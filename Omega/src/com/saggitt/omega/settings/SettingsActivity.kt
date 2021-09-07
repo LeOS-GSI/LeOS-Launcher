@@ -46,6 +46,7 @@ import com.android.launcher3.settings.PreferenceHighlighter
 import com.android.launcher3.states.RotationHelper
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.ContentWriter
+import com.farmerbb.taskbar.lib.Taskbar
 import com.saggitt.omega.OmegaPreferences
 import com.saggitt.omega.OmegaPreferencesChangeCallback
 import com.saggitt.omega.backup.BackupListActivity
@@ -74,7 +75,7 @@ open class SettingsActivity : SettingsBaseActivity(),
     PreferenceFragment.OnPreferenceDisplayDialogCallback,
     FragmentManager.OnBackStackChangedListener, View.OnClickListener {
     private var isSubSettings = false
-    protected var forceSubSettings = false
+    private var forceSubSettings = false
     private var hasPreview = false
     override fun onCreate(savedInstanceState: Bundle?) {
         var savedInstanceState: Bundle? = savedInstanceState
@@ -293,7 +294,7 @@ open class SettingsActivity : SettingsBaseActivity(),
             }
         }
 
-        fun highlightPreferenceIfNeeded() {
+        private fun highlightPreferenceIfNeeded() {
             if (!isAdded) {
                 return
             }
@@ -377,7 +378,7 @@ open class SettingsActivity : SettingsBaseActivity(),
             return if (position >= 0) PreferenceHighlighter(list, position) else null
         }
 
-        fun dispatchOnResume(group: PreferenceGroup) {
+        private fun dispatchOnResume(group: PreferenceGroup) {
             val count = group.preferenceCount
             for (i in 0 until count) {
                 val preference = group.getPreference(i)
@@ -398,7 +399,7 @@ open class SettingsActivity : SettingsBaseActivity(),
             unregisterObserverIfNeeded()
         }
 
-        fun registerObserverIfNeeded() {
+        private fun registerObserverIfNeeded() {
             if (!mIsDataSetObserverRegistered) {
                 mCurrentRootAdapter?.unregisterAdapterDataObserver(mDataSetObserver)
                 mCurrentRootAdapter = listView.adapter
@@ -454,7 +455,8 @@ open class SettingsActivity : SettingsBaseActivity(),
         }
 
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.omega_preferences,rootKey)
+            setPreferencesFromResource(R.xml.omega_preferences, rootKey)
+            onPreferencesAdded(preferenceScreen);
         }
 
         override fun onResume() {
@@ -584,11 +586,19 @@ open class SettingsActivity : SettingsBaseActivity(),
                     requireActivity().startActivity(intent)
                     false
                 }
+                findPreference<Preference>("pref_desktop_mode_settings")?.setOnPreferenceClickListener {
+                    Taskbar.openSettings(
+                        requireContext(),
+                        ThemeOverride.Settings().getTheme(requireContext())
+                    )
+                    true
+                }
             }
         }
 
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(content,rootKey)
+            setPreferencesFromResource(content, rootKey)
+            onPreferencesAdded(preferenceScreen)
         }
 
         private val content: Int
@@ -651,11 +661,6 @@ open class SettingsActivity : SettingsBaseActivity(),
 
         override fun onPreferenceClick(preference: Preference): Boolean {
             if (preference.key == "kill") Utilities.killLauncher()
-            /*else if (preference.key.equals("pref_widget_feed")) {
-                val intent = Intent(context, FeedWidgetsActivity::class.java)
-                    startActivity(intent);
-                }
-             */
             return false
         }
 

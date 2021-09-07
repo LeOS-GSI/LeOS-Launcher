@@ -29,7 +29,7 @@ class AllAppsSearchContainerView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LauncherAllAppsContainerView(context, attrs, defStyleAttr) {
-    private val mClearQsb = false
+    private var mClearQsb = false
 
     override fun dispatchDraw(canvas: Canvas) {
         val searchView = searchView

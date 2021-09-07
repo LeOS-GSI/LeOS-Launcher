@@ -79,9 +79,9 @@
             android:persistent="true"
             android:title="@string/title_drawer_row_height"
             app:defaultSeekbarValue="1.0"
-            app:maxValue="1.5"
             app:minValue="0.5"
-            app:steps="150"
+            app:maxValue="1.5"
+            app:steps="100"
             app:summaryFormat="%.0f%%"
             app:summaryMultiplier="100" />
 
@@ -99,9 +99,9 @@
         <com.saggitt.omega.preferences.StyledSwitchPreference
             android:defaultValue="false"
             android:key="pref_show_predictions"
-            android:title="@string/apps_label"
+            android:title="@string/title_app_suggestions"
             app:iconSpaceReserved="false"
-            app:searchTitle="@string/apps_label" />
+            app:searchTitle="@string/title_app_suggestions" />
 
         <com.saggitt.omega.preferences.StyledSwitchPreferenceCompat
             android:key="pref_showAllAppsLabel"
@@ -127,11 +127,13 @@
         <com.saggitt.omega.preferences.AutoModeSeekbarPreference
             android:key="pref_allAppsOpacitySB"
             android:title="@string/title_opacity"
+            android:persistent="true"
+            app:defaultSeekbarValue="1.0"
             app:minValue="0"
             app:maxValue="1"
+            app:steps="100"
             app:summaryFormat="%.0f%%"
-            app:summaryMultiplier="100"
-            android:persistent="true" />
+            app:summaryMultiplier="100" />
 
         <com.saggitt.omega.preferences.StyledSwitchPreference
             android:defaultValue="true"
@@ -186,7 +188,7 @@
             android:defaultValue="true"
             android:dependency="pref_allAppsSearch"
             android:disableDependentsState="true"
-            android:key="pref_allAppsGoogleSearch"
+            android:key="pref_allAppsGlobalSearch"
             android:summary="@string/summary_all_apps_google_search"
             android:title="@string/title_all_apps_google_search"
             app:iconSpaceReserved="false" />

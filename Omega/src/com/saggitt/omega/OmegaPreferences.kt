@@ -24,7 +24,10 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Looper
 import android.text.TextUtils
-import com.android.launcher3.*
+import com.android.launcher3.LauncherAppState
+import com.android.launcher3.LauncherFiles
+import com.android.launcher3.R
+import com.android.launcher3.Utilities
 import com.android.launcher3.Utilities.makeComponentKey
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.Executors.MAIN_EXECUTOR
@@ -79,7 +82,7 @@ class OmegaPreferences(val context: Context) : SharedPreferences.OnSharedPrefere
     val sharedPrefs = migratePrefs()
 
     /* --APP DRAWER-- */
-    var sortMode by StringIntPref("pref_key__sort_mode", 0, recreate)
+    var sortMode by StringIntPref("pref_key__sort_mode", 0, reloadApps)
     var showPredictions by BooleanPref("pref_show_predictions", false, doNothing)
     val showAllAppsLabel by BooleanPref("pref_showAllAppsLabel", false)
     var hiddenAppSet by StringSetPref("hidden-app-set", setOf(), reloadApps)
@@ -90,10 +93,10 @@ class OmegaPreferences(val context: Context) : SharedPreferences.OnSharedPrefere
     )
     var allAppsIconScale by FloatPref("allAppsIconSize", 1f, reloadApps)
     val drawerLabelColor by IntPref("pref_drawer_label_color", R.color.textColorPrimary, reloadApps)
-    var allAppsGlobalSearch by BooleanPref("pref_allAppsGoogleSearch", true, doNothing)
+    var allAppsGlobalSearch by BooleanPref("pref_allAppsGlobalSearch", true, doNothing)
     val allAppsSearch by BooleanPref("pref_allAppsSearch", true, recreate)
-    val allAppsTextScale by FloatPref("pref_allAppsIconTextScale", 1f, recreate)
-    val drawerPaddingScale by FloatPref("pref_allAppsPaddingScale", 1.0f, recreate)
+    val allAppsTextScale by FloatPref("pref_allAppsIconTextScale", 1f)
+    val drawerPaddingScale by FloatPref("pref_allAppsPaddingScale", 1.0f, restart)
     private val drawerMultilineLabel by BooleanPref("pref_iconLabelsInTwoLines", false, recreate)
     val drawerLabelRows get() = if (drawerMultilineLabel) 2 else 1
     val hideAllAppsAppLabels by BooleanPref("pref_hideAllAppsAppLabels", false, recreate)
@@ -103,8 +106,8 @@ class OmegaPreferences(val context: Context) : SharedPreferences.OnSharedPrefere
     val appGroupsManager by lazy { AppGroupsManager(this) }
     val separateWorkApps by BooleanPref("pref_separateWorkApps", false, recreate)
     val drawerBackgroundColor by IntPref("pref_drawer_background_color", R.color.white, recreate)
-    val customBackground by BooleanPref("pref_enable_custom_background", false, doNothing)
-    val allAppsOpacity by AlphaPref("pref_allAppsOpacitySB", -1, recreate)
+    val customBackground by BooleanPref("pref_enable_custom_background", false, recreate)
+    val allAppsOpacity by AlphaPref("pref_allAppsOpacitySB", -1, restart)
     private val drawerGridSizeDelegate = ResettableLazy {
         GridSize(
             this,
@@ -233,7 +236,6 @@ class OmegaPreferences(val context: Context) : SharedPreferences.OnSharedPrefere
 
     /* --SEARCH-- */
     var searchBarRadius by DimensionPref("pref_searchbar_radius", -1f)
-    val dockColoredGoogle by BooleanPref("pref_dockColoredGoogle", true, doNothing)
     var searchProvider by StringPref(
         "pref_globalSearchProvider",
         omegaConfig.defaultSearchProvider
@@ -243,13 +245,26 @@ class OmegaPreferences(val context: Context) : SharedPreferences.OnSharedPrefere
     val dualBubbleSearch by BooleanPref("pref_bubbleSearchStyle", false, recreate)
     val searchHiddenApps by BooleanPref("pref_search_hidden_apps", false)
 
+    val customFolderBackground by BooleanPref("pref_custom_folder_background", false, recreate)
+    val folderBackground by IntPref(
+        "pref_folder_background",
+        omegaConfig.defaultFolderBackground(),
+        recreate
+    )
+    var folderRadius by DimensionPref("pref_folder_radius", -1f, recreate)
+
+    /* --QUICK STEP-- */
+    val recentsBlurredBackground by BooleanPref("pref_recents_blur_background", true) {
+        onChangeCallback?.launcher?.background?.onEnabledChanged()
+    }
+
     /* --SMART SPACE-- */
     var usePillQsb by BooleanPref("pref_use_pill_qsb", false, recreate)
-    val enableSmartspace by BooleanPref("enable_smartspace", false, refreshGrid)
-    val smartspaceTime by BooleanPref("pref_smartspace_time", false, refreshGrid)
-    val smartspaceDate by BooleanPref("pref_smartspace_date", true, refreshGrid)
-    val smartspaceTimeAbove by BooleanPref("pref_smartspace_time_above", false, refreshGrid)
-    val smartspaceTime24H by BooleanPref("pref_smartspace_time_24_h", false, refreshGrid)
+    val enableSmartspace by BooleanPref("enable_smartspace", false, recreate)
+    val smartspaceTime by BooleanPref("pref_smartspace_time", false, recreate)
+    val smartspaceDate by BooleanPref("pref_smartspace_date", true, recreate)
+    val smartspaceTimeAbove by BooleanPref("pref_smartspace_time_above", false, recreate)
+    val smartspaceTime24H by BooleanPref("pref_smartspace_time_24_h", false, recreate)
     val weatherUnit by StringBasedPref(
         "pref_weather_units", Temperature.Unit.Celsius, ::updateSmartspaceProvider,
         Temperature.Companion::unitFromString, Temperature.Companion::unitToString
@@ -293,21 +308,15 @@ class OmegaPreferences(val context: Context) : SharedPreferences.OnSharedPrefere
     /* --FEED-- */
     var feedProvider by StringPref("pref_feedProvider", "", restart)
     val ignoreFeedWhitelist by BooleanPref("pref_feedProviderAllowAll", true, restart)
-    var feedProviderPackage by StringPref(
-        "pref_feed_provider_package",
-        BuildConfig.APPLICATION_ID,
-        restart
-    )
 
     /* --DEV-- */
     var developerOptionsEnabled by BooleanPref("pref_showDevOptions", false, recreate)
+    var desktopModeEnabled by BooleanPref("pref_desktop_mode", true, recreate)
     val showDebugInfo by BooleanPref("pref_showDebugInfo", false, doNothing)
     val lowPerformanceMode by BooleanPref("pref_lowPerformanceMode", false, recreate)
     val enablePhysics get() = !lowPerformanceMode
     val debugOkHttp by BooleanPref("pref_debugOkhttp", onChange = restart)
     var restoreSuccess by BooleanPref("pref_restoreSuccess", false)
-
-    val folderBgColored by BooleanPref("pref_folderBgColorGen", false)
 
     val customAppName =
         object : MutableMapPref<ComponentKey, String>("pref_appNameMap", reloadAll) {

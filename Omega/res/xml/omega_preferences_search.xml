@@ -42,13 +42,13 @@
             android:title="@string/title__search_action_assistant"
             app:controllerClass=".SearchController"
             app:iconSpaceReserved="false" />
-
+<!--
         <com.saggitt.omega.preferences.StyledSwitchPreferenceCompat
             android:defaultValue="false"
             android:key="pref_bubbleSearchStyle"
             android:title="@string/title__search_bubble_searchbar"
             app:controllerClass=".SearchController"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false" /> -->
 
         <com.saggitt.omega.preferences.AutoModeSeekbarPreference
             android:key="pref_searchbar_radius"
@@ -61,6 +61,31 @@
 
     </com.saggitt.omega.preferences.ThemedPreferenceCategory>
     <com.saggitt.omega.preferences.ThemedPreferenceCategory android:title="@string/app_categorization_folders">
+        <com.saggitt.omega.preferences.StyledSwitchPreference
+            android:defaultValue="true"
+            android:key="pref_custom_folder_background"
+            android:persistent="true"
+            android:title="@string/folder_custom_background"
+            app:iconSpaceReserved="false" />
+
+        <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+            android:defaultValue="@color/qsb_drawer_text_color_normal"
+            android:key="pref_folder_background"
+            android:title="@string/folder_background"
+            android:dependency="pref_custom_folder_background"
+            app:cpv_dialogTitle="@string/folder_background"
+            app:cpv_showAlphaSlider="false"
+            app:cpv_previewSize="large"
+            app:iconSpaceReserved="false" />
+
+        <com.saggitt.omega.preferences.AutoModeSeekbarPreference
+            android:key="pref_folder_radius"
+            android:title="@string/folder_radius"
+            app:defaultSeekbarValue="-1.0"
+            app:maxValue="24"
+            app:minValue="0.0"
+            app:steps="24"
+            app:summaryFormat="%.0fdp" />
 
     </com.saggitt.omega.preferences.ThemedPreferenceCategory>
 </PreferenceScreen>

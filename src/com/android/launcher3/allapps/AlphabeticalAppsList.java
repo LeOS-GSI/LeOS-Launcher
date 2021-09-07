@@ -15,7 +15,6 @@
  */
 package com.android.launcher3.allapps;
 
-
 import static com.saggitt.omega.util.Config.SORT_AZ;
 import static com.saggitt.omega.util.Config.SORT_BY_COLOR;
 import static com.saggitt.omega.util.Config.SORT_LAST_INSTALLED;
@@ -38,6 +37,7 @@ import com.android.launcher3.model.data.AppInfo;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.ItemInfoMatcher;
 import com.android.launcher3.util.LabelComparator;
+import com.saggitt.omega.OmegaLauncher;
 import com.saggitt.omega.OmegaPreferences;
 import com.saggitt.omega.allapps.AppColorComparator;
 import com.saggitt.omega.allapps.InstallTimeComparator;
@@ -113,7 +113,6 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
     private int mNumAppRowsInAdapter;
     private ItemInfoMatcher mItemFilter;
     private final OmegaPreferences prefs;
-
     private List<String> mSearchSuggestions;
 
     /**
@@ -367,7 +366,7 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
                 continue;
             }
 
-            String sectionName = info.sectionName;
+            String sectionName = getAndUpdateCachedSectionName(info);
 
             // Create a new section if the section names do not match
             if (!sectionName.equals(lastSectionName)) {
@@ -452,7 +451,6 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
                     break;
             }
         }
-
     }
 
     private List<AppInfo> getFiltersAppInfos() {
@@ -464,8 +462,17 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
             AppInfo match = mAllAppsStore.getApp(key);
             if (match != null) {
                 result.add(match);
+            } else {
+                //Add hidden apps to search results when the preference is enabled
+                ArrayList<AppInfo> apps = OmegaLauncher.getLauncher(mLauncher.getApplicationContext()).getHiddenApps();
+                for (AppInfo info : apps) {
+                    if (info.componentName.getPackageName().equals(key.componentName.getPackageName())) {
+                        result.add(info);
+                    }
+                }
             }
         }
+
         return result;
     }
 

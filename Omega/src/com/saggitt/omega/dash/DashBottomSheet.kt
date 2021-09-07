@@ -24,6 +24,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.launcher3.Launcher
@@ -31,6 +32,7 @@ import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
+import com.saggitt.omega.util.tintDrawable
 import com.saggitt.omega.views.CenterFloatingView
 
 class DashBottomSheet(context: Context) : RelativeLayout(context) {
@@ -66,14 +68,22 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
                     DashControlItem(context, it)
                 }
             }
+
         controlItemAdapter.set(controlItems)
+        val actionMediaPlayer = resources.getString(R.string.dash_media_player)
+
         val dashItems = activeDashProviders
             .mapNotNull { name ->
-                allActionItems.find { it.name == name }?.let {
+                allActionItems.find {
+                    it.name == name
+                            && it.name != actionMediaPlayer
+                }?.let {
                     DashActionItem(context, it)
                 }
             }
+
         dashItemAdapter.set(dashItems)
+
         val musicPlay = findViewById<AppCompatImageView>(R.id.musicPlay).apply {
             setImageResource(if (musicManager.isMusicActive) R.drawable.ic_music_pause else R.drawable.ic_music_play)
             setOnClickListener {
@@ -106,7 +116,9 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
                     )
                     setImageResource(R.drawable.ic_music_pause)
                 }
+                tintDrawable(prefs.accentColor)
             }
+            tintDrawable(prefs.accentColor)
         }
         findViewById<AppCompatImageView>(R.id.musicPrev).apply {
             setOnClickListener {
@@ -123,7 +135,9 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
                     )
                 )
                 musicPlay.setImageResource(R.drawable.ic_music_pause)
+                musicPlay.tintDrawable(prefs.accentColor)
             }
+            tintDrawable(prefs.accentColor)
         }
         findViewById<AppCompatImageView>(R.id.musicNext).apply {
             setOnClickListener {
@@ -140,7 +154,17 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
                     )
                 )
                 musicPlay.setImageResource(R.drawable.ic_music_pause)
+                musicPlay.tintDrawable(prefs.accentColor)
             }
+            tintDrawable(prefs.accentColor)
+        }
+
+        val musicTab = findViewById<ConstraintLayout>(R.id.musicTab)
+
+        if (activeDashProviders.contains(actionMediaPlayer)) {
+            musicTab.visibility = View.VISIBLE
+        } else {
+            musicTab.visibility = View.GONE
         }
     }
 

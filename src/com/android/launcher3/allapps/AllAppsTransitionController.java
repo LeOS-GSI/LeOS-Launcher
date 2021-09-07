@@ -35,7 +35,6 @@ import com.android.launcher3.anim.PendingAnimation;
 import com.android.launcher3.anim.PropertySetter;
 import com.android.launcher3.statemanager.StateManager.StateHandler;
 import com.android.launcher3.states.StateAnimationConfig;
-import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper;
 import com.android.launcher3.views.ScrimView;
 import com.android.systemui.plugins.AllAppsSearchPlugin;
 import com.android.systemui.plugins.PluginListener;

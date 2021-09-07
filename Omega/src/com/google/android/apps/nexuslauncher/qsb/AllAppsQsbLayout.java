@@ -5,7 +5,6 @@ import static com.android.launcher3.LauncherState.ALL_APPS_CONTENT;
 import static com.android.launcher3.LauncherState.ALL_APPS_HEADER;
 import static com.android.launcher3.LauncherState.HOTSEAT_SEARCH_BOX;
 import static com.android.launcher3.anim.Interpolators.LINEAR;
-import static com.android.launcher3.anim.PropertySetter.NO_ANIM_PROPERTY_SETTER;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -41,13 +40,13 @@ import com.android.launcher3.anim.PropertySetter;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.util.Themes;
 import com.google.android.apps.nexuslauncher.search.SearchThread;
-import com.saggitt.omega.OmegaPreferences;
 import com.saggitt.omega.search.SearchProvider;
 import com.saggitt.omega.search.SearchProviderController;
 import com.saggitt.omega.search.WebSearchProvider;
 import com.saggitt.omega.search.providers.AppsSearchProvider;
 
-public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManager, QsbChangeListener, OnIDPChangeListener {
+public class AllAppsQsbLayout extends AbstractQsbLayout implements
+        SearchUiManager, QsbChangeListener, OnIDPChangeListener {
 
     private QsbConfiguration qsbConfiguration;
     private boolean mLowPerformanceMode;
@@ -55,13 +54,11 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     private int mVerticalOffset;
     boolean mDoNotRemoveFallback;
     private int mShadowAlpha;
-    private Bitmap Dv;
+    private Bitmap shadowBitmap;
     private boolean mUseFallbackSearch;
     private FallbackAppsSearchView mFallback;
-    private TextView mHint;
+    private TextView hintTextView;
     private AllAppsContainerView mAppsView;
-    private OmegaPreferences prefs;
-    private boolean widgetMode;
     private int mTextColor;
 
     public AllAppsQsbLayout(Context context) {
@@ -86,14 +83,13 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
         mTopAdjusting = getResources().getDimensionPixelSize(R.dimen.qsb_margin_top_adjusting);
         mVerticalOffset = getResources().getDimensionPixelSize(R.dimen.all_apps_search_vertical_offset);
         setClipToPadding(false);
-        prefs = OmegaPreferences.Companion.getInstanceNoCreate();
         mLowPerformanceMode = prefs.getLowPerformanceMode();
         mTextColor = Themes.getAttrColor(mContext, R.attr.folderTextColor);
     }
 
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mHint = findViewById(R.id.qsb_hint);
+        hintTextView = findViewById(R.id.qsb_hint);
     }
 
     @Override
@@ -104,12 +100,6 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
         return (float) (((getLayoutParams().height
                 + Math.max(-mVerticalOffset, insets.top - mTopAdjusting))
                 + mVerticalOffset) + (bottom + ((int) (((float) (i - bottom)) * 0.45f))));
-    }
-
-    public void setWidgetMode(boolean enable) {
-        widgetMode = enable;
-        loadIcons();
-        setContentVisibility(HOTSEAT_SEARCH_BOX, NO_ANIM_PROPERTY_SETTER, LINEAR);
     }
 
     public void setInsets(Rect rect) {
@@ -130,6 +120,12 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
         qsbConfiguration.addListener(this);
     }
 
+    protected void onDetachedFromWindow() {
+        LauncherAppState.getIDP(getContext()).removeOnChangeListener(this);
+        qsbConfiguration.removeListener(this);
+        super.onDetachedFromWindow();
+    }
+
     @Override
     public void onIdpChanged(int changeFlags, InvariantDeviceProfile profile) {
         if ((changeFlags & CHANGE_FLAG_ICON_PARAMS) != 0) {
@@ -141,8 +137,9 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         super.onSharedPreferenceChanged(sharedPreferences, key);
-        if (key.equals("pref_allAppsGoogleSearch")) {
+        if (key.equals("pref_allAppsGlobalSearch")) {
             loadPreferences(sharedPreferences);
+
         }
     }
 
@@ -153,33 +150,6 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
         } else {
             return new AppsSearchProvider(getContext()).getIcon(colored);
         }
-    }
-
-    @Override
-    protected Drawable getHotseatIcon(boolean colored) {
-        return super.getIcon(colored);
-    }
-
-    @Override
-    protected boolean logoCanOpenFeed() {
-        return super.logoCanOpenFeed() && prefs.getAllAppsGlobalSearch();
-    }
-
-    @Override
-    protected Drawable getMicIcon(boolean colored) {
-        if (prefs.getAllAppsGlobalSearch()) {
-            mMicIconView.setVisibility(View.VISIBLE);
-            return super.getMicIcon(colored);
-        } else {
-            mMicIconView.setVisibility(View.GONE);
-            return null;
-        }
-    }
-
-    protected void onDetachedFromWindow() {
-        LauncherAppState.getIDP(getContext()).removeOnChangeListener(this);
-        super.onDetachedFromWindow();
-        qsbConfiguration.addListener(this);
     }
 
     public final void initialize(AllAppsContainerView allAppsContainerView) {
@@ -199,10 +169,10 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     }
 
     private void updateConfiguration() {
-        az(mAllAppsBgColor);
+        setBubbleBgColor(mAllAppsBgColor);
         addOrUpdateSearchPaint(qsbConfiguration.micStrokeWidth());
         showHintAssitant = qsbConfiguration.hintIsForAssistant();
-        setHintText(qsbConfiguration.hintTextValue(), mHint);
+        setHintText(qsbConfiguration.hintTextValue(), hintTextView);
         addOrUpdateSearchRipple();
     }
 
@@ -217,25 +187,26 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     }
 
     @Override
-    public final void startSearch(String str, int i) {
+    public final void startSearch(String str, int result) {
         if (mHotseatProgress < 0.5) {
-            startDrawerSearch(str, i);
+            startDrawerSearch(str, result);
         } else {
             startHotseatSearch();
         }
     }
-    private void startDrawerSearch(String str, int i) {
+
+    private void startDrawerSearch(String str, int result) {
         SearchProviderController controller = SearchProviderController.Companion
                 .getInstance(mContext);
         SearchProvider provider = controller.getSearchProvider();
         if (shouldUseFallbackSearch(provider)) {
             searchFallback(str);
         } else if (controller.isGoogle()) {
-            final ConfigBuilder f = new ConfigBuilder(this, true);
-            if (!getLauncher().getGoogleNow().startSearch(f.build(), f.getExtras())) {
+            ConfigBuilder config = new ConfigBuilder(this, true);
+            if (!getLauncher().getGoogleNow().startSearch(config.build(), config.getExtras())) {
                 searchFallback(str);
                 if (mFallback != null) {
-                    mFallback.setHint(null);
+                    mFallback.setHint("Search Apps");
                 }
             }
         } else {
@@ -244,6 +215,7 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
                 return null;
             });
         }
+        mResult = result;
     }
 
     private void startHotseatSearch() {
@@ -262,9 +234,9 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     }
 
     private void startGoogleSearch() {
-        final ConfigBuilder f = new ConfigBuilder(this, false);
-        if (getLauncher().getGoogleNow()
-                .startSearch(f.build(), f.getExtras())) {
+        final ConfigBuilder config = new ConfigBuilder(this, false);
+        if (!forceFallbackSearch() && getLauncher().getGoogleNow()
+                .startSearch(config.build(), config.getExtras())) {
             SharedPreferences devicePrefs = Utilities.getDevicePrefs(getContext());
             devicePrefs.edit().putInt("key_hotseat_qsb_tap_count",
                     devicePrefs.getInt("key_hotseat_qsb_tap_count", 0) + 1).apply();
@@ -339,7 +311,7 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
             mFallback.mAppsView = allAppsContainerView;
             mFallback.mSearchBarController.initialize(new SearchThread(mFallback.getContext()), mFallback,
                     Launcher.getLauncher(mFallback.getContext()), mFallback);
-            addView(this.mFallback);
+            addView(mFallback);
             mFallback.setTextColor(mTextColor);
         }
     }
@@ -364,40 +336,41 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         View view = (View) getParent();
-        if (!widgetMode) {
-            setTranslationX((float) ((view.getPaddingLeft() + (
-                    (((view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight())
-                            - (right - left))
-                            / 2)) - left));
-        }
+
+        setTranslationX((float) ((view.getPaddingLeft() + (
+                (((view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight())
+                        - (right - left))
+                        / 2)) - left));
+
         int containerTopMargin = 0;
         if (!prefs.getAllAppsSearch()) {
             MarginLayoutParams mlp = (MarginLayoutParams) getLayoutParams();
             containerTopMargin = -(mlp.topMargin + mlp.height);
         }
-        offsetTopAndBottom((int) mVerticalOffset - containerTopMargin);
+
+        offsetTopAndBottom(mVerticalOffset - containerTopMargin);
     }
 
     @Override
     protected void drawQsb(@NonNull Canvas canvas) {
         if (mShadowAlpha > 0) {
-            if (Dv == null) {
-                Dv = createShadowBitmap(
+            if (shadowBitmap == null) {
+                shadowBitmap = createShadowBitmap(
                         getResources().getDimension(R.dimen.hotseat_qsb_scroll_shadow_blur_radius),
                         getResources().getDimension(R.dimen.hotseat_qsb_scroll_key_shadow_offset),
                         0, true);
             }
             mShadowHelper.paint.setAlpha(mShadowAlpha);
-            drawShadow(Dv, canvas);
+            drawShadow(shadowBitmap, canvas);
             mShadowHelper.paint.setAlpha(255);
         }
         super.drawQsb(canvas);
     }
 
-    final void setShadowAlpha(int i) {
-        i = Utilities.boundToRange(i, 0, 255);
-        if (mShadowAlpha != i) {
-            mShadowAlpha = i;
+    final void setShadowAlpha(int alpha) {
+        alpha = Utilities.boundToRange(alpha, 0, 255);
+        if (mShadowAlpha != alpha) {
+            mShadowAlpha = alpha;
             invalidate();
         }
     }
@@ -422,7 +395,6 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
 
     @Override
     public void preDispatchKeyEvent(KeyEvent keyEvent) {
-
     }
 
     @Nullable
@@ -433,11 +405,6 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
 
     @Override
     protected void clearMainPillBg(Canvas canvas) {
-        if (!mLowPerformanceMode && mClearBitmap != null) {
-            if (mHotseatProgress < 1) {
-                drawPill(mClearShadowHelper, mClearBitmap, canvas);
-            }
-        }
     }
 
     @Override
@@ -449,12 +416,12 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
 
     @Override
     public void setContentVisibility(int visibleElements, PropertySetter setter, Interpolator interpolator) {
-        OmegaPreferences prefs = Utilities.getOmegaPrefs(getContext());
-        boolean hotseatQsbEnabled = prefs.getDockSearchBar() || widgetMode;
+        boolean hotseatQsbEnabled = prefs.getDockSearchBar();
         boolean drawerQsbEnabled = prefs.getAllAppsSearch();
         boolean hotseatQsbVisible = (visibleElements & HOTSEAT_SEARCH_BOX) != 0;
         boolean drawerQsbVisible = (visibleElements & ALL_APPS_HEADER) != 0;
         boolean qsbVisible = (hotseatQsbEnabled && hotseatQsbVisible) || (drawerQsbEnabled && drawerQsbVisible);
+
         float hotseatProgress, micProgress;
         if (!hotseatQsbEnabled) {
             hotseatProgress = 0;
@@ -468,6 +435,7 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements SearchUiManag
         } else {
             micProgress = hotseatProgress;
         }
+
         setter.setFloat(this, HOTSEAT_PROGRESS, hotseatProgress, LINEAR);
         setter.setViewAlpha(this, qsbVisible ? 1 : 0, interpolator);
         setter.setViewAlpha(mLogoIconView, 1 - hotseatProgress, interpolator);

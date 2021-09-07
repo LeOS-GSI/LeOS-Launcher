@@ -40,8 +40,8 @@
         android:layout_gravity="start|center"
         android:layout_marginTop="-6.0dip"
         android:layout_marginBottom="-6.0dip"
-        android:scaleType="center"
-        app:srcCompat="@drawable/ic_qsb_logo" />
+        android:src="@drawable/ic_super_g_color"
+        android:scaleType="center" />
 
     <FrameLayout
         android:id="@+id/mic_frame"

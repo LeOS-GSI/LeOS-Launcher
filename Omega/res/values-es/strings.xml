@@ -171,7 +171,7 @@
     <string name="reset_custom_icons">Remover iconos personalizados</string>
     <string name="import_icon">Importar icono</string>
     <string name="icon_pack_applied_toast">%s aplicado</string>
-    <string name="icon_shape_corner_round">Redondo</string>
+    <string name="icon_shape_corner_round">Redondeado</string>
     <string name="icon_shape_rounded_square">Redondeado</string>
     <string name="icon_shape_cylinder">Cilindro</string>
     <string name="icon_shape_teardrop">Lágrima</string>
@@ -218,7 +218,7 @@
     <string name="cat_drawer_grid">Cuadrícula</string>
     <string name="summary_search_hidden_apps">Mostrar accesos directos ocultos en los resultados.</string>
     <string name="title_all_apps_search">Barra de búsqueda en el Drawer</string>
-    <string name="event_provider_missing_notification_access">Para usarlo <xliff:g example="My Provider" id="providerName">“%1$s”</xliff:g>, habilite las notificaciones from <xliff:g example="My App" id="name">“%2$s”.</xliff:g></string>
+    <string name="event_provider_missing_notification_access">Para usarlo <xliff:g example="My Provider" id="providerName">“%1$s”</xliff:g>, habilite las notificaciones desde <xliff:g example="My App" id="name">“%2$s”.</xliff:g></string>
     <string name="zen_mode_enabled">No molestar está habilitado.</string>
     <string name="name_provider_alarm_events">Próximas alarmas</string>
     <string name="smartspace_in_time">En %1$s</string>
@@ -246,13 +246,60 @@
     <string name="action_open_settings">Abrir configuración del Launcher</string>
     <string name="folder_name_format">Carpeta: <xliff:g example="Games" id="name">%1$s</xliff:g></string>
     <string name="permission_iplocate_twilight_explanation">¿Permitir acceso a la ubicación aproximada\? Ésto permite un calculo de día noche mas certero.</string>
-
     <string name="gesture_press_home">Botón Inicio</string>
     <string name="gesture_press_back">Botón Atrás</string>
     <string name="gesture_double_tap">Doble toque</string>
     <string name="gesture_long_press">Mantener pulsado</string>
-    <string name="gesture_swipe_down">Deslizar hacia abajo</string>
-    <string name="gesture_swipe_up">Deslizar hacia arriba</string>
     <string name="gesture_dock_swipe_up">Deslizar hacia arriba sobre el dock</string>
-
+    <string name="backup_location">Ubicación</string>
+    <string name="backup_creating">Creando respaldo</string>
+    <string name="backup_error_blank_name">El nombre no debe estar vacío</string>
+    <string name="backup_wallpaper">Fondo de Pantalla</string>
+    <string name="backup_settings">Configuraciones</string>
+    <string name="backup_homescreen">Pantalla de Inicio</string>
+    <string name="restore_backup">Restaurar</string>
+    <string name="title_create">Crear</string>
+    <string name="backup_pref_summary">Guardar escritorio, Restaurar respaldos</string>
+    <string name="backup_share_title">Compartir respaldo</string>
+    <string name="restore_read_meta_fail">Archivo de respaldo no válido</string>
+    <string name="restore_failed">La restauración falló</string>
+    <string name="backup_failed">El respaldo falló</string>
+    <string name="restore_success">Restaruración correcta</string>
+    <string name="backup_restarting">Reiniciando</string>
+    <string name="backup_restoring">Restaurando respaldo</string>
+    <string name="backup_timestamp">Creado en</string>
+    <string name="backup_remove_from_recents">Remover de la lista</string>
+    <string name="backup_invalid">No disponible</string>
+    <string name="no_recent_backups">No hay respaldos recientes</string>
+    <string name="dialog_message_change_sort">¿Cambiar el orden a Alfabético?</string>
+    <string name="icu_abbrev_time">HH:mm</string>
+    <string name="icu_abbrev_time_12h">hh:mm aa</string>
+    <string name="icu_abbrev_date">dd MMMM</string>
+    <string name="notification_custom_color">Usar color personalizado</string>
+    <string name="title__search_bubble_searchbar">Mostrar dos burbujas</string>
+    <string name="backups">Respaldos</string>
+    <string name="title__about_changelog">Lista de cambios</string>
+    <string name="about_translators">Traductores</string>
+    <string name="about_source">Código Fuente</string>
+    <string name="dash_device_settings_title">Configuración del dispositivo</string>
+    <string name="dash_launch_app_title">Lanzar aplicación</string>
+    <string name="dash_mobile_network_title">Redes Móbiles</string>
+    <string name="dash_manage_apps_summary">Abrir el administrador de aplicaciones</string>
+    <string name="enabled_icon_packs">Habilitar</string>
+    <string name="label_voice_search">Búsqueda por voz</string>
+    <string name="tab_color">Color del Tab</string>
+    <string name="tab_hide_from_main">Ocultar del tab principal</string>
+    <string name="feed_add_widget">Añadir widget</string>
+    <string name="icon_shape_corner_squircle">Squircle</string>
+    <string name="gesture_swipe_up">Deslizar hacia arriba</string>
+    <string name="title__advanced_setting_search">Mostrar búsqueda de configuraciones</string>
+    <string name="wallpaper_pick_summary">Abrir el selector de fondos de pantalla</string>
+    <string name="dash_device_settings_summary">Abrir las configuraciones del dispositivo</string>
+    <string name="action_open_dash">Abrir el Dash</string>
+    <string name="action_app_search">Abrir el buscador de aplicaciones</string>
+    <string name="dash_all_apps_title">Abrir todas las aplicaciones</string>
+    <string name="search_no_results">No se encontraron resultados</string>
+    <string name="default_tab_name">Nueba pestaña</string>
+    <string name="tabs_manage">Administrar</string>
+    <string name="tab_manage_apps">Administrar aplicaciones</string>
 </resources>

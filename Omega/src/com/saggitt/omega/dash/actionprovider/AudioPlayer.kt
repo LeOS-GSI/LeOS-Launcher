@@ -15,30 +15,23 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.saggitt.omega.views
 
-import android.app.FragmentManager
+package com.saggitt.omega.dash.actionprovider
+
 import android.content.Context
-import android.util.AttributeSet
-import com.android.launcher3.Launcher
+import android.graphics.drawable.Drawable
+import androidx.appcompat.content.res.AppCompatResources
 import com.android.launcher3.R
+import com.saggitt.omega.dash.DashActionProvider
 
-// TODO: replace the Donations buttons with Google play dialog
-// this should be completed before the app is available in google play
-class GBillingDialog @JvmOverloads constructor(
-    context: Context?,
-    attrs: AttributeSet?,
-    defStyleAttr: Int = 0
-) :
-    BaseBottomSheet(context, attrs, defStyleAttr) {
-    private val mFragmentManager: FragmentManager = mLauncher.fragmentManager
-    fun populateAndShow() {}
-
-    companion object {
-        fun show(launcher: Launcher) {
-            val gbd = launcher.layoutInflater
-                .inflate(R.layout.billing_dialog, launcher.dragLayer, false) as GBillingDialog
-            gbd.populateAndShow()
+class AudioPlayer(context: Context) : DashActionProvider(context) {
+    override val name = context.getString(R.string.dash_media_player)
+    override val description = context.getString(R.string.dash_media_player_description)
+    override val icon: Drawable?
+        get() = AppCompatResources.getDrawable(context, R.drawable.ic_music_play).apply {
+            this?.setTint(darkenColor(accentColor))
         }
+
+    override fun runAction(context: Context) {
     }
 }
