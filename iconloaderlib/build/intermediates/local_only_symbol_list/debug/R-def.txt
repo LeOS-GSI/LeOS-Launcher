@@ -1,0 +1,9 @@
+R_DEF: Internal format may change without notice
+local
+bool simple_cache_enable_im_memory
+color legacy_icon_background
+dimen default_icon_bitmap_size
+dimen profile_badge_size
+drawable adaptive_icon_drawable_wrapper
+drawable ic_instant_app_badge
+string cache_db_name

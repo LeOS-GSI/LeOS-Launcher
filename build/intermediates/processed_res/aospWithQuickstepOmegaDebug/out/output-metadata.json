@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "PROCESSED_RES",
+    "kind": "Directory"
+  },
+  "applicationId": "com.saggitt.omega.dev",
+  "variantName": "aospWithQuickstepOmegaDebug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 284,
+      "versionName": "0.8.2",
+      "outputFile": "resources-aospWithQuickstepOmegaDebug.ap_"
+    }
+  ],
+  "elementType": "File"
+}

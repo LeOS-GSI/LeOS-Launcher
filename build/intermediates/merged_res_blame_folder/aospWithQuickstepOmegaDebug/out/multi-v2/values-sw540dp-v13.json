@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-sw540dp-v13/values-sw540dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/res/values-sw540dp-v13/values-sw540dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "44",
+                        "endOffsets": "95"
+                    }
+                }
+            ]
+        }
+    ]
+}

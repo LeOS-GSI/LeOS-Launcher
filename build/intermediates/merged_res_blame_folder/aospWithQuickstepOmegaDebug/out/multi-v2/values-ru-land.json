@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-ru-land/values-ru-land.xml",
+            "map": [
+                {
+                    "source": "/home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/res/values-ru-land/values-ru-land.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,132",
+                        "endColumns": "76,78",
+                        "endOffsets": "127,206"
+                    }
+                }
+            ]
+        }
+    ]
+}

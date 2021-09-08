@@ -1,0 +1,1339 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3/*
+4**
+5** Copyright 2017, The Android Open Source Project
+6**
+7** Licensed under the Apache License, Version 2.0 (the "License");
+8** you may not use this file except in compliance with the License.
+9** You may obtain a copy of the License at
+10**
+11**     http://www.apache.org/licenses/LICENSE-2.0
+12**
+13** Unless required by applicable law or agreed to in writing, software
+14** distributed under the License is distributed on an "AS IS" BASIS,
+15** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+16** See the License for the specific language governing permissions and
+17** limitations under the License.
+18*/
+19-->
+20<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+21    package="com.saggitt.omega.dev"
+22    android:versionCode="284"
+23    android:versionName="0.8.2" >
+24
+25    <uses-sdk
+26        android:minSdkVersion="26"
+27        android:targetSdkVersion="30" />
+28
+29    <permission
+29-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:24:5-27:55
+30        android:name="com.saggitt.omega.dev.permission.HOTSEAT_EDU"
+30-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:25:9-61
+31        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+31-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:26:9-72
+32        android:protectionLevel="signatureOrSystem" />
+32-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:27:9-52
+33
+34    <uses-permission android:name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS" />
+34-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:29:5-99
+34-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:29:22-96
+35    <uses-permission android:name="android.permission.VIBRATE" />
+35-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:30:5-66
+35-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:30:22-63
+36    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+36-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:54:5-77
+36-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:54:22-74
+37    <uses-permission android:name="com.saggitt.omega.dev.permission.HOTSEAT_EDU" />
+37-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:32:5-77
+37-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:32:22-74
+38
+39    <uses-feature
+39-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:22:5-24:36
+40        android:name="android.hardware.telephony"
+40-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:23:9-50
+41        android:required="false" /> <!-- Pixel -->
+41-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:24:9-33
+42    <permission
+42-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:27:5-30:55
+43        android:name="com.saggitt.omega.dev.permission.QSB"
+43-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:28:9-55
+44        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+44-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:29:9-72
+45        android:protectionLevel="signatureOrSystem" />
+45-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:30:9-52
+46
+47    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+47-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:32:5-85
+47-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:32:22-82
+48    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+48-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:33:5-86
+48-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:33:22-83
+49    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS" />
+49-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:34:5-102
+49-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:34:22-99
+50    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS" />
+50-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:35:5-103
+50-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:35:22-100
+51    <uses-permission android:name="com.saggitt.omega.dev.permission.READ_SETTINGS" />
+52    <uses-permission android:name="com.saggitt.omega.dev.permission.WRITE_SETTINGS" />
+53    <uses-permission android:name="com.saggitt.omega.dev.permission.QSB" />
+53-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:38:5-71
+53-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:38:22-68
+54    <uses-permission android:name="android.permission.START_TASKS_FROM_RECENTS" />
+54-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:39:5-41:47
+54-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:40:9-67
+55    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+55-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:42:5-44:47
+55-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:43:9-64
+56    <uses-permission android:name="android.permission.CREATE_USERS" />
+56-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:45:5-47:47
+56-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:46:9-55
+57    <uses-permission android:name="android.permission.MANAGE_USERS" />
+57-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:48:5-50:47
+57-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:49:9-55
+58    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+58-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:51:5-53:47
+58-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:52:9-62
+59    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
+59-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:54:5-56:47
+59-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:55:9-63
+60    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+60-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:57:5-80
+60-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:57:22-77
+61    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+61-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:60:5-76
+61-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:60:22-73
+62    <uses-permission android:name="android.permission.STATUS_BAR" />
+62-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:61:5-63:47
+62-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:62:9-53
+63    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+63-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:64:5-81
+63-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:64:22-78
+64    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+64-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:50:5-80
+64-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:50:22-77
+65    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+65-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:66:5-80
+65-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:66:22-77
+66    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+66-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:67:5-69:40
+66-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:68:9-66
+67    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+67-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:70:5-75
+67-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:70:22-72
+68    <uses-permission android:name="android.permission.READ_CALENDAR" />
+68-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:71:5-72
+68-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:71:22-69
+69    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+69-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:47:5-72
+69-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:47:22-69
+70    <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
+70-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:73:5-75
+70-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:73:22-72
+71    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+71-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:41:5-73
+71-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:41:22-70
+72    <uses-permission android:name="android.permission.READ_WALLPAPER_INTERNAL" />
+72-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:77:5-79:47
+72-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:78:9-66
+73    <uses-permission android:name="android.permission.DEVICE_POWER" />
+73-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:80:5-82:47
+73-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:81:9-55
+74    <uses-permission android:name="android.permission.INTERNET" />
+74-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:83:5-67
+74-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:83:22-64
+75    <uses-permission android:name="com.huawei.wallpaperservcie.permission.SET_WALLPAPER_OFFSET" />
+75-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:84:5-99
+75-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:84:22-96
+76    <uses-permission android:name="com.huawei.android.thememanager.permission.ACCESS_CHANGE_WALLPAPER" />
+76-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:85:5-106
+76-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:85:22-103
+77    <uses-permission android:name="android.permission.BIND_APPWIDGET" /> <!-- For weather / sunset/-rise -->
+77-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:49:5-73
+77-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:49:22-70
+78    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+78-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:90:5-81
+78-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:90:22-78
+79    <uses-permission android:name="org.pixelexperience.weather.client.READ_WEATHER" /> <!-- App prediction -->
+79-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:91:5-87
+79-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:91:22-84
+80    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+80-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:93:5-95:47
+80-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:94:9-62
+81    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+81-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:96:5-77
+81-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:96:22-75
+82    <uses-permission android:name="android.permission.READ_DEVICE_CONFIG" />
+82-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:53:5-77
+82-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:53:22-74
+83    <!--
+84    The manifest defines the common entries that should be present in any derivative of Launcher3.
+85    The components should generally not require any changes.
+86
+87    Rest of the components are defined in AndroidManifest.xml which is merged with this manifest
+88    at compile time. Note that the components defined in AndroidManifest.xml are also required,
+89    with some minor changed based on the derivative app.
+90    -->
+91    <permission
+91-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:32:5-37:67
+92        android:name="com.android.launcher.permission.INSTALL_SHORTCUT"
+92-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:33:9-72
+93        android:description="@string/permdesc_install_shortcut"
+93-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:37:9-64
+94        android:label="@string/permlab_install_shortcut"
+94-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:36:9-57
+95        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+95-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:34:9-72
+96        android:protectionLevel="dangerous" />
+96-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:35:9-44
+97
+98    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+98-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:39:5-78
+98-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:39:22-75
+99    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+99-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:40:5-77
+99-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:40:22-74
+100    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+100-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:42:5-79
+100-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:42:22-76
+101    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+101-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:43:5-76
+101-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:43:22-73
+102    <uses-permission android:name="android.permission.BLUETOOTH" />
+102-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:44:5-68
+102-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:44:22-65
+103    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+103-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:45:5-74
+103-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:45:22-71
+104    <uses-permission android:name="android.permission.CALL_PHONE" />
+104-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:46:5-69
+104-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:46:22-66
+105    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+105-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:48:5-78
+105-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:48:22-75
+106    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+106-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:51:5-81
+106-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:51:22-78
+107    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+107-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:52:5-82
+107-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:52:22-79
+108    <!--
+109    Permissions required for read/write access to the workspace data. These permission name
+110    should not conflict with that defined in other apps, as such an app should embed its package
+111    name in the permissions. eq com.mypackage.permission.READ_SETTINGS
+112    -->
+113    <permission
+114        android:name="com.saggitt.omega.dev.permission.READ_SETTINGS"
+115        android:description="@string/permdesc_read_settings"
+116        android:label="@string/permlab_read_settings"
+117        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+118        android:protectionLevel="signatureOrSystem" />
+119    <permission
+120        android:name="com.saggitt.omega.dev.permission.WRITE_SETTINGS"
+121        android:description="@string/permdesc_write_settings"
+122        android:label="@string/permlab_write_settings"
+123        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+124        android:protectionLevel="signatureOrSystem" />
+125
+126    <uses-feature
+126-->[com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:11:5-13:35
+127        android:glEsVersion="0x00020000"
+127-->[com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:12:9-41
+128        android:required="true" />
+128-->[com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:13:9-32
+129
+130    <application
+130-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:80:5-204:19
+131        android:name="com.saggitt.omega.OmegaApp"
+131-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:101:9-50
+132        android:allowBackup="true"
+132-->[com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:16:9-35
+133        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+133-->[androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+134        android:backupAgent="com.android.launcher3.LauncherBackupAgent"
+134-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:81:9-72
+135        android:backupInForeground="true"
+135-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:83:9-42
+136        android:debuggable="true"
+137        android:exported="true"
+137-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:43:9-32
+138        android:extractNativeLibs="false"
+139        android:fullBackupContent="@xml/backupscheme"
+139-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:84:9-54
+140        android:fullBackupOnly="true"
+140-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:82:9-38
+141        android:hardwareAccelerated="true"
+141-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:85:9-43
+142        android:icon="@mipmap/ic_launcher_debug"
+142-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:107:9-34
+143        android:label="@string/derived_app_name"
+143-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:86:9-49
+144        android:largeHeap="@bool/config_largeHeap"
+144-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:87:9-51
+145        android:networkSecurityConfig="@xml/network_security_config"
+145-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:104:9-69
+146        android:restoreAnyVersion="true"
+146-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:88:9-41
+147        android:roundIcon="@mipmap/ic_launcher_round_debug"
+147-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:108:9-44
+148        android:supportsRtl="true"
+148-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:89:9-35
+149        android:testOnly="true"
+150        android:theme="@style/AppTheme" >
+150-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:40:9-40
+151        <service
+151-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:46:9-53:19
+152            android:name="com.android.quickstep.TouchInteractionService"
+152-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:47:13-73
+153            android:directBootAware="true"
+153-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:49:13-43
+154            android:permission="android.permission.STATUS_BAR_SERVICE" >
+154-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:48:13-71
+155            <intent-filter>
+155-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:50:13-52:29
+156                <action android:name="android.intent.action.QUICKSTEP_SERVICE" />
+156-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:51:17-82
+156-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:51:25-79
+157            </intent-filter>
+158        </service>
+159
+160        <activity
+160-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:55:9-66:39
+161            android:name="com.android.quickstep.RecentsActivity"
+161-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:55:19-71
+162            android:clearTaskOnLaunch="true"
+162-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:58:13-45
+163            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+163-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:62:13-134
+164            android:excludeFromRecents="true"
+164-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:56:13-46
+165            android:exported="true"
+165-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:65:13-36
+166            android:launchMode="singleTask"
+166-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:57:13-44
+167            android:resizeableActivity="true"
+167-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:63:13-46
+168            android:resumeWhilePausing="true"
+168-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:64:13-46
+169            android:screenOrientation="unspecified"
+169-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:61:13-52
+170            android:stateNotNeeded="true"
+170-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:59:13-42
+171            android:taskAffinity=""
+171-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:66:13-36
+172            android:theme="@style/LauncherTheme" />
+172-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:60:13-49
+173
+174        <!-- Content provider to settings search. The autority should be same as the packageName -->
+175        <provider
+175-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:69:9-79:20
+176            android:name="com.android.quickstep.LauncherSearchIndexablesProvider"
+176-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:70:13-82
+177            android:authorities="com.saggitt.omega.dev"
+177-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:71:13-49
+178            android:exported="true"
+178-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:75:13-36
+179            android:grantUriPermissions="true"
+179-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:72:13-47
+180            android:multiprocess="true"
+180-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:73:13-40
+181            android:permission="android.permission.READ_SEARCH_INDEXABLES" >
+181-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:74:13-75
+182            <intent-filter>
+182-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:76:13-78:29
+183                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
+183-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:77:17-92
+183-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:77:25-89
+184            </intent-filter>
+185        </provider>
+186
+187        <activity
+187-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:97:9-102:40
+188            android:name="com.android.launcher3.proxy.ProxyActivityStarter"
+188-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:98:13-76
+189            android:clearTaskOnLaunch="true"
+189-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:101:13-45
+190            android:exported="false"
+190-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:102:13-37
+191            android:launchMode="singleTask"
+191-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:100:13-44
+192            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+192-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:99:13-83
+193        <activity
+193-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:104:9-113:20
+194            android:name="com.android.quickstep.interaction.GestureSandboxActivity"
+194-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:105:13-84
+195            android:autoRemoveFromRecents="true"
+195-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:106:13-49
+196            android:excludeFromRecents="true"
+196-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:107:13-46
+197            android:screenOrientation="portrait" >
+197-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:108:13-49
+198            <intent-filter>
+198-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:109:13-112:29
+199                <action android:name="com.android.quickstep.action.GESTURE_SANDBOX" />
+199-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:110:17-87
+199-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:110:25-84
+200
+201                <category android:name="android.intent.category.DEFAULT" />
+201-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+201-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+202            </intent-filter>
+203        </activity>
+204        <activity
+204-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:114:9-125:20
+205            android:name="com.android.launcher3.hybridhotseat.HotseatEduActivity"
+205-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:115:13-61
+206            android:clearTaskOnLaunch="true"
+206-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:116:13-45
+207            android:launchMode="singleTask"
+207-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:117:13-44
+208            android:noHistory="true"
+208-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:118:13-37
+209            android:permission="com.saggitt.omega.dev.permission.HOTSEAT_EDU"
+209-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:119:13-71
+210            android:theme="@android:style/Theme.NoDisplay" >
+210-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:120:13-59
+211            <intent-filter>
+211-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:121:13-124:29
+212                <action android:name="com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU" />
+212-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:122:17-95
+212-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:122:25-92
+213
+214                <category android:name="android.intent.category.DEFAULT" />
+214-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+214-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+215            </intent-filter>
+216        </activity>
+217
+218        <service
+218-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:127:9-131:72
+219            android:name="com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService"
+219-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:128:13-107
+220            android:exported="false"
+220-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:129:13-37
+221            android:permission="android.permission.BIND_JOB_SERVICE"
+221-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:131:13-69
+222            android:process=":wallpaper_chooser" />
+222-->/home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:130:13-49
+223        <!--
+224        Main launcher activity. When extending only change the name, and keep all the
+225        attributes and intent filters the same
+226        -->
+227        <activity
+227-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:124:9-149:20
+228            android:name="com.saggitt.omega.OmegaLauncher"
+228-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:125:13-59
+229            android:clearTaskOnLaunch="true"
+229-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:126:13-45
+230            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+230-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:127:13-134
+231            android:enabled="true"
+231-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:128:13-35
+232            android:label="@string/derived_app_name"
+232-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:129:13-53
+233            android:launchMode="singleTask"
+233-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:130:13-44
+234            android:resizeableActivity="true"
+234-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:131:13-46
+235            android:resumeWhilePausing="true"
+235-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:132:13-46
+236            android:screenOrientation="unspecified"
+236-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:133:13-52
+237            android:stateNotNeeded="true"
+237-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:134:13-42
+238            android:taskAffinity=""
+238-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:135:13-36
+239            android:windowSoftInputMode="adjustPan" >
+239-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:136:13-52
+240            <intent-filter>
+240-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:137:13-145:29
+241                <action android:name="android.intent.action.MAIN" />
+241-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:17-69
+241-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:25-66
+242
+243                <category android:name="android.intent.category.HOME" />
+243-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:140:17-73
+243-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:140:27-70
+244                <category android:name="android.intent.category.DEFAULT" />
+244-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+244-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+245                <category android:name="android.intent.category.MONKEY" />
+245-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:142:17-75
+245-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:142:27-72
+246                <category android:name="android.intent.category.LAUNCHER" />
+246-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:143:17-77
+246-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:143:27-74
+247                <category android:name="android.intent.category.LAUNCHER_APP" />
+247-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:144:17-81
+247-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:144:27-78
+248            </intent-filter>
+249
+250            <meta-data
+250-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:146:13-148:63
+251                android:name="com.android.launcher3.grid.control"
+251-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:147:17-66
+252                android:value="com.saggitt.omega.dev.grid_control" />
+252-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:148:17-60
+253        </activity>
+254        <activity
+254-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:154:9-164:20
+255            android:name="com.saggitt.omega.settings.SettingsActivity"
+255-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:155:13-71
+256            android:autoRemoveFromRecents="true"
+256-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:156:13-49
+257            android:label="@string/derived_app_name"
+257-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:157:13-53
+258            android:taskAffinity="com.saggitt.omega.dev.tasks.SETTINGS"
+258-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:158:13-67
+259            android:theme="@style/SettingsTheme_Light" >
+259-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:159:13-55
+260            <intent-filter>
+260-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:175:13-178:29
+261                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+261-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:176:17-88
+261-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:176:25-85
+262
+263                <category android:name="android.intent.category.DEFAULT" />
+263-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+263-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+264            </intent-filter>
+265        </activity>
+266        <activity
+266-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:166:9-171:58
+267            android:name="com.saggitt.omega.settings.search.SettingsSearchActivity"
+267-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:167:13-84
+268            android:autoRemoveFromRecents="true"
+268-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:168:13-49
+269            android:label="@string/derived_app_name"
+269-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:169:13-53
+270            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
+270-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:170:13-85
+271            android:theme="@style/SettingsTheme_Light" />
+271-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:171:13-55
+272        <activity
+272-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:173:9-176:58
+273            android:name="com.saggitt.omega.preferences.SelectableAppsActivity"
+273-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:174:13-80
+274            android:autoRemoveFromRecents="true"
+274-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:175:13-49
+275            android:theme="@style/SettingsTheme_Light" /> <!-- Actions -->
+275-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:176:13-55
+276        <activity
+276-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:179:9-189:20
+277            android:name="com.saggitt.omega.gestures.OmegaShortcutActivity"
+277-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:180:13-76
+278            android:icon="@mipmap/ic_launcher"
+278-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:181:13-47
+279            android:label="@string/omega_actions"
+279-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:182:13-50
+280            android:theme="@style/SettingsTheme_Light.Transparent" >
+280-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:183:13-67
+281            <intent-filter>
+281-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:184:13-188:29
+282                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+282-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:185:17-80
+282-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:185:25-77
+283
+284                <category android:name="android.intent.category.DEFAULT" />
+284-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+284-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+285            </intent-filter>
+286        </activity>
+287        <activity
+287-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:190:9-201:20
+288            android:name="com.saggitt.omega.gestures.ui.RunHandlerActivity"
+288-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:191:13-76
+289            android:taskAffinity="com.saggitt.omega.dev.tasks.RUN_HANDLER"
+289-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:192:13-70
+290            android:theme="@style/SettingsTheme_Light.Transparent" >
+290-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:193:13-67
+291            <intent-filter>
+291-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:194:13-200:29
+292                <action android:name="com.saggitt.omega.START_ACTION" />
+292-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:195:17-73
+292-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:195:25-70
+293                <action android:name="android.intent.action.ASSIST" />
+293-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:196:17-70
+293-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:196:25-68
+294                <action android:name="android.intent.action.SEARCH_LONG_PRESS" />
+294-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:197:17-82
+294-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:197:25-79
+295
+296                <category android:name="android.intent.category.DEFAULT" />
+296-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+296-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+297            </intent-filter>
+298        </activity>
+299        <activity
+299-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:204:9-207:58
+300            android:name="com.saggitt.omega.gestures.ui.SelectAppActivity"
+300-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:205:13-75
+301            android:label="@string/action_open_app_select_app"
+301-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:206:13-63
+302            android:theme="@style/SettingsTheme_Light" />
+302-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:207:13-55
+303        <activity
+303-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:209:9-211:56
+304            android:name="com.saggitt.omega.BlankActivity"
+304-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:210:13-59
+305            android:theme="@style/Theme.Transparent" /> <!-- Icon picker -->
+305-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:211:13-53
+306        <activity
+306-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:214:9-217:58
+307            android:name="com.saggitt.omega.iconpack.EditIconActivity"
+307-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:215:13-71
+308            android:taskAffinity="com.saggitt.omega.dev.tasks.EDIT_ICON"
+308-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:216:13-68
+309            android:theme="@style/SettingsTheme_Light" />
+309-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:217:13-55
+310        <activity
+310-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:218:9-220:58
+311            android:name="com.saggitt.omega.iconpack.IconPickerActivity"
+311-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:219:13-73
+312            android:theme="@style/SettingsTheme_Light" /> <!-- Apply directly from iconpack -->
+312-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:220:13-55
+313        <activity
+313-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:223:9-231:20
+314            android:name="com.saggitt.omega.iconpack.ApplyIconPackActivity"
+314-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:224:13-76
+315            android:theme="@style/SettingsTheme_Light.Transparent" >
+315-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:225:13-67
+316            <intent-filter>
+316-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:226:13-230:29
+317                <action android:name="com.saggitt.omega.APPLY_ICONS" />
+317-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:227:17-72
+317-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:227:25-69
+318
+319                <category android:name="android.intent.category.DEFAULT" />
+319-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+319-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+320            </intent-filter>
+321        </activity>
+322        <activity
+322-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:233:9-243:20
+323            android:name="com.saggitt.omega.FakeLauncher"
+323-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:234:13-58
+324            android:enabled="false" >
+324-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:235:13-36
+325            <intent-filter>
+325-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:237:13-242:29
+326                <action android:name="android.intent.action.MAIN" />
+326-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:17-69
+326-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:25-66
+327
+328                <category android:name="android.intent.category.HOME" />
+328-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:140:17-73
+328-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:140:27-70
+329                <category android:name="android.intent.category.DEFAULT" />
+329-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+329-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+330            </intent-filter>
+331        </activity> <!-- DT2S using screen timeout -->
+332        <activity
+332-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:246:9-249:56
+333            android:name="com.saggitt.omega.gestures.handlers.SleepTimeoutActivity"
+333-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:247:13-84
+334            android:screenOrientation="locked"
+334-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:248:13-47
+335            android:theme="@style/SleepTimeoutTheme" /> <!-- DT2S using device admin -->
+335-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:249:13-53
+336        <receiver
+336-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:252:9-263:20
+337            android:name="com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin$SleepDeviceAdmin"
+337-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:254:13-103
+338            android:description="@string/dt2s_admin_hint"
+338-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:253:13-58
+339            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+339-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:255:13-70
+340            <meta-data
+340-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:256:13-258:62
+341                android:name="android.app.device_admin"
+341-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:257:17-56
+342                android:resource="@xml/sleep_admin_policy" />
+342-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:258:17-59
+343
+344            <intent-filter>
+344-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:260:13-262:29
+345                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+345-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:261:17-82
+345-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:261:25-79
+346            </intent-filter>
+347        </receiver>
+348
+349        <service
+349-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:265:9-272:19
+350            android:name="com.saggitt.omega.OmegaAccessibilityService"
+350-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:266:13-71
+351            android:label="@string/derived_app_name"
+351-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:267:13-53
+352            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+352-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:268:13-79
+353            <intent-filter>
+353-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:269:13-271:29
+354                <action android:name="android.accessibilityservice.AccessibilityService" />
+354-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:270:17-92
+354-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:270:25-89
+355            </intent-filter>
+356        </service>
+357
+358        <activity
+358-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:274:9-278:58
+359            android:name="com.saggitt.omega.backup.BackupListActivity"
+359-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:275:13-71
+360            android:label="@string/backups"
+360-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:276:13-44
+361            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
+361-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:277:13-85
+362            android:theme="@style/SettingsTheme_Light" />
+362-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:278:13-55
+363        <activity
+363-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:279:9-284:58
+364            android:name="com.saggitt.omega.backup.NewBackupActivity"
+364-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:280:13-70
+365            android:label="@string/title_create"
+365-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:281:13-49
+366            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
+366-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:282:13-85
+367            android:requestLegacyExternalStorage="true"
+367-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:283:13-56
+368            android:theme="@style/SettingsTheme_Light" />
+368-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:284:13-55
+369        <activity
+369-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:285:9-320:20
+370            android:name="com.saggitt.omega.backup.RestoreBackupActivity"
+370-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:286:13-74
+371            android:label="@string/restore_backup"
+371-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:287:13-51
+372            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
+372-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:288:13-85
+373            android:theme="@style/SettingsTheme_Light" >
+373-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:289:13-55
+374            <intent-filter>
+374-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:290:13-319:29
+375                <action android:name="android.intent.action.VIEW" />
+375-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:291:17-69
+375-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:291:25-66
+376
+377                <category android:name="android.intent.category.DEFAULT" />
+377-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+377-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+378                <category android:name="android.intent.category.BROWSABLE" />
+378-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:294:17-78
+378-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:294:27-75
+379
+380                <data android:mimeType="application/vnd.omega.backup" />
+380-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+380-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+381                <data android:mimeType="application/octet-stream" />
+381-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+381-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+382                <data android:mimeType="application/x-zip-compressed" />
+382-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+382-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+383                <data android:mimeType="application/zip" />
+383-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+383-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+384                <data android:scheme="file" />
+384-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+385                <data android:scheme="content" />
+385-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+386                <data android:mimeType="*/*" />
+386-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+386-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+387                <!--
+388                    Work around Android's ugly primitive PatternMatcher
+389                    implementation that can't cope with finding a . early in
+390                    the path unless it's explicitly matched.
+391                -->
+392                <data android:host="*" />
+392-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+393                <data android:pathPattern=".*\\.zbk" />
+393-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+394                <data android:pathPattern=".*\\..*\\.zbk" />
+394-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+395                <data android:pathPattern=".*\\..*\\..*\\.zbk" />
+395-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+396                <data android:pathPattern=".*\\..*\\..*\\..*\\.zbk" />
+396-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+397                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.zbk" />
+397-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+398                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+398-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+399                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+399-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+400                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+400-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+401                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+401-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+402            </intent-filter>
+403        </activity>
+404        <activity
+404-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:322:9-325:47
+405            android:name="com.saggitt.omega.feed.FeedWidgetsActivity"
+405-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:323:13-70
+406            android:label="@string/feed_widget"
+406-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:324:13-48
+407            android:theme="@style/AppTheme" />
+407-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:325:13-44
+408        <activity
+408-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:326:9-333:57
+409            android:name="com.saggitt.omega.feed.WidgetPicker"
+409-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:327:13-63
+410            android:autoRemoveFromRecents="true"
+410-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:328:13-49
+411            android:excludeFromRecents="true"
+411-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:329:13-46
+412            android:exported="true"
+412-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:330:13-36
+413            android:finishOnCloseSystemDialogs="true"
+413-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:331:13-54
+414            android:label="@string/feed_widget"
+414-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:332:13-48
+415            android:theme="@style/WidgetPickerDialog" /> <!-- Pixel -->
+415-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:333:13-54
+416        <activity
+416-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:336:9-348:20
+417            android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity"
+417-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:337:13-90
+418            android:theme="@android:style/Theme.NoDisplay" >
+418-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:338:13-59
+419            <intent-filter android:priority="1" >
+419-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:339:13-347:29
+419-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:339:28-48
+420                <action android:name="com.google.android.apps.nexuslauncher.search.APP_LAUNCH" />
+420-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:340:17-98
+420-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:340:25-95
+421
+422                <category android:name="android.intent.category.DEFAULT" />
+422-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+422-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+423
+424                <data
+424-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+425                    android:mimeType="vnd.android.cursor.dir/vnd.android.search.suggest"
+425-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+426                    android:scheme="content" />
+427            </intent-filter>
+428        </activity>
+429
+430        <receiver
+430-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:350:9-356:20
+431            android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver"
+431-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:351:13-87
+432            android:permission="android.permission.CAPTURE_AUDIO_HOTWORD" >
+432-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:352:13-74
+433            <intent-filter>
+433-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:353:13-355:29
+434                <action android:name="com.google.android.systemui.OPA_ENABLED" />
+434-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:354:17-82
+434-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:354:25-79
+435            </intent-filter>
+436        </receiver>
+437        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver" >
+437-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:357:9-361:20
+437-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:357:19-110
+438            <intent-filter>
+438-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:358:13-360:29
+439                <action android:name="com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE" />
+439-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:359:17-98
+439-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:359:25-95
+440            </intent-filter>
+441        </receiver>
+442
+443        <meta-data
+443-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:363:9-365:35
+444            android:name="android.max_aspect"
+444-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:364:13-46
+445            android:value="2.1" />
+445-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:365:13-32
+446        <meta-data
+446-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:366:9-368:36
+447            android:name="com.samsung.android.non_immersive"
+447-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:367:13-61
+448            android:value="true" />
+448-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:368:13-33
+449
+450        <provider
+450-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:370:9-378:20
+451            android:name="androidx.core.content.FileProvider"
+451-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:371:13-62
+452            android:authorities="com.saggitt.omega.dev.provider"
+452-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:372:13-58
+453            android:exported="false"
+453-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:373:13-37
+454            android:grantUriPermissions="true" >
+454-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:374:13-47
+455            <meta-data
+455-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:375:13-377:58
+456                android:name="android.support.FILE_PROVIDER_PATHS"
+456-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:376:17-67
+457                android:resource="@xml/provider_paths" />
+457-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:377:17-55
+458        </provider>
+459        <provider
+459-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:380:9-383:39
+460            android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"
+460-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:381:13-90
+461            android:authorities="com.saggitt.omega.dev.appssearch"
+461-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:382:13-62
+462            android:exported="true" />
+462-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:383:13-36
+463        <provider
+463-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:385:9-389:50
+464            android:name="com.saggitt.omega.util.FiveSecsProvider"
+464-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:386:13-67
+465            android:authorities="com.saggitt.omega.dev.fivesecsprovider"
+465-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:387:13-68
+466            android:exported="true"
+466-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:388:13-36
+467            android:grantUriPermissions="true" /> <!-- Intent received used to install shortcuts from other applications -->
+467-->/home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:389:13-47
+468        <receiver
+468-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:92:9-99:20
+469            android:name="com.android.launcher3.InstallShortcutReceiver"
+469-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:93:13-73
+470            android:enabled="@bool/enable_install_shortcut_api"
+470-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:95:13-64
+471            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT" >
+471-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:94:13-82
+472            <intent-filter>
+472-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:96:13-98:29
+473                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
+473-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:97:17-87
+473-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:97:25-84
+474            </intent-filter>
+475        </receiver> <!-- Intent received when a session is committed -->
+476        <receiver android:name="com.android.launcher3.SessionCommitReceiver" >
+476-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:102:9-107:20
+476-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:103:13-71
+477            <intent-filter>
+477-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:104:13-106:29
+478                <action android:name="android.content.pm.action.SESSION_COMMITTED" />
+478-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:105:17-86
+478-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:105:25-83
+479            </intent-filter>
+480        </receiver> <!-- Intent received used to initialize a restored widget -->
+481        <receiver android:name="com.android.launcher3.AppWidgetsRestoredReceiver" >
+481-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:110:9-114:20
+481-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:110:19-82
+482            <intent-filter>
+482-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:111:13-113:29
+483                <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED" />
+483-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:112:17-90
+483-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:112:25-88
+484            </intent-filter>
+485        </receiver>
+486
+487        <service
+487-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:122:9-130:19
+488            android:name="com.android.launcher3.notification.NotificationListener"
+488-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:123:13-83
+489            android:enabled="@bool/notification_dots_enabled"
+489-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:125:13-62
+490            android:label="@string/notification_dots_service_title"
+490-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:124:13-68
+491            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+491-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:126:13-87
+492            <intent-filter>
+492-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:127:13-129:29
+493                <action android:name="android.service.notification.NotificationListenerService" />
+493-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:128:17-99
+493-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:128:25-96
+494            </intent-filter>
+495        </service>
+496
+497        <meta-data
+497-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:132:9-133:47
+498            android:name="android.nfc.disable_beam_default"
+498-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:132:20-67
+499            android:value="true" />
+499-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:133:24-44
+500
+501        <activity
+501-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:135:9-144:20
+502            android:name="com.android.launcher3.dragndrop.AddItemActivity"
+502-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:135:19-81
+503            android:autoRemoveFromRecents="true"
+503-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:138:13-49
+504            android:excludeFromRecents="true"
+504-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:137:13-46
+505            android:label="@string/action_add_to_workspace"
+505-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:139:13-60
+506            android:theme="@style/AppItemActivityTheme" >
+506-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:136:13-56
+507            <intent-filter>
+507-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:140:13-143:29
+508                <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT" />
+508-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:141:17-89
+508-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:141:25-86
+509                <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
+509-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:142:17-90
+509-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:142:25-87
+510            </intent-filter>
+511        </activity>
+512        <!--
+513        The settings provider contains Home's data, like the workspace favorites. The permissions
+514        should be changed to what is defined above. The authorities should also be changed to
+515        represent the package name.
+516        -->
+517        <provider
+518            android:name="com.android.launcher3.LauncherProvider"
+519            android:authorities="com.saggitt.omega.dev.settings"
+520            android:exported="true"
+521            android:readPermission="com.saggitt.omega.dev.permission.READ_SETTINGS"
+522            android:writePermission="com.saggitt.omega.dev.permission.WRITE_SETTINGS" />
+523        <!--
+524        The content provider for exposing various launcher grid options.
+525        TODO: Add proper permissions
+526        -->
+527        <provider
+528            android:name="com.android.launcher3.graphics.GridCustomizationsProvider"
+529            android:authorities="com.saggitt.omega.dev.grid_control"
+530            android:exported="true" />
+531        <provider
+532            android:name="com.android.launcher3.testing.TestInformationProvider"
+533            android:authorities="com.saggitt.omega.dev.TestInfo"
+534            android:enabled="false"
+535            android:exported="true"
+536            android:readPermission="android.permission.WRITE_SECURE_SETTINGS"
+537            android:writePermission="android.permission.WRITE_SECURE_SETTINGS" />
+538<!--         Launcher activity for secondary display -->
+539        <activity
+539-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:192:9-203:20
+540            android:name="com.android.launcher3.secondarydisplay.SecondaryDisplayLauncher"
+540-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:193:13-91
+541            android:enabled="true"
+541-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:194:13-35
+542            android:launchMode="singleTop"
+542-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:195:13-43
+543            android:theme="@style/AppTheme" >
+543-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:196:13-44
+544            <intent-filter>
+544-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:197:13-202:29
+545                <action android:name="android.intent.action.MAIN" />
+545-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:17-69
+545-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:25-66
+546
+547                <category android:name="android.intent.category.SECONDARY_HOME" />
+547-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:200:17-83
+547-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:200:27-80
+548                <category android:name="android.intent.category.DEFAULT" />
+548-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+548-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+549            </intent-filter>
+550        </activity>
+551        <activity
+551-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:25:9-27:39
+552            android:name="androidx.compose.ui.tooling.PreviewActivity"
+552-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:26:13-71
+553            android:exported="true" />
+553-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:27:13-36
+554        <activity
+554-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:48:9-51:45
+555            android:name="com.farmerbb.taskbar.activity.MainActivity"
+555-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:49:13-70
+556            android:label="@string/tb_app_name"
+556-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:50:13-48
+557            android:process=":libtaskbar" />
+557-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:51:13-42
+558        <activity
+558-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:52:9-58:64
+559            android:name="com.farmerbb.taskbar.activity.InvisibleActivity"
+559-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:53:13-75
+560            android:documentLaunchMode="always"
+560-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:54:13-48
+561            android:excludeFromRecents="true"
+561-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:55:13-46
+562            android:launchMode="singleTask"
+562-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:56:13-44
+563            android:process=":libtaskbar"
+563-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:57:13-42
+564            android:theme="@style/Taskbar.InvisibleActivity" />
+564-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:58:13-61
+565        <activity
+565-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:59:9-65:56
+566            android:name="com.farmerbb.taskbar.activity.InvisibleActivityAlt"
+566-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:60:13-78
+567            android:documentLaunchMode="always"
+567-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:61:13-48
+568            android:excludeFromRecents="true"
+568-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:62:13-46
+569            android:launchMode="singleTask"
+569-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:63:13-44
+570            android:process=":libtaskbar"
+570-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:64:13-42
+571            android:theme="@style/Taskbar.Incognito" />
+571-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:65:13-53
+572        <activity
+572-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:66:9-72:61
+573            android:name="com.farmerbb.taskbar.activity.dark.InvisibleActivityAltDark"
+573-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:67:13-87
+574            android:documentLaunchMode="always"
+574-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:68:13-48
+575            android:excludeFromRecents="true"
+575-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:69:13-46
+576            android:launchMode="singleTask"
+576-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:70:13-44
+577            android:process=":libtaskbar"
+577-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:71:13-42
+578            android:theme="@style/Taskbar.Incognito.Dark" />
+578-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:72:13-58
+579        <activity
+579-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:73:9-80:64
+580            android:name="com.farmerbb.taskbar.activity.InvisibleActivityFreeform"
+580-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:74:13-83
+581            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+581-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:75:13-186
+582            android:documentLaunchMode="always"
+582-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:76:13-48
+583            android:excludeFromRecents="true"
+583-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:77:13-46
+584            android:launchMode="singleInstance"
+584-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:78:13-48
+585            android:process=":libtaskbar"
+585-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:79:13-42
+586            android:theme="@style/Taskbar.InvisibleActivity" />
+586-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:80:13-61
+587        <activity
+587-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:81:9-95:20
+588            android:name="com.farmerbb.taskbar.activity.SecondaryHomeActivity"
+588-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:82:13-79
+589            android:configChanges="screenSize|keyboard|keyboardHidden"
+589-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:83:13-71
+590            android:enabled="true"
+590-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:84:13-35
+591            android:excludeFromRecents="true"
+591-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:85:13-46
+592            android:label="@string/tb_app_name"
+592-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:86:13-48
+593            android:process=":libtaskbar"
+593-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:87:13-42
+594            android:theme="@style/Taskbar.HomeActivity" >
+594-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:88:13-56
+595            <intent-filter>
+595-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:197:13-202:29
+596                <action android:name="android.intent.action.MAIN" />
+596-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:17-69
+596-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:25-66
+597
+598                <category android:name="android.intent.category.DEFAULT" />
+598-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+598-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+599                <category android:name="android.intent.category.SECONDARY_HOME" />
+599-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:200:17-83
+599-->/home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:200:27-80
+600            </intent-filter>
+601        </activity>
+602        <activity
+602-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:96:9-101:53
+603            android:name="com.farmerbb.taskbar.activity.ContextMenuActivity"
+603-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:97:13-77
+604            android:documentLaunchMode="always"
+604-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:98:13-48
+605            android:excludeFromRecents="true"
+605-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:99:13-46
+606            android:process=":libtaskbar"
+606-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:100:13-42
+607            android:theme="@style/Taskbar.Dialog" />
+607-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:101:13-50
+608        <activity
+608-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:102:9-107:58
+609            android:name="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark"
+609-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:103:13-86
+610            android:documentLaunchMode="always"
+610-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:104:13-48
+611            android:excludeFromRecents="true"
+611-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:105:13-46
+612            android:process=":libtaskbar"
+612-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:106:13-42
+613            android:theme="@style/Taskbar.Dialog.Dark" />
+613-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:107:13-55
+614        <activity
+614-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:108:9-111:63
+615            android:name="com.farmerbb.taskbar.activity.SelectAppActivity"
+615-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:109:13-75
+616            android:process=":libtaskbar"
+616-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:110:13-42
+617            android:theme="@style/Taskbar.Dialog.Blacklist" />
+617-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:111:13-60
+618        <activity
+618-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:112:9-115:68
+619            android:name="com.farmerbb.taskbar.activity.dark.SelectAppActivityDark"
+619-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:113:13-84
+620            android:process=":libtaskbar"
+620-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:114:13-42
+621            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+621-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:115:13-65
+622        <activity
+622-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:116:9-119:63
+623            android:name="com.farmerbb.taskbar.activity.DesktopIconSelectAppActivity"
+623-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:117:13-86
+624            android:process=":libtaskbar"
+624-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:118:13-42
+625            android:theme="@style/Taskbar.Dialog.Blacklist" />
+625-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:119:13-60
+626        <activity
+626-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:120:9-123:68
+627            android:name="com.farmerbb.taskbar.activity.dark.DesktopIconSelectAppActivityDark"
+627-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:121:13-95
+628            android:process=":libtaskbar"
+628-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:122:13-42
+629            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+629-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:123:13-65
+630        <activity
+630-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:124:9-129:56
+631            android:name="com.farmerbb.taskbar.activity.DummyActivity"
+631-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:125:13-71
+632            android:documentLaunchMode="always"
+632-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:126:13-48
+633            android:excludeFromRecents="true"
+633-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:127:13-46
+634            android:process=":libtaskbar"
+634-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:128:13-42
+635            android:theme="@style/Taskbar.Incognito" />
+635-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:129:13-53
+636        <activity
+636-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:130:9-133:63
+637            android:name="com.farmerbb.taskbar.activity.IconPackActivity"
+637-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:131:13-74
+638            android:process=":libtaskbar"
+638-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:132:13-42
+639            android:theme="@style/Taskbar.Dialog.Blacklist" />
+639-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:133:13-60
+640        <activity
+640-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:134:9-137:68
+641            android:name="com.farmerbb.taskbar.activity.dark.IconPackActivityDark"
+641-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:135:13-83
+642            android:process=":libtaskbar"
+642-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:136:13-42
+643            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+643-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:137:13-65
+644        <activity
+644-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:138:9-141:63
+645            android:name="com.farmerbb.taskbar.activity.ClearDataActivity"
+645-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:139:13-75
+646            android:process=":libtaskbar"
+646-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:140:13-42
+647            android:theme="@style/Taskbar.Dialog.Blacklist" />
+647-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:141:13-60
+648        <activity
+648-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:142:9-145:68
+649            android:name="com.farmerbb.taskbar.activity.dark.ClearDataActivityDark"
+649-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:143:13-84
+650            android:process=":libtaskbar"
+650-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:144:13-42
+651            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+651-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:145:13-65
+652        <activity
+652-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:146:9-152:56
+653            android:name="com.farmerbb.taskbar.activity.DashboardActivity"
+653-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:147:13-75
+654            android:documentLaunchMode="always"
+654-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:148:13-48
+655            android:excludeFromRecents="true"
+655-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:149:13-46
+656            android:launchMode="singleTask"
+656-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:150:13-44
+657            android:process=":libtaskbar"
+657-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:151:13-42
+658            android:theme="@style/Taskbar.Incognito" />
+658-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:152:13-53
+659        <activity
+659-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:153:9-159:61
+660            android:name="com.farmerbb.taskbar.activity.dark.DashboardActivityDark"
+660-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:154:13-84
+661            android:documentLaunchMode="always"
+661-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:155:13-48
+662            android:excludeFromRecents="true"
+662-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:156:13-46
+663            android:launchMode="singleTask"
+663-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:157:13-44
+664            android:process=":libtaskbar"
+664-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:158:13-42
+665            android:theme="@style/Taskbar.Incognito.Dark" />
+665-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:159:13-58
+666        <activity
+666-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:160:9-167:56
+667            android:name="com.farmerbb.taskbar.activity.TouchAbsorberActivity"
+667-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:161:13-79
+668            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+668-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:162:13-186
+669            android:documentLaunchMode="always"
+669-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:163:13-48
+670            android:excludeFromRecents="true"
+670-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:164:13-46
+671            android:launchMode="singleTask"
+671-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:165:13-44
+672            android:process=":libtaskbar"
+672-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:166:13-42
+673            android:theme="@style/Taskbar.Incognito" />
+673-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:167:13-53
+674        <activity
+674-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:12:9-14:49
+675            android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity"
+675-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:13:13-89
+676            android:process=":error_activity" />
+676-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:14:13-46
+677
+678        <provider
+678-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:16:9-20:39
+679            android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
+679-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:17:13-85
+680            android:authorities="com.saggitt.omega.dev.customactivityoncrashinitprovider"
+680-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:18:13-85
+681            android:exported="false"
+681-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:19:13-37
+682            android:initOrder="101" />
+682-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:20:13-36
+683        <provider
+683-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:26:9-34:20
+684            android:name="androidx.startup.InitializationProvider"
+684-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:27:13-67
+685            android:authorities="com.saggitt.omega.dev.androidx-startup"
+685-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:28:13-68
+686            android:exported="false" >
+686-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:29:13-37
+687            <meta-data
+687-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:31:13-33:52
+688                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+688-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:32:17-75
+689                android:value="androidx.startup" />
+689-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:33:17-49
+690            <meta-data
+690-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:31:13-33:52
+691                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+691-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:32:17-85
+692                android:value="androidx.startup" />
+692-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:33:17-49
+693            <meta-data
+693-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:31:13-33:52
+694                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+694-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:32:17-78
+695                android:value="androidx.startup" />
+695-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:33:17-49
+696        </provider>
+697
+698        <receiver
+698-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:36:9-45:20
+699            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+699-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:37:13-76
+700            android:directBootAware="false"
+700-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:38:13-44
+701            android:enabled="true"
+701-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:39:13-35
+702            android:exported="true"
+702-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:40:13-36
+703            android:permission="android.permission.DUMP" >
+703-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:41:13-57
+704            <intent-filter>
+704-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:42:13-44:29
+705                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+705-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:17-91
+705-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:25-88
+706            </intent-filter>
+707        </receiver>
+708    </application>
+709
+710</manifest>

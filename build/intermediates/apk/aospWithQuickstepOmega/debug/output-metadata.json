@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.saggitt.omega.dev",
+  "variantName": "aospWithQuickstepOmegaDebug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 284,
+      "versionName": "0.8.2",
+      "outputFile": "Peace-aosp-withQuickstep-omega-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}

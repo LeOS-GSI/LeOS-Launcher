@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-w600dp-v24/values-w600dp-v24.xml",
+            "map": [
+                {
+                    "source": "/home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/res/values-w600dp-v24/values-w600dp-v24.xml",
+                    "from": {
+                        "startLines": "2,3,6",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,109,263",
+                        "endLines": "2,5,8",
+                        "endColumns": "53,12,12",
+                        "endOffsets": "104,258,411"
+                    }
+                }
+            ]
+        }
+    ]
+}

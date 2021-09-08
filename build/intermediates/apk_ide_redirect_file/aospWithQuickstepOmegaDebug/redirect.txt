@@ -1,0 +1,2 @@
+#- File Locator -
+listingFile=../../apk/aospWithQuickstepOmega/debug/output-metadata.json

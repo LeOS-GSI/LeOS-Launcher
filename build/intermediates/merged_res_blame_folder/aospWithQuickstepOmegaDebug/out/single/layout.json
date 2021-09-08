@@ -1,0 +1,762 @@
+[
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/item_icon_preview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/item_icon_preview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/item_check.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/item_check.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_container_all_apps.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/search_container_all_apps.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/scrim_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/scrim_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/qsb_container_preview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/qsb_container_preview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/smartspace_singleline.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/smartspace_singleline.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/smartspace_twolines.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/smartspace_twolines.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_backup_list.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_backup_list.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_empty_search.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_empty_search.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/settings_fragment.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/settings_fragment.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/base_center_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/base_center_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_edu_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/recents_ui_overrides/res/layout/all_apps_edu_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/secondary_launcher.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/secondary_launcher.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_settings.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_settings.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/decor_layout.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/decor_layout.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/settings_bottom_sheet_container.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/settings_bottom_sheet_container.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/overview_clear_all_button.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/overview_clear_all_button.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/backup_blank.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/backup_blank.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widgets_scroll_container.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widgets_scroll_container.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dash_text_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dash_text_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/work_apps_paused.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/work_apps_paused.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/folder_page.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/folder_page.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_search_suggestion.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_search_suggestion.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/settings_category_material.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/settings_category_material.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/qsb_blocker_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/qsb_blocker_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_tab.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_tab.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widgets_list_row_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widgets_list_row_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/snackbar.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/snackbar.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/settings_category_v2.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/settings_category_v2.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/about_main.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/about_main.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widget_cell.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widget_cell.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_loading.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_loading.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_edit_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_edit_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_container_all_apps_google.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/search_container_all_apps_google.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_pack_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_pack_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/app_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/event_provider_dialog_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/event_provider_dialog_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dash_control_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dash_control_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/launcher_preview_layout.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/launcher_preview_layout.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/floating_header_content.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/recents_ui_overrides/res/layout/floating_header_content.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/gesture_tutorial_activity.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/gesture_tutorial_activity.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/event_provider_text_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/event_provider_text_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/folder_application.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/folder_application.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/launcher.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/launcher.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/qsb_hint.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/qsb_hint.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/import_icon_preview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/import_icon_preview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/task_menu.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/task_menu.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dash_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dash_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_folder_application.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_folder_application.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_shape_customize_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_shape_customize_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/custom_icon_colored.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/custom_icon_colored.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/app_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_pack_text_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_pack_text_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_insettable_recyclerview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_insettable_recyclerview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_pack_divider_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_pack_divider_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_switch_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_switch_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/fallback_recents_activity.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/recents_ui_overrides/res/layout/fallback_recents_activity.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_folder_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_folder_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_categorization_enable_toggle.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/app_categorization_enable_toggle.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_icon_vertical.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_icon_vertical.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_google_search_fallback.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_google_search_fallback.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_widget_picker.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_widget_picker.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widget_list_divider.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widget_list_divider.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_widget_master_switch.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_widget_master_switch.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_grid_size.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_grid_size.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/toolbar_title.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/toolbar_title.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/appwidget_not_ready.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/appwidget_not_ready.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_container_workspace.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/search_container_workspace.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/popup_container.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/popup_container.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widgets_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widgets_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_divider.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_divider.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/custom_icon_shapeless.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/custom_icon_shapeless.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/work_mode_switch.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/work_mode_switch.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/perm_request_dialog.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/perm_request_dialog.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_color_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_color_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/floating_surface_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/floating_surface_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/apps_search_qsb_template.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/apps_search_qsb_template.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/predicted_app_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/recents_ui_overrides/res/layout/predicted_app_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/home_preference.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/home_preference.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/arrow_toast.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/arrow_toast.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/base_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/base_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dialog_preference_recyclerview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dialog_preference_recyclerview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_groups_adapter_add.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/app_groups_adapter_add.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_categorization_type_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/app_categorization_type_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widget_cell_content.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widget_cell_content.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/workspace_screen.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/workspace_screen.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/backup_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/backup_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_breadcrumb_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/search_breadcrumb_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dash_dialog_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dash_dialog_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/widgets_full_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/widgets_full_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_two_target.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_two_target.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/system_shortcut_icon_only.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/system_shortcut_icon_only.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_edit_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/app_edit_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/item_icon_shape.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/item_icon_shape.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_icon_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/search_icon_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_fast_scroller.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_fast_scroller.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/fragment_icon_customization.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/fragment_icon_customization.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_search_market.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_search_market.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/overview_actions_container.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/overview_actions_container.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/smartspace_preview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/smartspace_preview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_preview_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_preview_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_settings_home.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_settings_home.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/notification_gutter.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/notification_gutter.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/digital_wellbeing_toast.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/digital_wellbeing_toast.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_settings_search.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_settings_search.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/qsb_container.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/qsb_container.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_select_type_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_select_type_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/legacy_tab_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/legacy_tab_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/item_all_widget.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/item_all_widget.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_category.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_category.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/task.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/task.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/gesture_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/gesture_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/date_widget.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/date_widget.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/item_added_widget.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/item_added_widget.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/about_changelog.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/about_changelog.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_tabs.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_tabs.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/system_shortcut_icons.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/system_shortcut_icons.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dash_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dash_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/add_item_confirmation_activity.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/add_item_confirmation_activity.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_seekbar.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_seekbar.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/pref_dialog_grid_size.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/pref_dialog_grid_size.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/list_divider.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/list_divider.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/user_folder_icon_normalized.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/user_folder_icon_normalized.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/system_shortcut.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/system_shortcut.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drop_target_tool_tip.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/drop_target_tool_tip.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/gesture_tutorial_fragment.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/gesture_tutorial_fragment.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/switch_preference_with_settings.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/switch_preference_with_settings.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_container_all_apps_hidden.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/search_container_all_apps_hidden.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_new_backup.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_new_backup.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_suggestion_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_suggestion_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/desktop_preview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/desktop_preview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preview_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preview_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_type_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_type_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/overview_panel.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/recents_ui_overrides/res/layout/overview_panel.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/predicted_hotseat_edu.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/recents_ui_overrides/res/layout/predicted_hotseat_edu.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/smart_space_date_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/smart_space_date_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/dialog_preference_fragment.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/dialog_preference_fragment.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/options_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/options_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/smartspace_widget.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/smartspace_widget.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_groups_adapter_header.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/app_groups_adapter_header.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_custom_title_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_custom_title_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/about.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/about.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_content_layout.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_content_layout.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_dialog_recyclerview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_dialog_recyclerview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/qsb_default_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/qsb_default_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/event_providers_divider_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/event_providers_divider_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/backup_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/backup_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/hotseat.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/hotseat.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_switch_widget.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_switch_widget.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/settings_bottom_sheet.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/settings_bottom_sheet.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/custom_icon_white.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/custom_icon_white.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/folder_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/folder_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_home_recyclerview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_home_recyclerview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_hidden_apps_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_hidden_apps_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/pref_dialog_icon_pack.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/pref_dialog_icon_pack.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/work_profile_edu.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/work_profile_edu.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/custom_icon_adaptive.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/custom_icon_adaptive.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/apps_search_icon_template.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/apps_search_icon_template.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_pack_dialog_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_pack_dialog_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_edit_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_edit_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/deep_shortcut.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/deep_shortcut.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/fragment_app_categorization.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/fragment_app_categorization.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/floating_icon_view.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/floating_icon_view.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/adapter_loading.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/adapter_loading.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/list_item_icon.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/list_item_icon.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drop_target_bar.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/drop_target_bar.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_floating_header.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/all_apps_floating_header.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/activity_restore_backup.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/activity_restore_backup.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/task_view_menu_option.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/task_view_menu_option.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/longpress_options_menu.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/longpress_options_menu.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_flowerpot_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_flowerpot_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_apps_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_apps_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/tab_item_check.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/tab_item_check.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/weather_widget.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/weather_widget.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/notification_pref_warning.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/notification_pref_warning.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/search_intent_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/search_intent_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/notification_content.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/notification_content.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/all_apps_rv_layout.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/all_apps_rv_layout.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/appwidget_error.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/appwidget_error.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/icon_shape_corner_row.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_shape_corner_row.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/about_license.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/about_license.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/backup_menu.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/backup_menu.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/preference_preview.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/preference_preview.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/custom_icon_legacy.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/custom_icon_legacy.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/qsb_without_mic.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/qsb_without_mic.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/tab_item.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/tab_item.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/app_widget_resize_frame.xml",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/layout/app_widget_resize_frame.xml"
+    }
+]

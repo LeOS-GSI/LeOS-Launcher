@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0-alpha08'
+        classpath 'com.android.tools.build:gradle:7.1.0-alpha11'
         classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.16"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
     }
@@ -41,6 +41,13 @@ final String FRAMEWORK_PREBUILTS_DIR = "prebuilts/"
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.protobuf'
+
+configurations.all {
+    resolutionStrategy {
+    force 'androidx.core:core:1.6.0'
+    force 'androidx.core:core-ktx:1.6.0'
+    }
+}
 
 android {
     compileSdkVersion 30

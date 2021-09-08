@@ -1,0 +1,1607 @@
+-- Merging decision tree log ---
+permission#com.saggitt.omega.dev.permission.READ_SETTINGS
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:64:5-69:63
+	android:name
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+permission#com.saggitt.omega.dev.permission.WRITE_SETTINGS
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:70:5-75:64
+	android:name
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+uses-permission#com.saggitt.omega.dev.permission.READ_SETTINGS
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:77:5-79
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:77:5-79
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:77:5-79
+	android:name
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+uses-permission#com.saggitt.omega.dev.permission.WRITE_SETTINGS
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:78:5-80
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:78:5-80
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:78:5-80
+	android:name
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+provider#com.android.launcher3.LauncherProvider
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:151:9-156:80
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:151:9-156:80
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:151:9-156:80
+	android:readPermission
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+	android:authorities
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+	android:writePermission
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+provider#com.android.launcher3.graphics.GridCustomizationsProvider
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:162:9-165:39
+	android:authorities
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+provider#com.android.launcher3.testing.TestInformationProvider
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:181:9-187:39
+	android:authorities
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+manifest
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+MERGED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:19:1-391:12
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+MERGED from [androidx.databinding:viewbinding:7.1.0-alpha11] /home/um300/.gradle/caches/transforms-3/c1ab993d8cad175f5031659a8c933997/transformed/jetified-viewbinding-7.1.0-alpha11/AndroidManifest.xml:17:1-24:12
+MERGED from [:IconLoader] /home/um300/Downloads/Android-apps/Peace/iconloaderlib/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference-ktx:1.1.1] /home/um300/.gradle/caches/transforms-3/25b265fa930f5399d3762aea44f76178/transformed/jetified-preference-ktx-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/um300/.gradle/caches/transforms-3/ac0db1afef47ea4d3eb3e7a617253595/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.activity:activity-compose:1.3.1] /home/um300/.gradle/caches/transforms-3/045b6dd3004665af842c7d232c9304c6/transformed/jetified-activity-compose-1.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.3.1] /home/um300/.gradle/caches/transforms-3/9c62a520f6d2fdd3d79f20f845684bf1/transformed/jetified-activity-ktx-1.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.otakuhqz.colorpickerx:colorpickerx:1.4.4] /home/um300/.gradle/caches/transforms-3/d1d0b0aee4a8591e1a10cdb3c30c565f/transformed/jetified-colorpickerx-1.4.4/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core-ktx:1.6.0] /home/um300/.gradle/caches/transforms-3/ba76a984abf6f9dd850b2875f6617a7a/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:27:1-170:12
+MERGED from [com.google.android.material:material:1.4.0] /home/um300/.gradle/caches/transforms-3/8ababe32655196989c42efe32a2fa679/transformed/material-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/um300/.gradle/caches/transforms-3/c1fffeac40c970aa9757de434eda3dec/transformed/constraintlayout-2.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:2:1-23:12
+MERGED from [com.jaredrummler:colorpicker:1.1.0] /home/um300/.gradle/caches/transforms-3/8d7cbe144cf532107a185e5a3f7336c5/transformed/jetified-colorpicker-1.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.mikepenz:fastadapter-extensions-diff:5.4.1] /home/um300/.gradle/caches/transforms-3/3984d2f2c99421ed1fa29a3742c3dc1c/transformed/jetified-fastadapter-extensions-diff-5.4.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.mikepenz:fastadapter-extensions-binding:5.4.1] /home/um300/.gradle/caches/transforms-3/1129345acdcf3979fe021e54e0d586af/transformed/jetified-fastadapter-extensions-binding-5.4.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.mikepenz:fastadapter:5.4.1] /home/um300/.gradle/caches/transforms-3/5e645c94b9ece2d8b7cb164fd36f96f0/transformed/jetified-fastadapter-5.4.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.1.1] /home/um300/.gradle/caches/transforms-3/5d5fda4d964e2b907626246d2bca5901/transformed/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.4.0-alpha03] /home/um300/.gradle/caches/transforms-3/b30ebd3c42766af6e0cef51cdabf39f4/transformed/appcompat-1.4.0-alpha03/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/um300/.gradle/caches/transforms-3/24021e8ff10b0ef491af4724bab63e7a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.2.1] /home/um300/.gradle/caches/transforms-3/f70d8fae3b66b8543ebef7a0fb4d7d22/transformed/recyclerview-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/um300/.gradle/caches/transforms-3/3e35b0eb9b68d1f5de04998553757536/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/um300/.gradle/caches/transforms-3/ed1cc2fed054fd01e5485a68c552a1f0/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/um300/.gradle/caches/transforms-3/89dbeff2d4445a482f1eb0638ee7d66c/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/um300/.gradle/caches/transforms-3/51e5b2ffe7c00ddbf04f8a10590a79b4/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:2:1-21:12
+MERGED from [androidx.compose.material:material:1.0.1] /home/um300/.gradle/caches/transforms-3/ef7c1ed457a6fee073ed303068bce4e0/transformed/jetified-material-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-tooling-data:1.0.1] /home/um300/.gradle/caches/transforms-3/ff5b8901acb43711a0d64b55b985f892/transformed/jetified-ui-tooling-data-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material-ripple:1.0.1] /home/um300/.gradle/caches/transforms-3/ee8dda2f283beefcc4f5eb2711ef657a/transformed/jetified-material-ripple-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.foundation:foundation:1.0.1] /home/um300/.gradle/caches/transforms-3/ba8f5bd5a4a17a0410e2442958a496e5/transformed/jetified-foundation-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.animation:animation:1.0.1] /home/um300/.gradle/caches/transforms-3/15292f27d10845e1336a58020bea0c3a/transformed/jetified-animation-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.animation:animation-core:1.0.1] /home/um300/.gradle/caches/transforms-3/9803fcecf8617a365055aced3828f967/transformed/jetified-animation-core-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material-icons-core:1.0.1] /home/um300/.gradle/caches/transforms-3/835095cd22e0e1dbdb7bebd4eb57af0d/transformed/jetified-material-icons-core-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.foundation:foundation-layout:1.0.1] /home/um300/.gradle/caches/transforms-3/99ec57ca36f4b4229dd49f510eb6b7aa/transformed/jetified-foundation-layout-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui:1.0.1] /home/um300/.gradle/caches/transforms-3/01ed255588ebea2830b72a2de8235b97/transformed/jetified-ui-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.0.1] /home/um300/.gradle/caches/transforms-3/51ae950a8762eb38fc300b0238faabb6/transformed/jetified-ui-tooling-preview-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/793db30a641d381183f0310e7f1a043f/transformed/jetified-lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/1a646a7016b51239fb37f3018bde29f1/transformed/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-text:1.0.1] /home/um300/.gradle/caches/transforms-3/376b6a58268f557f4cd72f28e5726897/transformed/jetified-ui-text-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.1] /home/um300/.gradle/caches/transforms-3/97a4581327d4d17d5ce11fcf4f6a47b9/transformed/jetified-runtime-saveable-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-graphics:1.0.1] /home/um300/.gradle/caches/transforms-3/e4293ce79024bf109654729ea984c477/transformed/jetified-ui-graphics-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-unit:1.0.1] /home/um300/.gradle/caches/transforms-3/bf6c855afc705209b357a13e9ea521de/transformed/jetified-ui-unit-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-geometry:1.0.1] /home/um300/.gradle/caches/transforms-3/9772f28847b28351e7b75fbdd0404ef0/transformed/jetified-ui-geometry-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime:1.0.1] /home/um300/.gradle/caches/transforms-3/926b0e000da9f2fa69ffe430f71b4128/transformed/jetified-runtime-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [:SystemUIShared] /home/um300/Downloads/Android-apps/Peace/SystemUIShared/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.palette:palette:1.0.0] /home/um300/.gradle/caches/transforms-3/891e8556590ff11fd34c65dbb20d5af9/transformed/palette-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/um300/.gradle/caches/transforms-3/adb71a0691b6f7f9fd4c52538d2e4067/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.6] /home/um300/.gradle/caches/transforms-3/251616fda4e90751cae22bc0a6e6a42e/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/um300/.gradle/caches/transforms-3/0b9dfa0a2f3fff3c4810768e42978f41/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/um300/.gradle/caches/transforms-3/70d7884b12b1377cafbbaa3dc313c0ef/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/um300/.gradle/caches/transforms-3/d57560200f2d5d7ba04dd2c90505798c/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.3.1] /home/um300/.gradle/caches/transforms-3/511433e90a6edaf95067afe020cf3c60/transformed/jetified-activity-1.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/um300/.gradle/caches/transforms-3/20f4573b7af96d1f651d4370aa18c1cd/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /home/um300/.gradle/caches/transforms-3/1aba16aa719d5b521069c30f5cd69acc/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0-alpha03] /home/um300/.gradle/caches/transforms-3/f8cbfac646a446a17dcd9efc6f14a551/transformed/jetified-appcompat-resources-1.4.0-alpha03/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/um300/.gradle/caches/transforms-3/8469bb520f07a88d15cb37101606fef6/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/um300/.gradle/caches/transforms-3/86a73b586efd8bc58bbc41146abd3173/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/um300/.gradle/caches/transforms-3/47dbb73c36fbfe72b167531b463a9193/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/e7107b8654b1b88873d05f5e74e2e995/transformed/jetified-emoji2-views-helper-1.0.0-alpha03/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.loader:loader:1.0.0] /home/um300/.gradle/caches/transforms-3/268dd5682689ddf10cf64d71c11eeed8/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/um300/.gradle/caches/transforms-3/9730491c2a90058732a00b96cc200214/transformed/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/um300/.gradle/caches/transforms-3/5e9b173fc9d3b1fcd6c840a741718eb0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/um300/.gradle/caches/transforms-3/831ee36de950f75f3728dc025300fd2d/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/um300/.gradle/caches/transforms-3/471f279312dd13cde857a13dc235b2a6/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] /home/um300/.gradle/caches/transforms-3/abb6eec3fd34e33da04b08648aba2ccb/transformed/jetified-savedstate-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/um300/.gradle/caches/transforms-3/f8494a662bfe2ffc4b98b40a9dc00a2f/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/um300/.gradle/caches/transforms-3/270b517c82a1edd089148decf8478f9d/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:17:1-48:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/um300/.gradle/caches/transforms-3/f6118ad4caa024ec60a11f969cc258b9/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/um300/.gradle/caches/transforms-3/20c9cfeed84fc8caa146c046852cac4b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/um300/.gradle/caches/transforms-3/07a5e24dfbd2c881c4649d3c756e7768/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/um300/.gradle/caches/transforms-3/a7056c42276eada35cda303a44402e59/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/um300/.gradle/caches/transforms-3/b97fb0d2e45e5d834af461581deb7077/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/um300/.gradle/caches/transforms-3/7f98d13fe6e3e9c5571d193b43146a33/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/um300/.gradle/caches/transforms-3/33dd3725296e60104645e582152a555e/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/32b1af5c328d461b434a2aaec6a2fd97/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/um300/.gradle/caches/transforms-3/70ab0d7742973727a41f6c26538fcef8/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/um300/.gradle/caches/transforms-3/5e74300df74499d3d94b1314fdc6b364/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/70e30bbbe2266682a0726d7247816412/transformed/lifecycle-runtime-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/um300/.gradle/caches/transforms-3/1c4b2a6a75a6dc3087b52ba0ada8568d/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/um300/.gradle/caches/transforms-3/7f9fbe6aa66ea90ec6d0c3b05a2fad8f/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-util:1.0.1] /home/um300/.gradle/caches/transforms-3/22378e5220ad282fa562d934d1576b04/transformed/jetified-ui-util-1.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/um300/.gradle/caches/transforms-3/41aa7d93f348dc1792705050f750a107/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:20:1-134:12
+INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:20:1-134:12
+INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:20:1-134:12
+	package
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:22:5-36
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:21:5-51
+	android:versionCode
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:20:1-205:12
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:21:5-63
+permission#com.android.launcher.permission.INSTALL_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:32:5-37:67
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:36:9-57
+	android:protectionLevel
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:35:9-44
+	android:permissionGroup
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:34:9-72
+	android:description
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:37:9-64
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:33:9-72
+uses-permission#android.permission.WRITE_SYNC_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:39:5-78
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:39:22-75
+uses-permission#android.permission.READ_SYNC_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:40:5-77
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:40:22-74
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:41:5-73
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:41:5-73
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:41:5-73
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:41:22-70
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:42:5-79
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:43:5-79
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:43:5-79
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:42:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:43:5-76
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:44:5-76
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:44:5-76
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:43:22-73
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:44:5-68
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:45:5-68
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:45:5-68
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:44:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:45:5-74
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:45:22-71
+uses-permission#android.permission.CALL_PHONE
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:46:5-69
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:46:22-66
+uses-permission#android.permission.SET_WALLPAPER
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:47:5-72
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:47:5-72
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:47:5-72
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:47:22-69
+uses-permission#android.permission.SET_WALLPAPER_HINTS
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:48:5-78
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:41:5-78
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:41:5-78
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:48:22-75
+uses-permission#android.permission.BIND_APPWIDGET
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:49:5-73
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:49:5-73
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:49:5-73
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:49:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:50:5-80
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:50:5-80
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:50:5-80
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:50:22-77
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:51:5-81
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:51:22-78
+uses-permission#android.permission.REQUEST_DELETE_PACKAGES
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:52:5-82
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:42:5-82
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:42:5-82
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:52:22-79
+uses-permission#android.permission.READ_DEVICE_CONFIG
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:53:5-77
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:53:5-77
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:53:5-77
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:53:22-74
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:54:5-77
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:54:5-77
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:54:5-77
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:54:22-74
+uses-permission#android.permission.WRITE_SECURE_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:57:5-80
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:57:5-80
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:57:5-80
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:57:22-77
+application
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:80:5-204:19
+MERGED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:100:5-390:19
+MERGED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:100:5-390:19
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:80:5-204:19
+MERGED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:80:5-204:19
+MERGED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:24:5-28:19
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:47:5-168:19
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:47:5-168:19
+MERGED from [com.google.android.material:material:1.4.0] /home/um300/.gradle/caches/transforms-3/8ababe32655196989c42efe32a2fa679/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] /home/um300/.gradle/caches/transforms-3/8ababe32655196989c42efe32a2fa679/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/um300/.gradle/caches/transforms-3/c1fffeac40c970aa9757de434eda3dec/transformed/constraintlayout-2.1.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/um300/.gradle/caches/transforms-3/c1fffeac40c970aa9757de434eda3dec/transformed/constraintlayout-2.1.0/AndroidManifest.xml:9:5-20
+MERGED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:11:5-21:19
+MERGED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:11:5-21:19
+MERGED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:15:5-19:19
+MERGED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:15:5-19:19
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:25:5-46:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:25:5-46:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/um300/.gradle/caches/transforms-3/07a5e24dfbd2c881c4649d3c756e7768/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/um300/.gradle/caches/transforms-3/07a5e24dfbd2c881c4649d3c756e7768/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+	android:backupInForeground
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:83:9-42
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:83:9-42
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:43:9-32
+	android:roundIcon
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:108:9-44
+	android:icon
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:107:9-34
+	android:restoreAnyVersion
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:88:9-41
+	android:largeHeap
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:87:9-51
+	android:networkSecurityConfig
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:104:9-69
+	android:fullBackupOnly
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:82:9-38
+	android:backupAgent
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:81:9-72
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:89:9-35
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:86:9-49
+		REJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:86:9-49
+		REJECTED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:17:9-41
+	android:hardwareAccelerated
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:85:9-43
+	android:fullBackupContent
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:84:9-54
+	android:allowBackup
+		ADDED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:16:9-35
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:40:9-40
+	tools:replace
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:114:9-38
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:101:9-50
+receiver#com.android.launcher3.InstallShortcutReceiver
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:92:9-99:20
+	android:enabled
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:95:13-64
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:94:13-82
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:93:13-73
+intent-filter#action:name:com.android.launcher.action.INSTALL_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:96:13-98:29
+action#com.android.launcher.action.INSTALL_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:97:17-87
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:97:25-84
+receiver#com.android.launcher3.SessionCommitReceiver
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:102:9-107:20
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:103:13-71
+intent-filter#action:name:android.content.pm.action.SESSION_COMMITTED
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:104:13-106:29
+action#android.content.pm.action.SESSION_COMMITTED
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:105:17-86
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:105:25-83
+receiver#com.android.launcher3.AppWidgetsRestoredReceiver
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:110:9-114:20
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:110:19-82
+intent-filter#action:name:android.appwidget.action.APPWIDGET_HOST_RESTORED
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:111:13-113:29
+action#android.appwidget.action.APPWIDGET_HOST_RESTORED
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:112:17-90
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:112:25-88
+service#com.android.launcher3.uioverrides.WallpaperManagerCompatVL$ColorExtractionService
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:116:9-120:72
+REJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:116:9-120:72
+	tools:node
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:95:13-32
+	android:process
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:119:13-49
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:118:13-37
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:120:13-69
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:117:13-109
+service#com.android.launcher3.notification.NotificationListener
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:122:9-130:19
+	android:enabled
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:125:13-62
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:124:13-68
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:126:13-87
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:123:13-83
+intent-filter#action:name:android.service.notification.NotificationListenerService
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:127:13-129:29
+action#android.service.notification.NotificationListenerService
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:128:17-99
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:128:25-96
+meta-data#android.nfc.disable_beam_default
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:132:9-133:47
+	android:value
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:133:24-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:132:20-67
+activity#com.android.launcher3.dragndrop.AddItemActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:135:9-144:20
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:139:13-60
+	android:excludeFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:137:13-46
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:138:13-49
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:136:13-56
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:135:19-81
+intent-filter#action:name:android.content.pm.action.CONFIRM_PIN_APPWIDGET+action:name:android.content.pm.action.CONFIRM_PIN_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:140:13-143:29
+action#android.content.pm.action.CONFIRM_PIN_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:141:17-89
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:141:25-86
+action#android.content.pm.action.CONFIRM_PIN_APPWIDGET
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:142:17-90
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:142:25-87
+activity#com.android.launcher3.settings.SettingsActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:170:9-179:20
+REJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:170:9-179:20
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:172:13-57
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:174:13-49
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:173:13-53
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:171:13-75
+intent-filter#action:name:android.intent.action.APPLICATION_PREFERENCES+category:name:android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:175:13-178:29
+action#android.intent.action.APPLICATION_PREFERENCES
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:176:17-88
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:176:25-85
+category#android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:17-76
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:177:27-73
+activity#com.android.launcher3.secondarydisplay.SecondaryDisplayLauncher
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:192:9-203:20
+	android:enabled
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:194:13-35
+	android:launchMode
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:195:13-43
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:196:13-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:193:13-91
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.SECONDARY_HOME
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:197:13-202:29
+action#android.intent.action.MAIN
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:17-69
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:198:25-66
+category#android.intent.category.SECONDARY_HOME
+ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:200:17-83
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml:200:27-80
+uses-sdk
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml reason: use-sdk injection requested
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+MERGED from [androidx.databinding:viewbinding:7.1.0-alpha11] /home/um300/.gradle/caches/transforms-3/c1ab993d8cad175f5031659a8c933997/transformed/jetified-viewbinding-7.1.0-alpha11/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:viewbinding:7.1.0-alpha11] /home/um300/.gradle/caches/transforms-3/c1ab993d8cad175f5031659a8c933997/transformed/jetified-viewbinding-7.1.0-alpha11/AndroidManifest.xml:20:5-22:41
+MERGED from [:IconLoader] /home/um300/Downloads/Android-apps/Peace/iconloaderlib/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-22:41
+MERGED from [:IconLoader] /home/um300/Downloads/Android-apps/Peace/iconloaderlib/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.1.1] /home/um300/.gradle/caches/transforms-3/25b265fa930f5399d3762aea44f76178/transformed/jetified-preference-ktx-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.1.1] /home/um300/.gradle/caches/transforms-3/25b265fa930f5399d3762aea44f76178/transformed/jetified-preference-ktx-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/um300/.gradle/caches/transforms-3/ac0db1afef47ea4d3eb3e7a617253595/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/um300/.gradle/caches/transforms-3/ac0db1afef47ea4d3eb3e7a617253595/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-compose:1.3.1] /home/um300/.gradle/caches/transforms-3/045b6dd3004665af842c7d232c9304c6/transformed/jetified-activity-compose-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-compose:1.3.1] /home/um300/.gradle/caches/transforms-3/045b6dd3004665af842c7d232c9304c6/transformed/jetified-activity-compose-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.3.1] /home/um300/.gradle/caches/transforms-3/9c62a520f6d2fdd3d79f20f845684bf1/transformed/jetified-activity-ktx-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.3.1] /home/um300/.gradle/caches/transforms-3/9c62a520f6d2fdd3d79f20f845684bf1/transformed/jetified-activity-ktx-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.otakuhqz.colorpickerx:colorpickerx:1.4.4] /home/um300/.gradle/caches/transforms-3/d1d0b0aee4a8591e1a10cdb3c30c565f/transformed/jetified-colorpickerx-1.4.4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.otakuhqz.colorpickerx:colorpickerx:1.4.4] /home/um300/.gradle/caches/transforms-3/d1d0b0aee4a8591e1a10cdb3c30c565f/transformed/jetified-colorpickerx-1.4.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] /home/um300/.gradle/caches/transforms-3/ba76a984abf6f9dd850b2875f6617a7a/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] /home/um300/.gradle/caches/transforms-3/ba76a984abf6f9dd850b2875f6617a7a/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:33:5-35:41
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:33:5-35:41
+MERGED from [com.google.android.material:material:1.4.0] /home/um300/.gradle/caches/transforms-3/8ababe32655196989c42efe32a2fa679/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] /home/um300/.gradle/caches/transforms-3/8ababe32655196989c42efe32a2fa679/transformed/material-1.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/um300/.gradle/caches/transforms-3/c1fffeac40c970aa9757de434eda3dec/transformed/constraintlayout-2.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /home/um300/.gradle/caches/transforms-3/c1fffeac40c970aa9757de434eda3dec/transformed/constraintlayout-2.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:7:5-9:41
+MERGED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.jaredrummler:colorpicker:1.1.0] /home/um300/.gradle/caches/transforms-3/8d7cbe144cf532107a185e5a3f7336c5/transformed/jetified-colorpicker-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.jaredrummler:colorpicker:1.1.0] /home/um300/.gradle/caches/transforms-3/8d7cbe144cf532107a185e5a3f7336c5/transformed/jetified-colorpicker-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.mikepenz:fastadapter-extensions-diff:5.4.1] /home/um300/.gradle/caches/transforms-3/3984d2f2c99421ed1fa29a3742c3dc1c/transformed/jetified-fastadapter-extensions-diff-5.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikepenz:fastadapter-extensions-diff:5.4.1] /home/um300/.gradle/caches/transforms-3/3984d2f2c99421ed1fa29a3742c3dc1c/transformed/jetified-fastadapter-extensions-diff-5.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikepenz:fastadapter-extensions-binding:5.4.1] /home/um300/.gradle/caches/transforms-3/1129345acdcf3979fe021e54e0d586af/transformed/jetified-fastadapter-extensions-binding-5.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikepenz:fastadapter-extensions-binding:5.4.1] /home/um300/.gradle/caches/transforms-3/1129345acdcf3979fe021e54e0d586af/transformed/jetified-fastadapter-extensions-binding-5.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikepenz:fastadapter:5.4.1] /home/um300/.gradle/caches/transforms-3/5e645c94b9ece2d8b7cb164fd36f96f0/transformed/jetified-fastadapter-5.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mikepenz:fastadapter:5.4.1] /home/um300/.gradle/caches/transforms-3/5e645c94b9ece2d8b7cb164fd36f96f0/transformed/jetified-fastadapter-5.4.1/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.preference:preference:1.1.1] /home/um300/.gradle/caches/transforms-3/5d5fda4d964e2b907626246d2bca5901/transformed/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] /home/um300/.gradle/caches/transforms-3/5d5fda4d964e2b907626246d2bca5901/transformed/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.0-alpha03] /home/um300/.gradle/caches/transforms-3/b30ebd3c42766af6e0cef51cdabf39f4/transformed/appcompat-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.0-alpha03] /home/um300/.gradle/caches/transforms-3/b30ebd3c42766af6e0cef51cdabf39f4/transformed/appcompat-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/um300/.gradle/caches/transforms-3/24021e8ff10b0ef491af4724bab63e7a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/um300/.gradle/caches/transforms-3/24021e8ff10b0ef491af4724bab63e7a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.1] /home/um300/.gradle/caches/transforms-3/f70d8fae3b66b8543ebef7a0fb4d7d22/transformed/recyclerview-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.1] /home/um300/.gradle/caches/transforms-3/f70d8fae3b66b8543ebef7a0fb4d7d22/transformed/recyclerview-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/um300/.gradle/caches/transforms-3/3e35b0eb9b68d1f5de04998553757536/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/um300/.gradle/caches/transforms-3/3e35b0eb9b68d1f5de04998553757536/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/um300/.gradle/caches/transforms-3/ed1cc2fed054fd01e5485a68c552a1f0/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/um300/.gradle/caches/transforms-3/ed1cc2fed054fd01e5485a68c552a1f0/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/um300/.gradle/caches/transforms-3/89dbeff2d4445a482f1eb0638ee7d66c/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/um300/.gradle/caches/transforms-3/89dbeff2d4445a482f1eb0638ee7d66c/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/um300/.gradle/caches/transforms-3/51e5b2ffe7c00ddbf04f8a10590a79b4/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/um300/.gradle/caches/transforms-3/51e5b2ffe7c00ddbf04f8a10590a79b4/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.compose.material:material:1.0.1] /home/um300/.gradle/caches/transforms-3/ef7c1ed457a6fee073ed303068bce4e0/transformed/jetified-material-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material:1.0.1] /home/um300/.gradle/caches/transforms-3/ef7c1ed457a6fee073ed303068bce4e0/transformed/jetified-material-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-data:1.0.1] /home/um300/.gradle/caches/transforms-3/ff5b8901acb43711a0d64b55b985f892/transformed/jetified-ui-tooling-data-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-data:1.0.1] /home/um300/.gradle/caches/transforms-3/ff5b8901acb43711a0d64b55b985f892/transformed/jetified-ui-tooling-data-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-ripple:1.0.1] /home/um300/.gradle/caches/transforms-3/ee8dda2f283beefcc4f5eb2711ef657a/transformed/jetified-material-ripple-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-ripple:1.0.1] /home/um300/.gradle/caches/transforms-3/ee8dda2f283beefcc4f5eb2711ef657a/transformed/jetified-material-ripple-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation:1.0.1] /home/um300/.gradle/caches/transforms-3/ba8f5bd5a4a17a0410e2442958a496e5/transformed/jetified-foundation-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation:1.0.1] /home/um300/.gradle/caches/transforms-3/ba8f5bd5a4a17a0410e2442958a496e5/transformed/jetified-foundation-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation:1.0.1] /home/um300/.gradle/caches/transforms-3/15292f27d10845e1336a58020bea0c3a/transformed/jetified-animation-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation:1.0.1] /home/um300/.gradle/caches/transforms-3/15292f27d10845e1336a58020bea0c3a/transformed/jetified-animation-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.0.1] /home/um300/.gradle/caches/transforms-3/9803fcecf8617a365055aced3828f967/transformed/jetified-animation-core-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.0.1] /home/um300/.gradle/caches/transforms-3/9803fcecf8617a365055aced3828f967/transformed/jetified-animation-core-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-icons-core:1.0.1] /home/um300/.gradle/caches/transforms-3/835095cd22e0e1dbdb7bebd4eb57af0d/transformed/jetified-material-icons-core-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material-icons-core:1.0.1] /home/um300/.gradle/caches/transforms-3/835095cd22e0e1dbdb7bebd4eb57af0d/transformed/jetified-material-icons-core-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation-layout:1.0.1] /home/um300/.gradle/caches/transforms-3/99ec57ca36f4b4229dd49f510eb6b7aa/transformed/jetified-foundation-layout-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.foundation:foundation-layout:1.0.1] /home/um300/.gradle/caches/transforms-3/99ec57ca36f4b4229dd49f510eb6b7aa/transformed/jetified-foundation-layout-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.0.1] /home/um300/.gradle/caches/transforms-3/01ed255588ebea2830b72a2de8235b97/transformed/jetified-ui-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.0.1] /home/um300/.gradle/caches/transforms-3/01ed255588ebea2830b72a2de8235b97/transformed/jetified-ui-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.0.1] /home/um300/.gradle/caches/transforms-3/51ae950a8762eb38fc300b0238faabb6/transformed/jetified-ui-tooling-preview-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.0.1] /home/um300/.gradle/caches/transforms-3/51ae950a8762eb38fc300b0238faabb6/transformed/jetified-ui-tooling-preview-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/793db30a641d381183f0310e7f1a043f/transformed/jetified-lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/793db30a641d381183f0310e7f1a043f/transformed/jetified-lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/1a646a7016b51239fb37f3018bde29f1/transformed/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/1a646a7016b51239fb37f3018bde29f1/transformed/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-text:1.0.1] /home/um300/.gradle/caches/transforms-3/376b6a58268f557f4cd72f28e5726897/transformed/jetified-ui-text-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-text:1.0.1] /home/um300/.gradle/caches/transforms-3/376b6a58268f557f4cd72f28e5726897/transformed/jetified-ui-text-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.1] /home/um300/.gradle/caches/transforms-3/97a4581327d4d17d5ce11fcf4f6a47b9/transformed/jetified-runtime-saveable-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable:1.0.1] /home/um300/.gradle/caches/transforms-3/97a4581327d4d17d5ce11fcf4f6a47b9/transformed/jetified-runtime-saveable-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-graphics:1.0.1] /home/um300/.gradle/caches/transforms-3/e4293ce79024bf109654729ea984c477/transformed/jetified-ui-graphics-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-graphics:1.0.1] /home/um300/.gradle/caches/transforms-3/e4293ce79024bf109654729ea984c477/transformed/jetified-ui-graphics-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-unit:1.0.1] /home/um300/.gradle/caches/transforms-3/bf6c855afc705209b357a13e9ea521de/transformed/jetified-ui-unit-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-unit:1.0.1] /home/um300/.gradle/caches/transforms-3/bf6c855afc705209b357a13e9ea521de/transformed/jetified-ui-unit-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-geometry:1.0.1] /home/um300/.gradle/caches/transforms-3/9772f28847b28351e7b75fbdd0404ef0/transformed/jetified-ui-geometry-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-geometry:1.0.1] /home/um300/.gradle/caches/transforms-3/9772f28847b28351e7b75fbdd0404ef0/transformed/jetified-ui-geometry-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime:1.0.1] /home/um300/.gradle/caches/transforms-3/926b0e000da9f2fa69ffe430f71b4128/transformed/jetified-runtime-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime:1.0.1] /home/um300/.gradle/caches/transforms-3/926b0e000da9f2fa69ffe430f71b4128/transformed/jetified-runtime-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [:SystemUIShared] /home/um300/Downloads/Android-apps/Peace/SystemUIShared/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-22:41
+MERGED from [:SystemUIShared] /home/um300/Downloads/Android-apps/Peace/SystemUIShared/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.palette:palette:1.0.0] /home/um300/.gradle/caches/transforms-3/891e8556590ff11fd34c65dbb20d5af9/transformed/palette-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] /home/um300/.gradle/caches/transforms-3/891e8556590ff11fd34c65dbb20d5af9/transformed/palette-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/um300/.gradle/caches/transforms-3/adb71a0691b6f7f9fd4c52538d2e4067/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/um300/.gradle/caches/transforms-3/adb71a0691b6f7f9fd4c52538d2e4067/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] /home/um300/.gradle/caches/transforms-3/251616fda4e90751cae22bc0a6e6a42e/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/um300/.gradle/caches/transforms-3/251616fda4e90751cae22bc0a6e6a42e/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/um300/.gradle/caches/transforms-3/0b9dfa0a2f3fff3c4810768e42978f41/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/um300/.gradle/caches/transforms-3/0b9dfa0a2f3fff3c4810768e42978f41/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/um300/.gradle/caches/transforms-3/70d7884b12b1377cafbbaa3dc313c0ef/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/um300/.gradle/caches/transforms-3/70d7884b12b1377cafbbaa3dc313c0ef/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/um300/.gradle/caches/transforms-3/d57560200f2d5d7ba04dd2c90505798c/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/um300/.gradle/caches/transforms-3/d57560200f2d5d7ba04dd2c90505798c/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.3.1] /home/um300/.gradle/caches/transforms-3/511433e90a6edaf95067afe020cf3c60/transformed/jetified-activity-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.3.1] /home/um300/.gradle/caches/transforms-3/511433e90a6edaf95067afe020cf3c60/transformed/jetified-activity-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/um300/.gradle/caches/transforms-3/20f4573b7af96d1f651d4370aa18c1cd/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/um300/.gradle/caches/transforms-3/20f4573b7af96d1f651d4370aa18c1cd/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /home/um300/.gradle/caches/transforms-3/1aba16aa719d5b521069c30f5cd69acc/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/um300/.gradle/caches/transforms-3/1aba16aa719d5b521069c30f5cd69acc/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0-alpha03] /home/um300/.gradle/caches/transforms-3/f8cbfac646a446a17dcd9efc6f14a551/transformed/jetified-appcompat-resources-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0-alpha03] /home/um300/.gradle/caches/transforms-3/f8cbfac646a446a17dcd9efc6f14a551/transformed/jetified-appcompat-resources-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/um300/.gradle/caches/transforms-3/8469bb520f07a88d15cb37101606fef6/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/um300/.gradle/caches/transforms-3/8469bb520f07a88d15cb37101606fef6/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/um300/.gradle/caches/transforms-3/86a73b586efd8bc58bbc41146abd3173/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/um300/.gradle/caches/transforms-3/86a73b586efd8bc58bbc41146abd3173/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/um300/.gradle/caches/transforms-3/47dbb73c36fbfe72b167531b463a9193/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/um300/.gradle/caches/transforms-3/47dbb73c36fbfe72b167531b463a9193/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/e7107b8654b1b88873d05f5e74e2e995/transformed/jetified-emoji2-views-helper-1.0.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/e7107b8654b1b88873d05f5e74e2e995/transformed/jetified-emoji2-views-helper-1.0.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.loader:loader:1.0.0] /home/um300/.gradle/caches/transforms-3/268dd5682689ddf10cf64d71c11eeed8/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/um300/.gradle/caches/transforms-3/268dd5682689ddf10cf64d71c11eeed8/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/um300/.gradle/caches/transforms-3/9730491c2a90058732a00b96cc200214/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/um300/.gradle/caches/transforms-3/9730491c2a90058732a00b96cc200214/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/um300/.gradle/caches/transforms-3/5e9b173fc9d3b1fcd6c840a741718eb0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/um300/.gradle/caches/transforms-3/5e9b173fc9d3b1fcd6c840a741718eb0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/um300/.gradle/caches/transforms-3/831ee36de950f75f3728dc025300fd2d/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/um300/.gradle/caches/transforms-3/831ee36de950f75f3728dc025300fd2d/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /home/um300/.gradle/caches/transforms-3/845d6eae4896fee20125a42a709944f4/transformed/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/um300/.gradle/caches/transforms-3/471f279312dd13cde857a13dc235b2a6/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/um300/.gradle/caches/transforms-3/471f279312dd13cde857a13dc235b2a6/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] /home/um300/.gradle/caches/transforms-3/abb6eec3fd34e33da04b08648aba2ccb/transformed/jetified-savedstate-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] /home/um300/.gradle/caches/transforms-3/abb6eec3fd34e33da04b08648aba2ccb/transformed/jetified-savedstate-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/um300/.gradle/caches/transforms-3/f8494a662bfe2ffc4b98b40a9dc00a2f/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/um300/.gradle/caches/transforms-3/f8494a662bfe2ffc4b98b40a9dc00a2f/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/um300/.gradle/caches/transforms-3/270b517c82a1edd089148decf8478f9d/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/um300/.gradle/caches/transforms-3/270b517c82a1edd089148decf8478f9d/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/um300/.gradle/caches/transforms-3/f6118ad4caa024ec60a11f969cc258b9/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/um300/.gradle/caches/transforms-3/f6118ad4caa024ec60a11f969cc258b9/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/um300/.gradle/caches/transforms-3/20c9cfeed84fc8caa146c046852cac4b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/um300/.gradle/caches/transforms-3/20c9cfeed84fc8caa146c046852cac4b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/um300/.gradle/caches/transforms-3/07a5e24dfbd2c881c4649d3c756e7768/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/um300/.gradle/caches/transforms-3/07a5e24dfbd2c881c4649d3c756e7768/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/um300/.gradle/caches/transforms-3/a7056c42276eada35cda303a44402e59/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/um300/.gradle/caches/transforms-3/a7056c42276eada35cda303a44402e59/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/um300/.gradle/caches/transforms-3/b97fb0d2e45e5d834af461581deb7077/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/um300/.gradle/caches/transforms-3/b97fb0d2e45e5d834af461581deb7077/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/um300/.gradle/caches/transforms-3/7f98d13fe6e3e9c5571d193b43146a33/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/um300/.gradle/caches/transforms-3/7f98d13fe6e3e9c5571d193b43146a33/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/um300/.gradle/caches/transforms-3/33dd3725296e60104645e582152a555e/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/um300/.gradle/caches/transforms-3/33dd3725296e60104645e582152a555e/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/32b1af5c328d461b434a2aaec6a2fd97/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /home/um300/.gradle/caches/transforms-3/32b1af5c328d461b434a2aaec6a2fd97/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/um300/.gradle/caches/transforms-3/70ab0d7742973727a41f6c26538fcef8/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/um300/.gradle/caches/transforms-3/70ab0d7742973727a41f6c26538fcef8/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/um300/.gradle/caches/transforms-3/5e74300df74499d3d94b1314fdc6b364/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/um300/.gradle/caches/transforms-3/5e74300df74499d3d94b1314fdc6b364/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/70e30bbbe2266682a0726d7247816412/transformed/lifecycle-runtime-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/70e30bbbe2266682a0726d7247816412/transformed/lifecycle-runtime-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/um300/.gradle/caches/transforms-3/1c4b2a6a75a6dc3087b52ba0ada8568d/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/um300/.gradle/caches/transforms-3/1c4b2a6a75a6dc3087b52ba0ada8568d/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/um300/.gradle/caches/transforms-3/7f9fbe6aa66ea90ec6d0c3b05a2fad8f/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/um300/.gradle/caches/transforms-3/7f9fbe6aa66ea90ec6d0c3b05a2fad8f/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-util:1.0.1] /home/um300/.gradle/caches/transforms-3/22378e5220ad282fa562d934d1576b04/transformed/jetified-ui-util-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-util:1.0.1] /home/um300/.gradle/caches/transforms-3/22378e5220ad282fa562d934d1576b04/transformed/jetified-ui-util-1.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/um300/.gradle/caches/transforms-3/41aa7d93f348dc1792705050f750a107/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/um300/.gradle/caches/transforms-3/41aa7d93f348dc1792705050f750a107/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/AndroidManifest-common.xml
+		INJECTED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml
+permission#com.saggitt.omega.dev.permission.HOTSEAT_EDU
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:24:5-27:55
+	android:protectionLevel
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:27:9-52
+	android:permissionGroup
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:26:9-72
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:25:9-61
+uses-permission#android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:29:5-99
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:29:22-96
+uses-permission#android.permission.VIBRATE
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:30:5-66
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:30:22-63
+uses-permission#com.saggitt.omega.dev.permission.HOTSEAT_EDU
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:32:5-77
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:32:22-74
+service#com.android.quickstep.TouchInteractionService
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:46:9-53:19
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:48:13-71
+	android:directBootAware
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:49:13-43
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:47:13-73
+intent-filter#action:name:android.intent.action.QUICKSTEP_SERVICE
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:50:13-52:29
+action#android.intent.action.QUICKSTEP_SERVICE
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:51:17-82
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:51:25-79
+activity#com.android.quickstep.RecentsActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:55:9-66:39
+	android:screenOrientation
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:61:13-52
+	android:clearTaskOnLaunch
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:58:13-45
+	android:stateNotNeeded
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:59:13-42
+	android:excludeFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:56:13-46
+	android:launchMode
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:57:13-44
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:65:13-36
+	android:resizeableActivity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:63:13-46
+	android:resumeWhilePausing
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:64:13-46
+	android:configChanges
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:62:13-134
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:60:13-49
+	android:taskAffinity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:66:13-36
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:55:19-71
+provider#com.android.quickstep.LauncherSearchIndexablesProvider
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:69:9-79:20
+	android:grantUriPermissions
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:72:13-47
+	android:authorities
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:71:13-49
+	android:multiprocess
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:73:13-40
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:75:13-36
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:74:13-75
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:70:13-82
+intent-filter#action:name:android.content.action.SEARCH_INDEXABLES_PROVIDER
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:76:13-78:29
+action#android.content.action.SEARCH_INDEXABLES_PROVIDER
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:77:17-92
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:77:25-89
+activity#com.android.launcher3.proxy.ProxyActivityStarter
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:97:9-102:40
+	android:clearTaskOnLaunch
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:101:13-45
+	android:launchMode
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:100:13-44
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:102:13-37
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:99:13-83
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:98:13-76
+activity#com.android.quickstep.interaction.GestureSandboxActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:104:9-113:20
+	android:screenOrientation
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:108:13-49
+	android:excludeFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:107:13-46
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:106:13-49
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:105:13-84
+intent-filter#action:name:com.android.quickstep.action.GESTURE_SANDBOX+category:name:android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:109:13-112:29
+action#com.android.quickstep.action.GESTURE_SANDBOX
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:110:17-87
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:110:25-84
+activity#com.android.launcher3.hybridhotseat.HotseatEduActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:114:9-125:20
+	android:clearTaskOnLaunch
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:116:13-45
+	android:launchMode
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:117:13-44
+	android:noHistory
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:118:13-37
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:119:13-71
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:120:13-59
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:115:13-61
+intent-filter#action:name:com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU+category:name:android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:121:13-124:29
+action#com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:122:17-95
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:122:25-92
+service#com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService
+ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:127:9-131:72
+	android:process
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:130:13-49
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:129:13-37
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:131:13-69
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/quickstep/AndroidManifest.xml:128:13-107
+uses-feature#android.hardware.telephony
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:22:5-24:36
+	android:required
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:24:9-33
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:23:9-50
+permission#com.saggitt.omega.dev.permission.QSB
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:27:5-30:55
+	android:protectionLevel
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:30:9-52
+	android:permissionGroup
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:29:9-72
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:28:9-55
+uses-permission#com.android.launcher.permission.READ_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:32:5-85
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:32:22-82
+uses-permission#com.android.launcher.permission.WRITE_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:33:5-86
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:33:22-83
+uses-permission#com.google.android.apps.nexuslauncher.permission.READ_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:34:5-102
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:34:22-99
+uses-permission#com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:35:5-103
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:35:22-100
+uses-permission#com.saggitt.omega.dev.permission.QSB
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:38:5-71
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:38:22-68
+uses-permission#android.permission.START_TASKS_FROM_RECENTS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:39:5-41:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:41:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:40:9-67
+uses-permission#android.permission.INTERACT_ACROSS_USERS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:42:5-44:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:44:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:43:9-64
+uses-permission#android.permission.CREATE_USERS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:45:5-47:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:47:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:46:9-55
+uses-permission#android.permission.MANAGE_USERS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:48:5-50:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:50:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:49:9-55
+uses-permission#android.permission.FORCE_STOP_PACKAGES
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:51:5-53:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:53:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:52:9-62
+uses-permission#android.permission.MANAGE_DEVICE_ADMINS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:54:5-56:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:56:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:55:9-63
+uses-permission#android.permission.EXPAND_STATUS_BAR
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:60:5-76
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:60:22-73
+uses-permission#android.permission.STATUS_BAR
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:61:5-63:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:63:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:62:9-53
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:64:5-81
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:64:22-78
+uses-permission#android.permission.ACCESS_MEDIA_LOCATION
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:66:5-80
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:66:22-77
+uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:67:5-69:40
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:69:9-37
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:68:9-66
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:70:5-75
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:70:22-72
+uses-permission#android.permission.READ_CALENDAR
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:71:5-72
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:71:22-69
+uses-permission#android.permission.INSTALL_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:73:5-75
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:73:22-72
+uses-permission#android.permission.READ_WALLPAPER_INTERNAL
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:77:5-79:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:79:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:78:9-66
+uses-permission#android.permission.DEVICE_POWER
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:80:5-82:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:82:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:81:9-55
+uses-permission#android.permission.INTERNET
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:83:5-67
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:83:22-64
+uses-permission#com.huawei.wallpaperservcie.permission.SET_WALLPAPER_OFFSET
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:84:5-99
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:84:22-96
+uses-permission#com.huawei.android.thememanager.permission.ACCESS_CHANGE_WALLPAPER
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:85:5-106
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:85:22-103
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:90:5-81
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:90:22-78
+uses-permission#org.pixelexperience.weather.client.READ_WEATHER
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:91:5-87
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:91:22-84
+uses-permission#android.permission.PACKAGE_USAGE_STATS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:93:5-95:47
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:37:5-39:47
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:37:5-39:47
+	tools:ignore
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:95:9-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:94:9-62
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:96:5-77
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:40:5-78
+MERGED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:40:5-78
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:96:22-75
+activity#com.android.launcher3.Launcher
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:116:9-118:35
+	tools:node
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:118:13-32
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:117:13-58
+activity#com.saggitt.omega.OmegaLauncher
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:124:9-149:20
+	android:screenOrientation
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:133:13-52
+	android:enabled
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:128:13-35
+	android:clearTaskOnLaunch
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:126:13-45
+	android:stateNotNeeded
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:134:13-42
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:129:13-53
+	android:launchMode
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:130:13-44
+	android:windowSoftInputMode
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:136:13-52
+	android:resizeableActivity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:131:13-46
+	android:resumeWhilePausing
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:132:13-46
+	android:configChanges
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:127:13-134
+	android:taskAffinity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:135:13-36
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:125:13-59
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.HOME+category:name:android.intent.category.LAUNCHER+category:name:android.intent.category.LAUNCHER_APP+category:name:android.intent.category.MONKEY
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:137:13-145:29
+category#android.intent.category.HOME
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:140:17-73
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:140:27-70
+category#android.intent.category.MONKEY
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:142:17-75
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:142:27-72
+category#android.intent.category.LAUNCHER
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:143:17-77
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:143:27-74
+category#android.intent.category.LAUNCHER_APP
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:144:17-81
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:144:27-78
+meta-data#com.android.launcher3.grid.control
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:146:13-148:63
+	android:value
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:148:17-60
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:147:17-66
+activity#com.saggitt.omega.settings.SettingsActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:154:9-164:20
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:157:13-53
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:156:13-49
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:159:13-55
+	android:taskAffinity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:158:13-67
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:155:13-71
+activity#com.saggitt.omega.settings.search.SettingsSearchActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:166:9-171:58
+	android:parentActivityName
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:170:13-85
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:169:13-53
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:168:13-49
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:171:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:167:13-84
+activity#com.saggitt.omega.preferences.SelectableAppsActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:173:9-176:58
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:175:13-49
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:176:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:174:13-80
+activity#com.saggitt.omega.gestures.OmegaShortcutActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:179:9-189:20
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:182:13-50
+	android:icon
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:181:13-47
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:183:13-67
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:180:13-76
+intent-filter#action:name:android.intent.action.CREATE_SHORTCUT+category:name:android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:184:13-188:29
+action#android.intent.action.CREATE_SHORTCUT
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:185:17-80
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:185:25-77
+activity#com.saggitt.omega.gestures.ui.RunHandlerActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:190:9-201:20
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:193:13-67
+	android:taskAffinity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:192:13-70
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:191:13-76
+intent-filter#action:name:android.intent.action.ASSIST+action:name:android.intent.action.SEARCH_LONG_PRESS+action:name:com.saggitt.omega.START_ACTION+category:name:android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:194:13-200:29
+action#com.saggitt.omega.START_ACTION
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:195:17-73
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:195:25-70
+action#android.intent.action.ASSIST
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:196:17-70
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:196:25-68
+action#android.intent.action.SEARCH_LONG_PRESS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:197:17-82
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:197:25-79
+activity#com.saggitt.omega.gestures.ui.SelectAppActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:204:9-207:58
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:206:13-63
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:207:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:205:13-75
+activity#com.saggitt.omega.BlankActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:209:9-211:56
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:211:13-53
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:210:13-59
+activity#com.saggitt.omega.iconpack.EditIconActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:214:9-217:58
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:217:13-55
+	android:taskAffinity
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:216:13-68
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:215:13-71
+activity#com.saggitt.omega.iconpack.IconPickerActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:218:9-220:58
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:220:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:219:13-73
+activity#com.saggitt.omega.iconpack.ApplyIconPackActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:223:9-231:20
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:225:13-67
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:224:13-76
+intent-filter#action:name:com.saggitt.omega.APPLY_ICONS+category:name:android.intent.category.DEFAULT
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:226:13-230:29
+action#com.saggitt.omega.APPLY_ICONS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:227:17-72
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:227:25-69
+activity#com.saggitt.omega.FakeLauncher
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:233:9-243:20
+	android:enabled
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:235:13-36
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:234:13-58
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.HOME
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:237:13-242:29
+activity#com.saggitt.omega.gestures.handlers.SleepTimeoutActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:246:9-249:56
+	android:screenOrientation
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:248:13-47
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:249:13-53
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:247:13-84
+receiver#com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin$SleepDeviceAdmin
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:252:9-263:20
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:255:13-70
+	android:description
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:253:13-58
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:254:13-103
+meta-data#android.app.device_admin
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:256:13-258:62
+	android:resource
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:258:17-59
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:257:17-56
+intent-filter#action:name:android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:260:13-262:29
+action#android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:261:17-82
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:261:25-79
+service#com.saggitt.omega.OmegaAccessibilityService
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:265:9-272:19
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:267:13-53
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:268:13-79
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:266:13-71
+intent-filter#action:name:android.accessibilityservice.AccessibilityService
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:269:13-271:29
+action#android.accessibilityservice.AccessibilityService
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:270:17-92
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:270:25-89
+activity#com.saggitt.omega.backup.BackupListActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:274:9-278:58
+	android:parentActivityName
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:277:13-85
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:276:13-44
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:278:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:275:13-71
+activity#com.saggitt.omega.backup.NewBackupActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:279:9-284:58
+	android:requestLegacyExternalStorage
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:283:13-56
+	android:parentActivityName
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:282:13-85
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:281:13-49
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:284:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:280:13-70
+activity#com.saggitt.omega.backup.RestoreBackupActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:285:9-320:20
+	android:parentActivityName
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:288:13-85
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:287:13-51
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:289:13-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:286:13-74
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:mimeType:*/*+data:mimeType:application/octet-stream+data:mimeType:application/vnd.omega.backup+data:mimeType:application/x-zip-compressed+data:mimeType:application/zip+data:pathPattern:.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\..*\\..*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\..*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\..*\\.zbk+data:pathPattern:.*\\..*\\.zbk+data:pathPattern:.*\\.zbk+data:scheme:content+data:scheme:file
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:290:13-319:29
+action#android.intent.action.VIEW
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:291:17-69
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:291:25-66
+category#android.intent.category.BROWSABLE
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:294:17-78
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:294:27-75
+data
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:17-73
+	android:mimeType
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:296:23-70
+activity#com.saggitt.omega.feed.FeedWidgetsActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:322:9-325:47
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:324:13-48
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:325:13-44
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:323:13-70
+activity#com.saggitt.omega.feed.WidgetPicker
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:326:9-333:57
+	android:finishOnCloseSystemDialogs
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:331:13-54
+	android:label
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:332:13-48
+	android:excludeFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:329:13-46
+	android:autoRemoveFromRecents
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:328:13-49
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:330:13-36
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:333:13-54
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:327:13-63
+activity#com.google.android.apps.nexuslauncher.search.AppLaunchActivity
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:336:9-348:20
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:338:13-59
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:337:13-90
+intent-filter#action:name:com.google.android.apps.nexuslauncher.search.APP_LAUNCH+category:name:android.intent.category.DEFAULT+data:mimeType:vnd.android.cursor.dir/vnd.android.search.suggest+data:scheme:content
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:339:13-347:29
+	android:priority
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:339:28-48
+action#com.google.android.apps.nexuslauncher.search.APP_LAUNCH
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:340:17-98
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:340:25-95
+receiver#com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:350:9-356:20
+	android:permission
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:352:13-74
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:351:13-87
+intent-filter#action:name:com.google.android.systemui.OPA_ENABLED
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:353:13-355:29
+action#com.google.android.systemui.OPA_ENABLED
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:354:17-82
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:354:25-79
+receiver#com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:357:9-361:20
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:357:19-110
+intent-filter#action:name:com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:358:13-360:29
+action#com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:359:17-98
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:359:25-95
+meta-data#android.max_aspect
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:363:9-365:35
+	android:value
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:365:13-32
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:364:13-46
+meta-data#com.samsung.android.non_immersive
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:366:9-368:36
+	android:value
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:368:13-33
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:367:13-61
+provider#androidx.core.content.FileProvider
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:370:9-378:20
+	android:grantUriPermissions
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:374:13-47
+	android:authorities
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:372:13-58
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:373:13-37
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:371:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:375:13-377:58
+	android:resource
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:377:17-55
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:376:17-67
+provider#com.google.android.apps.nexuslauncher.search.AppSearchProvider
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:380:9-383:39
+	android:authorities
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:382:13-62
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:383:13-36
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:381:13-90
+provider#com.saggitt.omega.util.FiveSecsProvider
+ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:385:9-389:50
+	android:grantUriPermissions
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:389:13-47
+	android:authorities
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:387:13-68
+	android:exported
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:388:13-36
+	android:name
+		ADDED from /home/um300/Downloads/Android-apps/Peace/Omega/AndroidManifest.xml:386:13-67
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:25:9-27:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:27:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:26:13-71
+activity#com.farmerbb.taskbar.activity.MainActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:48:9-51:45
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:51:13-42
+	android:label
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:50:13-48
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:49:13-70
+activity#com.farmerbb.taskbar.activity.InvisibleActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:52:9-58:64
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:57:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:55:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:56:13-44
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:54:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:58:13-61
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:53:13-75
+activity#com.farmerbb.taskbar.activity.InvisibleActivityAlt
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:59:9-65:56
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:64:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:62:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:63:13-44
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:61:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:65:13-53
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:60:13-78
+activity#com.farmerbb.taskbar.activity.dark.InvisibleActivityAltDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:66:9-72:61
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:71:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:69:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:70:13-44
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:68:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:72:13-58
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:67:13-87
+activity#com.farmerbb.taskbar.activity.InvisibleActivityFreeform
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:73:9-80:64
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:79:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:77:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:78:13-48
+	android:configChanges
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:75:13-186
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:76:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:80:13-61
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:74:13-83
+activity#com.farmerbb.taskbar.activity.SecondaryHomeActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:81:9-95:20
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:87:13-42
+	android:enabled
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:84:13-35
+	android:label
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:86:13-48
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:85:13-46
+	android:configChanges
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:83:13-71
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:88:13-56
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:82:13-79
+activity#com.farmerbb.taskbar.activity.ContextMenuActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:96:9-101:53
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:100:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:99:13-46
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:98:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:101:13-50
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:97:13-77
+activity#com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:102:9-107:58
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:106:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:105:13-46
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:104:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:107:13-55
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:103:13-86
+activity#com.farmerbb.taskbar.activity.SelectAppActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:108:9-111:63
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:110:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:111:13-60
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:109:13-75
+activity#com.farmerbb.taskbar.activity.dark.SelectAppActivityDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:112:9-115:68
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:114:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:115:13-65
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:113:13-84
+activity#com.farmerbb.taskbar.activity.DesktopIconSelectAppActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:116:9-119:63
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:118:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:119:13-60
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:117:13-86
+activity#com.farmerbb.taskbar.activity.dark.DesktopIconSelectAppActivityDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:120:9-123:68
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:122:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:123:13-65
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:121:13-95
+activity#com.farmerbb.taskbar.activity.DummyActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:124:9-129:56
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:128:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:127:13-46
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:126:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:129:13-53
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:125:13-71
+activity#com.farmerbb.taskbar.activity.IconPackActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:130:9-133:63
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:132:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:133:13-60
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:131:13-74
+activity#com.farmerbb.taskbar.activity.dark.IconPackActivityDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:134:9-137:68
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:136:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:137:13-65
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:135:13-83
+activity#com.farmerbb.taskbar.activity.ClearDataActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:138:9-141:63
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:140:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:141:13-60
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:139:13-75
+activity#com.farmerbb.taskbar.activity.dark.ClearDataActivityDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:142:9-145:68
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:144:13-42
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:145:13-65
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:143:13-84
+activity#com.farmerbb.taskbar.activity.DashboardActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:146:9-152:56
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:151:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:149:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:150:13-44
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:148:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:152:13-53
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:147:13-75
+activity#com.farmerbb.taskbar.activity.dark.DashboardActivityDark
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:153:9-159:61
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:158:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:156:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:157:13-44
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:155:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:159:13-58
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:154:13-84
+activity#com.farmerbb.taskbar.activity.TouchAbsorberActivity
+ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:160:9-167:56
+	android:process
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:166:13-42
+	android:excludeFromRecents
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:164:13-46
+	android:launchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:165:13-44
+	android:configChanges
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:162:13-186
+	android:documentLaunchMode
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:163:13-48
+	android:theme
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:167:13-53
+	android:name
+		ADDED from [com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:161:13-79
+activity#cat.ereza.customactivityoncrash.activity.DefaultErrorActivity
+ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:12:9-14:49
+	android:process
+		ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:14:13-46
+	android:name
+		ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:13:13-89
+provider#cat.ereza.customactivityoncrash.provider.CaocInitProvider
+ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:16:9-20:39
+	android:authorities
+		ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:18:13-85
+	android:exported
+		ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:19:13-37
+	android:initOrder
+		ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:20:13-36
+	android:name
+		ADDED from [cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:17:13-85
+uses-feature#0x00020000
+ADDED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:11:5-13:35
+	android:glEsVersion
+		ADDED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:12:9-41
+	android:required
+		ADDED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:13:9-32
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/transforms-3/09ddb20cf97ee0fb8e397eb263709acd/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:30:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:28:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:27:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:32:17-75
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:32:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:36:9-45:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:39:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:40:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:41:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:38:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:37:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:42:13-44:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:25-88
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:32:17-78

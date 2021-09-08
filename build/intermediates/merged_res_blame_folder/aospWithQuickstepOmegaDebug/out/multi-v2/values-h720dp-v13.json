@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/um300/.gradle/caches/transforms-3/b30ebd3c42766af6e0cef51cdabf39f4/transformed/appcompat-1.4.0-alpha03/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                },
+                {
+                    "source": "/home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,108,160,217,277,339,392,450,507,571",
+                        "endColumns": "52,51,56,59,61,52,57,56,63,51",
+                        "endOffsets": "103,155,212,272,334,387,445,502,566,618"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "122,175,227,284,344,406,459,517,574,638",
+                        "endColumns": "52,51,56,59,61,52,57,56,63,51",
+                        "endOffsets": "170,222,279,339,401,454,512,569,633,685"
+                    }
+                }
+            ]
+        }
+    ]
+}

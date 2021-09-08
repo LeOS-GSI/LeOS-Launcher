@@ -40,6 +40,7 @@
         android:theme="@style/AppTheme"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
+        android:exported="true"
         android:supportsRtl="true" >
 
         <service
@@ -61,6 +62,7 @@
             android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
             android:resizeableActivity="true"
             android:resumeWhilePausing="true"
+            android:exported="true"
             android:taskAffinity="" />
 
         <!-- Content provider to settings search. The autority should be same as the packageName -->
