@@ -1,0 +1,66 @@
+diff --git a/README.md b/README.md
+index ee1dab4e..46b2ade8 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,3 @@
+ # Peace Launcher
+ This is only the fork of Omega Launcher. No changes in sources. The changed sources are available on Gitlab
++Android Studio Bumbebee is needed
+\ No newline at end of file
+diff --git a/build.gradle b/build.gradle
+index 21794cea..b97b1f8a 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -7,7 +7,7 @@ buildscript {
+     }
+ 
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:7.1.0-alpha08'
++        classpath 'com.android.tools.build:gradle:7.1.0-alpha11'
+         classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.16"
+         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+     }
+@@ -42,6 +42,13 @@ apply plugin: 'com.android.application'
+ apply plugin: 'kotlin-android'
+ apply plugin: 'com.google.protobuf'
+ 
++configurations.all {
++    resolutionStrategy {
++    force 'androidx.core:core:1.6.0'
++    force 'androidx.core:core-ktx:1.6.0'
++    }
++}
++
+ android {
+     compileSdkVersion 30
+ 
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+index 712a2a83..f9fb7efe 100644
+--- a/gradle/wrapper/gradle-wrapper.properties
++++ b/gradle/wrapper/gradle-wrapper.properties
+@@ -1,4 +1,4 @@
+ #Tue Jul 27 20:04:18 CST 2021
+ distributionBase=GRADLE_USER_HOME
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.1.1-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.2-bin.zip
+ distributionPath=wrapper/dists
+diff --git a/quickstep/AndroidManifest.xml b/quickstep/AndroidManifest.xml
+index 4d945f57..226d5808 100644
+--- a/quickstep/AndroidManifest.xml
++++ b/quickstep/AndroidManifest.xml
+@@ -40,6 +40,7 @@
+         android:theme="@style/AppTheme"
+         android:largeHeap="@bool/config_largeHeap"
+         android:restoreAnyVersion="true"
++        android:exported="true"
+         android:supportsRtl="true" >
+ 
+         <service
+@@ -61,6 +62,7 @@
+             android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+             android:resizeableActivity="true"
+             android:resumeWhilePausing="true"
++            android:exported="true"
+             android:taskAffinity="" />
+ 
+         <!-- Content provider to settings search. The autority should be same as the packageName -->

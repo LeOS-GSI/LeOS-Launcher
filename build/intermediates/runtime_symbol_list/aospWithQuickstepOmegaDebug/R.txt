@@ -2876,9 +2876,6 @@ int id SHOW_PROGRESS 0x7f0a000a
 int id SYM 0x7f0a000b
 int id TOP_END 0x7f0a000c
 int id TOP_START 0x7f0a000d
-int id about 0x7f0a000e
-int id about2 0x7f0a000f
-int id about_main 0x7f0a0010
 int id accelerate 0x7f0a0011
 int id accessibility_action_clickable_span 0x7f0a0012
 int id accessibility_custom_action_0 0x7f0a0013
@@ -2995,10 +2992,6 @@ int id animateToEnd 0x7f0a0081
 int id animateToStart 0x7f0a0082
 int id antiClockwise 0x7f0a0083
 int id anticipate 0x7f0a0084
-int id app_build 0x7f0a0085
-int id app_logo 0x7f0a0086
-int id app_name 0x7f0a0087
-int id app_version 0x7f0a0088
 int id apps_count 0x7f0a0089
 int id apps_divider_view 0x7f0a008a
 int id apps_list_view 0x7f0a008b
@@ -3006,7 +2999,6 @@ int id apps_list_view_override 0x7f0a008c
 int id apps_view 0x7f0a008d
 int id arc 0x7f0a008e
 int id arrow 0x7f0a008f
-int id arrow_button 0x7f0a0090
 int id asConfigured 0x7f0a0091
 int id async 0x7f0a0092
 int id auto 0x7f0a0093
@@ -3038,7 +3030,6 @@ int id breadcrumb 0x7f0a00ac
 int id btn_qsb_search 0x7f0a00ad
 int id btn_qsb_setup 0x7f0a00ae
 int id bubble_text 0x7f0a00af
-int id build_information 0x7f0a00b0
 int id button 0x7f0a00b1
 int id buttonLayout 0x7f0a00b2
 int id buttonPanel 0x7f0a00b3
@@ -3118,8 +3109,6 @@ int id content_text 0x7f0a00fc
 int id content_wallpaper 0x7f0a00fd
 int id contiguous 0x7f0a00fe
 int id continuousVelocity 0x7f0a00ff
-int id contributor1 0x7f0a0100
-int id contributor2 0x7f0a0101
 int id coordinator 0x7f0a0102
 int id cos 0x7f0a0103
 int id counterclockwise 0x7f0a0104
@@ -3169,7 +3158,6 @@ int id design_menu_item_action_area 0x7f0a012f
 int id design_menu_item_action_area_stub 0x7f0a0130
 int id design_menu_item_text 0x7f0a0131
 int id design_navigation_view 0x7f0a0132
-int id developer 0x7f0a0133
 int id dialogMessage 0x7f0a0134
 int id dialogTitle 0x7f0a0135
 int id dialog_button 0x7f0a0136
@@ -3182,7 +3170,6 @@ int id disableScroll 0x7f0a013c
 int id disjoint 0x7f0a013d
 int id dismiss 0x7f0a013e
 int id divider 0x7f0a013f
-int id donate 0x7f0a0140
 int id dragAnticlockwise 0x7f0a0141
 int id dragClockwise 0x7f0a0142
 int id dragDown 0x7f0a0143
@@ -3283,7 +3270,6 @@ int id header_title 0x7f0a01a1
 int id help_button 0x7f0a01a2
 int id hex_preview 0x7f0a01a3
 int id hidden 0x7f0a01a4
-int id hidden_view 0x7f0a01a5
 int id hide_in_inspector_tag 0x7f0a01a6
 int id hide_taskbar_button 0x7f0a01a7
 int id hide_taskbar_button_alt 0x7f0a01a8
@@ -3503,9 +3489,6 @@ int id preview 0x7f0a027d
 int id preview_container 0x7f0a027e
 int id preview_frame 0x7f0a027f
 int id proceed 0x7f0a0280
-int id profile_image 0x7f0a0281
-int id profile_image1 0x7f0a0282
-int id profile_image2 0x7f0a0283
 int id progress 0x7f0a0284
 int id progressBar 0x7f0a0285
 int id progress_bar 0x7f0a0286
@@ -3621,7 +3604,6 @@ int id snackbar_text 0x7f0a02f3
 int id snap 0x7f0a02f4
 int id snapMargins 0x7f0a02f5
 int id snapshot 0x7f0a02f6
-int id source_code 0x7f0a02f7
 int id south 0x7f0a02f8
 int id space 0x7f0a02f9
 int id space_alt 0x7f0a02fa
@@ -3766,9 +3748,6 @@ int id transition_layout_save 0x7f0a0384
 int id transition_position 0x7f0a0385
 int id transition_scene_layoutid_cache 0x7f0a0386
 int id transition_transform 0x7f0a0387
-int id translators_container 0x7f0a0388
-int id translators_tv 0x7f0a0389
-int id translators_view 0x7f0a038a
 int id transparency_layout 0x7f0a038b
 int id transparency_seekbar 0x7f0a038c
 int id transparency_text 0x7f0a038d
@@ -3784,9 +3763,6 @@ int id uninstall_target_text 0x7f0a0396
 int id unlabeled 0x7f0a0397
 int id up 0x7f0a0398
 int id useLogo 0x7f0a0399
-int id username 0x7f0a039a
-int id username1 0x7f0a039b
-int id username2 0x7f0a039c
 int id vertical_only 0x7f0a039d
 int id view_offset_helper 0x7f0a039e
 int id view_scrim 0x7f0a039f
@@ -4302,8 +4278,10 @@ int mipmap ic_launcher 0x7f0f0001
 int mipmap ic_launcher_debug 0x7f0f0002
 int mipmap ic_launcher_home 0x7f0f0003
 int mipmap ic_launcher_home_foreground 0x7f0f0004
-int mipmap ic_launcher_round 0x7f0f0005
-int mipmap ic_launcher_round_debug 0x7f0f0006
+int mipmap ic_launcher_home_foregroundx 0x7f0f0005
+int mipmap ic_launcher_homex 0x7f0f0006
+int mipmap ic_launcher_round 0x7f0f0007
+int mipmap ic_launcher_round_debug 0x7f0f0008
 int plurals dotted_app_label 0x7f100000
 int plurals hidden_apps_count 0x7f100001
 int plurals mtrl_badge_content_description 0x7f100002

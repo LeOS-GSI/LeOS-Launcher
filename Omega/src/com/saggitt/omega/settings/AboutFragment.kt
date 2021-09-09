@@ -77,11 +77,10 @@ class AboutFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val aboutMain = view.findViewById<NestedScrollView>(R.id.about_main)
         val license = view.findViewById<WebView>(R.id.webview_license)
         val changelog = view.findViewById<WebView>(R.id.webview_changelog)
 
-        val lists = arrayOf(aboutMain, license, changelog)
+        val lists = arrayOf(license, changelog)
         val titles = arrayOf(
             getString(R.string.title__general_about), getString(R.string.category__about_licenses),
             getString(R.string.title__about_changelog)
@@ -103,108 +102,7 @@ class AboutFragment : Fragment() {
 
         lifecycleScope.launch {
             //Load view Items
-            val logo = view.findViewById<AppCompatImageView>(R.id.app_logo)
-            logo.setOnClickListener {
-                val anim = AnimationSet(true)
-                val rotate = RotateAnimation(
-                    0f,
-                    360f,
-                    Animation.RELATIVE_TO_SELF,
-                    0.5f,
-                    Animation.RELATIVE_TO_SELF,
-                    0.5f
-                )
-                rotate.duration = 800
-                rotate.interpolator = DecelerateInterpolator()
-                anim.addAnimation(rotate)
-                logo.startAnimation(anim)
-            }
-
-            val version = view.findViewById<AppCompatTextView>(R.id.app_version)
-            version.text = getString(R.string.app_version) + ": " + config.appVersionName
-
-            val build = view.findViewById<AppCompatTextView>(R.id.app_build)
-            build.text = getString(R.string.app_build) + ": " + config.appVersionCode
-
-            val buildInfo = view.findViewById<AppCompatTextView>(R.id.build_information)
-            loadBuildInfo(config, buildInfo)
-
-            val accent = Utilities.getOmegaPrefs(context).accentColor
-            view.findViewById<AppCompatButton>(R.id.source_code).apply {
-                applyColor(accent)
-                setTextColor(accent)
-                compoundDrawableTintList = if (isDark) {
-                    ColorStateList.valueOf(Color.WHITE)
-                } else {
-                    ColorStateList.valueOf(Color.BLACK)
-                }
-
-                setOnClickListener {
-                    Utilities.openURLinBrowser(context, getString(R.string.about_source_url))
-                }
-            }
-
-            view.findViewById<AppCompatButton>(R.id.donate).apply {
-                applyColor(accent)
-                setTextColor(accent)
-                compoundDrawableTintList = if (isDark) {
-                    ColorStateList.valueOf(Color.WHITE)
-                } else {
-                    ColorStateList.valueOf(Color.BLACK)
-                }
-                setOnClickListener {
-                    //TODO: replace with Google Pay Dialog
-                    Utilities.openURLinBrowser(context, getString(R.string.app_donate_url))
-                }
-            }
-
-            val developer = view.findViewById<ConstraintLayout>(R.id.developer)
-            developer.setOnClickListener {
-                Utilities.openURLinBrowser(requireContext(), "https://github.com/otakuhqz")
-            }
-
-            val contrib1 = view.findViewById<ConstraintLayout>(R.id.contributor1)
-            contrib1.setOnClickListener {
-                Utilities.openURLinBrowser(requireContext(), "https://github.com/machiav3lli")
-            }
-
-            val contrib2 = view.findViewById<ConstraintLayout>(R.id.contributor2)
-            contrib2.setOnClickListener {
-                Utilities.openURLinBrowser(requireContext(), "https://github.com/nonaybay")
-            }
-
-            val hiddenView = view.findViewById<LinearLayout>(R.id.hidden_view)
-            val translators: List<String> =
-                (Utilities.readTextfileFromRawRes(R.raw.translators, context, "", "")
-                    .trim() + "\n\n").split("\n")
-
-            view.findViewById<ComposeView>(R.id.translators_view).setContent {
-                OmegaAppTheme(isDark) {
-                    LoadTranslators(translators)
-                }
-            }
-
-            val arrow = view.findViewById<ImageButton>(R.id.arrow_button)
-            arrow.setOnClickListener {
-                if (hiddenView.visibility == View.VISIBLE) {
-                    hiddenView.visibility = View.GONE
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_more_24)
-                } else {
-                    hiddenView.visibility = View.VISIBLE
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_less_24)
-                }
-            }
-            val container = view.findViewById<RelativeLayout>(R.id.translators_container)
-            container.setOnClickListener {
-                if (hiddenView.visibility == View.VISIBLE) {
-                    hiddenView.visibility = View.GONE
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_more_24)
-                } else {
-                    hiddenView.visibility = View.VISIBLE
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_less_24)
-                }
-            }
-
+                       }
             val cssFile = if (isDark) {
                 "about_dark.css"
             } else {
@@ -280,37 +178,18 @@ class AboutFragment : Fragment() {
         else {
             "<br><b>Flavor:</b> " + tmp!!.replace("flavor", "")
         }
-        buildInfoText += if (config.getBuildConfigValue("BUILD_TYPE", "").also { tmp = it }
-                .isEmpty()) "" else " ($tmp)"
-        buildInfoText += if (config.getBuildConfigValue("BUILD_DATE", "").also { tmp = it }
-                .isEmpty()) "" else "<br><b>Build date:</b> $tmp"
-        buildInfoText += if (config.installSource.also { tmp = it }
-                .isEmpty()) "" else "<br><b>ISource:</b> $tmp"
-        buildInfoText += "<br><b>Manufacturer :</b> " + Build.MANUFACTURER
-        buildInfoText += "<br><b>Model :</b> " + Build.MODEL
-        buildInfoText += "<br><b>OS Version :</b> Android " + Build.VERSION.RELEASE
-        buildInfo.text = Html.fromHtml(buildInfoText, Html.FROM_HTML_MODE_COMPACT)
-        buildInfo.setOnClickListener {
-            Toast.makeText(context, R.string.debug_component_name_copied, Toast.LENGTH_SHORT).show()
-            Utilities.setClipboard(requireContext(), buildInfo.text)
-        }
     }
 
     private fun injectCSS(webView: WebView, cssAsset: String) {
         try {
             webView.settings.javaScriptEnabled = true
-            val inputStream = requireActivity().assets.open(cssAsset)
-            val buffer = ByteArray(inputStream.available())
-            inputStream.read(buffer)
-            inputStream.close()
-            val encoded = Base64.encodeToString(buffer, Base64.NO_WRAP)
             webView.loadUrl(
                 "javascript:(function() {" +
                         "var parent = document.getElementsByTagName('head').item(0);" +
                         "var style = document.createElement('style');" +
                         "style.type = 'text/css';" +
                         // Tell the browser to BASE64-decode the string into your script !!!
-                        "style.innerHTML = window.atob('" + encoded + "');" +
+                        "style.innerHTML = window.atob('" + "');" +
                         "parent.appendChild(style);" +
                         "})()"
             )
@@ -320,4 +199,3 @@ class AboutFragment : Fragment() {
             e.printStackTrace()
         }
     }
-}
