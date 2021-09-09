@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Thu Sep 09 13:18:32 CEST 2021
+=======
+#Thu Sep 09 09:26:18 CEST 2021
+>>>>>>> f6284e25cc5256ea724cf406b6983684b8311eb6
 path.4=12/classes.dex
 path.3=11/classes.dex
 path.2=10/classes.dex
