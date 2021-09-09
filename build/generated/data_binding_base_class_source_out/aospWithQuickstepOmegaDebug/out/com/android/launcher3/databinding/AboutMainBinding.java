@@ -4,153 +4,58 @@ package com.android.launcher3.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.compose.ui.platform.ComposeView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.widget.NestedScrollView;
+import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager.widget.ViewPager;
 import com.android.launcher3.R;
+import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class AboutMainBinding implements ViewBinding {
   @NonNull
-  private final View rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
-  public final AppCompatTextView about;
+  public final ViewPager pager;
 
   @NonNull
-  public final AppCompatTextView about2;
+  public final TabLayout slidingTabs;
 
   @NonNull
-  public final NestedScrollView aboutMain;
+  public final RelativeLayout tabcontent;
 
-  @NonNull
-  public final AppCompatTextView appBuild;
-
-  @NonNull
-  public final AppCompatImageView appLogo;
-
-  @NonNull
-  public final AppCompatTextView appName;
-
-  @NonNull
-  public final AppCompatTextView appVersion;
-
-  @NonNull
-  public final ImageButton arrowButton;
-
-  @NonNull
-  public final AppCompatTextView buildInformation;
-
-  @NonNull
-  public final ConstraintLayout contributor1;
-
-  @NonNull
-  public final ConstraintLayout contributor2;
-
-  @NonNull
-  public final ConstraintLayout developer;
-
-  @NonNull
-  public final AppCompatButton donate;
-
-  @NonNull
-  public final LinearLayout hiddenView;
-
-  @NonNull
-  public final AppCompatImageView profileImage;
-
-  @NonNull
-  public final AppCompatImageView profileImage1;
-
-  @NonNull
-  public final AppCompatImageView profileImage2;
-
-  @NonNull
-  public final AppCompatButton sourceCode;
-
-  @NonNull
-  public final RelativeLayout translatorsContainer;
-
-  @NonNull
-  public final AppCompatTextView translatorsTv;
-
-  @NonNull
-  public final ComposeView translatorsView;
-
-  @NonNull
-  public final AppCompatTextView username;
-
-  @NonNull
-  public final AppCompatTextView username1;
-
-  @NonNull
-  public final AppCompatTextView username2;
-
-  private AboutMainBinding(@NonNull View rootView, @NonNull AppCompatTextView about,
-      @NonNull AppCompatTextView about2, @NonNull NestedScrollView aboutMain,
-      @NonNull AppCompatTextView appBuild, @NonNull AppCompatImageView appLogo,
-      @NonNull AppCompatTextView appName, @NonNull AppCompatTextView appVersion,
-      @NonNull ImageButton arrowButton, @NonNull AppCompatTextView buildInformation,
-      @NonNull ConstraintLayout contributor1, @NonNull ConstraintLayout contributor2,
-      @NonNull ConstraintLayout developer, @NonNull AppCompatButton donate,
-      @NonNull LinearLayout hiddenView, @NonNull AppCompatImageView profileImage,
-      @NonNull AppCompatImageView profileImage1, @NonNull AppCompatImageView profileImage2,
-      @NonNull AppCompatButton sourceCode, @NonNull RelativeLayout translatorsContainer,
-      @NonNull AppCompatTextView translatorsTv, @NonNull ComposeView translatorsView,
-      @NonNull AppCompatTextView username, @NonNull AppCompatTextView username1,
-      @NonNull AppCompatTextView username2) {
+  private AboutMainBinding(@NonNull RelativeLayout rootView, @NonNull ViewPager pager,
+      @NonNull TabLayout slidingTabs, @NonNull RelativeLayout tabcontent) {
     this.rootView = rootView;
-    this.about = about;
-    this.about2 = about2;
-    this.aboutMain = aboutMain;
-    this.appBuild = appBuild;
-    this.appLogo = appLogo;
-    this.appName = appName;
-    this.appVersion = appVersion;
-    this.arrowButton = arrowButton;
-    this.buildInformation = buildInformation;
-    this.contributor1 = contributor1;
-    this.contributor2 = contributor2;
-    this.developer = developer;
-    this.donate = donate;
-    this.hiddenView = hiddenView;
-    this.profileImage = profileImage;
-    this.profileImage1 = profileImage1;
-    this.profileImage2 = profileImage2;
-    this.sourceCode = sourceCode;
-    this.translatorsContainer = translatorsContainer;
-    this.translatorsTv = translatorsTv;
-    this.translatorsView = translatorsView;
-    this.username = username;
-    this.username1 = username1;
-    this.username2 = username2;
+    this.pager = pager;
+    this.slidingTabs = slidingTabs;
+    this.tabcontent = tabcontent;
   }
 
   @Override
   @NonNull
-  public View getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
   @NonNull
+  public static AboutMainBinding inflate(@NonNull LayoutInflater inflater) {
+    return inflate(inflater, null, false);
+  }
+
+  @NonNull
   public static AboutMainBinding inflate(@NonNull LayoutInflater inflater,
-      @NonNull ViewGroup parent) {
-    if (parent == null) {
-      throw new NullPointerException("parent");
+      @Nullable ViewGroup parent, boolean attachToParent) {
+    View root = inflater.inflate(R.layout.about_main, parent, false);
+    if (attachToParent) {
+      parent.addView(root);
     }
-    inflater.inflate(R.layout.about_main, parent);
-    return bind(parent);
+    return bind(root);
   }
 
   @NonNull
@@ -159,154 +64,21 @@ public final class AboutMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.about;
-      AppCompatTextView about = ViewBindings.findChildViewById(rootView, id);
-      if (about == null) {
+      id = R.id.pager;
+      ViewPager pager = ViewBindings.findChildViewById(rootView, id);
+      if (pager == null) {
         break missingId;
       }
 
-      id = R.id.about2;
-      AppCompatTextView about2 = ViewBindings.findChildViewById(rootView, id);
-      if (about2 == null) {
+      id = R.id.sliding_tabs;
+      TabLayout slidingTabs = ViewBindings.findChildViewById(rootView, id);
+      if (slidingTabs == null) {
         break missingId;
       }
 
-      id = R.id.about_main;
-      NestedScrollView aboutMain = ViewBindings.findChildViewById(rootView, id);
-      if (aboutMain == null) {
-        break missingId;
-      }
+      RelativeLayout tabcontent = (RelativeLayout) rootView;
 
-      id = R.id.app_build;
-      AppCompatTextView appBuild = ViewBindings.findChildViewById(rootView, id);
-      if (appBuild == null) {
-        break missingId;
-      }
-
-      id = R.id.app_logo;
-      AppCompatImageView appLogo = ViewBindings.findChildViewById(rootView, id);
-      if (appLogo == null) {
-        break missingId;
-      }
-
-      id = R.id.app_name;
-      AppCompatTextView appName = ViewBindings.findChildViewById(rootView, id);
-      if (appName == null) {
-        break missingId;
-      }
-
-      id = R.id.app_version;
-      AppCompatTextView appVersion = ViewBindings.findChildViewById(rootView, id);
-      if (appVersion == null) {
-        break missingId;
-      }
-
-      id = R.id.arrow_button;
-      ImageButton arrowButton = ViewBindings.findChildViewById(rootView, id);
-      if (arrowButton == null) {
-        break missingId;
-      }
-
-      id = R.id.build_information;
-      AppCompatTextView buildInformation = ViewBindings.findChildViewById(rootView, id);
-      if (buildInformation == null) {
-        break missingId;
-      }
-
-      id = R.id.contributor1;
-      ConstraintLayout contributor1 = ViewBindings.findChildViewById(rootView, id);
-      if (contributor1 == null) {
-        break missingId;
-      }
-
-      id = R.id.contributor2;
-      ConstraintLayout contributor2 = ViewBindings.findChildViewById(rootView, id);
-      if (contributor2 == null) {
-        break missingId;
-      }
-
-      id = R.id.developer;
-      ConstraintLayout developer = ViewBindings.findChildViewById(rootView, id);
-      if (developer == null) {
-        break missingId;
-      }
-
-      id = R.id.donate;
-      AppCompatButton donate = ViewBindings.findChildViewById(rootView, id);
-      if (donate == null) {
-        break missingId;
-      }
-
-      id = R.id.hidden_view;
-      LinearLayout hiddenView = ViewBindings.findChildViewById(rootView, id);
-      if (hiddenView == null) {
-        break missingId;
-      }
-
-      id = R.id.profile_image;
-      AppCompatImageView profileImage = ViewBindings.findChildViewById(rootView, id);
-      if (profileImage == null) {
-        break missingId;
-      }
-
-      id = R.id.profile_image1;
-      AppCompatImageView profileImage1 = ViewBindings.findChildViewById(rootView, id);
-      if (profileImage1 == null) {
-        break missingId;
-      }
-
-      id = R.id.profile_image2;
-      AppCompatImageView profileImage2 = ViewBindings.findChildViewById(rootView, id);
-      if (profileImage2 == null) {
-        break missingId;
-      }
-
-      id = R.id.source_code;
-      AppCompatButton sourceCode = ViewBindings.findChildViewById(rootView, id);
-      if (sourceCode == null) {
-        break missingId;
-      }
-
-      id = R.id.translators_container;
-      RelativeLayout translatorsContainer = ViewBindings.findChildViewById(rootView, id);
-      if (translatorsContainer == null) {
-        break missingId;
-      }
-
-      id = R.id.translators_tv;
-      AppCompatTextView translatorsTv = ViewBindings.findChildViewById(rootView, id);
-      if (translatorsTv == null) {
-        break missingId;
-      }
-
-      id = R.id.translators_view;
-      ComposeView translatorsView = ViewBindings.findChildViewById(rootView, id);
-      if (translatorsView == null) {
-        break missingId;
-      }
-
-      id = R.id.username;
-      AppCompatTextView username = ViewBindings.findChildViewById(rootView, id);
-      if (username == null) {
-        break missingId;
-      }
-
-      id = R.id.username1;
-      AppCompatTextView username1 = ViewBindings.findChildViewById(rootView, id);
-      if (username1 == null) {
-        break missingId;
-      }
-
-      id = R.id.username2;
-      AppCompatTextView username2 = ViewBindings.findChildViewById(rootView, id);
-      if (username2 == null) {
-        break missingId;
-      }
-
-      return new AboutMainBinding(rootView, about, about2, aboutMain, appBuild, appLogo, appName,
-          appVersion, arrowButton, buildInformation, contributor1, contributor2, developer, donate,
-          hiddenView, profileImage, profileImage1, profileImage2, sourceCode, translatorsContainer,
-          translatorsTv, translatorsView, username, username1, username2);
+      return new AboutMainBinding((RelativeLayout) rootView, pager, slidingTabs, tabcontent);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

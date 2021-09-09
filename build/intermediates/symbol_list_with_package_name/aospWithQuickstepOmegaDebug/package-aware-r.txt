@@ -2877,9 +2877,6 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
-id about
-id about2
-id about_main
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2996,10 +2993,6 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
-id app_build
-id app_logo
-id app_name
-id app_version
 id apps_count
 id apps_divider_view
 id apps_list_view
@@ -3007,7 +3000,6 @@ id apps_list_view_override
 id apps_view
 id arc
 id arrow
-id arrow_button
 id asConfigured
 id async
 id auto
@@ -3039,7 +3031,6 @@ id breadcrumb
 id btn_qsb_search
 id btn_qsb_setup
 id bubble_text
-id build_information
 id button
 id buttonLayout
 id buttonPanel
@@ -3119,8 +3110,6 @@ id content_text
 id content_wallpaper
 id contiguous
 id continuousVelocity
-id contributor1
-id contributor2
 id coordinator
 id cos
 id counterclockwise
@@ -3170,7 +3159,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id developer
 id dialogMessage
 id dialogTitle
 id dialog_button
@@ -3183,7 +3171,6 @@ id disableScroll
 id disjoint
 id dismiss
 id divider
-id donate
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3284,7 +3271,6 @@ id header_title
 id help_button
 id hex_preview
 id hidden
-id hidden_view
 id hide_in_inspector_tag
 id hide_taskbar_button
 id hide_taskbar_button_alt
@@ -3504,9 +3490,6 @@ id preview
 id preview_container
 id preview_frame
 id proceed
-id profile_image
-id profile_image1
-id profile_image2
 id progress
 id progressBar
 id progress_bar
@@ -3622,7 +3605,6 @@ id snackbar_text
 id snap
 id snapMargins
 id snapshot
-id source_code
 id south
 id space
 id space_alt
@@ -3767,9 +3749,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id translators_container
-id translators_tv
-id translators_view
 id transparency_layout
 id transparency_seekbar
 id transparency_text
@@ -3785,9 +3764,6 @@ id uninstall_target_text
 id unlabeled
 id up
 id useLogo
-id username
-id username1
-id username2
 id vertical_only
 id view_offset_helper
 id view_scrim
@@ -4303,6 +4279,8 @@ mipmap ic_launcher
 mipmap ic_launcher_debug
 mipmap ic_launcher_home
 mipmap ic_launcher_home_foreground
+mipmap ic_launcher_home_foregroundx
+mipmap ic_launcher_homex
 mipmap ic_launcher_round
 mipmap ic_launcher_round_debug
 plurals dotted_app_label
