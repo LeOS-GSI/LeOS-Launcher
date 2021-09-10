@@ -19,8 +19,8 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.saggitt.omega.dev"
-    android:versionCode="284"
-    android:versionName="0.8.2" >
+    android:versionCode="2"
+    android:versionName="1" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -146,7 +146,6 @@
         android:restoreAnyVersion="true"
         android:roundIcon="@mipmap/ic_launcher_round_debug"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <service
             android:name="com.android.quickstep.TouchInteractionService"

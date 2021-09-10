@@ -38,7 +38,7 @@
                 android:id="@+id/icon_photos"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                app:srcCompat="@drawable/ic_google_photos"
+                app:srcCompat="@drawable/ic_telegram"
                 android:padding="10dp"
                 android:layout_gravity="center_horizontal|center_vertical" />
 
@@ -61,7 +61,7 @@
                 android:id="@+id/icon_youtube"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                app:srcCompat="@drawable/ic_youtube_color"
+                app:srcCompat="@drawable/ic_newpipe"
                 android:padding="10dp"
                 android:layout_gravity="center_horizontal|center_vertical" />
 
@@ -107,7 +107,7 @@
                 android:id="@+id/icon_whatsapp"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                app:srcCompat="@drawable/ic_whatsapp_color"
+                app:srcCompat="@drawable/ic_koler"
                 android:padding="10dp"
                 android:layout_gravity="center_horizontal|center_vertical" />
 

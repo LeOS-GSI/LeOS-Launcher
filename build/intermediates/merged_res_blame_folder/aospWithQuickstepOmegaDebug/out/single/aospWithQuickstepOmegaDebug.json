@@ -836,10 +836,6 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable-hdpi/ic_widget_resize_handle.png"
     },
     {
-        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_youtube_color.xml.flat",
-        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_youtube_color.xml"
-    },
-    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_qsb_icon_feedback_bg.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/qsb_icon_feedback_bg.xml"
     },
@@ -854,6 +850,10 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-hdpi_weather_02.png.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable-hdpi/weather_02.png"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_telegram.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_telegram.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_shape_rounded.xml.flat",
@@ -1048,6 +1048,10 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_cortana.xml"
     },
     {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_icon_telegram.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/icon_telegram.xml"
+    },
+    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_all_apps_bg_icon_2.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_all_apps_bg_icon_2.xml"
     },
@@ -1114,10 +1118,6 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/layout_drawer_tab_type_item.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_type_item.xml"
-    },
-    {
-        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_google_photos.xml.flat",
-        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_google_photos.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_add.xml.flat",
@@ -1220,6 +1220,10 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_list_remove.xml"
     },
     {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_phone_black.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_phone_black.xml"
+    },
+    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-xxhdpi_weather_01.png.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable-xxhdpi/weather_01.png"
     },
@@ -1234,6 +1238,10 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/layout_task.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/layout/task.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_th_jpg.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_th_jpg.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-xhdpi_workspace_bg_dark.9.png.flat",
@@ -1254,6 +1262,10 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_all_apps_bg_icon_3.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_all_apps_bg_icon_3.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_newpipe.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_newpipe.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_alarm_on_black_24dp.xml.flat",
@@ -1616,6 +1628,10 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/drawable/back_gesture.xml"
     },
     {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_barista_bohne.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_barista_bohne.xml"
+    },
+    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-xhdpi_work_tab_user_education.png.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable-xhdpi/work_tab_user_education.png"
     },
@@ -1662,6 +1678,10 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/anim_task_open_enter.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/res/anim/task_open_enter.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_telegram__software__logo_wine.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_telegram__software__logo_wine.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/layout_smartspace_widget.xml.flat",
@@ -1808,6 +1828,10 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_category.xml"
     },
     {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_hand.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/ic_hand.xml"
+    },
+    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_app_categorization_type_item_shape_outlined.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/app_categorization_type_item_shape_outlined.xml"
     },
@@ -1894,10 +1918,6 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/layout_settings_category_material.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/settings_category_material.xml"
-    },
-    {
-        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_whatsapp_color.xml.flat",
-        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_whatsapp_color.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-mdpi_weather_04n.png.flat",
@@ -2190,6 +2210,10 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/animator_all_apps_fastscroll_icon_anim.xml.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/res/animator/all_apps_fastscroll_icon_anim.xml"
+    },
+    {
+        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable_ic_koler.xml.flat",
+        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable/ic_koler.xml"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/layout_qsb_without_mic.xml.flat",

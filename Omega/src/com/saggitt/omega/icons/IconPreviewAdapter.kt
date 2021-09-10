@@ -34,8 +34,8 @@ class IconPreviewAdapter(context: Context) : RecyclerView.Adapter<IconPreviewAda
     private val adapterItems = ArrayList<PreviewIconModel>()
     private val mContext = context
     private val iconColor = Color.WHITE
-    private val previewIcons = intArrayOf(R.drawable.ic_google_photos, R.drawable.ic_instagram_color,
-            R.drawable.ic_youtube_color, R.drawable.ic_whatsapp_color)
+    private val previewIcons = intArrayOf(R.drawable.ic_telegram, R.drawable.ic_instagram_color,
+            R.drawable.ic_newpipe, R.drawable.ic_koler)
     private val previewNames = intArrayOf(R.string.preview_app_google_photos, R.string.preview_app_instagram,
             R.string.preview_app_youtube, R.string.preview_app_whatsapp)
 

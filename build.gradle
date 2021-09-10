@@ -52,8 +52,8 @@ configurations.all {
 android {
     compileSdkVersion 30
 
-    def name = "0.8.2"
-    def code = 284
+    def name = "1"
+    def code = 2
 
     defaultConfig {
         minSdkVersion 26
