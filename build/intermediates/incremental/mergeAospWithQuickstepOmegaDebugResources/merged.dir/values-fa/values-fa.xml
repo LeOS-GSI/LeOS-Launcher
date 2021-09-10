@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals formatted="false" msgid="5194538107138265416" name="dotted_app_label">
+      <item quantity="one"><ns1:g id="APP_NAME_2">%1$s</ns1:g>، <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> اعلان دارد</item>
+        <item quantity="other"><ns1:g id="APP_NAME_2">%1$s</ns1:g>، <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> اعلان دارد</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d اعلان جدید</item>
+    <item quantity="other">%d اعلان جدید</item>
+  </plurals>
+    <string msgid="7610119707847920412" name="abandoned_clean_this">"حذف"</string>
+    <string msgid="3990027586878167529" name="abandoned_promise_explanation">"برنامه برای این نماد نصب نشده است. می‌توانید آن را حذف کنید یا سعی کنید برنامه را جستجو کنید و آن را به صورت دستی نصب کنید."</string>
+    <string msgid="7096178467971716750" name="abandoned_promises_title">"این برنامه نصب نشده است."</string>
+    <string msgid="891119232568284442" name="abandoned_search">"جستجو"</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"پیمایش به صفحه اصلی"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"رفتن به بالا"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"گزینه‌های بیشتر"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"تمام"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"دیدن همه"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"انتخاب برنامه"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"خاموش"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"روشن"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"‎Alt+‎"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"‎Ctrl+‎"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"حذف"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"‎Function+‎"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"‎Meta+‎"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"‎Shift+‎"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"فاصله"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"‎Sym+‎"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"منو+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"جستجو…‏"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"پاک کردن پُرسمان"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"درخواست جستجو"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"جستجو"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"ارسال پُرسمان"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"جستجوی گفتاری"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"هم‌رسانی با"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"هم‌رسانی با <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"کوچک کردن"</string>
+    <string msgid="6312864233673544149" name="accessibility_app_usage_settings">"تنظیمات استفاده از برنامه"</string>
+    <string msgid="2277148124685870734" name="accessibility_close">"بستن"</string>
+    <string msgid="4058661986695117371" name="accessibility_recent_apps">"برنامه‌های اخیر"</string>
+    <string msgid="8902165848117513641" name="action_add_to_workspace">"افزودن به صفحه اصلی"</string>
+    <string msgid="282377193880900022" name="action_decrease_height">"کاهش ارتفاع"</string>
+    <string msgid="1374549771083094654" name="action_decrease_width">"کاهش عرض"</string>
+    <string msgid="2864038805849372848" name="action_deep_shortcut">"میان‌برها"</string>
+    <string msgid="5909461085055959187" name="action_dismiss_notification">"رد کردن"</string>
+    <string msgid="459390020612501122" name="action_increase_height">"افزایش ارتفاع"</string>
+    <string msgid="8773715375078513326" name="action_increase_width">"افزایش عرض"</string>
+    <string msgid="4339390619886385032" name="action_move">"انتقال مورد"</string>
+    <string msgid="2170188780612570250" name="action_move_here">"انتقال مورد به اینجا"</string>
+    <string msgid="1603837886334246317" name="action_move_to_workspace">"انتقال به صفحه اصلی"</string>
+    <string msgid="1802976324781771067" name="action_resize">"تغییر اندازه"</string>
+    <string msgid="8171125848358142917" name="action_screenshot">"نماگرفت"</string>
+    <string msgid="2648470652637092375" name="action_share">"هم‌رسانی"</string>
+    <string msgid="7456344436509528827" name="activity_not_available">"برنامه در دسترس نیست"</string>
+    <string msgid="8071924732094499514" name="activity_not_found">"برنامه نصب نشده است."</string>
+    <string msgid="5899764264480397019" name="add_item_request_drag_hint">"آن را لمس کنید و بکشید تا به‌صورت دستی اضافه شود"</string>
+    <string msgid="9040534766770853243" name="add_to_folder">"افزودن به پوشه: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4534929978967147231" name="add_to_folder_with_app">"افزودن به پوشه حاوی <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4793259502305558003" name="added_to_folder">"مورد به پوشه اضافه شد"</string>
+    <string msgid="8130441508702294465" name="all_apps_button_label">"فهرست برنامه‌ها"</string>
+    <string msgid="1315764287305224468" name="all_apps_button_personal_label">"فهرست برنامه‌های شخصی"</string>
+    <string msgid="7270707118948892488" name="all_apps_button_work_label">"فهرست برنامه‌های کاری"</string>
+    <string msgid="252062713717058851" name="all_apps_home_button_label">"صفحه اصلی"</string>
+    <string msgid="8542784161730910663" name="all_apps_label">"همه برنامه‌ها"</string>
+    <string msgid="5813968043155271636" name="all_apps_loading_message">"درحال بارگیری برنامه‌‌ها…"</string>
+    <string msgid="3200346862396363786" name="all_apps_no_search_results">"هیچ برنامه‌ای در مطابقت با «<ns1:g id="QUERY">%1$s</ns1:g>» پیدا نشد"</string>
+    <string msgid="4190252696685155002" name="all_apps_personal_tab">"شخصی"</string>
+    <string msgid="2672336544844936186" name="all_apps_prediction_tip">"برنامه‌های پیش‌بینی‌شده"</string>
+    <string msgid="1390553134053255246" name="all_apps_search_bar_hint">"جستجوی برنامه‌ها"</string>
+    <string msgid="1366263386197059176" name="all_apps_search_market_message">"جستجوی برنامه‌های بیشتر"</string>
+    <string msgid="4884822796154055118" name="all_apps_work_tab">"کاری"</string>
+    <string msgid="8662546029078692509" name="allow_rotation_desc">"وقتی تلفن چرخانده می‌شود"</string>
+    <string msgid="7728578836261442095" name="allow_rotation_title">"قابل‌چرخش بودن صفحه اصلی"</string>
+    <string msgid="8336702962104482644" name="app_downloading_title">"درحال بارگیری <ns1:g id="NAME">%1$s</ns1:g>، <ns1:g id="PROGRESS">%2$s</ns1:g> کامل شد"</string>
+    <string msgid="692894985365717661" name="app_info_drop_target_label">"اطلاعات برنامه"</string>
+    <string msgid="649227358658669779" name="app_name">"Launcher3"</string>
+    <string msgid="7053938513995617849" name="app_waiting_download_title">"<ns1:g id="NAME">%1$s</ns1:g> درانتظار نصب"</string>
+    <string msgid="7117251166066978730" name="auto_add_shortcuts_description">"برای برنامه‌های جدید"</string>
+    <string msgid="3698776050751790653" name="auto_add_shortcuts_label">"افزودن نماد برنامه‌ها به صفحه اصلی"</string>
+    <string msgid="2071401072261365546" name="blocked_by_policy">"برنامه یا سازمان شما اجازه نمی‌دهد این کنش انجام شود."</string>
+    <string name="bottomsheet_action_expand_halfway">گسترده کردن تا نیمه</string>
+    <string name="character_counter_content_description">نویسه‌های واردشده %1$d از %2$d</string>
+    <string name="character_counter_overflowed_content_description">محدودیت نویسه از حد مجاز %1$d از %2$d بیشتر شده است</string>
+    <string name="clear_text_end_icon_content_description">پاک کردن نوشتار</string>
+    <string msgid="406453423630273620" name="close_drawer">"بستن منوی پیمایش"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"بستن برگ"</string>
+    <string msgid="3209159573327985035" name="copy">"کپی"</string>
+    <string msgid="4050141361160214248" name="create_folder_with">"ایجاد پوشه با: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="3747508247759093328" name="custom_actions">"کنش‌های سفارشی"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"ورودی نامعتبر"</string>
+    <string msgid="7475544710230993317" name="default_scroll_format">"‏صفحه %1$d از %2$d"</string>
+    <string msgid="6673129024321402780" name="disabled_app_label">"<ns1:g id="APP_NAME">%1$s</ns1:g> غیرفعال شد"</string>
+    <string msgid="3357562989568808658" name="dismiss_prediction_label">"برنامه پیشنهاد داده نشود"</string>
+    <string name="error_icon_content_description">خطا</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"پیشرفته"</string>
+    <string name="exposed_dropdown_menu_content_description">نمایش منوی کرکره‌ای</string>
+    <string msgid="4100806530910930934" name="folder_closed">"پوشه بسته شد"</string>
+    <string msgid="6409794597405184510" name="folder_created">"پوشه ایجاد شد"</string>
+    <string msgid="5174843001373488816" name="folder_hint_text">"ویرایش نام"</string>
+    <string msgid="8626242716117004803" name="folder_name_format_exact">"پوشه: <ns1:g id="NAME">%1$s</ns1:g>، <ns1:g id="SIZE">%2$d</ns1:g> مورد"</string>
+    <string msgid="4270108890534995199" name="folder_name_format_overflow">"پوشه: <ns1:g id="NAME">%1$s</ns1:g>، <ns1:g id="SIZE">%2$d</ns1:g> مورد یا بیشتر"</string>
+    <string msgid="94695026776264709" name="folder_opened">"پوشه باز شده، <ns1:g id="WIDTH">%1$d</ns1:g> در <ns1:g id="HEIGHT">%2$d</ns1:g>"</string>
+    <string msgid="1794088362165669656" name="folder_renamed">"نام پوشه به <ns1:g id="NAME">%1$s</ns1:g> تغییر کرد"</string>
+    <string msgid="4625795376335528256" name="folder_tap_to_close">"برای بستن پوشه، ضربه بزنید"</string>
+    <string msgid="4017685068016979677" name="folder_tap_to_rename">"برای ذخیره تغییر نام، ضربه بزنید"</string>
+    <string msgid="6081085226050792095" name="gadget_error_text">"مشکل در بارگیری ابزارک"</string>
+    <string msgid="8274003207686040488" name="gadget_setup_text">"تنظیم"</string>
+    <string msgid="806512411299847073" name="home_screen">"صفحه اصلی"</string>
+    <string msgid="1506426298884658491" name="hotsaet_tip_prediction_disabled">"«پیشنهاد برنامه» غیرفعال است"</string>
+    <string msgid="2233554377501347650" name="hotsaet_tip_prediction_enabled">"«پیشنهاد برنامه» فعال است"</string>
+    <string msgid="522100018967146807" name="hotseat_auto_enrolled">"پرکاربردترین برنامه‌ها اینجا ظاهر می‌شوند و براساس روال‌ها تغییر می‌کنند"</string>
+    <string msgid="1611544083278999837" name="hotseat_edu_accept">"دریافت پیشنهادهای برنامه"</string>
+    <string msgid="2781161822780201689" name="hotseat_edu_dismiss">"نه متشکرم"</string>
+    <string msgid="8927179260533775320" name="hotseat_edu_message_migrate">"به‌راحتی در صفحه اصلی به پرکاربردترین برنامه‌ها دسترسی داشته باشید. پیشنهادها براساس روال‌هایتان تغییر خواهد کرد. برنامه‌های ردیف پایین در صفحه اصلی به بالا منتقل خواهند شد."</string>
+    <string msgid="3042360119039646356" name="hotseat_edu_message_migrate_alt">"به‌راحتی در صفحه اصلی به پرکاربردترین برنامه‌ها دسترسی داشته باشید. پیشنهادها براساس روال‌هایتان تغییر خواهد کرد. برنامه‌های ردیف پایین به پوشه جدیدی منتقل خواهند شد."</string>
+    <string msgid="4248943380443387697" name="hotseat_edu_message_migrate_landscape">"به‌راحتی در صفحه اصلی به پرکاربردترین برنامه‌ها دسترسی داشته باشید. پیشنهادها براساس روال‌هایتان تغییر خواهد کرد. برنامه‌های موجود در ردیف موارد دلخواه به صفحه اصلی منتقل می‌شوند."</string>
+    <string msgid="306578144424489980" name="hotseat_edu_title_migrate">"دریافت پیشنهادهای برنامه در ردیف پایین صفحه اصلی"</string>
+    <string msgid="3633942953997845243" name="hotseat_edu_title_migrate_landscape">"دریافت «پیشنهاد برنامه» در ردیف موارد دلخواه صفحه اصلی"</string>
+    <string msgid="7448809638125333693" name="hotseat_out_of_space">"فضای بیشتری در سینی موارد دلخواه وجود ندارد"</string>
+    <string msgid="4582028296938078419" name="hotseat_prediction_content_description">"برنامه پیش‌بینی‌شده: <ns1:g id="TITLE">%1$s</ns1:g>"</string>
+    <string msgid="6246554993566070818" name="hotseat_prediction_settings">"تنظیمات"</string>
+    <string msgid="3035673010274223538" name="hotseat_tip_gaps_filled">"«پیشنهاد برنامه» به فضای خالی اضافه شد"</string>
+    <string msgid="1325212677738179185" name="hotseat_tip_no_empty_slots">"برای دریافت پیشنهادهای برنامه، برنامه‌ها را به بیرون از ردیف پایین بکشید"</string>
+    <string name="icon_content_description">نماد کادر گفتگو</string>
+    <string msgid="6827826412747255547" name="in_progress">"درحال انجام"</string>
+    <string msgid="2486394087603402002" name="indeterminate">"نه علامت‌گذاری شده و نه علامت‌گذاری آن لغو شده"</string>
+    <string msgid="2539096853673231757" name="install_drop_target_label">"نصب"</string>
+    <string msgid="4211073925752213539" name="item_added_to_workspace">"مورد به صفحه اصلی اضافه شد"</string>
+    <string msgid="4606538322571412879" name="item_moved">"مورد منتقل شد"</string>
+    <string msgid="851119963877842327" name="item_removed">"مورد حذف شد"</string>
+    <string name="item_view_role_description">برگه</string>
+    <string msgid="8531721983832654978" name="label_application">"برنامه"</string>
+    <string msgid="4289502106628154155" name="long_accessible_way_to_add">"برای انتخاب یک ابزارک، دو ضربه سریع بزنید و نگه‌دارید یا از کنش‌های سفارشی استفاده کنید."</string>
+    <string msgid="3327314059613154633" name="long_accessible_way_to_add_shortcut">"برای انتخاب میان‌بر، دو ضربه سریع بزنید و نگه‌دارید یا از کنش‌های سفارشی استفاده کنید."</string>
+    <string msgid="4524750017792716791" name="long_press_shortcut_to_add">"برای انتخاب میان‌بر، لمس کنید و نگه‌دارید."</string>
+    <string msgid="7699152356777458215" name="long_press_widget_to_add">"برای انتخاب ابزارک لمس کنید و نگه دارید."</string>
+    <string name="material_clock_toggle_content_description">انتخاب .ق.ظ. یا ب.ظ.</string>
+    <string name="material_hour_selection">انتخاب ساعت</string>
+    <string name="material_hour_suffix">ساعت %1$s</string>
+    <string name="material_minute_selection">انتخاب دقیقه</string>
+    <string name="material_minute_suffix">%1$s دقیقه</string>
+    <string name="material_timepicker_am">ق.ظ</string>
+    <string name="material_timepicker_clock_mode_description">برای وارد کردن زمان، به حالت ساعت تغییر وضعیت دهید.</string>
+    <string name="material_timepicker_hour">ساعت</string>
+    <string name="material_timepicker_minute">دقیقه</string>
+    <string name="material_timepicker_pm">ب.ظ</string>
+    <string name="material_timepicker_select_time">انتخاب زمان</string>
+    <string name="material_timepicker_text_input_mode_description">برای وارد کردن زمان، به حالت ورودی نوشتاری تغییر وضعیت دهید.</string>
+    <string msgid="2833711483015685619" name="move_to_empty_cell">"انتقال به سطر <ns1:g id="NUMBER_0">%1$s</ns1:g> ستون <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="6295412897075147808" name="move_to_hotseat_position">"انتقال به موقعیت دلخواه <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6750008980455459790" name="move_to_position">"انتقال به موقعیت <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6898038085516271325" name="msg_disabled_by_admin">"توسط سرپرست سیستم غیرفعال شده است"</string>
+    <string msgid="281113995110910548" name="msg_missing_notification_access">"برای نمایش «نقطه‌های اعلان»، اعلان‌های برنامه را برای <ns1:g id="NAME">%1$s</ns1:g> روشن کنید"</string>
+    <string msgid="9208659281529857371" name="msg_no_phone_permission">"<ns1:g id="APP_NAME">%1$s</ns1:g> مجاز نیست تماس تلفنی برقرار کند"</string>
+    <string name="mtrl_badge_numberless_content_description">اعلان جدید</string>
+    <string name="mtrl_chip_close_icon_content_description">برداشتن %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">بیش از %1$d اعلان جدید</string>
+    <string name="mtrl_picker_a11y_next_month">تغییر به ماه بعدی</string>
+    <string name="mtrl_picker_a11y_prev_month">تغییر به ماه قبلی</string>
+    <string name="mtrl_picker_announce_current_selection">انتخاب کنونی: %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">انتخاب تاریخ</string>
+    <string name="mtrl_picker_date_header_unselected">تاریخ انتخابی</string>
+    <string name="mtrl_picker_day_of_week_column_header">ستون روز: %1$s</string>
+    <string name="mtrl_picker_invalid_format">قالب نامعتبر است.</string>
+    <string name="mtrl_picker_invalid_format_example">مثال: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">قالب: %1$s</string>
+    <string name="mtrl_picker_invalid_range">محدوده نامعتبر است.</string>
+    <string name="mtrl_picker_navigate_to_year_description">رفتن به سال %1$s</string>
+    <string name="mtrl_picker_out_of_range">خارج از محدوده: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">تاریخ شروع – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – تاریخ پایان</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">انتخاب محدوده</string>
+    <string name="mtrl_picker_range_header_unselected">تاریخ شروع – تاریخ پایان</string>
+    <string name="mtrl_picker_save">ذخیره</string>
+    <string name="mtrl_picker_text_input_date_hint">تاریخ</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">تاریخ پایان</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">تاریخ شروع</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">رفتن به روش ورودی تقویم</string>
+    <string name="mtrl_picker_toggle_to_day_selection">رفتن به رفتن به حالت انتخاب روز ضربه بزنید</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">رفتن به حالت ورودی نوشتاری</string>
+    <string name="mtrl_picker_toggle_to_year_selection">برای رفتن به حالت انتخاب سال ضربه بزنید</string>
+    <string msgid="542007171693138492" name="navigation_menu">"منوی پیمایش"</string>
+    <string msgid="6610465462668679431" name="not_selected">"انتخاب‌نشده"</string>
+    <string msgid="478774118347071097" name="not_set">"تنظیم نشده است"</string>
+    <string msgid="6002233469409822874" name="notification_dismissed">"اعلان رد شد"</string>
+    <string msgid="1760796511504341095" name="notification_dots_desc_off">"خاموش"</string>
+    <string msgid="1679848116452218908" name="notification_dots_desc_on">"روشن"</string>
+    <string msgid="4284221181793592871" name="notification_dots_service_title">"نمایش نقطه‌های اعلان"</string>
+    <string msgid="9062440428204120317" name="notification_dots_title">"نقطه‌های اعلان"</string>
+    <string msgid="1404149926117359025" name="notifications_header">"اعلان‌ها"</string>
+    <string msgid="875452955155264703" name="off">"خاموش"</string>
+    <string msgid="8655164131929253426" name="on">"روشن"</string>
+    <string msgid="4691004494942118364" name="out_of_space">"فضای بیشتری در این صفحه اصلی موجود نیست."</string>
+    <string msgid="7592128424511031410" name="package_state_unknown">"نامشخص"</string>
+    <string name="password_toggle_content_description">نمایش گذرواژه</string>
+    <string msgid="923466509822011139" name="permdesc_install_shortcut">"به برنامه اجازه می‌دهد میان‌برها را بدون دخالت کاربر اضافه کند."</string>
+    <string msgid="5833423719057558387" name="permdesc_read_settings">"به برنامه اجازه می‌دهد تنظیمات و میان‌برها را در صفحه اصلی بخواند."</string>
+    <string msgid="5440712911516509985" name="permdesc_write_settings">"به برنامه اجازه می‌دهد تنظیمات و میان‌برها را در صفحه اصلی تغییر دهد."</string>
+    <string msgid="5632423390354674437" name="permlab_install_shortcut">"نصب میان‌برها"</string>
+    <string msgid="1941457408239617576" name="permlab_read_settings">"خواندن تنظیمات و میان‌برهای صفحه اصلی"</string>
+    <string msgid="3574213698004620587" name="permlab_write_settings">"نوشتن تنظیمات و میان‌برهای صفحه اصلی"</string>
+    <string msgid="4196423321649756498" name="pin_prediction">"پین کردن پیشنهاد"</string>
+    <string msgid="8064208734425456485" name="place_automatically">"افزودن خودکار"</string>
+    <string msgid="7961817945132860002" name="preference_copied">"«<ns1:g id="SUMMARY">%1$s</ns1:g>» در بریده‌دان کپی شد."</string>
+    <string msgid="48863056265284071" name="recent_task_option_freeform">"Freeform"</string>
+    <string msgid="7929860679018978258" name="recent_task_option_pin">"پین"</string>
+    <string msgid="5353188922202653570" name="recent_task_option_split_screen">"تقسیم صفحه"</string>
+    <string msgid="5328176793634888831" name="recents_clear_all">"پاک کردن همه"</string>
+    <string msgid="7040467240571714191" name="recents_empty_message">"بدون موارد اخیر"</string>
+    <string msgid="1383965239183576790" name="remote_action_failed">"ناموفق بود: <ns1:g id="WHAT">%1$s</ns1:g>"</string>
+    <string msgid="7812859488053230776" name="remove_drop_target_label">"برداشتن"</string>
+    <string msgid="9160126848219158407" name="safemode_shortcut_error">"برنامه بارگیری شده در حالت ایمن غیرفعال شد"</string>
+    <string msgid="4863470563535682004" name="safemode_widget_error">"ابزارک‌ها در حالت ایمن غیرفعال هستند"</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"جستجو"</string>
+    <string msgid="6043586758067023" name="selected">"انتخاب شد"</string>
+    <string msgid="8873672322605444408" name="settings_button_text">"تنظیمات صفحه اصلی"</string>
+    <string msgid="2536503539825726397" name="shortcut_not_available">"میان‌بر دردسترس نیست"</string>
+    <string msgid="2676582286544232849" name="shortcuts_menu_with_notifications_description">"میان‌برها و اعلان‌ها"</string>
+    <string msgid="4722015666335015336" name="shorter_duration_less_than_one_minute">"&lt; ۱ دقیقه"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="4342122323125579619" name="styles_wallpaper_button_text">"سبک و کاغذدیواری"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>، <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="1672349317127674378" name="tab">"برگه"</string>
+    <string msgid="4479688746574672685" name="task_contents_description_with_remaining_time">"<ns1:g id="TASK_DESCRIPTION">%1$s</ns1:g>، <ns1:g id="REMAINING_TIME">%2$s</ns1:g>"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> درصد."</string>
+    <string msgid="3111996412933644358" name="time_left_for_app">"<ns1:g id="TIME">%1$s</ns1:g> باقی‌مانده برای امروز"</string>
+    <string msgid="4185902664111965088" name="title_app_suggestions">"پیشنهادهای برنامه"</string>
+    <string msgid="1376365968844349552" name="title_change_settings">"تغییر تنظیمات"</string>
+    <string msgid="7503287056163941064" name="title_missing_notification_access">"دسترسی به اعلان نیاز است"</string>
+    <string msgid="4151576204245173321" name="undo">"واگرد"</string>
+    <string msgid="4722034217958379417" name="uninstall_drop_target_label">"حذف نصب"</string>
+    <string msgid="4172046090762920660" name="uninstall_system_app_text">"این برنامه سیستمی است و حذف نصب نمی‌شود."</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"خاموش"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"روشن"</string>
+    <string msgid="8404103075899945851" name="wallpaper_button_text">"کاغذدیواری‌ها"</string>
+    <string msgid="3640149169885301790" name="widget_accessible_dims_format">"‏%1$d عرض در %2$d طول"</string>
+    <string msgid="2880537293434387943" name="widget_button_text">"ابزارک‌ها"</string>
+    <string msgid="2370757736025621599" name="widget_dims_format">"%1$d × %2$d"</string>
+    <string msgid="9130327887929620" name="widget_resized">"اندازه ابزارک به عرض <ns1:g id="NUMBER_0">%1$s</ns1:g> ارتفاع <ns1:g id="NUMBER_1">%2$s</ns1:g> تغییر کرد"</string>
+    <string msgid="2904559530954183366" name="widgets_bottom_sheet_title">"ابزارک‌های <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="796804551140113767" name="widgets_list">"فهرست ابزارک‌ها"</string>
+    <string msgid="6141506579418771922" name="widgets_list_closed">"فهرست ابزارک‌ها بسته شد"</string>
+    <string msgid="2197210494568696054" name="work_apps_paused_body">"برنامه‌های کاری نمی‌توانند اعلان ارسال کنند، از باتری استفاده کنند، یا به مکانتان دسترسی داشته باشند"</string>
+    <string msgid="7553586952985486433" name="work_apps_paused_content_description">"نمایه کاری موقتاً متوقف شده است. برنامه‌های کاری نمی‌توانند به شما اعلان ارسال کنند، از باتری استفاده کنند، یا به مکانتان دسترسی داشته باشند"</string>
+    <string msgid="2389865654362803723" name="work_apps_paused_title">"نمایه کاری موقتاً متوقف شده است"</string>
+    <string msgid="3753320833950115786" name="work_folder_name">"کاری"</string>
+    <string msgid="6069788082535149071" name="work_profile_edu_accept">"متوجه‌ام"</string>
+    <string msgid="8783418929296503629" name="work_profile_edu_next">"بعدی"</string>
+    <string msgid="4155536355149317441" name="work_profile_edu_personal_apps">"داده‌های شخصی از برنامه‌های کاری جدا و از دسترس آن‌ها پنهان هستند"</string>
+    <string msgid="237051938268703058" name="work_profile_edu_work_apps">"برنامه‌های کاری و داده‌ها برای سرپرست فناوری اطلاعات نمایان هستند"</string>
+    <string msgid="3081029915775481146" name="work_profile_toggle_label">"نمایه کاری"</string>
+    <string msgid="808075064383839144" name="work_switch_tip">"توقف موقت برنامه‌های کاری و اعلان‌ها"</string>
+    <string msgid="257366611030256142" name="workspace_new_page">"صفحه اصلی جدید"</string>
+    <string msgid="8458889198184077399" name="workspace_scroll_format">"‏صفحه اصلی %1$d از %2$d"</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tb_pref_theme_list">
+      <item>Sistema</item>
+      <item>Claro</item>
+      <item>Oscuro</item>
+  </string-array>
+    <string name="tb_pref_description_keyboard_shortcut">Iniciar/detener Taskbar:   {fou_social-windows} + M   {fou_magnifying-glass} + M\n\nBloquear dispositivo:   {fou_social-windows} + L   {fou_magnifying-glass} + L\n\nMostrar menú de inicio:   {fou_social-windows}   {fou_magnifying-glass}\n(requiere que Taskbar se establezca como la aplicación de asistencia en los Ajustes)</string>
+    <string name="tb_pref_description_keyboard_shortcut_alt">Iniciar/detener Taskbar\n• WinKey+M / Search+M\n\nBloquear dispositivo\n• WinKey+L / Search+L\n\nMostrar menú de inicio\n• WinKey / Search\n(requiere que Taskbar se establezca como la aplicación de asistencia en los Ajustes)</string>
+</resources>

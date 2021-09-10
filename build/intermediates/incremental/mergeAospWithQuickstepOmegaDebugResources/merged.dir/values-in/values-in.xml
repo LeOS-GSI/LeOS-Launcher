@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals formatted="false" msgid="5194538107138265416" name="dotted_app_label">
+      <item quantity="other"><ns1:g id="APP_NAME_2">%1$s</ns1:g>, memiliki <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> notifikasi</item>
+        <item quantity="one"><ns1:g id="APP_NAME_0">%1$s</ns1:g>, memiliki <ns1:g id="NOTIFICATION_COUNT_1">%2$d</ns1:g> notifikasi</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d notifikasi baru</item>
+    <item quantity="other">%d notifikasi baru</item>
+  </plurals>
+    <string msgid="7610119707847920412" name="abandoned_clean_this">"Buang"</string>
+    <string msgid="3990027586878167529" name="abandoned_promise_explanation">"Aplikasi untuk ikon ini belum dipasang. Anda dapat membuangnya, atau menelusuri aplikasi dan memasangnya secara manual."</string>
+    <string msgid="7096178467971716750" name="abandoned_promises_title">"Aplikasi ini belum terpasang"</string>
+    <string msgid="891119232568284442" name="abandoned_search">"Telusuri"</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Tunjukkan jalan ke rumah"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Kembali ke atas"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Opsi lain"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Selesai"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Lihat semua"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Pilih aplikasi"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"NONAKTIF"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"AKTIF"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"spasi"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Telusuri..."</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Hapus kueri"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Telusuri kueri"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Telusuri"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Kirim kueri"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Penelusuran suara"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Bagikan dengan"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Bagikan dengan <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Ciutkan"</string>
+    <string msgid="6312864233673544149" name="accessibility_app_usage_settings">"Setelan penggunaan aplikasi"</string>
+    <string msgid="2277148124685870734" name="accessibility_close">"Tutup"</string>
+    <string msgid="4058661986695117371" name="accessibility_recent_apps">"Aplikasi terbaru"</string>
+    <string msgid="8902165848117513641" name="action_add_to_workspace">"Tambahkan ke Layar Utama"</string>
+    <string msgid="282377193880900022" name="action_decrease_height">"Kurangi tinggi"</string>
+    <string msgid="1374549771083094654" name="action_decrease_width">"Kurangi lebar"</string>
+    <string msgid="2864038805849372848" name="action_deep_shortcut">"Pintasan"</string>
+    <string msgid="5909461085055959187" name="action_dismiss_notification">"Tutup"</string>
+    <string msgid="459390020612501122" name="action_increase_height">"Tambahi tinggi"</string>
+    <string msgid="8773715375078513326" name="action_increase_width">"Tambahi lebar"</string>
+    <string msgid="4339390619886385032" name="action_move">"Pindahkan item"</string>
+    <string msgid="2170188780612570250" name="action_move_here">"Pindahkan item ke sini"</string>
+    <string msgid="1603837886334246317" name="action_move_to_workspace">"Pindahkan ke layar Utama"</string>
+    <string msgid="1802976324781771067" name="action_resize">"Ubah ukuran"</string>
+    <string msgid="8171125848358142917" name="action_screenshot">"Screenshot"</string>
+    <string msgid="2648470652637092375" name="action_share">"Bagikan"</string>
+    <string msgid="7456344436509528827" name="activity_not_available">"Aplikasi tidak tersedia"</string>
+    <string msgid="8071924732094499514" name="activity_not_found">"Aplikasi tidak dipasang."</string>
+    <string msgid="5899764264480397019" name="add_item_request_drag_hint">"Sentuh lama untuk menempatkan secara manual"</string>
+    <string msgid="9040534766770853243" name="add_to_folder">"Tambahkan ke folder: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4534929978967147231" name="add_to_folder_with_app">"Tambahkan ke folder dengan <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4793259502305558003" name="added_to_folder">"Item ditambahkan ke folder"</string>
+    <string msgid="8130441508702294465" name="all_apps_button_label">"Daftar aplikasi"</string>
+    <string msgid="1315764287305224468" name="all_apps_button_personal_label">"Daftar aplikasi pribadi"</string>
+    <string msgid="7270707118948892488" name="all_apps_button_work_label">"Daftar aplikasi kantor"</string>
+    <string msgid="252062713717058851" name="all_apps_home_button_label">"Layar Utama"</string>
+    <string msgid="8542784161730910663" name="all_apps_label">"Semua aplikasi"</string>
+    <string msgid="5813968043155271636" name="all_apps_loading_message">"Memuat aplikasi…"</string>
+    <string msgid="3200346862396363786" name="all_apps_no_search_results">"Tidak ditemukan aplikasi yang cocok dengan \"<ns1:g id="QUERY">%1$s</ns1:g>\""</string>
+    <string msgid="4190252696685155002" name="all_apps_personal_tab">"Pribadi"</string>
+    <string msgid="2672336544844936186" name="all_apps_prediction_tip">"Aplikasi yang diprediksi"</string>
+    <string msgid="1390553134053255246" name="all_apps_search_bar_hint">"Telusuri aplikasi"</string>
+    <string msgid="1366263386197059176" name="all_apps_search_market_message">"Telusuri aplikasi lainnya"</string>
+    <string msgid="4884822796154055118" name="all_apps_work_tab">"Kerja"</string>
+    <string msgid="8662546029078692509" name="allow_rotation_desc">"Saat ponsel diputar"</string>
+    <string msgid="7728578836261442095" name="allow_rotation_title">"Izinkan Layar utama diputar"</string>
+    <string msgid="8336702962104482644" name="app_downloading_title">"<ns1:g id="NAME">%1$s</ns1:g> sedang didownload, <ns1:g id="PROGRESS">%2$s</ns1:g> selesai"</string>
+    <string msgid="692894985365717661" name="app_info_drop_target_label">"Info aplikasi"</string>
+    <string msgid="649227358658669779" name="app_name">"Launcher3"</string>
+    <string msgid="7053938513995617849" name="app_waiting_download_title">"<ns1:g id="NAME">%1$s</ns1:g> menunggu dipasang"</string>
+    <string msgid="7117251166066978730" name="auto_add_shortcuts_description">"Untuk aplikasi baru"</string>
+    <string msgid="3698776050751790653" name="auto_add_shortcuts_label">"Tambahkan ikon aplikasi ke Layar utama"</string>
+    <string msgid="2071401072261365546" name="blocked_by_policy">"Tindakan ini tidak diizinkan oleh aplikasi atau organisasi Anda"</string>
+    <string name="bottomsheet_action_expand_halfway">Luaskan setengah</string>
+    <string name="character_counter_content_description">Karakter yang dimasukkan %1$d dari %2$d</string>
+    <string name="character_counter_overflowed_content_description">Melebihi batas karakter %1$d dari %2$d</string>
+    <string name="clear_text_end_icon_content_description">Menghapus teks</string>
+    <string msgid="406453423630273620" name="close_drawer">"Tutup menu navigasi"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"Tutup sheet"</string>
+    <string msgid="3209159573327985035" name="copy">"Salin"</string>
+    <string msgid="4050141361160214248" name="create_folder_with">"Buat folder dengan: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="3747508247759093328" name="custom_actions">"Tindakan khusus"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"Input tidak valid"</string>
+    <string msgid="7475544710230993317" name="default_scroll_format">"Halaman %1$d dari %2$d"</string>
+    <string msgid="6673129024321402780" name="disabled_app_label">"<ns1:g id="APP_NAME">%1$s</ns1:g> dinonaktifkan"</string>
+    <string msgid="3357562989568808658" name="dismiss_prediction_label">"Jangan sarankan aplikasi"</string>
+    <string name="error_icon_content_description">Error</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Lanjutan"</string>
+    <string name="exposed_dropdown_menu_content_description">Tampilkan menu dropdown</string>
+    <string msgid="4100806530910930934" name="folder_closed">"Folder ditutup"</string>
+    <string msgid="6409794597405184510" name="folder_created">"Folder dibuat"</string>
+    <string msgid="5174843001373488816" name="folder_hint_text">"Sunting Nama"</string>
+    <string msgid="8626242716117004803" name="folder_name_format_exact">"Folder: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> item"</string>
+    <string msgid="4270108890534995199" name="folder_name_format_overflow">"Folder: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> item atau lebih"</string>
+    <string msgid="94695026776264709" name="folder_opened">"Folder dibuka, <ns1:g id="WIDTH">%1$d</ns1:g> x <ns1:g id="HEIGHT">%2$d</ns1:g>"</string>
+    <string msgid="1794088362165669656" name="folder_renamed">"Folder diganti namanya menjadi <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4625795376335528256" name="folder_tap_to_close">"Ketuk untuk menutup folder"</string>
+    <string msgid="4017685068016979677" name="folder_tap_to_rename">"Ketuk untuk menyimpan ganti nama"</string>
+    <string msgid="6081085226050792095" name="gadget_error_text">"Masalah memuat widget"</string>
+    <string msgid="8274003207686040488" name="gadget_setup_text">"Siapkan"</string>
+    <string msgid="806512411299847073" name="home_screen">"Layar utama"</string>
+    <string msgid="1506426298884658491" name="hotsaet_tip_prediction_disabled">"Saran aplikasi dinonaktifkan"</string>
+    <string msgid="2233554377501347650" name="hotsaet_tip_prediction_enabled">"Saran aplikasi diaktifkan"</string>
+    <string msgid="522100018967146807" name="hotseat_auto_enrolled">"Aplikasi yang paling sering digunakan muncul di sini, dan berubah berdasarkan rutinitas"</string>
+    <string msgid="1611544083278999837" name="hotseat_edu_accept">"Dapatkan saran aplikasi"</string>
+    <string msgid="2781161822780201689" name="hotseat_edu_dismiss">"Lain kali"</string>
+    <string msgid="8927179260533775320" name="hotseat_edu_message_migrate">"Akses aplikasi yang paling sering digunakan dengan mudah, langsung di Layar utama. Saran akan berubah berdasarkan rutinitas Anda. Aplikasi di baris paling bawah akan berpindah naik ke Layar utama."</string>
+    <string msgid="3042360119039646356" name="hotseat_edu_message_migrate_alt">"Akses aplikasi yang paling sering digunakan dengan mudah, langsung di Layar utama. Saran akan berubah berdasarkan rutinitas Anda. Aplikasi di baris paling bawah akan berpindah ke folder baru."</string>
+    <string msgid="4248943380443387697" name="hotseat_edu_message_migrate_landscape">"Mudah mengakses aplikasi yang paling sering digunakan, langsung di Layar utama. Saran akan berubah berdasarkan rutinitas Anda. Aplikasi di baris favorit akan berpindah ke Layar utama."</string>
+    <string msgid="306578144424489980" name="hotseat_edu_title_migrate">"Dapatkan saran aplikasi di baris paling bawah Layar utama"</string>
+    <string msgid="3633942953997845243" name="hotseat_edu_title_migrate_landscape">"Dapatkan saran aplikasi di baris favorit Layar utama"</string>
+    <string msgid="7448809638125333693" name="hotseat_out_of_space">"Tidak ada ruang tersisa di baki Favorit"</string>
+    <string msgid="4582028296938078419" name="hotseat_prediction_content_description">"Aplikasi yang diprediksi: <ns1:g id="TITLE">%1$s</ns1:g>"</string>
+    <string msgid="6246554993566070818" name="hotseat_prediction_settings">"Setelan"</string>
+    <string msgid="3035673010274223538" name="hotseat_tip_gaps_filled">"Saran aplikasi ditambahkan ke ruang kosong"</string>
+    <string msgid="1325212677738179185" name="hotseat_tip_no_empty_slots">"Tarik aplikasi dari baris paling bawah untuk mendapatkan saran aplikasi"</string>
+    <string name="icon_content_description">Ikon Dialog</string>
+    <string msgid="6827826412747255547" name="in_progress">"Dalam proses"</string>
+    <string msgid="2486394087603402002" name="indeterminate">"Tidak dicentang atau dihapus centangnya"</string>
+    <string msgid="2539096853673231757" name="install_drop_target_label">"Instal"</string>
+    <string msgid="4211073925752213539" name="item_added_to_workspace">"Item ditambahkan ke layar utama"</string>
+    <string msgid="4606538322571412879" name="item_moved">"Item dipindahkan"</string>
+    <string msgid="851119963877842327" name="item_removed">"Item dihapus"</string>
+    <string name="item_view_role_description">Tab</string>
+    <string msgid="8531721983832654978" name="label_application">"Aplikasi"</string>
+    <string msgid="4289502106628154155" name="long_accessible_way_to_add">"Ketuk dua kali &amp; tahan untuk mengambil widget atau menggunakan tindakan khusus."</string>
+    <string msgid="3327314059613154633" name="long_accessible_way_to_add_shortcut">"Ketuk dua kali &amp; tahan untuk memilih pintasan atau menggunakan tindakan khusus."</string>
+    <string msgid="4524750017792716791" name="long_press_shortcut_to_add">"Sentuh lama untuk memilih pintasan."</string>
+    <string msgid="7699152356777458215" name="long_press_widget_to_add">"Sentuh lama untuk memilih widget."</string>
+    <string name="material_clock_toggle_content_description">Pilih AM atau PM</string>
+    <string name="material_hour_selection">Pilih jam</string>
+    <string name="material_hour_suffix">Pukul %1$s</string>
+    <string name="material_minute_selection">Pilih menit</string>
+    <string name="material_minute_suffix">%1$s menit</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Beralih ke mode jam untuk masukan waktu.</string>
+    <string name="material_timepicker_hour">Jam</string>
+    <string name="material_timepicker_minute">Menit</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Pilih waktu</string>
+    <string name="material_timepicker_text_input_mode_description">Beralih ke mode masukan teks untuk masukan waktu.</string>
+    <string msgid="2833711483015685619" name="move_to_empty_cell">"Pindahkan ke baris <ns1:g id="NUMBER_0">%1$s</ns1:g> kolom <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="6295412897075147808" name="move_to_hotseat_position">"Pindahkan ke posisi favorit <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6750008980455459790" name="move_to_position">"PIndahkan ke posisi <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6898038085516271325" name="msg_disabled_by_admin">"Dinonaktifkan oleh admin"</string>
+    <string msgid="281113995110910548" name="msg_missing_notification_access">"Guna menampilkan Titik Notifikasi, aktifkan notifikasi aplikasi untuk <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="9208659281529857371" name="msg_no_phone_permission">"<ns1:g id="APP_NAME">%1$s</ns1:g> tidak diizinkan untuk melakukan panggilan telepon"</string>
+    <string name="mtrl_badge_numberless_content_description">Notifikasi baru</string>
+    <string name="mtrl_chip_close_icon_content_description">Menghapus %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Lebih dari %1$d notifikasi baru</string>
+    <string name="mtrl_picker_a11y_next_month">Ubah ke bulan berikutnya</string>
+    <string name="mtrl_picker_a11y_prev_month">Ubah ke bulan sebelumnya</string>
+    <string name="mtrl_picker_announce_current_selection">Pilihan saat ini: %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Pilih Tanggal</string>
+    <string name="mtrl_picker_date_header_unselected">Tanggal yang dipilih</string>
+    <string name="mtrl_picker_day_of_week_column_header">Kolom hari: %1$s</string>
+    <string name="mtrl_picker_invalid_format">Format tidak valid.</string>
+    <string name="mtrl_picker_invalid_format_example">Contoh: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Gunakan: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Rentang tidak valid.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Buka tahun %1$s</string>
+    <string name="mtrl_picker_out_of_range">Di luar rentang: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Tanggal mulai – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – Tanggal akhir</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Pilih Rentang</string>
+    <string name="mtrl_picker_range_header_unselected">Tanggal mulai – Tanggal akhir</string>
+    <string name="mtrl_picker_save">Simpan</string>
+    <string name="mtrl_picker_text_input_date_hint">Tanggal</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Tanggal akhir</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Tanggal mulai</string>
+    <string name="mtrl_picker_text_input_day_abbr">h</string>
+    <string name="mtrl_picker_text_input_month_abbr">b</string>
+    <string name="mtrl_picker_text_input_year_abbr">t</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Beralih ke mode masukan kalender</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Ketuk untuk beralih ke memilih hari</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Beralih ke mode masukan teks</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Ketuk untuk beralih ke memilih tahun</string>
+    <string msgid="542007171693138492" name="navigation_menu">"Menu navigasi"</string>
+    <string msgid="6610465462668679431" name="not_selected">"Tidak dipilih"</string>
+    <string msgid="478774118347071097" name="not_set">"Belum disetel"</string>
+    <string msgid="6002233469409822874" name="notification_dismissed">"Notifikasi ditutup"</string>
+    <string msgid="1760796511504341095" name="notification_dots_desc_off">"Nonaktif"</string>
+    <string msgid="1679848116452218908" name="notification_dots_desc_on">"Aktif"</string>
+    <string msgid="4284221181793592871" name="notification_dots_service_title">"Tampilkan titik notifikasi"</string>
+    <string msgid="9062440428204120317" name="notification_dots_title">"Titik notifikasi"</string>
+    <string msgid="1404149926117359025" name="notifications_header">"Notifikasi"</string>
+    <string msgid="875452955155264703" name="off">"Nonaktif"</string>
+    <string msgid="8655164131929253426" name="on">"Aktif"</string>
+    <string msgid="4691004494942118364" name="out_of_space">"Tidak ada ruang lagi pada layar Utama ini."</string>
+    <string msgid="7592128424511031410" name="package_state_unknown">"Tidak dikenal"</string>
+    <string name="password_toggle_content_description">Tampilkan sandi</string>
+    <string msgid="923466509822011139" name="permdesc_install_shortcut">"Mengizinkan aplikasi menambahkan pintasan tanpa campur tangan pengguna."</string>
+    <string msgid="5833423719057558387" name="permdesc_read_settings">"Mengizinkan aplikasi membaca setelan dan pintasan di layar Utama."</string>
+    <string msgid="5440712911516509985" name="permdesc_write_settings">"Mengizinkan aplikasi mengubah setelan dan pintasan di layar Utama."</string>
+    <string msgid="5632423390354674437" name="permlab_install_shortcut">"memasang pintasan"</string>
+    <string msgid="1941457408239617576" name="permlab_read_settings">"membaca setelan dan pintasan layar Utama"</string>
+    <string msgid="3574213698004620587" name="permlab_write_settings">"menulis setelan dan pintasan layar Utama"</string>
+    <string msgid="4196423321649756498" name="pin_prediction">"Pin Prediksi"</string>
+    <string msgid="8064208734425456485" name="place_automatically">"Tambahkan otomatis"</string>
+    <string msgid="7961817945132860002" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" disalin ke papan klip."</string>
+    <string msgid="48863056265284071" name="recent_task_option_freeform">"Format bebas"</string>
+    <string msgid="7929860679018978258" name="recent_task_option_pin">"Pasang pin"</string>
+    <string msgid="5353188922202653570" name="recent_task_option_split_screen">"Layar terpisah"</string>
+    <string msgid="5328176793634888831" name="recents_clear_all">"Hapus semua"</string>
+    <string msgid="7040467240571714191" name="recents_empty_message">"Tidak ada item yang baru dibuka"</string>
+    <string msgid="1383965239183576790" name="remote_action_failed">"Gagal: <ns1:g id="WHAT">%1$s</ns1:g>"</string>
+    <string msgid="7812859488053230776" name="remove_drop_target_label">"Hapus"</string>
+    <string msgid="9160126848219158407" name="safemode_shortcut_error">"Aplikasi yang didownload dinonaktifkan dalam mode Aman"</string>
+    <string msgid="4863470563535682004" name="safemode_widget_error">"Widget dinonaktifkan dalam mode Aman"</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Telusuri"</string>
+    <string msgid="6043586758067023" name="selected">"Dipilih"</string>
+    <string msgid="8873672322605444408" name="settings_button_text">"Setelan layar utama"</string>
+    <string msgid="2536503539825726397" name="shortcut_not_available">"Pintasan tidak tersedia"</string>
+    <string msgid="2676582286544232849" name="shortcuts_menu_with_notifications_description">"Pintasan dan notifikasi"</string>
+    <string msgid="4722015666335015336" name="shorter_duration_less_than_one_minute">"&lt; 1 menit"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="4342122323125579619" name="styles_wallpaper_button_text">"Gaya &amp; wallpaper"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="1672349317127674378" name="tab">"Tab"</string>
+    <string msgid="4479688746574672685" name="task_contents_description_with_remaining_time">"<ns1:g id="TASK_DESCRIPTION">%1$s</ns1:g>, <ns1:g id="REMAINING_TIME">%2$s</ns1:g>"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> persen."</string>
+    <string msgid="3111996412933644358" name="time_left_for_app">"<ns1:g id="TIME">%1$s</ns1:g> tersisa hari ini"</string>
+    <string msgid="4185902664111965088" name="title_app_suggestions">"Saran aplikasi"</string>
+    <string msgid="1376365968844349552" name="title_change_settings">"Ubah setelan"</string>
+    <string msgid="7503287056163941064" name="title_missing_notification_access">"Perlu akses notifikasi"</string>
+    <string msgid="4151576204245173321" name="undo">"Urungkan"</string>
+    <string msgid="4722034217958379417" name="uninstall_drop_target_label">"Uninstal"</string>
+    <string msgid="4172046090762920660" name="uninstall_system_app_text">"Ini adalah aplikasi sistem dan tidak dapat dicopot pemasangannya."</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"NONAKTIF"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"AKTIF"</string>
+    <string msgid="8404103075899945851" name="wallpaper_button_text">"Wallpaper"</string>
+    <string msgid="3640149169885301790" name="widget_accessible_dims_format">"lebar %1$d x tinggi %2$d"</string>
+    <string msgid="2880537293434387943" name="widget_button_text">"Widget"</string>
+    <string msgid="2370757736025621599" name="widget_dims_format">"%1$d × %2$d"</string>
+    <string msgid="9130327887929620" name="widget_resized">"Widget diubah ukurannya menjadi lebar <ns1:g id="NUMBER_0">%1$s</ns1:g> tinggi <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="2904559530954183366" name="widgets_bottom_sheet_title">"Widget <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="796804551140113767" name="widgets_list">"Daftar widget"</string>
+    <string msgid="6141506579418771922" name="widgets_list_closed">"Daftar widget ditutup"</string>
+    <string msgid="2197210494568696054" name="work_apps_paused_body">"Aplikasi kerja tidak dapat mengirimi Anda notifikasi, menggunakan baterai, atau mengakses lokasi Anda"</string>
+    <string msgid="7553586952985486433" name="work_apps_paused_content_description">"Profil kerja dijeda. Aplikasi kerja tidak dapat mengirimi Anda notifikasi, menggunakan baterai, atau mengakses lokasi Anda"</string>
+    <string msgid="2389865654362803723" name="work_apps_paused_title">"Profil kerja dijeda"</string>
+    <string msgid="3753320833950115786" name="work_folder_name">"Kantor"</string>
+    <string msgid="6069788082535149071" name="work_profile_edu_accept">"Oke"</string>
+    <string msgid="8783418929296503629" name="work_profile_edu_next">"Berikutnya"</string>
+    <string msgid="4155536355149317441" name="work_profile_edu_personal_apps">"Data pribadi terpisah &amp; tersembunyi dari aplikasi kerja"</string>
+    <string msgid="237051938268703058" name="work_profile_edu_work_apps">"Aplikasi &amp; data kerja terlihat oleh admin IT"</string>
+    <string msgid="3081029915775481146" name="work_profile_toggle_label">"Profil kerja"</string>
+    <string msgid="808075064383839144" name="work_switch_tip">"Jeda notifikasi dan aplikasi kerja"</string>
+    <string msgid="257366611030256142" name="workspace_new_page">"Halaman layar utama baru"</string>
+    <string msgid="8458889198184077399" name="workspace_scroll_format">"Layar utama %1$d dari %2$d"</string>
+</resources>

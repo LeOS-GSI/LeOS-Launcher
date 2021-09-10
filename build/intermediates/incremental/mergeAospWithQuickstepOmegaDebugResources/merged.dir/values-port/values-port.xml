@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="abc_action_bar_embed_tabs">false</bool>
+    <string name="tb_window_size_half_left">Half screen (top)</string>
+    <string name="tb_window_size_half_right">Half screen (bottom)</string>
+</resources>

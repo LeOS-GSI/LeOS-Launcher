@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="tb_pref_display_density_list">
+        <item>Default</item>
+        <item>Recommended (160dpi)</item>
+        <item>High-density (320dpi)</item>
+    </string-array>
+    <string-array name="tb_pref_display_density_list_alt">
+        <item>Recommended (160dpi)</item>
+        <item>High-density (320dpi)</item>
+    </string-array>
+    <string-array name="tb_pref_position_list">
+        <item>Lewy dolny (poziomo)</item>
+        <item>Lewy dolny (pionowo)</item>
+        <item>Prawy dolny (poziomo)</item>
+        <item>Prawy dolny (pionowo)</item>
+        <item>Lewy górny (poziomo)</item>
+        <item>Lewy górny (pionowo)</item>
+        <item>Prawy górny (poziomo)</item>
+        <item>Prawy górny (pionowo)</item>
+    </string-array>
+    <string-array name="tb_pref_recents_amount">
+        <item>Aplikacje używane w ciągu ostatniego dnia</item>
+        <item>Aplikacje używane po uruchomieniu Taskbar</item>
+        <item>Wszystkie aplikacje (może zmniejszyć wydajność)</item>
+    </string-array>
+    <string-array name="tb_pref_recents_amount_alt">
+        <item>Aplikacje używane w ciągu ostatniego dnia</item>
+        <item>Aplikacje używane po uruchomieniu Taskbar</item>
+        <item>Wszystkie aplikacje (może zmniejszyć wydajność)</item>
+        <item>Tylko uruchomione aplikacje</item>
+    </string-array>
+    <string-array name="tb_pref_show_search_bar_list">
+        <item>Klawiatura sprzętowa lub programowa</item>
+        <item>Tylko klawiatura sprzętowa</item>
+        <item>Nigdy nie pokazuj paska wyszukiwania</item>
+    </string-array>
+    <string-array name="tb_pref_sort_order">
+        <item>Ostatnio używane (malejąco)</item>
+        <item>Ostatnio używane (rosnąco)</item>
+        <item>Najczęściej używane (malejąco)</item>
+        <item>Najczęściej używane (rosnąco)</item>
+    </string-array>
+    <string-array name="tb_pref_sort_order_alt">
+        <item>Ostatnio uruchomione (malejąco)</item>
+        <item>Ostatnio uruchomione (rosnąco)</item>
+    </string-array>
+    <string-array name="tb_pref_start_menu_list">
+        <item>Siatka</item>
+        <item>Lista</item>
+    </string-array>
+    <string-array name="tb_pref_theme_list">
+        <item>Jasny</item>
+        <item>Ciemny</item>
+    </string-array>
+    <plurals formatted="false" msgid="5194538107138265416" name="dotted_app_label">
+      <item quantity="few"><ns1:g id="APP_NAME_2">%1$s</ns1:g> – <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> powiadomienia</item>
+      <item quantity="many"><ns1:g id="APP_NAME_2">%1$s</ns1:g> – <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> powiadomień</item>
+      <item quantity="other"><ns1:g id="APP_NAME_2">%1$s</ns1:g> – <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> powiadomienia</item>
+        <item quantity="one"><ns1:g id="APP_NAME_0">%1$s</ns1:g> – <ns1:g id="NOTIFICATION_COUNT_1">%2$d</ns1:g> powiadomienie</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d nowe powiadomienie</item>
+    <item quantity="few">%d nowe powiadomienia</item>
+    <item quantity="many">%d nowych powiadomień</item>
+    <item quantity="other">%d nowego powiadomienia</item>
+  </plurals>
+    <string msgid="7610119707847920412" name="abandoned_clean_this">"Usuń"</string>
+    <string msgid="3990027586878167529" name="abandoned_promise_explanation">"Aplikacja, której odpowiada ta ikona, nie jest zainstalowana. Możesz usunąć ikonę lub wyszukać aplikację i zainstalować ją ręcznie."</string>
+    <string msgid="7096178467971716750" name="abandoned_promises_title">"Ta aplikacja nie jest zainstalowana"</string>
+    <string msgid="891119232568284442" name="abandoned_search">"Szukaj"</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Przejdź na stronę główną"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Przejdź wyżej"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Więcej opcji"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Gotowe"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Pokaż wszystko"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Wybierz aplikację"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"WYŁ."</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"WŁ."</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Funkcyjny+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"spacja"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Szukaj…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Wyczyść zapytanie"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Zapytanie"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Szukaj"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Wyślij zapytanie"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Wyszukiwanie głosowe"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Udostępnij przez:"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Udostępnij przez: <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Zwiń"</string>
+    <string msgid="6312864233673544149" name="accessibility_app_usage_settings">"Ustawienia użycia aplikacji"</string>
+    <string msgid="2277148124685870734" name="accessibility_close">"Zamknij"</string>
+    <string msgid="4058661986695117371" name="accessibility_recent_apps">"Ostatnie aplikacje"</string>
+    <string msgid="8902165848117513641" name="action_add_to_workspace">"Dodaj do ekranu głównego"</string>
+    <string msgid="282377193880900022" name="action_decrease_height">"Zmniejsz wysokość"</string>
+    <string msgid="1374549771083094654" name="action_decrease_width">"Zmniejsz szerokość"</string>
+    <string msgid="2864038805849372848" name="action_deep_shortcut">"Skróty"</string>
+    <string msgid="5909461085055959187" name="action_dismiss_notification">"Zamknij"</string>
+    <string msgid="459390020612501122" name="action_increase_height">"Zwiększ wysokość"</string>
+    <string msgid="8773715375078513326" name="action_increase_width">"Zwiększ szerokość"</string>
+    <string msgid="4339390619886385032" name="action_move">"Przenieś element"</string>
+    <string msgid="2170188780612570250" name="action_move_here">"Przenieś element tutaj"</string>
+    <string msgid="1603837886334246317" name="action_move_to_workspace">"Przenieś na ekran główny"</string>
+    <string msgid="1802976324781771067" name="action_resize">"Zmień rozmiar"</string>
+    <string msgid="8171125848358142917" name="action_screenshot">"Zrzut ekranu"</string>
+    <string msgid="2648470652637092375" name="action_share">"Udostępnij"</string>
+    <string msgid="7456344436509528827" name="activity_not_available">"Aplikacja niedostępna"</string>
+    <string msgid="8071924732094499514" name="activity_not_found">"Aplikacja nie jest zainstalowana."</string>
+    <string msgid="5899764264480397019" name="add_item_request_drag_hint">"Kliknij i przytrzymaj, by umieścić ręcznie"</string>
+    <string msgid="9040534766770853243" name="add_to_folder">"Dodaj do folderu: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4534929978967147231" name="add_to_folder_with_app">"Dodaj do folderu z: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4793259502305558003" name="added_to_folder">"Element został dodany do folderu"</string>
+    <string msgid="8130441508702294465" name="all_apps_button_label">"Lista aplikacji"</string>
+    <string msgid="1315764287305224468" name="all_apps_button_personal_label">"Lista aplikacji osobistych"</string>
+    <string msgid="7270707118948892488" name="all_apps_button_work_label">"Lista aplikacji do pracy"</string>
+    <string msgid="252062713717058851" name="all_apps_home_button_label">"Ekran główny"</string>
+    <string msgid="8542784161730910663" name="all_apps_label">"Wszystkie aplikacje"</string>
+    <string msgid="5813968043155271636" name="all_apps_loading_message">"Ładuję aplikacje…"</string>
+    <string msgid="3200346862396363786" name="all_apps_no_search_results">"Nie znaleziono aplikacji pasujących do zapytania „<ns1:g id="QUERY">%1$s</ns1:g>”"</string>
+    <string msgid="4190252696685155002" name="all_apps_personal_tab">"Osobiste"</string>
+    <string msgid="2672336544844936186" name="all_apps_prediction_tip">"Przewidywane aplikacje"</string>
+    <string msgid="1390553134053255246" name="all_apps_search_bar_hint">"Wyszukaj aplikacje"</string>
+    <string msgid="1366263386197059176" name="all_apps_search_market_message">"Wyszukaj więcej aplikacji"</string>
+    <string msgid="4884822796154055118" name="all_apps_work_tab">"Służbowe"</string>
+    <string msgid="8662546029078692509" name="allow_rotation_desc">"Po obróceniu telefonu"</string>
+    <string msgid="7728578836261442095" name="allow_rotation_title">"Zezwalaj na obrót ekranu głównego"</string>
+    <string msgid="8336702962104482644" name="app_downloading_title">"Pobieranie elementu <ns1:g id="NAME">%1$s</ns1:g>, ukończono: <ns1:g id="PROGRESS">%2$s</ns1:g>"</string>
+    <string msgid="692894985365717661" name="app_info_drop_target_label">"O aplikacji"</string>
+    <string msgid="649227358658669779" name="app_name">"Launcher3"</string>
+    <string msgid="7053938513995617849" name="app_waiting_download_title">"<ns1:g id="NAME">%1$s</ns1:g> oczekuje na instalację"</string>
+    <string msgid="7117251166066978730" name="auto_add_shortcuts_description">"W przypadku nowych aplikacji"</string>
+    <string msgid="3698776050751790653" name="auto_add_shortcuts_label">"Dodaj ikony aplikacji do ekranu głównego"</string>
+    <string msgid="2071401072261365546" name="blocked_by_policy">"Nie możesz wykonać tego działania, bo nie zezwala na to aplikacja lub Twoja organizacja"</string>
+    <string name="bottomsheet_action_expand_halfway">Rozwiń do połowy</string>
+    <string name="character_counter_content_description">%1$d z %2$d znaków</string>
+    <string name="character_counter_overflowed_content_description">Przekroczono limit znaków (%1$d z %2$d)</string>
+    <string name="clear_text_end_icon_content_description">Wyczyść tekst</string>
+    <string msgid="406453423630273620" name="close_drawer">"Zamknij menu nawigacyjne"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"Zamknij arkusz"</string>
+    <string msgid="3209159573327985035" name="copy">"Kopiuj"</string>
+    <string name="cpv_custom">Dostosuj</string>
+    <string name="cpv_default_title">Wybierz kolor</string>
+    <string name="cpv_presets">Kolory domyślne</string>
+    <string name="cpv_select">Wybierz</string>
+    <string name="cpv_transparency">Przezroczystość</string>
+    <string msgid="4050141361160214248" name="create_folder_with">"Utwórz folder z: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="3747508247759093328" name="custom_actions">"Działania niestandardowe"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"Nieprawidłowe dane wejściowe"</string>
+    <string msgid="7475544710230993317" name="default_scroll_format">"Strona %1$d z %2$d"</string>
+    <string msgid="6673129024321402780" name="disabled_app_label">"Aplikacja <ns1:g id="APP_NAME">%1$s</ns1:g> jest wyłączona"</string>
+    <string msgid="3357562989568808658" name="dismiss_prediction_label">"Nie proponuj aplikacji"</string>
+    <string name="error_icon_content_description">Błąd</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Zaawansowane"</string>
+    <string name="exposed_dropdown_menu_content_description">Pokaż menu</string>
+    <string msgid="4100806530910930934" name="folder_closed">"Folder zamknięty"</string>
+    <string msgid="6409794597405184510" name="folder_created">"Folder został utworzony"</string>
+    <string msgid="5174843001373488816" name="folder_hint_text">"Edytuj nazwę"</string>
+    <string msgid="8626242716117004803" name="folder_name_format_exact">"Folder: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> elementy"</string>
+    <string msgid="4270108890534995199" name="folder_name_format_overflow">"Folder: <ns1:g id="NAME">%1$s</ns1:g>, liczba elementów: <ns1:g id="SIZE">%2$d</ns1:g> lub więcej"</string>
+    <string msgid="94695026776264709" name="folder_opened">"Folder otwarty, <ns1:g id="WIDTH">%1$d</ns1:g> na <ns1:g id="HEIGHT">%2$d</ns1:g>"</string>
+    <string msgid="1794088362165669656" name="folder_renamed">"Nazwa folderu zmieniona na <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4625795376335528256" name="folder_tap_to_close">"Kliknij, by zamknąć folder"</string>
+    <string msgid="4017685068016979677" name="folder_tap_to_rename">"Kliknij, by zapisać nową nazwę"</string>
+    <string msgid="6081085226050792095" name="gadget_error_text">"Problem podczas ładowania widżetu"</string>
+    <string msgid="8274003207686040488" name="gadget_setup_text">"Konfiguracja"</string>
+    <string msgid="806512411299847073" name="home_screen">"Ekran główny"</string>
+    <string msgid="1506426298884658491" name="hotsaet_tip_prediction_disabled">"Sugestie aplikacji są wyłączone"</string>
+    <string msgid="2233554377501347650" name="hotsaet_tip_prediction_enabled">"Włączono sugestie aplikacji"</string>
+    <string msgid="522100018967146807" name="hotseat_auto_enrolled">"Najczęściej używane aplikacje wyświetlają się tutaj i zmieniają się w zależności od rutyny"</string>
+    <string msgid="1611544083278999837" name="hotseat_edu_accept">"Otrzymuj sugestie aplikacji"</string>
+    <string msgid="2781161822780201689" name="hotseat_edu_dismiss">"Nie, dziękuję"</string>
+    <string msgid="8927179260533775320" name="hotseat_edu_message_migrate">"Łatwo uruchamiaj najczęściej używane aplikacje z ekranu głównego. Sugestie będą zmieniać się w zależności od Twoich nawyków. Aplikacje z dolnych wierszy będą przesuwane w górę, do ekranu głównego."</string>
+    <string msgid="3042360119039646356" name="hotseat_edu_message_migrate_alt">"Korzystaj z najczęściej używanych aplikacji na ekranie głównym w łatwy sposób. Sugestie będą się zmieniać na podstawie Twojej rutyny. Aplikacje z dolnych wierszy będą się przenosić do nowego folderu."</string>
+    <string msgid="4248943380443387697" name="hotseat_edu_message_migrate_landscape">"Zyskaj łatwy dostęp do najczęściej używanych aplikacji na ekranie głównym. Sugestie będą się zmieniać na podstawie Twojej rutyny. Aplikacje z wiersza ulubionych zostaną przeniesione na ekran główny."</string>
+    <string msgid="306578144424489980" name="hotseat_edu_title_migrate">"Otrzymuj sugestie aplikacji w dolnym wierszu ekranu głównego"</string>
+    <string msgid="3633942953997845243" name="hotseat_edu_title_migrate_landscape">"Otrzymuj sugestie aplikacji w wierszu ulubionych na ekranie głównym"</string>
+    <string msgid="7448809638125333693" name="hotseat_out_of_space">"Brak miejsca w Ulubionych"</string>
+    <string msgid="4582028296938078419" name="hotseat_prediction_content_description">"Przewidywana aplikacja: <ns1:g id="TITLE">%1$s</ns1:g>"</string>
+    <string msgid="6246554993566070818" name="hotseat_prediction_settings">"Ustawienia"</string>
+    <string msgid="3035673010274223538" name="hotseat_tip_gaps_filled">"Sugestie aplikacji dodane w pustym obszarze"</string>
+    <string msgid="1325212677738179185" name="hotseat_tip_no_empty_slots">"Przeciągnij aplikacje z dolnego wiersza, aby otrzymać sugestie aplikacji"</string>
+    <string name="icon_content_description">Ikona okna</string>
+    <string msgid="6827826412747255547" name="in_progress">"W toku"</string>
+    <string msgid="2486394087603402002" name="indeterminate">"Ani nie zaznaczono, ani nie odznaczono"</string>
+    <string msgid="2539096853673231757" name="install_drop_target_label">"Zainstaluj"</string>
+    <string msgid="4211073925752213539" name="item_added_to_workspace">"Element został dodany do ekranu głównego"</string>
+    <string msgid="4606538322571412879" name="item_moved">"Element został przeniesiony"</string>
+    <string msgid="851119963877842327" name="item_removed">"Element został usunięty"</string>
+    <string name="item_view_role_description">Karta</string>
+    <string msgid="8531721983832654978" name="label_application">"Aplikacja"</string>
+    <string msgid="4289502106628154155" name="long_accessible_way_to_add">"Kliknij dwukrotnie i przytrzymaj, by wybrać widżet lub użyć działań niestandardowych."</string>
+    <string msgid="3327314059613154633" name="long_accessible_way_to_add_shortcut">"Kliknij dwukrotnie i przytrzymaj, by wybrać skrót lub użyć działań niestandardowych."</string>
+    <string msgid="4524750017792716791" name="long_press_shortcut_to_add">"Kliknij i przytrzymaj, by wybrać skrót."</string>
+    <string msgid="7699152356777458215" name="long_press_widget_to_add">"Aby dodać widżet, kliknij go i przytrzymaj."</string>
+    <string name="material_clock_toggle_content_description">Wybierz: przed południem czy po południu</string>
+    <string name="material_hour_selection">Wybierz godzinę</string>
+    <string name="material_hour_suffix">%1$s</string>
+    <string name="material_minute_selection">Wybierz minuty</string>
+    <string name="material_minute_suffix">%1$s minut</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Aby wprowadzić czas, włącz tryb zegara.</string>
+    <string name="material_timepicker_hour">Godzina</string>
+    <string name="material_timepicker_minute">Minuta</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Określ czas</string>
+    <string name="material_timepicker_text_input_mode_description">Aby wprowadzić czas, włącz tryb wprowadzania tekstu.</string>
+    <string msgid="2833711483015685619" name="move_to_empty_cell">"Przenieś do wiersza <ns1:g id="NUMBER_0">%1$s</ns1:g> w kolumnie <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="6295412897075147808" name="move_to_hotseat_position">"Przenieś do pozycji ulubionych: <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6750008980455459790" name="move_to_position">"Przenieś do pozycji <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6898038085516271325" name="msg_disabled_by_admin">"Funkcja wyłączona przez administratora"</string>
+    <string msgid="281113995110910548" name="msg_missing_notification_access">"Aby pokazać plakietki z powiadomieniami, włącz powiadomienia aplikacji <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="9208659281529857371" name="msg_no_phone_permission">"<ns1:g id="APP_NAME">%1$s</ns1:g> nie może wykonywać połączeń telefonicznych"</string>
+    <string name="mtrl_badge_numberless_content_description">Nowe powiadomienie</string>
+    <string name="mtrl_chip_close_icon_content_description">Usuń: (%1$s)</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Liczba nowych powiadomień przekracza %1$d</string>
+    <string name="mtrl_picker_a11y_next_month">Zmień na następny miesiąc</string>
+    <string name="mtrl_picker_a11y_prev_month">Zmień na poprzedni miesiąc</string>
+    <string name="mtrl_picker_announce_current_selection">Bieżący wybór: %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Wybierz datę</string>
+    <string name="mtrl_picker_date_header_unselected">Wybrana data</string>
+    <string name="mtrl_picker_day_of_week_column_header">Kolumna z dniami: %1$s</string>
+    <string name="mtrl_picker_invalid_format">Nieprawidłowy format.</string>
+    <string name="mtrl_picker_invalid_format_example">Przykład: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Użyj formatu: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Nieprawidłowy zakres.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Przejdź do roku %1$s</string>
+    <string name="mtrl_picker_out_of_range">Poza zakresem: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Data rozpoczęcia – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – data zakończenia</string>
+    <string name="mtrl_picker_range_header_selected">%1$s–%2$s</string>
+    <string name="mtrl_picker_range_header_title">Wybierz zakres</string>
+    <string name="mtrl_picker_range_header_unselected">Data rozpoczęcia – data zakończenia</string>
+    <string name="mtrl_picker_save">Zapisz</string>
+    <string name="mtrl_picker_text_input_date_hint">Data</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Data zakończenia</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Data rozpoczęcia</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">r</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Włącz kalendarzowy tryb wprowadzania</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Kliknij, by wybrać dzień</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Włącz tekstowy tryb wprowadzania</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Kliknij, by wybrać rok</string>
+    <string msgid="542007171693138492" name="navigation_menu">"Menu nawigacyjne"</string>
+    <string msgid="6610465462668679431" name="not_selected">"Nie wybrano"</string>
+    <string msgid="478774118347071097" name="not_set">"Nie ustawiono"</string>
+    <string msgid="6002233469409822874" name="notification_dismissed">"Powiadomienie odrzucone"</string>
+    <string msgid="1760796511504341095" name="notification_dots_desc_off">"Wyłączono"</string>
+    <string msgid="1679848116452218908" name="notification_dots_desc_on">"Włączono"</string>
+    <string msgid="4284221181793592871" name="notification_dots_service_title">"Pokaż plakietki z powiadomieniami"</string>
+    <string msgid="9062440428204120317" name="notification_dots_title">"Plakietki z powiadomieniami"</string>
+    <string msgid="1404149926117359025" name="notifications_header">"Powiadomienia"</string>
+    <string msgid="875452955155264703" name="off">"Wyłączono"</string>
+    <string msgid="8655164131929253426" name="on">"Włączono"</string>
+    <string msgid="4691004494942118364" name="out_of_space">"Brak miejsca na tym ekranie głównym."</string>
+    <string msgid="7592128424511031410" name="package_state_unknown">"Brak informacji"</string>
+    <string name="password_toggle_content_description">Pokaż hasło</string>
+    <string msgid="923466509822011139" name="permdesc_install_shortcut">"Pozwala aplikacji dodawać skróty bez interwencji użytkownika."</string>
+    <string msgid="5833423719057558387" name="permdesc_read_settings">"Pozwala aplikacji na odczytywanie ustawień i skrótów na ekranie głównym."</string>
+    <string msgid="5440712911516509985" name="permdesc_write_settings">"Umożliwia aplikacji zmianę ustawień i skrótów na ekranie głównym."</string>
+    <string msgid="5632423390354674437" name="permlab_install_shortcut">"instalowanie skrótów"</string>
+    <string msgid="1941457408239617576" name="permlab_read_settings">"odczytywanie ustawień i skrótów na ekranie głównym"</string>
+    <string msgid="3574213698004620587" name="permlab_write_settings">"zapisywanie ustawień i skrótów na ekranie głównym"</string>
+    <string msgid="4196423321649756498" name="pin_prediction">"Przypnij podpowiedź"</string>
+    <string msgid="8064208734425456485" name="place_automatically">"Dodaj automatycznie"</string>
+    <string msgid="7961817945132860002" name="preference_copied">"Skopiowano „<ns1:g id="SUMMARY">%1$s</ns1:g>” do schowka."</string>
+    <string msgid="48863056265284071" name="recent_task_option_freeform">"Tryb dowolny"</string>
+    <string msgid="7929860679018978258" name="recent_task_option_pin">"Przypnij"</string>
+    <string msgid="5353188922202653570" name="recent_task_option_split_screen">"Podziel ekran"</string>
+    <string msgid="5328176793634888831" name="recents_clear_all">"Wyczyść wszystko"</string>
+    <string msgid="7040467240571714191" name="recents_empty_message">"Brak ostatnich elementów"</string>
+    <string msgid="1383965239183576790" name="remote_action_failed">"Niepowodzenie: <ns1:g id="WHAT">%1$s</ns1:g>"</string>
+    <string msgid="7812859488053230776" name="remove_drop_target_label">"Usuń"</string>
+    <string msgid="9160126848219158407" name="safemode_shortcut_error">"Pobrana aplikacja została wyłączona w trybie awaryjnym"</string>
+    <string msgid="4863470563535682004" name="safemode_widget_error">"Widżety są wyłączone w trybie bezpiecznym"</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Szukaj"</string>
+    <string msgid="6043586758067023" name="selected">"Wybrano"</string>
+    <string msgid="8873672322605444408" name="settings_button_text">"Ustawienia ekranu głównego"</string>
+    <string msgid="2536503539825726397" name="shortcut_not_available">"Skrót nie jest dostępny"</string>
+    <string msgid="2676582286544232849" name="shortcuts_menu_with_notifications_description">"Skróty i powiadomienia"</string>
+    <string msgid="4722015666335015336" name="shorter_duration_less_than_one_minute">"> 1 min"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="4342122323125579619" name="styles_wallpaper_button_text">"Style i tapety"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="1672349317127674378" name="tab">"Karta"</string>
+    <string msgid="4479688746574672685" name="task_contents_description_with_remaining_time">"<ns1:g id="TASK_DESCRIPTION">%1$s</ns1:g>, <ns1:g id="REMAINING_TIME">%2$s</ns1:g>"</string>
+    <string name="tb_accessibility_service_description">"Taskbar musi być aktywowany jako usługa dostępnu, aby można było wykonać czynności, takie jak Powrót, Dom, Ostatnie i Zasilanie, a także wyświetlanie zasobnika powiadomień.
+
+Uprawnienie to jest używane tylko do wykonywania czynności naciśnięcia przycisku i w żadnym innym celu."</string>
+    <string name="tb_accessibility_service_summary">Umożliwia Taskbar wykonywanie czynności naciśnięcia przycisku</string>
+    <string name="tb_action_activate">Aktywuj</string>
+    <string name="tb_action_cancel">Anuluj</string>
+    <string name="tb_action_close">Zamknij</string>
+    <string name="tb_action_continue">Kontynuuj</string>
+    <string name="tb_action_developer_options">Otwórz opcje programisty</string>
+    <string name="tb_action_dont_show_again">"Nie pokazuj ponownie"</string>
+    <string name="tb_action_grant_permission">Udziel uprawnień</string>
+    <string name="tb_action_hide">Ukryj Taskbar</string>
+    <string name="tb_action_hide_alt">Ukryj</string>
+    <string name="tb_action_i_understand">Rozumiem</string>
+    <string name="tb_action_no_thanks">Nie, dziękuję</string>
+    <string name="tb_action_ok">OK</string>
+    <string name="tb_action_open_settings">@string/tb_action_grant_permission</string>
+    <string name="tb_action_quit">Wyjdź</string>
+    <string name="tb_action_reset">Resetuj</string>
+    <string name="tb_action_show">Pokaż Taskbar</string>
+    <string name="tb_action_show_alt">Pokaż</string>
+    <string name="tb_action_uninstall">Odinstaluj</string>
+    <string name="tb_action_view">View</string>
+    <string name="tb_add_icon_to_desktop">Dodaj ikonę do pulpitu</string>
+    <string name="tb_add_shortcut">Dodaj skrót do ekranu głównego</string>
+    <string name="tb_allow_freeform_mode">Launch app in freeform mode</string>
+    <string name="tb_already_blacklisted">"Nie można wybrać %1$s, ponieważ znajduje się na liście ukrytych aplikacji"</string>
+    <string name="tb_already_top_app">"Nie można wybrać %1$s, ponieważ znajduje się na liście popularnych aplikacji"</string>
+    <string name="tb_alt_button_config">Alternatywna pozycja przycisku zwijania</string>
+    <string name="tb_app_hidden">1 ukryta aplikacja</string>
+    <string name="tb_app_info">Informacje o aplikacji</string>
+    <string name="tb_app_name">Taskbar</string>
+    <string name="tb_app_name_debug">Taskbar (Debug)</string>
+    <string name="tb_app_shortcuts">Więcej akcji...</string>
+    <string name="tb_apply_icon_pack">Zastosuj pakiet ikon</string>
+    <string name="tb_apply_icon_pack_description">Zastosować \"%1$s\" do Taskbar?</string>
+    <string name="tb_apps_hidden">%1$d aplikacje ukryte</string>
+    <string name="tb_are_you_sure">Czy jesteś pewny?</string>
+    <string name="tb_arrange_icons">Przenieś ikony</string>
+    <string name="tb_arrange_icons_alt">Przenieś ikonę</string>
+    <string name="tb_auto_hide_navbar">Automatyczne sterowanie paskiem nawigacyjnym systemu</string>
+    <string name="tb_auto_hide_navbar_alt">Hide navbar while on desktop</string>
+    <string name="tb_auto_hide_navbar_description">Ukryj pasek nawigacyjny, gdy Taskbar jest aktywny i Pokaż go, gdy Taskbar jest nieaktywny</string>
+    <string name="tb_backing_up_settings">Backing up settings…</string>
+    <string name="tb_backup_failed">An error occurred when creating backup</string>
+    <string name="tb_backup_file_invalid">The backup file you selected is invalid. Please try again.</string>
+    <string name="tb_backup_restore_not_available">Backup and restore is not available on this device</string>
+    <string name="tb_backup_settings">Backup settings to file…</string>
+    <string name="tb_backup_successful">Backup successful</string>
+    <string name="tb_blacklist_dialog_title">Ukryta</string>
+    <string name="tb_block_app">Zablokuj z ostatnich</string>
+    <string name="tb_button_back">Poprzedni</string>
+    <string name="tb_button_home">Dom</string>
+    <string name="tb_button_recents">Ostatnie</string>
+    <string name="tb_change_wallpaper">Zmień tapetę</string>
+    <string name="tb_change_wallpaper_alt">@string/tb_change_wallpaper</string>
+    <string name="tb_clear_desktop_icons">Ikony pulpitu</string>
+    <string name="tb_clear_hidden_apps">Menu Start - Ukryte aplikacje</string>
+    <string name="tb_clear_pba">Przypięte/zablokowane Ostatnie aplikacje</string>
+    <string name="tb_clear_pinned_apps">Resetowanie preferencji dla każdej aplikacji</string>
+    <string name="tb_clear_qs_shortcuts">Quick settings tiles</string>
+    <string name="tb_clear_top_apps">Menu Start - Najlepsze aplikacje</string>
+    <string name="tb_clear_window_sizes">Zapisane rozmiary okien</string>
+    <string name="tb_click_to_add_widget">Kliknij, aby dodać widżet</string>
+    <string name="tb_click_to_open_settings">Kliknij, aby otworzyć ustawienia</string>
+    <string name="tb_color_picker_alpha">Kanał alfa</string>
+    <string name="tb_color_picker_blue">Niebieski</string>
+    <string name="tb_color_picker_green">Zielony</string>
+    <string name="tb_color_picker_red">Czerwony</string>
+    <string name="tb_dashboard">Włącz obsługę widżetów</string>
+    <string name="tb_dashboard_description">Dodaj przycisk do Taskbar, który wyświetli widżety po naciśnięciu</string>
+    <string name="tb_dashboard_grid_size">Rozmiar siatki pulpitu widżetów</string>
+    <string name="tb_dashboard_tutorial">Kliknij w dowolnym miejscu ekranu, aby dodać widżet do pulpitu</string>
+    <string name="tb_density_custom">Custom (%ddpi)</string>
+    <string name="tb_density_default">Default (%ddpi)</string>
+    <string name="tb_desktop_mode_dialog_message">To configure your device for desktop mode, please follow these steps:\n\n• Go to Developer Options\n\n• Scroll to the bottom and turn on \"Enable freeform windows\" and \"Force desktop mode\"\n\n• Set Taskbar as your default home app\n\n• Reboot your device\n\nFor more information and troubleshooting steps, click the (?) icon in the upper-right hand corner of the screen.</string>
+    <string name="tb_desktop_mode_dialog_title">Enable desktop mode support</string>
+    <string name="tb_desktop_mode_help"><b>About desktop mode</b>\n\nTaskbar supports Android 10\'s built-in desktop mode functionality. You can connect your compatible Android 10+ device to an external display and run apps in resizable windows, with Taskbar\'s interface running on your external display and your existing launcher still running on your phone.\n\nDesktop mode requires a USB-to-HDMI adapter (or a lapdock), and a compatible device that supports video output. Additionally, certain settings require granting a special permission via adb.\n\nTo get started, tick the checkbox for \"Desktop mode.\" The app will guide you through the one-time setup process, which involves:\n\n• Enabling the \"Enable freeform windows\" and \"Force desktop mode\" developer options\n\n• Setting Taskbar as your default home app\n\n• Rebooting your device\n\n<b>Why does Taskbar need to be set as my default home app for desktop mode to work?</b>\n\nBy design, Android will only allow the default home app to act as the launcher for desktop mode on external displays.  If the currently set home app does not specifically declare support for desktop mode, then Android will fall back to using a predefined desktop mode interface.\n\nTaskbar is able to work around this limitation by acting as a shim between the system and your preferred launcher.  When Taskbar is set as your home app, when the home button is pressed it will immediately start the launcher you prefer to use on your phone, then quit.  This launcher is set within Taskbar\'s desktop mode preferences by clicking on the \"Primary launcher\" setting.\n\nThere are a couple of caveats to keep in mind when Taskbar is set as your home app:\n\n• Most app shortcuts (seen when long-pressing an app icon) will no longer be available to your primary launcher.  This is due to an Android system limitation where only the default home app has access to app shortcuts that are dynamically created.\n\n• Certain animations that occur when pressing the home button may look incorrect.  This is due to the aforementioned behavior where Taskbar acts as a shim when the home button is pressed.\n\n<b>How do I know if my device supports video output to external displays?</b>\n\nThe folks over at NexDock maintain a list of Android 10+ smartphones that are compatible with USB-to-HDMI video output (this list excludes Samsung and Huawei devices).  You can view this list here: http://nexdock.com/lapdock-for-smartphones\n\nGoogle Pixel devices, notably, do not include support for video output.  However, you can still use Taskbar with standard screen mirroring on these devices, either via Chromecast or by using a DisplayLink dock coupled with the DisplayLink Presenter app.\n\n<b>Should I use Taskbar\'s desktop mode over my device\'s built-in desktop mode solution, such as Samsung DeX?</b>\n\nSome OEMs, such as Samsung and Huawei, have implemented their own version of desktop mode, building on top of Google\'s implementation in Android 10.  These solutions have better integration with the rest of the system and are generally more polished overall.  There is no need to switch over to Taskbar if you\'re happy with your device\'s existing desktop mode solution.\n\nTaskbar\'s desktop mode support is geared towards devices that don\'t offer a built-in desktop mode solution beyond what Google ships as stock with Android 10.\n\n<b>I can\'t find the \"Force desktop mode\" toggle in developer options – can I still use desktop mode?</b>\n\nSome devices (such as the ASUS ROG Phone 2) do not have the \"Force desktop mode\" toggle in developer options. You will need to enable that option manually via adb. To do so, connect your device to a computer with the Android SDK installed, and run the following command (one-line):\n\nadb shell settings put global force_desktop_mode_on_external_displays 1\n\n<b>What should I do if something goes wrong or my launcher / apps behave funky when desktop mode is enabled?</b>\n\nPlease follow these steps to disable desktop mode in case anything goes wrong:\n\n• Pull down the quick settings drawer, then enter system settings via the gear icon\n\n• Navigate to developer options and disable \"Enable freeform support\" and \"Force desktop mode\"\n\n• Reboot your device</string>
+    <string name="tb_desktop_mode_ime_fix">Desktop mode input method fix</string>
+    <string name="tb_desktop_mode_ime_fix_summary">Fixes visual glitches caused by input methods on Android 11. Requires you to temporarily set Taskbar as your input method each time desktop mode starts.</string>
+    <string name="tb_desktop_mode_ime_fix_title">Enable input method fix</string>
+    <string name="tb_desktop_mode_ime_fix_toast">Open desktop mode settings to enable a fix for visual glitches caused by input methods</string>
+    <string name="tb_desktop_mode_ime_fix_toast_alt">Start desktop mode first before enabling the input method fix</string>
+    <string name="tb_desktop_mode_is_active">Desktop mode is active</string>
+    <string name="tb_desktop_mode_pref_description">Use Taskbar to launch windowed apps on an external display, similar to Samsung DeX and other solutions.\n\nRequires either a USB-to-HDMI adapter, or a lapdock, and a device that supports video output.</string>
+    <string name="tb_desktop_mode_setup_complete">Launch Taskbar by clicking the home button on your external display.</string>
+    <string name="tb_dialog_donate_message">"Wspieraj rozwój Taskbar poprzez aktualizację do Wersji dla darczyńców dla %1$s!
+
+Wersja dla darczyńców jest identyczna z bezpłatną wersją, a Twoje preferencje zostaną automatycznie przeniesione.
+
+Taskbar jest i zawsze będzie w 100%% darmowy, open source, bez reklam. Jednak wasze wsparcie jest bardzo doceniane!"</string>
+    <string name="tb_disable_home_setting">Please disable the \"Replace home screen\" setting under \"Advanced features\" in order to use desktop mode.</string>
+    <string name="tb_disable_scrolling_list">Wyłącz przewijanie listy</string>
+    <string name="tb_display_density">Display density</string>
+    <string name="tb_double_tap_to_sleep">Dwukrotne stuknięcie w tryb uśpienia</string>
+    <string name="tb_enable_accessibility">@string/tb_accessibility_service_description</string>
+    <string name="tb_enable_additional_settings">Enable additional settings</string>
+    <string name="tb_enable_additional_settings_message_1">Taskbar can optionally use elevated permissions to improve your desktop mode experience. These permissions are granted by running an adb shell command.\n\nIf you wish to continue, connect your device to a computer with the Android SDK installed, and run the following command (one line):</string>
+    <string name="tb_enable_additional_settings_message_2">Once granted, the additional settings will be enabled when a display is connected.</string>
+    <string name="tb_enable_additional_settings_pref_description">Click here for info on how to enable</string>
+    <string name="tb_enable_developer_options">Włącz opcje programisty, stukając wersję 7 razy</string>
+    <string name="tb_enable_double_tap_to_sleep">Włączyć dwukrotne stuknięcie w  tryb uśpienia?</string>
+    <string name="tb_enable_force_activities_resizable">Przewiń do dołu i włącz \"%s\"</string>
+    <string name="tb_enable_recent_apps">"Na pasku zadań można opcjonalnie wyświetlać ikony ostatnio używanych aplikacji wzdłuż krawędzi ekranu. W tym celu %1$s wymaga uprawnień dostępu do użytkowania.
+
+"</string>
+    <string name="tb_enable_recent_apps_instructions_phone">Włączyć obsługę ostatnio używanych aplikacji?</string>
+    <string name="tb_enable_recent_apps_instructions_tv">To enable support for recent apps, press \"Open Settings\" to open the Android TV app settings menu. Select \"Special app access\", then select \"Usage access\" and ensure that Taskbar is enabled.</string>
+    <string name="tb_error_creating_widget">Error creating widget</string>
+    <string name="tb_error_dialog_message">"Niestety, z powodu ograniczeń OEM, funkcja ta nie może być włączona w urządzeniu.
+
+Nadal możesz być w stanie ją włączyć za pomocą tego polecenia powłoki adb:
+
+appops set %1$s %2$s allow"</string>
+    <string name="tb_error_dialog_title">Błąd</string>
+    <string name="tb_error_reading_custom_start_image">Błąd odczytu obrazu niestandardowego dla menu startowego. Spróbuj innego pliku.</string>
+    <string name="tb_essential_phone_grip_rejection">Na Essential Phone, wyłącz odrzucenie uchwytu (w opcjach programisty), aby pomóc w otwarciu/zamknięciu Taskbar</string>
+    <string name="tb_file_manager">Menedżer plików</string>
+    <string name="tb_filepicker_install_file_manager">Proszę zainstalować Menedżera plików.</string>
+    <string name="tb_filepicker_select_an_image_file">Wybierz plik obrazu</string>
+    <string name="tb_force_activities_resizable">Wymusić działanie zmienny rozmiaru</string>
+    <string name="tb_freeform_dialog_message">"Aby pasek zadań mógł uruchamiać aplikacje w trybie Freeform, należy wykonać następujące kroki:
+
+• Przejdź do Opcji Programisty
+
+• Przewiń do dołu i włącz \"%s\"
+
+• Zrestartuj urządzenie"</string>
+    <string name="tb_freeform_dialog_message_alt">"Aby Taskbar mógł uruchamiać aplikacje w trybie Freeform, postępuj zgodnie z poniższymi krokami:
+
+- Przejdź do opcji dla programistów i włącz debugowanie USB.
+
+- Podłącz urządzenie do komputera z zainstalowanym pakietem Android SDK i wykonaj następujące polecenie (jedna linia):
+
+adb shell settings put global enable_freeform_support 1
+
+- Zrestartuj urządzenie"</string>
+    <string name="tb_freeform_dialog_title">Włącz obsługę Freeform</string>
+    <string name="tb_freeform_help_dialog_message">"Tryb freeform (swobodne okna)
+
+Pasek zadań umożliwia uruchamianie aplikacji w dowolnych ruchomych oknach na urządzeniach z Androidem 7.0 lub więcej. Nie jest wymagany dostęp do root, chociaż urządzenia z systemem Android 8,0, 8,1 i 9 wymagają polecenia powłoki ADB do uruchomienia podczas wstępnej konfiguracji.
+
+Po prostu wykonaj następujące kroki, aby skonfigurować urządzenie do uruchamiania aplikacji w trybie Freeform:
+
+1. Zaznacz pole dla \"Obsługa okien Freeform\" wewnątrz aplikacji Taskbar
+
+2. Postępuj zgodnie ze wskazówkami wyświetlanymi w oknie podręcznym, aby włączyć odpowiednie ustawienia w urządzeniu (jednorazowa konfiguracja)
+
+3. Przejdź do strony ostatnich aplikacji na urządzeniu i wyczyść wszystkie ostatnie aplikacje
+
+4. Uruchom Taskbar, a następnie wybierz aplikację, aby ją uruchomić w oknie freeform (swobodne okno)
+
+Aby uzyskać najlepsze wyniki, zwłaszcza w systemie Android 8,0 i 8,1, uruchom ponownie urządzenie przed użyciem trybu freeform
+
+Ustawienia predefiniowane rozmiaru okna
+
+Pasek zadań może uruchamiać okna aplikacji w różnych predefiniowanych rozmiarach. Możesz wybrać rozmiar okna przez długie naciśnięcie lub kliknięcie prawym przyciskiem myszy ikony aplikacji i wybranie \"nowe okno.\"
+
+Aby zapisać predefiniowany rozmiar okna dla konkretnej aplikacji, po prostu naciśnij i przytrzymaj preset, a pojawi się znacznik wyboru wskazujący, że jest ustawiony jako domyślny. Pasek zadań uruchomi aplikację przy użyciu tego wybranego rozmiaru po kolejnym uruchomieniu.
+
+Pamiętaj, że rozmiary okien nie działają poprawnie na Androidzie 8,0 i 8,1. Jednak można obejść to, uruchamiając aplikację, i natychmiast zamykając ją, a następnie uruchamiając ją ponownie z menu przeglądnia Androida.
+
+Rozwiązywanie problemów
+
+• Aplikacje nadal uruchomić na pełnym ekranie
+
+Jeśli aplikacja jest uruchomiona, która jest już załadowana do pamięci, pasek zadań przyniesie ją na pierwszy plan. W celu uruchomienia aplikacji w trybie Freeform, musi być uruchomiona ze świeżego stanu.
+
+Przesuń aplikację z dala od Ostatnie, a następnie ponownie uruchom ją ze strony ostatnich aplikacji za pomocą Taskbar. Jeśli to nie zadziała, naciśnij długo ikonę aplikacji, wybierz \"informacje o aplikacji,\", a następnie Wymuś zatrzymanie aplikacji. Alternatywnie można ponownie uruchomić urządzenie.
+
+• Aplikacje, które są zmaksymalizowane, nie mogą zostać przywrócone do okna
+
+Jeśli naciśniesz przycisk Maksymalizuj na pasku tytułowym aplikacji, Android przyniesie aplikację z trybu swobodnego i do trybu pełnoekranowego. Jak wspomniano powyżej, Taskbar może uruchamiać aplikacje tylko w oknach o swobodnym kształcie, jeśli są uruchamiane ze świeżego stanu.
+
+Aby rozwiązać ten problem, można zmaksymalizować okna, naciskając lub klikając tuż poza ramkę okna aplikacji. Spowoduje to rozwinięcie okna, aby wypełnić wszystkie dostępne miejsca, zachowując je w obszarze roboczym freeform.
+
+• Maksymalizacja systemu Windows nie działa na Androidzie 9
+
+Ta funkcjonalność wykracza poza kontrolę Taskbar i jest czymś, co Google musi naprawić na ich końcu. Jeśli chcesz zmaksymalizować okno na Androidzie 9, użyj \"zmaksymalizowanego\" rozmiaru okna.
+
+• Przejścia aplikacji nie wydają się działać prawidłowo, zwłaszcza na Androidzie 9
+
+Jest to również problem, który Google musi naprawić na ich końcu, jednak można obejść, wyłączając przejścia aplikacji.
+
+Możesz wyłączyć przejścia podczas uruchamiania aplikacji, przechodząc do ustawień ostatnich aplikacji na Taskbar i włączając opcję \"szybsze przełączanie aplikacji\". Alternatywnie można wyłączyć przejścia w całym systemie, przechodząc do opcji programisty i ustawiając \"Skala animacji przejścia\" na \"Animacja wyłączona.\""</string>
+    <string name="tb_freeform_help_dialog_title">Pomoc i instrukcje</string>
+    <string name="tb_freeform_off">Freeform wył.</string>
+    <string name="tb_freeform_on">Freeform włą.</string>
+    <string name="tb_full_length">Rozszerz obszar o białą przestrzeń</string>
+    <string name="tb_hide_icon_labels">Hide app icon labels</string>
+    <string name="tb_hide_taskbar_disclaimer">Nie dotyczy aplikacji w trybie Freeform</string>
+    <string name="tb_hsl_launcher_uninstalled">%1$s was uninstalled. Please select a different launcher from the list.</string>
+    <string name="tb_hsl_main_activity_text">Select your primary launcher from the list below. You can change this selection at any time from within Taskbar\'s desktop mode settings.</string>
+    <string name="tb_hsl_no_launchers_found">No primary launchers were found. Please download and install one, then try again.</string>
+    <string name="tb_icon_pack">Pakiet ikon</string>
+    <string name="tb_icon_pack_none">Brak</string>
+    <string name="tb_icon_preview">Icon preview</string>
+    <string name="tb_icon_preview_description">Use the slider to adjust the generated icon to your liking.</string>
+    <string name="tb_import_dialog_message">"Dziękujemy za zakup Wersji dla darczyńców Taskbar!
+
+Twoje ustawienia zostały pomyślnie zaimportowane i możesz teraz odinstalować darmową wersję aplikacji."</string>
+    <string name="tb_importing_settings">Importowanie ustawień... proszę czekać.</string>
+    <string name="tb_invalid_grid_size">Nieprawidłowy rozmiar siatki</string>
+    <string name="tb_invalid_package_name">Nieprawidłowa nazwa pakietu</string>
+    <string name="tb_invalid_shortcut">Invalid shortcut</string>
+    <string name="tb_launch_games_fullscreen_message">Jeśli aplikacja deklaruje, że jest grą, nie zezwala na jej uruchomienie w trybie Freeform.</string>
+    <string name="tb_launch_games_fullscreen_title">Uruchamianie gier na pełnym ekranie</string>
+    <string name="tb_loading_apps">Ładowanie aplikacji…</string>
+    <string name="tb_lock_device">Blokada urządzenia</string>
+    <string name="tb_lock_device_not_supported">Nieobsługiwane na tym urządzeniu</string>
+    <string name="tb_manage_app_data">Manage app data</string>
+    <string name="tb_manage_app_data_description">@string/tb_clear_pinned_apps</string>
+    <string name="tb_max_num_of_recents">%1$d aplikacji</string>
+    <string name="tb_max_num_of_recents_singular">1 aplikacja</string>
+    <string name="tb_max_num_of_recents_unlimited">Bez ograniczeń</string>
+    <string name="tb_must_specify_extra">Należy określić Intent.EXTRA_PACKAGE_NAME</string>
+    <string name="tb_navigation_bar_buttons">Przyciski paska nawigacyjnego</string>
+    <string name="tb_navigation_bar_buttons_description">Dodaj dodatkowe przyciski do Taskbar, które wykonują działania na pasku nawigacyjnym</string>
+    <string name="tb_new_shortcut">Launch app</string>
+    <string name="tb_no_freeform_support">Tryb Freeform nie jest włączony na urządzeniu – Otwórz Taskbar i włącz go najpierw</string>
+    <string name="tb_no_icon_packs_installed">Brak zainstalowanego pakietu ikon</string>
+    <string name="tb_no_icons_to_arrange">Brak ikon do ułożenia</string>
+    <string name="tb_no_icons_to_sort">Brak ikon do sortowania</string>
+    <string name="tb_nothing_to_see_here">Nie ma tu nic do zobaczenia, poruszaj się wzdłuż...</string>
+    <string name="tb_notification_settings">Ustawienia powiadomień systemowych</string>
+    <string name="tb_num_of_recents_blurb">"Przed zmianą tego ustawienia należy upewnić się, że dostęp do funkcji jest włączony.
+
+Wyższe wartości mogą zmniejszyć wydajność."</string>
+    <string name="tb_off">Wył</string>
+    <string name="tb_on">WŁ</string>
+    <string name="tb_open_taskbar_settings">Otwórz ustawienia</string>
+    <string name="tb_opening_notification_tray">Opened notification tray on primary display</string>
+    <string name="tb_opening_power_menu">Opened power menu on primary display</string>
+    <string name="tb_opening_quick_settings">Opened quick settings on primary display</string>
+    <string name="tb_opening_volume_control">Opened volume control on primary display</string>
+    <string name="tb_permission_dialog_instructions_phone">Proszę nacisnąć \"Udziel uprawnień\" i upewnij się, że \"Zezwalaj na rysowanie nad innymi aplikacjami\" jest włączone.</string>
+    <string name="tb_permission_dialog_instructions_tv">Please press \"Open Settings\" to open the Android TV app settings menu. Select \"Special app access\", then select \"Display over other apps\" and ensure that Taskbar is enabled.</string>
+    <string name="tb_permission_dialog_message">"%s wymaga uprawnienia do rysowania nad innymi aplikacjami.
+
+"</string>
+    <string name="tb_permission_dialog_title">Potrzebne jest pozwolenie</string>
+    <string name="tb_pin_app">Przypnij do ostatnich</string>
+    <string name="tb_pin_shortcut_not_supported">"Twój launcher nie obsługuje dodawania skrótów z innych aplikacji.
+
+Proszę ręcznie dodać skrót z menu launchera \"Widżety\""</string>
+    <string name="tb_power_button_warning_message">"Niestandardowe ROM oparte na CyanogenMod / LineageOS mają problem, gdy przycisk zasilania nie działa, gdy urządzenie znajduje się w trybie Freeform.
+
+Proszę przetestować przycisk zasilania teraz. Jeśli nie działa, zachowaj ostrożność podczas korzystania z trybu Freeform, ponieważ możesz stracić możliwość uaktywniania urządzenia ze stanu uśpienia, jeśli ekran ulegnie awarii."</string>
+    <string name="tb_power_button_warning_title">Uwaga</string>
+    <string name="tb_power_menu">Menu zasilania</string>
+    <string name="tb_powered_by_taskbar">Wspierane przez Taskbar</string>
+    <string name="tb_pref_about_description">"Taskbar: PC-style productivity for Android
+
+© %1$d Braden Farmer
+Logo aplikacji przez Mark Morilla
+
+Kliknij tutaj, aby sprawdzić aktualizacje lub pozostawić ocenę! %2$s"</string>
+    <string name="tb_pref_about_description_alt">"Taskbar: produktywność w stylu PC dla Androida
+
+© %1$d Braden Farmer
+Logo aplikacji Mark Morilla"</string>
+    <string name="tb_pref_centered_icons">Wyśrodkuj ikony w obrębie przestrzeni</string>
+    <string name="tb_pref_change_wallpaper_desktop">Apply to desktop only</string>
+    <string name="tb_pref_change_wallpaper_global">Apply to entire device</string>
+    <string name="tb_pref_description_chrome_os_context_menu_fix">Włącz tę opcję, jeśli korzystasz z Taskbar obok stacji dokującej Chrome OS</string>
+    <string name="tb_pref_description_enable_recents">Required for recent apps to appear</string>
+    <string name="tb_pref_description_force_new_window">Wymusza, aby aplikacja otwierała nowe okno za każdym razem, gdy jest wybierana z menu startowego lub ostatnich aplikacji (jeśli aplikacja pozwala na wiele okien).</string>
+    <string name="tb_pref_description_freeform_hack">"Umożliwia Taskbar uruchamiać aplikacje w trybie Freeform, aby uzyskać bardziej desktopowe wrażenia.
+
+Ta funkcja jest eksperymentalna i może powodować problemy ze standardową wielozadaniowością dzielonego ekranu."</string>
+    <string name="tb_pref_description_hide_when_keyboard_shown">Gdy klawiatura ekranowa jest wyświetlana</string>
+    <string name="tb_pref_description_keyboard_shortcut">"Start/stop Taskbar:   {fou_social-windows} + M   {fou_magnifying-glass} + M
+
+Pokaż menu Start:   {fou_social-windows}   {fou_magnifying-glass}
+(wymaga, aby Taskbar był ustawiony jako aplikacja pomocnicza w Ustawieniach)"</string>
+    <string name="tb_pref_description_keyboard_shortcut_alt">"Start/stop Taskbar
+• WinKey+M / Search+M
+
+Pokaż menu Start
+• WinKey / Search
+(wymaga, aby Taskbar był ustawiony jako aplikacja pomocnicza w Ustawieniach)"</string>
+    <string name="tb_pref_description_launcher">Użycie paska zadań jako zamiennika ekranu głównego</string>
+    <string name="tb_pref_description_save_window_sizes">Podczas otwierania nowych okien z menu kontekstowego</string>
+    <string name="tb_pref_description_sys_tray">Widoczne tylko, gdy pasek zadań jest poziomy</string>
+    <string name="tb_pref_description_use_mask">Może zmniejszać wydajność, gdy ustawiony jest pakiet ikon</string>
+    <string name="tb_pref_dim_screen_description">Press the home button to manually activate</string>
+    <string name="tb_pref_dim_screen_title">Lock and dim phone screen while active</string>
+    <string name="tb_pref_disable_animations">Szybsze przełączanie aplikacji</string>
+    <string name="tb_pref_header_about">O Taskbar</string>
+    <string name="tb_pref_header_advanced">Zaawansowane funkcje</string>
+    <string name="tb_pref_header_appearance">Wygląd</string>
+    <string name="tb_pref_header_desktop_mode">Desktop mode</string>
+    <string name="tb_pref_header_freeform">Tryb Freeform</string>
+    <string name="tb_pref_header_general">Ustawienia główne</string>
+    <string name="tb_pref_header_recent_apps">Ostatnie aplikacje</string>
+    <string name="tb_pref_max_num_of_recents">Maksymalna liczba ostatnich/przypiętych aplikacji</string>
+    <string name="tb_pref_notification_count_description">Requires notification access</string>
+    <string name="tb_pref_notification_count_title">Show notification count in status area</string>
+    <string name="tb_pref_remove_desktop_wallpaper">Use device wallpaper</string>
+    <string name="tb_pref_secondscreen_description">"Zmień rozdzielczość i zwartość urządzenia po podłączeniu go do zewnętrznego wyświetlacza w celu uzyskania wrażeń typu Continuum lub DeX-like."</string>
+    <string name="tb_pref_secondscreen_description_alt">@string/tb_pref_secondscreen_description</string>
+    <string name="tb_pref_secondscreen_title_install">Zainstaluj DrugiEkran</string>
+    <string name="tb_pref_secondscreen_title_open">Otwórz DrugiEkran</string>
+    <string name="tb_pref_summary_donate">Wspieraj rozwój Taskbar za pomocą niewielkiej darowizny, aktualizując go do wersji dla darczyńców</string>
+    <string name="tb_pref_summary_hide_foreground">Może obniżyć wydajność</string>
+    <string name="tb_pref_summary_tasker_enabled">Wyłącz dla poprawy bezpieczeństwa</string>
+    <string name="tb_pref_title_accent_color">Kolor wyróżnienia</string>
+    <string name="tb_pref_title_amount_of_recents">Ostatnie aplikacje do wyświetlania</string>
+    <string name="tb_pref_title_anchor">Zakotwiczenie Taskbar podczas obracania ekranu</string>
+    <string name="tb_pref_title_app_drawer_icon">Logo Taskbar</string>
+    <string name="tb_pref_title_app_drawer_icon_ag">%s logo</string>
+    <string name="tb_pref_title_background_tint">Barwa tła</string>
+    <string name="tb_pref_title_blacklist">Konfiguracja aplikacji w menu startowym</string>
+    <string name="tb_pref_title_chrome_os_context_menu_fix">Poprawka zgodności stacji dokującej Chrome OS</string>
+    <string name="tb_pref_title_donate">Darowizna</string>
+    <string name="tb_pref_title_enable_recents">Włącz/wyłącz dostęp do użytkowania</string>
+    <string name="tb_pref_title_force_new_window">Zawsze otwieraj aplikacje w nowych oknach</string>
+    <string name="tb_pref_title_freeform_hack">Wsparcie dla okien Freeform</string>
+    <string name="tb_pref_title_freeform_mode_help">Pomoc i instrukcje dla trybu freeform</string>
+    <string name="tb_pref_title_hide_foreground">Ukrywaj ikonę aplikacji na pierwszym planie</string>
+    <string name="tb_pref_title_hide_taskbar">Zwijaj pasek zadań po wybieraniu elementu</string>
+    <string name="tb_pref_title_hide_when_keyboard_shown">Automatycznie zwiń Taskbar</string>
+    <string name="tb_pref_title_invisible_button">Ukryj przycisk, gdy pasek zadań jest zwinięty</string>
+    <string name="tb_pref_title_keyboard_shortcut">Włącz skróty klawiaturowe</string>
+    <string name="tb_pref_title_launcher">Zastępowanie ekranu głównego</string>
+    <string name="tb_pref_title_position">Pozycja na ekranie</string>
+    <string name="tb_pref_title_recents_refresh_interval">Częstotliwość odświeżania</string>
+    <string name="tb_pref_title_save_window_sizes">Zawsze zapisuj rozmiary okien dla aplikacji</string>
+    <string name="tb_pref_title_scrollbar">Użyj paska szybkiego przewijania w menu start</string>
+    <string name="tb_pref_title_shortcut_icon">Pokaż ikonę skrótu dla przypiętych aplikacji</string>
+    <string name="tb_pref_title_sort_order">Kolejność sortowania</string>
+    <string name="tb_pref_title_start_button_image">Obraz przycisku Start</string>
+    <string name="tb_pref_title_start_menu_layout">Układ menu Start</string>
+    <string name="tb_pref_title_start_on_boot">Uruchom przy starcie</string>
+    <string name="tb_pref_title_sys_tray">Pokaż ikony stanu i zegar</string>
+    <string name="tb_pref_title_tasker_enabled">Zezwalaj na integrację z aplikacjami innych firm</string>
+    <string name="tb_pref_title_theme">Motyw</string>
+    <string name="tb_pref_title_use_mask">Użyj maski dla ikon nietematycznych</string>
+    <string name="tb_pref_title_window_size">Domyślny rozmiar okna</string>
+    <string name="tb_press_enter">"Nie znaleziono żadnych aplikacji
+
+Naciśnij ENTER, aby wyszukać za pomocą Google"</string>
+    <string name="tb_press_enter_alt">"Nie znaleziono żadnych aplikacji
+
+Naciśnij ENTER, aby otworzyć w przeglądarce"</string>
+    <string name="tb_primary_launcher">Primary launcher</string>
+    <string name="tb_quit_taskbar">Wyjdź</string>
+    <string name="tb_reboot_required">Zrestartuj urządzenie, aby ukończyć konfigurację trybu Freeform</string>
+    <string name="tb_reboot_required_alt">Reboot your device to complete desktop mode setup</string>
+    <string name="tb_refresh_frequency">%1$s sekundy</string>
+    <string name="tb_refresh_frequency_blurb">"Upewnij się, że dostęp do użycia jest włączony przed zmianą tego ustawienia.
+
+Niższe wartości zwiększą użycie procesora i mogą skrócić żywotność baterii."</string>
+    <string name="tb_refresh_frequency_continuous">Ciągłe</string>
+    <string name="tb_refresh_frequency_singular">1 sekunda</string>
+    <string name="tb_remove_desktop_icon">Usuń z pulpitu</string>
+    <string name="tb_remove_widget">Usuń widżet</string>
+    <string name="tb_reset_colors">Przywróć domyślne kolory</string>
+    <string name="tb_restore_failed">An error occurred when restoring backup</string>
+    <string name="tb_restore_settings">Restore settings from file…</string>
+    <string name="tb_restore_successful">Restore successful</string>
+    <string name="tb_restore_widget">Przywróć widżet</string>
+    <string name="tb_restoring_settings">Restoring settings…</string>
+    <string name="tb_rom">ROM</string>
+    <string name="tb_samsung_freeform_message">"Pasek zadań może mieć problemy z otwieraniem aplikacji w trybie Freeform na niektórych urządzeniach Samsung, ze względu na zmiany systemu dokonane w trybie wielu-okien.
+
+W takim przypadku może być konieczne flashowanie niestandardowego ROM-u w celu korzystania z trybu Freeform na tym urządzeniu."</string>
+    <string name="tb_samsung_freeform_title">Uwaga</string>
+    <string name="tb_see_whats_new">See what\'s new in this release</string>
+    <string name="tb_select_an_app">Wybierz aplikację</string>
+    <string name="tb_set_as_default_home">Naciśnij \"Zawsze\" aby ustawić Taskbar jako domyślny Launcher</string>
+    <string name="tb_set_launcher_default_summary">Required for desktop mode to work</string>
+    <string name="tb_set_launcher_default_title">Set Taskbar as default home app</string>
+    <string name="tb_set_wallpaper">Ustaw tapetę za pomocą...</string>
+    <string name="tb_settings">Ustawienia</string>
+    <string name="tb_settings_imported_successfully">Ustawienia zaimportowane pomyślnie</string>
+    <string name="tb_shortcut_created">Utworzono skrót trybu Freeform</string>
+    <string name="tb_show_search_bar">Widoczność paska wyszukiwania</string>
+    <string name="tb_show_window_sizes">Nowe okno...</string>
+    <string name="tb_sort_by_name">Sortuj ikony według nazwy</string>
+    <string name="tb_start_button_image_custom">Niestandardowe</string>
+    <string name="tb_start_button_image_default">Domyślna</string>
+    <string name="tb_start_menu_apps">Aplikacje menu startowego</string>
+    <string name="tb_start_taskbar">Uruchom/zatrzymaj Taskbar</string>
+    <string name="tb_system_settings">Ustawienia systemu</string>
+    <string name="tb_taskbar_is_active">Taskbar jest aktywny</string>
+    <string name="tb_tasker_action_title">Wybierz akcję</string>
+    <string name="tb_tasker_condition_title">Wybierz warunek</string>
+    <string name="tb_tasker_off">Taskbar Wył.</string>
+    <string name="tb_tasker_on">Taskbar Włą.</string>
+    <string name="tb_toggle_dashboard">Przełącz pulpit</string>
+    <string name="tb_toggle_start_menu">Przełącz menu Start</string>
+    <string name="tb_tools">Narzędzia</string>
+    <string name="tb_top_app">1 popularna aplikacja</string>
+    <string name="tb_top_apps">%1$d popularnych aplikacji</string>
+    <string name="tb_top_apps_dialog_title">Najpopularniejsze aplikacje</string>
+    <string name="tb_transparent_start_menu">Przezroczystość menu start</string>
+    <string name="tb_unable_to_apply_density_change">Unable to apply density change</string>
+    <string name="tb_unable_to_set_default_home">Unable to set default home app. Please do so manually via system settings.</string>
+    <string name="tb_unblock_app">Odblokuj z Ostatnie</string>
+    <string name="tb_uninstall">Odinstaluj</string>
+    <string name="tb_unpin_app">Odpinanie z Ostatnie</string>
+    <string name="tb_usage_stats_message">Proszę upewnić się, że %s jest ustawiony na \"Włą\"</string>
+    <string name="tb_use_default">Użyj domyślnych</string>
+    <string name="tb_visual_feedback">Wizualne sprzężenie podczas wybierania ikon</string>
+    <string name="tb_volume">Regulacja głośności</string>
+    <string name="tb_widget_restore_toast">Wybierz \"%1$s\" aby przywrócić ten widżet</string>
+    <string name="tb_window_size">Window size</string>
+    <string name="tb_window_size_fullscreen">Zmaksymalizowane</string>
+    <string name="tb_window_size_half_left">@string/tb_window_size_half_left_alt</string>
+    <string name="tb_window_size_half_left_alt">Połowa ekranu (lewa/górna)</string>
+    <string name="tb_window_size_half_right">@string/tb_window_size_half_right_alt</string>
+    <string name="tb_window_size_half_right_alt">Połowa ekranu (prawo/dół)</string>
+    <string name="tb_window_size_large">Duże</string>
+    <string name="tb_window_size_phone_size">Wielkość telefonu</string>
+    <string name="tb_window_size_standard">Standardowy</string>
+    <string name="tb_window_sizes_not_available">"Rozmiary okien nie działają poprawnie na tej wersji Androida - zobacz \"Pomoc i instrukcje\" jak to obejść"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> procent."</string>
+    <string msgid="3111996412933644358" name="time_left_for_app">"Na dziś zostało <ns1:g id="TIME">%1$s</ns1:g>"</string>
+    <string msgid="4185902664111965088" name="title_app_suggestions">"Sugestie aplikacji"</string>
+    <string msgid="1376365968844349552" name="title_change_settings">"Zmień ustawienia"</string>
+    <string msgid="7503287056163941064" name="title_missing_notification_access">"Wymagany jest dostęp do powiadomień"</string>
+    <string msgid="4151576204245173321" name="undo">"Cofnij"</string>
+    <string msgid="4722034217958379417" name="uninstall_drop_target_label">"Odinstaluj"</string>
+    <string msgid="4172046090762920660" name="uninstall_system_app_text">"To aplikacja systemowa i nie można jej odinstalować."</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"WYŁ."</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"WŁ."</string>
+    <string msgid="8404103075899945851" name="wallpaper_button_text">"Tapety"</string>
+    <string msgid="3640149169885301790" name="widget_accessible_dims_format">"Szerokość %1$d, wysokość %2$d"</string>
+    <string msgid="2880537293434387943" name="widget_button_text">"Widżety"</string>
+    <string msgid="2370757736025621599" name="widget_dims_format">"%1$d × %2$d"</string>
+    <string msgid="9130327887929620" name="widget_resized">"Szerokość i wysokość widżetu zmieniła się na <ns1:g id="NUMBER_0">%1$s</ns1:g> x <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="2904559530954183366" name="widgets_bottom_sheet_title">"<ns1:g id="NAME">%1$s</ns1:g> – widżety"</string>
+    <string msgid="796804551140113767" name="widgets_list">"Lista widgetów"</string>
+    <string msgid="6141506579418771922" name="widgets_list_closed">"Lista widgetów zamknięta"</string>
+    <string msgid="2197210494568696054" name="work_apps_paused_body">"Aplikacje do pracy nie mogą wysyłać powiadomień, używać baterii ani mieć dostępu do Twojej lokalizacji"</string>
+    <string msgid="7553586952985486433" name="work_apps_paused_content_description">"Wstrzymano profil do pracy. Aplikacje do pracy nie mogą wysyłać powiadomień, używać baterii ani uzyskiwać dostępu do Twojej lokalizacji"</string>
+    <string msgid="2389865654362803723" name="work_apps_paused_title">"Wstrzymano profil służbowy"</string>
+    <string msgid="3753320833950115786" name="work_folder_name">"Praca"</string>
+    <string msgid="6069788082535149071" name="work_profile_edu_accept">"OK"</string>
+    <string msgid="8783418929296503629" name="work_profile_edu_next">"Dalej"</string>
+    <string msgid="4155536355149317441" name="work_profile_edu_personal_apps">"Dane osobiste znajdują się w innym miejscu i są niewidoczne dla aplikacji do pracy"</string>
+    <string msgid="237051938268703058" name="work_profile_edu_work_apps">"Dane i aplikacje z profilu do pracy są widoczne dla Twojego administratora IT"</string>
+    <string msgid="3081029915775481146" name="work_profile_toggle_label">"Profil do pracy"</string>
+    <string msgid="808075064383839144" name="work_switch_tip">"Wstrzymaj aplikacje do pracy i powiadomienia"</string>
+    <string msgid="257366611030256142" name="workspace_new_page">"Nowa strona ekranu głównego"</string>
+    <string msgid="8458889198184077399" name="workspace_scroll_format">"Ekran główny %1$d z %2$d"</string>
+</resources>

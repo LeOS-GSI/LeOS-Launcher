@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tb_pref_theme_list">
+        <item>System</item>
+        <item>Светлая</item>
+        <item>Темная</item>
+    </string-array>
+    <string name="tb_pref_description_keyboard_shortcut">Запуск/остановка Taskbar\n• WinKey+M, Search+M\n\nЗаблокировать устройство\n• WinKey+L, Search+L\n\nПоказать меню\n• WinKey, Search\n(нужно установить Taskbar ассистентом по умолчанию)</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tb_pref_theme_list">
+        <item>System</item>
+        <item>Açık</item>
+        <item>Koyu</item>
+    </string-array>
+    <string name="tb_pref_description_keyboard_shortcut">"Taskbar başlat/durdur:   {fou_social-windows} + M   {fou_magnifying-glass} + M
+
+Cihaz kilitlemr:   {fou_social-windows} + L   {fou_magnifying-glass} + L
+
+Başlat menüsünü gösterme:   {fou_social-windows}   {fou_magnifying-glass}
+(ayarlarda Taskbar yardımcı uygulaması olarak ayarlanmasını gerektirir)"</string>
+    <string name="tb_pref_description_keyboard_shortcut_alt">"Taskbar başlat/durdur
+• WinKey+M / Search+M
+
+Cihaz kilitle
+• WinKey+L / Search+L
+
+Başlat menüsü gösterme
+• WinKey / Search
+(ayarlarda Taskbar yardımcı uygulaması olarak ayarlanmasını gerektirir)"</string>
+</resources>

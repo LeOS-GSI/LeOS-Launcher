@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cpv_custom">Personalizzato</string>
+    <string name="cpv_default_title">Seleziona un Colore</string>
+    <string name="cpv_presets">Predefiniti</string>
+    <string name="cpv_select">Seleziona</string>
+    <string name="cpv_transparency">Trasparenza</string>
+</resources>

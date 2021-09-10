@@ -4358,7 +4358,6 @@ string action_open_overview_class
 string action_open_recents
 string action_open_settings
 string action_open_widgets
-string action_overlay
 string action_preferences
 string action_press_back
 string action_resize

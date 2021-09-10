@@ -168,7 +168,6 @@ class GestureController(val launcher: OmegaLauncher) : TouchController {
                 OpenDrawerGestureHandler(context, null),
                 OpenWidgetsGestureHandler(context, null),
                 NotificationsOpenGestureHandler(context, null),
-                OpenOverlayGestureHandler(context, null),
                 OpenOverviewGestureHandler(context, null),
                 StartGlobalSearchGestureHandler(context, null),
                 StartAppSearchGestureHandler(context, null),

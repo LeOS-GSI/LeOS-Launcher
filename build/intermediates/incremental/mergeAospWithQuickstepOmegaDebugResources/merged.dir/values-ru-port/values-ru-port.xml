@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tb_window_size_half_left">Половина экрана (верхняя)</string>
+    <string name="tb_window_size_half_right">Половина экрана (нижняя)</string>
+</resources>

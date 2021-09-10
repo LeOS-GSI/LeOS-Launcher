@@ -4357,7 +4357,6 @@ int string action_open_overview_class 0x7f120041
 int string action_open_recents 0x7f120042
 int string action_open_settings 0x7f120043
 int string action_open_widgets 0x7f120044
-int string action_overlay 0x7f120045
 int string action_preferences 0x7f120046
 int string action_press_back 0x7f120047
 int string action_resize 0x7f120048

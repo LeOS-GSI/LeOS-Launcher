@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals formatted="false" msgid="5194538107138265416" name="dotted_app_label">
+      <item quantity="one">May <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> (na) notification ang <ns1:g id="APP_NAME_2">%1$s</ns1:g></item>
+        <item quantity="other">May <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> (na) notification ang <ns1:g id="APP_NAME_2">%1$s</ns1:g></item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d bagong notification</item>
+    <item quantity="other">%d na bagong notification</item>
+  </plurals>
+    <string msgid="7610119707847920412" name="abandoned_clean_this">"Alisin"</string>
+    <string msgid="3990027586878167529" name="abandoned_promise_explanation">"Hindi naka-install ang app para sa icon na ito. Puwede mo itong alisin, o maaari mong hanapin ang app at i-install ito nang manual."</string>
+    <string msgid="7096178467971716750" name="abandoned_promises_title">"Hindi naka-install ang app na ito"</string>
+    <string msgid="891119232568284442" name="abandoned_search">"Maghanap"</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Mag-navigate sa home"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Mag-navigate pataas"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Higit pang opsyon"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Tapos na"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Tingnan lahat"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Pumili ng app"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"I-OFF"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"I-ON"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"space"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Maghanap…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"I-clear ang query"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Query sa paghahanap"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Maghanap"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Isumite ang query"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Paghahanap gamit ang boses"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Ibahagi sa/kay"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Ibahagi gamit ang <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"I-collapse"</string>
+    <string msgid="6312864233673544149" name="accessibility_app_usage_settings">"Mga setting ng paggamit ng app"</string>
+    <string msgid="2277148124685870734" name="accessibility_close">"Isara"</string>
+    <string msgid="4058661986695117371" name="accessibility_recent_apps">"Mga kamakailang app"</string>
+    <string msgid="8902165848117513641" name="action_add_to_workspace">"Idagdag sa Home screen"</string>
+    <string msgid="282377193880900022" name="action_decrease_height">"Bawasan ang taas"</string>
+    <string msgid="1374549771083094654" name="action_decrease_width">"Bawasan ang lapad"</string>
+    <string msgid="2864038805849372848" name="action_deep_shortcut">"Mga Shortcut"</string>
+    <string msgid="5909461085055959187" name="action_dismiss_notification">"I-dismiss"</string>
+    <string msgid="459390020612501122" name="action_increase_height">"Dagdagan ang taas"</string>
+    <string msgid="8773715375078513326" name="action_increase_width">"Dagdagan ang lapad"</string>
+    <string msgid="4339390619886385032" name="action_move">"Ilipat ang item"</string>
+    <string msgid="2170188780612570250" name="action_move_here">"Ilipat ang item dito"</string>
+    <string msgid="1603837886334246317" name="action_move_to_workspace">"Ilipat sa Home screen"</string>
+    <string msgid="1802976324781771067" name="action_resize">"I-resize"</string>
+    <string msgid="8171125848358142917" name="action_screenshot">"Screenshot"</string>
+    <string msgid="2648470652637092375" name="action_share">"Ibahagi"</string>
+    <string msgid="7456344436509528827" name="activity_not_available">"Hindi available ang app"</string>
+    <string msgid="8071924732094499514" name="activity_not_found">"Hindi naka-install ang app."</string>
+    <string msgid="5899764264480397019" name="add_item_request_drag_hint">"Pindutin nang matagal para manual na ilagay"</string>
+    <string msgid="9040534766770853243" name="add_to_folder">"Idagdag sa folder: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4534929978967147231" name="add_to_folder_with_app">"Idagdag sa folder kasama ng <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4793259502305558003" name="added_to_folder">"Idinagdag ang item sa folder"</string>
+    <string msgid="8130441508702294465" name="all_apps_button_label">"Listahan ng mga app"</string>
+    <string msgid="1315764287305224468" name="all_apps_button_personal_label">"Listahan ng mga personal na app"</string>
+    <string msgid="7270707118948892488" name="all_apps_button_work_label">"Listahan ng mga app sa trabaho"</string>
+    <string msgid="252062713717058851" name="all_apps_home_button_label">"Home"</string>
+    <string msgid="8542784161730910663" name="all_apps_label">"Lahat ng app"</string>
+    <string msgid="5813968043155271636" name="all_apps_loading_message">"Naglo-load ng mga app…"</string>
+    <string msgid="3200346862396363786" name="all_apps_no_search_results">"Walang nahanap na app na tumutugma sa \"<ns1:g id="QUERY">%1$s</ns1:g>\""</string>
+    <string msgid="4190252696685155002" name="all_apps_personal_tab">"Personal"</string>
+    <string msgid="2672336544844936186" name="all_apps_prediction_tip">"Iyong mga nahulaang app"</string>
+    <string msgid="1390553134053255246" name="all_apps_search_bar_hint">"Maghanap ng mga app"</string>
+    <string msgid="1366263386197059176" name="all_apps_search_market_message">"Maghanap ng higit pang mga app"</string>
+    <string msgid="4884822796154055118" name="all_apps_work_tab">"Trabaho"</string>
+    <string msgid="8662546029078692509" name="allow_rotation_desc">"Kailan maro-rotate ang telepono"</string>
+    <string msgid="7728578836261442095" name="allow_rotation_title">"Payagan ang pag-rotate ng Home screen"</string>
+    <string msgid="8336702962104482644" name="app_downloading_title">"Dina-download na ang <ns1:g id="NAME">%1$s</ns1:g>, tapos na ang <ns1:g id="PROGRESS">%2$s</ns1:g>"</string>
+    <string msgid="692894985365717661" name="app_info_drop_target_label">"Impormasyon ng app"</string>
+    <string msgid="649227358658669779" name="app_name">"Launcher3"</string>
+    <string msgid="7053938513995617849" name="app_waiting_download_title">"Hinihintay nang mag-install ang <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="7117251166066978730" name="auto_add_shortcuts_description">"Para sa mga bagong app"</string>
+    <string msgid="3698776050751790653" name="auto_add_shortcuts_label">"Magdagdag ng mga app icon sa Home screen"</string>
+    <string msgid="2071401072261365546" name="blocked_by_policy">"Hindi pinapayagan ng app o ng iyong organisasyon ang pagkilos na ito"</string>
+    <string name="bottomsheet_action_expand_halfway">I-expand hanggang gitna</string>
+    <string name="character_counter_content_description">Mga character na nailagay %1$d sa %2$d</string>
+    <string name="character_counter_overflowed_content_description">Lumampas sa limitasyon sa bilang ng character %1$d sa %2$d</string>
+    <string name="clear_text_end_icon_content_description">I-clear ang text</string>
+    <string msgid="406453423630273620" name="close_drawer">"Isara ang menu ng navigation"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"Isara ang sheet"</string>
+    <string msgid="3209159573327985035" name="copy">"Kopyahin"</string>
+    <string msgid="4050141361160214248" name="create_folder_with">"Gumawa ng folder na may: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="3747508247759093328" name="custom_actions">"Mga custom na pagkilos"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"Invalid na input"</string>
+    <string msgid="7475544710230993317" name="default_scroll_format">"Pahina %1$d ng %2$d"</string>
+    <string msgid="6673129024321402780" name="disabled_app_label">"Naka-disable ang <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="3357562989568808658" name="dismiss_prediction_label">"Huwag magmungkahi ng app"</string>
+    <string name="error_icon_content_description">Error</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Advanced"</string>
+    <string name="exposed_dropdown_menu_content_description">Ipakita ang dropdown na menu</string>
+    <string msgid="4100806530910930934" name="folder_closed">"Nakasara ang folder"</string>
+    <string msgid="6409794597405184510" name="folder_created">"Nagawa ang folder"</string>
+    <string msgid="5174843001373488816" name="folder_hint_text">"I-edit ang Pangalan"</string>
+    <string msgid="8626242716117004803" name="folder_name_format_exact">"Folder: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> (na) item"</string>
+    <string msgid="4270108890534995199" name="folder_name_format_overflow">"Folder: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> o higit pang item"</string>
+    <string msgid="94695026776264709" name="folder_opened">"Binuksan ang folder, <ns1:g id="WIDTH">%1$d</ns1:g> by <ns1:g id="HEIGHT">%2$d</ns1:g>"</string>
+    <string msgid="1794088362165669656" name="folder_renamed">"Pinalitan ang pangalan ng folder ng <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4625795376335528256" name="folder_tap_to_close">"I-tap upang isara ang folder"</string>
+    <string msgid="4017685068016979677" name="folder_tap_to_rename">"I-tap upang i-save ang bagong pangalan"</string>
+    <string msgid="6081085226050792095" name="gadget_error_text">"Problema sa pag-load ng widget"</string>
+    <string msgid="8274003207686040488" name="gadget_setup_text">"I-setup"</string>
+    <string msgid="806512411299847073" name="home_screen">"Home screen"</string>
+    <string msgid="1506426298884658491" name="hotsaet_tip_prediction_disabled">"Naka-disable ang mga iminumungkahing app"</string>
+    <string msgid="2233554377501347650" name="hotsaet_tip_prediction_enabled">"Naka-enable ang mga iminumungkahing app"</string>
+    <string msgid="522100018967146807" name="hotseat_auto_enrolled">"Ipinapakita ang mga pinakaginagamit na app dito, at nababago ito batay sa mga routine"</string>
+    <string msgid="1611544083278999837" name="hotseat_edu_accept">"Kumuha ng mga suhestiyon sa app"</string>
+    <string msgid="2781161822780201689" name="hotseat_edu_dismiss">"Huwag na lang"</string>
+    <string msgid="8927179260533775320" name="hotseat_edu_message_migrate">"Madaling ma-access ang mga pinakaginagamit mong app nang direkta sa Home screen. Magbabago ang mga suhestyon batay sa iyong mga routine. Mapupunta sa iyong Home screen ang mga app na nasa ibabang row."</string>
+    <string msgid="3042360119039646356" name="hotseat_edu_message_migrate_alt">"Madaling ma-access ang mga pinakaginagamit mong app, direkta sa Home screen. Magbabago ang mga suhestyon batay sa iyong mga routine. Mapupunta sa isang bagong folder ang mga app na nasa ibabang row."</string>
+    <string msgid="4248943380443387697" name="hotseat_edu_message_migrate_landscape">"Madaling ma-access ang mga pinakaginagamit mong app nang direkta sa Home screen. Magbabago ang mga suhestyon batay sa iyong mga routine. Mapupunta sa iyong Home screen ang mga app sa row ng mga paborito."</string>
+    <string msgid="306578144424489980" name="hotseat_edu_title_migrate">"Makakuha ng mga suhestyon sa app sa ibabang row ng iyong Home screen"</string>
+    <string msgid="3633942953997845243" name="hotseat_edu_title_migrate_landscape">"Makakuha ng mga iminumungkahing app sa row ng mga paborito ng iyong Home screen"</string>
+    <string msgid="7448809638125333693" name="hotseat_out_of_space">"Wala nang lugar sa tray ng Mga Paborito"</string>
+    <string msgid="4582028296938078419" name="hotseat_prediction_content_description">"Hinulaang app: <ns1:g id="TITLE">%1$s</ns1:g>"</string>
+    <string msgid="6246554993566070818" name="hotseat_prediction_settings">"Mga Setting"</string>
+    <string msgid="3035673010274223538" name="hotseat_tip_gaps_filled">"Idinagdag sa bakanteng espasyo ang mga iminumungkahing app"</string>
+    <string msgid="1325212677738179185" name="hotseat_tip_no_empty_slots">"I-drag ang mga app mula sa ibabang row para makakuha ng mga suhestyon sa app"</string>
+    <string name="icon_content_description">Icon ng Dialog</string>
+    <string msgid="6827826412747255547" name="in_progress">"Isinasagawa"</string>
+    <string msgid="2486394087603402002" name="indeterminate">"Hindi may check o walang check"</string>
+    <string msgid="2539096853673231757" name="install_drop_target_label">"I-install"</string>
+    <string msgid="4211073925752213539" name="item_added_to_workspace">"Naidagdag sa home screen ang item"</string>
+    <string msgid="4606538322571412879" name="item_moved">"Nalipat ang item"</string>
+    <string msgid="851119963877842327" name="item_removed">"Naalis na ang item"</string>
+    <string name="item_view_role_description">Tab</string>
+    <string msgid="8531721983832654978" name="label_application">"App"</string>
+    <string msgid="4289502106628154155" name="long_accessible_way_to_add">"I-double tap nang matagal upang pumili ng widget o gumamit ng mga custom na pagkilos."</string>
+    <string msgid="3327314059613154633" name="long_accessible_way_to_add_shortcut">"I-double tap nang matagal para kumuha ng shortcut o gumamit ng mga custom na pagkilos."</string>
+    <string msgid="4524750017792716791" name="long_press_shortcut_to_add">"Pindutin nang matagal para kumuha ng shortcut."</string>
+    <string msgid="7699152356777458215" name="long_press_widget_to_add">"Pindutin nang matagal upang kumuha ng widget."</string>
+    <string name="material_clock_toggle_content_description">Piliin ang AM o PM</string>
+    <string name="material_hour_selection">Pumili ng oras</string>
+    <string name="material_hour_suffix">%1$s o\'clock</string>
+    <string name="material_minute_selection">Pumili ng mga minuto</string>
+    <string name="material_minute_suffix">%1$s (na) minuto</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Lumipat sa mode ng orasan para sa input na oras.</string>
+    <string name="material_timepicker_hour">Oras</string>
+    <string name="material_timepicker_minute">Minuto</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Pumili ng oras</string>
+    <string name="material_timepicker_text_input_mode_description">Lumipat sa pamamaraan ng pag-input ng text para sa input na oras.</string>
+    <string msgid="2833711483015685619" name="move_to_empty_cell">"Ilipat sa row <ns1:g id="NUMBER_0">%1$s</ns1:g> column <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="6295412897075147808" name="move_to_hotseat_position">"Ilipat sa posisyon <ns1:g id="NUMBER">%1$s</ns1:g> sa mga paborito"</string>
+    <string msgid="6750008980455459790" name="move_to_position">"Ilipat sa posisyon <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6898038085516271325" name="msg_disabled_by_admin">"Na-disable ng iyong admin"</string>
+    <string msgid="281113995110910548" name="msg_missing_notification_access">"Upang ipakita ang Mga Notification Dot, i-on ang mga notification ng app para sa <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="9208659281529857371" name="msg_no_phone_permission">"Hindi pinahihintulutang tumawag ang <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string name="mtrl_badge_numberless_content_description">Bagong notification</string>
+    <string name="mtrl_chip_close_icon_content_description">Alisin ang %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Mahigit %1$d (na) bagong notification</string>
+    <string name="mtrl_picker_a11y_next_month">Lumipat sa susunod na buwan</string>
+    <string name="mtrl_picker_a11y_prev_month">Lumipat sa nakaraang buwan</string>
+    <string name="mtrl_picker_announce_current_selection">Kasalukuyang seleksyon: %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Pumili ng Petsa</string>
+    <string name="mtrl_picker_date_header_unselected">Piniling petsa</string>
+    <string name="mtrl_picker_day_of_week_column_header">Column ng mga araw: %1$s</string>
+    <string name="mtrl_picker_invalid_format">Invalid na format.</string>
+    <string name="mtrl_picker_invalid_format_example">Halimbawa: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Gamitin: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Invalid na hanay.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Mag-navigate patungo sa taong %1$s</string>
+    <string name="mtrl_picker_out_of_range">Wala sa sakop: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Petsa ng pagsisimula – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – Petsa ng pagtatapos</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Pumili ng Range</string>
+    <string name="mtrl_picker_range_header_unselected">Petsa ng pagsisimula – Petsa ng pagtatapos</string>
+    <string name="mtrl_picker_save">I-save</string>
+    <string name="mtrl_picker_text_input_date_hint">Petsa</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Petsa ng pagtatapos</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Petsa ng pagsisimula</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Lumipat sa pamamaraan ng pag-input ng kalendaryo</string>
+    <string name="mtrl_picker_toggle_to_day_selection">I-tap para lumipat sa pagpili ng araw</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Lumipat sa pamamaraan ng pag-input ng text</string>
+    <string name="mtrl_picker_toggle_to_year_selection">I-tap para lumipat sa pagpili ng taon</string>
+    <string msgid="542007171693138492" name="navigation_menu">"Menu ng navigation"</string>
+    <string msgid="6610465462668679431" name="not_selected">"Hindi napili"</string>
+    <string msgid="478774118347071097" name="not_set">"Hindi nakatakda"</string>
+    <string msgid="6002233469409822874" name="notification_dismissed">"Na-dismiss ang notification"</string>
+    <string msgid="1760796511504341095" name="notification_dots_desc_off">"Naka-off"</string>
+    <string msgid="1679848116452218908" name="notification_dots_desc_on">"Naka-on"</string>
+    <string msgid="4284221181793592871" name="notification_dots_service_title">"Ipakita ang mga notification dot"</string>
+    <string msgid="9062440428204120317" name="notification_dots_title">"Mga notification dot"</string>
+    <string msgid="1404149926117359025" name="notifications_header">"Mga Notification"</string>
+    <string msgid="875452955155264703" name="off">"Naka-off"</string>
+    <string msgid="8655164131929253426" name="on">"Naka-on"</string>
+    <string msgid="4691004494942118364" name="out_of_space">"Wala nang lugar sa Home screen na ito."</string>
+    <string msgid="7592128424511031410" name="package_state_unknown">"Hindi kilala"</string>
+    <string name="password_toggle_content_description">Ipakita ang password</string>
+    <string msgid="923466509822011139" name="permdesc_install_shortcut">"Pinapayagan ang isang app na magdagdag ng mga shortcut nang walang panghihimasok ng user."</string>
+    <string msgid="5833423719057558387" name="permdesc_read_settings">"Pinapayagan ang app na basahin ang mga setting at shortcut sa Home."</string>
+    <string msgid="5440712911516509985" name="permdesc_write_settings">"Pinapayagan ang app na baguhin ang mga setting at shortcut sa Home."</string>
+    <string msgid="5632423390354674437" name="permlab_install_shortcut">"i-install ang mga shortcut"</string>
+    <string msgid="1941457408239617576" name="permlab_read_settings">"basahin ang mga setting at shortcut ng Home"</string>
+    <string msgid="3574213698004620587" name="permlab_write_settings">"magsulat ng mga setting at shortcut ng Home"</string>
+    <string msgid="4196423321649756498" name="pin_prediction">"I-pin ang Hula"</string>
+    <string msgid="8064208734425456485" name="place_automatically">"Awtomatikong idagdag"</string>
+    <string msgid="7961817945132860002" name="preference_copied">"Nakopya sa clipboard ang \"<ns1:g id="SUMMARY">%1$s</ns1:g>.\""</string>
+    <string msgid="48863056265284071" name="recent_task_option_freeform">"Freeform"</string>
+    <string msgid="7929860679018978258" name="recent_task_option_pin">"I-pin"</string>
+    <string msgid="5353188922202653570" name="recent_task_option_split_screen">"Hatiin ang screen"</string>
+    <string msgid="5328176793634888831" name="recents_clear_all">"I-clear lahat"</string>
+    <string msgid="7040467240571714191" name="recents_empty_message">"Walang kamakailang item"</string>
+    <string msgid="1383965239183576790" name="remote_action_failed">"Hindi nagawa: <ns1:g id="WHAT">%1$s</ns1:g>"</string>
+    <string msgid="7812859488053230776" name="remove_drop_target_label">"Alisin"</string>
+    <string msgid="9160126848219158407" name="safemode_shortcut_error">"Naka-disable ang na-download na app sa Safe mode"</string>
+    <string msgid="4863470563535682004" name="safemode_widget_error">"Naka-disable ang mga widget sa Safe mode"</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Maghanap"</string>
+    <string msgid="6043586758067023" name="selected">"Napili"</string>
+    <string msgid="8873672322605444408" name="settings_button_text">"Mga setting ng Home"</string>
+    <string msgid="2536503539825726397" name="shortcut_not_available">"Hindi available ang shortcut"</string>
+    <string msgid="2676582286544232849" name="shortcuts_menu_with_notifications_description">"Mga shortcut at notification"</string>
+    <string msgid="4722015666335015336" name="shorter_duration_less_than_one_minute">"&lt; 1 min"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="4342122323125579619" name="styles_wallpaper_button_text">"Mga istilo at wallpaper"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="1672349317127674378" name="tab">"Tab"</string>
+    <string msgid="4479688746574672685" name="task_contents_description_with_remaining_time">"<ns1:g id="TASK_DESCRIPTION">%1$s</ns1:g>, <ns1:g id="REMAINING_TIME">%2$s</ns1:g>"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> (na) porsyento."</string>
+    <string msgid="3111996412933644358" name="time_left_for_app">"<ns1:g id="TIME">%1$s</ns1:g> na lang ngayon"</string>
+    <string msgid="4185902664111965088" name="title_app_suggestions">"Mga iminumungkahing app"</string>
+    <string msgid="1376365968844349552" name="title_change_settings">"Baguhin ang mga setting"</string>
+    <string msgid="7503287056163941064" name="title_missing_notification_access">"Kinakailangan ng access sa notification"</string>
+    <string msgid="4151576204245173321" name="undo">"I-undo"</string>
+    <string msgid="4722034217958379417" name="uninstall_drop_target_label">"I-uninstall"</string>
+    <string msgid="4172046090762920660" name="uninstall_system_app_text">"Isa itong app ng system at hindi maaaring i-uninstall."</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"NAKA-OFF"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"NAKA-ON"</string>
+    <string msgid="8404103075899945851" name="wallpaper_button_text">"Mga Wallpaper"</string>
+    <string msgid="3640149169885301790" name="widget_accessible_dims_format">"%1$d ang lapad at %2$d ang taas"</string>
+    <string msgid="2880537293434387943" name="widget_button_text">"Mga Widget"</string>
+    <string msgid="2370757736025621599" name="widget_dims_format">"%1$d × %2$d"</string>
+    <string msgid="9130327887929620" name="widget_resized">"Na-resize ang widget sa lapad <ns1:g id="NUMBER_0">%1$s</ns1:g> taas <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="2904559530954183366" name="widgets_bottom_sheet_title">"Mga widget ng <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="796804551140113767" name="widgets_list">"Listahan ng mga widget"</string>
+    <string msgid="6141506579418771922" name="widgets_list_closed">"Nakasara ang listahan ng mga widget"</string>
+    <string msgid="2197210494568696054" name="work_apps_paused_body">"Ang mga app para sa trabaho ay hindi makakapagpadala sa iyo ng mga notification, makakagamit ng battery mo, o makaka-access ng iyong lokasyon"</string>
+    <string msgid="7553586952985486433" name="work_apps_paused_content_description">"Naka-pause ang profile sa trabaho. Hindi makakapagpadala sa iyo ng mga notification, makakagamit ng battery mo, o makaka-access ng iyong lokasyon ang mga app para sa trabaho"</string>
+    <string msgid="2389865654362803723" name="work_apps_paused_title">"Naka-pause ang profile sa trabaho"</string>
+    <string msgid="3753320833950115786" name="work_folder_name">"Trabaho"</string>
+    <string msgid="6069788082535149071" name="work_profile_edu_accept">"OK"</string>
+    <string msgid="8783418929296503629" name="work_profile_edu_next">"Susunod"</string>
+    <string msgid="4155536355149317441" name="work_profile_edu_personal_apps">"Hiwalay at nakatago ang personal na data sa mga app para sa trabaho"</string>
+    <string msgid="237051938268703058" name="work_profile_edu_work_apps">"Makikita ng iyong IT admin ang mga app at data para sa trabaho"</string>
+    <string msgid="3081029915775481146" name="work_profile_toggle_label">"Profile sa trabaho"</string>
+    <string msgid="808075064383839144" name="work_switch_tip">"I-pause ang mga app at notification para sa trabaho"</string>
+    <string msgid="257366611030256142" name="workspace_new_page">"Bagong page ng home screen"</string>
+    <string msgid="8458889198184077399" name="workspace_scroll_format">"Home screen %1$d ng %2$d"</string>
+</resources>

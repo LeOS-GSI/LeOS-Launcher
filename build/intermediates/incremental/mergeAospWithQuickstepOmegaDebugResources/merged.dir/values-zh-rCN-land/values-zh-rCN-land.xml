@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tb_window_size_half_left">半屏 (左侧)</string>
+    <string name="tb_window_size_half_right">半屏 (右侧)</string>
+</resources>

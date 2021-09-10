@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="tb_pref_display_density_list">
+        <item>Default</item>
+        <item>Recommended (160dpi)</item>
+        <item>High-density (320dpi)</item>
+    </string-array>
+    <string-array name="tb_pref_display_density_list_alt">
+        <item>Recommended (160dpi)</item>
+        <item>High-density (320dpi)</item>
+    </string-array>
+    <string-array name="tb_pref_position_list">
+        <item>Linksonder (horizontaal)</item>
+        <item>Linksonder (verticaal)</item>
+        <item>Rechtsonder (horizontaal)</item>
+        <item>Rechtsonder (verticaal)</item>
+        <item>Linksboven (horizontaal)</item>
+        <item>Linksboven (verticaal)</item>
+        <item>Rechtsboven (horizontaal)</item>
+        <item>Rechtsboven (verticaal)</item>
+    </string-array>
+    <string-array name="tb_pref_recents_amount">
+        <item>Apps die je gisteren gebruikt hebt</item>
+        <item>Apps die je gebruikt hebt na het opstarten van Taakbalk</item>
+        <item>Alle apps (kan de prestaties beïnvloeden)</item>
+    </string-array>
+    <string-array name="tb_pref_recents_amount_alt">
+        <item>Apps die je gisteren gebruikt hebt</item>
+        <item>Apps die je gebruikt hebt na het opstarten van Taakbalk</item>
+        <item>Alle apps (kan de prestaties beïnvloeden)</item>
+        <item>Alleen actieve apps</item>
+    </string-array>
+    <string-array name="tb_pref_show_search_bar_list">
+        <item>Bij hardware- of softwarematig toetsenbord</item>
+        <item>Alleen bij hardwarematig toetsenbord</item>
+        <item>Zoekvak altijd verbergen</item>
+    </string-array>
+    <string-array name="tb_pref_sort_order">
+        <item>Recent gebruikt (aflopend)</item>
+        <item>Recent gebruikt (oplopend)</item>
+        <item>Meest gebruikt (aflopend)</item>
+        <item>Meest gebruikt (oplopend)</item>
+    </string-array>
+    <string-array name="tb_pref_sort_order_alt">
+        <item>Recent gestart (aflopend)</item>
+        <item>Recent gestart (oplopend)</item>
+    </string-array>
+    <string-array name="tb_pref_start_menu_list">
+        <item>Raster</item>
+        <item>Lijst</item>
+    </string-array>
+    <string-array name="tb_pref_theme_list">
+        <item>Licht</item>
+        <item>Donker</item>
+    </string-array>
+    <plurals formatted="false" msgid="5194538107138265416" name="dotted_app_label">
+      <item quantity="other"><ns1:g id="APP_NAME_2">%1$s</ns1:g>, heeft <ns1:g id="NOTIFICATION_COUNT_3">%2$d</ns1:g> meldingen</item>
+        <item quantity="one"><ns1:g id="APP_NAME_0">%1$s</ns1:g>, heeft <ns1:g id="NOTIFICATION_COUNT_1">%2$d</ns1:g> melding</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d nieuwe melding</item>
+    <item quantity="other">%d nieuwe meldingen</item>
+  </plurals>
+    <string msgid="7610119707847920412" name="abandoned_clean_this">"Verwijderen"</string>
+    <string msgid="3990027586878167529" name="abandoned_promise_explanation">"De app voor dit icoon is niet geïnstalleerd. Je kunt het icoon verwijderen of de app zoeken en handmatig installeren."</string>
+    <string msgid="7096178467971716750" name="abandoned_promises_title">"Deze app is niet geïnstalleerd"</string>
+    <string msgid="891119232568284442" name="abandoned_search">"Zoeken"</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Navigeren naar startpositie"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Omhoog navigeren"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Meer opties"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Klaar"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Alles tonen"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Een app selecteren"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"UIT"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"AAN"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt +"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl +"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Functie +"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta +"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift +"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"spatie"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym +"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu +"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Zoeken…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Zoekopdracht wissen"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Zoekopdracht"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Zoeken"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Zoekopdracht verzenden"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Gesproken zoekopdracht"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Delen met"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Delen met <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Samenvouwen"</string>
+    <string msgid="6312864233673544149" name="accessibility_app_usage_settings">"Instellingen voor app-gebruik"</string>
+    <string msgid="2277148124685870734" name="accessibility_close">"Sluiten"</string>
+    <string msgid="4058661986695117371" name="accessibility_recent_apps">"Recente apps"</string>
+    <string msgid="8902165848117513641" name="action_add_to_workspace">"Toevoegen aan startscherm"</string>
+    <string msgid="282377193880900022" name="action_decrease_height">"Hoogte verkleinen"</string>
+    <string msgid="1374549771083094654" name="action_decrease_width">"Breedte verkleinen"</string>
+    <string msgid="2864038805849372848" name="action_deep_shortcut">"Snelkoppelingen"</string>
+    <string msgid="5909461085055959187" name="action_dismiss_notification">"Sluiten"</string>
+    <string msgid="459390020612501122" name="action_increase_height">"Hoogte vergroten"</string>
+    <string msgid="8773715375078513326" name="action_increase_width">"Breedte vergroten"</string>
+    <string msgid="4339390619886385032" name="action_move">"Item verplaatsen"</string>
+    <string msgid="2170188780612570250" name="action_move_here">"Item hier naartoe verplaatsen"</string>
+    <string msgid="1603837886334246317" name="action_move_to_workspace">"Verplaatsen naar startscherm"</string>
+    <string msgid="1802976324781771067" name="action_resize">"Formaat aanpassen"</string>
+    <string msgid="8171125848358142917" name="action_screenshot">"Screenshot"</string>
+    <string msgid="2648470652637092375" name="action_share">"Delen"</string>
+    <string msgid="7456344436509528827" name="activity_not_available">"App is niet beschikbaar"</string>
+    <string msgid="8071924732094499514" name="activity_not_found">"App is niet geïnstalleerd."</string>
+    <string msgid="5899764264480397019" name="add_item_request_drag_hint">"Tik en houd vast om handmatig te plaatsen"</string>
+    <string msgid="9040534766770853243" name="add_to_folder">"Toevoegen aan map: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4534929978967147231" name="add_to_folder_with_app">"Toevoegen aan map met <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4793259502305558003" name="added_to_folder">"Item toegevoegd aan map"</string>
+    <string msgid="8130441508702294465" name="all_apps_button_label">"Lijst met apps"</string>
+    <string msgid="1315764287305224468" name="all_apps_button_personal_label">"Lijst met persoonlijke apps"</string>
+    <string msgid="7270707118948892488" name="all_apps_button_work_label">"Lijst met werk-apps"</string>
+    <string msgid="252062713717058851" name="all_apps_home_button_label">"Homepage"</string>
+    <string msgid="8542784161730910663" name="all_apps_label">"Alle apps"</string>
+    <string msgid="5813968043155271636" name="all_apps_loading_message">"Apps laden…"</string>
+    <string msgid="3200346862396363786" name="all_apps_no_search_results">"Er zijn geen apps gevonden die overeenkomen met \'<ns1:g id="QUERY">%1$s</ns1:g>\'"</string>
+    <string msgid="4190252696685155002" name="all_apps_personal_tab">"Privé"</string>
+    <string msgid="2672336544844936186" name="all_apps_prediction_tip">"Je voorspelde apps"</string>
+    <string msgid="1390553134053255246" name="all_apps_search_bar_hint">"Apps zoeken"</string>
+    <string msgid="1366263386197059176" name="all_apps_search_market_message">"Zoeken naar meer apps"</string>
+    <string msgid="4884822796154055118" name="all_apps_work_tab">"Werk"</string>
+    <string msgid="8662546029078692509" name="allow_rotation_desc">"Wanneer de telefoon gedraaid is"</string>
+    <string msgid="7728578836261442095" name="allow_rotation_title">"Draaien van startscherm toestaan"</string>
+    <string msgid="8336702962104482644" name="app_downloading_title">"<ns1:g id="NAME">%1$s</ns1:g> wordt gedownload, <ns1:g id="PROGRESS">%2$s</ns1:g> voltooid"</string>
+    <string msgid="692894985365717661" name="app_info_drop_target_label">"App-info"</string>
+    <string msgid="649227358658669779" name="app_name">"Launcher3"</string>
+    <string msgid="7053938513995617849" name="app_waiting_download_title">"<ns1:g id="NAME">%1$s</ns1:g> wacht op installatie"</string>
+    <string msgid="7117251166066978730" name="auto_add_shortcuts_description">"Voor nieuwe apps"</string>
+    <string msgid="3698776050751790653" name="auto_add_shortcuts_label">"App-iconen toevoegen aan startscherm"</string>
+    <string msgid="2071401072261365546" name="blocked_by_policy">"Deze actie wordt niet toegestaan door de app of je organisatie"</string>
+    <string name="bottomsheet_action_expand_halfway">Half uitvouwen</string>
+    <string name="character_counter_content_description">%1$d van %2$d tekens opgegeven</string>
+    <string name="character_counter_overflowed_content_description">Tekenlimiet heeft %1$d van %2$d overschreden</string>
+    <string name="clear_text_end_icon_content_description">Tekst wissen</string>
+    <string msgid="406453423630273620" name="close_drawer">"Navigatiemenu sluiten"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"Blad sluiten"</string>
+    <string msgid="3209159573327985035" name="copy">"Kopiëren"</string>
+    <string msgid="4050141361160214248" name="create_folder_with">"Map maken met: <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="3747508247759093328" name="custom_actions">"Aangepaste acties"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"Ongeldige invoer"</string>
+    <string msgid="7475544710230993317" name="default_scroll_format">"Pagina %1$d van %2$d"</string>
+    <string msgid="6673129024321402780" name="disabled_app_label">"<ns1:g id="APP_NAME">%1$s</ns1:g> is uitgeschakeld"</string>
+    <string msgid="3357562989568808658" name="dismiss_prediction_label">"Geen app voorstellen"</string>
+    <string name="error_icon_content_description">Fout</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Geavanceerd"</string>
+    <string name="exposed_dropdown_menu_content_description">Dropdownmenu weergeven</string>
+    <string msgid="4100806530910930934" name="folder_closed">"Map gesloten"</string>
+    <string msgid="6409794597405184510" name="folder_created">"Map gemaakt"</string>
+    <string msgid="5174843001373488816" name="folder_hint_text">"Naam bewerken"</string>
+    <string msgid="8626242716117004803" name="folder_name_format_exact">"Map: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> items"</string>
+    <string msgid="4270108890534995199" name="folder_name_format_overflow">"Map: <ns1:g id="NAME">%1$s</ns1:g>, <ns1:g id="SIZE">%2$d</ns1:g> of meer items"</string>
+    <string msgid="94695026776264709" name="folder_opened">"Map geopend, <ns1:g id="WIDTH">%1$d</ns1:g> bij <ns1:g id="HEIGHT">%2$d</ns1:g>"</string>
+    <string msgid="1794088362165669656" name="folder_renamed">"De naam van de map is gewijzigd in <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="4625795376335528256" name="folder_tap_to_close">"Tik om de map te sluiten"</string>
+    <string msgid="4017685068016979677" name="folder_tap_to_rename">"Tik om de gewijzigde naam op te slaan"</string>
+    <string msgid="6081085226050792095" name="gadget_error_text">"Probleem bij het laden van widget"</string>
+    <string msgid="8274003207686040488" name="gadget_setup_text">"Configuratie"</string>
+    <string msgid="806512411299847073" name="home_screen">"Startscherm"</string>
+    <string msgid="1506426298884658491" name="hotsaet_tip_prediction_disabled">"App-suggesties zijn uitgeschakeld"</string>
+    <string msgid="2233554377501347650" name="hotsaet_tip_prediction_enabled">"App-suggesties zijn ingeschakeld"</string>
+    <string msgid="522100018967146807" name="hotseat_auto_enrolled">"De meestgebruikte apps worden hier weergegeven en kunnen veranderen op basis van je routines"</string>
+    <string msgid="1611544083278999837" name="hotseat_edu_accept">"App-suggesties ontvangen"</string>
+    <string msgid="2781161822780201689" name="hotseat_edu_dismiss">"Nee, bedankt"</string>
+    <string msgid="8927179260533775320" name="hotseat_edu_message_migrate">"Open je meestgebruikte apps gemakkelijk vanaf het startscherm. De suggesties veranderen op basis van je routines. Apps op de onderste rij worden naar je startscherm verplaatst."</string>
+    <string msgid="3042360119039646356" name="hotseat_edu_message_migrate_alt">"Open je meestgebruikte apps gemakkelijk vanaf het startscherm. De suggesties veranderen op basis van je routines. Apps op de onderste rij worden naar een nieuwe map verplaatst."</string>
+    <string msgid="4248943380443387697" name="hotseat_edu_message_migrate_landscape">"Open je meestgebruikte apps gemakkelijk vanaf het startscherm. De suggesties veranderen op basis van je routines. Apps op de rij met favorieten worden naar het startscherm verplaatst."</string>
+    <string msgid="306578144424489980" name="hotseat_edu_title_migrate">"App-suggesties ontvangen op de onderste rij van je startscherm"</string>
+    <string msgid="3633942953997845243" name="hotseat_edu_title_migrate_landscape">"App-suggesties ontvangen op de rij met favorieten op het startscherm"</string>
+    <string msgid="7448809638125333693" name="hotseat_out_of_space">"Geen ruimte meer in het vak \'Favorieten\'"</string>
+    <string msgid="4582028296938078419" name="hotseat_prediction_content_description">"Voorspelde app: <ns1:g id="TITLE">%1$s</ns1:g>"</string>
+    <string msgid="6246554993566070818" name="hotseat_prediction_settings">"Instellingen"</string>
+    <string msgid="3035673010274223538" name="hotseat_tip_gaps_filled">"App-suggesties toegevoegd aan lege ruimte"</string>
+    <string msgid="1325212677738179185" name="hotseat_tip_no_empty_slots">"Sleep apps weg van de onderste rij om app-suggesties te ontvangen"</string>
+    <string name="icon_content_description">Icoon voor dialoogvenster</string>
+    <string msgid="6827826412747255547" name="in_progress">"Bezig"</string>
+    <string msgid="2486394087603402002" name="indeterminate">"Niet aangevinkt of uitgevinkt"</string>
+    <string msgid="2539096853673231757" name="install_drop_target_label">"Installeren"</string>
+    <string msgid="4211073925752213539" name="item_added_to_workspace">"Item toegevoegd aan startscherm"</string>
+    <string msgid="4606538322571412879" name="item_moved">"Item verplaatst"</string>
+    <string msgid="851119963877842327" name="item_removed">"Item verwijderd"</string>
+    <string name="item_view_role_description">Tabblad</string>
+    <string msgid="8531721983832654978" name="label_application">"App"</string>
+    <string msgid="4289502106628154155" name="long_accessible_way_to_add">"Dubbeltik en blijf aanraken om een widget toe te voegen of aangepaste acties te gebruiken."</string>
+    <string msgid="3327314059613154633" name="long_accessible_way_to_add_shortcut">"Dubbeltik en houd vast om een snelkoppeling toe te voegen of aangepaste acties te gebruiken."</string>
+    <string msgid="4524750017792716791" name="long_press_shortcut_to_add">"Tik en houd vast om snelkoppeling toe te voegen."</string>
+    <string msgid="7699152356777458215" name="long_press_widget_to_add">"Blijf aanraken om een widget toe te voegen."</string>
+    <string name="material_clock_toggle_content_description">Selecteer a.m. of p.m.</string>
+    <string name="material_hour_selection">Selecteer uur</string>
+    <string name="material_hour_suffix">%1$s uur</string>
+    <string name="material_minute_selection">Minuten selecteren</string>
+    <string name="material_minute_suffix">%1$s minuten</string>
+    <string name="material_timepicker_am">a.m.</string>
+    <string name="material_timepicker_clock_mode_description">Schakel naar de klokmodus om de tijd in te voeren.</string>
+    <string name="material_timepicker_hour">Uur</string>
+    <string name="material_timepicker_minute">Minuut</string>
+    <string name="material_timepicker_pm">p.m.</string>
+    <string name="material_timepicker_select_time">Tijd selecteren</string>
+    <string name="material_timepicker_text_input_mode_description">Schakel naar de tekstinvoermodus om de tijd in te voeren.</string>
+    <string msgid="2833711483015685619" name="move_to_empty_cell">"Verplaatsen naar rij <ns1:g id="NUMBER_0">%1$s</ns1:g>, kolom <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="6295412897075147808" name="move_to_hotseat_position">"Verplaatsen naar positie <ns1:g id="NUMBER">%1$s</ns1:g> voor favorieten"</string>
+    <string msgid="6750008980455459790" name="move_to_position">"Verplaatsen naar positie <ns1:g id="NUMBER">%1$s</ns1:g>"</string>
+    <string msgid="6898038085516271325" name="msg_disabled_by_admin">"Uitgeschakeld door je beheerder"</string>
+    <string msgid="281113995110910548" name="msg_missing_notification_access">"Als je meldingsstipjes wilt weergeven, schakel je app-meldingen in voor <ns1:g id="NAME">%1$s</ns1:g>"</string>
+    <string msgid="9208659281529857371" name="msg_no_phone_permission">"<ns1:g id="APP_NAME">%1$s</ns1:g> mag niet bellen"</string>
+    <string name="mtrl_badge_numberless_content_description">Nieuwe melding</string>
+    <string name="mtrl_chip_close_icon_content_description">%1$s verwijderen</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Meer dan %1$d nieuwe meldingen</string>
+    <string name="mtrl_picker_a11y_next_month">Naar volgende maand gaan</string>
+    <string name="mtrl_picker_a11y_prev_month">Naar vorige maand gaan</string>
+    <string name="mtrl_picker_announce_current_selection">Huidige selectie: %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Selecteer een datum</string>
+    <string name="mtrl_picker_date_header_unselected">Geselecteerde datum</string>
+    <string name="mtrl_picker_day_of_week_column_header">Kolom met dagen: %1$s</string>
+    <string name="mtrl_picker_invalid_format">Ongeldige indeling.</string>
+    <string name="mtrl_picker_invalid_format_example">Voorbeeld: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Gebruik: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Ongeldig bereik.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Naar jaar %1$s navigeren</string>
+    <string name="mtrl_picker_out_of_range">Valt buiten bereik: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Startdatum - %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – einddatum</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Selecteer een periode</string>
+    <string name="mtrl_picker_range_header_unselected">Startdatum - einddatum</string>
+    <string name="mtrl_picker_save">Opslaan</string>
+    <string name="mtrl_picker_text_input_date_hint">Datum</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Einddatum</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Startdatum</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">j</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Overschakelen naar agenda-invoermodus</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Tik om naar dagselectie te schakelen</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Overschakelen naar tekstinvoermodus</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Tik om naar jaarselectie te schakelen</string>
+    <string msgid="542007171693138492" name="navigation_menu">"Navigatiemenu"</string>
+    <string msgid="6610465462668679431" name="not_selected">"Niet geselecteerd"</string>
+    <string msgid="478774118347071097" name="not_set">"Niet ingesteld"</string>
+    <string msgid="6002233469409822874" name="notification_dismissed">"Melding gesloten"</string>
+    <string msgid="1760796511504341095" name="notification_dots_desc_off">"Uit"</string>
+    <string msgid="1679848116452218908" name="notification_dots_desc_on">"Aan"</string>
+    <string msgid="4284221181793592871" name="notification_dots_service_title">"Meldingsstipjes weergeven"</string>
+    <string msgid="9062440428204120317" name="notification_dots_title">"Meldingsstipjes"</string>
+    <string msgid="1404149926117359025" name="notifications_header">"Meldingen"</string>
+    <string msgid="875452955155264703" name="off">"Uit"</string>
+    <string msgid="8655164131929253426" name="on">"Aan"</string>
+    <string msgid="4691004494942118364" name="out_of_space">"Er is geen ruimte meer op dit startscherm."</string>
+    <string msgid="7592128424511031410" name="package_state_unknown">"Onbekend"</string>
+    <string name="password_toggle_content_description">Wachtwoord weergeven</string>
+    <string msgid="923466509822011139" name="permdesc_install_shortcut">"Een app toestaan snelkoppelingen toe te voegen zonder tussenkomst van de gebruiker."</string>
+    <string msgid="5833423719057558387" name="permdesc_read_settings">"De app toestaan de instellingen en snelkoppelingen op de homepage te lezen."</string>
+    <string msgid="5440712911516509985" name="permdesc_write_settings">"De app toestaan de instellingen en snelkoppelingen op de homepage te wijzigen."</string>
+    <string msgid="5632423390354674437" name="permlab_install_shortcut">"Snelle links instellen"</string>
+    <string msgid="1941457408239617576" name="permlab_read_settings">"instellingen en snelkoppelingen op startscherm lezen"</string>
+    <string msgid="3574213698004620587" name="permlab_write_settings">"instellingen en snelkoppelingen op startscherm zetten"</string>
+    <string msgid="4196423321649756498" name="pin_prediction">"Vastzetvoorspelling"</string>
+    <string msgid="8064208734425456485" name="place_automatically">"Automatisch toevoegen"</string>
+    <string msgid="7961817945132860002" name="preference_copied">"\'<ns1:g id="SUMMARY">%1$s</ns1:g>\' is gekopieerd naar het klembord."</string>
+    <string msgid="48863056265284071" name="recent_task_option_freeform">"Vrije vorm"</string>
+    <string msgid="7929860679018978258" name="recent_task_option_pin">"Vastzetten"</string>
+    <string msgid="5353188922202653570" name="recent_task_option_split_screen">"Gesplitst scherm"</string>
+    <string msgid="5328176793634888831" name="recents_clear_all">"Alles wissen"</string>
+    <string msgid="7040467240571714191" name="recents_empty_message">"Geen recente items"</string>
+    <string msgid="1383965239183576790" name="remote_action_failed">"Mislukt: <ns1:g id="WHAT">%1$s</ns1:g>"</string>
+    <string msgid="7812859488053230776" name="remove_drop_target_label">"Verwijderen"</string>
+    <string msgid="9160126848219158407" name="safemode_shortcut_error">"Gedownloade app uitgeschakeld in veilige modus"</string>
+    <string msgid="4863470563535682004" name="safemode_widget_error">"Widgets uitgeschakeld in Veilige modus"</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Zoeken"</string>
+    <string msgid="6043586758067023" name="selected">"Geselecteerd"</string>
+    <string msgid="8873672322605444408" name="settings_button_text">"Instellingen start"</string>
+    <string msgid="2536503539825726397" name="shortcut_not_available">"Snelkoppeling is niet beschikbaar"</string>
+    <string msgid="2676582286544232849" name="shortcuts_menu_with_notifications_description">"Snelkoppelingen en meldingen"</string>
+    <string msgid="4722015666335015336" name="shorter_duration_less_than_one_minute">"&lt; 1 minuut"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="4342122323125579619" name="styles_wallpaper_button_text">"Stijl en achtergrond"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="1672349317127674378" name="tab">"Tabblad"</string>
+    <string msgid="4479688746574672685" name="task_contents_description_with_remaining_time">"<ns1:g id="TASK_DESCRIPTION">%1$s</ns1:g>, <ns1:g id="REMAINING_TIME">%2$s</ns1:g>"</string>
+    <string name="tb_accessibility_service_description">Om knopacties uit te voeren, zoals terug, beginscherm, recente apps en het tonen van het energiemenu, moet Taakbalk worden geactiveerd in de toegankelijkheidsinstellingen.\n\nDeze machtiging wordt alleen gebruikt voor het uitvoeren van knopacties en nergens anders voor.</string>
+    <string name="tb_accessibility_service_summary">Staat Taakbalk toe om knopacties uit te voeren</string>
+    <string name="tb_action_activate">Activeren</string>
+    <string name="tb_action_cancel">Annuleren</string>
+    <string name="tb_action_close">Sluiten</string>
+    <string name="tb_action_continue">Doorgaan</string>
+    <string name="tb_action_developer_options">Ontwikkelaarsopties openen</string>
+    <string name="tb_action_dont_show_again">Niet meer tonen</string>
+    <string name="tb_action_grant_permission">Machtiging verlenen</string>
+    <string name="tb_action_hide">Taakbalk verbergen</string>
+    <string name="tb_action_hide_alt">Verbergen</string>
+    <string name="tb_action_i_understand">Ik begrijp het</string>
+    <string name="tb_action_no_thanks">Nee, bedankt</string>
+    <string name="tb_action_ok">Oké</string>
+    <string name="tb_action_open_settings">@string/tb_action_grant_permission</string>
+    <string name="tb_action_quit">Afsluiten</string>
+    <string name="tb_action_reset">Standaardwaarden</string>
+    <string name="tb_action_show">Taakbalk tonen</string>
+    <string name="tb_action_show_alt">Tonen</string>
+    <string name="tb_action_uninstall">Verwijderen</string>
+    <string name="tb_action_view">View</string>
+    <string name="tb_add_icon_to_desktop">Add icon to desktop</string>
+    <string name="tb_add_shortcut">Snelkoppeling toevoegen op beginscherm</string>
+    <string name="tb_allow_freeform_mode">Launch app in freeform mode</string>
+    <string name="tb_already_blacklisted">%1$s kan niet worden gekozen omdat hij op de verborgen apps-lijst staat</string>
+    <string name="tb_already_top_app">%1$s kan niet worden gekozen omdat hij op de top-apps-lijst staat</string>
+    <string name="tb_alt_button_config">Alternatieve locatie voor inklapknop</string>
+    <string name="tb_app_hidden">1 verborgen app</string>
+    <string name="tb_app_info">App-informatie</string>
+    <string name="tb_app_name">Taakbalk</string>
+    <string name="tb_app_name_debug">Taakbalk (foutopsporing)</string>
+    <string name="tb_app_shortcuts">Meer acties…</string>
+    <string name="tb_apply_icon_pack">Pictogramthema toepassen</string>
+    <string name="tb_apply_icon_pack_description">\"%1$s\" toepassen op Taakbalk?</string>
+    <string name="tb_apps_hidden">%1$d verborgen apps</string>
+    <string name="tb_are_you_sure">Weet je het zeker?</string>
+    <string name="tb_arrange_icons">Move icons</string>
+    <string name="tb_arrange_icons_alt">Move icon</string>
+    <string name="tb_auto_hide_navbar">Systeemnavigatiebalk automtisch beheren</string>
+    <string name="tb_auto_hide_navbar_alt">Hide navbar while on desktop</string>
+    <string name="tb_auto_hide_navbar_description">Verberg de navigatiebalk als Taakbalk actief is en toon de balk als Taakbalk inactief is</string>
+    <string name="tb_backing_up_settings">Backing up settings…</string>
+    <string name="tb_backup_failed">An error occurred when creating backup</string>
+    <string name="tb_backup_file_invalid">The backup file you selected is invalid. Please try again.</string>
+    <string name="tb_backup_restore_not_available">Backup and restore is not available on this device</string>
+    <string name="tb_backup_settings">Backup settings to file…</string>
+    <string name="tb_backup_successful">Backup successful</string>
+    <string name="tb_blacklist_dialog_title">Verborgen</string>
+    <string name="tb_block_app">Niet tonen in recente apps</string>
+    <string name="tb_button_back">Terug</string>
+    <string name="tb_button_home">Beginscherm</string>
+    <string name="tb_button_recents">Recente apps</string>
+    <string name="tb_change_wallpaper">Achtergrond wijzigen</string>
+    <string name="tb_change_wallpaper_alt">@string/tb_change_wallpaper</string>
+    <string name="tb_clear_desktop_icons">Desktop icons</string>
+    <string name="tb_clear_hidden_apps">Startmenu – Verborgen apps</string>
+    <string name="tb_clear_pba">Vastgemaakte/uitgesloten recente apps</string>
+    <string name="tb_clear_pinned_apps">Standaardwaarden</string>
+    <string name="tb_clear_qs_shortcuts">Quick settings tiles</string>
+    <string name="tb_clear_top_apps">Startmenu – Top-apps</string>
+    <string name="tb_clear_window_sizes">Opgeslagen vensterafmetingen</string>
+    <string name="tb_click_to_add_widget">Druk om widget toe te voegen</string>
+    <string name="tb_click_to_open_settings">Druk om instellingen te openen</string>
+    <string name="tb_color_picker_alpha">Alfa</string>
+    <string name="tb_color_picker_blue">Blauw</string>
+    <string name="tb_color_picker_green">Groen</string>
+    <string name="tb_color_picker_red">Rood</string>
+    <string name="tb_dashboard">Widgetondersteuning inschakelen</string>
+    <string name="tb_dashboard_description">Voegt een knop toe aan de taakbalk om widgets te tonen</string>
+    <string name="tb_dashboard_grid_size">Afmetingen van widgetoverzicht</string>
+    <string name="tb_dashboard_tutorial">Druk ergens op het scherm om een widget toe te voegen aan het overzicht</string>
+    <string name="tb_density_custom">Custom (%ddpi)</string>
+    <string name="tb_density_default">Default (%ddpi)</string>
+    <string name="tb_desktop_mode_dialog_message">To configure your device for desktop mode, please follow these steps:\n\n• Go to Developer Options\n\n• Scroll to the bottom and turn on \"Enable freeform windows\" and \"Force desktop mode\"\n\n• Set Taskbar as your default home app\n\n• Reboot your device\n\nFor more information and troubleshooting steps, click the (?) icon in the upper-right hand corner of the screen.</string>
+    <string name="tb_desktop_mode_dialog_title">Enable desktop mode support</string>
+    <string name="tb_desktop_mode_help"><b>About desktop mode</b>\n\nTaskbar supports Android 10\'s built-in desktop mode functionality. You can connect your compatible Android 10+ device to an external display and run apps in resizable windows, with Taskbar\'s interface running on your external display and your existing launcher still running on your phone.\n\nDesktop mode requires a USB-to-HDMI adapter (or a lapdock), and a compatible device that supports video output. Additionally, certain settings require granting a special permission via adb.\n\nTo get started, tick the checkbox for \"Desktop mode.\" The app will guide you through the one-time setup process, which involves:\n\n• Enabling the \"Enable freeform windows\" and \"Force desktop mode\" developer options\n\n• Setting Taskbar as your default home app\n\n• Rebooting your device\n\n<b>Why does Taskbar need to be set as my default home app for desktop mode to work?</b>\n\nBy design, Android will only allow the default home app to act as the launcher for desktop mode on external displays.  If the currently set home app does not specifically declare support for desktop mode, then Android will fall back to using a predefined desktop mode interface.\n\nTaskbar is able to work around this limitation by acting as a shim between the system and your preferred launcher.  When Taskbar is set as your home app, when the home button is pressed it will immediately start the launcher you prefer to use on your phone, then quit.  This launcher is set within Taskbar\'s desktop mode preferences by clicking on the \"Primary launcher\" setting.\n\nThere are a couple of caveats to keep in mind when Taskbar is set as your home app:\n\n• Most app shortcuts (seen when long-pressing an app icon) will no longer be available to your primary launcher.  This is due to an Android system limitation where only the default home app has access to app shortcuts that are dynamically created.\n\n• Certain animations that occur when pressing the home button may look incorrect.  This is due to the aforementioned behavior where Taskbar acts as a shim when the home button is pressed.\n\n<b>How do I know if my device supports video output to external displays?</b>\n\nThe folks over at NexDock maintain a list of Android 10+ smartphones that are compatible with USB-to-HDMI video output (this list excludes Samsung and Huawei devices).  You can view this list here: http://nexdock.com/lapdock-for-smartphones\n\nGoogle Pixel devices, notably, do not include support for video output.  However, you can still use Taskbar with standard screen mirroring on these devices, either via Chromecast or by using a DisplayLink dock coupled with the DisplayLink Presenter app.\n\n<b>Should I use Taskbar\'s desktop mode over my device\'s built-in desktop mode solution, such as Samsung DeX?</b>\n\nSome OEMs, such as Samsung and Huawei, have implemented their own version of desktop mode, building on top of Google\'s implementation in Android 10.  These solutions have better integration with the rest of the system and are generally more polished overall.  There is no need to switch over to Taskbar if you\'re happy with your device\'s existing desktop mode solution.\n\nTaskbar\'s desktop mode support is geared towards devices that don\'t offer a built-in desktop mode solution beyond what Google ships as stock with Android 10.\n\n<b>I can\'t find the \"Force desktop mode\" toggle in developer options – can I still use desktop mode?</b>\n\nSome devices (such as the ASUS ROG Phone 2) do not have the \"Force desktop mode\" toggle in developer options. You will need to enable that option manually via adb. To do so, connect your device to a computer with the Android SDK installed, and run the following command (one-line):\n\nadb shell settings put global force_desktop_mode_on_external_displays 1\n\n<b>What should I do if something goes wrong or my launcher / apps behave funky when desktop mode is enabled?</b>\n\nPlease follow these steps to disable desktop mode in case anything goes wrong:\n\n• Pull down the quick settings drawer, then enter system settings via the gear icon\n\n• Navigate to developer options and disable \"Enable freeform support\" and \"Force desktop mode\"\n\n• Reboot your device</string>
+    <string name="tb_desktop_mode_ime_fix">Desktop mode input method fix</string>
+    <string name="tb_desktop_mode_ime_fix_summary">Fixes visual glitches caused by input methods on Android 11. Requires you to temporarily set Taskbar as your input method each time desktop mode starts.</string>
+    <string name="tb_desktop_mode_ime_fix_title">Enable input method fix</string>
+    <string name="tb_desktop_mode_ime_fix_toast">Open desktop mode settings to enable a fix for visual glitches caused by input methods</string>
+    <string name="tb_desktop_mode_ime_fix_toast_alt">Start desktop mode first before enabling the input method fix</string>
+    <string name="tb_desktop_mode_is_active">Desktop mode is active</string>
+    <string name="tb_desktop_mode_pref_description">Use Taskbar to launch windowed apps on an external display, similar to Samsung DeX and other solutions.\n\nRequires either a USB-to-HDMI adapter, or a lapdock, and a device that supports video output.</string>
+    <string name="tb_desktop_mode_setup_complete">Launch Taskbar by clicking the home button on your external display.</string>
+    <string name="tb_dialog_donate_message">Ondersteun de ontwikkeling van Taakbalk door te upgraden naar de Donatieversie voor maar %1$s!\n\nDe Donatieversie is identiek aan de gratis versie en je voorkeuren worden automatisch overgeheveld.\n\nTaakbalk is en zal altijd 100%% gratis, open source en reclamevrij blijven.  Maaar je ondesteuning wordt zeer gewaardeerd!</string>
+    <string name="tb_disable_home_setting">Please disable the \"Replace home screen\" setting under \"Advanced features\" in order to use desktop mode.</string>
+    <string name="tb_disable_scrolling_list">Scrollijst uitschakelen</string>
+    <string name="tb_display_density">Display density</string>
+    <string name="tb_double_tap_to_sleep">Dubbeltik om venster uit te schakelen</string>
+    <string name="tb_enable_accessibility">@string/tb_accessibility_service_description</string>
+    <string name="tb_enable_additional_settings">Enable additional settings</string>
+    <string name="tb_enable_additional_settings_message_1">Taskbar can optionally use elevated permissions to improve your desktop mode experience. These permissions are granted by running an adb shell command.\n\nIf you wish to continue, connect your device to a computer with the Android SDK installed, and run the following command (one line):</string>
+    <string name="tb_enable_additional_settings_message_2">Once granted, the additional settings will be enabled when a display is connected.</string>
+    <string name="tb_enable_additional_settings_pref_description">Click here for info on how to enable</string>
+    <string name="tb_enable_developer_options">Schakel Ontwikkelaarsopties in door 7 keer op de bouwversie te drukken</string>
+    <string name="tb_enable_double_tap_to_sleep">Dubbeltikken om venster uit te schakelen inschakelen?</string>
+    <string name="tb_enable_force_activities_resizable">Scroll naar onderen en schakel \"%s\" in</string>
+    <string name="tb_enable_recent_apps">%1$s kan, optioneel, aan de zijkant pictogrammen tonen van je recent gebruikte apps.  Als je dit wilt, dan heeft %1$s de machtiging gebruikstoegang nodig.\n\n</string>
+    <string name="tb_enable_recent_apps_instructions_phone">Ondersteuning inschakelen voor recente apps?</string>
+    <string name="tb_enable_recent_apps_instructions_tv">To enable support for recent apps, press \"Open Settings\" to open the Android TV app settings menu. Select \"Special app access\", then select \"Usage access\" and ensure that Taskbar is enabled.</string>
+    <string name="tb_error_creating_widget">Error creating widget</string>
+    <string name="tb_error_dialog_message">Door OEM-beperkingen kan deze functie helaas niet worden ingeschakeld op je apparaat.\n\nJe kunt proberen dit alsnog in te schakelen met deze adb shell-opdracht:\n\nappops set %1$s %2$s allow</string>
+    <string name="tb_error_dialog_title">Fout</string>
+    <string name="tb_error_reading_custom_start_image">Error reading image</string>
+    <string name="tb_essential_phone_grip_rejection">Op de Essential Phone moet je grip rejection uitschakelen (in de Ontwikkelaarsopties) om Taakbalk te kunnen openen/sluiten</string>
+    <string name="tb_file_manager">Bestandsbeheer</string>
+    <string name="tb_filepicker_install_file_manager">Error selecting image</string>
+    <string name="tb_filepicker_select_an_image_file">Select an image file</string>
+    <string name="tb_force_activities_resizable">Formaat activiteiten geforceerd aanpasbaar maken</string>
+    <string name="tb_freeform_dialog_message">Om Taakbalk apps te laten opstarten in vrije venstermodus, moet je deze stappen doorlopen:\n\n• Ga naar Ontwikkelaarsopties\n\n• Scroll naar onderen en schakel \"%s\" in\n\n• Herstart je apparaat</string>
+    <string name="tb_freeform_dialog_message_alt">Om Taakbalk apps te laten opstarten in vrije venstermodus, moet je deze stappen volgen:\n\n• Ga naar Ontwikkelaarsopties en schakel USB-foutopsporing in\n\n• Verbind je apparaat met een computer waarop de Android SDK is geïnstalleerd en voer de volgende opdracht uit (één regel):\n\nadb shell settings put global enable_freeform_support 1\n\n• Herstart je apparaat</string>
+    <string name="tb_freeform_dialog_title">Vrije venstermodus inschakelen</string>
+    <string name="tb_freeform_help_dialog_message"><b>Over vrije venstermodus</b>\n\nTaakbalk stelt je in staat om apps op te starten in vrije, verplaatsbare vensters op apparaten met Android 7.0 en hoger; hiervoor is roottoegang vereist.  Op apparaten met Android 8.0 en hoger is alleen een adb shell-opdracht vereist.\n\nVolg deze stappen om je apparaat in te stellen zodat apps kunnen worden opgestart in vrije venstermodus:\n\n<b>1.</b> Schakel \"Vrije venstermodus-ondersteuning\" in in de Taakbalk-app\n\n<b>2.</b> Volg de instructies in het pop-upvenster om de juiste instellingen te activeren op je apparaat (eenmalig)\n\n<b>3.</b> Ga naar het recente apps-overzicht en sluit alle recente apps\n\n<b>4.</b> Start Taakbalk en kies een app om deze op te starten in vrije venstermodus\n\n<i>Voor het beste resultaat, vooral op Android 8.0 en hoger, herstart je je apparaat vóórdat je vrije venstermodus gebruikt</i>\n\n<b>Voorinstellingen voor vensterafmetingen</b>\n\nTaakbalk kan app-vensters openen met een voorinstelling.  Kies een vensterafmeting door een app-pictogram lang ingedrukt te houden of door er met de rechtermuisknop op te klikken en kies \"Nieuw venster.\"\n\nOm een voorinstelling op te slaan voor een specifieke app, houd je de voorinstelling lang ingedrukt. Er verschijnt dan een vinkje, wat aangeeft dat het de standaardinstelling is geworden.  Taakbalk start de app voortaan op met de gekozen afmetingen.\n\nLet op: dit werkt niet altijd juist op Android 8.0 en 8.1.  Je kunt dit verbeteren door de app op te starten, daarna direct te minimaliseren en weer te openen via het recente apps-overzicht.\n\n<b>Probleemoplossing</b>\n\n<i>• Apps starten nog steeds op in volledig scherm-modus</i>\n\nAls een app wordt opgestart die al in het geheugen is geladen, dan brengt Taakbalk hem naar de voorgrond. Om de app op te starten in vrije venstermodus, moet de app een koude start krijgen.\n\nVeeg de app weg uit het recente apps-overzicht en start de app opnieuw. Als dit niet werkt, houd dan het app-pictogram lang ingedrukt, kies \"App-informatie\" en sluit de app geforceerd af.  Ook kun je je apparaat herstarten.\n\n<i>• Gemaximaliseerde apps kunnen niet worden verkleind naar een venster</i>\n\nAls je op de maximaliseer-knop drukt, dan haalt Android de app uit de vrije venstermodus en toont hem op het volledige scherm. Zoals hierboven beschreven, kan Taakbalk alleen apps starten in vrije venstermodus als de apps koud worden gestart.\n\nOm dit te omzeilen, kun je vensters maximaliseren door net buiten het vensterframe te drukken of klikken.  Dit zorgt ervoor dat de app alle beschikbare ruimte opvult zonder dat deze uit de vrije venstermodus wordt gehaald.\n\n<i>• Vensters maximaliseren werkt niet op Android 9</i>\n\nDit ligt buiten de macht van Taakbalk en is iets dat Google moet oplossen. Gebruik bovenstaande methode om een venster te maximaliseren op Android 9.\n\n<i>• App-overgangen werken niet goed, vooral op Android 9</i>\n\nOok dit is iets dat Google moet oplossen. Echter, je kunt dit omzeilen door app-overgangen uit te schakelen.\n\nDit kan door naar de recente app-instellingen in de Taakbalk-instellingen te gaan en de optie \"Sneller schakelen tussen apps\" in te schakelen. Je kunt dit ook systeembreed doen door in de instellingen te gaan naar Ontwikkelaarsopties en bij \"Vensterovergangsschaal\" te kiezen voor \"Geen animaties.\"</string>
+    <string name="tb_freeform_help_dialog_title">Hulp en instructies</string>
+    <string name="tb_freeform_off">Vrije venstermodus uit</string>
+    <string name="tb_freeform_on">Vrije venstermodus aan</string>
+    <string name="tb_full_length">Gebied opvullen met witruimte</string>
+    <string name="tb_hide_icon_labels">Hide app icon labels</string>
+    <string name="tb_hide_taskbar_disclaimer">Niet van toepassing op apps in vrije venstermodus</string>
+    <string name="tb_hsl_launcher_uninstalled">%1$s was uninstalled. Please select a different launcher from the list.</string>
+    <string name="tb_hsl_main_activity_text">Select your primary launcher from the list below. You can change this selection at any time from within Taskbar\'s desktop mode settings.</string>
+    <string name="tb_hsl_no_launchers_found">No primary launchers were found. Please download and install one, then try again.</string>
+    <string name="tb_icon_pack">Pictogramthema</string>
+    <string name="tb_icon_pack_none">Geen</string>
+    <string name="tb_icon_preview">Icon preview</string>
+    <string name="tb_icon_preview_description">Use the slider to adjust the generated icon to your liking.</string>
+    <string name="tb_import_dialog_message">Bedankt voor het aanschaffen van de Donatieversie van Taakbalk!\n\nJe instellingen zijn geïmporteerd; je kunt de gratis versie nu verwijderen.</string>
+    <string name="tb_importing_settings">Bezig met importeren van instellingen… even geduld.</string>
+    <string name="tb_invalid_grid_size">Ongeldige rastergrootte</string>
+    <string name="tb_invalid_package_name">Ongeldige pakketnaam</string>
+    <string name="tb_invalid_shortcut">Invalid shortcut</string>
+    <string name="tb_launch_games_fullscreen_message">Als een app zich bekendmaakt als spel, dan wordt deze niet opgestart in vrije venstermodus</string>
+    <string name="tb_launch_games_fullscreen_title">Spellen starten in volledige scherm-modus</string>
+    <string name="tb_loading_apps">Bezig met laden van apps…</string>
+    <string name="tb_lock_device">Apparaat vergrendelen</string>
+    <string name="tb_lock_device_not_supported">Niet ondersteund op dit apparaat</string>
+    <string name="tb_manage_app_data">Manage app data</string>
+    <string name="tb_manage_app_data_description">@string/tb_clear_pinned_apps</string>
+    <string name="tb_max_num_of_recents">%1$d apps</string>
+    <string name="tb_max_num_of_recents_singular">1 app</string>
+    <string name="tb_max_num_of_recents_unlimited">Ongelimiteerd</string>
+    <string name="tb_must_specify_extra">Intent.EXTRA_PACKAGE_NAME moet worden opgegeven</string>
+    <string name="tb_navigation_bar_buttons">Navigatiebalkknoppen</string>
+    <string name="tb_navigation_bar_buttons_description">Voeg extra knoppen toe aan Taakbalk die navigatiebalkacties uitvoeren</string>
+    <string name="tb_new_shortcut">Launch app</string>
+    <string name="tb_no_freeform_support">Vrije venstermodus is niet ingeschakeld op je apparaat – open Taakbalk en schakel dit in</string>
+    <string name="tb_no_icon_packs_installed">Geen geïnstalleerde pictogramthema\'s</string>
+    <string name="tb_no_icons_to_arrange">No icons to move</string>
+    <string name="tb_no_icons_to_sort">No icons to sort</string>
+    <string name="tb_nothing_to_see_here">Niks te zien, loop maar door…</string>
+    <string name="tb_notification_settings">Meldingsinstellingen</string>
+    <string name="tb_num_of_recents_blurb">Zorg ervoor dat gebruikstoegang is ingeschakeld vóórdat je deze instelling wijzigt.\n\nHogere waardes kunnen de prestaties beïnvloeden.</string>
+    <string name="tb_off">Uit</string>
+    <string name="tb_on">Aan</string>
+    <string name="tb_open_taskbar_settings">Instellingen openen</string>
+    <string name="tb_opening_notification_tray">Opened notification tray on primary display</string>
+    <string name="tb_opening_power_menu">Opened power menu on primary display</string>
+    <string name="tb_opening_quick_settings">Opened quick settings on primary display</string>
+    <string name="tb_opening_volume_control">Opened volume control on primary display</string>
+    <string name="tb_permission_dialog_instructions_phone">Druk op \"Machtiging verlenen\" en zorg ervoor dat \"Weergeven over andere apps\" is ingeschakeld.</string>
+    <string name="tb_permission_dialog_instructions_tv">Please press \"Open Settings\" to open the Android TV app settings menu. Select \"Special app access\", then select \"Display over other apps\" and ensure that Taskbar is enabled.</string>
+    <string name="tb_permission_dialog_message">%s vereist de machtiging om over andere apps te mogen worden getoond voordat de app kan worden gestart.\n\n</string>
+    <string name="tb_permission_dialog_title">Machtiging vereist</string>
+    <string name="tb_pin_app">Vastmaken aan recente apps</string>
+    <string name="tb_pin_shortcut_not_supported">Je launcher heeft geen ondersteuning voor het toevoegen van snelkoppelingen uit andere apps apps.\n\nVoeg de snelkoppeling handmatig toe via het \"Widgets\"-menu van je launcher.</string>
+    <string name="tb_power_button_warning_message">Aangepaste ROM\'s die gebaseerd zijn op CyanogenMod / LineageOS, hebben last van een probleem: de aan-/uitknop werkt niet als het apparaat zich bevindt in vrije venstermodus.\n\nTest je aan-/uitknop nu.  Als deze niet werkt, wees dan voorzichtig met het gebruiken van vrije venstermodus, aangezien je het scherm niet meer kunt inschakelen als het is uitgeschakeld.</string>
+    <string name="tb_power_button_warning_title">Waarschuwing</string>
+    <string name="tb_power_menu">Energiemenu</string>
+    <string name="tb_powered_by_taskbar">Powered by Taskbar</string>
+    <string name="tb_pref_about_description">Taakbalk: productiviteit op Android in PC-stijl\n\n© %1$d Braden Farmer\nApp-logo door Mark Morilla\n\nDruk hier om te controleren op updates of laat een beoordeling achter! %2$s</string>
+    <string name="tb_pref_about_description_alt">Taakbalk: productiviteit op Android in PC-stijl\n\n© %1$d Braden Farmer\nApp-logo door Mark Morilla</string>
+    <string name="tb_pref_centered_icons">Centered app icons</string>
+    <string name="tb_pref_change_wallpaper_desktop">Apply to desktop only</string>
+    <string name="tb_pref_change_wallpaper_global">Apply to entire device</string>
+    <string name="tb_pref_description_chrome_os_context_menu_fix">Schakel dit in als je Taakbalk tegelijk gebruikt met het Chrome OS-dock</string>
+    <string name="tb_pref_description_enable_recents">Required for recent apps to appear</string>
+    <string name="tb_pref_description_force_new_window">Dwingt nieuwe vensters af, telkens als een app wordt geopend via het startmenu of uit de recente apps (als de app in kwestie ondersteuning heeft voor meerdere vensters)</string>
+    <string name="tb_pref_description_freeform_hack">Staat Taakbalk toe om op te starten in vrije venstermodus. Dit zorgt voor een bureaubladachtige gebruikservaring.\n\nDeze functie is experimenteel en kan problemen veroorzaken met de standaard split-screen multitasking.</string>
+    <string name="tb_pref_description_hide_when_keyboard_shown">Als het virtuele toetsenbord wordt getoond</string>
+    <string name="tb_pref_description_keyboard_shortcut">Taakbalk starten/stoppen:   {fou_social-windows} + M   {fou_magnifying-glass} + M\n\nStartmenu tonen:   {fou_social-windows}   {fou_magnifying-glass}\n(Taakbalk moet hiervoor worden ingesteld als assistent-app in de Instellingen)</string>
+    <string name="tb_pref_description_keyboard_shortcut_alt">Taakbalk starten/stoppen\n• WinKey+M / Search+M\n\nStartmenu tonen\n• WinKey / Search\n(Taakbalk moet hiervoor worden ingesteld als assistent-app in de Instellingen)</string>
+    <string name="tb_pref_description_launcher">Gebruik Taakbalk als je beginscherm</string>
+    <string name="tb_pref_description_save_window_sizes">Bij het openen van nieuwe apps via het rechtermuisknopmenu</string>
+    <string name="tb_pref_description_sys_tray">Only visible when Taskbar is horizontal</string>
+    <string name="tb_pref_description_use_mask">Kan de prestaties beïnvloeden</string>
+    <string name="tb_pref_dim_screen_description">Press the home button to manually activate</string>
+    <string name="tb_pref_dim_screen_title">Lock and dim phone screen while active</string>
+    <string name="tb_pref_disable_animations">Sneller schakelen tussen apps</string>
+    <string name="tb_pref_header_about">Over Taakbalk</string>
+    <string name="tb_pref_header_advanced">Geavanceerde functies</string>
+    <string name="tb_pref_header_appearance">Uiterlijk</string>
+    <string name="tb_pref_header_desktop_mode">Desktop mode</string>
+    <string name="tb_pref_header_freeform">Vrije venstermodus</string>
+    <string name="tb_pref_header_general">Algemene instellingen</string>
+    <string name="tb_pref_header_recent_apps">Recente apps</string>
+    <string name="tb_pref_max_num_of_recents">Max. aantal vastgemaakte/recente apps</string>
+    <string name="tb_pref_notification_count_description">Requires notification access</string>
+    <string name="tb_pref_notification_count_title">Show notification count in status area</string>
+    <string name="tb_pref_remove_desktop_wallpaper">Use device wallpaper</string>
+    <string name="tb_pref_secondscreen_description">Wijzig de apparaatresolutie en -dichtheid als je verbonden bent met een extern scherm, voor een Continuum- of Dex-achtige gebruikservaring</string>
+    <string name="tb_pref_secondscreen_description_alt">@string/tb_pref_secondscreen_description</string>
+    <string name="tb_pref_secondscreen_title_install">SecondScreen installeren</string>
+    <string name="tb_pref_secondscreen_title_open">SecondScreen openen</string>
+    <string name="tb_pref_summary_donate">Ondersteun de ontwikkeling van Taakbalk door middel van een kleine donatie door het aanschaffen van de Donatieversie</string>
+    <string name="tb_pref_summary_hide_foreground">Kan de prestaties beïnvloeden</string>
+    <string name="tb_pref_summary_tasker_enabled">Schakel dit uit voor verhoogde veiligheid</string>
+    <string name="tb_pref_title_accent_color">Accentkleur</string>
+    <string name="tb_pref_title_amount_of_recents">Te tonen recente apps</string>
+    <string name="tb_pref_title_anchor">Taakbalk meedraaien bij draaien van scherm</string>
+    <string name="tb_pref_title_app_drawer_icon">Taakbalk-logo gebruiken als startmenu-pictogram</string>
+    <string name="tb_pref_title_app_drawer_icon_ag">%s logo</string>
+    <string name="tb_pref_title_background_tint">Achtergrondtint</string>
+    <string name="tb_pref_title_blacklist">Startmenu-apps instellen</string>
+    <string name="tb_pref_title_chrome_os_context_menu_fix">Chrome OS-dockcomptabiliteit</string>
+    <string name="tb_pref_title_donate">Doneren</string>
+    <string name="tb_pref_title_enable_recents">Gebruikstoegang in-/uitschakelen</string>
+    <string name="tb_pref_title_force_new_window">Apps altijd openen in nieuwe vensters</string>
+    <string name="tb_pref_title_freeform_hack">Vrije venstermodus</string>
+    <string name="tb_pref_title_freeform_mode_help">Hulp en instructies over vrije venstermodus</string>
+    <string name="tb_pref_title_hide_foreground">Pictogram verbergen voor app op voorgrond</string>
+    <string name="tb_pref_title_hide_taskbar">Taakbalk inklappen na drukken op item</string>
+    <string name="tb_pref_title_hide_when_keyboard_shown">Taakbalk automatisch inklappen</string>
+    <string name="tb_pref_title_invisible_button">Knop verbergen als Taakbalk is ingeklapt</string>
+    <string name="tb_pref_title_keyboard_shortcut">Sneltoetsen inschakelen</string>
+    <string name="tb_pref_title_launcher">Beginscherm vervangen</string>
+    <string name="tb_pref_title_position">Locatie op scherm</string>
+    <string name="tb_pref_title_recents_refresh_interval">Ververstussenpoos</string>
+    <string name="tb_pref_title_save_window_sizes">Vensterafmetingen van apps altijd opslaan</string>
+    <string name="tb_pref_title_scrollbar">Snelle scrollbalk gebruiken in startmenu</string>
+    <string name="tb_pref_title_shortcut_icon">Snelkoppelingspictogram tonen voor vastgemaakte apps</string>
+    <string name="tb_pref_title_sort_order">Sorteervolgorde</string>
+    <string name="tb_pref_title_start_button_image">Start button image</string>
+    <string name="tb_pref_title_start_menu_layout">Startmenu-indeling</string>
+    <string name="tb_pref_title_start_on_boot">Opstarten met telefoonopstart</string>
+    <string name="tb_pref_title_sys_tray">Show status icons and clock</string>
+    <string name="tb_pref_title_tasker_enabled">Externe app-integratie toestaan</string>
+    <string name="tb_pref_title_theme">Thema</string>
+    <string name="tb_pref_title_use_mask">Ontbrekende pictogrammen van thema automatisch toevoegen</string>
+    <string name="tb_pref_title_window_size">Standaard vensterafmetingen</string>
+    <string name="tb_press_enter">Geen apps aangetroffen\n\nDruk op Enter om te zoeken met Google</string>
+    <string name="tb_press_enter_alt">Geen apps aangetroffen\n\nDruk op Enter om te openen in webbrowser</string>
+    <string name="tb_primary_launcher">Primary launcher</string>
+    <string name="tb_quit_taskbar">Afsluiten</string>
+    <string name="tb_reboot_required">Herstart je apparaat om vrije venstermodus in te schakelen</string>
+    <string name="tb_reboot_required_alt">Reboot your device to complete desktop mode setup</string>
+    <string name="tb_refresh_frequency">%1$s seconden</string>
+    <string name="tb_refresh_frequency_blurb">Zorg ervoor dat gebruikstoegang is ingeschakeld vóórdat je deze instelling wijzigt.\n\nLagere waardes verhogen het CPU-gebruik en kunnen de batterij sneller doen leeglopen.</string>
+    <string name="tb_refresh_frequency_continuous">Doorlopend</string>
+    <string name="tb_refresh_frequency_singular">1 seconde</string>
+    <string name="tb_remove_desktop_icon">Remove from desktop</string>
+    <string name="tb_remove_widget">Widget verwijderen</string>
+    <string name="tb_reset_colors">Standaardwaarden</string>
+    <string name="tb_restore_failed">An error occurred when restoring backup</string>
+    <string name="tb_restore_settings">Restore settings from file…</string>
+    <string name="tb_restore_successful">Restore successful</string>
+    <string name="tb_restore_widget">Widget herstellen</string>
+    <string name="tb_restoring_settings">Restoring settings…</string>
+    <string name="tb_rom">ROM</string>
+    <string name="tb_samsung_freeform_message">Taakbalk kan op sommige Samsung-apparaten problemen hebben met het openen van apps in vrije venstermodus. Dit komt doordat Samsung aanpassingen heeft gedaan aan het vensterbeleid.\n\nAls dit het geval is, dan moet je waarschijnlijk een aangepaste ROM gebruiken als je vrije venstermodus wilt gebruiken op dit apparaat.</string>
+    <string name="tb_samsung_freeform_title">Let op</string>
+    <string name="tb_see_whats_new">See what\'s new in this release</string>
+    <string name="tb_select_an_app">Select an app</string>
+    <string name="tb_set_as_default_home">Druk op \"Altijd\" om Taakbalk in te stellen als je standaard beginscherm</string>
+    <string name="tb_set_launcher_default_summary">Required for desktop mode to work</string>
+    <string name="tb_set_launcher_default_title">Set Taskbar as default home app</string>
+    <string name="tb_set_wallpaper">Stel achtergrond in via…</string>
+    <string name="tb_settings">Settings</string>
+    <string name="tb_settings_imported_successfully">Instellingen zijn geïmporteerd</string>
+    <string name="tb_shortcut_created">Snelkoppeling voor vrije venstermodus gecreëerd</string>
+    <string name="tb_show_search_bar">Zichtbaarheid van zoekvak</string>
+    <string name="tb_show_window_sizes">Nieuw venster…</string>
+    <string name="tb_sort_by_name">Sort icons by name</string>
+    <string name="tb_start_button_image_custom">Custom</string>
+    <string name="tb_start_button_image_default">Default</string>
+    <string name="tb_start_menu_apps">Startmenu-apps</string>
+    <string name="tb_start_taskbar">Taakbalk starten/stoppen</string>
+    <string name="tb_system_settings">Systeeminstellingen</string>
+    <string name="tb_taskbar_is_active">Taakbalk is actief</string>
+    <string name="tb_tasker_action_title">Actie kiezen</string>
+    <string name="tb_tasker_condition_title">Omstandigheid kiezen</string>
+    <string name="tb_tasker_off">Taakbalk uit</string>
+    <string name="tb_tasker_on">Taakbalk aan</string>
+    <string name="tb_toggle_dashboard">Widgetoverzicht tonen/verbergen</string>
+    <string name="tb_toggle_start_menu">Startmenu tonen/verbergen</string>
+    <string name="tb_tools">Hulpmiddelen</string>
+    <string name="tb_top_app">1 top-app</string>
+    <string name="tb_top_apps">%1$d top-apps</string>
+    <string name="tb_top_apps_dialog_title">Top-apps</string>
+    <string name="tb_transparent_start_menu">Doorzichtig startmenu</string>
+    <string name="tb_unable_to_apply_density_change">Unable to apply density change</string>
+    <string name="tb_unable_to_set_default_home">Unable to set default home app. Please do so manually via system settings.</string>
+    <string name="tb_unblock_app">Tonen in recente apps</string>
+    <string name="tb_uninstall">Verwijderen</string>
+    <string name="tb_unpin_app">Losmaken van recente apps</string>
+    <string name="tb_usage_stats_message">Zorg ervoor dat %s is ingeschakeld (\"Aan\")</string>
+    <string name="tb_use_default">Standaard gebruiken</string>
+    <string name="tb_visual_feedback">Visuele feedback bij het kiezen van pictogrammen</string>
+    <string name="tb_volume">Volumebeheer</string>
+    <string name="tb_widget_restore_toast">Kies \"%1$s\" om deze widget te herstellen</string>
+    <string name="tb_window_size">Window size</string>
+    <string name="tb_window_size_fullscreen">Gemaximaliseerd</string>
+    <string name="tb_window_size_half_left">@string/tb_window_size_half_left_alt</string>
+    <string name="tb_window_size_half_left_alt">Helft van scherm (links/boven)</string>
+    <string name="tb_window_size_half_right">@string/tb_window_size_half_right_alt</string>
+    <string name="tb_window_size_half_right_alt">Helft van scherm (rechts/onder)</string>
+    <string name="tb_window_size_large">Groot</string>
+    <string name="tb_window_size_phone_size">Telefoongrootte</string>
+    <string name="tb_window_size_standard">Standaard</string>
+    <string name="tb_window_sizes_not_available">Vensterafmetingen werken niet goed op deze Android-versie - bekijk de \"Help en instructies\" om dit probleem te omzeilen</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> procent."</string>
+    <string msgid="3111996412933644358" name="time_left_for_app">"Nog <ns1:g id="TIME">%1$s</ns1:g> vandaag"</string>
+    <string msgid="4185902664111965088" name="title_app_suggestions">"App-suggesties"</string>
+    <string msgid="1376365968844349552" name="title_change_settings">"Instellingen wijzigen"</string>
+    <string msgid="7503287056163941064" name="title_missing_notification_access">"Toegang tot meldingen vereist"</string>
+    <string msgid="4151576204245173321" name="undo">"Ongedaan maken"</string>
+    <string msgid="4722034217958379417" name="uninstall_drop_target_label">"Deïnstalleren"</string>
+    <string msgid="4172046090762920660" name="uninstall_system_app_text">"Dit is een systeemapp die niet kan worden verwijderd."</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"UIT"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"AAN"</string>
+    <string msgid="8404103075899945851" name="wallpaper_button_text">"Achtergrond"</string>
+    <string msgid="3640149169885301790" name="widget_accessible_dims_format">"%1$d breed en %2$d hoog"</string>
+    <string msgid="2880537293434387943" name="widget_button_text">"Widgets"</string>
+    <string msgid="2370757736025621599" name="widget_dims_format">"%1$d × %2$d"</string>
+    <string msgid="9130327887929620" name="widget_resized">"Formaat van widget gewijzigd in breedte <ns1:g id="NUMBER_0">%1$s</ns1:g> en hoogte <ns1:g id="NUMBER_1">%2$s</ns1:g>"</string>
+    <string msgid="2904559530954183366" name="widgets_bottom_sheet_title">"<ns1:g id="NAME">%1$s</ns1:g>-widgets"</string>
+    <string msgid="796804551140113767" name="widgets_list">"Lijst met widgets"</string>
+    <string msgid="6141506579418771922" name="widgets_list_closed">"Lijst met widgets gesloten"</string>
+    <string msgid="2197210494568696054" name="work_apps_paused_body">"Werk-apps kunnen je geen meldingen sturen, niet je batterij gebruiken en geen toegang krijgen tot je locatie"</string>
+    <string msgid="7553586952985486433" name="work_apps_paused_content_description">"Werkprofiel is onderbroken. Werk-apps kunnen je geen meldingen sturen, niet je batterij gebruiken en geen toegang krijgen tot je locatie"</string>
+    <string msgid="2389865654362803723" name="work_apps_paused_title">"Werkprofiel is onderbroken"</string>
+    <string msgid="3753320833950115786" name="work_folder_name">"Werk"</string>
+    <string msgid="6069788082535149071" name="work_profile_edu_accept">"OK"</string>
+    <string msgid="8783418929296503629" name="work_profile_edu_next">"Volgende"</string>
+    <string msgid="4155536355149317441" name="work_profile_edu_personal_apps">"Persoonlijke gegevens zijn afgescheiden en verborgen voor werk-apps"</string>
+    <string msgid="237051938268703058" name="work_profile_edu_work_apps">"Werk-apps en -gegevens zijn zichtbaar voor je IT-beheerder"</string>
+    <string msgid="3081029915775481146" name="work_profile_toggle_label">"Werkprofiel"</string>
+    <string msgid="808075064383839144" name="work_switch_tip">"Werk-apps en -meldingen onderbreken"</string>
+    <string msgid="257366611030256142" name="workspace_new_page">"Nieuwe startschermpagina"</string>
+    <string msgid="8458889198184077399" name="workspace_scroll_format">"Startscherm %1$d van %2$d"</string>
+</resources>
