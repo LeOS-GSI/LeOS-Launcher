@@ -224,10 +224,6 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/icon_pack_divider_item.xml"
     },
     {
-        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/about_main_old.xml",
-        "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/about_main_old.xml"
-    },
-    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/stripped.dir/layout/drawer_tab_switch_row.xml",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/layout/drawer_tab_switch_row.xml"
     },

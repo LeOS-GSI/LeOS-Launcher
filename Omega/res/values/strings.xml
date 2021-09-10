@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="derived_app_name" translatable="false">Omega Launcher</string>
+    <string name="derived_app_name" translatable="false">LeOS Launcher</string>
     <string name="app_version" translatable="false">Version</string>
     <string name="app_build" translatable="false">Build</string>
     <string name="default_folder_name">New Folder</string>
@@ -405,9 +405,9 @@
     <string name="restore_failed">Restore failed</string>
     <string name="restore_read_meta_fail">Invalid backup file</string>
     <string name="backup_share_title">Share backup</string>
-    <string name="backup_share_text">Omega backup file</string>
+    <string name="backup_share_text">LeOS backup file</string>
     <string name="backup_location">Location</string>
-    <string name="backup_location_device_storage">Omega Folder</string>
+    <string name="backup_location_device_storage">LeOS Folder</string>
     <string name="read_external_storage_required">To create a Backup, grant the Storage permission.</string>
     <string name="local_backups">In Storage</string>
     <!-- DEVELOPER -->

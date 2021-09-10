@@ -4279,8 +4279,6 @@ mipmap ic_launcher
 mipmap ic_launcher_debug
 mipmap ic_launcher_home
 mipmap ic_launcher_home_foreground
-mipmap ic_launcher_home_foregroundx
-mipmap ic_launcher_homex
 mipmap ic_launcher_round
 mipmap ic_launcher_round_debug
 plurals dotted_app_label

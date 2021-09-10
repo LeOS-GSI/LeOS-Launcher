@@ -138,18 +138,13 @@ class SearchProviderController(private val context: Context) {
             EdgeSearchProvider(context),
 
             /*Web Providers*/
-            BaiduWebSearchProvider(context),
             BraveWebSearchProvider(context),
-            BingWebSearchProvider(context),
             DDGWebSearchProvider(context),
             EcosiaWebSearchProvider(context),
             MetagerWebSearchProvider(context),
-            GoogleWebSearchProvider(context),
             QwantWebSearchProvider(context),
             StartpageWebSearchProvider(context),
             SearxWebSearchProvider(context),
-            YahooWebSearchProvider(context),
-            YandexWebSearchProvider(context)
         ).filter { it.isAvailable }
     }
 }

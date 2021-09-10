@@ -804,10 +804,6 @@
         "source": "/home/um300/Downloads/Android-apps/Peace/res/drawable/deep_shortcuts_text_placeholder.xml"
     },
     {
-        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/mipmap-hdpi_ic_launcher_homex.png.flat",
-        "source": "/home/um300/Downloads/Android-apps/Peace/res/mipmap-hdpi/ic_launcher_homex.png"
-    },
-    {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-xxhdpi_weather_09.png.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/drawable-xxhdpi/weather_09.png"
     },
@@ -1538,10 +1534,6 @@
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/mipmap-xxxhdpi_ic_allapps_adaptive.png.flat",
         "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/mipmap-xxxhdpi/ic_allapps_adaptive.png"
-    },
-    {
-        "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/mipmap-hdpi_ic_launcher_home_foregroundx.png.flat",
-        "source": "/home/um300/Downloads/Android-apps/Peace/res/mipmap-hdpi/ic_launcher_home_foregroundx.png"
     },
     {
         "merged": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/merged_res/aospWithQuickstepOmegaDebug/drawable-xxhdpi_weather_03.png.flat",

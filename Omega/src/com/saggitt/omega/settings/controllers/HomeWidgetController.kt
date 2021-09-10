@@ -1,5 +1,5 @@
 /*
- *  This file is part of LeOS Launcher
+ *  This file is part of Omega Launcher
  *  Copyright (c) 2021   Saul Henriquez
  *
  *  This program is free software: you can redistribute it and/or modify
