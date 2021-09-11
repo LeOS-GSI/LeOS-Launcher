@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-he/values-he.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-he/values-he.xml",
             "map": [
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/values-he/strings.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/res/values-he/strings.xml",
                     "from": {
                         "startLines": "24,23,22,18,20,21,19,25,31,28,56,50,51,52,8,2,53,7,4,3,6,5,55,30,9,27,54,29,48,49,10,11,17,13,12,14,15,16,45,44,26,43,42,46,63,62,60,40,39,38,58,59,57,64,47,37,36,35,34,33,32,61,41",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

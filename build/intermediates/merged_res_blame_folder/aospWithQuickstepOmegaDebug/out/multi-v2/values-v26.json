@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-v26/bools.xml",
-                    "from": {
-                        "startLines": "21,19",
-                        "startColumns": "4,4",
-                        "startOffsets": "733,677",
-                        "endColumns": "57,54",
-                        "endOffsets": "786,727"
-                    },
-                    "to": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,113",
-                        "endColumns": "57,54",
-                        "endOffsets": "108,163"
-                    }
-                },
-                {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-v26/styles.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-v26/styles.xml",
                     "from": {
                         "startLines": "20,33,27",
                         "startColumns": "4,4,4",
@@ -37,6 +20,42 @@
                         "endLines": "29,34,39",
                         "endColumns": "12,12,12",
                         "endOffsets": "1688,1978,2284"
+                    }
+                },
+                {
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/res/values-v26/styles.xml",
+                    "from": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "821",
+                        "endLines": "24",
+                        "endColumns": "12",
+                        "endOffsets": "1043"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1102",
+                        "endLines": "23",
+                        "endColumns": "12",
+                        "endOffsets": "1324"
+                    }
+                },
+                {
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-v26/bools.xml",
+                    "from": {
+                        "startLines": "21,19",
+                        "startColumns": "4,4",
+                        "startOffsets": "733,677",
+                        "endColumns": "57,54",
+                        "endOffsets": "786,727"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,54",
+                        "endOffsets": "108,163"
                     }
                 },
                 {
@@ -56,25 +75,6 @@
                         "endLines": "4,5,9,13,17,18",
                         "endColumns": "74,86,12,12,12,92",
                         "endOffsets": "238,325,539,765,1004,1097"
-                    }
-                },
-                {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/Omega/res/values-v26/styles.xml",
-                    "from": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "821",
-                        "endLines": "24",
-                        "endColumns": "12",
-                        "endOffsets": "1043"
-                    },
-                    "to": {
-                        "startLines": "19",
-                        "startColumns": "4",
-                        "startOffsets": "1102",
-                        "endLines": "23",
-                        "endColumns": "12",
-                        "endOffsets": "1324"
                     }
                 }
             ]

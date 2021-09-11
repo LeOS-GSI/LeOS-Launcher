@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-night-v26/values-night-v26.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-night-v26/values-night-v26.xml",
             "map": [
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-night-v26/styles.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-night-v26/styles.xml",
                     "from": {
                         "startLines": "21",
                         "startColumns": "4",

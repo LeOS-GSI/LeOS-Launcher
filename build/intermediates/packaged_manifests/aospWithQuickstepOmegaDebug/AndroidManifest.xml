@@ -146,6 +146,7 @@
         android:restoreAnyVersion="true"
         android:roundIcon="@mipmap/ic_launcher_round_debug"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <service
             android:name="com.android.quickstep.TouchInteractionService"

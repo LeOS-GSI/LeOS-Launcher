@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-sw720dp-v13/values-sw720dp-v13.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-sw720dp-v13/values-sw720dp-v13.xml",
             "map": [
                 {
                     "source": "/home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/res/values-sw720dp-v13/values-sw720dp-v13.xml",
@@ -21,26 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-sw720dp/styles.xml",
-                    "from": {
-                        "startLines": "20,30",
-                        "startColumns": "4,4",
-                        "startOffsets": "671,1208",
-                        "endLines": "27,36",
-                        "endColumns": "12,12",
-                        "endOffsets": "1179,1540"
-                    },
-                    "to": {
-                        "startLines": "14,22",
-                        "startColumns": "4,4",
-                        "startOffsets": "767,1280",
-                        "endLines": "21,28",
-                        "endColumns": "12,12",
-                        "endOffsets": "1275,1612"
-                    }
-                },
-                {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-sw720dp/config.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-sw720dp/config.xml",
                     "from": {
                         "startLines": "1,8,5",
                         "startColumns": "4,4,4",
@@ -57,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-sw720dp/dimens.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-sw720dp/dimens.xml",
                     "from": {
                         "startLines": "19,18,23,24,25,22",
                         "startColumns": "4,4,4,4,4,4",
@@ -71,6 +52,25 @@
                         "startOffsets": "219,287,359,414,470,528",
                         "endColumns": "67,71,54,55,57,53",
                         "endOffsets": "282,354,409,465,523,577"
+                    }
+                },
+                {
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-sw720dp/styles.xml",
+                    "from": {
+                        "startLines": "20,30",
+                        "startColumns": "4,4",
+                        "startOffsets": "671,1208",
+                        "endLines": "27,36",
+                        "endColumns": "12,12",
+                        "endOffsets": "1179,1540"
+                    },
+                    "to": {
+                        "startLines": "14,22",
+                        "startColumns": "4,4",
+                        "startOffsets": "767,1280",
+                        "endLines": "21,28",
+                        "endColumns": "12,12",
+                        "endOffsets": "1275,1612"
                     }
                 }
             ]

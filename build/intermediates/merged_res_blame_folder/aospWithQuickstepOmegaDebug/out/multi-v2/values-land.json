@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/home/um300/.gradle/caches/transforms-3/8ababe32655196989c42efe32a2fa679/transformed/material-1.4.0/res/values-land/values-land.xml",
@@ -23,20 +23,22 @@
                     }
                 },
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/values-land/dimens.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/res/values-land/styles.xml",
                     "from": {
-                        "startLines": "17",
-                        "startColumns": "4",
-                        "startOffsets": "691",
-                        "endColumns": "64",
-                        "endOffsets": "751"
+                        "startLines": "18,23",
+                        "startColumns": "4,4",
+                        "startOffsets": "729,875",
+                        "endLines": "20,26",
+                        "endColumns": "12,12",
+                        "endOffsets": "824,1023"
                     },
                     "to": {
-                        "startLines": "29",
-                        "startColumns": "4",
-                        "startOffsets": "1924",
-                        "endColumns": "64",
-                        "endOffsets": "1984"
+                        "startLines": "34,37",
+                        "startColumns": "4,4",
+                        "startOffsets": "2267,2367",
+                        "endLines": "36,40",
+                        "endColumns": "12,12",
+                        "endOffsets": "2362,2515"
                     }
                 },
                 {
@@ -57,7 +59,7 @@
                     }
                 },
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/res/values-land/dimens.xml",
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/res/values-land/dimens.xml",
                     "from": {
                         "startLines": "27,24,19,20,21,18",
                         "startColumns": "4,4,4,4,4,4",
@@ -74,25 +76,6 @@
                     }
                 },
                 {
-                    "source": "/home/um300/Downloads/Android-apps/Peace/quickstep/res/values-land/styles.xml",
-                    "from": {
-                        "startLines": "18,23",
-                        "startColumns": "4,4",
-                        "startOffsets": "729,875",
-                        "endLines": "20,26",
-                        "endColumns": "12,12",
-                        "endOffsets": "824,1023"
-                    },
-                    "to": {
-                        "startLines": "34,37",
-                        "startColumns": "4,4",
-                        "startOffsets": "2267,2367",
-                        "endLines": "36,40",
-                        "endColumns": "12,12",
-                        "endOffsets": "2362,2515"
-                    }
-                },
-                {
                     "source": "/home/um300/.gradle/caches/transforms-3/b30ebd3c42766af6e0cef51cdabf39f4/transformed/appcompat-1.4.0-alpha03/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
@@ -100,6 +83,23 @@
                         "startOffsets": "55,125,196",
                         "endColumns": "69,70,67",
                         "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/res/values-land/dimens.xml",
+                    "from": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "691",
+                        "endColumns": "64",
+                        "endOffsets": "751"
+                    },
+                    "to": {
+                        "startLines": "29",
+                        "startColumns": "4",
+                        "startOffsets": "1924",
+                        "endColumns": "64",
+                        "endOffsets": "1984"
                     }
                 }
             ]

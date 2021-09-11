@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
                     "source": "/home/um300/.gradle/caches/transforms-3/5d5fda4d964e2b907626246d2bca5901/transformed/preference-1.1.1/res/values-sw360dp-v13/values-sw360dp-v13.xml",

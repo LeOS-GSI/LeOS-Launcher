@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/um300/Downloads/Android-apps/Peace/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-fr-rFR/values-fr-rFR.xml",
+            "outputFile": "/home/um300/Downloads/Android-apps/LeOS-Launcher/build/intermediates/incremental/mergeAospWithQuickstepOmegaDebugResources/merged.dir/values-fr-rFR/values-fr-rFR.xml",
             "map": [
                 {
                     "source": "/home/um300/.gradle/caches/transforms-3/8d7cbe144cf532107a185e5a3f7336c5/transformed/jetified-colorpicker-1.1.0/res/values-fr-rFR/values-fr-rFR.xml",

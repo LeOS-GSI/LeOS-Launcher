@@ -1,2 +1,3 @@
-# Peace Launcher
-This is only the fork of Omega Launcher. Releases are stored at https://leos-gsi.de/downloads/special_apps/Launcher/
+#LeOS Launcher
+This is a fork of Omega Launcher and default Launcher in LeOS-GSI. 
+Releases are stored at https://leos-gsi.de/downloads/special_apps/Launcher/
