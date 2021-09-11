@@ -1,3 +1,2 @@
 # Peace Launcher
-This is only the fork of Omega Launcher. No changes in sources. The changed sources are available on Gitlab
-Android Studio Bumblebee is needed
+This is only the fork of Omega Launcher. Releases are stored at https://leos-gsi.de/downloads/special_apps/Launcher/
