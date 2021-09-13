@@ -18,7 +18,7 @@
 */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.saggitt.omega.dev"
+    package="com.leos.launcher.dev"
     android:versionCode="2"
     android:versionName="1" >
 
@@ -27,20 +27,20 @@
         android:targetSdkVersion="30" />
 
     <permission
-        android:name="com.saggitt.omega.dev.permission.HOTSEAT_EDU"
+        android:name="com.leos.launcher.dev.permission.HOTSEAT_EDU"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="signatureOrSystem" />
 
     <uses-permission android:name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-    <uses-permission android:name="com.saggitt.omega.dev.permission.HOTSEAT_EDU" />
+    <uses-permission android:name="com.leos.launcher.dev.permission.HOTSEAT_EDU" />
 
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" /> <!-- Pixel -->
     <permission
-        android:name="com.saggitt.omega.dev.permission.QSB"
+        android:name="com.leos.launcher.dev.permission.QSB"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="signatureOrSystem" />
 
@@ -48,9 +48,9 @@
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.saggitt.omega.dev.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.saggitt.omega.dev.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.saggitt.omega.dev.permission.QSB" />
+    <uses-permission android:name="com.leos.launcher.dev.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.leos.launcher.dev.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.leos.launcher.dev.permission.QSB" />
     <uses-permission android:name="android.permission.START_TASKS_FROM_RECENTS" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
     <uses-permission android:name="android.permission.CREATE_USERS" />
@@ -111,13 +111,13 @@
     name in the permissions. eq com.mypackage.permission.READ_SETTINGS
     -->
     <permission
-        android:name="com.saggitt.omega.dev.permission.READ_SETTINGS"
+        android:name="com.leos.launcher.dev.permission.READ_SETTINGS"
         android:description="@string/permdesc_read_settings"
         android:label="@string/permlab_read_settings"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="signatureOrSystem" />
     <permission
-        android:name="com.saggitt.omega.dev.permission.WRITE_SETTINGS"
+        android:name="com.leos.launcher.dev.permission.WRITE_SETTINGS"
         android:description="@string/permdesc_write_settings"
         android:label="@string/permlab_write_settings"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
@@ -146,7 +146,6 @@
         android:restoreAnyVersion="true"
         android:roundIcon="@mipmap/ic_launcher_round_debug"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <service
             android:name="com.android.quickstep.TouchInteractionService"
@@ -174,7 +173,7 @@
         <!-- Content provider to settings search. The autority should be same as the packageName -->
         <provider
             android:name="com.android.quickstep.LauncherSearchIndexablesProvider"
-            android:authorities="com.saggitt.omega.dev"
+            android:authorities="com.leos.launcher.dev"
             android:exported="true"
             android:grantUriPermissions="true"
             android:multiprocess="true"
@@ -206,7 +205,7 @@
             android:clearTaskOnLaunch="true"
             android:launchMode="singleTask"
             android:noHistory="true"
-            android:permission="com.saggitt.omega.dev.permission.HOTSEAT_EDU"
+            android:permission="com.leos.launcher.dev.permission.HOTSEAT_EDU"
             android:theme="@android:style/Theme.NoDisplay" >
             <intent-filter>
                 <action android:name="com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU" />
@@ -249,13 +248,13 @@
 
             <meta-data
                 android:name="com.android.launcher3.grid.control"
-                android:value="com.saggitt.omega.dev.grid_control" />
+                android:value="com.leos.launcher.dev.grid_control" />
         </activity>
         <activity
             android:name="com.saggitt.omega.settings.SettingsActivity"
             android:autoRemoveFromRecents="true"
             android:label="@string/derived_app_name"
-            android:taskAffinity="com.saggitt.omega.dev.tasks.SETTINGS"
+            android:taskAffinity="com.leos.launcher.dev.tasks.SETTINGS"
             android:theme="@style/SettingsTheme_Light" >
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
@@ -286,7 +285,7 @@
         </activity>
         <activity
             android:name="com.saggitt.omega.gestures.ui.RunHandlerActivity"
-            android:taskAffinity="com.saggitt.omega.dev.tasks.RUN_HANDLER"
+            android:taskAffinity="com.leos.launcher.dev.tasks.RUN_HANDLER"
             android:theme="@style/SettingsTheme_Light.Transparent" >
             <intent-filter>
                 <action android:name="com.saggitt.omega.START_ACTION" />
@@ -305,7 +304,7 @@
             android:theme="@style/Theme.Transparent" /> <!-- Icon picker -->
         <activity
             android:name="com.saggitt.omega.iconpack.EditIconActivity"
-            android:taskAffinity="com.saggitt.omega.dev.tasks.EDIT_ICON"
+            android:taskAffinity="com.leos.launcher.dev.tasks.EDIT_ICON"
             android:theme="@style/SettingsTheme_Light" />
         <activity
             android:name="com.saggitt.omega.iconpack.IconPickerActivity"
@@ -449,7 +448,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.saggitt.omega.dev.provider"
+            android:authorities="com.leos.launcher.dev.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -458,11 +457,11 @@
         </provider>
         <provider
             android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"
-            android:authorities="com.saggitt.omega.dev.appssearch"
+            android:authorities="com.leos.launcher.dev.appssearch"
             android:exported="true" />
         <provider
             android:name="com.saggitt.omega.util.FiveSecsProvider"
-            android:authorities="com.saggitt.omega.dev.fivesecsprovider"
+            android:authorities="com.leos.launcher.dev.fivesecsprovider"
             android:exported="true"
             android:grantUriPermissions="true" /> <!-- Intent received used to install shortcuts from other applications -->
         <receiver
@@ -516,21 +515,21 @@
         -->
         <provider
             android:name="com.android.launcher3.LauncherProvider"
-            android:authorities="com.saggitt.omega.dev.settings"
+            android:authorities="com.leos.launcher.dev.settings"
             android:exported="true"
-            android:readPermission="com.saggitt.omega.dev.permission.READ_SETTINGS"
-            android:writePermission="com.saggitt.omega.dev.permission.WRITE_SETTINGS" />
+            android:readPermission="com.leos.launcher.dev.permission.READ_SETTINGS"
+            android:writePermission="com.leos.launcher.dev.permission.WRITE_SETTINGS" />
         <!--
         The content provider for exposing various launcher grid options.
         TODO: Add proper permissions
         -->
         <provider
             android:name="com.android.launcher3.graphics.GridCustomizationsProvider"
-            android:authorities="com.saggitt.omega.dev.grid_control"
+            android:authorities="com.leos.launcher.dev.grid_control"
             android:exported="true" />
         <provider
             android:name="com.android.launcher3.testing.TestInformationProvider"
-            android:authorities="com.saggitt.omega.dev.TestInfo"
+            android:authorities="com.leos.launcher.dev.TestInfo"
             android:enabled="false"
             android:exported="true"
             android:readPermission="android.permission.WRITE_SECURE_SETTINGS"
@@ -677,12 +676,12 @@
 
         <provider
             android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
-            android:authorities="com.saggitt.omega.dev.customactivityoncrashinitprovider"
+            android:authorities="com.leos.launcher.dev.customactivityoncrashinitprovider"
             android:exported="false"
             android:initOrder="101" />
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.saggitt.omega.dev.androidx-startup"
+            android:authorities="com.leos.launcher.dev.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

@@ -58,7 +58,7 @@ android {
     defaultConfig {
         minSdkVersion 26
         targetSdkVersion 30
-        applicationId 'com.saggitt.omega'
+        applicationId 'com.leos.launcher'
 
         versionName name
         versionCode code
@@ -123,7 +123,7 @@ android {
     productFlavors {
         aosp {
             dimension "app"
-            applicationId 'com.saggitt.omega'
+            applicationId 'com.leos.launcher'
             testApplicationId 'com.android.launcher3.tests'
         }
 

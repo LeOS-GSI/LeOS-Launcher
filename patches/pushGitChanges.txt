@@ -1,7 +1,0 @@
-git add *
-git commit –m ‘message’
-git pull
-git push
-
-token: 
-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

@@ -57,7 +57,7 @@ public class RecentTasksList extends TaskStackChangeListener {
     private TaskLoadResult mResultsUi = INVALID_RESULT;
 
     public RecentTasksList(LooperExecutor mainThreadExecutor,
-                           KeyguardManagerCompat keyguardManager, ActivityManagerWrapper activityManagerWrapper) {
+            KeyguardManagerCompat keyguardManager, ActivityManagerWrapper activityManagerWrapper) {
         mMainThreadExecutor = mainThreadExecutor;
         mKeyguardManager = keyguardManager;
         mChangeId = 1;

@@ -1,19 +1,19 @@
 -- Merging decision tree log ---
-permission#com.saggitt.omega.dev.permission.READ_SETTINGS
+permission#com.leos.launcher.dev.permission.READ_SETTINGS
 INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:64:5-69:63
 	android:name
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml
-permission#com.saggitt.omega.dev.permission.WRITE_SETTINGS
+permission#com.leos.launcher.dev.permission.WRITE_SETTINGS
 INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:70:5-75:64
 	android:name
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml
-uses-permission#com.saggitt.omega.dev.permission.READ_SETTINGS
+uses-permission#com.leos.launcher.dev.permission.READ_SETTINGS
 INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:77:5-79
 MERGED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:77:5-79
 MERGED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:77:5-79
 	android:name
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml
-uses-permission#com.saggitt.omega.dev.permission.WRITE_SETTINGS
+uses-permission#com.leos.launcher.dev.permission.WRITE_SETTINGS
 INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:78:5-80
 MERGED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:78:5-80
 MERGED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:78:5-80
@@ -131,9 +131,9 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/um300/.gradle/caches/t
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/um300/.gradle/caches/transforms-3/7f9fbe6aa66ea90ec6d0c3b05a2fad8f/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.ui:ui-util:1.0.1] /home/um300/.gradle/caches/transforms-3/22378e5220ad282fa562d934d1576b04/transformed/jetified-ui-util-1.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/um300/.gradle/caches/transforms-3/41aa7d93f348dc1792705050f750a107/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:20:1-134:12
-INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:20:1-134:12
-INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:20:1-134:12
+INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:20:1-135:12
+INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:20:1-135:12
+INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:20:1-135:12
 	package
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:22:5-36
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml
@@ -143,7 +143,7 @@ INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/Android
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:20:1-205:12
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:21:5-51
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:22:5-51
 	android:versionCode
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:20:1-205:12
@@ -288,7 +288,7 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:83:9-42
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:83:9-42
 	android:exported
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:43:9-32
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:44:9-32
 	android:roundIcon
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:108:9-44
 	android:icon
@@ -318,7 +318,7 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /home/um300/.gradle/caches/
 	android:allowBackup
 		ADDED from [com.github.LawnchairLauncher:hoko-lite:0e21db9ae5] /home/um300/.gradle/caches/transforms-3/f6e98346f800422b408061bb373c55b8/transformed/jetified-hoko-lite-0e21db9ae5/AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:40:9-40
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:41:9-40
 	tools:replace
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:114:9-38
 	android:name
@@ -361,7 +361,7 @@ service#com.android.launcher3.uioverrides.WallpaperManagerCompatVL$ColorExtracti
 ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:116:9-120:72
 REJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:116:9-120:72
 	tools:node
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:95:13-32
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:96:13-32
 	android:process
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:119:13-49
 	android:exported
@@ -641,151 +641,151 @@ INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/Android
 	android:minSdkVersion
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml
 		INJECTED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml
-permission#com.saggitt.omega.dev.permission.HOTSEAT_EDU
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:24:5-27:55
+permission#com.leos.launcher.dev.permission.HOTSEAT_EDU
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:25:5-28:55
 	android:protectionLevel
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:27:9-52
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:28:9-52
 	android:permissionGroup
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:26:9-72
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:27:9-72
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:25:9-61
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:26:9-61
 uses-permission#android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:29:5-99
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:5-99
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:29:22-96
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:22-96
 uses-permission#android.permission.VIBRATE
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:5-66
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:31:5-66
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:22-63
-uses-permission#com.saggitt.omega.dev.permission.HOTSEAT_EDU
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:32:5-77
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:31:22-63
+uses-permission#com.leos.launcher.dev.permission.HOTSEAT_EDU
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:33:5-77
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:32:22-74
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:33:22-74
 service#com.android.quickstep.TouchInteractionService
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:46:9-53:19
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:47:9-54:19
 	android:permission
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:48:13-71
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:49:13-71
 	android:directBootAware
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:49:13-43
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:50:13-43
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:47:13-73
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:48:13-73
 intent-filter#action:name:android.intent.action.QUICKSTEP_SERVICE
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:50:13-52:29
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:51:13-53:29
 action#android.intent.action.QUICKSTEP_SERVICE
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:51:17-82
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:52:17-82
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:51:25-79
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:52:25-79
 activity#com.android.quickstep.RecentsActivity
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:55:9-66:39
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:56:9-67:39
 	android:screenOrientation
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:61:13-52
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:62:13-52
 	android:clearTaskOnLaunch
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:58:13-45
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:59:13-45
 	android:stateNotNeeded
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:59:13-42
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:60:13-42
 	android:excludeFromRecents
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:56:13-46
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:57:13-46
 	android:launchMode
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:57:13-44
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:58:13-44
 	android:exported
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:65:13-36
-	android:resizeableActivity
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:63:13-46
-	android:resumeWhilePausing
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:64:13-46
-	android:configChanges
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:62:13-134
-	android:theme
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:60:13-49
-	android:taskAffinity
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:66:13-36
+	android:resizeableActivity
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:64:13-46
+	android:resumeWhilePausing
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:65:13-46
+	android:configChanges
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:63:13-134
+	android:theme
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:61:13-49
+	android:taskAffinity
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:67:13-36
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:55:19-71
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:56:19-71
 provider#com.android.quickstep.LauncherSearchIndexablesProvider
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:69:9-79:20
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:70:9-80:20
 	android:grantUriPermissions
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:72:13-47
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:73:13-47
 	android:authorities
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:71:13-49
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:72:13-49
 	android:multiprocess
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:73:13-40
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:74:13-40
 	android:exported
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:75:13-36
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:76:13-36
 	android:permission
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:74:13-75
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:75:13-75
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:70:13-82
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:71:13-82
 intent-filter#action:name:android.content.action.SEARCH_INDEXABLES_PROVIDER
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:76:13-78:29
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:77:13-79:29
 action#android.content.action.SEARCH_INDEXABLES_PROVIDER
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:77:17-92
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:78:17-92
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:77:25-89
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:78:25-89
 activity#com.android.launcher3.proxy.ProxyActivityStarter
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:97:9-102:40
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:98:9-103:40
 	android:clearTaskOnLaunch
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:101:13-45
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:102:13-45
 	android:launchMode
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:100:13-44
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:101:13-44
 	android:exported
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:102:13-37
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:103:13-37
 	android:theme
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:99:13-83
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:100:13-83
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:98:13-76
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:99:13-76
 activity#com.android.quickstep.interaction.GestureSandboxActivity
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:104:9-113:20
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:105:9-114:20
 	android:screenOrientation
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:108:13-49
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:109:13-49
 	android:excludeFromRecents
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:107:13-46
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:108:13-46
 	android:autoRemoveFromRecents
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:106:13-49
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:107:13-49
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:105:13-84
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:106:13-84
 intent-filter#action:name:com.android.quickstep.action.GESTURE_SANDBOX+category:name:android.intent.category.DEFAULT
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:109:13-112:29
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:110:13-113:29
 action#com.android.quickstep.action.GESTURE_SANDBOX
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:110:17-87
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:111:17-87
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:110:25-84
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:111:25-84
 activity#com.android.launcher3.hybridhotseat.HotseatEduActivity
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:114:9-125:20
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:115:9-126:20
 	android:clearTaskOnLaunch
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:116:13-45
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:117:13-45
 	android:launchMode
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:117:13-44
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:118:13-44
 	android:noHistory
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:118:13-37
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:119:13-37
 	android:permission
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:119:13-71
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:120:13-71
 	android:theme
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:120:13-59
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:121:13-59
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:115:13-61
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:116:13-61
 intent-filter#action:name:com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU+category:name:android.intent.category.DEFAULT
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:121:13-124:29
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:122:13-125:29
 action#com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:122:17-95
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:123:17-95
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:122:25-92
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:123:25-92
 service#com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService
-ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:127:9-131:72
+ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:128:9-132:72
 	android:process
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:130:13-49
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:131:13-49
 	android:exported
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:129:13-37
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:130:13-37
 	android:permission
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:131:13-69
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:132:13-69
 	android:name
-		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:128:13-107
+		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:129:13-107
 uses-feature#android.hardware.telephony
 ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:22:5-24:36
 	android:required
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:24:9-33
 	android:name
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:23:9-50
-permission#com.saggitt.omega.dev.permission.QSB
+permission#com.leos.launcher.dev.permission.QSB
 ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:27:5-30:55
 	android:protectionLevel
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:30:9-52
@@ -809,7 +809,7 @@ uses-permission#com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS
 ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:35:5-103
 	android:name
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:35:22-100
-uses-permission#com.saggitt.omega.dev.permission.QSB
+uses-permission#com.leos.launcher.dev.permission.QSB
 ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:38:5-71
 	android:name
 		ADDED from /home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:38:22-68

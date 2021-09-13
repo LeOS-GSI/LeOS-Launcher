@@ -37,7 +37,7 @@ assemble:
     - set +o pipefail
     - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
     - set -o pipefail
-    - ./gradlew assembleAospWithQuickstepOmegaDebug
+    - ./gradlew assembledebug
 
 signRelease:
   stage: sign

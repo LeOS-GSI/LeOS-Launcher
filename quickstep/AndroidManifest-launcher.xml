@@ -16,7 +16,8 @@
 ** limitations under the License.
 */
 -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.launcher3">
     <uses-sdk android:minSdkVersion="25" android:targetSdkVersion="29" />
     <!--
@@ -24,7 +25,8 @@
     Refer comments around specific entries on how to extend individual components.
     -->
 
-    <application android:backupAgent="com.android.launcher3.LauncherBackupAgent"
+    <application 
+        android:backupAgent="com.android.launcher3.LauncherBackupAgent"
         android:fullBackupContent="@xml/backupscheme" android:fullBackupOnly="true"
         android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_home"
         android:label="@string/derived_app_name" android:largeHeap="@bool/config_largeHeap"
@@ -34,7 +36,8 @@
         Main launcher activity. When extending only change the name, and keep all the
         attributes and intent filters the same
         -->
-        <activity android:name="com.android.launcher3.uioverrides.QuickstepLauncher"
+        <activity 
+            android:name="com.android.launcher3.uioverrides.QuickstepLauncher"
             android:clearTaskOnLaunch="true"
             android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
             android:enabled="true" android:launchMode="singleTask" android:resizeableActivity="true"

@@ -18,7 +18,7 @@
 18*/
 19-->
 20<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-21    package="com.saggitt.omega.dev"
+21    package="com.leos.launcher.dev"
 22    android:versionCode="2"
 23    android:versionName="1" >
 24
@@ -27,26 +27,26 @@
 27        android:targetSdkVersion="30" />
 28
 29    <permission
-29-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:24:5-27:55
-30        android:name="com.saggitt.omega.dev.permission.HOTSEAT_EDU"
-30-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:25:9-61
+29-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:25:5-28:55
+30        android:name="com.leos.launcher.dev.permission.HOTSEAT_EDU"
+30-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:26:9-61
 31        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-31-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:26:9-72
+31-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:27:9-72
 32        android:protectionLevel="signatureOrSystem" />
-32-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:27:9-52
+32-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:28:9-52
 33
 34    <uses-permission android:name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS" />
-34-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:29:5-99
-34-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:29:22-96
+34-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:5-99
+34-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:22-96
 35    <uses-permission android:name="android.permission.VIBRATE" />
-35-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:5-66
-35-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:30:22-63
+35-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:31:5-66
+35-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:31:22-63
 36    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 36-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:54:5-77
 36-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:54:22-74
-37    <uses-permission android:name="com.saggitt.omega.dev.permission.HOTSEAT_EDU" />
-37-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:32:5-77
-37-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:32:22-74
+37    <uses-permission android:name="com.leos.launcher.dev.permission.HOTSEAT_EDU" />
+37-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:33:5-77
+37-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:33:22-74
 38
 39    <uses-feature
 39-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:22:5-24:36
@@ -56,7 +56,7 @@
 41-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:24:9-33
 42    <permission
 42-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:27:5-30:55
-43        android:name="com.saggitt.omega.dev.permission.QSB"
+43        android:name="com.leos.launcher.dev.permission.QSB"
 43-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:28:9-55
 44        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
 44-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:29:9-72
@@ -75,9 +75,9 @@
 50    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS" />
 50-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:35:5-103
 50-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:35:22-100
-51    <uses-permission android:name="com.saggitt.omega.dev.permission.READ_SETTINGS" />
-52    <uses-permission android:name="com.saggitt.omega.dev.permission.WRITE_SETTINGS" />
-53    <uses-permission android:name="com.saggitt.omega.dev.permission.QSB" />
+51    <uses-permission android:name="com.leos.launcher.dev.permission.READ_SETTINGS" />
+52    <uses-permission android:name="com.leos.launcher.dev.permission.WRITE_SETTINGS" />
+53    <uses-permission android:name="com.leos.launcher.dev.permission.QSB" />
 53-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:38:5-71
 53-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:38:22-68
 54    <uses-permission android:name="android.permission.START_TASKS_FROM_RECENTS" />
@@ -224,13 +224,13 @@
 111    name in the permissions. eq com.mypackage.permission.READ_SETTINGS
 112    -->
 113    <permission
-114        android:name="com.saggitt.omega.dev.permission.READ_SETTINGS"
+114        android:name="com.leos.launcher.dev.permission.READ_SETTINGS"
 115        android:description="@string/permdesc_read_settings"
 116        android:label="@string/permlab_read_settings"
 117        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
 118        android:protectionLevel="signatureOrSystem" />
 119    <permission
-120        android:name="com.saggitt.omega.dev.permission.WRITE_SETTINGS"
+120        android:name="com.leos.launcher.dev.permission.WRITE_SETTINGS"
 121        android:description="@string/permdesc_write_settings"
 122        android:label="@string/permlab_write_settings"
 123        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
@@ -257,7 +257,7 @@
 135-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:83:9-42
 136        android:debuggable="true"
 137        android:exported="true"
-137-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:43:9-32
+137-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:44:9-32
 138        android:extractNativeLibs="false"
 139        android:fullBackupContent="@xml/backupscheme"
 139-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:84:9-54
@@ -279,1061 +279,1060 @@
 147-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:108:9-44
 148        android:supportsRtl="true"
 148-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:89:9-35
-149        android:testOnly="true"
-150        android:theme="@style/AppTheme" >
-150-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:40:9-40
-151        <service
-151-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:46:9-53:19
-152            android:name="com.android.quickstep.TouchInteractionService"
-152-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:47:13-73
-153            android:directBootAware="true"
-153-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:49:13-43
-154            android:permission="android.permission.STATUS_BAR_SERVICE" >
-154-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:48:13-71
-155            <intent-filter>
-155-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:50:13-52:29
-156                <action android:name="android.intent.action.QUICKSTEP_SERVICE" />
-156-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:51:17-82
-156-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:51:25-79
-157            </intent-filter>
-158        </service>
-159
-160        <activity
-160-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:55:9-66:39
-161            android:name="com.android.quickstep.RecentsActivity"
-161-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:55:19-71
-162            android:clearTaskOnLaunch="true"
-162-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:58:13-45
-163            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
-163-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:62:13-134
-164            android:excludeFromRecents="true"
-164-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:56:13-46
-165            android:exported="true"
-165-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:65:13-36
-166            android:launchMode="singleTask"
-166-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:57:13-44
-167            android:resizeableActivity="true"
-167-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:63:13-46
-168            android:resumeWhilePausing="true"
-168-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:64:13-46
-169            android:screenOrientation="unspecified"
-169-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:61:13-52
-170            android:stateNotNeeded="true"
-170-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:59:13-42
-171            android:taskAffinity=""
-171-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:66:13-36
-172            android:theme="@style/LauncherTheme" />
-172-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:60:13-49
-173
-174        <!-- Content provider to settings search. The autority should be same as the packageName -->
-175        <provider
-175-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:69:9-79:20
-176            android:name="com.android.quickstep.LauncherSearchIndexablesProvider"
-176-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:70:13-82
-177            android:authorities="com.saggitt.omega.dev"
-177-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:71:13-49
-178            android:exported="true"
-178-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:75:13-36
-179            android:grantUriPermissions="true"
-179-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:72:13-47
-180            android:multiprocess="true"
-180-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:73:13-40
-181            android:permission="android.permission.READ_SEARCH_INDEXABLES" >
-181-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:74:13-75
-182            <intent-filter>
-182-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:76:13-78:29
-183                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
-183-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:77:17-92
-183-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:77:25-89
-184            </intent-filter>
-185        </provider>
-186
-187        <activity
-187-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:97:9-102:40
-188            android:name="com.android.launcher3.proxy.ProxyActivityStarter"
-188-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:98:13-76
-189            android:clearTaskOnLaunch="true"
-189-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:101:13-45
-190            android:exported="false"
-190-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:102:13-37
-191            android:launchMode="singleTask"
-191-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:100:13-44
-192            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-192-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:99:13-83
-193        <activity
-193-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:104:9-113:20
-194            android:name="com.android.quickstep.interaction.GestureSandboxActivity"
-194-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:105:13-84
-195            android:autoRemoveFromRecents="true"
-195-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:106:13-49
-196            android:excludeFromRecents="true"
-196-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:107:13-46
-197            android:screenOrientation="portrait" >
-197-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:108:13-49
-198            <intent-filter>
-198-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:109:13-112:29
-199                <action android:name="com.android.quickstep.action.GESTURE_SANDBOX" />
-199-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:110:17-87
-199-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:110:25-84
-200
-201                <category android:name="android.intent.category.DEFAULT" />
-201-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-201-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-202            </intent-filter>
-203        </activity>
-204        <activity
-204-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:114:9-125:20
-205            android:name="com.android.launcher3.hybridhotseat.HotseatEduActivity"
-205-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:115:13-61
-206            android:clearTaskOnLaunch="true"
-206-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:116:13-45
-207            android:launchMode="singleTask"
-207-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:117:13-44
-208            android:noHistory="true"
-208-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:118:13-37
-209            android:permission="com.saggitt.omega.dev.permission.HOTSEAT_EDU"
-209-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:119:13-71
-210            android:theme="@android:style/Theme.NoDisplay" >
-210-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:120:13-59
-211            <intent-filter>
-211-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:121:13-124:29
-212                <action android:name="com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU" />
-212-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:122:17-95
-212-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:122:25-92
-213
-214                <category android:name="android.intent.category.DEFAULT" />
-214-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-214-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-215            </intent-filter>
-216        </activity>
-217
-218        <service
-218-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:127:9-131:72
-219            android:name="com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService"
-219-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:128:13-107
-220            android:exported="false"
-220-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:129:13-37
-221            android:permission="android.permission.BIND_JOB_SERVICE"
-221-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:131:13-69
-222            android:process=":wallpaper_chooser" />
-222-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:130:13-49
-223        <!--
-224        Main launcher activity. When extending only change the name, and keep all the
-225        attributes and intent filters the same
-226        -->
-227        <activity
-227-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:124:9-149:20
-228            android:name="com.saggitt.omega.OmegaLauncher"
-228-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:125:13-59
-229            android:clearTaskOnLaunch="true"
-229-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:126:13-45
-230            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
-230-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:127:13-134
-231            android:enabled="true"
-231-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:128:13-35
-232            android:label="@string/derived_app_name"
-232-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:129:13-53
-233            android:launchMode="singleTask"
-233-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:130:13-44
-234            android:resizeableActivity="true"
-234-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:131:13-46
-235            android:resumeWhilePausing="true"
-235-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:132:13-46
-236            android:screenOrientation="unspecified"
-236-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:133:13-52
-237            android:stateNotNeeded="true"
-237-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:134:13-42
-238            android:taskAffinity=""
-238-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:135:13-36
-239            android:windowSoftInputMode="adjustPan" >
-239-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:136:13-52
-240            <intent-filter>
-240-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:137:13-145:29
-241                <action android:name="android.intent.action.MAIN" />
-241-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
-241-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
-242
-243                <category android:name="android.intent.category.HOME" />
-243-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:17-73
-243-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:27-70
-244                <category android:name="android.intent.category.DEFAULT" />
-244-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-244-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-245                <category android:name="android.intent.category.MONKEY" />
-245-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:142:17-75
-245-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:142:27-72
-246                <category android:name="android.intent.category.LAUNCHER" />
-246-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:143:17-77
-246-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:143:27-74
-247                <category android:name="android.intent.category.LAUNCHER_APP" />
-247-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:144:17-81
-247-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:144:27-78
-248            </intent-filter>
-249
-250            <meta-data
-250-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:146:13-148:63
-251                android:name="com.android.launcher3.grid.control"
-251-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:147:17-66
-252                android:value="com.saggitt.omega.dev.grid_control" />
-252-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:148:17-60
-253        </activity>
-254        <activity
-254-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:154:9-164:20
-255            android:name="com.saggitt.omega.settings.SettingsActivity"
-255-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:155:13-71
-256            android:autoRemoveFromRecents="true"
-256-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:156:13-49
-257            android:label="@string/derived_app_name"
-257-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:157:13-53
-258            android:taskAffinity="com.saggitt.omega.dev.tasks.SETTINGS"
-258-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:158:13-67
-259            android:theme="@style/SettingsTheme_Light" >
-259-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:159:13-55
-260            <intent-filter>
-260-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:175:13-178:29
-261                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
-261-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:176:17-88
-261-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:176:25-85
-262
-263                <category android:name="android.intent.category.DEFAULT" />
-263-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-263-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-264            </intent-filter>
-265        </activity>
-266        <activity
-266-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:166:9-171:58
-267            android:name="com.saggitt.omega.settings.search.SettingsSearchActivity"
-267-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:167:13-84
-268            android:autoRemoveFromRecents="true"
-268-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:168:13-49
-269            android:label="@string/derived_app_name"
-269-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:169:13-53
-270            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
-270-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:170:13-85
-271            android:theme="@style/SettingsTheme_Light" />
-271-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:171:13-55
-272        <activity
-272-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:173:9-176:58
-273            android:name="com.saggitt.omega.preferences.SelectableAppsActivity"
-273-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:174:13-80
-274            android:autoRemoveFromRecents="true"
-274-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:175:13-49
-275            android:theme="@style/SettingsTheme_Light" /> <!-- Actions -->
-275-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:176:13-55
-276        <activity
-276-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:179:9-189:20
-277            android:name="com.saggitt.omega.gestures.OmegaShortcutActivity"
-277-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:180:13-76
-278            android:icon="@mipmap/ic_launcher"
-278-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:181:13-47
-279            android:label="@string/omega_actions"
-279-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:182:13-50
-280            android:theme="@style/SettingsTheme_Light.Transparent" >
-280-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:183:13-67
-281            <intent-filter>
-281-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:184:13-188:29
-282                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-282-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:185:17-80
-282-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:185:25-77
-283
-284                <category android:name="android.intent.category.DEFAULT" />
-284-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-284-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-285            </intent-filter>
-286        </activity>
-287        <activity
-287-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:190:9-201:20
-288            android:name="com.saggitt.omega.gestures.ui.RunHandlerActivity"
-288-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:191:13-76
-289            android:taskAffinity="com.saggitt.omega.dev.tasks.RUN_HANDLER"
-289-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:192:13-70
-290            android:theme="@style/SettingsTheme_Light.Transparent" >
-290-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:193:13-67
-291            <intent-filter>
-291-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:194:13-200:29
-292                <action android:name="com.saggitt.omega.START_ACTION" />
-292-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:195:17-73
-292-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:195:25-70
-293                <action android:name="android.intent.action.ASSIST" />
-293-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:196:17-70
-293-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:196:25-68
-294                <action android:name="android.intent.action.SEARCH_LONG_PRESS" />
-294-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:197:17-82
-294-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:197:25-79
-295
-296                <category android:name="android.intent.category.DEFAULT" />
-296-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-296-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-297            </intent-filter>
-298        </activity>
-299        <activity
-299-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:204:9-207:58
-300            android:name="com.saggitt.omega.gestures.ui.SelectAppActivity"
-300-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:205:13-75
-301            android:label="@string/action_open_app_select_app"
-301-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:206:13-63
-302            android:theme="@style/SettingsTheme_Light" />
-302-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:207:13-55
-303        <activity
-303-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:209:9-211:56
-304            android:name="com.saggitt.omega.BlankActivity"
-304-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:210:13-59
-305            android:theme="@style/Theme.Transparent" /> <!-- Icon picker -->
-305-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:211:13-53
-306        <activity
-306-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:214:9-217:58
-307            android:name="com.saggitt.omega.iconpack.EditIconActivity"
-307-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:215:13-71
-308            android:taskAffinity="com.saggitt.omega.dev.tasks.EDIT_ICON"
-308-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:216:13-68
-309            android:theme="@style/SettingsTheme_Light" />
-309-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:217:13-55
-310        <activity
-310-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:218:9-220:58
-311            android:name="com.saggitt.omega.iconpack.IconPickerActivity"
-311-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:219:13-73
-312            android:theme="@style/SettingsTheme_Light" /> <!-- Apply directly from iconpack -->
-312-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:220:13-55
-313        <activity
-313-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:223:9-231:20
-314            android:name="com.saggitt.omega.iconpack.ApplyIconPackActivity"
-314-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:224:13-76
-315            android:theme="@style/SettingsTheme_Light.Transparent" >
-315-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:225:13-67
-316            <intent-filter>
-316-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:226:13-230:29
-317                <action android:name="com.saggitt.omega.APPLY_ICONS" />
-317-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:227:17-72
-317-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:227:25-69
-318
-319                <category android:name="android.intent.category.DEFAULT" />
-319-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-319-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-320            </intent-filter>
-321        </activity>
-322        <activity
-322-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:233:9-243:20
-323            android:name="com.saggitt.omega.FakeLauncher"
-323-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:234:13-58
-324            android:enabled="false" >
-324-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:235:13-36
-325            <intent-filter>
-325-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:237:13-242:29
-326                <action android:name="android.intent.action.MAIN" />
-326-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
-326-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
-327
-328                <category android:name="android.intent.category.HOME" />
-328-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:17-73
-328-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:27-70
-329                <category android:name="android.intent.category.DEFAULT" />
-329-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-329-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-330            </intent-filter>
-331        </activity> <!-- DT2S using screen timeout -->
-332        <activity
-332-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:246:9-249:56
-333            android:name="com.saggitt.omega.gestures.handlers.SleepTimeoutActivity"
-333-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:247:13-84
-334            android:screenOrientation="locked"
-334-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:248:13-47
-335            android:theme="@style/SleepTimeoutTheme" /> <!-- DT2S using device admin -->
-335-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:249:13-53
-336        <receiver
-336-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:252:9-263:20
-337            android:name="com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin$SleepDeviceAdmin"
-337-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:254:13-103
-338            android:description="@string/dt2s_admin_hint"
-338-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:253:13-58
-339            android:permission="android.permission.BIND_DEVICE_ADMIN" >
-339-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:255:13-70
-340            <meta-data
-340-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:256:13-258:62
-341                android:name="android.app.device_admin"
-341-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:257:17-56
-342                android:resource="@xml/sleep_admin_policy" />
-342-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:258:17-59
-343
-344            <intent-filter>
-344-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:260:13-262:29
-345                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-345-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:261:17-82
-345-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:261:25-79
-346            </intent-filter>
-347        </receiver>
-348
-349        <service
-349-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:265:9-272:19
-350            android:name="com.saggitt.omega.OmegaAccessibilityService"
-350-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:266:13-71
-351            android:label="@string/derived_app_name"
-351-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:267:13-53
-352            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
-352-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:268:13-79
-353            <intent-filter>
-353-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:269:13-271:29
-354                <action android:name="android.accessibilityservice.AccessibilityService" />
-354-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:270:17-92
-354-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:270:25-89
-355            </intent-filter>
-356        </service>
-357
-358        <activity
-358-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:274:9-278:58
-359            android:name="com.saggitt.omega.backup.BackupListActivity"
-359-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:275:13-71
-360            android:label="@string/backups"
-360-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:276:13-44
-361            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
-361-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:277:13-85
-362            android:theme="@style/SettingsTheme_Light" />
-362-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:278:13-55
-363        <activity
-363-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:279:9-284:58
-364            android:name="com.saggitt.omega.backup.NewBackupActivity"
-364-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:280:13-70
-365            android:label="@string/title_create"
-365-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:281:13-49
-366            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
-366-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:282:13-85
-367            android:requestLegacyExternalStorage="true"
-367-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:283:13-56
-368            android:theme="@style/SettingsTheme_Light" />
-368-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:284:13-55
-369        <activity
-369-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:285:9-320:20
-370            android:name="com.saggitt.omega.backup.RestoreBackupActivity"
-370-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:286:13-74
-371            android:label="@string/restore_backup"
-371-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:287:13-51
-372            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
-372-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:288:13-85
-373            android:theme="@style/SettingsTheme_Light" >
-373-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:289:13-55
-374            <intent-filter>
-374-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:290:13-319:29
-375                <action android:name="android.intent.action.VIEW" />
-375-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:291:17-69
-375-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:291:25-66
-376
-377                <category android:name="android.intent.category.DEFAULT" />
-377-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-377-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-378                <category android:name="android.intent.category.BROWSABLE" />
-378-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:294:17-78
-378-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:294:27-75
-379
-380                <data android:mimeType="application/vnd.omega.backup" />
+149        android:theme="@style/AppTheme" >
+149-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:41:9-40
+150        <service
+150-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:47:9-54:19
+151            android:name="com.android.quickstep.TouchInteractionService"
+151-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:48:13-73
+152            android:directBootAware="true"
+152-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:50:13-43
+153            android:permission="android.permission.STATUS_BAR_SERVICE" >
+153-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:49:13-71
+154            <intent-filter>
+154-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:51:13-53:29
+155                <action android:name="android.intent.action.QUICKSTEP_SERVICE" />
+155-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:52:17-82
+155-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:52:25-79
+156            </intent-filter>
+157        </service>
+158
+159        <activity
+159-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:56:9-67:39
+160            android:name="com.android.quickstep.RecentsActivity"
+160-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:56:19-71
+161            android:clearTaskOnLaunch="true"
+161-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:59:13-45
+162            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+162-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:63:13-134
+163            android:excludeFromRecents="true"
+163-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:57:13-46
+164            android:exported="true"
+164-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:66:13-36
+165            android:launchMode="singleTask"
+165-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:58:13-44
+166            android:resizeableActivity="true"
+166-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:64:13-46
+167            android:resumeWhilePausing="true"
+167-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:65:13-46
+168            android:screenOrientation="unspecified"
+168-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:62:13-52
+169            android:stateNotNeeded="true"
+169-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:60:13-42
+170            android:taskAffinity=""
+170-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:67:13-36
+171            android:theme="@style/LauncherTheme" />
+171-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:61:13-49
+172
+173        <!-- Content provider to settings search. The autority should be same as the packageName -->
+174        <provider
+174-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:70:9-80:20
+175            android:name="com.android.quickstep.LauncherSearchIndexablesProvider"
+175-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:71:13-82
+176            android:authorities="com.leos.launcher.dev"
+176-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:72:13-49
+177            android:exported="true"
+177-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:76:13-36
+178            android:grantUriPermissions="true"
+178-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:73:13-47
+179            android:multiprocess="true"
+179-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:74:13-40
+180            android:permission="android.permission.READ_SEARCH_INDEXABLES" >
+180-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:75:13-75
+181            <intent-filter>
+181-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:77:13-79:29
+182                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
+182-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:78:17-92
+182-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:78:25-89
+183            </intent-filter>
+184        </provider>
+185
+186        <activity
+186-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:98:9-103:40
+187            android:name="com.android.launcher3.proxy.ProxyActivityStarter"
+187-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:99:13-76
+188            android:clearTaskOnLaunch="true"
+188-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:102:13-45
+189            android:exported="false"
+189-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:103:13-37
+190            android:launchMode="singleTask"
+190-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:101:13-44
+191            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+191-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:100:13-83
+192        <activity
+192-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:105:9-114:20
+193            android:name="com.android.quickstep.interaction.GestureSandboxActivity"
+193-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:106:13-84
+194            android:autoRemoveFromRecents="true"
+194-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:107:13-49
+195            android:excludeFromRecents="true"
+195-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:108:13-46
+196            android:screenOrientation="portrait" >
+196-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:109:13-49
+197            <intent-filter>
+197-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:110:13-113:29
+198                <action android:name="com.android.quickstep.action.GESTURE_SANDBOX" />
+198-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:111:17-87
+198-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:111:25-84
+199
+200                <category android:name="android.intent.category.DEFAULT" />
+200-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+200-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+201            </intent-filter>
+202        </activity>
+203        <activity
+203-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:115:9-126:20
+204            android:name="com.android.launcher3.hybridhotseat.HotseatEduActivity"
+204-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:116:13-61
+205            android:clearTaskOnLaunch="true"
+205-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:117:13-45
+206            android:launchMode="singleTask"
+206-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:118:13-44
+207            android:noHistory="true"
+207-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:119:13-37
+208            android:permission="com.leos.launcher.dev.permission.HOTSEAT_EDU"
+208-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:120:13-71
+209            android:theme="@android:style/Theme.NoDisplay" >
+209-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:121:13-59
+210            <intent-filter>
+210-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:122:13-125:29
+211                <action android:name="com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU" />
+211-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:123:17-95
+211-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:123:25-92
+212
+213                <category android:name="android.intent.category.DEFAULT" />
+213-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+213-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+214            </intent-filter>
+215        </activity>
+216
+217        <service
+217-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:128:9-132:72
+218            android:name="com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService"
+218-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:129:13-107
+219            android:exported="false"
+219-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:130:13-37
+220            android:permission="android.permission.BIND_JOB_SERVICE"
+220-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:132:13-69
+221            android:process=":wallpaper_chooser" />
+221-->/home/um300/Downloads/Android-apps/LeOS-Launcher/quickstep/AndroidManifest.xml:131:13-49
+222        <!--
+223        Main launcher activity. When extending only change the name, and keep all the
+224        attributes and intent filters the same
+225        -->
+226        <activity
+226-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:124:9-149:20
+227            android:name="com.saggitt.omega.OmegaLauncher"
+227-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:125:13-59
+228            android:clearTaskOnLaunch="true"
+228-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:126:13-45
+229            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+229-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:127:13-134
+230            android:enabled="true"
+230-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:128:13-35
+231            android:label="@string/derived_app_name"
+231-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:129:13-53
+232            android:launchMode="singleTask"
+232-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:130:13-44
+233            android:resizeableActivity="true"
+233-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:131:13-46
+234            android:resumeWhilePausing="true"
+234-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:132:13-46
+235            android:screenOrientation="unspecified"
+235-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:133:13-52
+236            android:stateNotNeeded="true"
+236-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:134:13-42
+237            android:taskAffinity=""
+237-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:135:13-36
+238            android:windowSoftInputMode="adjustPan" >
+238-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:136:13-52
+239            <intent-filter>
+239-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:137:13-145:29
+240                <action android:name="android.intent.action.MAIN" />
+240-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
+240-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
+241
+242                <category android:name="android.intent.category.HOME" />
+242-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:17-73
+242-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:27-70
+243                <category android:name="android.intent.category.DEFAULT" />
+243-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+243-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+244                <category android:name="android.intent.category.MONKEY" />
+244-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:142:17-75
+244-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:142:27-72
+245                <category android:name="android.intent.category.LAUNCHER" />
+245-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:143:17-77
+245-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:143:27-74
+246                <category android:name="android.intent.category.LAUNCHER_APP" />
+246-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:144:17-81
+246-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:144:27-78
+247            </intent-filter>
+248
+249            <meta-data
+249-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:146:13-148:63
+250                android:name="com.android.launcher3.grid.control"
+250-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:147:17-66
+251                android:value="com.leos.launcher.dev.grid_control" />
+251-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:148:17-60
+252        </activity>
+253        <activity
+253-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:154:9-164:20
+254            android:name="com.saggitt.omega.settings.SettingsActivity"
+254-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:155:13-71
+255            android:autoRemoveFromRecents="true"
+255-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:156:13-49
+256            android:label="@string/derived_app_name"
+256-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:157:13-53
+257            android:taskAffinity="com.leos.launcher.dev.tasks.SETTINGS"
+257-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:158:13-67
+258            android:theme="@style/SettingsTheme_Light" >
+258-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:159:13-55
+259            <intent-filter>
+259-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:175:13-178:29
+260                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+260-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:176:17-88
+260-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:176:25-85
+261
+262                <category android:name="android.intent.category.DEFAULT" />
+262-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+262-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+263            </intent-filter>
+264        </activity>
+265        <activity
+265-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:166:9-171:58
+266            android:name="com.saggitt.omega.settings.search.SettingsSearchActivity"
+266-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:167:13-84
+267            android:autoRemoveFromRecents="true"
+267-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:168:13-49
+268            android:label="@string/derived_app_name"
+268-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:169:13-53
+269            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
+269-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:170:13-85
+270            android:theme="@style/SettingsTheme_Light" />
+270-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:171:13-55
+271        <activity
+271-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:173:9-176:58
+272            android:name="com.saggitt.omega.preferences.SelectableAppsActivity"
+272-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:174:13-80
+273            android:autoRemoveFromRecents="true"
+273-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:175:13-49
+274            android:theme="@style/SettingsTheme_Light" /> <!-- Actions -->
+274-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:176:13-55
+275        <activity
+275-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:179:9-189:20
+276            android:name="com.saggitt.omega.gestures.OmegaShortcutActivity"
+276-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:180:13-76
+277            android:icon="@mipmap/ic_launcher"
+277-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:181:13-47
+278            android:label="@string/omega_actions"
+278-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:182:13-50
+279            android:theme="@style/SettingsTheme_Light.Transparent" >
+279-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:183:13-67
+280            <intent-filter>
+280-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:184:13-188:29
+281                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+281-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:185:17-80
+281-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:185:25-77
+282
+283                <category android:name="android.intent.category.DEFAULT" />
+283-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+283-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+284            </intent-filter>
+285        </activity>
+286        <activity
+286-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:190:9-201:20
+287            android:name="com.saggitt.omega.gestures.ui.RunHandlerActivity"
+287-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:191:13-76
+288            android:taskAffinity="com.leos.launcher.dev.tasks.RUN_HANDLER"
+288-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:192:13-70
+289            android:theme="@style/SettingsTheme_Light.Transparent" >
+289-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:193:13-67
+290            <intent-filter>
+290-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:194:13-200:29
+291                <action android:name="com.saggitt.omega.START_ACTION" />
+291-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:195:17-73
+291-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:195:25-70
+292                <action android:name="android.intent.action.ASSIST" />
+292-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:196:17-70
+292-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:196:25-68
+293                <action android:name="android.intent.action.SEARCH_LONG_PRESS" />
+293-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:197:17-82
+293-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:197:25-79
+294
+295                <category android:name="android.intent.category.DEFAULT" />
+295-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+295-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+296            </intent-filter>
+297        </activity>
+298        <activity
+298-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:204:9-207:58
+299            android:name="com.saggitt.omega.gestures.ui.SelectAppActivity"
+299-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:205:13-75
+300            android:label="@string/action_open_app_select_app"
+300-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:206:13-63
+301            android:theme="@style/SettingsTheme_Light" />
+301-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:207:13-55
+302        <activity
+302-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:209:9-211:56
+303            android:name="com.saggitt.omega.BlankActivity"
+303-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:210:13-59
+304            android:theme="@style/Theme.Transparent" /> <!-- Icon picker -->
+304-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:211:13-53
+305        <activity
+305-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:214:9-217:58
+306            android:name="com.saggitt.omega.iconpack.EditIconActivity"
+306-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:215:13-71
+307            android:taskAffinity="com.leos.launcher.dev.tasks.EDIT_ICON"
+307-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:216:13-68
+308            android:theme="@style/SettingsTheme_Light" />
+308-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:217:13-55
+309        <activity
+309-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:218:9-220:58
+310            android:name="com.saggitt.omega.iconpack.IconPickerActivity"
+310-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:219:13-73
+311            android:theme="@style/SettingsTheme_Light" /> <!-- Apply directly from iconpack -->
+311-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:220:13-55
+312        <activity
+312-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:223:9-231:20
+313            android:name="com.saggitt.omega.iconpack.ApplyIconPackActivity"
+313-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:224:13-76
+314            android:theme="@style/SettingsTheme_Light.Transparent" >
+314-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:225:13-67
+315            <intent-filter>
+315-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:226:13-230:29
+316                <action android:name="com.saggitt.omega.APPLY_ICONS" />
+316-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:227:17-72
+316-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:227:25-69
+317
+318                <category android:name="android.intent.category.DEFAULT" />
+318-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+318-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+319            </intent-filter>
+320        </activity>
+321        <activity
+321-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:233:9-243:20
+322            android:name="com.saggitt.omega.FakeLauncher"
+322-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:234:13-58
+323            android:enabled="false" >
+323-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:235:13-36
+324            <intent-filter>
+324-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:237:13-242:29
+325                <action android:name="android.intent.action.MAIN" />
+325-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
+325-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
+326
+327                <category android:name="android.intent.category.HOME" />
+327-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:17-73
+327-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:140:27-70
+328                <category android:name="android.intent.category.DEFAULT" />
+328-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+328-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+329            </intent-filter>
+330        </activity> <!-- DT2S using screen timeout -->
+331        <activity
+331-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:246:9-249:56
+332            android:name="com.saggitt.omega.gestures.handlers.SleepTimeoutActivity"
+332-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:247:13-84
+333            android:screenOrientation="locked"
+333-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:248:13-47
+334            android:theme="@style/SleepTimeoutTheme" /> <!-- DT2S using device admin -->
+334-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:249:13-53
+335        <receiver
+335-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:252:9-263:20
+336            android:name="com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin$SleepDeviceAdmin"
+336-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:254:13-103
+337            android:description="@string/dt2s_admin_hint"
+337-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:253:13-58
+338            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+338-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:255:13-70
+339            <meta-data
+339-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:256:13-258:62
+340                android:name="android.app.device_admin"
+340-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:257:17-56
+341                android:resource="@xml/sleep_admin_policy" />
+341-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:258:17-59
+342
+343            <intent-filter>
+343-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:260:13-262:29
+344                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+344-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:261:17-82
+344-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:261:25-79
+345            </intent-filter>
+346        </receiver>
+347
+348        <service
+348-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:265:9-272:19
+349            android:name="com.saggitt.omega.OmegaAccessibilityService"
+349-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:266:13-71
+350            android:label="@string/derived_app_name"
+350-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:267:13-53
+351            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+351-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:268:13-79
+352            <intent-filter>
+352-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:269:13-271:29
+353                <action android:name="android.accessibilityservice.AccessibilityService" />
+353-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:270:17-92
+353-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:270:25-89
+354            </intent-filter>
+355        </service>
+356
+357        <activity
+357-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:274:9-278:58
+358            android:name="com.saggitt.omega.backup.BackupListActivity"
+358-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:275:13-71
+359            android:label="@string/backups"
+359-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:276:13-44
+360            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
+360-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:277:13-85
+361            android:theme="@style/SettingsTheme_Light" />
+361-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:278:13-55
+362        <activity
+362-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:279:9-284:58
+363            android:name="com.saggitt.omega.backup.NewBackupActivity"
+363-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:280:13-70
+364            android:label="@string/title_create"
+364-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:281:13-49
+365            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
+365-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:282:13-85
+366            android:requestLegacyExternalStorage="true"
+366-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:283:13-56
+367            android:theme="@style/SettingsTheme_Light" />
+367-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:284:13-55
+368        <activity
+368-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:285:9-320:20
+369            android:name="com.saggitt.omega.backup.RestoreBackupActivity"
+369-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:286:13-74
+370            android:label="@string/restore_backup"
+370-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:287:13-51
+371            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
+371-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:288:13-85
+372            android:theme="@style/SettingsTheme_Light" >
+372-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:289:13-55
+373            <intent-filter>
+373-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:290:13-319:29
+374                <action android:name="android.intent.action.VIEW" />
+374-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:291:17-69
+374-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:291:25-66
+375
+376                <category android:name="android.intent.category.DEFAULT" />
+376-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+376-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+377                <category android:name="android.intent.category.BROWSABLE" />
+377-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:294:17-78
+377-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:294:27-75
+378
+379                <data android:mimeType="application/vnd.omega.backup" />
+379-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
+379-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
+380                <data android:mimeType="application/octet-stream" />
 380-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
 380-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
-381                <data android:mimeType="application/octet-stream" />
+381                <data android:mimeType="application/x-zip-compressed" />
 381-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
 381-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
-382                <data android:mimeType="application/x-zip-compressed" />
+382                <data android:mimeType="application/zip" />
 382-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
 382-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
-383                <data android:mimeType="application/zip" />
+383                <data android:scheme="file" />
 383-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-383-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
-384                <data android:scheme="file" />
+384                <data android:scheme="content" />
 384-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-385                <data android:scheme="content" />
+385                <data android:mimeType="*/*" />
 385-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-386                <data android:mimeType="*/*" />
-386-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-386-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
-387                <!--
-388                    Work around Android's ugly primitive PatternMatcher
-389                    implementation that can't cope with finding a . early in
-390                    the path unless it's explicitly matched.
-391                -->
-392                <data android:host="*" />
+385-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
+386                <!--
+387                    Work around Android's ugly primitive PatternMatcher
+388                    implementation that can't cope with finding a . early in
+389                    the path unless it's explicitly matched.
+390                -->
+391                <data android:host="*" />
+391-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
+392                <data android:pathPattern=".*\\.zbk" />
 392-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-393                <data android:pathPattern=".*\\.zbk" />
+393                <data android:pathPattern=".*\\..*\\.zbk" />
 393-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-394                <data android:pathPattern=".*\\..*\\.zbk" />
+394                <data android:pathPattern=".*\\..*\\..*\\.zbk" />
 394-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-395                <data android:pathPattern=".*\\..*\\..*\\.zbk" />
+395                <data android:pathPattern=".*\\..*\\..*\\..*\\.zbk" />
 395-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-396                <data android:pathPattern=".*\\..*\\..*\\..*\\.zbk" />
+396                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.zbk" />
 396-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-397                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.zbk" />
+397                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
 397-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-398                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+398                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
 398-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-399                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+399                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
 399-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-400                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+400                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
 400-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-401                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
-401-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-402            </intent-filter>
-403        </activity>
-404        <activity
-404-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:322:9-325:47
-405            android:name="com.saggitt.omega.feed.FeedWidgetsActivity"
-405-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:323:13-70
-406            android:label="@string/feed_widget"
-406-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:324:13-48
-407            android:theme="@style/AppTheme" />
-407-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:325:13-44
-408        <activity
-408-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:326:9-333:57
-409            android:name="com.saggitt.omega.feed.WidgetPicker"
-409-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:327:13-63
-410            android:autoRemoveFromRecents="true"
-410-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:328:13-49
-411            android:excludeFromRecents="true"
-411-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:329:13-46
-412            android:exported="true"
-412-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:330:13-36
-413            android:finishOnCloseSystemDialogs="true"
-413-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:331:13-54
-414            android:label="@string/feed_widget"
-414-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:332:13-48
-415            android:theme="@style/WidgetPickerDialog" /> <!-- Pixel -->
-415-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:333:13-54
-416        <activity
-416-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:336:9-348:20
-417            android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity"
-417-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:337:13-90
-418            android:theme="@android:style/Theme.NoDisplay" >
-418-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:338:13-59
-419            <intent-filter android:priority="1" >
-419-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:339:13-347:29
-419-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:339:28-48
-420                <action android:name="com.google.android.apps.nexuslauncher.search.APP_LAUNCH" />
-420-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:340:17-98
-420-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:340:25-95
-421
-422                <category android:name="android.intent.category.DEFAULT" />
-422-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-422-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-423
-424                <data
-424-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
-425                    android:mimeType="vnd.android.cursor.dir/vnd.android.search.suggest"
-425-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
-426                    android:scheme="content" />
-427            </intent-filter>
-428        </activity>
-429
-430        <receiver
-430-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:350:9-356:20
-431            android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver"
-431-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:351:13-87
-432            android:permission="android.permission.CAPTURE_AUDIO_HOTWORD" >
-432-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:352:13-74
-433            <intent-filter>
-433-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:353:13-355:29
-434                <action android:name="com.google.android.systemui.OPA_ENABLED" />
-434-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:354:17-82
-434-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:354:25-79
-435            </intent-filter>
-436        </receiver>
-437        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver" >
-437-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:357:9-361:20
-437-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:357:19-110
-438            <intent-filter>
-438-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:358:13-360:29
-439                <action android:name="com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE" />
-439-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:359:17-98
-439-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:359:25-95
-440            </intent-filter>
-441        </receiver>
-442
-443        <meta-data
-443-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:363:9-365:35
-444            android:name="android.max_aspect"
-444-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:364:13-46
-445            android:value="2.1" />
-445-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:365:13-32
-446        <meta-data
-446-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:366:9-368:36
-447            android:name="com.samsung.android.non_immersive"
-447-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:367:13-61
-448            android:value="true" />
-448-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:368:13-33
-449
-450        <provider
-450-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:370:9-378:20
-451            android:name="androidx.core.content.FileProvider"
-451-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:371:13-62
-452            android:authorities="com.saggitt.omega.dev.provider"
-452-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:372:13-58
-453            android:exported="false"
-453-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:373:13-37
-454            android:grantUriPermissions="true" >
-454-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:374:13-47
-455            <meta-data
-455-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:375:13-377:58
-456                android:name="android.support.FILE_PROVIDER_PATHS"
-456-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:376:17-67
-457                android:resource="@xml/provider_paths" />
-457-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:377:17-55
-458        </provider>
-459        <provider
-459-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:380:9-383:39
-460            android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"
-460-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:381:13-90
-461            android:authorities="com.saggitt.omega.dev.appssearch"
-461-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:382:13-62
-462            android:exported="true" />
-462-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:383:13-36
-463        <provider
-463-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:385:9-389:50
-464            android:name="com.saggitt.omega.util.FiveSecsProvider"
-464-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:386:13-67
-465            android:authorities="com.saggitt.omega.dev.fivesecsprovider"
-465-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:387:13-68
-466            android:exported="true"
-466-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:388:13-36
-467            android:grantUriPermissions="true" /> <!-- Intent received used to install shortcuts from other applications -->
-467-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:389:13-47
-468        <receiver
-468-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:92:9-99:20
-469            android:name="com.android.launcher3.InstallShortcutReceiver"
-469-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:93:13-73
-470            android:enabled="@bool/enable_install_shortcut_api"
-470-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:95:13-64
-471            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT" >
-471-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:94:13-82
-472            <intent-filter>
-472-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:96:13-98:29
-473                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
-473-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:97:17-87
-473-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:97:25-84
-474            </intent-filter>
-475        </receiver> <!-- Intent received when a session is committed -->
-476        <receiver android:name="com.android.launcher3.SessionCommitReceiver" >
-476-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:102:9-107:20
-476-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:103:13-71
-477            <intent-filter>
-477-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:104:13-106:29
-478                <action android:name="android.content.pm.action.SESSION_COMMITTED" />
-478-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:105:17-86
-478-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:105:25-83
-479            </intent-filter>
-480        </receiver> <!-- Intent received used to initialize a restored widget -->
-481        <receiver android:name="com.android.launcher3.AppWidgetsRestoredReceiver" >
-481-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:110:9-114:20
-481-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:110:19-82
-482            <intent-filter>
-482-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:111:13-113:29
-483                <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED" />
-483-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:112:17-90
-483-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:112:25-88
-484            </intent-filter>
-485        </receiver>
-486
-487        <service
-487-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:122:9-130:19
-488            android:name="com.android.launcher3.notification.NotificationListener"
-488-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:123:13-83
-489            android:enabled="@bool/notification_dots_enabled"
-489-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:125:13-62
-490            android:label="@string/notification_dots_service_title"
-490-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:124:13-68
-491            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-491-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:126:13-87
-492            <intent-filter>
-492-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:127:13-129:29
-493                <action android:name="android.service.notification.NotificationListenerService" />
-493-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:128:17-99
-493-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:128:25-96
-494            </intent-filter>
-495        </service>
-496
-497        <meta-data
-497-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:132:9-133:47
-498            android:name="android.nfc.disable_beam_default"
-498-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:132:20-67
-499            android:value="true" />
-499-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:133:24-44
-500
-501        <activity
-501-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:135:9-144:20
-502            android:name="com.android.launcher3.dragndrop.AddItemActivity"
-502-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:135:19-81
-503            android:autoRemoveFromRecents="true"
-503-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:138:13-49
-504            android:excludeFromRecents="true"
-504-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:137:13-46
-505            android:label="@string/action_add_to_workspace"
-505-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:139:13-60
-506            android:theme="@style/AppItemActivityTheme" >
-506-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:136:13-56
-507            <intent-filter>
-507-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:140:13-143:29
-508                <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT" />
-508-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:141:17-89
-508-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:141:25-86
-509                <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
-509-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:142:17-90
-509-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:142:25-87
-510            </intent-filter>
-511        </activity>
-512        <!--
-513        The settings provider contains Home's data, like the workspace favorites. The permissions
-514        should be changed to what is defined above. The authorities should also be changed to
-515        represent the package name.
-516        -->
-517        <provider
-518            android:name="com.android.launcher3.LauncherProvider"
-519            android:authorities="com.saggitt.omega.dev.settings"
-520            android:exported="true"
-521            android:readPermission="com.saggitt.omega.dev.permission.READ_SETTINGS"
-522            android:writePermission="com.saggitt.omega.dev.permission.WRITE_SETTINGS" />
-523        <!--
-524        The content provider for exposing various launcher grid options.
-525        TODO: Add proper permissions
-526        -->
-527        <provider
-528            android:name="com.android.launcher3.graphics.GridCustomizationsProvider"
-529            android:authorities="com.saggitt.omega.dev.grid_control"
-530            android:exported="true" />
-531        <provider
-532            android:name="com.android.launcher3.testing.TestInformationProvider"
-533            android:authorities="com.saggitt.omega.dev.TestInfo"
-534            android:enabled="false"
-535            android:exported="true"
-536            android:readPermission="android.permission.WRITE_SECURE_SETTINGS"
-537            android:writePermission="android.permission.WRITE_SECURE_SETTINGS" />
-538<!--         Launcher activity for secondary display -->
-539        <activity
-539-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:192:9-203:20
-540            android:name="com.android.launcher3.secondarydisplay.SecondaryDisplayLauncher"
-540-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:193:13-91
-541            android:enabled="true"
-541-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:194:13-35
-542            android:launchMode="singleTop"
-542-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:195:13-43
-543            android:theme="@style/AppTheme" >
-543-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:196:13-44
-544            <intent-filter>
-544-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:197:13-202:29
-545                <action android:name="android.intent.action.MAIN" />
-545-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
-545-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
-546
-547                <category android:name="android.intent.category.SECONDARY_HOME" />
-547-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:17-83
-547-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:27-80
-548                <category android:name="android.intent.category.DEFAULT" />
-548-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-548-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-549            </intent-filter>
-550        </activity>
-551        <activity
-551-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:25:9-27:39
-552            android:name="androidx.compose.ui.tooling.PreviewActivity"
-552-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:26:13-71
-553            android:exported="true" />
-553-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:27:13-36
-554        <activity
-554-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:48:9-51:45
-555            android:name="com.farmerbb.taskbar.activity.MainActivity"
-555-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:49:13-70
-556            android:label="@string/tb_app_name"
-556-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:50:13-48
-557            android:process=":libtaskbar" />
-557-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:51:13-42
-558        <activity
-558-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:52:9-58:64
-559            android:name="com.farmerbb.taskbar.activity.InvisibleActivity"
-559-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:53:13-75
-560            android:documentLaunchMode="always"
-560-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:54:13-48
-561            android:excludeFromRecents="true"
-561-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:55:13-46
-562            android:launchMode="singleTask"
-562-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:56:13-44
-563            android:process=":libtaskbar"
-563-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:57:13-42
-564            android:theme="@style/Taskbar.InvisibleActivity" />
-564-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:58:13-61
-565        <activity
-565-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:59:9-65:56
-566            android:name="com.farmerbb.taskbar.activity.InvisibleActivityAlt"
-566-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:60:13-78
-567            android:documentLaunchMode="always"
-567-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:61:13-48
-568            android:excludeFromRecents="true"
-568-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:62:13-46
-569            android:launchMode="singleTask"
-569-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:63:13-44
-570            android:process=":libtaskbar"
-570-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:64:13-42
-571            android:theme="@style/Taskbar.Incognito" />
-571-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:65:13-53
-572        <activity
-572-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:66:9-72:61
-573            android:name="com.farmerbb.taskbar.activity.dark.InvisibleActivityAltDark"
-573-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:67:13-87
-574            android:documentLaunchMode="always"
-574-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:68:13-48
-575            android:excludeFromRecents="true"
-575-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:69:13-46
-576            android:launchMode="singleTask"
-576-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:70:13-44
-577            android:process=":libtaskbar"
-577-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:71:13-42
-578            android:theme="@style/Taskbar.Incognito.Dark" />
-578-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:72:13-58
-579        <activity
-579-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:73:9-80:64
-580            android:name="com.farmerbb.taskbar.activity.InvisibleActivityFreeform"
-580-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:74:13-83
-581            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-581-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:75:13-186
-582            android:documentLaunchMode="always"
-582-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:76:13-48
-583            android:excludeFromRecents="true"
-583-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:77:13-46
-584            android:launchMode="singleInstance"
-584-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:78:13-48
-585            android:process=":libtaskbar"
-585-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:79:13-42
-586            android:theme="@style/Taskbar.InvisibleActivity" />
-586-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:80:13-61
-587        <activity
-587-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:81:9-95:20
-588            android:name="com.farmerbb.taskbar.activity.SecondaryHomeActivity"
-588-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:82:13-79
-589            android:configChanges="screenSize|keyboard|keyboardHidden"
-589-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:83:13-71
-590            android:enabled="true"
-590-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:84:13-35
-591            android:excludeFromRecents="true"
-591-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:85:13-46
-592            android:label="@string/tb_app_name"
-592-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:86:13-48
-593            android:process=":libtaskbar"
-593-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:87:13-42
-594            android:theme="@style/Taskbar.HomeActivity" >
-594-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:88:13-56
-595            <intent-filter>
-595-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:197:13-202:29
-596                <action android:name="android.intent.action.MAIN" />
-596-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
-596-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
-597
-598                <category android:name="android.intent.category.DEFAULT" />
-598-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
-598-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
-599                <category android:name="android.intent.category.SECONDARY_HOME" />
-599-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:17-83
-599-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:27-80
-600            </intent-filter>
-601        </activity>
-602        <activity
-602-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:96:9-101:53
-603            android:name="com.farmerbb.taskbar.activity.ContextMenuActivity"
-603-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:97:13-77
-604            android:documentLaunchMode="always"
-604-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:98:13-48
-605            android:excludeFromRecents="true"
-605-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:99:13-46
-606            android:process=":libtaskbar"
-606-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:100:13-42
-607            android:theme="@style/Taskbar.Dialog" />
-607-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:101:13-50
-608        <activity
-608-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:102:9-107:58
-609            android:name="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark"
-609-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:103:13-86
-610            android:documentLaunchMode="always"
-610-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:104:13-48
-611            android:excludeFromRecents="true"
-611-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:105:13-46
-612            android:process=":libtaskbar"
-612-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:106:13-42
-613            android:theme="@style/Taskbar.Dialog.Dark" />
-613-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:107:13-55
-614        <activity
-614-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:108:9-111:63
-615            android:name="com.farmerbb.taskbar.activity.SelectAppActivity"
-615-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:109:13-75
-616            android:process=":libtaskbar"
-616-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:110:13-42
-617            android:theme="@style/Taskbar.Dialog.Blacklist" />
-617-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:111:13-60
-618        <activity
-618-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:112:9-115:68
-619            android:name="com.farmerbb.taskbar.activity.dark.SelectAppActivityDark"
-619-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:113:13-84
-620            android:process=":libtaskbar"
-620-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:114:13-42
-621            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
-621-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:115:13-65
-622        <activity
-622-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:116:9-119:63
-623            android:name="com.farmerbb.taskbar.activity.DesktopIconSelectAppActivity"
-623-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:117:13-86
-624            android:process=":libtaskbar"
-624-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:118:13-42
-625            android:theme="@style/Taskbar.Dialog.Blacklist" />
-625-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:119:13-60
-626        <activity
-626-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:120:9-123:68
-627            android:name="com.farmerbb.taskbar.activity.dark.DesktopIconSelectAppActivityDark"
-627-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:121:13-95
-628            android:process=":libtaskbar"
-628-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:122:13-42
-629            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
-629-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:123:13-65
-630        <activity
-630-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:124:9-129:56
-631            android:name="com.farmerbb.taskbar.activity.DummyActivity"
-631-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:125:13-71
-632            android:documentLaunchMode="always"
-632-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:126:13-48
-633            android:excludeFromRecents="true"
-633-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:127:13-46
-634            android:process=":libtaskbar"
-634-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:128:13-42
-635            android:theme="@style/Taskbar.Incognito" />
-635-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:129:13-53
-636        <activity
-636-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:130:9-133:63
-637            android:name="com.farmerbb.taskbar.activity.IconPackActivity"
-637-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:131:13-74
-638            android:process=":libtaskbar"
-638-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:132:13-42
-639            android:theme="@style/Taskbar.Dialog.Blacklist" />
-639-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:133:13-60
-640        <activity
-640-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:134:9-137:68
-641            android:name="com.farmerbb.taskbar.activity.dark.IconPackActivityDark"
-641-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:135:13-83
-642            android:process=":libtaskbar"
-642-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:136:13-42
-643            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
-643-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:137:13-65
-644        <activity
-644-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:138:9-141:63
-645            android:name="com.farmerbb.taskbar.activity.ClearDataActivity"
-645-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:139:13-75
-646            android:process=":libtaskbar"
-646-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:140:13-42
-647            android:theme="@style/Taskbar.Dialog.Blacklist" />
-647-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:141:13-60
-648        <activity
-648-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:142:9-145:68
-649            android:name="com.farmerbb.taskbar.activity.dark.ClearDataActivityDark"
-649-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:143:13-84
-650            android:process=":libtaskbar"
-650-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:144:13-42
-651            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
-651-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:145:13-65
-652        <activity
-652-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:146:9-152:56
-653            android:name="com.farmerbb.taskbar.activity.DashboardActivity"
-653-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:147:13-75
-654            android:documentLaunchMode="always"
-654-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:148:13-48
-655            android:excludeFromRecents="true"
-655-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:149:13-46
-656            android:launchMode="singleTask"
-656-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:150:13-44
-657            android:process=":libtaskbar"
-657-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:151:13-42
-658            android:theme="@style/Taskbar.Incognito" />
-658-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:152:13-53
-659        <activity
-659-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:153:9-159:61
-660            android:name="com.farmerbb.taskbar.activity.dark.DashboardActivityDark"
-660-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:154:13-84
-661            android:documentLaunchMode="always"
-661-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:155:13-48
-662            android:excludeFromRecents="true"
-662-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:156:13-46
-663            android:launchMode="singleTask"
-663-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:157:13-44
-664            android:process=":libtaskbar"
-664-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:158:13-42
-665            android:theme="@style/Taskbar.Incognito.Dark" />
-665-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:159:13-58
-666        <activity
-666-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:160:9-167:56
-667            android:name="com.farmerbb.taskbar.activity.TouchAbsorberActivity"
-667-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:161:13-79
-668            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
-668-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:162:13-186
-669            android:documentLaunchMode="always"
-669-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:163:13-48
-670            android:excludeFromRecents="true"
-670-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:164:13-46
-671            android:launchMode="singleTask"
-671-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:165:13-44
-672            android:process=":libtaskbar"
-672-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:166:13-42
-673            android:theme="@style/Taskbar.Incognito" />
-673-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:167:13-53
-674        <activity
-674-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:12:9-14:49
-675            android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity"
-675-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:13:13-89
-676            android:process=":error_activity" />
-676-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:14:13-46
-677
-678        <provider
-678-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:16:9-20:39
-679            android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
-679-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:17:13-85
-680            android:authorities="com.saggitt.omega.dev.customactivityoncrashinitprovider"
-680-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:18:13-85
-681            android:exported="false"
-681-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:19:13-37
-682            android:initOrder="101" />
-682-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:20:13-36
-683        <provider
-683-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:26:9-34:20
-684            android:name="androidx.startup.InitializationProvider"
-684-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:27:13-67
-685            android:authorities="com.saggitt.omega.dev.androidx-startup"
-685-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:28:13-68
-686            android:exported="false" >
-686-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:29:13-37
-687            <meta-data
-687-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:31:13-33:52
-688                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-688-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:32:17-75
-689                android:value="androidx.startup" />
-689-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:33:17-49
-690            <meta-data
-690-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:31:13-33:52
-691                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-691-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:32:17-85
-692                android:value="androidx.startup" />
-692-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:33:17-49
-693            <meta-data
-693-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:31:13-33:52
-694                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-694-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:32:17-78
-695                android:value="androidx.startup" />
-695-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:33:17-49
-696        </provider>
-697
-698        <receiver
-698-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:36:9-45:20
-699            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-699-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:37:13-76
-700            android:directBootAware="false"
-700-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:38:13-44
-701            android:enabled="true"
-701-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:39:13-35
-702            android:exported="true"
-702-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:40:13-36
-703            android:permission="android.permission.DUMP" >
-703-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:41:13-57
-704            <intent-filter>
-704-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:42:13-44:29
-705                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-705-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:17-91
-705-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:25-88
-706            </intent-filter>
-707        </receiver>
-708    </application>
-709
-710</manifest>
+401            </intent-filter>
+402        </activity>
+403        <activity
+403-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:322:9-325:47
+404            android:name="com.saggitt.omega.feed.FeedWidgetsActivity"
+404-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:323:13-70
+405            android:label="@string/feed_widget"
+405-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:324:13-48
+406            android:theme="@style/AppTheme" />
+406-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:325:13-44
+407        <activity
+407-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:326:9-333:57
+408            android:name="com.saggitt.omega.feed.WidgetPicker"
+408-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:327:13-63
+409            android:autoRemoveFromRecents="true"
+409-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:328:13-49
+410            android:excludeFromRecents="true"
+410-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:329:13-46
+411            android:exported="true"
+411-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:330:13-36
+412            android:finishOnCloseSystemDialogs="true"
+412-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:331:13-54
+413            android:label="@string/feed_widget"
+413-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:332:13-48
+414            android:theme="@style/WidgetPickerDialog" /> <!-- Pixel -->
+414-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:333:13-54
+415        <activity
+415-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:336:9-348:20
+416            android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity"
+416-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:337:13-90
+417            android:theme="@android:style/Theme.NoDisplay" >
+417-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:338:13-59
+418            <intent-filter android:priority="1" >
+418-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:339:13-347:29
+418-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:339:28-48
+419                <action android:name="com.google.android.apps.nexuslauncher.search.APP_LAUNCH" />
+419-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:340:17-98
+419-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:340:25-95
+420
+421                <category android:name="android.intent.category.DEFAULT" />
+421-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+421-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+422
+423                <data
+423-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:17-73
+424                    android:mimeType="vnd.android.cursor.dir/vnd.android.search.suggest"
+424-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:296:23-70
+425                    android:scheme="content" />
+426            </intent-filter>
+427        </activity>
+428
+429        <receiver
+429-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:350:9-356:20
+430            android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver"
+430-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:351:13-87
+431            android:permission="android.permission.CAPTURE_AUDIO_HOTWORD" >
+431-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:352:13-74
+432            <intent-filter>
+432-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:353:13-355:29
+433                <action android:name="com.google.android.systemui.OPA_ENABLED" />
+433-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:354:17-82
+433-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:354:25-79
+434            </intent-filter>
+435        </receiver>
+436        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver" >
+436-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:357:9-361:20
+436-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:357:19-110
+437            <intent-filter>
+437-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:358:13-360:29
+438                <action android:name="com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE" />
+438-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:359:17-98
+438-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:359:25-95
+439            </intent-filter>
+440        </receiver>
+441
+442        <meta-data
+442-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:363:9-365:35
+443            android:name="android.max_aspect"
+443-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:364:13-46
+444            android:value="2.1" />
+444-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:365:13-32
+445        <meta-data
+445-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:366:9-368:36
+446            android:name="com.samsung.android.non_immersive"
+446-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:367:13-61
+447            android:value="true" />
+447-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:368:13-33
+448
+449        <provider
+449-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:370:9-378:20
+450            android:name="androidx.core.content.FileProvider"
+450-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:371:13-62
+451            android:authorities="com.leos.launcher.dev.provider"
+451-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:372:13-58
+452            android:exported="false"
+452-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:373:13-37
+453            android:grantUriPermissions="true" >
+453-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:374:13-47
+454            <meta-data
+454-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:375:13-377:58
+455                android:name="android.support.FILE_PROVIDER_PATHS"
+455-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:376:17-67
+456                android:resource="@xml/provider_paths" />
+456-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:377:17-55
+457        </provider>
+458        <provider
+458-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:380:9-383:39
+459            android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"
+459-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:381:13-90
+460            android:authorities="com.leos.launcher.dev.appssearch"
+460-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:382:13-62
+461            android:exported="true" />
+461-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:383:13-36
+462        <provider
+462-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:385:9-389:50
+463            android:name="com.saggitt.omega.util.FiveSecsProvider"
+463-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:386:13-67
+464            android:authorities="com.leos.launcher.dev.fivesecsprovider"
+464-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:387:13-68
+465            android:exported="true"
+465-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:388:13-36
+466            android:grantUriPermissions="true" /> <!-- Intent received used to install shortcuts from other applications -->
+466-->/home/um300/Downloads/Android-apps/LeOS-Launcher/Omega/AndroidManifest.xml:389:13-47
+467        <receiver
+467-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:92:9-99:20
+468            android:name="com.android.launcher3.InstallShortcutReceiver"
+468-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:93:13-73
+469            android:enabled="@bool/enable_install_shortcut_api"
+469-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:95:13-64
+470            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT" >
+470-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:94:13-82
+471            <intent-filter>
+471-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:96:13-98:29
+472                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
+472-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:97:17-87
+472-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:97:25-84
+473            </intent-filter>
+474        </receiver> <!-- Intent received when a session is committed -->
+475        <receiver android:name="com.android.launcher3.SessionCommitReceiver" >
+475-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:102:9-107:20
+475-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:103:13-71
+476            <intent-filter>
+476-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:104:13-106:29
+477                <action android:name="android.content.pm.action.SESSION_COMMITTED" />
+477-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:105:17-86
+477-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:105:25-83
+478            </intent-filter>
+479        </receiver> <!-- Intent received used to initialize a restored widget -->
+480        <receiver android:name="com.android.launcher3.AppWidgetsRestoredReceiver" >
+480-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:110:9-114:20
+480-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:110:19-82
+481            <intent-filter>
+481-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:111:13-113:29
+482                <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED" />
+482-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:112:17-90
+482-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:112:25-88
+483            </intent-filter>
+484        </receiver>
+485
+486        <service
+486-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:122:9-130:19
+487            android:name="com.android.launcher3.notification.NotificationListener"
+487-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:123:13-83
+488            android:enabled="@bool/notification_dots_enabled"
+488-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:125:13-62
+489            android:label="@string/notification_dots_service_title"
+489-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:124:13-68
+490            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+490-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:126:13-87
+491            <intent-filter>
+491-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:127:13-129:29
+492                <action android:name="android.service.notification.NotificationListenerService" />
+492-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:128:17-99
+492-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:128:25-96
+493            </intent-filter>
+494        </service>
+495
+496        <meta-data
+496-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:132:9-133:47
+497            android:name="android.nfc.disable_beam_default"
+497-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:132:20-67
+498            android:value="true" />
+498-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:133:24-44
+499
+500        <activity
+500-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:135:9-144:20
+501            android:name="com.android.launcher3.dragndrop.AddItemActivity"
+501-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:135:19-81
+502            android:autoRemoveFromRecents="true"
+502-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:138:13-49
+503            android:excludeFromRecents="true"
+503-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:137:13-46
+504            android:label="@string/action_add_to_workspace"
+504-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:139:13-60
+505            android:theme="@style/AppItemActivityTheme" >
+505-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:136:13-56
+506            <intent-filter>
+506-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:140:13-143:29
+507                <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT" />
+507-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:141:17-89
+507-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:141:25-86
+508                <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
+508-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:142:17-90
+508-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:142:25-87
+509            </intent-filter>
+510        </activity>
+511        <!--
+512        The settings provider contains Home's data, like the workspace favorites. The permissions
+513        should be changed to what is defined above. The authorities should also be changed to
+514        represent the package name.
+515        -->
+516        <provider
+517            android:name="com.android.launcher3.LauncherProvider"
+518            android:authorities="com.leos.launcher.dev.settings"
+519            android:exported="true"
+520            android:readPermission="com.leos.launcher.dev.permission.READ_SETTINGS"
+521            android:writePermission="com.leos.launcher.dev.permission.WRITE_SETTINGS" />
+522        <!--
+523        The content provider for exposing various launcher grid options.
+524        TODO: Add proper permissions
+525        -->
+526        <provider
+527            android:name="com.android.launcher3.graphics.GridCustomizationsProvider"
+528            android:authorities="com.leos.launcher.dev.grid_control"
+529            android:exported="true" />
+530        <provider
+531            android:name="com.android.launcher3.testing.TestInformationProvider"
+532            android:authorities="com.leos.launcher.dev.TestInfo"
+533            android:enabled="false"
+534            android:exported="true"
+535            android:readPermission="android.permission.WRITE_SECURE_SETTINGS"
+536            android:writePermission="android.permission.WRITE_SECURE_SETTINGS" />
+537<!--         Launcher activity for secondary display -->
+538        <activity
+538-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:192:9-203:20
+539            android:name="com.android.launcher3.secondarydisplay.SecondaryDisplayLauncher"
+539-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:193:13-91
+540            android:enabled="true"
+540-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:194:13-35
+541            android:launchMode="singleTop"
+541-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:195:13-43
+542            android:theme="@style/AppTheme" >
+542-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:196:13-44
+543            <intent-filter>
+543-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:197:13-202:29
+544                <action android:name="android.intent.action.MAIN" />
+544-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
+544-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
+545
+546                <category android:name="android.intent.category.SECONDARY_HOME" />
+546-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:17-83
+546-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:27-80
+547                <category android:name="android.intent.category.DEFAULT" />
+547-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+547-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+548            </intent-filter>
+549        </activity>
+550        <activity
+550-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:25:9-27:39
+551            android:name="androidx.compose.ui.tooling.PreviewActivity"
+551-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:26:13-71
+552            android:exported="true" />
+552-->[androidx.compose.ui:ui-tooling:1.0.1] /home/um300/.gradle/caches/transforms-3/6cd85a0cdb4c18d944b98e5a4832aa46/transformed/jetified-ui-tooling-1.0.1/AndroidManifest.xml:27:13-36
+553        <activity
+553-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:48:9-51:45
+554            android:name="com.farmerbb.taskbar.activity.MainActivity"
+554-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:49:13-70
+555            android:label="@string/tb_app_name"
+555-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:50:13-48
+556            android:process=":libtaskbar" />
+556-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:51:13-42
+557        <activity
+557-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:52:9-58:64
+558            android:name="com.farmerbb.taskbar.activity.InvisibleActivity"
+558-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:53:13-75
+559            android:documentLaunchMode="always"
+559-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:54:13-48
+560            android:excludeFromRecents="true"
+560-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:55:13-46
+561            android:launchMode="singleTask"
+561-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:56:13-44
+562            android:process=":libtaskbar"
+562-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:57:13-42
+563            android:theme="@style/Taskbar.InvisibleActivity" />
+563-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:58:13-61
+564        <activity
+564-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:59:9-65:56
+565            android:name="com.farmerbb.taskbar.activity.InvisibleActivityAlt"
+565-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:60:13-78
+566            android:documentLaunchMode="always"
+566-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:61:13-48
+567            android:excludeFromRecents="true"
+567-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:62:13-46
+568            android:launchMode="singleTask"
+568-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:63:13-44
+569            android:process=":libtaskbar"
+569-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:64:13-42
+570            android:theme="@style/Taskbar.Incognito" />
+570-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:65:13-53
+571        <activity
+571-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:66:9-72:61
+572            android:name="com.farmerbb.taskbar.activity.dark.InvisibleActivityAltDark"
+572-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:67:13-87
+573            android:documentLaunchMode="always"
+573-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:68:13-48
+574            android:excludeFromRecents="true"
+574-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:69:13-46
+575            android:launchMode="singleTask"
+575-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:70:13-44
+576            android:process=":libtaskbar"
+576-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:71:13-42
+577            android:theme="@style/Taskbar.Incognito.Dark" />
+577-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:72:13-58
+578        <activity
+578-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:73:9-80:64
+579            android:name="com.farmerbb.taskbar.activity.InvisibleActivityFreeform"
+579-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:74:13-83
+580            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+580-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:75:13-186
+581            android:documentLaunchMode="always"
+581-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:76:13-48
+582            android:excludeFromRecents="true"
+582-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:77:13-46
+583            android:launchMode="singleInstance"
+583-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:78:13-48
+584            android:process=":libtaskbar"
+584-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:79:13-42
+585            android:theme="@style/Taskbar.InvisibleActivity" />
+585-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:80:13-61
+586        <activity
+586-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:81:9-95:20
+587            android:name="com.farmerbb.taskbar.activity.SecondaryHomeActivity"
+587-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:82:13-79
+588            android:configChanges="screenSize|keyboard|keyboardHidden"
+588-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:83:13-71
+589            android:enabled="true"
+589-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:84:13-35
+590            android:excludeFromRecents="true"
+590-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:85:13-46
+591            android:label="@string/tb_app_name"
+591-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:86:13-48
+592            android:process=":libtaskbar"
+592-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:87:13-42
+593            android:theme="@style/Taskbar.HomeActivity" >
+593-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:88:13-56
+594            <intent-filter>
+594-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:197:13-202:29
+595                <action android:name="android.intent.action.MAIN" />
+595-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:17-69
+595-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:198:25-66
+596
+597                <category android:name="android.intent.category.DEFAULT" />
+597-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:17-76
+597-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:177:27-73
+598                <category android:name="android.intent.category.SECONDARY_HOME" />
+598-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:17-83
+598-->/home/um300/Downloads/Android-apps/LeOS-Launcher/AndroidManifest-common.xml:200:27-80
+599            </intent-filter>
+600        </activity>
+601        <activity
+601-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:96:9-101:53
+602            android:name="com.farmerbb.taskbar.activity.ContextMenuActivity"
+602-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:97:13-77
+603            android:documentLaunchMode="always"
+603-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:98:13-48
+604            android:excludeFromRecents="true"
+604-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:99:13-46
+605            android:process=":libtaskbar"
+605-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:100:13-42
+606            android:theme="@style/Taskbar.Dialog" />
+606-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:101:13-50
+607        <activity
+607-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:102:9-107:58
+608            android:name="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark"
+608-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:103:13-86
+609            android:documentLaunchMode="always"
+609-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:104:13-48
+610            android:excludeFromRecents="true"
+610-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:105:13-46
+611            android:process=":libtaskbar"
+611-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:106:13-42
+612            android:theme="@style/Taskbar.Dialog.Dark" />
+612-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:107:13-55
+613        <activity
+613-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:108:9-111:63
+614            android:name="com.farmerbb.taskbar.activity.SelectAppActivity"
+614-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:109:13-75
+615            android:process=":libtaskbar"
+615-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:110:13-42
+616            android:theme="@style/Taskbar.Dialog.Blacklist" />
+616-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:111:13-60
+617        <activity
+617-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:112:9-115:68
+618            android:name="com.farmerbb.taskbar.activity.dark.SelectAppActivityDark"
+618-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:113:13-84
+619            android:process=":libtaskbar"
+619-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:114:13-42
+620            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+620-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:115:13-65
+621        <activity
+621-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:116:9-119:63
+622            android:name="com.farmerbb.taskbar.activity.DesktopIconSelectAppActivity"
+622-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:117:13-86
+623            android:process=":libtaskbar"
+623-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:118:13-42
+624            android:theme="@style/Taskbar.Dialog.Blacklist" />
+624-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:119:13-60
+625        <activity
+625-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:120:9-123:68
+626            android:name="com.farmerbb.taskbar.activity.dark.DesktopIconSelectAppActivityDark"
+626-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:121:13-95
+627            android:process=":libtaskbar"
+627-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:122:13-42
+628            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+628-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:123:13-65
+629        <activity
+629-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:124:9-129:56
+630            android:name="com.farmerbb.taskbar.activity.DummyActivity"
+630-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:125:13-71
+631            android:documentLaunchMode="always"
+631-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:126:13-48
+632            android:excludeFromRecents="true"
+632-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:127:13-46
+633            android:process=":libtaskbar"
+633-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:128:13-42
+634            android:theme="@style/Taskbar.Incognito" />
+634-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:129:13-53
+635        <activity
+635-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:130:9-133:63
+636            android:name="com.farmerbb.taskbar.activity.IconPackActivity"
+636-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:131:13-74
+637            android:process=":libtaskbar"
+637-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:132:13-42
+638            android:theme="@style/Taskbar.Dialog.Blacklist" />
+638-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:133:13-60
+639        <activity
+639-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:134:9-137:68
+640            android:name="com.farmerbb.taskbar.activity.dark.IconPackActivityDark"
+640-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:135:13-83
+641            android:process=":libtaskbar"
+641-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:136:13-42
+642            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+642-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:137:13-65
+643        <activity
+643-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:138:9-141:63
+644            android:name="com.farmerbb.taskbar.activity.ClearDataActivity"
+644-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:139:13-75
+645            android:process=":libtaskbar"
+645-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:140:13-42
+646            android:theme="@style/Taskbar.Dialog.Blacklist" />
+646-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:141:13-60
+647        <activity
+647-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:142:9-145:68
+648            android:name="com.farmerbb.taskbar.activity.dark.ClearDataActivityDark"
+648-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:143:13-84
+649            android:process=":libtaskbar"
+649-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:144:13-42
+650            android:theme="@style/Taskbar.Dialog.Blacklist.Dark" />
+650-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:145:13-65
+651        <activity
+651-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:146:9-152:56
+652            android:name="com.farmerbb.taskbar.activity.DashboardActivity"
+652-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:147:13-75
+653            android:documentLaunchMode="always"
+653-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:148:13-48
+654            android:excludeFromRecents="true"
+654-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:149:13-46
+655            android:launchMode="singleTask"
+655-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:150:13-44
+656            android:process=":libtaskbar"
+656-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:151:13-42
+657            android:theme="@style/Taskbar.Incognito" />
+657-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:152:13-53
+658        <activity
+658-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:153:9-159:61
+659            android:name="com.farmerbb.taskbar.activity.dark.DashboardActivityDark"
+659-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:154:13-84
+660            android:documentLaunchMode="always"
+660-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:155:13-48
+661            android:excludeFromRecents="true"
+661-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:156:13-46
+662            android:launchMode="singleTask"
+662-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:157:13-44
+663            android:process=":libtaskbar"
+663-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:158:13-42
+664            android:theme="@style/Taskbar.Incognito.Dark" />
+664-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:159:13-58
+665        <activity
+665-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:160:9-167:56
+666            android:name="com.farmerbb.taskbar.activity.TouchAbsorberActivity"
+666-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:161:13-79
+667            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+667-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:162:13-186
+668            android:documentLaunchMode="always"
+668-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:163:13-48
+669            android:excludeFromRecents="true"
+669-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:164:13-46
+670            android:launchMode="singleTask"
+670-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:165:13-44
+671            android:process=":libtaskbar"
+671-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:166:13-42
+672            android:theme="@style/Taskbar.Incognito" />
+672-->[com.github.farmerbb:libtaskbar:2.1.1] /home/um300/.gradle/caches/transforms-3/a5264eaf76326a643d700b666b4dd6a1/transformed/jetified-libtaskbar-2.1.1/AndroidManifest.xml:167:13-53
+673        <activity
+673-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:12:9-14:49
+674            android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity"
+674-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:13:13-89
+675            android:process=":error_activity" />
+675-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:14:13-46
+676
+677        <provider
+677-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:16:9-20:39
+678            android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
+678-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:17:13-85
+679            android:authorities="com.leos.launcher.dev.customactivityoncrashinitprovider"
+679-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:18:13-85
+680            android:exported="false"
+680-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:19:13-37
+681            android:initOrder="101" />
+681-->[cat.ereza:customactivityoncrash:2.3.0] /home/um300/.gradle/caches/transforms-3/374da06cde4fb77d289314b8d46767d0/transformed/jetified-customactivityoncrash-2.3.0/AndroidManifest.xml:20:13-36
+682        <provider
+682-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:26:9-34:20
+683            android:name="androidx.startup.InitializationProvider"
+683-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:27:13-67
+684            android:authorities="com.leos.launcher.dev.androidx-startup"
+684-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:28:13-68
+685            android:exported="false" >
+685-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:29:13-37
+686            <meta-data
+686-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:31:13-33:52
+687                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+687-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:32:17-75
+688                android:value="androidx.startup" />
+688-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/um300/.gradle/caches/transforms-3/f56527423b4f317c3951eb8c2a2c58e2/transformed/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:33:17-49
+689            <meta-data
+689-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:31:13-33:52
+690                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+690-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:32:17-85
+691                android:value="androidx.startup" />
+691-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:33:17-49
+692            <meta-data
+692-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:31:13-33:52
+693                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+693-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:32:17-78
+694                android:value="androidx.startup" />
+694-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/um300/.gradle/caches/transforms-3/67411683169dd55ad3d44c342590f573/transformed/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:33:17-49
+695        </provider>
+696
+697        <receiver
+697-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:36:9-45:20
+698            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+698-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:37:13-76
+699            android:directBootAware="false"
+699-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:38:13-44
+700            android:enabled="true"
+700-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:39:13-35
+701            android:exported="true"
+701-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:40:13-36
+702            android:permission="android.permission.DUMP" >
+702-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:41:13-57
+703            <intent-filter>
+703-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:42:13-44:29
+704                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+704-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:17-91
+704-->[androidx.profileinstaller:profileinstaller:1.0.1] /home/um300/.gradle/caches/transforms-3/c1eafdc5e0f47e5b961cf315b1a882f1/transformed/jetified-profileinstaller-1.0.1/AndroidManifest.xml:43:25-88
+705            </intent-filter>
+706        </receiver>
+707    </application>
+708
+709</manifest>

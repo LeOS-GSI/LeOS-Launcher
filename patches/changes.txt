@@ -1,6 +1,0 @@
-Peace icon als ic_launcher.png copieren nach:
-/home/um300/Downloads/launcher/PeaceLauncher/Omega/res/mipmap-hdpi
-/home/um300/Downloads/launcher/PeaceLauncher/Omega/res/mipmap-mdpi
-/home/um300/Downloads/launcher/PeaceLauncher/Omega/res/mipmap-xhdpi
-/home/um300/Downloads/launcher/PeaceLauncher/Omega/res/mipmap-xxhdpi
-/home/um300/Downloads/launcher/PeaceLauncher/Omega/res/mipmap-xxxhdpi
