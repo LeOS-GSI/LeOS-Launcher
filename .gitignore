@@ -1,6 +1,7 @@
 # Project exclude paths
 /buildSrc/.gradle/
 /buildSrc/build/
+build
 /buildSrc/build/classes/java/main/
 /aospWithQuickstepOmega/
 db_files
