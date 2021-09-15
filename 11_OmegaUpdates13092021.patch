@@ -1,0 +1,173 @@
+diff --git a/build/generated/source/buildConfig/aospWithQuickstepOmega/debug/com/android/launcher3/BuildConfig.java b/build/generated/source/buildConfig/aospWithQuickstepOmega/debug/com/android/launcher3/BuildConfig.java
+index d03a9721..6eff26f6 100644
+--- a/build/generated/source/buildConfig/aospWithQuickstepOmega/debug/com/android/launcher3/BuildConfig.java
++++ b/build/generated/source/buildConfig/aospWithQuickstepOmega/debug/com/android/launcher3/BuildConfig.java
+@@ -14,7 +14,7 @@ public final class BuildConfig {
+   public static final int VERSION_CODE = 2;
+   public static final String VERSION_NAME = "1";
+   // Field from default config.
+-  public static final String BUILD_DATE = "2021-09-12T22:06Z";
++  public static final String BUILD_DATE = "2021-09-13T07:48Z";
+   // Field from default config.
+   public static final String[] DETECTED_ANDROID_LOCALES = {"de","hi","lo","pt","lt","hr","lv","hu","en-rIN","hy","uk","ur","mk","ml","mn","uz","af","in","fr-rCA","mr","ms","el","zh-rHK","zh-rTW","en","is","it","am","my","iw","es","b+sr+Latn","et","eu","ar","as","vi","nb","es-rUS","ja","ne","az","pt-rPT","rm","zu","fa","ro","nl","zh-rCN","ru","be","fi","en-rXC","bg","fr","bn","bs","en-rCA","en-rGB","ka","si","sk","sl","ca","sq","sr","kk","km","kn","or","sv","sw","ko","gl","ta","ky","gu","cs","pa","te","th","tl","pl","da","tr","en-rAU"};
+   // Field from default config.
+diff --git a/build/intermediates/dex/aospWithQuickstepOmegaDebug/mergeProjectDexAospWithQuickstepOmegaDebug/12/classes.dex b/build/intermediates/dex/aospWithQuickstepOmegaDebug/mergeProjectDexAospWithQuickstepOmegaDebug/12/classes.dex
+index 6e43ddbf..37bcecea 100644
+Binary files a/build/intermediates/dex/aospWithQuickstepOmegaDebug/mergeProjectDexAospWithQuickstepOmegaDebug/12/classes.dex and b/build/intermediates/dex/aospWithQuickstepOmegaDebug/mergeProjectDexAospWithQuickstepOmegaDebug/12/classes.dex differ
+diff --git a/build/intermediates/incremental/packageAospWithQuickstepOmegaDebug/tmp/aospWithQuickstepOmegaDebug/dex-renamer-state.txt b/build/intermediates/incremental/packageAospWithQuickstepOmegaDebug/tmp/aospWithQuickstepOmegaDebug/dex-renamer-state.txt
+index e93c125e..9721e6f3 100644
+--- a/build/intermediates/incremental/packageAospWithQuickstepOmegaDebug/tmp/aospWithQuickstepOmegaDebug/dex-renamer-state.txt
++++ b/build/intermediates/incremental/packageAospWithQuickstepOmegaDebug/tmp/aospWithQuickstepOmegaDebug/dex-renamer-state.txt
+@@ -1,4 +1,4 @@
+-#Mon Sep 13 00:06:32 CEST 2021
++#Mon Sep 13 09:48:58 CEST 2021
+ path.4=12/classes.dex
+ path.3=11/classes.dex
+ path.2=10/classes.dex
+diff --git a/build/intermediates/javac/aospWithQuickstepOmegaDebug/classes/com/android/launcher3/BuildConfig.class b/build/intermediates/javac/aospWithQuickstepOmegaDebug/classes/com/android/launcher3/BuildConfig.class
+index 574467ba..389355de 100644
+Binary files a/build/intermediates/javac/aospWithQuickstepOmegaDebug/classes/com/android/launcher3/BuildConfig.class and b/build/intermediates/javac/aospWithQuickstepOmegaDebug/classes/com/android/launcher3/BuildConfig.class differ
+diff --git a/build/intermediates/project_dex_archive/aospWithQuickstepOmegaDebug/out/com/android/launcher3/BuildConfig.dex b/build/intermediates/project_dex_archive/aospWithQuickstepOmegaDebug/out/com/android/launcher3/BuildConfig.dex
+index 8cd584fa..4c35e667 100644
+Binary files a/build/intermediates/project_dex_archive/aospWithQuickstepOmegaDebug/out/com/android/launcher3/BuildConfig.dex and b/build/intermediates/project_dex_archive/aospWithQuickstepOmegaDebug/out/com/android/launcher3/BuildConfig.dex differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/build-history.bin b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/build-history.bin
+index d1f105ab..e3223c4a 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/build-history.bin and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/build-history.bin differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab
+index 78392059..84790e15 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at
+index 65f0122f..695556f8 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab
+index 6433de28..f8c71f5f 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at
+index 2c44f564..13fc0b5c 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab
+index f1a612fa..79fa7dbf 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at
+index aa5adca5..c5a12fc4 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab
+index a28b71a3..fda2ce7e 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at
+index f5a78fa1..4a3ce759 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab
+index a1ab786c..5b644ddf 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at
+index 7851a305..3a031c29 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at differ
+diff --git a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/last-build.bin b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/last-build.bin
+index 64c0b570..6e6e3f9e 100644
+Binary files a/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/last-build.bin and b/build/kotlin/compileAospWithQuickstepOmegaDebugKotlin/last-build.bin differ
+diff --git a/build/tmp/compileAospWithQuickstepOmegaDebugJavaWithJavac/previous-compilation-data.bin b/build/tmp/compileAospWithQuickstepOmegaDebugJavaWithJavac/previous-compilation-data.bin
+index 153badc2..965750f7 100644
+Binary files a/build/tmp/compileAospWithQuickstepOmegaDebugJavaWithJavac/previous-compilation-data.bin and b/build/tmp/compileAospWithQuickstepOmegaDebugJavaWithJavac/previous-compilation-data.bin differ
+diff --git a/buildSrc/.gradle/7.2/executionHistory/executionHistory.lock b/buildSrc/.gradle/7.2/executionHistory/executionHistory.lock
+index 18baf668..a2345974 100644
+Binary files a/buildSrc/.gradle/7.2/executionHistory/executionHistory.lock and b/buildSrc/.gradle/7.2/executionHistory/executionHistory.lock differ
+diff --git a/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock b/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+index 6bd198bd..0e75d446 100644
+Binary files a/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock and b/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock differ
+diff --git a/quickstep/AndroidManifest-launcher.xml b/quickstep/AndroidManifest-launcher.xml
+index 4507b8b4..41234c52 100644
+--- a/quickstep/AndroidManifest-launcher.xml
++++ b/quickstep/AndroidManifest-launcher.xml
+@@ -40,18 +40,19 @@
+             android:name="com.android.launcher3.uioverrides.QuickstepLauncher"
+             android:clearTaskOnLaunch="true"
+             android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+-            android:enabled="true" android:launchMode="singleTask" android:resizeableActivity="true"
+-            android:resumeWhilePausing="true" android:screenOrientation="unspecified"
+-            android:stateNotNeeded="true" android:taskAffinity=""
+-            android:windowSoftInputMode="adjustPan">
++            android:resizeableActivity="true"
++            android:resumeWhilePausing="true"
++            android:taskAffinity=""
++            android:enabled="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.HOME" />
+                 <category android:name="android.intent.category.DEFAULT" />
+-                <category android:name="android.intent.category.MONKEY" />
++                <category android:name="android.intent.category.MONKEY"/>
+                 <category android:name="android.intent.category.LAUNCHER_APP" />
+             </intent-filter>
+-            <meta-data android:name="com.android.launcher3.grid.control"
++            <meta-data
++                android:name="com.android.launcher3.grid.control"
+                 android:value="${packageName}.grid_control" />
+         </activity>
+ 
+diff --git a/src/com/android/launcher3/Hotseat.java b/src/com/android/launcher3/Hotseat.java
+index 01284b67..3f0f3573 100644
+--- a/src/com/android/launcher3/Hotseat.java
++++ b/src/com/android/launcher3/Hotseat.java
+@@ -16,6 +16,8 @@
+ 
+ package com.android.launcher3;
+ 
++import static com.android.launcher3.logging.LoggerUtils.newContainerTarget;
++
+ import android.content.Context;
+ import android.graphics.Rect;
+ import android.util.AttributeSet;
+@@ -32,8 +34,6 @@ import com.android.launcher3.userevent.nano.LauncherLogProto.Target;
+ 
+ import java.util.ArrayList;
+ 
+-import static com.android.launcher3.logging.LoggerUtils.newContainerTarget;
+-
+ public class Hotseat extends CellLayout implements LogContainerProvider, Insettable {
+ 
+     @ViewDebug.ExportedProperty(category = "launcher")
+@@ -57,14 +57,19 @@ public class Hotseat extends CellLayout implements LogContainerProvider, Insetta
+      * Returns orientation specific cell X given invariant order in the hotseat
+      */
+     public int getCellXFromOrder(int rank) {
+-        return mHasVerticalHotseat ? 0 : rank;
++        //return mHasVerticalHotseat ? 0 : rank;
++        int size = mHasVerticalHotseat ? getCountY() : getCountX();
++        return mHasVerticalHotseat ? rank / size : rank % size;
+     }
+ 
+     /**
+      * Returns orientation specific cell Y given invariant order in the hotseat
+      */
+     public int getCellYFromOrder(int rank) {
+-        return mHasVerticalHotseat ? (getCountY() - (rank + 1)) : 0;
++        //return mHasVerticalHotseat ? (getCountY() - (rank + 1)) : 0;
++
++        int size = mHasVerticalHotseat ? getCountY() : getCountX();
++        return mHasVerticalHotseat ? (getCountY() - ((rank % size) + 1)) : rank / size;
+     }
+ 
+     public void resetLayout(boolean hasVerticalHotseat) {
+diff --git a/src/com/android/launcher3/model/FirstScreenBroadcast.java b/src/com/android/launcher3/model/FirstScreenBroadcast.java
+index 5112304f..f9ed2c78 100644
+--- a/src/com/android/launcher3/model/FirstScreenBroadcast.java
++++ b/src/com/android/launcher3/model/FirstScreenBroadcast.java
+@@ -15,6 +15,8 @@
+  */
+ package com.android.launcher3.model;
+ 
++import static android.app.PendingIntent.FLAG_IMMUTABLE;
++import static android.app.PendingIntent.FLAG_ONE_SHOT;
+ import static android.os.Process.myUserHandle;
+ 
+ import android.app.PendingIntent;
+@@ -145,7 +147,7 @@ public class FirstScreenBroadcast {
+                 .putStringArrayListExtra(HOTSEAT_ITEM_EXTRA, new ArrayList<>(hotseatItems))
+                 .putStringArrayListExtra(WIDGET_ITEM_EXTRA, new ArrayList<>(widgetItems))
+                 .putExtra(VERIFICATION_TOKEN_EXTRA, PendingIntent.getActivity(context, 0,
+-                        new Intent(), PendingIntent.FLAG_ONE_SHOT)));
++                        new Intent(), FLAG_ONE_SHOT | FLAG_IMMUTABLE)));
+     }
+ 
+     private static String getPackageName(ItemInfo info) {
