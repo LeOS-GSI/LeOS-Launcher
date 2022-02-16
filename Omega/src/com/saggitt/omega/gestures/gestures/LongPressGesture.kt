@@ -14,7 +14,6 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.gestures.gestures
 
 import com.saggitt.omega.gestures.Gesture
@@ -23,8 +22,10 @@ import com.saggitt.omega.gestures.handlers.OpenOverviewGestureHandler
 
 class LongPressGesture(controller: GestureController) : Gesture(controller) {
 
-    private val handler by controller.createHandlerPref("pref_gesture_long_press",
-            OpenOverviewGestureHandler(controller.launcher, null))
+    private val handler by controller.createHandlerPref(
+        "pref_gesture_long_press",
+        OpenOverviewGestureHandler(controller.launcher, null)
+    )
     override val isEnabled = true
 
     override fun onEvent(): Boolean {

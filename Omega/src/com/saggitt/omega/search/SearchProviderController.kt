@@ -24,7 +24,6 @@ import com.saggitt.omega.search.providers.*
 import com.saggitt.omega.search.webproviders.*
 import com.saggitt.omega.theme.ThemeManager
 import com.saggitt.omega.theme.ThemeOverride
-import com.saggitt.omega.util.Config
 import com.saggitt.omega.util.SingletonHolder
 import com.saggitt.omega.util.ensureOnMainThread
 import com.saggitt.omega.util.useApplicationContext
@@ -68,9 +67,7 @@ class SearchProviderController(private val context: Context) {
             val curr = prefs.searchProvider
             if (cache == null || cached != curr) {
                 cache = createProvider(prefs.searchProvider) {
-
-                    val config = Config(context)
-                    createProvider(config.defaultSearchProvider) { AppsSearchProvider(context) }
+                    AppsSearchProvider(context)
                 }
                 cached = cache!!::class.java.name
                 if (prefs.searchProvider != cached) {
@@ -82,8 +79,8 @@ class SearchProviderController(private val context: Context) {
         }
 
     private fun createProvider(
-        providerName: String,
-        fallback: () -> SearchProvider
+            providerName: String,
+            fallback: () -> SearchProvider
     ): SearchProvider {
         try {
             val constructor = Class.forName(providerName).getConstructor(Context::class.java)
@@ -118,33 +115,38 @@ class SearchProviderController(private val context: Context) {
     }
 
     companion object : SingletonHolder<SearchProviderController, Context>(
-        ensureOnMainThread(
-            useApplicationContext(::SearchProviderController)
-        )
+            ensureOnMainThread(
+                    useApplicationContext(::SearchProviderController)
+            )
     ) {
         fun getSearchProviders(context: Context) = listOf(
-            AppsSearchProvider(context),
-            GoogleSearchProvider(context),
-            SFinderSearchProvider(context),
-            GoogleGoSearchProvider(context),
-            FirefoxSearchProvider(context),
-            DuckDuckGoSearchProvider(context),
-            BingSearchProvider(context),
-            BaiduSearchProvider(context),
-            YandexSearchProvider(context),
-            QwantSearchProvider(context),
-            SearchLiteSearchProvider(context),
-            CoolSearchSearchProvider(context),
-            EdgeSearchProvider(context),
+                AppsSearchProvider(context),
+                GoogleSearchProvider(context),
+                SFinderSearchProvider(context),
+                GoogleGoSearchProvider(context),
+                FirefoxSearchProvider(context),
+                DuckDuckGoSearchProvider(context),
+                BingSearchProvider(context),
+                BaiduSearchProvider(context),
+                YandexSearchProvider(context),
+                QwantSearchProvider(context),
+                SearchLiteSearchProvider(context),
+                CoolSearchSearchProvider(context),
+                EdgeSearchProvider(context),
 
-            /*Web Providers*/
-            BraveWebSearchProvider(context),
-            DDGWebSearchProvider(context),
-            EcosiaWebSearchProvider(context),
-            MetagerWebSearchProvider(context),
-            QwantWebSearchProvider(context),
-            StartpageWebSearchProvider(context),
-            SearxWebSearchProvider(context),
+                /*Web Providers*/
+                BaiduWebSearchProvider(context),
+                BraveWebSearchProvider(context),
+                BingWebSearchProvider(context),
+                DDGWebSearchProvider(context),
+                EcosiaWebSearchProvider(context),
+                MetagerWebSearchProvider(context),
+                GoogleWebSearchProvider(context),
+                QwantWebSearchProvider(context),
+                StartpageWebSearchProvider(context),
+                SearxWebSearchProvider(context),
+                YahooWebSearchProvider(context),
+                YandexWebSearchProvider(context)
         ).filter { it.isAvailable }
     }
 }

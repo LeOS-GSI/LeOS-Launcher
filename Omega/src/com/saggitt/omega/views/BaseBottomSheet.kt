@@ -34,12 +34,13 @@ import com.android.launcher3.util.Themes
 import com.android.launcher3.views.AbstractSlideInView
 
 open class BaseBottomSheet @JvmOverloads constructor(
-    context: Context?,
-    attrs: AttributeSet?,
-    defStyleAttr: Int = 0
-) : AbstractSlideInView(context, attrs, defStyleAttr), Insettable {
-    protected val mColorScrim: ColorScrim = ColorScrim.createExtractedColorScrim(this)
+        context: Context?,
+        attrs: AttributeSet?,
+        defStyleAttr: Int = 0
+) : AbstractSlideInView<Launcher>(context, attrs, defStyleAttr), Insettable {
     private val mInsets: Rect = Rect()
+    private val mLauncher = Launcher.getLauncher(context)
+
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         super.onLayout(changed, l, t, r, b)
         setTranslationShift(mTranslationShift)
@@ -52,11 +53,6 @@ open class BaseBottomSheet @JvmOverloads constructor(
         animateOpen(animate)
     }
 
-    override fun setTranslationShift(translationShift: Float) {
-        super.setTranslationShift(translationShift)
-        mColorScrim.setProgress(1 - mTranslationShift)
-    }
-
     override fun onCloseComplete() {
         super.onCloseComplete()
         clearNavBarColor()
@@ -64,15 +60,15 @@ open class BaseBottomSheet @JvmOverloads constructor(
 
     protected fun clearNavBarColor() {
         mLauncher.systemUiController.updateUiState(
-            SystemUiController.UI_STATE_WIDGET_BOTTOM_SHEET, 0
+                SystemUiController.UI_STATE_WIDGET_BOTTOM_SHEET, 0
         )
     }
 
     protected fun setupNavBarColor() {
         val isSheetDark = Themes.getAttrBoolean(mLauncher, R.attr.isMainColorDark)
         mLauncher.systemUiController.updateUiState(
-            SystemUiController.UI_STATE_WIDGET_BOTTOM_SHEET,
-            if (isSheetDark) SystemUiController.FLAG_DARK_NAV else SystemUiController.FLAG_LIGHT_NAV
+                SystemUiController.UI_STATE_WIDGET_BOTTOM_SHEET,
+                if (isSheetDark) SystemUiController.FLAG_DARK_NAV else SystemUiController.FLAG_LIGHT_NAV
         )
     }
 
@@ -83,7 +79,7 @@ open class BaseBottomSheet @JvmOverloads constructor(
         mIsOpen = true
         setupNavBarColor()
         mOpenCloseAnimator.setValues(
-            PropertyValuesHolder.ofFloat(TRANSLATION_SHIFT, TRANSLATION_SHIFT_OPENED)
+                PropertyValuesHolder.ofFloat(TRANSLATION_SHIFT, TRANSLATION_SHIFT_OPENED)
         )
         mOpenCloseAnimator.interpolator = Interpolators.FAST_OUT_SLOW_IN
         if (!animate) {
@@ -114,31 +110,29 @@ open class BaseBottomSheet @JvmOverloads constructor(
             bottomInset = 0
         }
         setPadding(
-            paddingLeft + leftInset, paddingTop,
-            paddingRight + rightInset, paddingBottom + bottomInset
+                paddingLeft + leftInset, paddingTop,
+                paddingRight + rightInset, paddingBottom + bottomInset
         )
     }
 
-    override fun logActionCommand(command: Int) {}
-
     companion object {
         private val PADDING_BOTTOM: IntProperty<View> =
-            object : IntProperty<View>("paddingBottom") {
-                override fun setValue(view: View, paddingBottom: Int) {
-                    view.setPadding(
-                        view.paddingLeft, view.paddingTop,
-                        view.paddingRight, paddingBottom
-                    )
-                }
+                object : IntProperty<View>("paddingBottom") {
+                    override fun setValue(view: View, paddingBottom: Int) {
+                        view.setPadding(
+                                view.paddingLeft, view.paddingTop,
+                                view.paddingRight, paddingBottom
+                        )
+                    }
 
-                override fun get(view: View): Int {
-                    return view.paddingBottom
+                    override fun get(view: View): Int {
+                        return view.paddingBottom
+                    }
                 }
-            }
         private const val DEFAULT_CLOSE_DURATION = 200
         fun inflate(launcher: Launcher): BaseBottomSheet {
             return launcher.layoutInflater
-                .inflate(R.layout.base_bottom_sheet, launcher.dragLayer, false) as BaseBottomSheet
+                    .inflate(R.layout.base_bottom_sheet, launcher.dragLayer, false) as BaseBottomSheet
         }
     }
 

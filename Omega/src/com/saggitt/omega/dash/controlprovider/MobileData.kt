@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.controlprovider
 
 import android.content.Context
@@ -29,8 +28,10 @@ import com.android.launcher3.R
 import com.saggitt.omega.dash.DashControlProvider
 
 class MobileData(context: Context) : DashControlProvider(context) {
+    override val itemId = 15
     override val name = context.getString(R.string.dash_mobile_network_title)
     override val description = context.getString(R.string.dash_mobile_network_summary)
+    override val extendable = true
     var tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
     override val icon: Drawable?

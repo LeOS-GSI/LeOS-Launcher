@@ -17,6 +17,7 @@
 
 package com.saggitt.omega.groups
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.RippleDrawable
@@ -29,15 +30,16 @@ import android.widget.TextView
 import androidx.core.graphics.ColorUtils
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
-import com.saggitt.omega.settings.SettingsBottomSheet
 import com.saggitt.omega.util.dpToPx
 import com.saggitt.omega.util.getColorAttr
 import com.saggitt.omega.util.tintDrawable
+import com.saggitt.omega.views.SettingsBottomSheet
 
-class DrawerTabTypeSelectionBottomSheet(
-    context: Context,
-    selectionItems: Map<String, Array<Int>>,
-    callback: (which: String) -> Unit
+@SuppressLint("ViewConstructor")
+class DrawerTabTypeSelectionBottomSheet constructor(
+        context: Context,
+        selectionItems: Map<String, Array<Int>>,
+        callback: (which: String) -> Unit
 ) : FrameLayout(context) {
     init {
         View.inflate(context, R.layout.drawer_tab_select_type_bottom_sheet, this)
@@ -45,33 +47,31 @@ class DrawerTabTypeSelectionBottomSheet(
         val accent = Utilities.getOmegaPrefs(context).accentColor
         val container = findViewById<ViewGroup>(R.id.types_container)
 
-        findViewById<TextView>(android.R.id.title).setTextColor(accent)
-
         val tintNormal = ColorUtils
-            .setAlphaComponent(context.getColorAttr(android.R.attr.colorControlHighlight), 255)
+                .setAlphaComponent(context.getColorAttr(android.R.attr.colorControlHighlight), 255)
         val tintList = ColorStateList(
-            arrayOf(
-                intArrayOf(android.R.attr.state_selected),
-                intArrayOf()
-            ),
-            intArrayOf(
-                accent,
-                tintNormal
-            )
+                arrayOf(
+                        intArrayOf(android.R.attr.state_selected),
+                        intArrayOf()
+                ),
+                intArrayOf(
+                        accent,
+                        tintNormal
+                )
         )
         val rippleTintList = ColorStateList(
-            arrayOf(
-                intArrayOf(android.R.attr.state_selected),
-                intArrayOf()
-            ),
-            intArrayOf(
-                ColorUtils.setAlphaComponent(accent, 31),
-                ColorUtils.setAlphaComponent(tintNormal, 31)
-            )
+                arrayOf(
+                        intArrayOf(android.R.attr.state_selected),
+                        intArrayOf()
+                ),
+                intArrayOf(
+                        ColorUtils.setAlphaComponent(accent, 31),
+                        ColorUtils.setAlphaComponent(tintNormal, 31)
+                )
         )
 
         for (item in selectionItems) {
-            val view = View.inflate(context, R.layout.drawer_tab_type_item, null)
+            val view = View.inflate(context, R.layout.drawer_tab_type_manual, null)
 
             view.background.setTintList(tintList)
             (view.background as RippleDrawable).setColor(rippleTintList)
@@ -97,9 +97,9 @@ class DrawerTabTypeSelectionBottomSheet(
 
     companion object {
         fun show(
-            context: Context,
-            selectionItems: Map<String, Array<Int>>,
-            callback: (which: String) -> Unit
+                context: Context,
+                selectionItems: Map<String, Array<Int>>,
+                callback: (which: String) -> Unit
         ) {
             val sheet = SettingsBottomSheet.inflate(context)
             sheet.show(DrawerTabTypeSelectionBottomSheet(context, selectionItems) {

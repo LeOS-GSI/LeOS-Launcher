@@ -1,6 +1,6 @@
 /*
  *  This file is part of Omega Launcher
- *  Copyright (c) 2021   Saul Henriquez
+ *  Copyright (c) 2021   Omega Launcher Team
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as
@@ -20,11 +20,16 @@ package com.saggitt.omega.theme
 
 import androidx.compose.ui.graphics.Color
 
-val graySurface = Color(0xFF202124)
-val purple200 = Color(0xFFCE93D8)
-val purple500 = Color(0xFF9C27B0)
-val purple700 = Color(0xFF7B1FA2)
-val blue500 = Color(0xFF6200EE)
-val blue700 = Color(0xFF3700B3)
-val white200 = Color(0xFFF3F3F3)
-val teal200 = Color(0xFF03DAC5)
+val Grey50 = Color(0xfffdfdfd)
+val Grey100 = Color(0xffe9e9e9)
+val Grey200 = Color(0xffd9d9d9)
+val Grey300 = Color(0xffc4c4c4)
+val Grey400 = Color(0xff9d9d9d)
+val Grey500 = Color(0xff7b7b7b)
+val Grey600 = Color(0xff555555)
+val Grey700 = Color(0xff434343)
+val Grey800 = Color(0xff262626)
+val Grey900 = Color(0xff212121)
+
+val IndigoA100 = Color(0xFF8c9eff)
+val IndigoA700 = Color(0xFF304ffe)

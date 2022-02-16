@@ -1,139 +1,163 @@
-/*
- *     This file is part of Lawnchair Launcher.
- *
- *     Lawnchair Launcher is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     Lawnchair Launcher is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 package com.saggitt.omega.iconpack
 
+import android.content.ComponentName
 import android.content.Context
-import android.content.pm.LauncherActivityInfo
-import android.content.pm.ShortcutInfo
-import android.graphics.Bitmap
+import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.content.res.XmlResourceParser
 import android.graphics.drawable.Drawable
-import com.android.launcher3.FastBitmapDrawable
-import com.android.launcher3.compat.AlphabeticIndexCompat
-import com.android.launcher3.model.data.ItemInfo
-import com.android.launcher3.util.ComponentKey
-import com.android.launcher3.util.Executors.ICON_PACK_EXECUTOR
-import com.saggitt.omega.icons.CustomIconProvider
-import java.util.*
+import android.util.Xml
+import com.saggitt.omega.icons.ClockMetadata
+import kotlinx.coroutines.*
+import org.xmlpull.v1.XmlPullParser
+import org.xmlpull.v1.XmlPullParserException
+import org.xmlpull.v1.XmlPullParserFactory
+import java.io.IOException
 import java.util.concurrent.Semaphore
-import kotlin.collections.ArrayList
 
-abstract class IconPack(val context: Context, val packPackageName: String) {
+class IconPack(
+    private val context: Context,
+    private val packPackageName: String,
+    private val packResources: Resources
+) {
     private var waiter: Semaphore? = Semaphore(0)
-    private val indexCompat by lazy { AlphabeticIndexCompat(context) }
-    private val loadCompleteListeners = ArrayList<(IconPack) -> Unit>()
+    private val deferredLoad: Deferred<Unit>
 
-    fun executeLoadPack() {
-        ICON_PACK_EXECUTOR.execute {
-            loadPack()
+    private val componentMap = mutableMapOf<ComponentName, IconEntry>()
+    private val calendarMap = mutableMapOf<ComponentName, CalendarIconEntry>()
+    private val clockMap = mutableMapOf<ComponentName, IconEntry>()
+    private val clockMetas = mutableMapOf<IconEntry, ClockMetadata>()
+
+    private val idCache = mutableMapOf<String, Int>()
+
+    init {
+        deferredLoad = scope.async(Dispatchers.IO) {
+            loadInternal()
             waiter?.release()
-            loadCompleteListeners.forEach { it.invoke(this) }
-            loadCompleteListeners.clear()
-        }
-    }
-
-    @Synchronized
-    fun ensureInitialLoadComplete() {
-        waiter?.run {
-            acquireUninterruptibly()
-            release()
             waiter = null
         }
     }
 
-    val displayIcon get() = packInfo.displayIcon
-    val displayName get() = packInfo.displayName
+    suspend fun load() {
+        return deferredLoad.await()
+    }
 
-    abstract val packInfo: IconPackList.PackInfo
+    fun loadBlocking() {
+        waiter?.run {
+            acquireUninterruptibly()
+            release()
+        }
+    }
 
-    abstract fun onDateChanged()
+    fun getIcon(componentName: ComponentName) = componentMap[componentName]
+    fun getCalendar(componentName: ComponentName) = calendarMap[componentName]
+    fun getClock(entry: IconEntry) = clockMetas[entry]
 
-    abstract fun loadPack()
+    fun getCalendars(): MutableSet<ComponentName> = calendarMap.keys
+    fun getClocks(): MutableSet<ComponentName> = clockMap.keys
 
-    abstract fun getEntryForComponent(key: ComponentKey): Entry?
+    fun getIcon(iconEntry: IconEntry, iconDpi: Int): Drawable? {
+        val id = getDrawableId(iconEntry.name)
+        if (id == 0) return null
+        return packResources.getDrawableForDensity(id, iconDpi, null)
+    }
 
-    open fun getMaskEntryForComponent(key: ComponentKey): Entry? = null
+    private fun getDrawableId(name: String) = idCache.getOrPut(name) {
+        packResources.getIdentifier(name, "drawable", packPackageName)
+    }
 
-    open fun getIcon(entry: IconPackManager.CustomIconEntry, iconDpi: Int): Drawable? {
+    @Suppress("BlockingMethodInNonBlockingContext")
+    private fun loadInternal() {
+        val parseXml = getXml("appfilter") ?: return
+        val compStart = "ComponentInfo{"
+        val compStartLength = compStart.length
+        val compEnd = "}"
+        val compEndLength = compEnd.length
+        try {
+            while (parseXml.next() != XmlPullParser.END_DOCUMENT) {
+                if (parseXml.eventType != XmlPullParser.START_TAG) continue
+                val name = parseXml.name
+                val isCalendar = name == "calendar"
+                when (name) {
+                    "item", "calendar" -> {
+                        var componentName: String? = parseXml["component"]
+                        val drawableName = parseXml[if (isCalendar) "prefix" else "drawable"]
+                        if (componentName != null && drawableName != null) {
+                            if (componentName.startsWith(compStart) && componentName.endsWith(
+                                    compEnd
+                                )
+                            ) {
+                                componentName = componentName.substring(
+                                    compStartLength,
+                                    componentName.length - compEndLength
+                                )
+                            }
+                            val parsed = ComponentName.unflattenFromString(componentName)
+                            if (parsed != null) {
+                                if (isCalendar) {
+                                    calendarMap[parsed] = CalendarIconEntry(this, drawableName)
+                                } else {
+                                    componentMap[parsed] = IconEntry(this, drawableName)
+                                }
+                            }
+                        }
+                    }
+                    "dynamic-clock" -> {
+                        val drawableName = parseXml["drawable"]
+                        if (drawableName != null) {
+                            if (parseXml is XmlResourceParser) {
+                                clockMetas[IconEntry(this, drawableName)] = ClockMetadata(
+                                    parseXml.getAttributeIntValue(null, "hourLayerIndex", -1),
+                                    parseXml.getAttributeIntValue(null, "minuteLayerIndex", -1),
+                                    parseXml.getAttributeIntValue(null, "secondLayerIndex", -1),
+                                    parseXml.getAttributeIntValue(null, "defaultHour", 0),
+                                    parseXml.getAttributeIntValue(null, "defaultMinute", 0),
+                                    parseXml.getAttributeIntValue(null, "defaultSecond", 0)
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+            componentMap.forEach { (componentName, iconEntry) ->
+                if (clockMetas.containsKey(iconEntry)) {
+                    clockMap[componentName] = iconEntry
+                }
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        } catch (e: XmlPullParserException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        } catch (e: IllegalStateException) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun getXml(name: String): XmlPullParser? {
+        val res: Resources
+        try {
+            res = context.packageManager.getResourcesForApplication(packPackageName)
+            val resourceId = res.getIdentifier(name, "xml", packPackageName)
+            return if (0 != resourceId) {
+                context.packageManager.getXml(packPackageName, resourceId, null)
+            } else {
+                val factory = XmlPullParserFactory.newInstance()
+                val parser = factory.newPullParser()
+                parser.setInput(res.assets.open("$name.xml"), Xml.Encoding.UTF_8.toString())
+                parser
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+        } catch (e: IOException) {
+        } catch (e: XmlPullParserException) {
+        }
         return null
     }
 
-    abstract fun getIcon(launcherActivityInfo: LauncherActivityInfo,
-                         iconDpi: Int, flattenDrawable: Boolean,
-                         customIconEntry: IconPackManager.CustomIconEntry?,
-                         iconProvider: CustomIconProvider?): Drawable?
-
-    abstract fun getIcon(shortcutInfo: ShortcutInfo, iconDpi: Int): Drawable?
-
-    abstract fun newIcon(icon: Bitmap, itemInfo: ItemInfo,
-                         customIconEntry: IconPackManager.CustomIconEntry?,
-                         drawableFactory: CustomDrawableFactory): FastBitmapDrawable?
-
-    open fun getAllIcons(callback: (List<PackEntry>) -> Unit, cancel: () -> Boolean,
-                         filter: (item: String) -> Boolean = { _ -> true }) {
-        ensureInitialLoadComplete()
-        callback(categorize(filterDuplicates(entries)).filter {
-            if (it is Entry) filter(it.identifierName) else true
-        })
-    }
-
-    abstract fun supportsMasking(): Boolean
-
-    private fun filterDuplicates(entries: List<Entry>): List<Entry> {
-        var previous = ""
-        val filtered = ArrayList<Entry>()
-        entries.sortedBy { it.identifierName }.forEach {
-            if (it.identifierName != previous) {
-                previous = it.identifierName
-                filtered.add(it)
-            }
-        }
-        return filtered
-    }
-
-    private fun categorize(entries: List<Entry>): List<PackEntry> {
-        val packEntries = ArrayList<PackEntry>()
-        var previousSection = ""
-        entries.sortedBy { it.displayName.lowercase(Locale.getDefault()) }.forEach {
-            val currentSection = indexCompat.computeSectionName(it.displayName)
-            if (currentSection != previousSection) {
-                previousSection = currentSection
-                packEntries.add(CategoryTitle(currentSection))
-            }
-            packEntries.add(it)
-        }
-        return packEntries
-    }
-
-    abstract val entries: List<Entry>
-
-    open class PackEntry
-
-    class CategoryTitle(val title: String) : PackEntry()
-
-    abstract class Entry : PackEntry() {
-
-        abstract val displayName: String
-        abstract val identifierName: String
-        val drawable get() = drawableForDensity(0)
-        abstract val isAvailable: Boolean
-
-        abstract fun drawableForDensity(density: Int): Drawable
-
-        abstract fun toCustomEntry(): IconPackManager.CustomIconEntry
+    companion object {
+        private val scope = CoroutineScope(Dispatchers.IO) + CoroutineName("IconPack")
     }
 }
+
+private operator fun XmlPullParser.get(key: String): String? = this.getAttributeValue(null, key)

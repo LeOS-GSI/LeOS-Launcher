@@ -1,28 +1,29 @@
 /*
- *     This file is part of Lawnchair Launcher.
+ *  This file is part of Omega Launcher
+ *  Copyright (c) 2021   Saul Henriquez
  *
- *     Lawnchair Launcher is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
  *
- *     Lawnchair Launcher is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
  *
- *     You should have received a copy of the GNU General Public License
- *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package com.saggitt.omega.theme
 
 import android.content.Context
 import android.content.res.Configuration
-import android.os.Handler
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import com.android.launcher3.uioverrides.WallpaperColorInfo
+import com.android.launcher3.util.Executors.MAIN_EXECUTOR
 import com.saggitt.omega.BlankActivity
 import com.saggitt.omega.omegaApp
 import com.saggitt.omega.twilight.TwilightListener
@@ -47,7 +48,8 @@ class ThemeManager(val context: Context) : WallpaperColorInfo.OnChangeListener, 
         }
 
     val isDark get() = themeFlags and THEME_DARK != 0
-    val supportsDarkText get() = themeFlags and THEME_DARK_TEXT != 0
+    val isBlack get() = themeFlags and THEME_USE_BLACK != 0
+    val supportsDarkText get() = false
     val displayName: String
         get() {
             val values = context.resources.getIntArray(R.array.themeValues)
@@ -56,8 +58,7 @@ class ThemeManager(val context: Context) : WallpaperColorInfo.OnChangeListener, 
             return strings.getOrNull(index) ?: context.resources.getString(R.string.theme_auto)
         }
     private val twilightManager by lazy { TwilightManager.getInstance(context) }
-    // TODO ditch Handler class fully
-    private val handler = Handler()
+    private val handler = MAIN_EXECUTOR.handler
     private var listenToTwilight = false
         set(value) {
             if (field != value) {
@@ -124,21 +125,12 @@ class ThemeManager(val context: Context) : WallpaperColorInfo.OnChangeListener, 
             else -> theme.hasFlag(THEME_DARK)
         }
 
-        val supportsDarkText = when {
-            theme.hasFlag(THEME_DARK_TEXT) -> true
-            theme.hasFlag(THEME_FOLLOW_WALLPAPER) -> wallpaperColorInfo.supportsDarkText()
-            else -> wallpaperColorInfo.supportsDarkText()
-        }
-
-        val darkMainColor = wallpaperColorInfo.isMainColorDark
-
         var newFlags = 0
-        if (supportsDarkText) newFlags = newFlags or THEME_DARK_TEXT
         if (isDark) newFlags = newFlags or THEME_DARK
         if (isBlack) newFlags = newFlags or THEME_USE_BLACK
-        if (darkMainColor) newFlags = newFlags or THEME_DARK_MAIN_COLOR
         if (newFlags == themeFlags) return
         themeFlags = newFlags
+        // TODO no listeners are added for now, either we keep this logic and use it in all classes or just use reloadActivities
         reloadActivities()
         synchronized(listeners) {
             removeDeadListeners()
@@ -188,29 +180,28 @@ class ThemeManager(val context: Context) : WallpaperColorInfo.OnChangeListener, 
         usingNightMode = newConfig.usingNightMode
     }
 
+    // TODO make all activities (including the desktop one) apply the chosen theme
     interface ThemeableActivity {
+        var currentTheme: Int
+        var currentAccent: Int
         fun onThemeChanged()
     }
 
     companion object :
         SingletonHolder<ThemeManager, Context>(ensureOnMainThread(useApplicationContext(::ThemeManager))) {
 
-        const val THEME_FOLLOW_WALLPAPER = 1         // 000001 = 1
-        const val THEME_DARK_TEXT = 1 shl 1          // 000010 = 2
-        const val THEME_DARK = 1 shl 2               // 000100 = 4
-        const val THEME_USE_BLACK = 1 shl 3          // 001000 = 8
-        const val THEME_FOLLOW_NIGHT_MODE = 1 shl 4  // 010000 = 16
-        const val THEME_FOLLOW_DAYLIGHT = 1 shl 5    // 100000 = 32
-        const val THEME_DARK_MAIN_COLOR = 1 shl 6    // 1000000 = 64
+        const val THEME_DARK = 0b00001                // 1
+        const val THEME_USE_BLACK = 0b00010           // 2
+        const val THEME_FOLLOW_WALLPAPER = 0b00100    // 4
+        const val THEME_FOLLOW_NIGHT_MODE = 0b01000   // 8
+        const val THEME_FOLLOW_DAYLIGHT = 0b10000     // 16
 
         const val THEME_AUTO_MASK =
             THEME_FOLLOW_WALLPAPER or THEME_FOLLOW_NIGHT_MODE or THEME_FOLLOW_DAYLIGHT
         const val THEME_DARK_MASK = THEME_DARK or THEME_AUTO_MASK
 
-        fun isDarkText(flags: Int) = (flags and THEME_DARK_TEXT) != 0
         fun isDark(flags: Int) = (flags and THEME_DARK) != 0
         fun isBlack(flags: Int) = (flags and THEME_USE_BLACK) != 0
-        fun isDarkMainColor(flags: Int) = (flags and THEME_DARK_MAIN_COLOR) != 0
 
         fun getDefaultTheme(): Int {
             return if (Utilities.ATLEAST_Q) {

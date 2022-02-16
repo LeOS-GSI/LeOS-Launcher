@@ -29,8 +29,10 @@ import android.util.Log;
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 
+import com.android.launcher3.Launcher;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.saggitt.omega.smartspace.weather.icons.WeatherIconManager;
+import com.saggitt.omega.util.OmegaUtilsKt;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -291,8 +293,7 @@ public class OPWeatherProvider {
     }
 
     private boolean isAppEnabled() {
-        return PackageManagerHelper
-                .isAppEnabled(mContext.getPackageManager(), WEATHER_PACKAGE_NAME, 0);
+        return OmegaUtilsKt.isAppEnabled(mContext.getPackageManager(), WEATHER_PACKAGE_NAME, 0);
     }
 
     private void queryWeatherInformation() {

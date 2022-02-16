@@ -1,5 +1,4 @@
-/*
- *     This file is part of Lawnchair Launcher.
+/*     This file is part of Lawnchair Launcher.
  *
  *     Lawnchair Launcher is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -14,7 +13,6 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.gestures.handlers
 
 import android.content.Context
@@ -32,9 +30,10 @@ import com.android.launcher3.Launcher
 import com.android.launcher3.LauncherState
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
+import com.android.launcher3.anim.AnimatorListeners
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.views.OptionsPopupView
-import com.android.launcher3.widget.WidgetsFullSheet
+import com.android.launcher3.widget.picker.WidgetsFullSheet
 import com.android.quickstep.SysUINavigationMode
 import com.saggitt.omega.dash.DashBottomSheet
 import com.saggitt.omega.gestures.GestureController
@@ -60,10 +59,10 @@ open class OpenDrawerGestureHandler(context: Context, config: JSONObject?) :
     override val requiresForeground = true
 
     private fun getNameRes(): Int {
-        if (SysUINavigationMode.INSTANCE.get(context).mode == SysUINavigationMode.Mode.NO_BUTTON) {
-            return R.string.action_open_drawer_or_recents
+        return if (SysUINavigationMode.INSTANCE.get(context).mode == SysUINavigationMode.Mode.NO_BUTTON) {
+            R.string.action_open_drawer_or_recents
         } else {
-            return R.string.action_open_drawer
+            R.string.action_open_drawer
         }
     }
 
@@ -71,11 +70,13 @@ open class OpenDrawerGestureHandler(context: Context, config: JSONObject?) :
         controller.launcher.stateManager.goToState(
             LauncherState.ALL_APPS,
             true,
-            getOnCompleteRunnable(controller)
+            AnimatorListeners.forEndCallback(getOnCompleteRunnable(controller))
         )
     }
 
-    open fun getOnCompleteRunnable(controller: GestureController): Runnable? = null
+    open fun getOnCompleteRunnable(controller: GestureController): Runnable? {
+        return Runnable { }
+    }
 
     override fun getTargetState(): LauncherState {
         return LauncherState.ALL_APPS
@@ -109,7 +110,7 @@ class OpenDashGestureHandler(context: Context, config: JSONObject?) :
     override val requiresForeground = true
 
     override fun onGestureTrigger(controller: GestureController, view: View?) {
-        DashBottomSheet.show(controller.launcher, false)
+        DashBottomSheet.show(controller.launcher, true)
     }
 }
 
@@ -145,7 +146,7 @@ class StartAppSearchGestureHandler(context: Context, config: JSONObject?) :
             by lazy {
                 Intent.ShortcutIconResource.fromContext(
                     context,
-                    R.drawable.ic_search_shadow
+                    R.drawable.ic_search
                 )
             }
 
@@ -154,6 +155,31 @@ class StartAppSearchGestureHandler(context: Context, config: JSONObject?) :
     }
 }
 
+@Keep
+class OpenOverlayGestureHandler(context: Context, config: JSONObject?) :
+    GestureHandler(context, config) {
+
+    override val displayName: String = context.getString(R.string.action_overlay)
+    override val iconResource: Intent.ShortcutIconResource by lazy {
+        Intent.ShortcutIconResource.fromContext(
+            context,
+            R.drawable.ic_super_g_color
+        )
+    }
+
+    override fun onGestureTrigger(controller: GestureController, view: View?) {
+        controller.launcher.startActivity(
+            Intent(Intent.ACTION_MAIN).setClassName(
+                PACKAGE,
+                "$PACKAGE.SearchActivity"
+            )
+        )
+    }
+
+    companion object {
+        private const val PACKAGE = "com.google.android.googlequicksearchbox"
+    }
+}
 
 @Keep
 class StartAppGestureHandler(context: Context, config: JSONObject?) :
@@ -234,10 +260,9 @@ class StartAppGestureHandler(context: Context, config: JSONObject?) :
             appName = data.getStringExtra("appName")
             type = data.getStringExtra("type")
             when (type) {
-                "app" -> {
-                    target =
-                        Utilities.makeComponentKey(context, data.getStringExtra("target") ?: "")
-                }
+                "app" ->
+                    target = Utilities
+                        .makeComponentKey(context, data.getStringExtra("target") ?: "")
                 "shortcut" -> {
                     intent = Intent.parseUri(data.getStringExtra("intent"), 0)
                     user = data.getParcelableExtra("user")
@@ -289,7 +314,7 @@ class OpenSettingsGestureHandler(context: Context, config: JSONObject?) :
 
     override val displayName = context.getString(R.string.action_open_settings)
     override val iconResource: Intent.ShortcutIconResource by lazy {
-        Intent.ShortcutIconResource.fromContext(context, R.drawable.ic_settings)
+        Intent.ShortcutIconResource.fromContext(context, R.drawable.ic_omega_settings)
     }
 
     override fun onGestureTrigger(controller: GestureController, view: View?) {
@@ -307,7 +332,7 @@ class OpenOverviewGestureHandler(context: Context, config: JSONObject?) :
     override val iconResource: Intent.ShortcutIconResource by lazy {
         Intent.ShortcutIconResource.fromContext(
             context,
-            R.drawable.ic_settings
+            R.drawable.ic_drag_handle
         )
     }
     override val requiresForeground = true
@@ -325,17 +350,11 @@ class OpenOverviewGestureHandler(context: Context, config: JSONObject?) :
 }
 
 interface VerticalSwipeGestureHandler {
-
-    fun onDragStart(start: Boolean) {
-
-    }
-
+    fun onDragStart(start: Boolean) {}
     fun onDrag(displacement: Float, velocity: Float) {}
-
     fun onDragEnd(velocity: Float, fling: Boolean) {}
 }
 
 interface StateChangeGestureHandler {
-
     fun getTargetState(): LauncherState
 }

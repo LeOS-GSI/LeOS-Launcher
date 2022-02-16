@@ -21,14 +21,14 @@ import android.content.Context
 import android.graphics.Bitmap
 import com.hoko.blur.HokoBlur
 import com.hoko.blur.task.AsyncBlurTask
-import com.saggitt.omega.OmegaPreferences
+import com.saggitt.omega.preferences.OmegaPreferences
 
 class BlurWallpaperFilter(private val context: Context) : WallpaperFilter {
 
     private var blurRadius = 25
 
     override fun applyPrefs(prefs: OmegaPreferences) {
-        blurRadius = prefs.blurRadius.toInt() / BlurWallpaperProvider.DOWNSAMPLE_FACTOR
+        blurRadius = prefs.blurRadius / BlurWallpaperProvider.DOWNSAMPLE_FACTOR
         blurRadius = blurRadius.coerceAtLeast(1).coerceAtMost(25)
     }
 

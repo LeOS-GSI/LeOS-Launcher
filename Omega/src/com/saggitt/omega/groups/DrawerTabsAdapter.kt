@@ -28,7 +28,7 @@ import com.saggitt.omega.util.isVisible
 import com.saggitt.omega.util.omegaPrefs
 
 open class DrawerTabsAdapter(context: Context) :
-    AppGroupsAdapter<DrawerTabsAdapter.TabHolder, DrawerTabs.Tab>(context) {
+        AppGroupsAdapter<DrawerTabsAdapter.TabHolder, DrawerTabs.Tab>(context) {
 
     override val groupsModel: DrawerTabs = manager.drawerTabs
     override val headerText = R.string.app_categorization_tabs
@@ -37,19 +37,19 @@ open class DrawerTabsAdapter(context: Context) :
             UserCache.INSTANCE.get(context).userProfiles.size > 1
 
     override fun createGroup(callback: (DrawerTabs.Tab, Boolean) -> Unit) {
-        DrawerTabTypeSelectionBottomSheet.show(
-            context, mapOf(
-                FlowerpotTabs.TYPE_FLOWERPOT to arrayOf(
-                    R.string.tab_type_smart,
-                    R.string.pref_appcategorization_flowerpot_summary,
-                    R.drawable.ic_category
-                ),
-                DrawerTabs.TYPE_CUSTOM to arrayOf(
-                    R.string.custom,
-                    R.string.tab_type_custom_desc,
-                    R.drawable.ic_list
+         DrawerTabTypeSelectionBottomSheet.show(
+                 context, mapOf(
+                 FlowerpotTabs.TYPE_FLOWERPOT to arrayOf(
+                         R.string.tab_type_smart,
+                         R.string.pref_appcategorization_flowerpot_summary,
+                         R.drawable.ic_category
+                 ),
+                 DrawerTabs.TYPE_CUSTOM to arrayOf(
+                         R.string.custom,
+                         R.string.tab_type_custom_desc,
+                         R.drawable.ic_squares_four
                 )
-            )
+        )
         ) {
             when (it) {
                 DrawerTabs.TYPE_CUSTOM -> callback(DrawerTabs.CustomTab(context), false)
@@ -60,14 +60,14 @@ open class DrawerTabsAdapter(context: Context) :
 
     override fun createGroupHolder(parent: ViewGroup): TabHolder {
         return TabHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.tab_item, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.tab_item, parent, false)
         )
     }
 
     override fun filterGroups(): Collection<DrawerTabs.Tab> {
         return if (hasWorkApps) {
             groupsModel.getGroups()
-                .filter { it !is DrawerTabs.ProfileTab || !it.profile.matchesAll }
+                    .filter { it !is DrawerTabs.ProfileTab || !it.profile.matchesAll }
         } else {
             groupsModel.getGroups().filter { it !is DrawerTabs.ProfileTab || it.profile.matchesAll }
         }
@@ -79,7 +79,7 @@ open class DrawerTabsAdapter(context: Context) :
             super.bind(info)
 
             delete.isVisible =
-                info.type in arrayOf(DrawerTabs.TYPE_CUSTOM, FlowerpotTabs.TYPE_FLOWERPOT)
+                    info.type in arrayOf(DrawerTabs.TYPE_CUSTOM, FlowerpotTabs.TYPE_FLOWERPOT)
         }
     }
 }

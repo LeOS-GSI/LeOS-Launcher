@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
@@ -28,6 +27,7 @@ import com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin
 import com.saggitt.omega.gestures.handlers.SleepMethodPieAccessibility
 
 class SleepDevice(context: Context) : DashActionProvider(context) {
+    override val itemId = 10
     override val name = context.getString(R.string.action_sleep)
     override val description = context.getString(R.string.action_sleep)
 

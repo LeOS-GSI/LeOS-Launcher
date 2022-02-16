@@ -20,7 +20,6 @@ package com.saggitt.omega.dash
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -61,8 +60,12 @@ class DashEditAdapter(context: Context) : RecyclerView.Adapter<DashEditAdapter.H
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return when (viewType) {
-            TYPE_HEADER -> createHolder(parent, R.layout.icon_pack_text_item, ::HeaderHolder)
-            TYPE_DASH_ITEM -> createHolder(parent, R.layout.icon_pack_dialog_item, ::DashItemHolder)
+            TYPE_HEADER -> createHolder(parent, R.layout.adapter_item_text, ::HeaderHolder)
+            TYPE_DASH_ITEM -> createHolder(
+                parent,
+                R.layout.adapter_item_with_icon,
+                ::DashItemHolder
+            )
             TYPE_DIVIDER -> createHolder(
                 parent,
                 R.layout.event_providers_divider_item,
@@ -92,8 +95,7 @@ class DashEditAdapter(context: Context) : RecyclerView.Adapter<DashEditAdapter.H
         while (iterator.hasNext()) {
             val item = iterator.next()
             if (item is ProviderItem) {
-                newSpecs.add(item.info.name)
-                Log.d("SmartspaceEventProvider", "adding item ${item.info.name}")
+                newSpecs.add(item.info.itemId.toString())
             }
             if (item is DividerItem) break
         }
@@ -117,11 +119,11 @@ class DashEditAdapter(context: Context) : RecyclerView.Adapter<DashEditAdapter.H
         adapterItems.addAll(otherItems)
     }
 
-    private fun getAndRemoveOther(s: String): ProviderItem? {
+    private fun getAndRemoveOther(itemId: String): ProviderItem? {
         val iterator = otherItems.iterator()
         while (iterator.hasNext()) {
             val item = iterator.next()
-            if (item.info.name == s) {
+            if (item.info.itemId == Integer.valueOf(itemId)) {
                 iterator.remove()
                 return item
             }
@@ -175,7 +177,7 @@ class DashEditAdapter(context: Context) : RecyclerView.Adapter<DashEditAdapter.H
 
     class HeaderHolder(itemView: View) : Holder(itemView) {
         init {
-            itemView.findViewById<TextView>(android.R.id.text1).setText(R.string.enabled_icon_packs)
+            itemView.findViewById<TextView>(android.R.id.text1).setText(R.string.enabled_events)
         }
     }
 
@@ -184,7 +186,7 @@ class DashEditAdapter(context: Context) : RecyclerView.Adapter<DashEditAdapter.H
 
         val icon: ImageView = itemView.findViewById(android.R.id.icon)
         val title: TextView = itemView.findViewById(android.R.id.title)
-        val summary: TextView = itemView.findViewById(R.id.summary)
+        val summary: TextView = itemView.findViewById(android.R.id.summary)
         private val dragHandle: View = itemView.findViewById(R.id.drag_handle)
         private val dashItem
             get() = adapterItems[bindingAdapterPosition] as? ProviderItem

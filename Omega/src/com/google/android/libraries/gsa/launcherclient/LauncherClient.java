@@ -30,13 +30,17 @@ import java.lang.ref.WeakReference;
 
 public class LauncherClient {
     private static int apiVersion = -1;
-
-    private ILauncherOverlay mOverlay;
-    private final IScrollCallback mScrollCallback;
-
+    public final IScrollCallback mScrollCallback;
     public final BaseClientService mBaseService;
     public final LauncherClientService mLauncherService;
-
+    public final Activity mActivity;
+    public int mFlags;
+    public LayoutParams mLayoutParams;
+    public OverlayCallback mOverlayCallback;
+    public boolean mDestroyed = false;
+    private ILauncherOverlay mOverlay;
+    private int mActivityState = 0;
+    private int mServiceState = 0;
     public final BroadcastReceiver googleInstallListener = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -48,75 +52,7 @@ public class LauncherClient {
             }
         }
     };
-
-    private int mActivityState = 0;
-    private int mServiceState = 0;
-    public int mFlags;
-
-    public LayoutParams mLayoutParams;
-    public OverlayCallback mOverlayCallback;
-    public final Activity mActivity;
-
-    public boolean mDestroyed = false;
     private Bundle mLayoutBundle;
-
-    public class OverlayCallback extends ILauncherOverlayCallback.Stub implements Callback {
-        public LauncherClient mClient;
-        private final Handler mUIHandler = new Handler(Looper.getMainLooper(), this);
-        public Window mWindow;
-        private boolean mWindowHidden = false;
-        public WindowManager mWindowManager;
-        int mWindowShift;
-
-        @Override
-        public final void overlayScrollChanged(float f) {
-            mUIHandler.removeMessages(2);
-            Message.obtain(mUIHandler, 2, f).sendToTarget();
-            if (f > 0f && mWindowHidden) {
-                mWindowHidden = false;
-            }
-        }
-
-        @Override
-        public final void overlayStatusChanged(int i) {
-            Message.obtain(mUIHandler, 4, i, 0).sendToTarget();
-        }
-
-        @Override
-        public boolean handleMessage(Message message) {
-            if (mClient == null) {
-                return true;
-            }
-
-            switch (message.what) {
-                case 2:
-                    if ((mClient.mServiceState & 1) != 0) {
-                        float floatValue = (float) message.obj;
-                        mClient.mScrollCallback.onOverlayScrollChanged(floatValue);
-                    }
-                    return true;
-                case 3:
-                    WindowManager.LayoutParams attributes = mWindow.getAttributes();
-                    if ((Boolean) message.obj) {
-                        attributes.x = mWindowShift;
-                        attributes.flags |= 512;
-                    } else {
-                        attributes.x = 0;
-                        attributes.flags &= -513;
-                    }
-                    mWindowManager.updateViewLayout(mWindow.getDecorView(), attributes);
-                    return true;
-                case 4:
-                    mClient.setServiceState(message.arg1);
-                    if (mClient.mScrollCallback instanceof ISerializableScrollCallback) {
-                        ((ISerializableScrollCallback) mClient.mScrollCallback).setPersistentFlags(message.arg1);
-                    }
-                    return true;
-                default:
-                    return false;
-            }
-        }
-    }
 
     public LauncherClient(Activity activity, IScrollCallback scrollCallback, StaticInteger flags) {
         mActivity = activity;
@@ -143,6 +79,30 @@ public class LauncherClient {
                 mActivity.getWindow().peekDecorView().isAttachedToWindow()) {
             onAttachedToWindow();
         }
+    }
+
+    static Intent getIntent(Context context, boolean proxy) {
+        BridgeInfo bridgeInfo = proxy ? FeedBridge.Companion.getInstance(context).resolveBridge() : null;
+        String pkg = context.getPackageName();
+        return new Intent("com.android.launcher3.WINDOW_OVERLAY")
+                .setPackage(bridgeInfo != null ? bridgeInfo.getPackageName() : "com.google.android.googlequicksearchbox")
+                .setData(Uri.parse(new StringBuilder(pkg.length() + 18)
+                        .append("app://")
+                        .append(pkg)
+                        .append(":")
+                        .append(Process.myUid())
+                        .toString())
+                        .buildUpon()
+                        .appendQueryParameter("v", Integer.toString(7))
+                        .appendQueryParameter("cv", Integer.toString(9))
+                        .build());
+    }
+
+    private static void loadApiVersion(Context context) {
+        ResolveInfo resolveService = context.getPackageManager().resolveService(getIntent(context, false), PackageManager.GET_META_DATA);
+        apiVersion = resolveService == null || resolveService.serviceInfo.metaData == null ?
+                1 :
+                resolveService.serviceInfo.metaData.getInt("service.api.version", 1);
     }
 
     public final void onAttachedToWindow() {
@@ -217,14 +177,13 @@ public class LauncherClient {
         }
     }
 
+    public void onDestroy() {
+        mActivity.unregisterReceiver(googleInstallListener);
+    }
+
     private void reconnect() {
         if (!mDestroyed && (!mLauncherService.connect() || !mBaseService.connect())) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    setServiceState(0);
-                }
-            });
+            mActivity.runOnUiThread(() -> setServiceState(0));
         }
     }
 
@@ -386,27 +345,61 @@ public class LauncherClient {
         }
     }
 
-    static Intent getIntent(Context context, boolean proxy) {
-        BridgeInfo bridgeInfo = proxy ? FeedBridge.Companion.getInstance(context).resolveBridge() : null;
-        String pkg = context.getPackageName();
-        return new Intent("com.android.launcher3.WINDOW_OVERLAY")
-                .setPackage(bridgeInfo != null ? bridgeInfo.getPackageName() : "com.google.android.googlequicksearchbox")
-                .setData(Uri.parse(new StringBuilder(pkg.length() + 18)
-                        .append("app://")
-                        .append(pkg)
-                        .append(":")
-                        .append(Process.myUid())
-                        .toString())
-                        .buildUpon()
-                        .appendQueryParameter("v", Integer.toString(7))
-                        .appendQueryParameter("cv", Integer.toString(9))
-                        .build());
-    }
+    public class OverlayCallback extends ILauncherOverlayCallback.Stub implements Callback {
+        private final Handler mUIHandler = new Handler(Looper.getMainLooper(), this);
+        public LauncherClient mClient;
+        public Window mWindow;
+        public WindowManager mWindowManager;
+        int mWindowShift;
+        private boolean mWindowHidden = false;
 
-    private static void loadApiVersion(Context context) {
-        ResolveInfo resolveService = context.getPackageManager().resolveService(getIntent(context, false), PackageManager.GET_META_DATA);
-        apiVersion = resolveService == null || resolveService.serviceInfo.metaData == null ?
-                1 :
-                resolveService.serviceInfo.metaData.getInt("service.api.version", 1);
+        @Override
+        public final void overlayScrollChanged(float f) {
+            mUIHandler.removeMessages(2);
+            Message.obtain(mUIHandler, 2, f).sendToTarget();
+            if (f > 0f && mWindowHidden) {
+                mWindowHidden = false;
+            }
+        }
+
+        @Override
+        public final void overlayStatusChanged(int i) {
+            Message.obtain(mUIHandler, 4, i, 0).sendToTarget();
+        }
+
+        @Override
+        public boolean handleMessage(Message message) {
+            if (mClient == null) {
+                return true;
+            }
+
+            switch (message.what) {
+                case 2:
+                    if ((mClient.mServiceState & 1) != 0) {
+                        float floatValue = (float) message.obj;
+                        mClient.mScrollCallback.onOverlayScrollChanged(floatValue);
+                    }
+                    return true;
+                case 3:
+                    WindowManager.LayoutParams attributes = mWindow.getAttributes();
+                    if ((Boolean) message.obj) {
+                        attributes.x = mWindowShift;
+                        attributes.flags |= 512;
+                    } else {
+                        attributes.x = 0;
+                        attributes.flags &= -513;
+                    }
+                    mWindowManager.updateViewLayout(mWindow.getDecorView(), attributes);
+                    return true;
+                case 4:
+                    mClient.setServiceState(message.arg1);
+                    if (mClient.mScrollCallback instanceof ISerializableScrollCallback) {
+                        ((ISerializableScrollCallback) mClient.mScrollCallback).setPersistentFlags(message.arg1);
+                    }
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 }

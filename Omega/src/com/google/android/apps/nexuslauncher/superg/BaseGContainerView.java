@@ -44,6 +44,7 @@ public abstract class BaseGContainerView extends FrameLayout implements View.OnC
         Utilities.getPrefs(paramContext).registerOnSharedPreferenceChangeListener(this);
         mElevationAnimator = new ObjectAnimator();
     }
+
     public void applyOpaPreference() {
         int qsbViewId = getQsbView(false);
         if (qsbViewId != mQsbViewId) {

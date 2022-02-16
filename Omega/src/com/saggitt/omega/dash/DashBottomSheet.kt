@@ -33,7 +33,7 @@ import com.android.launcher3.Utilities
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
 import com.saggitt.omega.util.tintDrawable
-import com.saggitt.omega.views.CenterFloatingView
+import com.saggitt.omega.views.BaseBottomSheet
 
 class DashBottomSheet(context: Context) : RelativeLayout(context) {
     private var controlFastAdapter: FastAdapter<DashControlItem>? = null
@@ -58,13 +58,14 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
             layoutManager = GridLayoutManager(context, 2)
             adapter = controlFastAdapter
         }
-        findViewById<RecyclerView>(R.id.dash_recycler).apply {
-            layoutManager = GridLayoutManager(context, 4)
+        findViewById<RecyclerView>(R.id.dash_action_recycler).apply {
+            // TODO add option to select between 4/6
+            layoutManager = GridLayoutManager(context, 6)
             adapter = dashActionFastAdapter
         }
         val controlItems = activeDashProviders
-            .mapNotNull { name ->
-                allControlItems.find { it.name == name }?.let {
+            .mapNotNull { itemId ->
+                allControlItems.find { it.itemId.toString() == itemId }?.let {
                     DashControlItem(context, it)
                 }
             }
@@ -73,10 +74,9 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
         val actionMediaPlayer = resources.getString(R.string.dash_media_player)
 
         val dashItems = activeDashProviders
-            .mapNotNull { name ->
+            .mapNotNull { itemId ->
                 allActionItems.find {
-                    it.name == name
-                            && it.name != actionMediaPlayer
+                    it.itemId.toString() == itemId && it.itemId != 2
                 }?.let {
                     DashActionItem(context, it)
                 }
@@ -161,7 +161,7 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
 
         val musicTab = findViewById<ConstraintLayout>(R.id.musicTab)
 
-        if (activeDashProviders.contains(actionMediaPlayer)) {
+        if (activeDashProviders.contains("2")) {
             musicTab.visibility = View.VISIBLE
         } else {
             musicTab.visibility = View.GONE
@@ -170,7 +170,7 @@ class DashBottomSheet(context: Context) : RelativeLayout(context) {
 
     companion object {
         fun show(launcher: Launcher, animate: Boolean) {
-            val sheet = CenterFloatingView.inflate(launcher)
+            val sheet = BaseBottomSheet.inflate(launcher)
             val view = DashBottomSheet(launcher)
             sheet.show(view, animate)
         }

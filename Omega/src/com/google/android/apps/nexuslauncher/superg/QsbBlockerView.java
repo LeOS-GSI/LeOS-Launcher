@@ -19,14 +19,12 @@ import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.Workspace;
 import com.android.launcher3.logging.StatsLogManager;
 import com.android.launcher3.model.data.ItemInfo;
-import com.google.android.material.animation.AnimatorSetCompat;
 import com.saggitt.omega.OmegaAppKt;
-import com.saggitt.omega.smartspace.OmegaSmartspaceController;
-import com.saggitt.omega.smartspace.OmegaSmartspaceController.WeatherData;
-import com.saggitt.omega.smartspace.SmartspacePreferencesShortcut;
+import com.saggitt.omega.smartspace.OmegaSmartSpaceController;
+import com.saggitt.omega.smartspace.OmegaSmartSpaceController.WeatherData;
+import com.saggitt.omega.smartspace.SmartSpacePreferencesShortcut;
 import com.saggitt.omega.util.OmegaUtilsKt;
 
 import org.jetbrains.annotations.Nullable;
@@ -34,11 +32,12 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A simple view used to show the region blocked by QSB during drag and drop.
  */
-public class QsbBlockerView extends FrameLayout implements Workspace.OnStateChangeListener, OmegaSmartspaceController.Listener,
+public class QsbBlockerView extends FrameLayout implements OmegaSmartSpaceController.Listener,
         OnClickListener, OnLongClickListener {
-    private final OmegaSmartspaceController mController;
+    private final OmegaSmartSpaceController mController;
     private int mState = 0;
     private View mView;
+    private BubbleTextView mDummyBubbleTextView;
 
     private final Paint mBgPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -105,17 +104,12 @@ public class QsbBlockerView extends FrameLayout implements Workspace.OnStateChan
     }
 
     @Override
-    public void prepareStateChange(AnimatorSetCompat builder) {
-
-    }
-
-    @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawPaint(mBgPaint);
     }
 
     @Override
-    public void onDataUpdated(@Nullable WeatherData weather, @Nullable OmegaSmartspaceController.CardData card) {
+    public void onDataUpdated(@Nullable WeatherData weather, @Nullable OmegaSmartSpaceController.CardData card) {
         final int oldState = mState;
         final View oldView = mView;
 
@@ -177,7 +171,7 @@ public class QsbBlockerView extends FrameLayout implements Workspace.OnStateChan
     @Override
     public boolean onLongClick(View v) {
         OmegaUtilsKt.openPopupMenu(mView, null,
-                new SmartspacePreferencesShortcut(StatsLogManager.LauncherRankingEvent.UNKNOWN));
+                new SmartSpacePreferencesShortcut(getContext(), StatsLogManager.LauncherRankingEvent.UNKNOWN));
         return false;
     }
 }

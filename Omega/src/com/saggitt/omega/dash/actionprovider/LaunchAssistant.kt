@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
@@ -26,6 +25,7 @@ import com.android.launcher3.R
 import com.saggitt.omega.dash.DashActionProvider
 
 class LaunchAssistant(context: Context) : DashActionProvider(context) {
+    override val itemId = 6
     override val name = context.getString(R.string.launch_assistant)
     override val description = context.getString(R.string.gesture_launch_assistant)
 

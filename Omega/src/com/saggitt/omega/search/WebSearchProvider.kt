@@ -21,10 +21,11 @@ package com.saggitt.omega.search
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import com.android.launcher3.Launcher
 import com.android.launcher3.LauncherState
-import com.android.launcher3.Utilities
-import com.saggitt.omega.OmegaLauncher
+import com.android.launcher3.anim.AnimatorListeners
 import com.saggitt.omega.util.OkHttpClientBuilder
+import com.saggitt.omega.util.openURLinBrowser
 import com.saggitt.omega.util.toArrayList
 import okhttp3.Request
 import org.json.JSONArray
@@ -42,25 +43,27 @@ abstract class WebSearchProvider(context: Context) : SearchProvider(context) {
     protected abstract val suggestionsUrl: String?
 
     override fun startSearch(callback: (intent: Intent) -> Unit) {
-        val launcher = OmegaLauncher.getLauncher(context)
-        launcher.stateManager.goToState(LauncherState.ALL_APPS, true) {
-            launcher.appsView.searchUiManager.startSearch()
-        }
+        val launcher = Launcher.getLauncher(context)
+        launcher.stateManager.goToState(
+                LauncherState.ALL_APPS,
+                true,
+                AnimatorListeners.forEndCallback(Runnable { launcher.appsView.searchUiManager.startSearch() })
+        )
     }
 
     open fun getSuggestions(query: String): List<String> {
         if (suggestionsUrl == null) return emptyList()
         try {
             val response = client.newCall(
-                Request.Builder()
-                    .url(suggestionsUrl!!.format(query))
-                    .build()
+                    Request.Builder()
+                            .url(suggestionsUrl!!.format(query))
+                            .build()
             )
-                .execute()
+                    .execute()
             val result = JSONArray(response.body?.string())
-                .getJSONArray(1)
-                .toArrayList<String>()
-                .take(MAX_SUGGESTIONS)
+                    .getJSONArray(1)
+                    .toArrayList<String>()
+                    .take(MAX_SUGGESTIONS)
 
             Log.e("WebSearchProvider", result.toString())
             response.close();
@@ -73,7 +76,7 @@ abstract class WebSearchProvider(context: Context) : SearchProvider(context) {
     }
 
     open fun openResults(query: String) {
-        Utilities.openURLinBrowser(context, getResultUrl(query))
+        openURLinBrowser(context, getResultUrl(query))
     }
 
     protected open fun getResultUrl(query: String) = packageName.format(query)

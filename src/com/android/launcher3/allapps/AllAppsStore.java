@@ -15,14 +15,19 @@
  */
 package com.android.launcher3.allapps;
 
+import static com.android.launcher3.model.data.AppInfo.COMPONENT_KEY_COMPARATOR;
+import static com.android.launcher3.model.data.AppInfo.EMPTY_ARRAY;
+import static com.android.launcher3.model.data.ItemInfoWithIcon.FLAG_SHOW_DOWNLOAD_PROGRESS_MASK;
+
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
 
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.folder.FolderIcon;
 import com.android.launcher3.model.data.AppInfo;
 import com.android.launcher3.model.data.ItemInfo;
-import com.android.launcher3.model.data.PromiseAppInfo;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.PackageUserKey;
 
@@ -36,9 +41,6 @@ import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-
-import static com.android.launcher3.model.data.AppInfo.COMPONENT_KEY_COMPARATOR;
-import static com.android.launcher3.model.data.AppInfo.EMPTY_ARRAY;
 
 /**
  * A utility class to maintain the collection of all apps.
@@ -57,8 +59,8 @@ public class AllAppsStore {
 
     private final List<OnUpdateListener> mUpdateListeners = new CopyOnWriteArrayList<>();
     private final ArrayList<ViewGroup> mIconContainers = new ArrayList<>();
-    private final Set<FolderIcon> mFolderIcons = Collections.newSetFromMap(new WeakHashMap<>());
     private int mModelFlags;
+    private final Set<FolderIcon> mFolderIcons = Collections.newSetFromMap(new WeakHashMap<>());
 
     private int mDeferUpdatesFlags = 0;
     private boolean mUpdatePending = false;
@@ -85,6 +87,11 @@ public class AllAppsStore {
         return (mModelFlags & mask) != 0;
     }
 
+    /**
+     * Returns {@link AppInfo} if any apps matches with provided {@link ComponentKey}, otherwise
+     * null.
+     */
+    @Nullable
     public AppInfo getApp(ComponentKey key) {
         mTempInfo.componentName = key.componentName;
         mTempInfo.user = key.user;
@@ -131,7 +138,7 @@ public class AllAppsStore {
     }
 
     public void registerIconContainer(ViewGroup container) {
-        if (container != null) {
+        if (container != null && !mIconContainers.contains(container)) {
             mIconContainers.add(container);
         }
     }
@@ -153,6 +160,7 @@ public class AllAppsStore {
                 }
             }
         });
+
         Set<FolderIcon> foldersToUpdate = new HashSet<>();
         for (FolderIcon folderIcon : mFolderIcons) {
             folderIcon.getFolder().iterateOverItems((info, view) -> {
@@ -171,10 +179,23 @@ public class AllAppsStore {
         }
     }
 
-    public void updatePromiseAppProgress(PromiseAppInfo app) {
+    /**
+     * Sets the AppInfo's associated icon's progress bar.
+     * <p>
+     * If this app is installed and supports incremental downloads, the progress bar will be updated
+     * the app's total download progress. Otherwise, the progress bar will be updated to the app's
+     * installation progress.
+     * <p>
+     * If this app is fully downloaded, the app icon will be reapplied.
+     */
+    public void updateProgressBar(AppInfo app) {
         updateAllIcons((child) -> {
             if (child.getTag() == app) {
-                child.applyProgressLevel(app.level);
+                if ((app.runtimeStatusFlags & FLAG_SHOW_DOWNLOAD_PROGRESS_MASK) == 0) {
+                    child.applyFromApplicationInfo(app);
+                } else {
+                    child.applyProgressLevel();
+                }
             }
         });
     }

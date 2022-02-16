@@ -16,6 +16,8 @@
 
 package com.android.launcher3.provider;
 
+import static com.android.launcher3.Utilities.getDevicePrefs;
+
 import android.content.ContentProviderOperation;
 import android.content.ContentValues;
 import android.content.Context;
@@ -52,8 +54,6 @@ import com.android.launcher3.util.PackageManagerHelper;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashSet;
-
-import static com.android.launcher3.Utilities.getDevicePrefs;
 
 /**
  * Utility class to import data from another Launcher which is based on Launcher3 schema.
@@ -284,8 +284,9 @@ public class ImportDataTask {
             insertOperations.clear();
         }
 
-        IntSparseArrayMap<Object> hotseatItems = GridSizeMigrationTask.removeBrokenHotseatItems(mContext);
-        int myHotseatCount = LauncherAppState.getIDP(mContext).numHotseatIcons;
+        IntSparseArrayMap<Object> hotseatItems = GridSizeMigrationTask
+                .removeBrokenHotseatItems(mContext);
+        int myHotseatCount = LauncherAppState.getIDP(mContext).numDatabaseHotseatIcons;
         if (hotseatItems.size() < myHotseatCount) {
             // Insufficient hotseat items. Add a few more.
             HotseatParserCallback parserCallback = new HotseatParserCallback(

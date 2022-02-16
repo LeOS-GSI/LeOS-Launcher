@@ -53,7 +53,7 @@ public class SuperGContainerView extends BaseGContainerView {
         } else {
             Rect workspacePadding = deviceProfile.workspacePadding;
             int fullWidth = size - workspacePadding.left - workspacePadding.right;
-            qsbWidth = DeviceProfile.calculateCellWidth(fullWidth, deviceProfile.inv.numColumns) * deviceProfile.inv.numColumns;
+            qsbWidth = DeviceProfile.calculateCellWidth(fullWidth, 0, deviceProfile.inv.numColumns) * deviceProfile.inv.numColumns;
             marginStart = 0;
         }
 

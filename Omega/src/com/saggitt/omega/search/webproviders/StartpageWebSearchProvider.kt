@@ -23,7 +23,7 @@ import com.android.launcher3.R
 import com.saggitt.omega.search.WebSearchProvider
 
 class StartpageWebSearchProvider(context: Context) :
-    WebSearchProvider(context) {
+        WebSearchProvider(context) {
     override val icon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_startpage_search, null)!!
 

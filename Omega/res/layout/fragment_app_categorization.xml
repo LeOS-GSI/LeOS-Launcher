@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~     This file is part of Lawnchair Launcher.
+  ~ This file is part of Omega Launcher
+  ~ Copyright (c) 2022   Omega Launcher Team
   ~
-  ~     Lawnchair Launcher is free software: you can redistribute it and/or modify
-  ~     it under the terms of the GNU General Public License as published by
-  ~     the Free Software Foundation, either version 3 of the License, or
-  ~     (at your option) any later version.
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as
+  ~ published by the Free Software Foundation, either version 3 of the
+  ~ License, or (at your option) any later version.
   ~
-  ~     Lawnchair Launcher is distributed in the hope that it will be useful,
-  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~     GNU General Public License for more details.
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
   ~
-  ~     You should have received a copy of the GNU General Public License
-  ~     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<com.saggitt.omega.views.PreferenceNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.saggitt.omega.views.InsettableLinearLayout
+    <include
+        android:id="@+id/enableToggle"
+        layout="@layout/app_categorization_enable_toggle" />
+
+    <TextView
+        android:id="@android:id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:orientation="vertical">
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="10dip"
+        android:text="@string/pref_appcategorization_style_text"
+        android:textStyle="bold"
+        android:textColor="?colorAccent"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingTop="16dip"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
 
-        <include
-            android:id="@+id/enableToggle"
-            layout="@layout/app_categorization_enable_toggle" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:listDivider" />
 
-        <include
-            android:id="@+id/styleHeader"
-            layout="@layout/settings_category_v2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/categorization_type"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <include
-            android:id="@+id/folderTypeItem"
-            layout="@layout/app_categorization_type_item" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false" />
 
-        <include
-            android:id="@+id/tabTypeItem"
-            layout="@layout/app_categorization_type_item" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false" />
-    </com.saggitt.omega.views.InsettableLinearLayout>
-</com.saggitt.omega.views.PreferenceNestedScrollView>
+</LinearLayout>

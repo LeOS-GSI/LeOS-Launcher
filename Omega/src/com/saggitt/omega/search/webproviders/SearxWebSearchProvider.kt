@@ -24,7 +24,7 @@ import com.saggitt.omega.search.WebSearchProvider
 import com.saggitt.omega.util.locale
 
 class SearxWebSearchProvider(context: Context) :
-    WebSearchProvider(context) {
+        WebSearchProvider(context) {
     override val icon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_searx_search, null)!!
 

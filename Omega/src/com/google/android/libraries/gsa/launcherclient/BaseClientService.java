@@ -9,10 +9,10 @@ import android.util.Log;
 import com.saggitt.omega.smartspace.FeedBridge;
 
 public class BaseClientService implements ServiceConnection {
-    private boolean mConnected;
     private final Context mContext;
     private final int mFlags;
     private final ServiceConnection mBridge;
+    private boolean mConnected;
 
     BaseClientService(Context context, int flags) {
         mContext = context;

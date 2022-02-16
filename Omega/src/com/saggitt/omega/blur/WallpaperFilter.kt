@@ -18,7 +18,7 @@
 package com.saggitt.omega.blur
 
 import android.graphics.Bitmap
-import com.saggitt.omega.OmegaPreferences
+import com.saggitt.omega.preferences.OmegaPreferences
 
 interface WallpaperFilter {
 

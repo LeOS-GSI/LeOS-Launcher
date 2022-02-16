@@ -27,7 +27,8 @@ import com.android.launcher3.LauncherAppState
 import com.android.launcher3.LauncherState
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
-import com.saggitt.omega.OmegaPreferences
+import com.android.launcher3.anim.AnimatorListeners
+import com.saggitt.omega.preferences.OmegaPreferences
 import com.saggitt.omega.search.SearchProvider
 
 @Keep
@@ -43,15 +44,17 @@ class AppsSearchProvider(context: Context) : SearchProvider(context) {
 
     override fun startSearch(callback: (intent: Intent) -> Unit) {
         val launcher = LauncherAppState.getInstanceNoCreate().launcher
-        launcher.stateManager.goToState(LauncherState.ALL_APPS, true) {
-            launcher.appsView.searchUiManager.startSearch()
-        }
+        launcher.stateManager.goToState(
+                LauncherState.ALL_APPS,
+                true,
+                AnimatorListeners.forEndCallback(Runnable { launcher.appsView.searchUiManager.startSearch() })
+        )
     }
 
     override val icon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_search, null)!!
-            .mutate()
-            .apply {
-                setTint(prefs.accentColor)
-            }
+                .mutate()
+                .apply {
+                    setTint(prefs.accentColor)
+                }
 }

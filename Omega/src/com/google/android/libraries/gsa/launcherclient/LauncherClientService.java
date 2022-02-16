@@ -14,15 +14,15 @@ public class LauncherClientService extends BaseClientService {
     public WeakReference<LauncherClient> mClient;
     private boolean mStopped;
 
+    private LauncherClientService(Context context) {
+        super(context, Context.BIND_AUTO_CREATE | Context.BIND_WAIVE_PRIORITY);
+    }
+
     static LauncherClientService getInstance(Context context) {
         if (sInstance == null) {
             sInstance = new LauncherClientService(context.getApplicationContext());
         }
         return sInstance;
-    }
-
-    private LauncherClientService(Context context) {
-        super(context, Context.BIND_AUTO_CREATE | Context.BIND_WAIVE_PRIORITY);
     }
 
     public final void setStopped(boolean stopped) {
@@ -47,15 +47,15 @@ public class LauncherClientService extends BaseClientService {
         }
     }
 
+    public final LauncherClient getClient() {
+        return mClient != null ? mClient.get() : null;
+    }
+
     private void setClient(ILauncherOverlay overlay) {
         mOverlay = overlay;
         LauncherClient client = getClient();
         if (client != null) {
             client.setOverlay(mOverlay);
         }
-    }
-
-    public final LauncherClient getClient() {
-        return mClient != null ? mClient.get() : null;
     }
 }

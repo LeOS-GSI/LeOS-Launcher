@@ -1,22 +1,24 @@
 /*
- *     This file is part of Lawnchair Launcher.
+ * This file is part of Omega Launcher
+ * Copyright (c) 2022   Omega Launcher Team
  *
- *     Lawnchair Launcher is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
  *
- *     Lawnchair Launcher is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- *     You should have received a copy of the GNU General Public License
- *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package com.saggitt.omega.groups.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.text.TextUtils
 import android.util.LayoutDirection
@@ -24,17 +26,20 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.android.launcher3.R
 import com.saggitt.omega.groups.AppGroups
-import com.saggitt.omega.groups.DrawerTabEditBottomSheet
-import com.saggitt.omega.util.*
+import com.saggitt.omega.groups.DrawerGroupBottomSheet
+import com.saggitt.omega.util.getColorAccent
+import com.saggitt.omega.util.isVisible
+import com.saggitt.omega.util.omegaPrefs
+import com.saggitt.omega.util.tintDrawable
 
 abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : AppGroups.Group>(val context: Context) :
-    RecyclerView.Adapter<AppGroupsAdapter.Holder>() {
+        RecyclerView.Adapter<AppGroupsAdapter.Holder>() {
 
     private var saved = true
 
@@ -59,12 +64,12 @@ abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : Ap
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder = when (viewType) {
         TYPE_HEADER -> HeaderHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.app_groups_adapter_header, parent, false)
+                LayoutInflater.from(parent.context)
+                        .inflate(R.layout.app_groups_adapter_header, parent, false)
         )
         TYPE_ADD -> AddHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.app_groups_adapter_add, parent, false)
+                LayoutInflater.from(parent.context)
+                        .inflate(R.layout.app_groups_adapter_add, parent, false)
         )
         TYPE_GROUP -> createGroupHolder(parent)
         else -> throw IllegalStateException("Unknown view type $viewType")
@@ -80,6 +85,7 @@ abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : Ap
 
     abstract fun filterGroups(): Collection<T>
 
+    @SuppressLint("NotifyDataSetChanged")
     open fun loadAppGroups() {
         items.clear()
         headerItemCount = 0
@@ -125,18 +131,8 @@ abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : Ap
         return true
     }
 
-    fun showAddDialog() {
-        createGroup { group, animate ->
-            DrawerTabEditBottomSheet.newGroup(context, group, animate) {
-                group.customizations.applyFrom(it)
-                addGroup(group)
-                saveChanges()
-            }
-        }
-    }
-
     fun showEditDialog(group: T) {
-        DrawerTabEditBottomSheet.edit(context, group) {
+        DrawerGroupBottomSheet.edit(context, group) {
             saved = false
             saveChanges()
             loadAppGroups()
@@ -147,47 +143,48 @@ abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : Ap
 
     open class Holder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
+    /* Crea la fila del encabezado*/
     inner class HeaderHolder(itemView: View) : Holder(itemView) {
 
         init {
-            val context = itemView.context
-            val title = itemView.findViewById<View>(R.id.categoryHeader)
-                .findViewById<TextView>(android.R.id.title)
+            val title = itemView.findViewById<TextView>(R.id.group_title)
             title.setText(headerText)
-            title.setTextColor(context.createDisabledColor(accent))
-
-            val tipIcon =
-                itemView.findViewById<View>(R.id.tipRow).findViewById<ImageView>(android.R.id.icon)
-            tipIcon.tintDrawable(accent)
         }
     }
 
+    /* Crea una fila para Opcion de Agregar*/
     inner class AddHolder(itemView: View) : Holder(itemView), View.OnClickListener {
 
         init {
-            val title = itemView.findViewById<TextView>(android.R.id.title)
-            title.setTextColor(accent)
-
-            val icon = itemView.findViewById<ImageView>(android.R.id.icon)
-            icon.tintDrawable(accent)
-
             itemView.setOnClickListener(this)
         }
 
         override fun onClick(v: View) {
             showAddDialog()
         }
+
+        /* Mostrar el dialogo de Crear */
+        private fun showAddDialog() {
+            createGroup { group, animate ->
+                DrawerGroupBottomSheet.newGroup(context, group, animate) {
+                    group.customizations.applyFrom(it)
+                    addGroup(group)
+                    saveChanges()
+                }
+            }
+        }
     }
 
+    /* Crea una fila por cada folder*/
     open inner class GroupHolder(itemView: View) : Holder(itemView) {
 
         protected val title: TextView = itemView.findViewById(R.id.title)
         protected val summary: TextView = itemView.findViewById(R.id.summary)
-        protected val delete: ImageView = itemView.findViewById(R.id.delete)
+        protected val delete: AppCompatImageView = itemView.findViewById(R.id.delete)
         private var deleted = false
 
         init {
-            itemView.findViewById<View>(R.id.drag_handle).setOnTouchListener { _, event ->
+            itemView.findViewById<AppCompatImageView>(R.id.drag_handle).setOnTouchListener { _, event ->
                 if (event.actionMasked == MotionEvent.ACTION_DOWN) {
                     itemTouchHelper.startDrag(this)
                 }
@@ -237,17 +234,17 @@ abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : Ap
     inner class TouchHelperCallback : ItemTouchHelper.Callback() {
 
         override fun getMovementFlags(
-            recyclerView: RecyclerView,
-            viewHolder: RecyclerView.ViewHolder
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder
         ): Int {
             if (viewHolder !is AppGroupsAdapter<*, *>.GroupHolder) return 0
             return makeMovementFlags(ItemTouchHelper.UP or ItemTouchHelper.DOWN, 0)
         }
 
         override fun onMove(
-            recyclerView: RecyclerView,
-            viewHolder: RecyclerView.ViewHolder,
-            target: RecyclerView.ViewHolder
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
         ): Boolean {
             return move(viewHolder.bindingAdapterPosition, target.bindingAdapterPosition)
         }
@@ -256,7 +253,6 @@ abstract class AppGroupsAdapter<VH : AppGroupsAdapter<VH, T>.GroupHolder, T : Ap
     }
 
     companion object {
-
         const val TYPE_HEADER = 0
         const val TYPE_ADD = 1
         const val TYPE_GROUP = 2

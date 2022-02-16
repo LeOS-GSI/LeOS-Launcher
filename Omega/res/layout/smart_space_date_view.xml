@@ -26,5 +26,5 @@
         android:shadowRadius="9"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        tools:text="Rag123" />
+        tools:text="10:25 PM" />
 </FrameLayout>

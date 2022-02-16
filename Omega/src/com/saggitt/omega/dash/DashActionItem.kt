@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash
 
 import android.content.Context
@@ -26,20 +25,20 @@ import com.android.launcher3.AbstractFloatingView
 import com.android.launcher3.Launcher
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
-import com.android.launcher3.databinding.DashItemBinding
+import com.android.launcher3.databinding.DashActionItemBinding
 import com.android.launcher3.util.Themes
 import com.mikepenz.fastadapter.binding.AbstractBindingItem
 
 class DashActionItem(val context: Context, val provider: DashActionProvider) :
-    AbstractBindingItem<DashItemBinding>() {
+    AbstractBindingItem<DashActionItemBinding>() {
 
     override val type: Int
         get() = R.id.fastadapter_item
 
     override fun createBinding(inflater: LayoutInflater, parent: ViewGroup?) =
-        DashItemBinding.inflate(inflater, parent, false)
+        DashActionItemBinding.inflate(inflater, parent, false)
 
-    override fun bindView(binding: DashItemBinding, payloads: List<Any>) {
+    override fun bindView(binding: DashActionItemBinding, payloads: List<Any>) {
         val backgroundColor =
             ColorStateList.valueOf(Themes.getAttrColor(context, R.attr.dashIconBackground))
         binding.itemIcon.backgroundTintList = backgroundColor

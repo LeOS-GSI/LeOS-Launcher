@@ -26,6 +26,7 @@ import com.android.launcher3.Utilities
 
 abstract class DashProvider(protected val context: Context) {
     val accentColor = Utilities.getOmegaPrefs(context).accentColor
+    abstract val itemId: Int
     abstract val name: String
     abstract val description: String
     abstract val icon: Drawable?
@@ -45,4 +46,5 @@ abstract class DashActionProvider(context: Context) : DashProvider(context) {
 
 abstract class DashControlProvider(context: Context) : DashProvider(context) {
     abstract var state: Boolean
+    abstract val extendable: Boolean
 }

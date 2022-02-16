@@ -25,27 +25,26 @@ import android.os.UserHandle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import com.android.launcher3.pm.UserCache
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.ItemInfoMatcher
-import com.saggitt.omega.OmegaPreferencesChangeCallback
 import com.saggitt.omega.groups.FlowerpotTabs.FlowerpotTab
-import com.saggitt.omega.preferences.SelectableAppsActivity
+import com.saggitt.omega.preferences.OmegaPreferencesChangeCallback
+import com.saggitt.omega.preferences.views.PreferencesActivity
+import com.saggitt.omega.util.Config
 import com.saggitt.omega.util.omegaPrefs
-import com.saggitt.omega.util.tintDrawable
 import org.json.JSONObject
 
 abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.CategorizationType) :
-    AppGroups<DrawerTabs.Tab>(manager, type) {
+        AppGroups<DrawerTabs.Tab>(manager, type) {
 
     private val personalTabCreator = ProfileTabCreator(Profile(null))
     private val workTabCreator by lazy {
         val workUser =
-            UserCache.INSTANCE.get(context).userProfiles.firstOrNull { it != Process.myUserHandle() }
+                UserCache.INSTANCE.get(context).userProfiles.firstOrNull { it != Process.myUserHandle() }
         if (workUser != null) ProfileTabCreator(Profile(workUser)) else object : GroupCreator<Tab> {
             override fun createGroup(context: Context): Tab? {
                 return null
@@ -78,11 +77,11 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
     override fun getGroupCreator(type: String): GroupCreator<Tab> {
         if (type.startsWith(TYPE_PROFILE_PREFIX)) {
             val profile = Profile.fromString(context, type.substring(TYPE_PROFILE_PREFIX.length))
-                ?: return object : GroupCreator<Tab> {
-                    override fun createGroup(context: Context): Tab? {
-                        return null
+                    ?: return object : GroupCreator<Tab> {
+                        override fun createGroup(context: Context): Tab? {
+                            return null
+                        }
                     }
-                }
             return ProfileTabCreator(profile)
         }
         return when (type) {
@@ -100,11 +99,12 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
     }
 
     override fun onGroupsChanged(changeCallback: OmegaPreferencesChangeCallback) {
+        //TODO revisar codigo para tabs
         changeCallback.launcher.allAppsController.appsView.reloadTabs()
     }
 
     abstract class Tab(context: Context, type: String, title: String) :
-        Group(type, context, title) {
+            Group(type, context, title) {
 
         val color = ColorRow(KEY_COLOR, AppGroupsUtils.getInstance(context).defaultColor)
 
@@ -113,11 +113,10 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
         }
     }
 
-    class CustomTab(context: Context) :
-        Tab(context, TYPE_CUSTOM, context.getString(R.string.default_tab_name)) {
+    class CustomTab(context: Context) : Tab(context, TYPE_CUSTOM, context.getString(R.string.default_tab_name)) {
         val hideFromAllApps = SwitchRow(
-            R.drawable.tab_hide_from_main, R.string.tab_hide_from_main,
-            KEY_HIDE_FROM_ALL_APPS, true
+                R.drawable.tab_hide_from_main, R.string.tab_hide_from_main,
+                KEY_HIDE_FROM_ALL_APPS, true
         )
         val contents = AppsRow(KEY_ITEMS, mutableSetOf())
 
@@ -125,7 +124,7 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
             addCustomization(hideFromAllApps)
             addCustomization(contents)
 
-            customizations.setOrder(KEY_TITLE, KEY_HIDE_FROM_ALL_APPS, KEY_COLOR, KEY_ITEMS)
+            customizations.setOrder(KEY_TITLE, KEY_HIDE_FROM_ALL_APPS, KEY_ITEMS, KEY_COLOR)
         }
 
         override val summary: String
@@ -139,7 +138,7 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
     }
 
     open class ProfileTab(context: Context, val profile: Profile) :
-        Tab(context, "$TYPE_PROFILE_PREFIX$profile}", getTitle(context, profile)) {
+            Tab(context, "$TYPE_PROFILE_PREFIX$profile}", getTitle(context, profile)) {
 
         init {
             addCustomization(HiddenAppsRow(profile))
@@ -149,8 +148,8 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
         override val summary: String?
             get() {
                 val hidden = context.omegaPrefs.hiddenAppSet
-                    .map { Utilities.makeComponentKey(context, it) }
-                    .filter(getWorkFilter(profile))
+                        .map { Utilities.makeComponentKey(context, it) }
+                        .filter(getWorkFilter(profile))
                 val size = hidden.size
                 if (size == 0) {
                     return null
@@ -169,27 +168,47 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
     }
 
     class HiddenAppsRow(private val profile: Profile) :
-        Group.Customization<Collection<ComponentKey>, Boolean>(KEY_HIDDEN, emptySet()) {
+            Group.Customization<Collection<ComponentKey>, Boolean>(KEY_HIDDEN, emptySet()) {
 
         private val predicate get() = getWorkFilter(profile)
 
-        override fun createRow(context: Context, parent: ViewGroup, accent: Int): View? {
+        override fun createRow(context: Context, parent: ViewGroup): View? {
             val view = LayoutInflater.from(context)
-                .inflate(R.layout.drawer_tab_hidden_apps_row, parent, false)
+                    .inflate(R.layout.drawer_tab_hidden_apps_row, parent, false)
 
-            view.findViewById<ImageView>(R.id.manage_apps_icon).tintDrawable(accent)
             updateCount(view)
 
             view.setOnClickListener {
-                SelectableAppsActivity.start(context, filteredValue(context), { newSelections ->
-                    if (newSelections != null) {
-                        value = HashSet(newSelections)
-                        updateCount(view)
+                if (Utilities.ATLEAST_R && Utilities.getOmegaPrefs(context).enableProtectedApps) {
+                    Config.showLockScreen(
+                            context,
+                            context.getString(R.string.trust_apps_manager_name)
+                    ) {
+                        openFragment(context, view)
                     }
-                }, profile)
+                } else {
+                    openFragment(context, view)
+                }
             }
 
             return view
+        }
+
+        private fun openFragment(context: Context, view: View) {
+            val fragment = "com.saggitt.omega.views.SelectableAppsFragment"
+            PreferencesActivity.startFragment(
+                    context,
+                    fragment,
+                    context.resources.getString(R.string.title__drawer_hide_apps),
+                    filteredValue(context),
+                    { newSelections ->
+                        if (newSelections != null) {
+                            value = HashSet(newSelections)
+                            updateCount(view)
+                        }
+                    },
+                    profile
+            )
         }
 
         override fun loadFromJson(context: Context, obj: Boolean?) {}
@@ -204,20 +223,20 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
         private fun updateCount(view: View) {
             val count = (value ?: filteredValue(view.context)).size
             view.findViewById<TextView>(R.id.apps_count).text =
-                view.resources.getQuantityString(R.plurals.hidden_apps_count, count, count)
+                    view.resources.getQuantityString(R.plurals.hidden_apps_count, count, count)
         }
 
         private fun filteredValue(context: Context): Collection<ComponentKey> {
             return context.omegaPrefs.hiddenAppSet
-                .map { Utilities.makeComponentKey(context, it) }
-                .filter(predicate)
+                    .map { Utilities.makeComponentKey(context, it) }
+                    .filter(predicate)
         }
 
         private fun setHiddenApps(context: Context, hidden: Collection<ComponentKey>) {
             val prefs = context.omegaPrefs
             val hiddenSet = ArrayList(prefs.hiddenAppSet
-                .map { Utilities.makeComponentKey(context, it) }
-                .filter { !predicate(it) })
+                    .map { Utilities.makeComponentKey(context, it) }
+                    .filter { !predicate(it) })
             hiddenSet.addAll(hidden)
             prefs.hiddenAppSet = hiddenSet.map(ComponentKey::toString).toSet()
         }
@@ -257,8 +276,8 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
         constructor() : this(null, true)
 
         constructor(parcel: Parcel) : this(
-            parcel.readParcelable<UserHandle?>(UserHandle::class.java.classLoader),
-            parcel.readBoolean()
+                parcel.readParcelable<UserHandle?>(UserHandle::class.java.classLoader),
+                parcel.readBoolean()
         )
 
         fun matches(user: UserHandle): Boolean {
@@ -309,7 +328,7 @@ abstract class DrawerTabs(manager: AppGroupsManager, type: AppGroupsManager.Cate
                 val obj = JSONObject(profile)
                 val user = if (obj.has(KEY_ID)) {
                     UserCache.INSTANCE.get(context)
-                        .getUserForSerialNumber(obj.getLong(KEY_ID)) ?: return null
+                            .getUserForSerialNumber(obj.getLong(KEY_ID)) ?: return null
                 } else null
                 val matchesAll = obj.getBoolean(KEY_MATCHES_ALL)
                 return Profile(user, matchesAll)

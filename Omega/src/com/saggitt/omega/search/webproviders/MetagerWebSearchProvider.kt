@@ -25,7 +25,7 @@ import com.saggitt.omega.util.locale
 import java.util.*
 
 class MetagerWebSearchProvider(context: Context) :
-    WebSearchProvider(context) {
+        WebSearchProvider(context) {
     override val icon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_metager_search, null)!!
 

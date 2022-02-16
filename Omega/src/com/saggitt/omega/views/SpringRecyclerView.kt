@@ -89,14 +89,7 @@ open class SpringRecyclerView @JvmOverloads constructor(
      * Called by Android [android.view.View.onDrawScrollBars]
      */
     @Keep
-    protected fun onDrawVerticalScrollBar(
-        canvas: Canvas,
-        scrollBar: Drawable,
-        l: Int,
-        t: Int,
-        r: Int,
-        b: Int
-    ) {
+    protected fun onDrawVerticalScrollBar( canvas: Canvas, scrollBar: Drawable, l: Int, t: Int, r: Int, b: Int) {
         springManager.withSpringNegative(canvas, shouldTranslateSelf) {
             scrollBar.setColorFilter(scrollBarColor, PorterDuff.Mode.SRC_ATOP)
             scrollBar.setBounds(l, t, r, b)

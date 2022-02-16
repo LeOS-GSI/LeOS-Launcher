@@ -1,6 +1,6 @@
 /*
  *  This file is part of Omega Launcher
- *  Copyright (c) 2021   Saul Henriquez
+ *  Copyright (c) 2021   Omega Launcher Team
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as
@@ -15,6 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 package com.saggitt.omega.allapps
 
 import android.content.ComponentName
@@ -22,7 +23,6 @@ import android.content.Context
 import android.os.UserHandle
 import com.android.launcher3.Utilities
 import com.android.launcher3.util.ComponentKey
-import java.util.*
 
 class CustomAppFilter(private val mContext: Context) : OmegaAppFilter(mContext) {
 

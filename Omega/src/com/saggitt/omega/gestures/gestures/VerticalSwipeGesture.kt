@@ -14,7 +14,6 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.gestures.gestures
 
 import com.android.launcher3.LauncherState
@@ -27,12 +26,18 @@ class VerticalSwipeGesture(controller: GestureController) : Gesture(controller) 
 
     override val isEnabled = true
 
-    private val swipeUpHandler by controller.createHandlerPref("pref_gesture_swipe_up",
-            OpenDrawerGestureHandler(controller.launcher, null))
-    private val dockSwipeUpHandler by controller.createHandlerPref("pref_gesture_dock_swipe_up",
-            OpenDrawerGestureHandler(controller.launcher, null))
-    private val swipeDownHandler by controller.createHandlerPref("pref_gesture_swipe_down",
-            NotificationsOpenGestureHandler(controller.launcher, null))
+    private val swipeUpHandler by controller.createHandlerPref(
+        "pref_gesture_swipe_up",
+        OpenDrawerGestureHandler(controller.launcher, null)
+    )
+    private val dockSwipeUpHandler by controller.createHandlerPref(
+        "pref_gesture_dock_swipe_up",
+        OpenDrawerGestureHandler(controller.launcher, null)
+    )
+    private val swipeDownHandler by controller.createHandlerPref(
+        "pref_gesture_swipe_down",
+        NotificationsOpenGestureHandler(controller.launcher, null)
+    )
 
     val customSwipeUp get() = swipeUpHandler !is VerticalSwipeGestureHandler
     val customDockSwipeUp get() = dockSwipeUpHandler !is VerticalSwipeGestureHandler

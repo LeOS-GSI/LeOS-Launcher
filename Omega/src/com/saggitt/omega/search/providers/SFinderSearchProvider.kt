@@ -24,8 +24,8 @@ import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
-import com.android.launcher3.util.PackageManagerHelper
 import com.saggitt.omega.search.SearchProvider
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 class SFinderSearchProvider(context: Context) : SearchProvider(context) {
@@ -41,32 +41,32 @@ class SFinderSearchProvider(context: Context) : SearchProvider(context) {
         get() = PACKAGE
 
     override val isAvailable: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, PACKAGE, 0)
+        get() = context.packageManager.isAppEnabled(PACKAGE, 0)
 
     override fun startSearch(callback: (intent: Intent) -> Unit) {
         callback(
-            Intent(Intent.ACTION_MAIN)
-                .setClassName(PACKAGE, CLASS)
+                Intent(Intent.ACTION_MAIN)
+                        .setClassName(PACKAGE, CLASS)
         )
     }
 
     override fun startVoiceSearch(callback: (intent: Intent) -> Unit) {
         callback(
-            Intent(Intent.ACTION_MAIN)
-                .setClassName(PACKAGE, CLASS)
-                .putExtra("launch_mode", "voice_input")
+                Intent(Intent.ACTION_MAIN)
+                        .setClassName(PACKAGE, CLASS)
+                        .putExtra("launch_mode", "voice_input")
         )
     }
 
     override val icon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_search, null)!!
-            .mutate()
-            .apply {
-                setTint(Utilities.getOmegaPrefs(context).accentColor)
-            }
+                .mutate()
+                .apply {
+                    setTint(Utilities.getOmegaPrefs(context).accentColor)
+                }
 
     override val voiceIcon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_mic_color, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_mic, null)!!
             .mutate()
             .apply {
                 setTint(Utilities.getOmegaPrefs(context).accentColor)

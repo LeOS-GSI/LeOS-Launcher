@@ -78,6 +78,9 @@ public class AutoInstallsLayout {
 
     static AutoInstallsLayout get(Context context, AppWidgetHost appWidgetHost,
             LayoutParserCallback callback) {
+        if (!BuildConfig.ENABLE_AUTO_INSTALLS_LAYOUT) {
+            return null;
+        }
         Pair<String, Resources> customizationApkInfo = PackageManagerHelper.findSystemApk(
                 ACTION_LAUNCHER_CUSTOMIZATION, context.getPackageManager());
         if (customizationApkInfo == null) {
@@ -89,7 +92,7 @@ public class AutoInstallsLayout {
 
         // Try with grid size and hotseat count
         String layoutName = String.format(Locale.ENGLISH, FORMATTED_LAYOUT_RES_WITH_HOSTEAT,
-                grid.numColumns, grid.numRows, grid.numHotseatIcons);
+                grid.numColumns, grid.numRows, grid.numDatabaseHotseatIcons);
         int layoutId = targetRes.getIdentifier(layoutName, "xml", pkg);
 
         // Try with only grid size
@@ -658,7 +661,7 @@ public class AutoInstallsLayout {
         }
     }
 
-    protected static void beginDocument(XmlPullParser parser, String firstElementName)
+    public static void beginDocument(XmlPullParser parser, String firstElementName)
             throws XmlPullParserException, IOException {
         int type;
         while ((type = parser.next()) != XmlPullParser.START_TAG

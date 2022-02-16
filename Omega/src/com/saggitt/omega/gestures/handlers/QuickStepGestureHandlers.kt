@@ -14,7 +14,6 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.gestures.handlers
 
 import android.accessibilityservice.AccessibilityService
@@ -33,13 +32,19 @@ import com.saggitt.omega.omegaApp
 import org.json.JSONObject
 
 @Keep
-open class OpenRecentsGestureHandler(context: Context, config: JSONObject?) : GestureHandler(context, config),
-        VerticalSwipeGestureHandler, StateChangeGestureHandler {
+open class OpenRecentsGestureHandler(context: Context, config: JSONObject?) :
+    GestureHandler(context, config),
+    VerticalSwipeGestureHandler, StateChangeGestureHandler {
 
     override val displayName: String = context.getString(R.string.action_open_recents)
     override val isAvailable: Boolean
         get() = TouchInteractionService.isConnected()
-    override val iconResource: Intent.ShortcutIconResource by lazy { Intent.ShortcutIconResource.fromContext(context, R.drawable.ic_launcher_foreground) }
+    override val iconResource: Intent.ShortcutIconResource by lazy {
+        Intent.ShortcutIconResource.fromContext(
+            context,
+            R.drawable.ic_launcher_foreground
+        )
+    }
 
     override fun onGestureTrigger(controller: GestureController, view: View?) {
         controller.launcher.stateManager.goToState(LauncherState.OVERVIEW)
@@ -54,7 +59,8 @@ open class OpenRecentsGestureHandler(context: Context, config: JSONObject?) : Ge
 
 @Keep
 @TargetApi(Build.VERSION_CODES.P)
-open class PressBackGestureHandler(context: Context, config: JSONObject?) : GestureHandler(context, config) {
+open class PressBackGestureHandler(context: Context, config: JSONObject?) :
+    GestureHandler(context, config) {
 
     override val displayName: String = context.getString(R.string.action_press_back)
 

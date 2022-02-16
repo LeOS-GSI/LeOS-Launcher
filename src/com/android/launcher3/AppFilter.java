@@ -6,6 +6,9 @@ import android.os.UserHandle;
 
 import com.android.launcher3.util.ResourceBasedOverride;
 
+/**
+ * Utility class to filter out components from various lists
+ */
 public class AppFilter implements ResourceBasedOverride {
 
     public static AppFilter newInstance(Context context) {

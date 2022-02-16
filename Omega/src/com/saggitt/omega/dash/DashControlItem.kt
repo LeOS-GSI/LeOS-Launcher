@@ -20,7 +20,9 @@ package com.saggitt.omega.dash
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.drawable.RippleDrawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.android.launcher3.AbstractFloatingView
 import com.android.launcher3.Launcher
@@ -42,15 +44,23 @@ class DashControlItem(val context: Context, val provider: DashControlProvider) :
     override fun bindView(binding: DashControlItemBinding, payloads: List<Any>) {
         val backgroundColor =
             ColorStateList.valueOf(Themes.getAttrColor(context, R.attr.dashIconBackground))
+        val sheetColor =
+            ColorStateList.valueOf(Themes.getAttrColor(context, R.attr.dashSheetBackground))
         val activeColor = ColorStateList.valueOf(Utilities.getOmegaPrefs(context).accentColor)
-        binding.root.backgroundTintList =
-            if (provider.state) activeColor.withAlpha(144) else backgroundColor
+        binding.content.backgroundTintList = if (provider.state) activeColor else backgroundColor
+        binding.content.background = RippleDrawable(
+            if (provider.state) backgroundColor.withAlpha(120)
+            else activeColor.withAlpha(120),
+            binding.content.background, null
+        )
         binding.itemIcon.setImageDrawable(provider.icon)
         binding.itemName.text = provider.name
         binding.itemIcon.tooltipText = provider.description
-        binding.itemIcon.imageTintList = activeColor
-        binding.itemName.setTextColor(activeColor)
-        binding.root.setOnClickListener {
+        binding.itemIcon.imageTintList = if (provider.state) sheetColor else activeColor
+        binding.itemExtend.visibility = if (provider.extendable) View.VISIBLE else View.GONE
+        binding.itemExtend.imageTintList = if (provider.state) sheetColor else activeColor
+        binding.itemName.setTextColor(if (provider.state) sheetColor else activeColor)
+        binding.content.setOnClickListener {
             provider.state = !provider.state
             AbstractFloatingView.closeAllOpenViews(Launcher.getLauncher(context))
         }

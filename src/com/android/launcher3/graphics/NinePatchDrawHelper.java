@@ -30,12 +30,11 @@ public class NinePatchDrawHelper {
     // The extra width used for the bitmap. This portion of the bitmap is stretched to match the
     // width of the draw region. Randomly chosen, any value > 4 will be sufficient.
     public static final int EXTENSION_PX = 20;
-
-    private final Rect mSrc = new Rect();
-    private final RectF mDst = new RectF();
     // Enable filtering to always get a nice edge. This avoids jagged line, when bitmap is
     // translated by half pixel.
     public final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
+    private final Rect mSrc = new Rect();
+    private final RectF mDst = new RectF();
 
     /**
      * Draws the bitmap split into three parts horizontally, with the middle part having width
@@ -58,7 +57,7 @@ public class NinePatchDrawHelper {
      * stretched vertically.
      */
     public void drawVerticallyStretched(Bitmap bitmap, Canvas canvas, float left, float top,
-            float right, float bottom) {
+                                        float right, float bottom) {
         draw(bitmap, canvas, left, top, right);
 
         // Draw bottom stretched region.
@@ -69,7 +68,6 @@ public class NinePatchDrawHelper {
         mDst.bottom = bottom;
         draw3Patch(bitmap, canvas, left, right);
     }
-
 
 
     private void draw3Patch(Bitmap bitmap, Canvas canvas, float left, float right) {
@@ -89,7 +87,7 @@ public class NinePatchDrawHelper {
     }
 
     private void drawRegion(Bitmap bitmap, Canvas c,
-            int srcLeft, int srcRight, float dstLeft, float dstRight) {
+                            int srcLeft, int srcRight, float dstLeft, float dstRight) {
         mSrc.left = srcLeft;
         mSrc.right = srcRight;
 

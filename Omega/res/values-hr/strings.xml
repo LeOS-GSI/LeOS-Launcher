@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title__desktop_full_width_widgets">Widgeti pune širine</string>
+    <string name="title_desktop_full_width_widgets">Widgeti pune širine</string>
     <string name="allow_rotation_blocked_desc">Trenutna postavka zaslona ne dozvoljava rotaciju</string>
     <string name="pref_category__incubating">Inkubiranje</string>
     <string name="pref_category__others">Ostalo</string>
     <string name="pref_category__inputs">Geste i Pretraga</string>
     <string name="pref_category__interfaces">Sučelje</string>
-    <string name="summary__general_about">Više informacija o LeOS Launcheru</string>
+    <string name="summary__general_about">Više informacija o Omega Launcheru</string>
     <string name="summary__general_advanced">Jezik, sigurnosna kopija, pretraga postavki</string>
     <string name="summary__general_notifications">Bedž brojač, boja bedža, geste</string>
     <string name="summary__general_smartspace">Datum, vrijeme, početni widget</string>

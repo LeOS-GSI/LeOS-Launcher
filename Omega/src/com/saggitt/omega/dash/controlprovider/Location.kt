@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.controlprovider
 
 import android.content.Context
@@ -30,8 +29,11 @@ import com.android.launcher3.R
 import com.saggitt.omega.dash.DashControlProvider
 
 class Location(context: Context) : DashControlProvider(context) {
+    override val itemId = 14
     override val name = context.getString(R.string.dash_location)
     override val description = context.getString(R.string.dash_location_summary)
+    override val extendable = true
+
     var locationManager =
         context.getSystemService(LOCATION_SERVICE) as LocationManager
 

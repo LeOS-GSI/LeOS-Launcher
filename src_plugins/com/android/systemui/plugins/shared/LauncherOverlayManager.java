@@ -19,6 +19,9 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
+import com.google.android.libraries.gsa.launcherclient.LauncherClient;
+import com.google.systemui.smartspace.SmartSpaceView;
+
 import java.io.PrintWriter;
 
 /**
@@ -39,9 +42,6 @@ public interface LauncherOverlayManager extends Application.ActivityLifecycleCal
     }
 
     default void openOverlay() {
-    }
-
-    default void onMinusOneChanged() {
     }
 
     default void hideOverlay(boolean animate) {
@@ -69,6 +69,13 @@ public interface LauncherOverlayManager extends Application.ActivityLifecycleCal
 
     @Override
     default void onActivityPaused(Activity activity) {
+    }
+
+    default void registerSmartSpaceView(SmartSpaceView smartspace) {
+    }
+
+    default LauncherClient getClient() {
+        return null;
     }
 
     @Override
@@ -103,7 +110,6 @@ public interface LauncherOverlayManager extends Application.ActivityLifecycleCal
 
         /**
          * Called when the launcher is ready to use the overlay
-         *
          * @param callbacks A set of callbacks provided by Launcher in relation to the overlay
          */
         void setOverlayCallbacks(LauncherOverlayCallbacks callbacks);
