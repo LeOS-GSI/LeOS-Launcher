@@ -215,13 +215,13 @@ private val contributors = listOf(
         TeamMember(
                 name = R.string.author,
                 descriptionRes = R.string.author_role,
-                photoUrl = "https://avatars.githubusercontent.com/u/6044050",
+                photoUrl = "https://reuthernet.at/icon.png",
                 webpage = "https://leos-gsi.de"
         ),
         TeamMember(
                 name = R.string.contributor1,
                 descriptionRes = R.string.author_role,
-                photoUrl = "https://avatars.githubusercontent.com/u/40302595",
+                photoUrl = "https://avatars.githubusercontent.com/u/6044050",
                 webpage = "https://github.com/otakuhqz"
         )
 )
