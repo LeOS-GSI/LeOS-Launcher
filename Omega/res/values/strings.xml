@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="derived_app_name" translatable="false">Omega Launcher</string>
+    <string name="derived_app_name" translatable="false">LeOS-Launcher</string>
     <string name="app_version" translatable="false">Version</string>
     <string name="app_build" translatable="false">Build</string>
     <string name="default_folder_name">New Folder</string>
@@ -38,7 +38,7 @@
     <string name="summary__general_smartspace">Date, time, home widget</string>
     <string name="summary__general_notifications">Badge count, badge color, gestures</string>
     <string name="summary__general_advanced">Language, back up, setting search</string>
-    <string name="summary__general_about">More about Omega Launcher</string>
+    <string name="summary__general_about">More about LeOS-Launcher</string>
     <string name="pref_category__interfaces">User Interface</string>
     <string name="pref_category__inputs">Gestures and Search</string>
     <string name="pref_category__others">Others</string>
@@ -460,11 +460,11 @@
     <string name="category__about_licenses">License</string>
     <string name="license_gpl" translatable="false">GPLv3+</string>
     <string name="app_donate_url" translatable="false">https://paypal.me/saulhenriquez</string>
-    <string name="author" translatable="false">Saul Henriquez</string>
-    <string name="author_role" translatable="false">Developer</string>
-    <string name="contributor1" translatable="false">Antonios Hazim</string>
-    <string name="contributor2" translatable="false">Rafael Venancio</string>
-    <string name="contributor_role" translatable="false">Contributor</string>
+    <string name="author" translatable="false">Harvey186</string>
+    <string name="author_role" translatable="false">Author</string>
+    <string name="contributor1" translatable="false">Saul Henriquez</string>
+    <string name="contributor2" translatable="false">Antonios Hazim</string>
+    <string name="contributor_role" translatable="false">Developer</string>
     <string name="title_storage_permission_required">Storage Access Needed</string>
     <string name="content_storage_permission_required">Grant access to storage to set a wallpaper.</string>
     <!-- DASH -->

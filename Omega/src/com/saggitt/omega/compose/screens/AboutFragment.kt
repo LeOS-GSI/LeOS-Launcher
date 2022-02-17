@@ -197,17 +197,17 @@ private val links = listOf(
         Link(
                 iconResId = R.drawable.ic_github,
                 labelResId = R.string.about_source,
-                url = "https://github.com/otakuhqz/Omega"
+                url = "https://github.com/LeOS-GSI/LeOS-Launcher"
         ),
         Link(
                 iconResId = R.drawable.ic_channel,
                 labelResId = R.string.about_channel,
-                url = "https://t.me/omegalauncher"
+                url = "https://t.me/LeOS_Support"
         ),
         Link(
                 iconResId = R.drawable.ic_community,
                 labelResId = R.string.about_community,
-                url = "https://t.me/omegalauncher_group"
+                url = "https://t.me/LeOS_Support"
         )
 )
 
@@ -216,12 +216,12 @@ private val contributors = listOf(
                 name = R.string.author,
                 descriptionRes = R.string.author_role,
                 photoUrl = "https://avatars.githubusercontent.com/u/6044050",
-                webpage = "https://github.com/otakuhqz"
+                webpage = "https://leos-gsi.de"
         ),
         TeamMember(
                 name = R.string.contributor1,
                 descriptionRes = R.string.author_role,
                 photoUrl = "https://avatars.githubusercontent.com/u/40302595",
-                webpage = "https://github.com/machiav3lli"
+                webpage = "https://github.com/otakuhqz"
         )
 )

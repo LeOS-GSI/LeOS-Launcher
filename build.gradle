@@ -6,7 +6,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0-beta01'
+        classpath 'com.android.tools.build:gradle:7.2.0-beta02'
         classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.18"
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
     }
@@ -50,7 +50,7 @@ android {
     defaultConfig {
         minSdkVersion 26
         targetSdkVersion 31
-        applicationId 'com.saggitt.omega'
+        applicationId 'com.leos.launcher'
 
         versionName name
         versionCode code
@@ -70,7 +70,7 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            applicationIdSuffix ".alpha"
+            applicationIdSuffix ".beta"
             manifestPlaceholders = [
                     appIcon     : "@mipmap/ic_launcher_debug",
                     appIconRound: "@mipmap/ic_launcher_round_debug"
@@ -122,7 +122,7 @@ android {
     productFlavors {
         aosp {
             dimension "app"
-            applicationId 'com.saggitt.omega'
+            applicationId 'com.leos.launcher'
             testApplicationId 'com.android.launcher3.tests'
         }
 
