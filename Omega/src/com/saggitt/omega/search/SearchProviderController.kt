@@ -121,27 +121,18 @@ class SearchProviderController(private val context: Context) {
     ) {
         fun getSearchProviders(context: Context) = listOf(
                 AppsSearchProvider(context),
-                GoogleSearchProvider(context),
                 SFinderSearchProvider(context),
-                GoogleGoSearchProvider(context),
                 FirefoxSearchProvider(context),
                 DuckDuckGoSearchProvider(context),
-                BingSearchProvider(context),
-                BaiduSearchProvider(context),
                 YandexSearchProvider(context),
                 QwantSearchProvider(context),
                 SearchLiteSearchProvider(context),
                 CoolSearchSearchProvider(context),
-                EdgeSearchProvider(context),
 
                 /*Web Providers*/
-                BaiduWebSearchProvider(context),
-                BraveWebSearchProvider(context),
-                BingWebSearchProvider(context),
                 DDGWebSearchProvider(context),
                 EcosiaWebSearchProvider(context),
                 MetagerWebSearchProvider(context),
-                GoogleWebSearchProvider(context),
                 QwantWebSearchProvider(context),
                 StartpageWebSearchProvider(context),
                 SearxWebSearchProvider(context),

@@ -1,0 +1,32 @@
+diff --git a/Omega/src/com/saggitt/omega/search/SearchProviderController.kt b/Omega/src/com/saggitt/omega/search/SearchProviderController.kt
+index 9c06e5df..5e9db70a 100644
+--- a/Omega/src/com/saggitt/omega/search/SearchProviderController.kt
++++ b/Omega/src/com/saggitt/omega/search/SearchProviderController.kt
+@@ -121,27 +121,18 @@ class SearchProviderController(private val context: Context) {
+     ) {
+         fun getSearchProviders(context: Context) = listOf(
+                 AppsSearchProvider(context),
+-                GoogleSearchProvider(context),
+                 SFinderSearchProvider(context),
+-                GoogleGoSearchProvider(context),
+                 FirefoxSearchProvider(context),
+                 DuckDuckGoSearchProvider(context),
+-                BingSearchProvider(context),
+-                BaiduSearchProvider(context),
+                 YandexSearchProvider(context),
+                 QwantSearchProvider(context),
+                 SearchLiteSearchProvider(context),
+                 CoolSearchSearchProvider(context),
+-                EdgeSearchProvider(context),
+ 
+                 /*Web Providers*/
+-                BaiduWebSearchProvider(context),
+-                BraveWebSearchProvider(context),
+-                BingWebSearchProvider(context),
+                 DDGWebSearchProvider(context),
+                 EcosiaWebSearchProvider(context),
+                 MetagerWebSearchProvider(context),
+-                GoogleWebSearchProvider(context),
+                 QwantWebSearchProvider(context),
+                 StartpageWebSearchProvider(context),
+                 SearxWebSearchProvider(context),
