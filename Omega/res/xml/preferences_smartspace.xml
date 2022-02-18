@@ -24,19 +24,6 @@
 
     <SwitchPreference
         android:defaultValue="false"
-        android:key="enable_smartspace"
-        android:title="@string/title_smartspace"
-        app:iconSpaceReserved="false" />
-
-    <SwitchPreference
-        android:defaultValue="true"
-        android:dependency="pref_use_pill_qsb"
-        android:key="pref_smartspace_date"
-        android:title="@string/title_smartspace_date"
-        app:iconSpaceReserved="false" />
-
-    <SwitchPreference
-        android:defaultValue="false"
         android:dependency="pref_use_pill_qsb"
         android:key="pref_smartspace_time"
         android:title="@string/title_smartspace_time"
