@@ -22,7 +22,7 @@
     package="com.android.launcher3">
     <uses-sdk
         android:minSdkVersion="25"
-        android:targetSdkVersion="29" />
+        android:targetSdkVersion="31" />
     <!--
     Manifest entries specific to Launcher3. This is merged with AndroidManifest-common.xml.
     Refer comments around specific entries on how to extend individual components.
@@ -33,7 +33,7 @@
         android:fullBackupOnly="true"
         android:fullBackupContent="@xml/backupscheme"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/ic_launcher_home"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/derived_app_name"
         android:theme="@style/AppTheme"
         android:largeHeap="@bool/config_largeHeap"

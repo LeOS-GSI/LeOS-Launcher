@@ -178,7 +178,7 @@
         <!-- Actions -->
         <activity
             android:name="com.saggitt.omega.gestures.OmegaShortcutActivity"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_comic_hand_peace_sign"
             android:label="@string/omega_actions"
             android:theme="@style/SettingsTheme_Light.Transparent">
             <intent-filter>
@@ -386,6 +386,7 @@
             android:name="com.saggitt.omega.util.FiveSecsProvider"
             android:authorities="${applicationId}.fivesecsprovider"
             android:exported="true"
-            android:grantUriPermissions="true" />
+            android:grantUriPermissions="true"
+            tools:ignore="MissingClass" />
     </application>
 </manifest>

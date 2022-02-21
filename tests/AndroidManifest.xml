@@ -20,7 +20,7 @@
 
     <uses-sdk
         android:minSdkVersion="25"
-        android:targetSdkVersion="29"
+        android:targetSdkVersion="31"
         tools:overrideLibrary="android.support.test.uiautomator.v18" />
 
     <application android:debuggable="true">
