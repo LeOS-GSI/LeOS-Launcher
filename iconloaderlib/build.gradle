@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     publishNonDefault true
 
     defaultConfig {
         minSdkVersion 26
-        targetSdkVersion 30
+        compileSdkVersion 31
     }
 
     sourceSets {
