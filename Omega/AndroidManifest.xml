@@ -28,13 +28,14 @@
         android:name="${applicationId}.permission.QSB"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="signatureOrSystem" />
-
+    <uses-permission android:name="com.android.launcher.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS" />
     <uses-permission android:name="${applicationId}.permission.READ_SETTINGS" />
     <uses-permission android:name="${applicationId}.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="${applicationId}.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
     <uses-permission android:name="${applicationId}.permission.QSB" />
     <uses-permission
         android:name="android.permission.START_TASKS_FROM_RECENTS"
@@ -136,7 +137,6 @@
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.MONKEY" />
@@ -236,7 +236,6 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

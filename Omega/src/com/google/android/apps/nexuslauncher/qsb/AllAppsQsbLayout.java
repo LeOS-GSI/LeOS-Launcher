@@ -246,10 +246,7 @@ public class AllAppsQsbLayout extends AbstractQsbLayout implements
                     new BroadcastReceiver() {
                         @Override
                         public void onReceive(Context context, Intent intent) {
-                            if (getResultCode() == 0) {
-                                fallbackSearch(
-                                        "com.google.android.googlequicksearchbox.TEXT_ASSIST");
-                            } else {
+                            if (getResultCode() == 1) {
                                 getLauncher().playQsbAnimation();
                             }
                         }

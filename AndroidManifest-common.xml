@@ -52,6 +52,7 @@
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.READ_DEVICE_CONFIG" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="com.android.launcher.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
 
     <!-- TODO(b/150802536): Enabled only for ENABLE_FIXED_ROTATION_TRANSFORM feature flag -->
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
@@ -76,6 +77,7 @@
 
     <uses-permission android:name="${packageName}.permission.READ_SETTINGS" />
     <uses-permission android:name="${packageName}.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="${applicationId}.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
 
     <application
         android:backupAgent="com.android.launcher3.LauncherBackupAgent"
@@ -196,7 +198,6 @@
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.SECONDARY_HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
