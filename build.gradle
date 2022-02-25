@@ -51,7 +51,7 @@ configurations.all {
 android {
     compileSdkVersion 31
 
-    def name = "1"
+    def name = "12"
     def code = 12
 
     defaultConfig {
@@ -205,6 +205,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.1.0"
     implementation "androidx.dynamicanimation:dynamicanimation:1.0.0"
     implementation "com.google.android.material:material:1.4.0"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+
 
     // Libs
     implementation "com.jaredrummler:colorpicker:1.1.0"
