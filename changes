@@ -3,3 +3,6 @@
 - Omega/res/values/strings.xml
 - Omega/src/com/saggitt/omega/compose/screens/AboutScreen.kt
 - icons
+- buildgradle.kts
+- preferences_desktop.xml
+- iconPackProvider.xml
