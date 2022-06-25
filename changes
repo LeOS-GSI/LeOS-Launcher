@@ -6,3 +6,4 @@
 - buildgradle.kts
 - preferences_desktop.xml
 - iconPackProvider.xml
+- serviceProviderController

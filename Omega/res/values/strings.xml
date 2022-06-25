@@ -349,7 +349,7 @@
     <string name="action_app_search">Open app search</string>
     <string name="action_open_widgets">Open Widget Drawer</string>
     <string name="action_open_notifications">Open notifications</string>
-    <string name="action_overlay">Open Google Feed</string>
+    <string name="action_overlay">not available</string>
     <string name="action_close_notifications">Close notifications</string>
     <string name="action_global_search">Launch Global Search</string>
     <string name="action_sleep">Sleep</string>
@@ -365,13 +365,13 @@
     <string name="dt2s_admin_warning">Double tap to sleep will be turned off.</string>
     <!-- SEARCH -->
     <string name="title__search_bubble_searchbar">Show Two Bubbles</string>
-    <string name="title__search_action_assistant">Open Assistant</string>
+    <string name="title__search_action_assistant">not availble</string>
     <string name="title_search_action_lens">Show Lens Icon</string>
     <string name="title__search_show_assistant">Show Voice Search Button</string>
     <string name="title_search_provider">Search engine</string>
     <string name="title__search_bar_radius">Corner Radius</string>
-    <string name="summary__search_show_as_assistant_summary">Open Assistant instead of Voice Search</string>
-    <string name="summary_search_show_lens_summary">When the Google App is installed</string>
+    <string name="summary__search_show_as_assistant_summary">not available</string>
+    <string name="summary_search_show_lens_summary">--</string>
     <string name="cat_search_bar">Search Bar</string>
     <string name="search_no_results">No Results</string>
     <string name="search_breadcrumb_connector" translatable="false">

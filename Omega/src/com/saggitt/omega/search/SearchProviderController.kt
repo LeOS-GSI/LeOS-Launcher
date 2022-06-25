@@ -39,7 +39,7 @@ class SearchProviderController(private val context: Context) {
 
     private val listeners = HashSet<OnProviderChangeListener>()
 
-    val isGoogle get() = searchProvider is GoogleSearchProvider
+    val isGoogle get() = searchProvider is QwantSearchProvider
 
     init {
         ThemeManager.getInstance(context).addOverride(themeOverride)
@@ -121,7 +121,6 @@ class SearchProviderController(private val context: Context) {
     ) {
         fun getSearchProviders(context: Context) = listOf(
                 AppsSearchProvider(context),
-                GoogleSearchProvider(context),
                 SFinderSearchProvider(context),
                 GoogleGoSearchProvider(context),
                 FirefoxSearchProvider(context),
@@ -141,7 +140,6 @@ class SearchProviderController(private val context: Context) {
                 DDGWebSearchProvider(context),
                 EcosiaWebSearchProvider(context),
                 MetagerWebSearchProvider(context),
-                GoogleWebSearchProvider(context),
                 QwantWebSearchProvider(context),
                 StartpageWebSearchProvider(context),
                 SearxWebSearchProvider(context),
