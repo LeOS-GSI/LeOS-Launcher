@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~  This file is part of LeOS Launcher
+  ~  This file is part of Omega Launcher
   ~  Copyright (c) 2021   Saul Henriquez
   ~
   ~  This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,9 @@
   -->
 
 <resources>
+    <attr name="allAppsInterimScrimAlpha" format="integer" />
+    <attr name="colorAccentPrimary" format="color" />
+    <attr name="textColorOnAccent" format="color" />
     <declare-styleable name="SubPreference">
         <attr name="content" format="reference" />
         <attr name="longClickContent" format="reference" />
@@ -112,6 +115,7 @@
     <attr name="gIcon" format="reference" />
     <attr name="micIcon" format="reference" />
 
+    <attr name="qsbFillColor" format="color" />
     <declare-styleable name="PreviewPreference">
         <attr name="previewLayout" format="float" />
     </declare-styleable>
@@ -124,4 +128,10 @@
         <attr name="defaultSeekbarValue" format="float" />
         <attr name="steps" format="integer" />
     </declare-styleable>
+    <declare-styleable name="AppWidgetAttrs">
+        <attr name="appWidgetPadding" format="dimension" />
+        <attr name="appWidgetInnerRadius" format="dimension" />
+        <attr name="appWidgetRadius" format="dimension" />
+    </declare-styleable>
+
 </resources>

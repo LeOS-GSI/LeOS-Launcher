@@ -22,14 +22,20 @@ import com.android.launcher3.Launcher
 import com.android.launcher3.R
 import com.android.launcher3.folder.FolderIcon
 
-class DrawerFolderItem(private val info: DrawerFolderInfo, private val index: Int) {
+class DrawerFolderItem(private val info: DrawerFolderInfo) {
 
     private var icon: FolderIcon? = null
 
     fun getFolderIcon(launcher: Launcher, container: ViewGroup): FolderIcon {
         if (icon == null) {
-            icon = FolderIcon.inflateFolderAndIcon(R.layout.all_apps_folder_icon, launcher,
-                    container, info)
+            icon = FolderIcon.inflateFolderAndIcon(
+                R.layout.all_apps_folder_icon,
+                launcher,
+                container,
+                info
+            )
+            // Ensure the all apps icon height matches the workspace icons in portrait mode.
+            icon!!.layoutParams.height = launcher.deviceProfile.allAppsCellHeightPx + 5
         }
         return icon!!.apply {
             (parent as? ViewGroup)?.removeView(this)

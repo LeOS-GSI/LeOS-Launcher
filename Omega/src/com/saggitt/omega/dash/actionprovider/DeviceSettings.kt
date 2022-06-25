@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
@@ -27,11 +26,12 @@ import com.android.launcher3.R
 import com.saggitt.omega.dash.DashActionProvider
 
 class DeviceSettings(context: Context) : DashActionProvider(context) {
+    override val itemId = 4
     override val name = context.getString(R.string.dash_device_settings_title)
     override val description = context.getString(R.string.dash_device_settings_summary)
 
     override val icon: Drawable?
-        get() = AppCompatResources.getDrawable(context, R.drawable.ic_device_settings).apply {
+        get() = AppCompatResources.getDrawable(context, R.drawable.ic_setting).apply {
             this?.setTint(darkenColor(accentColor))
         }
 

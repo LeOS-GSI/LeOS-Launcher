@@ -41,11 +41,7 @@ class OkHttpClientBuilder {
             }
         }
         builder.addInterceptor(HttpLoggingInterceptor().apply {
-            level = if (context?.omegaPrefs?.debugOkHttp == true) {
-                HttpLoggingInterceptor.Level.BODY
-            } else {
-                HttpLoggingInterceptor.Level.BASIC
-            }
+            level = HttpLoggingInterceptor.Level.BASIC
         })
         return builder.build()
     }

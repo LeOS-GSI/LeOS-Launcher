@@ -25,16 +25,16 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
-import com.android.launcher3.util.PackageManagerHelper
 import com.saggitt.omega.search.SearchProvider
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 class BingSearchProvider(context: Context) : SearchProvider(context) {
 
     private val cortanaInstalled: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, PACKAGE_CORTANA, 0)
+        get() = context.packageManager.isAppEnabled(PACKAGE_CORTANA, 0)
     private val alexaInstalled: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, PACKAGE_ALEXA, 0)
+        get() = context.packageManager.isAppEnabled(PACKAGE_ALEXA, 0)
 
     override val name: String = context.getString(R.string.search_provider_bing)
     override val supportsVoiceSearch: Boolean
@@ -46,17 +46,20 @@ class BingSearchProvider(context: Context) : SearchProvider(context) {
         get() = PACKAGE
 
     override val isAvailable: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, PACKAGE, 0)
+        get() = context.packageManager.isAppEnabled(PACKAGE, 0)
 
     override fun startSearch(callback: (intent: Intent) -> Unit) = callback(
         Intent().setClassName(
             PACKAGE,
-            "com.microsoft.clients.bing.widget.WidgetSearchActivity"
+            "com.microsoft.sapphire.app.main.SplashActivity"
         ).setPackage(PACKAGE)
     )
 
     override fun startVoiceSearch(callback: (intent: Intent) -> Unit) =
-        callback(Intent(Intent.ACTION_SEARCH_LONG_PRESS).setPackage(PACKAGE))
+        callback(
+            Intent().setClassName(PACKAGE, "com.microsoft.clients.bing.voice.VoiceActivity")
+                .setPackage(PACKAGE)
+        )
 
     override fun startAssistant(callback: (intent: Intent) -> Unit) = callback(
         if (cortanaInstalled) {
@@ -69,15 +72,14 @@ class BingSearchProvider(context: Context) : SearchProvider(context) {
         }
     )
 
+    override val iconRes: Int
+        get() = R.drawable.ic_bing
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_bing, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 
     override val voiceIcon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_mic_color, null)!!
-            .mutate()
-            .apply {
-                setTint(Color.rgb(0x00, 0x89, 0x7B))
-            }
+        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_mic, null)!!
+            .mutate().apply { setTint(Color.rgb(0x00, 0x89, 0x7B)) }
 
     override val assistantIcon: Drawable?
         get() = ResourcesCompat.getDrawable(
@@ -85,16 +87,6 @@ class BingSearchProvider(context: Context) : SearchProvider(context) {
             if (cortanaInstalled) R.drawable.ic_cortana
             else R.drawable.ic_alexa, null
         )!!
-
-    override fun getShadowAssistantIcon(): Drawable? {
-        if (cortanaInstalled) {
-            return wrapInShadowDrawable(
-                ResourcesCompat
-                    .getDrawable(context.resources, R.drawable.ic_cortana_shadow, null)!!
-            )
-        }
-        return super.getShadowAssistantIcon()
-    }
 
     companion object {
         private const val PACKAGE = "com.microsoft.bing"

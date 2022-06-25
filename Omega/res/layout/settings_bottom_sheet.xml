@@ -13,12 +13,12 @@
      limitations under the License.
 -->
 
-<com.saggitt.omega.settings.SettingsBottomSheet xmlns:android="http://schemas.android.com/apk/res/android"
+<com.saggitt.omega.views.SettingsBottomSheet xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
-    android:background="@drawable/top_round_rect_primary"
+    android:background="@drawable/widgets_bottom_sheet_background"
     android:elevation="@dimen/deep_shortcuts_elevation"
     android:orientation="vertical"
     android:theme="?attr/widgetsTheme">
@@ -35,4 +35,4 @@
         android:layout_gravity="bottom"
         android:background="@android:color/black"
         android:focusable="false" />
-</com.saggitt.omega.settings.SettingsBottomSheet>
+</com.saggitt.omega.views.SettingsBottomSheet>

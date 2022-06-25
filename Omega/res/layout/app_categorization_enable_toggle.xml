@@ -37,7 +37,7 @@
         android:paddingEnd="8dp"
         android:paddingBottom="4dp">
 
-        <androidx.preference.internal.PreferenceImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@android:id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
             android:singleLine="true"
-            android:text="@string/pref_appcategorization_enable_title"
+            android:text="@string/title_app_categorization_enable"
             android:textAppearance="?android:attr/textAppearanceListItem" />
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_below="@android:id/title"
             android:layout_alignStart="@android:id/title"
             android:maxLines="10"
-            android:text="@string/pref_appcategorization_enable_summary"
+            android:text="@string/summary_app_categorization_enable"
             android:textAlignment="viewStart"
             android:textAppearance="?android:attr/textAppearanceListItemSecondary"
             android:textColor="?android:attr/textColorSecondary" />
@@ -85,7 +85,13 @@
         android:orientation="vertical"
         android:paddingStart="16dp">
 
-        <include layout="@layout/preference_switch_widget" />
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchWidget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false" />
     </LinearLayout>
 
 </LinearLayout>

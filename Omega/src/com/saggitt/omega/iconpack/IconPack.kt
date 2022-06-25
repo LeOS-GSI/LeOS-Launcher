@@ -1,139 +1,84 @@
-/*
- *     This file is part of Lawnchair Launcher.
- *
- *     Lawnchair Launcher is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     Lawnchair Launcher is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 package com.saggitt.omega.iconpack
 
+import android.content.ComponentName
 import android.content.Context
-import android.content.pm.LauncherActivityInfo
-import android.content.pm.ShortcutInfo
-import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import com.android.launcher3.FastBitmapDrawable
 import com.android.launcher3.compat.AlphabeticIndexCompat
-import com.android.launcher3.model.data.ItemInfo
-import com.android.launcher3.util.ComponentKey
-import com.android.launcher3.util.Executors.ICON_PACK_EXECUTOR
-import com.saggitt.omega.icons.CustomIconProvider
-import java.util.*
+import com.saggitt.omega.data.IconPickerItem
+import com.saggitt.omega.icons.ClockMetadata
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.Flow
 import java.util.concurrent.Semaphore
-import kotlin.collections.ArrayList
 
-abstract class IconPack(val context: Context, val packPackageName: String) {
+abstract class IconPack(
+    protected val context: Context,
+    val packPackageName: String,
+) {
     private var waiter: Semaphore? = Semaphore(0)
-    private val indexCompat by lazy { AlphabeticIndexCompat(context) }
-    private val loadCompleteListeners = ArrayList<(IconPack) -> Unit>()
+    private lateinit var deferredLoad: Deferred<Unit>
 
-    fun executeLoadPack() {
-        ICON_PACK_EXECUTOR.execute {
-            loadPack()
+    abstract val label: String
+
+    private val alphabeticIndexCompat by lazy { AlphabeticIndexCompat(context) }
+
+    protected fun startLoad() {
+        deferredLoad = scope.async(Dispatchers.IO) {
+            loadInternal()
             waiter?.release()
-            loadCompleteListeners.forEach { it.invoke(this) }
-            loadCompleteListeners.clear()
-        }
-    }
-
-    @Synchronized
-    fun ensureInitialLoadComplete() {
-        waiter?.run {
-            acquireUninterruptibly()
-            release()
             waiter = null
         }
     }
 
-    val displayIcon get() = packInfo.displayIcon
-    val displayName get() = packInfo.displayName
-
-    abstract val packInfo: IconPackList.PackInfo
-
-    abstract fun onDateChanged()
-
-    abstract fun loadPack()
-
-    abstract fun getEntryForComponent(key: ComponentKey): Entry?
-
-    open fun getMaskEntryForComponent(key: ComponentKey): Entry? = null
-
-    open fun getIcon(entry: IconPackManager.CustomIconEntry, iconDpi: Int): Drawable? {
-        return null
+    suspend fun load() {
+        return deferredLoad.await()
     }
 
-    abstract fun getIcon(launcherActivityInfo: LauncherActivityInfo,
-                         iconDpi: Int, flattenDrawable: Boolean,
-                         customIconEntry: IconPackManager.CustomIconEntry?,
-                         iconProvider: CustomIconProvider?): Drawable?
-
-    abstract fun getIcon(shortcutInfo: ShortcutInfo, iconDpi: Int): Drawable?
-
-    abstract fun newIcon(icon: Bitmap, itemInfo: ItemInfo,
-                         customIconEntry: IconPackManager.CustomIconEntry?,
-                         drawableFactory: CustomDrawableFactory): FastBitmapDrawable?
-
-    open fun getAllIcons(callback: (List<PackEntry>) -> Unit, cancel: () -> Boolean,
-                         filter: (item: String) -> Boolean = { _ -> true }) {
-        ensureInitialLoadComplete()
-        callback(categorize(filterDuplicates(entries)).filter {
-            if (it is Entry) filter(it.identifierName) else true
-        })
+    fun loadBlocking() {
+        waiter?.run {
+            acquireUninterruptibly()
+            release()
+        }
     }
 
-    abstract fun supportsMasking(): Boolean
+    abstract fun getIcon(componentName: ComponentName): IconEntry?
+    abstract fun getCalendar(componentName: ComponentName): IconEntry?
+    abstract fun getClock(entry: IconEntry): ClockMetadata?
 
-    private fun filterDuplicates(entries: List<Entry>): List<Entry> {
+    abstract fun getCalendars(): MutableSet<ComponentName>
+    abstract fun getClocks(): MutableSet<ComponentName>
+
+    abstract fun getIcon(iconEntry: IconEntry, iconDpi: Int): Drawable?
+
+    abstract fun getAllIcons(): Flow<List<IconPickerCategory>>
+
+    @Suppress("BlockingMethodInNonBlockingContext")
+    protected abstract fun loadInternal()
+
+    protected fun removeDuplicates(items: List<IconPickerItem>): List<IconPickerItem> {
         var previous = ""
-        val filtered = ArrayList<Entry>()
-        entries.sortedBy { it.identifierName }.forEach {
-            if (it.identifierName != previous) {
-                previous = it.identifierName
+        val filtered = ArrayList<IconPickerItem>()
+        items.sortedBy { it.drawableName }.forEach {
+            if (it.drawableName != previous) {
+                previous = it.drawableName
                 filtered.add(it)
             }
         }
         return filtered
     }
 
-    private fun categorize(entries: List<Entry>): List<PackEntry> {
-        val packEntries = ArrayList<PackEntry>()
-        var previousSection = ""
-        entries.sortedBy { it.displayName.lowercase(Locale.getDefault()) }.forEach {
-            val currentSection = indexCompat.computeSectionName(it.displayName)
-            if (currentSection != previousSection) {
-                previousSection = currentSection
-                packEntries.add(CategoryTitle(currentSection))
+    protected fun categorize(allItems: List<IconPickerItem>): List<IconPickerCategory> {
+        return allItems
+            .groupBy { alphabeticIndexCompat.computeSectionName(it.label) }
+            .map { (sectionName, items) ->
+                IconPickerCategory(
+                    title = sectionName,
+                    items = items
+                )
             }
-            packEntries.add(it)
-        }
-        return packEntries
+            .sortedBy { it.title }
     }
 
-    abstract val entries: List<Entry>
-
-    open class PackEntry
-
-    class CategoryTitle(val title: String) : PackEntry()
-
-    abstract class Entry : PackEntry() {
-
-        abstract val displayName: String
-        abstract val identifierName: String
-        val drawable get() = drawableForDensity(0)
-        abstract val isAvailable: Boolean
-
-        abstract fun drawableForDensity(density: Int): Drawable
-
-        abstract fun toCustomEntry(): IconPackManager.CustomIconEntry
+    companion object {
+        private val scope = CoroutineScope(Dispatchers.IO) + CoroutineName("IconPack")
     }
 }

@@ -1,5 +1,5 @@
 <!--
-  ~  This file is part of LeOS Launcher
+  ~  This file is part of Omega Launcher
   ~  Copyright (c) 2021   Saul Henriquez
   ~
   ~  This program is free software: you can redistribute it and/or modify
@@ -19,9 +19,70 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="32dp"
     android:height="32dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:tint="?colorControlNormal"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
     <path
-        android:fillColor="#008AF8"
-        android:pathData="M4,8h4L8,4L4,4v4zM10,20h4v-4h-4v4zM4,20h4v-4L4,16v4zM4,14h4v-4L4,10v4zM10,14h4v-4h-4v4zM16,4v4h4L20,4h-4zM10,8h4L14,4h-4v4zM16,14h4v-4h-4v4zM16,20h4v-4h-4v4z" />
+        android:fillColor="@android:color/transparent"
+        android:pathData="M128.034,127.399m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M190.187,127.399m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M65.882,127.399m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M129.111,190.34m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M191.264,190.34m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M65.044,190.58m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M128.436,64.488m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M190.589,64.488m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M66.284,64.488m-15.538,0a15.538,15.538 0,1 1,31.076 0a15.538,15.538 0,1 1,-31.076 0"
+        android:strokeWidth="18"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
 </vector>

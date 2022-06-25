@@ -24,7 +24,6 @@ import java.util.function.Predicate;
 
 /**
  * A simple LRU cache for task key entries
- *
  * @param <V> The type of the value
  */
 public class TaskKeyLruCache<V> {
@@ -118,7 +117,7 @@ public class TaskKeyLruCache<V> {
         }
 
         @Override
-        protected boolean removeEldestEntry(Entry<Integer, TaskKeyLruCache.Entry<V>> eldest) {
+        protected boolean removeEldestEntry(LinkedHashMap.Entry<Integer, TaskKeyLruCache.Entry<V>> eldest) {
             return size() > mMaxSize;
         }
     }

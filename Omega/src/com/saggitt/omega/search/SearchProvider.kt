@@ -20,19 +20,16 @@ package com.saggitt.omega.search
 import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
-import com.android.launcher3.R
-import com.android.launcher3.graphics.ShadowDrawable
-import com.saggitt.omega.settings.search.SettingsSearchActivity
 
 abstract class SearchProvider(protected val context: Context) {
     abstract val name: String
     abstract val supportsVoiceSearch: Boolean
     abstract val supportsAssistant: Boolean
     abstract val supportsFeed: Boolean
-    open val settingsIntent get() = Intent().setClass(context, SettingsSearchActivity::class.java)
 
     abstract val packageName: String
     abstract val icon: Drawable
+    abstract val iconRes: Int
     open val voiceIcon: Drawable?
         get() = if (supportsVoiceSearch)
             throw RuntimeException("Voice search supported but not implemented")
@@ -61,23 +58,11 @@ abstract class SearchProvider(protected val context: Context) {
         if (supportsFeed) throw RuntimeException("Feed supported but not implemented")
     }
 
-    protected fun wrapInShadowDrawable(d: Drawable?): Drawable =
-        ShadowDrawable.wrap(
-            context, d, R.color.qsb_icon_shadow_color,
-            4f, R.color.qsb_dark_icon_tint
-        ).apply { applyTheme(context.theme) }
+    fun getIcon(colored: Boolean) = icon // maybe consider coloring
 
-    fun getIcon(colored: Boolean) =
-        if (colored) icon else wrapInShadowDrawable(icon)
+    fun getVoiceIcon(colored: Boolean) = voiceIcon // maybe consider coloring
 
-    fun getVoiceIcon(colored: Boolean) =
-        if (colored) voiceIcon else voiceIcon?.let { wrapInShadowDrawable(it) }
-
-    fun getAssistantIcon(colored: Boolean) =
-        if (colored) assistantIcon else getShadowAssistantIcon()
-
-    open fun getShadowAssistantIcon() =
-        assistantIcon?.let { wrapInShadowDrawable(it) }
+    fun getAssistantIcon(colored: Boolean) = assistantIcon // maybe consider coloring
 
     override fun toString(): String = this::class.java.name
 }

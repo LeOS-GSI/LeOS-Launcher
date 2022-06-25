@@ -8,10 +8,11 @@ public abstract class WallpaperColorInfo {
     private static final Object sInstanceLock = new Object();
     private static WallpaperColorInfo sInstance;
 
+    // TODO think if it still does make sense to use it when Material-You/Monet engines are there
     public static WallpaperColorInfo getInstance(Context context) {
         synchronized (sInstanceLock) {
             if (sInstance == null) {
-                if (Utilities.ATLEAST_Q && !Utilities.HIDDEN_APIS_ALLOWED) {
+                if (Utilities.ATLEAST_Q) {
                     sInstance = new WallpaperColorInfoVL(context.getApplicationContext());
                 } else if (Utilities.ATLEAST_P) {
                     sInstance = new WallpaperColorInfoVP(context.getApplicationContext());

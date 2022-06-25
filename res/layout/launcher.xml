@@ -19,11 +19,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <com.saggitt.omega.views.OmegaBackgroundView
-        android:id="@+id/omega_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <com.android.launcher3.dragndrop.DragLayer
         android:id="@+id/drag_layer"
         android:layout_width="match_parent"
@@ -31,6 +26,11 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:importantForAccessibility="no">
+
+        <com.android.launcher3.views.AccessibilityActionsView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/home_screen" />
 
         <View
             android:id="@+id/dummy_view"
@@ -53,13 +53,8 @@
             layout="@layout/hotseat" />
 
         <include
-            android:id="@+id/overview_panel"
-            layout="@layout/overview_panel" />
-
-        <include
             android:id="@+id/options_view"
-            layout="@layout/options_view" />
-
+            layout="@layout/longpress_options_menu" />
 
         <!-- Keep these behind the workspace so that they are not visible when
          we go into AllApps -->
@@ -74,15 +69,21 @@
             android:id="@+id/drop_target_bar"
             layout="@layout/drop_target_bar" />
 
-        <include
+        <com.android.launcher3.views.ScrimView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/scrim_view"
-            layout="@layout/scrim_view" />
+            android:background="@android:color/transparent" />
 
         <include
             android:id="@+id/apps_view"
             layout="@layout/all_apps"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/overview_panel"
+            layout="@layout/overview_panel" />
 
     </com.android.launcher3.dragndrop.DragLayer>
 

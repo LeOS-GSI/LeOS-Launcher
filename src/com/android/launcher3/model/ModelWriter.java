@@ -24,12 +24,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 
 import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.LauncherAppWidgetHost;
 import com.android.launcher3.LauncherModel;
 import com.android.launcher3.LauncherProvider;
 import com.android.launcher3.LauncherSettings;
@@ -44,16 +41,19 @@ import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.model.data.LauncherAppWidgetInfo;
 import com.android.launcher3.model.data.WorkspaceItemInfo;
 import com.android.launcher3.util.ContentWriter;
+import com.android.launcher3.util.Executors;
 import com.android.launcher3.util.ItemInfoMatcher;
-import com.saggitt.omega.iconpack.IconPackManager;
+import com.android.launcher3.util.LooperExecutor;
+import com.android.launcher3.widget.LauncherAppWidgetHost;
+import com.saggitt.omega.iconpack.CustomIconEntry;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * Class for handling model updates.
@@ -65,7 +65,7 @@ public class ModelWriter {
     private final Context mContext;
     private final LauncherModel mModel;
     private final BgDataModel mBgDataModel;
-    private final Handler mUiHandler;
+    private final LooperExecutor mUiExecutor;
 
     private final boolean mHasVerticalHotseat;
     private final boolean mVerifyChanges;
@@ -81,7 +81,7 @@ public class ModelWriter {
         mBgDataModel = dataModel;
         mHasVerticalHotseat = hasVerticalHotseat;
         mVerifyChanges = verifyChanges;
-        mUiHandler = new Handler(Looper.getMainLooper());
+        mUiExecutor = Executors.MAIN_EXECUTOR;
     }
 
     private void updateItemInfoProps(
@@ -93,7 +93,7 @@ public class ModelWriter {
         // in the hotseat
         if (container == Favorites.CONTAINER_HOTSEAT) {
             item.screenId = mHasVerticalHotseat
-                    ? LauncherAppState.getIDP(mContext).numHotseatIcons - cellY - 1 : cellX;
+                    ? LauncherAppState.getIDP(mContext).numDatabaseHotseatIcons - cellY - 1 : cellX;
         } else {
             item.screenId = screenId;
         }
@@ -198,7 +198,6 @@ public class ModelWriter {
         updateItemInfoProps(item, container, screenId, cellX, cellY);
         item.spanX = spanX;
         item.spanY = spanY;
-
         MODEL_EXECUTOR.execute(new UpdateItemRunnable(item, () ->
                 new ContentWriter(mContext)
                         .put(Favorites.CONTAINER, item.container)
@@ -210,13 +209,9 @@ public class ModelWriter {
                         .put(Favorites.SCREEN, item.screenId)));
     }
 
-    private void executeUpdateItem(ItemInfo item, Supplier<ContentWriter> writer) {
-        MODEL_EXECUTOR.execute(new UpdateItemRunnable(item, writer));
-    }
-
     public static void modifyItemInDatabase(Context context, final ItemInfo item, String alias,
                                             String swipeUpAction,
-                                            IconPackManager.CustomIconEntry iconEntry, Bitmap icon,
+                                            CustomIconEntry iconEntry, Bitmap icon,
                                             boolean updateIcon, boolean reload) {
         LauncherAppState.getInstance(context).getLauncher().getModelWriter().executeUpdateItem(item, () -> {
             final ContentWriter writer = new ContentWriter(context);
@@ -233,11 +228,15 @@ public class ModelWriter {
         }
     }
 
+    private void executeUpdateItem(ItemInfo item, Supplier<ContentWriter> writer) {
+        MODEL_EXECUTOR.execute(new UpdateItemRunnable(item, writer));
+    }
+
     /**
      * Update an item to the database in a specified container.
      */
     public void updateItemInDatabase(ItemInfo item) {
-        ((Executor) MODEL_EXECUTOR).execute(new UpdateItemRunnable(item, () -> {
+        MODEL_EXECUTOR.execute(new UpdateItemRunnable(item, () -> {
             ContentWriter writer = new ContentWriter(mContext);
             item.onAddToDatabase(writer);
             return writer;
@@ -257,7 +256,7 @@ public class ModelWriter {
 
         ModelVerifier verifier = new ModelVerifier();
         final StackTraceElement[] stackTrace = new Throwable().getStackTrace();
-        ((Executor) MODEL_EXECUTOR).execute(() -> {
+        MODEL_EXECUTOR.execute(() -> {
             // Write the item on background thread, as some properties might have been updated in
             // the background.
             final ContentWriter writer = new ContentWriter(mContext);
@@ -285,7 +284,9 @@ public class ModelWriter {
      * Removes all the items from the database matching {@param matcher}.
      */
     public void deleteItemsFromDatabase(ItemInfoMatcher matcher) {
-        deleteItemsFromDatabase(matcher.filterItemInfos(mBgDataModel.itemsIdMap));
+        deleteItemsFromDatabase(StreamSupport.stream(mBgDataModel.itemsIdMap.spliterator(), false)
+                .filter(matcher::matchesInfo)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -364,14 +365,14 @@ public class ModelWriter {
         if (mPreparingToUndo) {
             mDeleteRunnables.add(r);
         } else {
-            ((Executor) MODEL_EXECUTOR).execute(r);
+            MODEL_EXECUTOR.execute(r);
         }
     }
 
     public void commitDelete() {
         mPreparingToUndo = false;
         for (Runnable runnable : mDeleteRunnables) {
-            ((Executor) MODEL_EXECUTOR).execute(runnable);
+            MODEL_EXECUTOR.execute(runnable);
         }
         mDeleteRunnables.clear();
     }
@@ -507,7 +508,7 @@ public class ModelWriter {
 
             int executeId = mBgDataModel.lastBindId;
 
-            mUiHandler.post(() -> {
+            mUiExecutor.post(() -> {
                 int currentId = mBgDataModel.lastBindId;
                 if (currentId > executeId) {
                     // Model was already bound after job was executed.

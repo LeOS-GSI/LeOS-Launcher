@@ -1,6 +1,6 @@
 /*
  *  This file is part of Omega Launcher
- *  Copyright (c) 2021   Saul Henriquez
+ *  Copyright (c) 2021   Omega Launcher Team
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as
@@ -20,11 +20,35 @@ package com.saggitt.omega.theme
 
 import androidx.compose.ui.graphics.Color
 
-val graySurface = Color(0xFF202124)
-val purple200 = Color(0xFFCE93D8)
-val purple500 = Color(0xFF9C27B0)
-val purple700 = Color(0xFF7B1FA2)
-val blue500 = Color(0xFF6200EE)
-val blue700 = Color(0xFF3700B3)
-val white200 = Color(0xFFF3F3F3)
-val teal200 = Color(0xFF03DAC5)
+// Light Theme
+val LightBackground = Color(0xFFFFFFFF)
+val LightOnBackground = Color(0xFF000000)
+val LightSurface = Color(0xFFE9ECEF)
+val LightOnSurface = Color(0xFF191C1A)
+val LightPrimary = Color(0xFFFF1744)
+val LightOnPrimary = Color(0xFF434343)
+val LightSurfaceVariant = Color(0xFFE9ECEF)
+val LightOnSurfaceVariant = Color(0xFF555555) // use for secondary text
+val LightOutline = Color(0xff9d9d9d)
+
+// Dark Theme
+val DarkBackground = Color(0xFF212121)
+val DarkOnBackground = Color(0xFFFFFFFF)
+val DarkSurface = Color(0xff262626)
+val DarkOnSurface = Color(0xFFE9ECEF)
+val DarkPrimary = Color(0xFFFF1744)
+val DarkOnPrimary = Color(0xffE9E9E9)
+val DarkSurfaceVariant = Color(0xFF323639)
+val DarkOnSurfaceVariant = Color(0xFFD9D9D9) // use for secondary text
+val DarkOutline = Color(0xFFE9E9E9)
+
+// Black Theme
+val BlackBackground = Color(0xFF000000)
+val BlackOnBackground = Color(0xFFFFFFFF)
+val BlackSurface = Color(0xFF212121)
+val BlackOnSurface = Color(0xFFE9ECEF)
+val BlackPrimary = Color(0xFFFF1744)
+val BlackOnPrimary = Color(0xFFE9E9E9)
+val BlackSurfaceVariant = Color(0xFF323639)
+val BlackOnSurfaceVariant = Color(0xFFD9D9D9) // use for secondary text
+val BlackOutline = Color(0xFFE9E9E9)

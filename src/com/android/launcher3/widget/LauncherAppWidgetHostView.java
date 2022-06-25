@@ -19,10 +19,13 @@ package com.android.launcher3.widget;
 import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.SparseBooleanArray;
-import android.view.LayoutInflater;
+import android.util.SparseIntArray;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewDebug;
@@ -32,24 +35,33 @@ import android.widget.AdapterView;
 import android.widget.Advanceable;
 import android.widget.RemoteViews;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.android.launcher3.CheckLongPressHelper;
 import com.android.launcher3.Launcher;
-import com.android.launcher3.LauncherAppWidgetProviderInfo;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.Workspace;
 import com.android.launcher3.dragndrop.DragLayer;
+import com.android.launcher3.keyboard.ViewGroupFocusHelper;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.model.data.LauncherAppWidgetInfo;
-import com.android.launcher3.util.Executors;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.BaseDragLayer.TouchCompleteListener;
 import com.android.launcher3.widget.custom.CustomAppWidgetProviderInfo;
+import com.android.launcher3.widget.dragndrop.AppWidgetHostViewDragListener;
+
+import java.util.List;
 
 /**
  * {@inheritDoc}
  */
-public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
-        implements TouchCompleteListener, View.OnLongClickListener {
+public class LauncherAppWidgetHostView extends BaseLauncherAppWidgetHostView
+        implements TouchCompleteListener, View.OnLongClickListener,
+        LocalColorExtractor.Listener {
+
+    private static final String LOG_TAG = "LauncherAppWidgetHostView";
 
     // Related to the auto-advancing of widgets
     private static final long ADVANCE_INTERVAL = 20000;
@@ -57,40 +69,82 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
 
     // Maintains a list of widget ids which are supposed to be auto advanced.
     private static final SparseBooleanArray sAutoAdvanceWidgetIds = new SparseBooleanArray();
-
-    protected final LayoutInflater mInflater;
+    // Maximum duration for which updates can be deferred.
+    private static final long UPDATE_LOCK_TIMEOUT_MILLIS = 1000;
 
     private final CheckLongPressHelper mLongPressHelper;
     protected final Launcher mLauncher;
+    private final Workspace mWorkspace;
 
     @ViewDebug.ExportedProperty(category = "launcher")
     private boolean mReinflateOnConfigChange;
 
+    // Maintain the color manager.
+    private final LocalColorExtractor mColorExtractor;
+
     private boolean mIsScrollable;
     private boolean mIsAttachedToWindow;
     private boolean mIsAutoAdvanceRegistered;
+    private boolean mIsInDragMode = false;
     private Runnable mAutoAdvanceRunnable;
+    private RectF mLastLocationRegistered = null;
+    @Nullable
+    private AppWidgetHostViewDragListener mDragListener;
+
+    // Used to store the widget sizes in drag layer coordinates.
+    private final Rect mCurrentWidgetSize = new Rect();
+    private final Rect mWidgetSizeAtDrag = new Rect();
+
+    private final RectF mTempRectF = new RectF();
+
+    private final Object mUpdateLock = new Object();
+    private final ViewGroupFocusHelper mDragLayerRelativeCoordinateHelper;
+    private long mDeferUpdatesUntilMillis = 0;
+    private RemoteViews mDeferredRemoteViews;
+    private boolean mHasDeferredColorChange = false;
+    private @Nullable
+    SparseIntArray mDeferredColorChange = null;
+    private boolean mEnableColorExtraction = true;
 
     public LauncherAppWidgetHostView(Context context) {
         super(context);
         mLauncher = Launcher.getLauncher(context);
+        mWorkspace = mLauncher.getWorkspace();
         mLongPressHelper = new CheckLongPressHelper(this, this);
-        mInflater = LayoutInflater.from(context);
         setAccessibilityDelegate(mLauncher.getAccessibilityDelegate());
         setBackgroundResource(R.drawable.widget_internal_focus_bg);
 
-        if (Utilities.ATLEAST_OREO) {
-            setExecutor(Executors.THREAD_POOL_EXECUTOR);
-        }
         if (Utilities.ATLEAST_Q && Themes.getAttrBoolean(mLauncher, R.attr.isWorkspaceDarkText)) {
             setOnLightBackground(true);
+        }
+        mColorExtractor = LocalColorExtractor.newInstance(getContext());
+        mColorExtractor.setListener(this);
+
+        mDragLayerRelativeCoordinateHelper = new ViewGroupFocusHelper(mLauncher.getDragLayer());
+    }
+
+    @Override
+    public void setColorResources(@Nullable SparseIntArray colors) {
+        if (colors == null) {
+            if (Utilities.ATLEAST_S)
+                resetColorResources();
+        } else {
+            super.setColorResources(colors);
+        }
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (mIsInDragMode && mDragListener != null) {
+            mDragListener.onDragContentChanged();
         }
     }
 
     @Override
     public boolean onLongClick(View view) {
         if (mIsScrollable) {
-            DragLayer dragLayer = Launcher.getLauncher(getContext()).getDragLayer();
+            DragLayer dragLayer = mLauncher.getDragLayer();
             dragLayer.requestDisallowInterceptTouchEvent(false);
         }
         view.performLongClick();
@@ -110,12 +164,15 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
     }
 
     @Override
-    protected View getErrorView() {
-        return mInflater.inflate(R.layout.appwidget_error, this, false);
-    }
-
-    @Override
     public void updateAppWidget(RemoteViews remoteViews) {
+        synchronized (mUpdateLock) {
+            if (isDeferringUpdates()) {
+                mDeferredRemoteViews = remoteViews;
+                return;
+            }
+            mDeferredRemoteViews = null;
+        }
+
         super.updateAppWidget(remoteViews);
 
         // The provider info or the views might have changed.
@@ -137,7 +194,7 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
         if (viewGroup instanceof AdapterView) {
             return true;
         } else {
-            for (int i=0; i < viewGroup.getChildCount(); i++) {
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
                 View child = viewGroup.getChildAt(i);
                 if (child instanceof ViewGroup) {
                     if (checkScrollableRecursively((ViewGroup) child)) {
@@ -149,9 +206,56 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
         return false;
     }
 
+    /**
+     * Returns true if the application of {@link RemoteViews} through {@link #updateAppWidget} and
+     * colors through {@link #onColorsChanged} are currently being deferred.
+     * @see #beginDeferringUpdates()
+     */
+    private boolean isDeferringUpdates() {
+        return SystemClock.uptimeMillis() < mDeferUpdatesUntilMillis;
+    }
+
+    /**
+     * Begin deferring the application of any {@link RemoteViews} updates made through
+     * {@link #updateAppWidget} and color changes through {@link #onColorsChanged} until
+     * {@link #endDeferringUpdates()} has been called or the next {@link #updateAppWidget} or
+     * {@link #onColorsChanged} call after {@link #UPDATE_LOCK_TIMEOUT_MILLIS} have elapsed.
+     */
+    public void beginDeferringUpdates() {
+        synchronized (mUpdateLock) {
+            mDeferUpdatesUntilMillis = SystemClock.uptimeMillis() + UPDATE_LOCK_TIMEOUT_MILLIS;
+        }
+    }
+
+    /**
+     * Stop deferring the application of {@link RemoteViews} updates made through
+     * {@link #updateAppWidget} and color changes made through {@link #onColorsChanged} and apply
+     * any deferred updates.
+     */
+    public void endDeferringUpdates() {
+        RemoteViews remoteViews;
+        SparseIntArray deferredColors;
+        boolean hasDeferredColors;
+        synchronized (mUpdateLock) {
+            mDeferUpdatesUntilMillis = 0;
+            remoteViews = mDeferredRemoteViews;
+            mDeferredRemoteViews = null;
+            deferredColors = mDeferredColorChange;
+            hasDeferredColors = mHasDeferredColorChange;
+            mDeferredColorChange = null;
+            mHasDeferredColorChange = false;
+        }
+        if (remoteViews != null) {
+            updateAppWidget(remoteViews);
+        }
+        if (hasDeferredColors) {
+            onColorsChanged(null /* rectF */, deferredColors);
+        }
+    }
+
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-            DragLayer dragLayer = Launcher.getLauncher(getContext()).getDragLayer();
+            DragLayer dragLayer = mLauncher.getDragLayer();
             if (mIsScrollable) {
                 dragLayer.requestDisallowInterceptTouchEvent(true);
             }
@@ -173,6 +277,10 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
 
         mIsAttachedToWindow = true;
         checkIfAutoAdvance();
+
+        if (mLastLocationRegistered != null) {
+            mColorExtractor.addLocation(List.of(mLastLocationRegistered));
+        }
     }
 
     @Override
@@ -183,6 +291,7 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
         // state is updated. So isAttachedToWindow() will return true until next frame.
         mIsAttachedToWindow = false;
         checkIfAutoAdvance();
+        mColorExtractor.removeLocations();
     }
 
     @Override
@@ -210,25 +319,115 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
         }
     }
 
-    public void switchToErrorView() {
-        // Update the widget with 0 Layout id, to reset the view to error view.
-        updateAppWidget(new RemoteViews(getAppWidgetInfo().provider.getPackageName(), 0));
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+
+        mIsScrollable = checkScrollableRecursively(this);
+        updateColorExtraction();
+    }
+
+    /**
+     * Starts the drag mode.
+     */
+    public void startDrag(AppWidgetHostViewDragListener dragListener) {
+        mIsInDragMode = true;
+        mDragListener = dragListener;
+    }
+
+    /** Handles a drag event occurred on a workspace page, {@code pageId}. */
+    public void handleDrag(Rect rectInDragLayer, int pageId) {
+        mWidgetSizeAtDrag.set(rectInDragLayer);
+        updateColorExtraction(mWidgetSizeAtDrag, pageId);
+    }
+
+    /** Ends the drag mode. */
+    public void endDrag() {
+        mIsInDragMode = false;
+        mDragListener = null;
+        mWidgetSizeAtDrag.setEmpty();
+    }
+
+    /**
+     * @param rectInDragLayer Rect of widget in drag layer coordinates.
+     * @param pageId The workspace page the widget is on.
+     */
+    private void updateColorExtraction(Rect rectInDragLayer, int pageId) {
+        if (!mEnableColorExtraction) return;
+        mColorExtractor.getExtractedRectForViewRect(mLauncher, pageId, rectInDragLayer, mTempRectF);
+
+        if (mTempRectF.isEmpty()) {
+            return;
+        }
+        if (!isSameLocation(mTempRectF, mLastLocationRegistered, /* epsilon= */ 1e-6f)) {
+            if (mLastLocationRegistered != null) {
+                mColorExtractor.removeLocations();
+            }
+            mLastLocationRegistered = new RectF(mTempRectF);
+            mColorExtractor.addLocation(List.of(mLastLocationRegistered));
+        }
+    }
+
+    /**
+     * Update the color extraction, using the current position of the app widget.
+     */
+    private void updateColorExtraction() {
+        if (!mIsInDragMode && getTag() instanceof LauncherAppWidgetInfo) {
+            LauncherAppWidgetInfo info = (LauncherAppWidgetInfo) getTag();
+            mDragLayerRelativeCoordinateHelper.viewToRect(this, mCurrentWidgetSize);
+            updateColorExtraction(mCurrentWidgetSize,
+                    mWorkspace.getPageIndexForScreenId(info.screenId));
+        }
+    }
+
+    /**
+     * Enables the local color extraction.
+     *
+     * @param updateColors If true, this will update the color extraction using the current location
+     *                     of the App Widget.
+     */
+    public void enableColorExtraction(boolean updateColors) {
+        mEnableColorExtraction = true;
+        if (updateColors) {
+            updateColorExtraction();
+        }
+    }
+
+    /**
+     * Disables the local color extraction.
+     */
+    public void disableColorExtraction() {
+        mEnableColorExtraction = false;
+    }
+
+    // Compare two location rectangles. Locations are always in the [0;1] range.
+    private static boolean isSameLocation(@NonNull RectF rect1, @Nullable RectF rect2,
+                                          float epsilon) {
+        if (rect2 == null) return false;
+        return isSameCoordinate(rect1.left, rect2.left, epsilon)
+                && isSameCoordinate(rect1.right, rect2.right, epsilon)
+                && isSameCoordinate(rect1.top, rect2.top, epsilon)
+                && isSameCoordinate(rect1.bottom, rect2.bottom, epsilon);
+    }
+
+    private static boolean isSameCoordinate(float c1, float c2, float epsilon) {
+        return Math.abs(c1 - c2) < epsilon;
     }
 
     @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        try {
-            super.onLayout(changed, left, top, right, bottom);
-        } catch (final RuntimeException e) {
-            post(new Runnable() {
-                @Override
-                public void run() {
-                    switchToErrorView();
-                }
-            });
+    public void onColorsChanged(RectF rectF, SparseIntArray colors) {
+        synchronized (mUpdateLock) {
+            if (isDeferringUpdates()) {
+                mDeferredColorChange = colors;
+                mHasDeferredColorChange = true;
+                return;
+            }
+            mDeferredColorChange = null;
+            mHasDeferredColorChange = false;
         }
 
-        mIsScrollable = checkScrollableRecursively(this);
+        // setColorResources will reapply the view, which must happen in the UI thread.
+        post(() -> setColorResources(colors));
     }
 
     @Override
@@ -323,6 +522,10 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
             return;
         }
         LauncherAppWidgetInfo info = (LauncherAppWidgetInfo) getTag();
+        if (info == null) {
+            // This occurs when LauncherAppWidgetHostView is used to render a preview layout.
+            return;
+        }
         // Remove and rebind the current widget (which was inflated in the wrong
         // orientation), but don't delete it from the database
         mLauncher.removeItem(this, info, false  /* deleteFromDb */);

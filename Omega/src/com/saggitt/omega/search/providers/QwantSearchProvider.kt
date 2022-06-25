@@ -22,7 +22,7 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
-import com.android.launcher3.util.PackageManagerHelper
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 class QwantSearchProvider(context: Context) : FirefoxSearchProvider(context) {
@@ -30,10 +30,11 @@ class QwantSearchProvider(context: Context) : FirefoxSearchProvider(context) {
     override val name = context.getString(R.string.search_provider_qwant)
     override val packageName = "com.qwant.liberty"
 
+    override val iconRes: Int
+        get() = R.drawable.ic_qwant
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_qwant, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 
-    override fun getPackage(context: Context) = listOf(
-        "com.qwant.liberty"
-    ).firstOrNull { PackageManagerHelper.isAppEnabled(context.packageManager, it, 0) }
+    override fun getPackage(context: Context) = listOf("com.qwant.liberty")
+        .firstOrNull { context.packageManager.isAppEnabled(it, 0) }
 }

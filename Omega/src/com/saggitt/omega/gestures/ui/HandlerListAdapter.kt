@@ -26,11 +26,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.launcher3.R
 import com.saggitt.omega.gestures.GestureController
 import com.saggitt.omega.gestures.GestureHandler
-import com.saggitt.omega.util.applyAccent
 
-class HandlerListAdapter(private val context: Context, isSwipeUp: Boolean,
-                         private val currentClass: String,
-                         private val onSelectHandler: (handler: GestureHandler) -> Unit, showBlank: Boolean = true) : RecyclerView.Adapter<HandlerListAdapter.Holder>() {
+class HandlerListAdapter(
+    private val context: Context, isSwipeUp: Boolean,
+    private val currentClass: String,
+    private val onSelectHandler: (handler: GestureHandler) -> Unit, showBlank: Boolean = true
+) : RecyclerView.Adapter<HandlerListAdapter.Holder>() {
 
     val handlers = GestureController.getGestureHandlers(context, isSwipeUp, showBlank)
 
@@ -49,7 +50,6 @@ class HandlerListAdapter(private val context: Context, isSwipeUp: Boolean,
 
         val text = itemView.findViewById<CheckedTextView>(android.R.id.text1)!!.apply {
             setOnClickListener(this@Holder)
-            applyAccent()
         }
 
         override fun onClick(v: View) {

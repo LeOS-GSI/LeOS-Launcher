@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~  This file is part of LeOS Launcher
+  ~  This file is part of Omega Launcher
   ~  Copyright (c) 2021   Saul Henriquez
   ~
   ~  This program is free software: you can redistribute it and/or modify
@@ -17,13 +17,13 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/preview_frame"
-        layout="@layout/desktop_preview" />
+        layout="@layout/customize_icons_preview" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -32,51 +32,20 @@
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <androidx.compose.ui.platform.ComposeView
             android:id="@+id/shape_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
             android:clipChildren="true"
             android:clipToPadding="true" />
 
-        <include layout="@layout/list_divider" />
-
-        <include
-            android:id="@+id/shapeless_icons"
-            layout="@layout/custom_icon_shapeless"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/icon_preferences"
+            android:name="com.saggitt.omega.preferences.views.PrefIconShapeFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/list_divider" />
+            android:layout_below="@id/shape_view"
+            android:layout_marginTop="8dp" />
 
-        <include
-            android:id="@+id/legacy_icons"
-            layout="@layout/custom_icon_legacy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/shapeless_icons" />
-
-        <include
-            android:id="@+id/colored_icons"
-            layout="@layout/custom_icon_colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/legacy_icons" />
-
-        <include
-            android:id="@+id/white_icons"
-            layout="@layout/custom_icon_white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/colored_icons" />
-
-        <include
-            android:id="@+id/adaptive_icons"
-            layout="@layout/custom_icon_adaptive"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/white_icons" />
     </RelativeLayout>
 </LinearLayout>

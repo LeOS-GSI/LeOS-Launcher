@@ -21,16 +21,16 @@ package com.saggitt.omega.search
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import com.android.launcher3.LauncherAppState
 import com.android.launcher3.LauncherState
-import com.android.launcher3.Utilities
-import com.saggitt.omega.OmegaLauncher
-import com.saggitt.omega.util.OkHttpClientBuilder
+import com.android.launcher3.anim.AnimatorListeners
+import com.saggitt.omega.util.openURLinBrowser
 import com.saggitt.omega.util.toArrayList
+import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
 
 abstract class WebSearchProvider(context: Context) : SearchProvider(context) {
-    protected val client = OkHttpClientBuilder().build(context)
 
     override val supportsVoiceSearch = false
     override val supportsAssistant = false
@@ -42,29 +42,31 @@ abstract class WebSearchProvider(context: Context) : SearchProvider(context) {
     protected abstract val suggestionsUrl: String?
 
     override fun startSearch(callback: (intent: Intent) -> Unit) {
-        val launcher = OmegaLauncher.getLauncher(context)
-        launcher.stateManager.goToState(LauncherState.ALL_APPS, true) {
-            launcher.appsView.searchUiManager.startSearch()
-        }
+        val launcher = LauncherAppState.getInstanceNoCreate().launcher
+        launcher.stateManager.goToState(
+            LauncherState.ALL_APPS,
+            true,
+            AnimatorListeners.forEndCallback(Runnable { launcher.appsView.searchUiManager.startSearch() })
+        )
     }
 
     open fun getSuggestions(query: String): List<String> {
+        val client = OkHttpClient()
         if (suggestionsUrl == null) return emptyList()
+        if (query.isEmpty()) return emptyList()
+        val request = Request.Builder()
+            .url(suggestionsUrl!!.format(query))
+            .build()
         try {
-            val response = client.newCall(
-                Request.Builder()
-                    .url(suggestionsUrl!!.format(query))
-                    .build()
-            )
-                .execute()
+            val response = client.newCall(request).execute()
             val result = JSONArray(response.body?.string())
                 .getJSONArray(1)
                 .toArrayList<String>()
                 .take(MAX_SUGGESTIONS)
+            response.close()
 
-            Log.e("WebSearchProvider", result.toString())
-            response.close();
-            return result;
+            Log.e("WebSearchProvider", "Websearch Query: $result")
+            return result
         } catch (ex: Exception) {
             Log.e("WebSearchProvider", ex.message ?: "", ex)
         }
@@ -73,7 +75,7 @@ abstract class WebSearchProvider(context: Context) : SearchProvider(context) {
     }
 
     open fun openResults(query: String) {
-        Utilities.openURLinBrowser(context, getResultUrl(query))
+        openURLinBrowser(context, getResultUrl(query))
     }
 
     protected open fun getResultUrl(query: String) = packageName.format(query)

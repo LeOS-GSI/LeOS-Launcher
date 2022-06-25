@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~  This file is part of LeOS Launcher
-  ~  Copyright (c) 2021   Harvey186
+<!--
+  ~  The file on which this xml is based on is part of NewPipe (https://newpipe.net)
+  ~  Copyright (c) 2015   Christian Schabesberger
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as
@@ -18,18 +18,41 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp"
     android:height="48dp"
-    android:viewportWidth="100"
-    android:viewportHeight="100">
+    android:viewportWidth="192"
+    android:viewportHeight="192">
     <path
-        android:pathData="M50,50m-50,0a50,50 0,1 1,100 0a50,50 0,1 1,-100 0"
-        android:fillColor="#CD201F"/>
+        android:fillColor="#ff5252"
+        android:pathData="M88,104m-0,0a0,0 0,1 1,0 0a0,0 0,1 1,-0 0"
+        android:strokeWidth="17.10300064"
+        android:strokeColor="#00000000" />
     <path
-        android:pathData="M47,28.2c-9,-5.3 -15.3,-9 -15.3,-9v61.7c0,0 30.4,-18 52.3,-30.9C72.1,43 57.7,34.5 47,28.2z"
-        android:fillColor="#FFFFFF"/>
+        android:fillColor="#ff7575"
+        android:pathData="M96,96m-88,0a88,88 0,1 1,176 0a88,88 0,1 1,-176 0"
+        android:strokeWidth="17.10300064"
+        android:strokeColor="#00000000" />
     <path
-        android:pathData="M48.4,40.1c-4.1,-2.4 -7,-4.1 -7,-4.1V64c0,0 13.9,-8.2 23.8,-14C59.8,46.8 53.3,42.9 48.4,40.1z"
-        android:fillColor="#CD201F"/>
+        android:fillColor="#cc4242"
+        android:pathData="M184,96A88,88 0,0 1,96.123 184,88 88,0 0,1 8,96.246"
+        android:strokeWidth="17.10300064"
+        android:strokeColor="#00000000" />
     <path
-        android:pathData="M41.4,55.6h6.2v21h-6.2z"
-        android:fillColor="#CD201F"/>
+        android:fillColor="#cd201f"
+        android:pathData="M8,96a88,87 0,1 0,176 0a88,87 0,1 0,-176 0z"
+        android:strokeWidth="17.10300064"
+        android:strokeColor="#00000000" />
+    <path
+        android:fillType="evenOdd"
+        android:pathData="M96.002,96.022m-88,0a88,88 0,1 1,176 0a88,88 0,1 1,-176 0"
+        android:strokeWidth="3.5"
+        android:strokeColor="#00000000"
+        android:strokeLineCap="butt"
+        android:strokeLineJoin="miter" />
+    <path
+        android:fillColor="#ffffff"
+        android:fillType="evenOdd"
+        android:pathData="M62.038,154.848 L79.885,143.472 80.259,68.066 126.183,95.333 92.951,114.496v21.928L161.985,95.333 61.944,36.538Z"
+        android:strokeWidth="1"
+        android:strokeColor="#00000000"
+        android:strokeLineCap="butt"
+        android:strokeLineJoin="miter" />
 </vector>

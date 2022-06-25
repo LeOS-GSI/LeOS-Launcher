@@ -19,15 +19,13 @@ package com.saggitt.omega.search.providers
 
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.graphics.drawable.Drawable
 import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
-import com.android.launcher3.util.PackageManagerHelper
-import com.saggitt.omega.OmegaLauncher
 import com.saggitt.omega.search.SearchProvider
 import com.saggitt.omega.util.Config
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 class GoogleSearchProvider(context: Context) : SearchProvider(context) {
@@ -36,11 +34,9 @@ class GoogleSearchProvider(context: Context) : SearchProvider(context) {
     override val supportsVoiceSearch = true
     override val supportsAssistant = true
     override val isAvailable: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, Config.GOOGLE_QSB, 0)
+        get() = context.packageManager.isAppEnabled(Config.GOOGLE_QSB, 0)
     override val supportsFeed = true
-    override val settingsIntent: Intent
-        get() = Intent("com.google.android.apps.gsa.nowoverlayservice.PIXEL_DOODLE_QSB_SETTINGS")
-            .setPackage(Config.GOOGLE_QSB).addFlags(FLAG_ACTIVITY_NEW_TASK)
+
     override val packageName: String
         get() = Config.GOOGLE_QSB
     override val isBroadcast: Boolean
@@ -61,24 +57,21 @@ class GoogleSearchProvider(context: Context) : SearchProvider(context) {
         )
 
     override fun startFeed(callback: (intent: Intent) -> Unit) {
-        val launcher = OmegaLauncher.getLauncher(context)
-        if (launcher.getGoogleNow() != null) {
-            launcher.getGoogleNow()!!.showOverlay(true)
-        } else {
-            callback(
-                Intent(Intent.ACTION_MAIN).setClassName(
-                    Config.GOOGLE_QSB,
-                    "${Config.GOOGLE_QSB}.SearchActivity"
-                )
+        callback(
+            Intent(Intent.ACTION_MAIN).setClassName(
+                Config.GOOGLE_QSB,
+                "${Config.GOOGLE_QSB}.SearchActivity"
             )
-        }
+        )
     }
 
+    override val iconRes: Int
+        get() = R.drawable.ic_super_g_color
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_qsb_logo, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 
     override val voiceIcon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_qsb_mic, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_mic_color, null)!!
 
     override val assistantIcon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_qsb_assist, null)!!

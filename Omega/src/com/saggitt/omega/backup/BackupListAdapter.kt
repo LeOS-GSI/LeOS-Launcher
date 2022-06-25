@@ -1,3 +1,21 @@
+/*
+ * This file is part of Omega Launcher
+ * Copyright (c) 2022   Omega Launcher Team
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package com.saggitt.omega.backup
 
 import android.content.Context
@@ -15,22 +33,22 @@ import com.saggitt.omega.util.isVisible
 
 class BackupListAdapter(val context: Context) : RecyclerView.Adapter<BackupListAdapter.Holder>() {
 
-    private val backupList = ArrayList<OmegaBackup>()
-    private val backupMetaLoaderList = ArrayList<OmegaBackup.MetaLoader>()
+    private val backupList = ArrayList<BackupFile>()
+    private val backupMetaLoaderList = ArrayList<BackupFile.MetaLoader>()
 
     var callbacks: Callbacks? = null
 
-    fun setData(data: List<OmegaBackup>) {
+    fun setData(data: List<BackupFile>) {
         backupList.clear()
         data.forEach {
             backupList.add(it)
-            backupMetaLoaderList.add(OmegaBackup.MetaLoader(it))
+            backupMetaLoaderList.add(BackupFile.MetaLoader(it))
         }
     }
 
-    fun addItem(backup: OmegaBackup) {
-        backupList.add(0, backup)
-        backupMetaLoaderList.add(0, OmegaBackup.MetaLoader(backup))
+    fun addItem(backupFile: BackupFile) {
+        backupList.add(0, backupFile)
+        backupMetaLoaderList.add(0, BackupFile.MetaLoader(backupFile))
         notifyItemChanged(0)
     }
 
@@ -91,7 +109,8 @@ class BackupListAdapter(val context: Context) : RecyclerView.Adapter<BackupListA
         init {
             itemView.findViewById<View>(R.id.action_new_backup).setOnClickListener(this)
             itemView.findViewById<View>(R.id.action_restore_backup).setOnClickListener(this)
-            itemView.findViewById<TextView>(R.id.local_backup_title).setTextColor(Utilities.getOmegaPrefs(context).accentColor)
+            itemView.findViewById<TextView>(R.id.local_backup_title)
+                .setTextColor(Utilities.getOmegaPrefs(context).accentColor)
         }
 
         override fun onClick(v: View) {
@@ -102,7 +121,8 @@ class BackupListAdapter(val context: Context) : RecyclerView.Adapter<BackupListA
         }
     }
 
-    inner class ItemHolder(itemView: View) : Holder(itemView), View.OnClickListener, View.OnLongClickListener {
+    inner class ItemHolder(itemView: View) : Holder(itemView), View.OnClickListener,
+        View.OnLongClickListener {
 
         private val previewContainer = itemView.findViewById<View>(R.id.preview_container)
         private val wallpaper = itemView.findViewById<ImageView>(R.id.wallpaper)
@@ -124,7 +144,7 @@ class BackupListAdapter(val context: Context) : RecyclerView.Adapter<BackupListA
                 backupItem.isEnabled = true
                 title.text = metaLoader.meta?.name ?: context.getString(R.string.backup_invalid)
                 summary.text = metaLoader.meta?.localizedTimestamp
-                        ?: context.getString(R.string.backup_invalid)
+                    ?: context.getString(R.string.backup_invalid)
                 metaLoader.meta?.preview?.apply {
                     previewContainer.isVisible = true
                     preview.setImageBitmap(first)
@@ -135,7 +155,7 @@ class BackupListAdapter(val context: Context) : RecyclerView.Adapter<BackupListA
                 backupItem.isEnabled = false
                 title.text = context.getString(R.string.loading)
                 summary.text = context.getString(R.string.loading)
-                metaLoader.callback = object : OmegaBackup.MetaLoader.Callback {
+                metaLoader.callback = object : BackupFile.MetaLoader.Callback {
                     override fun onMetaLoaded() {
                         notifyItemChanged(backupMetaLoaderList.indexOf(metaLoader) + 1)
                     }

@@ -1,7 +1,6 @@
 # Project exclude paths
 /buildSrc/.gradle/
 /buildSrc/build/
-build
 /buildSrc/build/classes/java/main/
 /aospWithQuickstepOmega/
 db_files
@@ -21,3 +20,4 @@ build/
 .DS_Store
 *.hprof
 /.settings/org.eclipse.buildship.core.prefs
+/.vscode/settings.json

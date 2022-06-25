@@ -22,7 +22,7 @@
         launcher:keyShadowColor="#22000000"
         launcher:ambientShadowBlur="6dp"
         launcher:keyShadowBlur="2dp"
-        launcher:keyShadowOffset="0.5dp" />
+        launcher:keyShadowOffsetX="0.5dp" />
 
     <com.google.android.apps.nexuslauncher.superg.DoubleShadowTextClock
         android:textSize="12sp"
@@ -37,5 +37,5 @@
         launcher:keyShadowColor="#33000000"
         launcher:ambientShadowBlur="2dp"
         launcher:keyShadowBlur="1dp"
-        launcher:keyShadowOffset="0.5dp" />
+        launcher:keyShadowOffsetX="0.5dp" />
 </com.google.android.apps.nexuslauncher.superg.DateWidgetView>

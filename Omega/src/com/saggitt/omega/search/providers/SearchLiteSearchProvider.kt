@@ -24,8 +24,8 @@ import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
-import com.android.launcher3.util.PackageManagerHelper
 import com.saggitt.omega.search.SearchProvider
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 class SearchLiteSearchProvider(context: Context) : SearchProvider(context) {
@@ -39,15 +39,14 @@ class SearchLiteSearchProvider(context: Context) : SearchProvider(context) {
     override val packageName: String
         get() = "com.orekie.search"
     override val isAvailable: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, packageName, 0)
+        get() = context.packageManager.isAppEnabled(packageName, 0)
 
     override fun startSearch(callback: (intent: Intent) -> Unit) =
         callback(Intent(Intent.ACTION_SEARCH).setPackage(packageName))
 
+    override val iconRes: Int
+        get() = R.drawable.ic_search
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_search, null)!!
-            .mutate()
-            .apply {
-                setTint(Utilities.getOmegaPrefs(context).accentColor)
-            }
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
+            .mutate().apply { setTint(Utilities.getOmegaPrefs(context).accentColor) }
 }

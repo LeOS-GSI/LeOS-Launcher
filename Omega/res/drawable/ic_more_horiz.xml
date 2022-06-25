@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~  This file is part of LeOS Launcher
+  ~  This file is part of Omega Launcher
   ~  Copyright (c) 2021   Saul Henriquez
   ~
   ~  This program is free software: you can redistribute it and/or modify
@@ -21,17 +21,35 @@
     android:viewportWidth="32"
     android:viewportHeight="32">
     <path
+        android:fillAlpha="0.20"
+        android:fillColor="?colorAccent"
         android:pathData="M16,16m-16,0a16,16 0,1 1,32 0a16,16 0,1 1,-32 0"
-        android:strokeAlpha="0.30"
-        android:fillColor="#00D34D"
-        android:fillAlpha="0.20" />
+        android:strokeAlpha="0.30" />
     <group
-        android:translateX="2"
-        android:translateY="2"
-        android:scaleY="1.2"
-        android:scaleX="1.2">
+        android:scaleX="0.09"
+        android:scaleY="0.09"
+        android:translateX="4.5"
+        android:translateY="4.5">
         <path
-            android:fillColor="#00D34D"
-            android:pathData="M6,10c-1.1,0 -2,0.9 -2,2s0.9,2 2,2 2,-0.9 2,-2 -0.9,-2 -2,-2zM18,10c-1.1,0 -2,0.9 -2,2s0.9,2 2,2 2,-0.9 2,-2 -0.9,-2 -2,-2zM12,10c-1.1,0 -2,0.9 -2,2s0.9,2 2,2 2,-0.9 2,-2 -0.9,-2 -2,-2z" />
+            android:fillColor="@android:color/transparent"
+            android:pathData="M128,128m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0"
+            android:strokeWidth="24"
+            android:strokeColor="?colorAccent"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:fillColor="@android:color/transparent"
+            android:pathData="M208,128m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0"
+            android:strokeWidth="24"
+            android:strokeColor="?colorAccent"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:fillColor="@android:color/transparent"
+            android:pathData="M48,128m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0"
+            android:strokeWidth="24"
+            android:strokeColor="?colorAccent"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
     </group>
 </vector>

@@ -1,18 +1,19 @@
 /*
- *     This file is part of Lawnchair Launcher.
+ * This file is part of Neo Launcher
+ * Copyright (c) 2022   Neo Launcher Team
  *
- *     Lawnchair Launcher is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
  *
- *     Lawnchair Launcher is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- *     You should have received a copy of the GNU General Public License
- *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package com.saggitt.omega.override
@@ -20,20 +21,16 @@ package com.saggitt.omega.override
 import android.content.Context
 import android.content.pm.LauncherActivityInfo
 import android.content.pm.LauncherApps
-import android.os.Build
-import com.android.launcher3.LauncherAppState
 import com.android.launcher3.LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT
 import com.android.launcher3.LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT
 import com.android.launcher3.Utilities
-import com.android.launcher3.icons.LauncherIcons
 import com.android.launcher3.model.ModelWriter
 import com.android.launcher3.model.data.WorkspaceItemInfo
-import com.saggitt.omega.iconpack.IconPackManager
 import com.saggitt.omega.util.SingletonHolder
 import com.saggitt.omega.util.ensureOnMainThread
 import com.saggitt.omega.util.useApplicationContext
 
-class ShortcutInfoProvider private constructor(context: Context) : CustomInfoProvider<WorkspaceItemInfo>(context) {
+class ShortcutInfoProvider(context: Context) : CustomInfoProvider<WorkspaceItemInfo>(context) {
 
     private val launcherApps by lazy { context.getSystemService(LauncherApps::class.java) }
 
@@ -50,26 +47,26 @@ class ShortcutInfoProvider private constructor(context: Context) : CustomInfoPro
     }
 
     override fun setTitle(info: WorkspaceItemInfo, title: String?, modelWriter: ModelWriter) {
-        info.setTitle(context, title)
+        info.setTitle(title, modelWriter)
     }
 
-    override fun setIcon(info: WorkspaceItemInfo, entry: IconPackManager.CustomIconEntry?) {
+    /*override fun setIcon(info: WorkspaceItemInfo, entry: CustomIconEntry?) {
         info.setIconEntry(context, entry)
         if (entry != null) {
             val launcherActivityInfo = getLauncherActivityInfo(info)
             val iconCache = LauncherAppState.getInstance(context).iconCache
-            val drawable = iconCache.getFullResIcon(launcherActivityInfo, info, false)
+            val drawable = iconCache.getFullResIcon(launcherActivityInfo)
             val bitmap = LauncherIcons.obtain(context)
                 .createBadgedIconBitmap(drawable, info.user, Build.VERSION_CODES.O_MR1)
             info.setIcon(context, bitmap.icon)
         } else {
             info.setIcon(context, null)
         }
-    }
+    }*/
 
-    override fun getIcon(info: WorkspaceItemInfo): IconPackManager.CustomIconEntry? {
+    /*override fun getIcon(info: WorkspaceItemInfo): CustomIconEntry? {
         return info.customIconEntry
-    }
+    }*/
 
     override fun supportsSwipeUp(info: WorkspaceItemInfo) = false
 
@@ -92,6 +89,9 @@ class ShortcutInfoProvider private constructor(context: Context) : CustomInfoPro
         return launcherApps.resolveActivity(info.getIntent(), info.user)
     }
 
-    companion object : SingletonHolder<ShortcutInfoProvider, Context>(ensureOnMainThread(
-            useApplicationContext(::ShortcutInfoProvider)))
+    companion object : SingletonHolder<ShortcutInfoProvider, Context>(
+        ensureOnMainThread(
+            useApplicationContext(::ShortcutInfoProvider)
+        )
+    )
 }

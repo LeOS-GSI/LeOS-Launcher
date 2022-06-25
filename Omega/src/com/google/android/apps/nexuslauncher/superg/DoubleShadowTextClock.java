@@ -29,7 +29,8 @@ public class DoubleShadowTextClock extends TextClock {
 
     public DoubleShadowTextClock(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        TypedArray ta = context.obtainStyledAttributes(attributeSet, new int[]{R.attr.ambientShadowColor, R.attr.keyShadowColor, R.attr.ambientShadowBlur, R.attr.keyShadowBlur, R.attr.keyShadowOffset}, i, 0);
+        TypedArray ta = context.obtainStyledAttributes(attributeSet, new int[]{R.attr.ambientShadowColor,
+                R.attr.keyShadowColor, R.attr.ambientShadowBlur, R.attr.keyShadowBlur, R.attr.keyShadowOffsetX}, i, 0);
         ambientShadowColor = ta.getColor(0, 0);
         keyShadowColor = ta.getColor(1, 0);
         ambientShadowBlur = ta.getDimension(2, 0f);

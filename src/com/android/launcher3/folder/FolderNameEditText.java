@@ -41,22 +41,18 @@ public class FolderNameEditText extends ExtendedEditText {
     private static final boolean DEBUG = false;
 
     private boolean mEnteredCompose = false;
-    private Context mContext;
 
     public FolderNameEditText(Context context) {
         super(context);
-        mContext = context;
     }
 
     public FolderNameEditText(Context context, AttributeSet attrs) {
         // ctor chaining breaks the touch handling
         super(context, attrs);
-        mContext = context;
     }
 
     public FolderNameEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mContext = context;
     }
 
     @Override
@@ -85,7 +81,7 @@ public class FolderNameEditText extends ExtendedEditText {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (Utilities.getOmegaPrefs(mContext).getLockDesktop())
+        if (Utilities.getOmegaPrefs(getContext()).getLockDesktop())
             return true;
         return super.onTouchEvent(event);
     }

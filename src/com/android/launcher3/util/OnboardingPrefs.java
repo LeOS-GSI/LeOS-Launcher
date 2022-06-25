@@ -33,20 +33,53 @@ import java.util.Map;
 public class OnboardingPrefs<T extends Launcher> {
 
     public static final String HOME_BOUNCE_SEEN = "launcher.apps_view_shown";
-    public static final String SHELF_BOUNCE_SEEN = "launcher.shelf_bounce_seen";
     public static final String HOME_BOUNCE_COUNT = "launcher.home_bounce_count";
-    public static final String SHELF_BOUNCE_COUNT = "launcher.shelf_bounce_count";
-    public static final String ALL_APPS_COUNT = "launcher.all_apps_count";
     public static final String HOTSEAT_DISCOVERY_TIP_COUNT = "launcher.hotseat_discovery_tip_count";
     public static final String HOTSEAT_LONGPRESS_TIP_SEEN = "launcher.hotseat_longpress_tip_seen";
+    public static final String SEARCH_EDU_SEEN = "launcher.search_edu_seen";
+    public static final String SEARCH_SNACKBAR_COUNT = "launcher.keyboard_snackbar_count";
+    public static final String TASKBAR_EDU_SEEN = "launcher.taskbar_edu_seen";
+    // When adding a new key, add it here as well, to be able to reset it from Developer Options.
+    public static final Map<String, String[]> ALL_PREF_KEYS = Map.of(
+            "All Apps Bounce", new String[]{HOME_BOUNCE_SEEN, HOME_BOUNCE_COUNT},
+            "Hybrid Hotseat Education", new String[]{HOTSEAT_DISCOVERY_TIP_COUNT,
+                    HOTSEAT_LONGPRESS_TIP_SEEN},
+            "Search Education", new String[]{SEARCH_EDU_SEEN, SEARCH_SNACKBAR_COUNT},
+            "Taskbar Education", new String[]{TASKBAR_EDU_SEEN}
+    );
+
+    /**
+     * Events that either have happened or have not (booleans).
+     */
+    @StringDef(value = {
+            HOME_BOUNCE_SEEN,
+            HOTSEAT_LONGPRESS_TIP_SEEN,
+            SEARCH_EDU_SEEN,
+            TASKBAR_EDU_SEEN
+    })
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface EventBoolKey {
+    }
+
+    /**
+     * Events that occur multiple times, which we count up to a max defined in {@link #MAX_COUNTS}.
+     */
+    @StringDef(value = {
+            HOME_BOUNCE_COUNT,
+            HOTSEAT_DISCOVERY_TIP_COUNT,
+            SEARCH_SNACKBAR_COUNT
+    })
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface EventCountKey {
+    }
+
     private static final Map<String, Integer> MAX_COUNTS;
 
     static {
-        Map<String, Integer> maxCounts = new ArrayMap<>(3);
+        Map<String, Integer> maxCounts = new ArrayMap<>(4);
         maxCounts.put(HOME_BOUNCE_COUNT, 3);
-        maxCounts.put(SHELF_BOUNCE_COUNT, 3);
-        maxCounts.put(ALL_APPS_COUNT, 5);
         maxCounts.put(HOTSEAT_DISCOVERY_TIP_COUNT, 5);
+        maxCounts.put(SEARCH_SNACKBAR_COUNT, 3);
         MAX_COUNTS = Collections.unmodifiableMap(maxCounts);
     }
 
@@ -65,9 +98,7 @@ public class OnboardingPrefs<T extends Launcher> {
         return mSharedPrefs.getInt(key, 0);
     }
 
-    /**
-     * @return Whether we have seen this event enough times, as defined by {@link #MAX_COUNTS}.
-     */
+    /** @return Whether we have seen this event enough times, as defined by {@link #MAX_COUNTS}. */
     public boolean hasReachedMaxCount(@EventCountKey String eventKey) {
         return hasReachedMaxCount(getCount(eventKey), eventKey);
     }
@@ -76,9 +107,7 @@ public class OnboardingPrefs<T extends Launcher> {
         return count >= MAX_COUNTS.get(eventKey);
     }
 
-    /**
-     * @return Whether we have seen the given event.
-     */
+    /** @return Whether we have seen the given event. */
     public boolean getBoolean(@EventBoolKey String key) {
         return mSharedPrefs.getBoolean(key, false);
     }
@@ -103,29 +132,5 @@ public class OnboardingPrefs<T extends Launcher> {
         count++;
         mSharedPrefs.edit().putInt(eventKey, count).apply();
         return hasReachedMaxCount(count, eventKey);
-    }
-
-    /**
-     * Events that either have happened or have not (booleans).
-     */
-    @StringDef(value = {
-            HOME_BOUNCE_SEEN,
-            SHELF_BOUNCE_SEEN
-    })
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface EventBoolKey {
-    }
-
-    /**
-     * Events that occur multiple times, which we count up to a max defined in {@link #MAX_COUNTS}.
-     */
-    @StringDef(value = {
-            HOME_BOUNCE_COUNT,
-            SHELF_BOUNCE_COUNT,
-            ALL_APPS_COUNT,
-            HOTSEAT_DISCOVERY_TIP_COUNT
-    })
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface EventCountKey {
     }
 }

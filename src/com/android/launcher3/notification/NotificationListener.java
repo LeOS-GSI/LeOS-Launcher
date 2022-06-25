@@ -18,7 +18,7 @@ package com.android.launcher3.notification;
 
 import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
-import static com.android.launcher3.util.SecureSettingsObserver.newNotificationSettingsObserver;
+import static com.android.launcher3.util.SettingsCache.NOTIFICATION_BADGING_URI;
 
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -39,7 +39,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
 
 import com.android.launcher3.util.PackageUserKey;
-import com.android.launcher3.util.SecureSettingsObserver;
+import com.android.launcher3.util.SettingsCache;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,13 +79,18 @@ public class NotificationListener extends NotificationListenerService {
      * Maps groupKey's to the corresponding group of notifications.
      */
     private final Map<String, NotificationGroup> mNotificationGroupMap = new HashMap<>();
-    /** Maps keys to their corresponding current group key */
+    /**
+     * Maps keys to their corresponding current group key
+     */
     private final Map<String, String> mNotificationGroupKeyMap = new HashMap<>();
 
-    /** The last notification key that was dismissed from launcher UI */
+    /**
+     * The last notification key that was dismissed from launcher UI
+     */
     private String mLastKeyDismissedByLauncher;
 
-    private SecureSettingsObserver mNotificationDotsObserver;
+    private SettingsCache mSettingsCache;
+    private SettingsCache.OnChangeListener mNotificationSettingsChangedListener;
 
     public NotificationListener() {
         mWorkerHandler = new Handler(MODEL_EXECUTOR.getLooper(), this::handleWorkerMessage);
@@ -93,7 +98,8 @@ public class NotificationListener extends NotificationListenerService {
         sNotificationListenerInstance = this;
     }
 
-    public static @Nullable NotificationListener getInstanceIfConnected() {
+    public static @Nullable
+    NotificationListener getInstanceIfConnected() {
         return sIsConnected ? sNotificationListenerInstance : null;
     }
 
@@ -124,11 +130,6 @@ public class NotificationListener extends NotificationListenerService {
     @Keep
     public static void removeStatusBarNotificationsChangedListener() {
         sStatusBarNotificationsChangedListener = null;
-    }
-
-    private static Pair<PackageUserKey, NotificationKeyData> toKeyPair(StatusBarNotification sbn) {
-        return Pair.create(PackageUserKey.fromNotification(sbn),
-                NotificationKeyData.fromNotification(sbn));
     }
 
     private boolean handleWorkerMessage(Message message) {
@@ -196,32 +197,6 @@ public class NotificationListener extends NotificationListenerService {
         return false;
     }
 
-    @Override
-    public void onListenerConnected() {
-        super.onListenerConnected();
-        sIsConnected = true;
-
-        mNotificationDotsObserver =
-                newNotificationSettingsObserver(this, this::onNotificationSettingsChanged);
-        mNotificationDotsObserver.register();
-        mNotificationDotsObserver.dispatchOnChange();
-
-        onNotificationFullRefresh();
-    }
-
-    private void onNotificationSettingsChanged(boolean areNotificationDotsEnabled) {
-        if (!areNotificationDotsEnabled && sIsConnected) {
-            requestUnbind();
-        }
-    }
-
-    private void onNotificationFullRefresh() {
-        mWorkerHandler.obtainMessage(MSG_NOTIFICATION_FULL_REFRESH).sendToTarget();
-        if (sStatusBarNotificationsChangedListener != null) {
-            sStatusBarNotificationsChangedListener.onNotificationFullRefresh();
-        }
-    }
-
     private boolean handleUiMessage(Message message) {
         switch (message.what) {
             case MSG_NOTIFICATION_POSTED:
@@ -249,10 +224,38 @@ public class NotificationListener extends NotificationListenerService {
     }
 
     @Override
+    public void onListenerConnected() {
+        super.onListenerConnected();
+        sIsConnected = true;
+
+        // Register an observer to rebind the notification listener when dots are re-enabled.
+        mSettingsCache = SettingsCache.INSTANCE.get(this);
+        mNotificationSettingsChangedListener = this::onNotificationSettingsChanged;
+        mSettingsCache.register(NOTIFICATION_BADGING_URI,
+                mNotificationSettingsChangedListener);
+        onNotificationSettingsChanged(mSettingsCache.getValue(NOTIFICATION_BADGING_URI));
+
+        onNotificationFullRefresh();
+    }
+
+    private void onNotificationSettingsChanged(boolean areNotificationDotsEnabled) {
+        if (!areNotificationDotsEnabled && sIsConnected) {
+            requestUnbind();
+        }
+    }
+
+    private void onNotificationFullRefresh() {
+        mWorkerHandler.obtainMessage(MSG_NOTIFICATION_FULL_REFRESH).sendToTarget();
+        if (sStatusBarNotificationsChangedListener != null) {
+            sStatusBarNotificationsChangedListener.onNotificationFullRefresh();
+        }
+    }
+
+    @Override
     public void onListenerDisconnected() {
         super.onListenerDisconnected();
         sIsConnected = false;
-        mNotificationDotsObserver.unregister();
+        mSettingsCache.unregister(NOTIFICATION_BADGING_URI, mNotificationSettingsChangedListener);
         onNotificationFullRefresh();
     }
 
@@ -261,7 +264,6 @@ public class NotificationListener extends NotificationListenerService {
         if (sbn != null) {
             mWorkerHandler.obtainMessage(MSG_NOTIFICATION_POSTED, sbn).sendToTarget();
         }
-
         if (sStatusBarNotificationsChangedListener != null) {
             sStatusBarNotificationsChangedListener.onNotificationPosted(sbn);
         }
@@ -272,7 +274,6 @@ public class NotificationListener extends NotificationListenerService {
         if (sbn != null) {
             mWorkerHandler.obtainMessage(MSG_NOTIFICATION_REMOVED, sbn).sendToTarget();
         }
-
         if (sStatusBarNotificationsChangedListener != null) {
             sStatusBarNotificationsChangedListener.onNotificationRemoved(sbn);
         }
@@ -360,6 +361,11 @@ public class NotificationListener extends NotificationListenerService {
         boolean missingTitleAndText = TextUtils.isEmpty(title) && TextUtils.isEmpty(text);
         boolean isGroupHeader = (notification.flags & Notification.FLAG_GROUP_SUMMARY) != 0;
         return !isGroupHeader && !missingTitleAndText;
+    }
+
+    private static Pair<PackageUserKey, NotificationKeyData> toKeyPair(StatusBarNotification sbn) {
+        return Pair.create(PackageUserKey.fromNotification(sbn),
+                NotificationKeyData.fromNotification(sbn));
     }
 
     public interface NotificationsChangedListener {

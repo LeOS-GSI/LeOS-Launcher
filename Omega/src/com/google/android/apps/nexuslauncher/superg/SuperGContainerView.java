@@ -1,8 +1,9 @@
 package com.google.android.apps.nexuslauncher.superg;
 
+import static com.saggitt.omega.util.ContextExtensionsKt.getColorAttr;
+
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,8 +14,6 @@ import com.android.launcher3.R;
 import com.saggitt.omega.util.OmegaUtilsKt;
 
 public class SuperGContainerView extends BaseGContainerView {
-
-    private int mQsbColor = Color.WHITE;
 
     public SuperGContainerView(Context paramContext) {
         this(paramContext, null);
@@ -53,7 +52,7 @@ public class SuperGContainerView extends BaseGContainerView {
         } else {
             Rect workspacePadding = deviceProfile.workspacePadding;
             int fullWidth = size - workspacePadding.left - workspacePadding.right;
-            qsbWidth = DeviceProfile.calculateCellWidth(fullWidth, deviceProfile.inv.numColumns) * deviceProfile.inv.numColumns;
+            qsbWidth = DeviceProfile.calculateCellWidth(fullWidth, 0, deviceProfile.inv.numColumns) * deviceProfile.inv.numColumns;
             marginStart = 0;
         }
 
@@ -86,6 +85,6 @@ public class SuperGContainerView extends BaseGContainerView {
     protected void applyQsbColor() {
         super.applyQsbColor();
         float radius = OmegaUtilsKt.dpToPx(100);
-        mQsbView.setBackground(OmegaUtilsKt.createRipplePill(getContext(), mQsbColor, radius));
+        mQsbView.setBackground(OmegaUtilsKt.createRipplePill(getContext(), getColorAttr(getContext(), R.attr.popupColorPrimary), radius));
     }
 }

@@ -1,6 +1,6 @@
 /*
  *  This file is part of Omega Launcher
- *  Copyright (c) 2021   Saul Henriquez
+ *  Copyright (c) 2021   Omega Launcher Team
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as
@@ -18,58 +18,256 @@
 
 package com.saggitt.omega.icons
 
-import android.annotation.SuppressLint
-import android.content.Context
+import android.content.*
+import android.content.Intent.*
+import android.content.pm.ActivityInfo
 import android.content.pm.LauncherActivityInfo
-import android.content.pm.ShortcutInfo
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
-import com.android.launcher3.AdaptiveIconCompat
+import android.os.Handler
+import android.os.Process
+import android.os.UserHandle
+import android.os.UserManager
+import android.util.ArrayMap
+import android.util.Log
+import androidx.core.content.getSystemService
+import com.android.launcher3.BuildConfig
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
-import com.android.launcher3.model.data.ItemInfo
-import com.google.android.apps.nexuslauncher.DynamicIconProvider
-import com.saggitt.omega.iconpack.IconPackManager
+import com.android.launcher3.icons.IconProvider
+import com.android.launcher3.icons.ThemedIconDrawable
+import com.android.launcher3.util.ComponentKey
+import com.android.launcher3.util.SafeCloseable
+import com.saggitt.omega.data.IconOverrideRepository
+import com.saggitt.omega.iconpack.IconEntry
+import com.saggitt.omega.iconpack.IconPack
+import com.saggitt.omega.iconpack.IconPackProvider
+import com.saggitt.omega.iconpack.IconType
+import com.saggitt.omega.util.MultiSafeCloseable
+import org.xmlpull.v1.XmlPullParser
+import java.util.function.Supplier
 
-class CustomIconProvider(context: Context) : DynamicIconProvider(context) {
-    private val iconPackManager by lazy { IconPackManager.getInstance(context) }
+class CustomIconProvider @JvmOverloads constructor(
+    private val context: Context,
+    supportsIconTheme: Boolean = false
+) :
+    IconProvider(context, supportsIconTheme) {
+    private val prefs = Utilities.getOmegaPrefs(context)
+    private val mContext = context
+    private val iconPackProvider = IconPackProvider.INSTANCE.get(context)
+    private val overrideRepo = IconOverrideRepository.INSTANCE.get(context)
+    private val iconPack get() = iconPackProvider.getIconPackOrSystem(prefs.iconPackPackage)
 
-    fun getIcon(shortcutInfo: ShortcutInfo, iconDpi: Int): Drawable? {
-        return iconPackManager.getIcon(
-            shortcutInfo,
-            iconDpi
-        )//.assertNotAdaptiveIconDrawable(shortcutInfo)
-    }
-
-    override fun getIcon(launcherActivityInfo: LauncherActivityInfo, iconDpi: Int, flattenDrawable: Boolean): Drawable {
-        return iconPackManager.getIcon(launcherActivityInfo, iconDpi, flattenDrawable, null, this)//.assertNotAdaptiveIconDrawable(launcherActivityInfo)
-    }
-
-    fun getIcon(launcherActivityInfo: LauncherActivityInfo, itemInfo: ItemInfo, iconDpi: Int, flattenDrawable: Boolean): Drawable {
-        return iconPackManager.getIcon(launcherActivityInfo, iconDpi, flattenDrawable, itemInfo, this)//.assertNotAdaptiveIconDrawable(launcherActivityInfo)
-    }
-
-    fun getDynamicIcon(launcherActivityInfo: LauncherActivityInfo?, iconDpi: Int, flattenDrawable: Boolean): Drawable {
-        return super.getIcon(launcherActivityInfo, iconDpi, flattenDrawable)//.assertNotAdaptiveIconDrawable(launcherActivityInfo)
-    }
-
-    private fun <T> T.assertNotAdaptiveIconDrawable(info: Any?): T {
-        if (Utilities.ATLEAST_OREO && this is AdaptiveIconCompat) {
-            error(
-                "unwrapped AdaptiveIconDrawable for ${
-                    if (info is LauncherActivityInfo) info.applicationInfo else info
-                }"
-            )
+    private var _themeMap: Map<ComponentName, ThemedIconDrawable.ThemeData>? = null
+    private val themeMap: Map<ComponentName, ThemedIconDrawable.ThemeData>
+        get() {
+            if (_themeMap == null) {
+                _themeMap = createThemedIconMap()
+            }
+            return _themeMap!!
         }
-        return this
+    val supportsIconTheme get() = themeMap != DISABLED_MAP
+
+    private fun resolveIconEntry(componentName: ComponentName, user: UserHandle): IconEntry? {
+        val componentKey = ComponentKey(componentName, user)
+        // first look for user-overridden icon
+        val overrideItem = overrideRepo.overridesMap[componentKey]
+        if (overrideItem != null) {
+            return overrideItem.toIconEntry()
+        }
+
+        val iconPack = this.iconPack ?: return null
+        // then look for dynamic calendar
+        val calendarEntry = iconPack.getCalendar(componentName)
+        if (calendarEntry != null) {
+            return calendarEntry
+        }
+        // finally, look for normal icon
+        return iconPack.getIcon(componentName)
     }
 
-    companion object {
-
-        @SuppressLint("UseCompatLoadingForDrawables")
-        @JvmStatic
-        fun getAdaptiveIconDrawableWrapper(context: Context): AdaptiveIconCompat {
-            return AdaptiveIconCompat.wrap(context.getDrawable(
-                    R.drawable.adaptive_icon_drawable_wrapper)!!.mutate()) as AdaptiveIconCompat
+    override fun getIconWithOverrides(
+        packageName: String,
+        component: String,
+        user: UserHandle,
+        iconDpi: Int,
+        fallback: Supplier<Drawable>
+    ): Drawable {
+        val componentName = ComponentName(packageName, component)
+        val iconEntry = resolveIconEntry(componentName, user)
+        var resolvedEntry = iconEntry
+        var iconType = ICON_TYPE_DEFAULT
+        var themeData: ThemedIconDrawable.ThemeData? = null
+        if (iconEntry != null) {
+            val clock = iconPackProvider.getClockMetadata(iconEntry)
+            when {
+                iconEntry.type == IconType.Calendar -> {
+                    resolvedEntry = iconEntry.resolveDynamicCalendar(getDay())
+                    themeData = getThemeData(mCalendar.packageName, "")
+                    iconType = ICON_TYPE_CALENDAR
+                }
+                !supportsIconTheme -> {
+                    // theming is disabled, don't populate theme data
+                }
+                clock != null -> {
+                    // the icon supports dynamic clock, use dynamic themed clock
+                    themeData = getThemeData(mClock.packageName, "")
+                    iconType = ICON_TYPE_CLOCK
+                }
+                packageName == mClock.packageName -> {
+                    // is clock app but icon might not be adaptive, fallback to static themed clock
+                    themeData = ThemedIconDrawable.ThemeData(
+                        context.resources,
+                        BuildConfig.APPLICATION_ID,
+                        R.drawable.themed_icon_static_clock
+                    )
+                }
+                packageName == mCalendar.packageName -> {
+                    // calendar app, apply the dynamic calendar icon
+                    themeData = getThemeData(mCalendar.packageName, "")
+                    iconType = ICON_TYPE_CALENDAR
+                }
+                else -> {
+                    // regular icon
+                    themeData = getThemeData(componentName)
+                }
+            }
         }
+        val icon = resolvedEntry?.let { iconPackProvider.getDrawable(it, iconDpi, user) }
+        val td = themeData
+        if (icon != null) {
+            return if (td != null) td.wrapDrawable(icon, iconType) else icon
+        }
+        return super.getIconWithOverrides(packageName, component, user, iconDpi, fallback)
+    }
+
+    override fun getIcon(info: ActivityInfo?): Drawable {
+        return CustomAdaptiveIconDrawable.wrapNonNull(super.getIcon(info))
+    }
+
+    override fun getIcon(info: ActivityInfo?, iconDpi: Int): Drawable {
+        return CustomAdaptiveIconDrawable.wrapNonNull(super.getIcon(info, iconDpi))
+    }
+
+    override fun getIcon(info: LauncherActivityInfo?, iconDpi: Int): Drawable {
+        return CustomAdaptiveIconDrawable.wrapNonNull(super.getIcon(info, iconDpi))
+    }
+
+    override fun registerIconChangeListener(
+        callback: IconChangeListener,
+        handler: Handler
+    ): SafeCloseable {
+        return MultiSafeCloseable().apply {
+            add(super.registerIconChangeListener(callback, handler))
+            add(IconPackChangeReceiver(mContext, handler, callback))
+        }
+    }
+
+    private inner class IconPackChangeReceiver(
+        private val context: Context,
+        private val handler: Handler,
+        private val callback: IconChangeListener
+    ) : SafeCloseable {
+
+        private var calendarAndClockChangeReceiver: CalendarAndClockChangeReceiver? = null
+            set(value) {
+                field?.close()
+                field = value
+            }
+
+        private val iconPackPref = prefs.iconPackPackage
+
+        init {
+            recreateCalendarAndClockChangeReceiver()
+        }
+
+        private fun recreateCalendarAndClockChangeReceiver() {
+            val iconPack =
+                IconPackProvider.INSTANCE.get(context).getIconPackOrSystem(iconPackPref)
+            calendarAndClockChangeReceiver = if (iconPack != null) {
+                CalendarAndClockChangeReceiver(context, handler, iconPack, callback)
+            } else {
+                null
+            }
+        }
+
+        override fun close() {
+            calendarAndClockChangeReceiver = null
+        }
+    }
+
+    private class CalendarAndClockChangeReceiver(
+        private val context: Context, handler: Handler,
+        private val iconPack: IconPack,
+        private val callback: IconChangeListener
+    ) : BroadcastReceiver(), SafeCloseable {
+
+        init {
+            val filter = IntentFilter(ACTION_TIMEZONE_CHANGED)
+            filter.addAction(ACTION_TIME_CHANGED)
+            filter.addAction(ACTION_DATE_CHANGED)
+            context.registerReceiver(this, filter, null, handler)
+        }
+
+        override fun onReceive(context: Context, intent: Intent) {
+            when (intent.action) {
+                ACTION_TIMEZONE_CHANGED -> {
+                    iconPack.getClocks().forEach { componentName ->
+                        callback.onAppIconChanged(componentName.packageName, Process.myUserHandle())
+                    }
+                }
+                ACTION_DATE_CHANGED, ACTION_TIME_CHANGED -> {
+                    context.getSystemService<UserManager>()?.userProfiles?.forEach { user ->
+                        iconPack.getCalendars().forEach { componentName ->
+                            callback.onAppIconChanged(componentName.packageName, user)
+                        }
+                    }
+                }
+            }
+        }
+
+        override fun close() {
+            context.unregisterReceiver(this)
+        }
+    }
+
+    private fun createThemedIconMap(): MutableMap<ComponentName, ThemedIconDrawable.ThemeData> {
+        val map = ArrayMap<ComponentName, ThemedIconDrawable.ThemeData>()
+
+        fun updateMapFromResources(resources: Resources, packageName: String) {
+            try {
+                val xmlId = resources.getIdentifier(THEMED_ICON_MAP_FILE, "xml", packageName)
+                if (xmlId != 0) {
+                    val parser = resources.getXml(xmlId)
+                    val depth = parser.depth
+                    var type: Int
+                    while (
+                        (parser.next()
+                            .also { type = it } != XmlPullParser.END_TAG || parser.depth > depth) &&
+                        type != XmlPullParser.END_DOCUMENT
+                    ) {
+                        if (type != XmlPullParser.START_TAG) continue
+                        if (TAG_ICON == parser.name) {
+                            val pkg = parser.getAttributeValue(null, ATTR_PACKAGE)
+                            val cmp = parser.getAttributeValue(null, ATTR_COMPONENT) ?: ""
+                            val iconId = parser.getAttributeResourceValue(null, ATTR_DRAWABLE, 0)
+                            if (iconId != 0 && pkg.isNotEmpty()) {
+                                map[ComponentName(pkg, cmp)] =
+                                    ThemedIconDrawable.ThemeData(resources, packageName, iconId)
+                            }
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e("CustomIconProvider", "Unable to parse icon map.", e)
+            }
+        }
+
+        updateMapFromResources(
+            resources = context.resources,
+            packageName = context.packageName
+        )
+
+        return map
     }
 }

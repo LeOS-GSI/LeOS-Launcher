@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 /*
 **
 ** Copyright 2017, The Android Open Source Project
@@ -17,70 +16,58 @@
 ** limitations under the License.
 */
 -->
-<manifest 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.android.launcher3">
 
-    <permission
-        android:name="${packageName}.permission.HOTSEAT_EDU"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="signatureOrSystem" />
-
-    <uses-permission android:name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-    <uses-permission android:name="${packageName}.permission.HOTSEAT_EDU" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:backupAgent="com.android.launcher3.LauncherBackupAgent"
-        android:fullBackupOnly="true"
         android:fullBackupContent="@xml/backupscheme"
+        android:fullBackupOnly="true"
         android:hardwareAccelerated="true"
         android:label="@string/derived_app_name"
-        android:theme="@style/AppTheme"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
-        android:exported="true"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.Light">
 
         <service
             android:name="com.android.quickstep.TouchInteractionService"
-            android:permission="android.permission.STATUS_BAR_SERVICE"
-            android:directBootAware="true" >
+            android:directBootAware="true"
+            android:exported="true"
+            android:permission="android.permission.STATUS_BAR_SERVICE">
             <intent-filter>
                 <action android:name="android.intent.action.QUICKSTEP_SERVICE" />
             </intent-filter>
         </service>
 
-        <activity android:name="com.android.quickstep.RecentsActivity"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTask"
+        <activity
+            android:name="com.android.quickstep.RecentsActivity"
             android:clearTaskOnLaunch="true"
-            android:stateNotNeeded="true"
-            android:theme="@style/LauncherTheme"
-            android:screenOrientation="unspecified"
-            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize|density"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
             android:resizeableActivity="true"
             android:resumeWhilePausing="true"
-            android:exported="true"
-            android:taskAffinity="" />
+            android:screenOrientation="unspecified"
+            android:stateNotNeeded="true"
+            android:taskAffinity=""
+            android:theme="@style/LauncherTheme" />
 
         <!-- Content provider to settings search. The autority should be same as the packageName -->
         <provider
             android:name="com.android.quickstep.LauncherSearchIndexablesProvider"
             android:authorities="${packageName}"
+            android:exported="true"
             android:grantUriPermissions="true"
             android:multiprocess="true"
-            android:permission="android.permission.READ_SEARCH_INDEXABLES"
-            android:exported="true">
+            android:permission="android.permission.READ_SEARCH_INDEXABLES">
             <intent-filter>
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
 
         <!-- FileProvider used for sharing images. -->
-        <!--
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${packageName}.overview.fileprovider"
@@ -90,46 +77,46 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/overview_file_provider_paths" />
         </provider>
-        -->
-        <service
-            android:name="com.android.launcher3.uioverrides.WallpaperManagerCompatVL$ColorExtractionService"
-            tools:node="remove" />
 
         <activity
             android:name="com.android.launcher3.proxy.ProxyActivityStarter"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-            android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
 
         <activity
             android:name="com.android.quickstep.interaction.GestureSandboxActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.android.quickstep.action.GESTURE_SANDBOX" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!--
+        Activity following gesture nav onboarding.
+        It's protected by android.permission.REBOOT to ensure that only system apps can start it
+        (setup wizard already has this permission)
+        -->
         <activity
-            android:name=".hybridhotseat.HotseatEduActivity"
-            android:clearTaskOnLaunch="true"
-            android:launchMode="singleTask"
-            android:noHistory="true"
-            android:permission="${packageName}.permission.HOTSEAT_EDU"
-            android:theme="@android:style/Theme.NoDisplay">
+            android:name="com.android.quickstep.interaction.AllSetActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/allset_title"
+            android:permission="android.permission.REBOOT"
+            android:screenOrientation="portrait"
+            android:theme="@style/AllSetTheme">
             <intent-filter>
-                <action android:name="com.android.launcher3.action.SHOW_HYBRID_HOTSEAT_EDU" />
+                <action android:name="com.android.quickstep.action.GESTURE_ONBOARDING_ALL_SET" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <service
-            android:name="com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService"
-            android:exported="false"
-            android:process=":wallpaper_chooser"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

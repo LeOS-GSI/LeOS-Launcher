@@ -22,7 +22,7 @@ public class DoubleShadowTextView extends AppCompatTextView {
     public DoubleShadowTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mShadowInfo = new DoubleShadowBubbleTextView.ShadowInfo(context, attrs, defStyleAttr);
-        setShadowLayer(Math.max(mShadowInfo.keyShadowBlur + mShadowInfo.keyShadowOffset, mShadowInfo.ambientShadowBlur), 0f, 0f, mShadowInfo.keyShadowColor);
+        setShadowLayer(Math.max(mShadowInfo.keyShadowBlur + mShadowInfo.keyShadowOffsetX, mShadowInfo.ambientShadowBlur), 0f, 0f, mShadowInfo.keyShadowColor);
     }
 
     protected void onDraw(Canvas canvas) {
@@ -32,7 +32,7 @@ public class DoubleShadowTextView extends AppCompatTextView {
         }
         getPaint().setShadowLayer(mShadowInfo.ambientShadowBlur, 0.0f, 0.0f, mShadowInfo.ambientShadowColor);
         super.onDraw(canvas);
-        getPaint().setShadowLayer(mShadowInfo.keyShadowBlur, 0.0f, mShadowInfo.keyShadowOffset, mShadowInfo.keyShadowColor);
+        getPaint().setShadowLayer(mShadowInfo.keyShadowBlur, 0.0f, mShadowInfo.keyShadowOffsetX, mShadowInfo.keyShadowColor);
         super.onDraw(canvas);
     }
 }

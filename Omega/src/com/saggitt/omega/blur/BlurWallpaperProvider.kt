@@ -17,6 +17,7 @@
 
 package com.saggitt.omega.blur
 
+import android.annotation.SuppressLint
 import android.app.WallpaperManager
 import android.content.Context
 import android.graphics.*
@@ -27,6 +28,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
+import com.android.launcher3.util.Executors.MAIN_EXECUTOR
 import com.saggitt.omega.util.*
 
 class BlurWallpaperProvider(val context: Context) {
@@ -50,13 +52,6 @@ class BlurWallpaperProvider(val context: Context) {
             }
         }
     private var mOffset: Float = 0.6f
-    var blurRadius = 25
-        private set
-    private val mNotifyRunnable = Runnable {
-        for (listener in mListeners) {
-            listener.onWallpaperChanged()
-        }
-    }
 
     private val mVibrancyPaint = Paint(Paint.FILTER_BITMAP_FLAG or Paint.ANTI_ALIAS_FLAG)
     private val mColorPaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -85,6 +80,7 @@ class BlurWallpaperProvider(val context: Context) {
 
     private fun getEnabledStatus() = mWallpaperManager.wallpaperInfo == null && prefs.enableBlur
 
+    @SuppressLint("MissingPermission")
     private fun updateWallpaper() {
         if (applyTask != null) {
             updatePending = true
@@ -165,11 +161,6 @@ class BlurWallpaperProvider(val context: Context) {
 
     private fun scaleToScreenSize(bitmap: Bitmap): Bitmap {
         val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        /*val display = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            context.display
-        } else {
-            wm.defaultDisplay
-        }*/
         val display = wm.defaultDisplay
         display?.getRealMetrics(mDisplayMetrics)
 
@@ -210,7 +201,7 @@ class BlurWallpaperProvider(val context: Context) {
 //        get() = Utilities.resolveAttributeData(context, R.attr.blurTintColor)
 
     fun updateAsync() {
-        Utilities.THREAD_POOL_EXECUTOR.execute(mUpdateRunnable)
+        MAIN_EXECUTOR.execute(mUpdateRunnable)
     }
 
     private fun applyVibrancy(wallpaper: Bitmap): Bitmap {
@@ -275,12 +266,6 @@ class BlurWallpaperProvider(val context: Context) {
         }
     }
 
-    fun setUseTransparency(useTransparency: Boolean) {
-        for (listener in mListeners) {
-            listener.setUseTransparency(useTransparency)
-        }
-    }
-
     interface Listener {
 
         fun onWallpaperChanged() {}
@@ -291,10 +276,6 @@ class BlurWallpaperProvider(val context: Context) {
 
     companion object :
         SingletonHolder<BlurWallpaperProvider, Context>(ensureOnMainThread(useApplicationContext(::BlurWallpaperProvider))) {
-
-        const val BLUR_QSB = 1
-        const val BLUR_FOLDER = 2
-        const val BLUR_ALLAPPS = 4
         const val DOWNSAMPLE_FACTOR = 8
 
         var isEnabled: Boolean = false

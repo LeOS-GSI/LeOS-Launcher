@@ -14,7 +14,6 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.gestures.handlers
 
 import android.annotation.SuppressLint
@@ -28,7 +27,8 @@ import org.json.JSONObject
 import java.lang.reflect.InvocationTargetException
 
 @Keep
-class NotificationsOpenGestureHandler(context: Context, config: JSONObject?) : GestureHandler(context, config) {
+class NotificationsOpenGestureHandler(context: Context, config: JSONObject?) :
+    GestureHandler(context, config) {
 
     override val displayName = context.getString(R.string.action_open_notifications)
 
@@ -36,8 +36,8 @@ class NotificationsOpenGestureHandler(context: Context, config: JSONObject?) : G
     override fun onGestureTrigger(controller: GestureController, view: View?) {
         try {
             Class.forName("android.app.StatusBarManager")
-                    .getMethod("expandNotificationsPanel")
-                    .invoke(controller.launcher.getSystemService("statusbar"))
+                .getMethod("expandNotificationsPanel")
+                .invoke(controller.launcher.getSystemService("statusbar"))
         } catch (ex: ClassNotFoundException) {
         } catch (ex: NoSuchMethodException) {
         } catch (ex: IllegalAccessException) {
@@ -48,7 +48,8 @@ class NotificationsOpenGestureHandler(context: Context, config: JSONObject?) : G
 
 // TODO not used class, should be removed?
 @Keep
-class NotificationsCloseGestureHandler(context: Context, config: JSONObject?) : GestureHandler(context, config) {
+class NotificationsCloseGestureHandler(context: Context, config: JSONObject?) :
+    GestureHandler(context, config) {
 
     override val displayName = context.getString(R.string.action_close_notifications)
 
@@ -56,8 +57,8 @@ class NotificationsCloseGestureHandler(context: Context, config: JSONObject?) : 
     override fun onGestureTrigger(controller: GestureController, view: View?) {
         try {
             Class.forName("android.app.StatusBarManager")
-                    .getMethod("collapsePanels")
-                    .invoke(controller.launcher.getSystemService("statusbar"))
+                .getMethod("collapsePanels")
+                .invoke(controller.launcher.getSystemService("statusbar"))
         } catch (ex: ClassNotFoundException) {
         } catch (ex: NoSuchMethodException) {
         } catch (ex: IllegalAccessException) {

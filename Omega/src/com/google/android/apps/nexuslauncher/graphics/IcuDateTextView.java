@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.saggitt.omega.OmegaPreferences;
+import com.saggitt.omega.preferences.OmegaPreferences;
 
 import java.util.Locale;
 

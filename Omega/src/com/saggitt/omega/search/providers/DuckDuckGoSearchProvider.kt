@@ -23,8 +23,8 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
-import com.android.launcher3.util.PackageManagerHelper
 import com.saggitt.omega.search.SearchProvider
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 class DuckDuckGoSearchProvider(context: Context) : SearchProvider(context) {
@@ -39,11 +39,13 @@ class DuckDuckGoSearchProvider(context: Context) : SearchProvider(context) {
         get() = "com.duckduckgo.mobile.android"
 
     override val isAvailable: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, packageName, 0)
+        get() = context.packageManager.isAppEnabled(packageName, 0)
 
     override fun startSearch(callback: (intent: Intent) -> Unit) =
         callback(Intent(Intent.ACTION_ASSIST).setPackage(packageName))
 
+    override val iconRes: Int
+        get() = R.drawable.ic_ddg
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_ddg, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 }

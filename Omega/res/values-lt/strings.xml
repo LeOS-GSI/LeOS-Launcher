@@ -12,20 +12,20 @@
     <string name="title__general_smartspace">Pagrindinio ekrano valdiklis</string>
     <string name="title__desktop_grid_size">Tinklelio dydis</string>
     <string name="title__desktop_icon_size">Piktogramos dydis</string>
-    <string name="title__desktop_full_width_widgets">Viso pločio valdikliai</string>
+    <string name="title_desktop_full_width_widgets">Viso pločio valdikliai</string>
     <string name="allow_rotation_blocked_desc">Dabartinis ekrano nustatymas neleidžia pasukimo</string>
     <string name="pref_category__incubating">Inkubacija</string>
     <string name="pref_category__others">Kita</string>
     <string name="pref_category__inputs">Gestai ir paieška</string>
-    <string name="pref_category__interfaces">Sąsajos</string>
-    <string name="summary__general_about">Daugiau informacijos apie LeOS Launcher</string>
+    <string name="pref_category__interfaces">Vartotojo sąsaja</string>
+    <string name="summary__general_about">Daugiau apie Neo Launcher</string>
     <string name="summary__general_advanced">Kalba, atsarginė kopija, paieškos nustatymas</string>
     <string name="summary__general_notifications">Ženklelių skaičius, ženklelio spalva, gestai</string>
     <string name="summary__general_search">Paieškos teikėjas, stilius, piktogramos</string>
     <string name="summary__general_theme">Keiskite spalvas, piktogramų paketą, piktogramos formą</string>
     <string name="title__general_notifications">Gestai ir pranešimai</string>
     <string name="title__general_advanced">Išplėstiniai nustatymai</string>
-    <string name="title__general_search">Paieška</string>
+    <string name="title__general_search">Paieška ir aplankai</string>
     <string name="title__general_theme">Tema</string>
     <string name="title__general_dock">Greitos prieigos įrankių juosta</string>
     <string name="title__general_desktop">Darbalaukis</string>
@@ -49,7 +49,7 @@
     <string name="pref_appcategorization_folders_summary">Bakstelėkite, kad atidarytumėte iššokantį langą.</string>
     <string name="app_categorization_folders">Aplankai</string>
     <string name="pref_appcategorization_style_text">Stilius</string>
-    <string name="pref_appcategorization_enable_title">Programėlių skirstymas į kategorijas</string>
+    <string name="title_app_categorize">Programėlių skirstymas į kategorijas</string>
     <string name="cat_drawer_icons">Piktogramos</string>
     <string name="cat_drawer_grid">Tinklelis</string>
     <string name="title_drawer_paged">Puslapiai</string>
@@ -66,8 +66,8 @@
     <string name="title__sort_by_color">Pagal spalvą</string>
     <string name="title__sort_most_used">Dažniausiai naudojamos</string>
     <string name="title__sort_last_installed">Vėliausiai įdiegtos</string>
-    <string name="title__sort_alphabetical_za">Abėcėlės tvarka ZA</string>
-    <string name="title__sort_alphabetical_az">Abėcėlės tvarka AZ</string>
+    <string name="title__sort_alphabetical_za">Z→A</string>
+    <string name="title__sort_alphabetical_az">A→Z</string>
     <string name="title__sort_mode">Programėlių rikiavimas</string>
     <string name="title_drawer_row_height">Eilutės aukštis</string>
     <string name="title_drawer_enable_background">Naudoti pasirinktinę fono spalvą</string>
@@ -110,12 +110,12 @@
     <string name="home_widget">Vienu žvilgsniu</string>
     <string name="name_provider_alarm_events">Artėjantys žadintuvo signalai</string>
     <string name="resuable_text_alarm">Žadintuvas</string>
-    <string name="msg_minus_one_on_left">Į kairę nuo pagrindinio ekrano</string>
+    <string name="pref_shelf_summary">Į kairę nuo pagrindinio ekrano</string>
     <string name="title_smartspace_feed_theme">Sklaidos kanalo tema</string>
     <string name="title_show_google_app">Rodyti Google app</string>
     <string name="title_white_only_treatment">Pakeisti baltus fonus</string>
     <string name="title_legacy_treatment">Sukurti prisitaikančias piktogramas</string>
-    <string name="title_legacy_colored_backgrounds">Spalvoti fonai</string>
+    <string name="title_colored_backgrounds">Spalvoti fonai</string>
     <string name="title_force_shapeless">Priverstinai naudoti beformes piktogramas</string>
     <string name="title_adaptify_pack">Sukurti prisitaikančias piktogramų paketo piktogramas</string>
     <string name="color_presets">Parinktys</string>
@@ -143,7 +143,6 @@
     <string name="label_voice_search">Paieška balsu</string>
     <string name="automatic_short">Auto</string>
     <string name="reset_to_default">Atstatyti į numatytuosius</string>
-    <string name="enabled_icon_packs">Įjungta</string>
     <string name="drag_to_enable_packs">Vilkite aukštyn, kad įjungtumėte</string>
     <string name="drag_to_disable_packs">Vilkite žemyn, kad išjungtumėte</string>
     <string name="dash_device_settings_summary">Atidaryti įrenginio nustatymus</string>
@@ -161,8 +160,7 @@
     <string name="dash_all_apps_title">Atidaryti „Visos programėlės“</string>
     <string name="about_source">Pirminis kodas</string>
     <string name="about_translators">Vertėjai</string>
-    <string name="about_team">Šeimos nariai</string>
-    <string name="title__about_project_team">Kūrėjas</string>
+    <string name="about_team">Komandos nariai</string>
     <string name="title__about_changelog">Pakeitimų žurnalas</string>
     <string name="title__about_donate">Paaukoti</string>
     <string name="about_build_information">Versijos informacija</string>
@@ -205,7 +203,6 @@
     <string name="title_create">Sukurti</string>
     <string name="backup_pref_summary">Išsaugoti pagrindinį ekraną, atkurti atsargines kopijas</string>
     <string name="backup_share">Dalintis</string>
-    <string name="backup_delete_failed">Kažkas nutiko ne taip</string>
     <string name="backup_delete">Slėpti</string>
     <string name="backups">Atsarginės kopijos</string>
     <string name="title__advanced_language">Kalba</string>
@@ -250,8 +247,6 @@
     <string name="title__folder_badge_count">Rodyti aplanko ženklelių skaičių</string>
     <string name="notification_custom_color">Naudoti pasirinktinę spalvą</string>
     <string name="title__notification_count">Rodyti pranešimų skaičių</string>
-    <string name="off">Išjungta</string>
-    <string name="on">Įjungta</string>
     <string name="folder_name_format">Aplankas: <xliff:g example="Games" id="name">%1$s</xliff:g></string>
     <string name="units_romer">Rømer</string>
     <string name="units_reaumur">Réaumur</string>
@@ -297,7 +292,6 @@
     <string name="tab_type_smart">Automatiškai</string>
     <string name="tab_type_custom_desc">Pasirinkti nuorodas neautomatiniu būdu.</string>
     <string name="pref_appcategorization_tabs_summary">Braukite naršydami tarp grupių.</string>
-    <string name="pref_appcategorization_enable_summary">Pasirinkite stalčiaus išdėstymo režimą</string>
     <string name="summary__drawer_hide_apps">Slėpti programėlę iš programėlių stalčiaus</string>
     <string name="title_search_hidden_apps">Rasti paslėptas nuorodas</string>
     <string name="title_all_apps_search">Stalčiaus paieškos juosta</string>
@@ -351,14 +345,14 @@
     <string name="title__theme_blur_radius">Suliejimo intensyvumas</string>
     <string name="title__theme_blur">Suliejimas</string>
     <string name="title__theme_accent_color">Akcento spalva</string>
-    <string name="msg_missing_usage_access">Jei norite rodyti programėlių pasiūlymus, įjunkite naudojimo prieigą <xliff:g id="name" example="My App"> %1$s </xliff:g></string>
+    <string name="msg_missing_usage_access">Jei norite rodyti programėlių pasiūlymus, įjunkite naudojimo prieigą <xliff:g example="My App" id="name">%1$s</xliff:g></string>
     <string name="needs_usage_access">Reikalinga naudojimo prieiga</string>
-    <string name="hide_app_reset">Atstatyti</string>
+    <string name="hide_app_reset">Atstatyti paslėptas programėles</string>
     <string name="hide_app_selected">  paslėpta</string>
     <plurals name="hidden_apps_count">
         <item quantity="one">%1$d paslėpta</item>
-        <item quantity="few"></item>
-        <item quantity="other"></item>
+        <item quantity="few"/>
+        <item quantity="other"/>
     </plurals>
     <string name="selected_count">%1$d pasirinkta</string>
     <plurals name="tab_apps_count">
@@ -373,10 +367,44 @@
     <string name="title__drawer_icon_size">„Visos programėlės“ piktogramos dydis</string>
     <string name="title__drawer_hide_apps">Paslėptų programėlių nuorodos</string>
     <string name="title_separate_work_apps">Antras skirtukas darbo programėlėms</string>
-    <string name="summary__full_width_widgets">Leisti valdikliams išsidėstyti per visą plotį be užpildų</string>
+    <string name="summary_full_width_widgets">Leisti valdikliams išsidėstyti per visą plotį be užpildų</string>
     <string name="summary__general_desktop">Pritaikykite savo darbalaukį</string>
     <string name="edit_dash">Redaguoti skydelį</string>
     <string name="action_open_dash">Atidaryti skydelį</string>
     <string name="icu_abbrev_wday_month_day_no_year">EEEEMMMd</string>
     <string name="full_wday_month_day_no_year">EEEE, MMMM d</string>
+    <string name="folder_radius">Aplanko kampo spindulys</string>
+    <string name="folder_background">Aplanko fono spalva</string>
+    <string name="folder_custom_background">Naudoti pasirinktinį aplanko foną</string>
+    <string name="dash_media_player_description">Rodyti arba slėpti garso grotuvo valdiklius</string>
+    <string name="dash_media_player">Garso grotuvas</string>
+    <string name="fonts_change_global_font">Keisti</string>
+    <string name="fonts_global_font">Visuotinis šriftas</string>
+    <string name="disable_protected_apps_message">Norint išjungti apsaugotas programėles, reikalinga autentikacija</string>
+    <string name="disable_protected_apps">Išjungti apsaugotas programėles</string>
+    <string name="enable_protected_apps">Įgalinti apsaugotas programėles</string>
+    <string name="trust_apps_manager_name">Paslėptos ir apsaugotos programėlės</string>
+    <string name="trust_apps_no_lock_error">Nustatykite saugų užrakinimo ekraną, kad apribotumėte prieigą prie programėlės</string>
+    <string name="protected_app_reset">Atstatyti apsaugotas programėles</string>
+    <string name="dash_wifi">Wi-Fi</string>
+    <string name="dash_wifi_summary">Wi-Fi būsena ir ryšys</string>
+    <string name="dash_bluetooth">Bluetooth</string>
+    <string name="dash_bluetooth_summary">Įjunkite arba išjunkite Bluetooth</string>
+    <string name="dash_location">Vieta</string>
+    <string name="dash_location_summary">Pakeisti vietos nustatymus</string>
+    <string name="dash_torch">Žibintuvėlis</string>
+    <string name="gesture_launch_assistant">Paleiskite asistentą (mygtuku arba gestu)</string>
+    <string name="dash_torch_summary">Įjunkite / išjunkite žibintuvėlį.</string>
+    <string name="dash_auto_rotation">Automatinis pasukimas</string>
+    <string name="dash_sync_summary">Įjunkite / išjunkite sinchronizavimą.</string>
+    <string name="dash_auto_rotation_summary">Įjunkite / išjunkite automatinį pasukimą.</string>
+    <string name="dash_sync">Sinchronizavimas</string>
+    <string name="launch_assistant">Paleidimo asistentas</string>
+    <string name="modify_system_settings">Sistemos nustatymų keitimas</string>
+    <string name="modify_system_settings_message">Kad tai veiktų, turite leisti „Omega“ keisti sistemos nustatymus</string>
+    <string name="app_widget_name">Laikrodžio valdiklis</string>
+    <string name="about_community">Bendruomenė</string>
+    <string name="about_translators_group">Bendraautoriai ir vertėjai</string>
+    <string name="about_channel">Kanalas</string>
+    <string name="about_open_source">Bibliotekos, kurias naudojame</string>
 </resources>

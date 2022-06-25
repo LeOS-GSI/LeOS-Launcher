@@ -12,7 +12,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:foreground="?selectableItemBackground"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@+id/action_restore_backup"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:drawableStart="@drawable/ic_backup"
             android:drawablePadding="16dp"
             android:gravity="center_vertical"
             android:padding="16dp"
             android:text="@string/title_create"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:drawableStartCompat="@drawable/ic_backup" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -38,7 +38,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:foreground="?selectableItemBackground"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/action_new_backup"
@@ -48,12 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:drawableStart="@drawable/ic_restore"
             android:drawablePadding="16dp"
             android:gravity="center_vertical"
             android:padding="16dp"
             android:text="@string/restore_backup"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:drawableStartCompat="@drawable/ic_restore" />
     </androidx.cardview.widget.CardView>
 
     <TextView

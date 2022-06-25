@@ -1,16 +1,575 @@
+diff --git a/.changes.kate-swp b/.changes.kate-swp
+deleted file mode 100644
+index 8087a688..00000000
+Binary files a/.changes.kate-swp and /dev/null differ
+diff --git a/AndroidManifest.xml b/AndroidManifest.xml
+index 8fc266a5..51981fd5 100644
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -33,7 +33,7 @@
+         android:fullBackupOnly="true"
+         android:fullBackupContent="@xml/backupscheme"
+         android:hardwareAccelerated="true"
+-        android:icon="@drawable/ic_launcher_home"
++        android:icon="@mipmap/ic_launcher_round"
+         android:label="@string/derived_app_name"
+         android:theme="@style/AppTheme.Light"
+         android:largeHeap="@bool/config_largeHeap"
+diff --git a/Omega/res/mipmap-anydpi-v26/ic_launcher_debug.xml b/Omega/res/mipmap-anydpi-v26/ic_launcher_debug.xml
+index f6e1f75e..41334675 100644
+--- a/Omega/res/mipmap-anydpi-v26/ic_launcher_debug.xml
++++ b/Omega/res/mipmap-anydpi-v26/ic_launcher_debug.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@color/ic_launcher_background_debug" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground_debug" />
++    <background android:drawable="@color/legacy_icon_background" />
++    <foreground android:drawable="@mipmap/ic_launcher_foreground_debug" />
+ </adaptive-icon>
+\ No newline at end of file
+diff --git a/Omega/res/mipmap-anydpi-v26/ic_launcher_round.xml b/Omega/res/mipmap-anydpi-v26/ic_launcher_round.xml
+index ac94b34f..41334675 100644
+--- a/Omega/res/mipmap-anydpi-v26/ic_launcher_round.xml
++++ b/Omega/res/mipmap-anydpi-v26/ic_launcher_round.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@color/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@color/legacy_icon_background" />
++    <foreground android:drawable="@mipmap/ic_launcher_foreground_debug" />
+ </adaptive-icon>
+\ No newline at end of file
+diff --git a/Omega/res/mipmap-anydpi-v26/ic_launcher_round_debug.xml b/Omega/res/mipmap-anydpi-v26/ic_launcher_round_debug.xml
+index f6e1f75e..41334675 100644
+--- a/Omega/res/mipmap-anydpi-v26/ic_launcher_round_debug.xml
++++ b/Omega/res/mipmap-anydpi-v26/ic_launcher_round_debug.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@color/ic_launcher_background_debug" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground_debug" />
++    <background android:drawable="@color/legacy_icon_background" />
++    <foreground android:drawable="@mipmap/ic_launcher_foreground_debug" />
+ </adaptive-icon>
+\ No newline at end of file
+diff --git a/Omega/res/mipmap-hdpi/ic_launcher.png b/Omega/res/mipmap-hdpi/ic_launcher.png
+index 6e7da12c..f60e9c66 100644
+Binary files a/Omega/res/mipmap-hdpi/ic_launcher.png and b/Omega/res/mipmap-hdpi/ic_launcher.png differ
+diff --git a/Omega/res/mipmap-hdpi/ic_launcher_round.png b/Omega/res/mipmap-hdpi/ic_launcher_round.png
+index 96c1680a..438b0487 100644
+Binary files a/Omega/res/mipmap-hdpi/ic_launcher_round.png and b/Omega/res/mipmap-hdpi/ic_launcher_round.png differ
+diff --git a/Omega/res/mipmap-mdpi/ic_launcher.png b/Omega/res/mipmap-mdpi/ic_launcher.png
+index 3009d623..35d417fe 100644
+Binary files a/Omega/res/mipmap-mdpi/ic_launcher.png and b/Omega/res/mipmap-mdpi/ic_launcher.png differ
+diff --git a/Omega/res/mipmap-mdpi/ic_launcher_round.png b/Omega/res/mipmap-mdpi/ic_launcher_round.png
+index 658d0936..e91d0936 100644
+Binary files a/Omega/res/mipmap-mdpi/ic_launcher_round.png and b/Omega/res/mipmap-mdpi/ic_launcher_round.png differ
+diff --git a/Omega/res/mipmap-xhdpi/ic_launcher.png b/Omega/res/mipmap-xhdpi/ic_launcher.png
+index d21da202..9e4d7641 100644
+Binary files a/Omega/res/mipmap-xhdpi/ic_launcher.png and b/Omega/res/mipmap-xhdpi/ic_launcher.png differ
+diff --git a/Omega/res/mipmap-xhdpi/ic_launcher_round.png b/Omega/res/mipmap-xhdpi/ic_launcher_round.png
+index 1264ccc4..4fad7de5 100644
+Binary files a/Omega/res/mipmap-xhdpi/ic_launcher_round.png and b/Omega/res/mipmap-xhdpi/ic_launcher_round.png differ
+diff --git a/Omega/res/mipmap-xxhdpi/ic_launcher.png b/Omega/res/mipmap-xxhdpi/ic_launcher.png
+index 0509f7e1..d19c67ec 100644
+Binary files a/Omega/res/mipmap-xxhdpi/ic_launcher.png and b/Omega/res/mipmap-xxhdpi/ic_launcher.png differ
+diff --git a/Omega/res/mipmap-xxhdpi/ic_launcher_round.png b/Omega/res/mipmap-xxhdpi/ic_launcher_round.png
+index c75bcd7c..33e9f6ca 100644
+Binary files a/Omega/res/mipmap-xxhdpi/ic_launcher_round.png and b/Omega/res/mipmap-xxhdpi/ic_launcher_round.png differ
+diff --git a/Omega/res/mipmap-xxxhdpi/ic_launcher.png b/Omega/res/mipmap-xxxhdpi/ic_launcher.png
+index 2e229a1a..7cf75227 100644
+Binary files a/Omega/res/mipmap-xxxhdpi/ic_launcher.png and b/Omega/res/mipmap-xxxhdpi/ic_launcher.png differ
+diff --git a/Omega/res/mipmap-xxxhdpi/ic_launcher_round.png b/Omega/res/mipmap-xxxhdpi/ic_launcher_round.png
+index 0f161423..51ec8ce4 100644
+Binary files a/Omega/res/mipmap-xxxhdpi/ic_launcher_round.png and b/Omega/res/mipmap-xxxhdpi/ic_launcher_round.png differ
+diff --git a/Omega/res/values/.strings.xml.kate-swp b/Omega/res/values/.strings.xml.kate-swp
+deleted file mode 100644
+index 2ff5295b..00000000
+Binary files a/Omega/res/values/.strings.xml.kate-swp and /dev/null differ
+diff --git a/Omega/res/values/strings.xml b/Omega/res/values/strings.xml
+index 7f103672..b8b36b05 100644
+--- a/Omega/res/values/strings.xml
++++ b/Omega/res/values/strings.xml
+@@ -16,7 +16,7 @@
+   ~  You should have received a copy of the GNU General Public License
+   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+   --><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+-    <string name="derived_app_name" translatable="false">Neo Launcher</string>
++    <string name="derived_app_name" translatable="false">LeOS Launcher</string>
+     <string name="app_version" translatable="false">Version</string>
+     <string name="app_build" translatable="false">Build</string>
+     <string name="app_id" translatable="false">Package</string>
+@@ -40,7 +40,7 @@
+     <string name="summary__general_smartspace">Date, time, home widget</string>
+     <string name="summary__general_notifications">Badge count, badge color, gestures</string>
+     <string name="summary__general_advanced">Language, back up, setting search</string>
+-    <string name="summary__general_about">More about Neo Launcher</string>
++    <string name="summary__general_about">More about LeOS Launcher</string>
+     <string name="pref_category__interfaces">User Interface</string>
+     <string name="pref_category__inputs">Gestures and Search</string>
+     <string name="pref_category__others">Others</string>
+@@ -382,8 +382,8 @@
+     <string name="search_provider_ddg" translatable="false">DuckDuckGo</string>
+     <string name="search_provider_baidu" translatable="false">Baidu</string>
+     <string name="search_provider_s_finder" translatable="false">S Finder</string>
+-    <string name="google" translatable="false">Google</string>
+-    <string name="search_provider_google_go" translatable="false">Google Go</string>
++    <string name="google" translatable="false">G**gle</string>
++    <string name="search_provider_google_go" translatable="false">G**gle Go</string>
+     <string name="search_provider_firefox" translatable="false">Firefox</string>
+     <string name="search_provider_search_lite" translatable="false">Search Lite</string>
+     <string name="search_provider_cool_search" translatable="false">Cool Search</string>
+@@ -469,7 +469,7 @@
+     <string name="about_build_information">Build info</string>
+     <string name="title__about_donate">Donate</string>
+     <string name="title__about_changelog">Changelog</string>
+-    <string name="about_copyright">Copyright © 2020–2021</string>
++    <string name="about_copyright">Copyleft © 2022</string>
+     <string name="about_team">Team Members</string>
+     <string name="about_translators_group">Contributors and Translators</string>
+     <string name="about_translators">Translators</string>
+@@ -480,12 +480,12 @@
+     <string name="about_source_url" translatable="false">https://github.com/otakuhqz/Omega</string>
+     <string name="category__about_licenses">License</string>
+     <string name="license_gpl" translatable="false">GPLv3+</string>
+-    <string name="app_donate_url" translatable="false">https://paypal.me/saulhenriquez</string>
+-    <string name="author" translatable="false">Saul Henriquez</string>
++    <string name="app_donate_url" translatable="false">https://paypal.me/LeOSGSI</string>
++    <string name="author" translatable="false">Harvey186</string>
+     <string name="author_role" translatable="false">Developer</string>
+-    <string name="contributor1" translatable="false">Antonios Hazim</string>
++    <string name="contributor1" translatable="false">Saul Henriquez</string>
+     <string name="contributor2" translatable="false">Rafael Venancio</string>
+-    <string name="contributor_role" translatable="false">Contributor</string>
++    <string name="contributor_role" translatable="false">Contributor/NeoLauncher</string>
+     <string name="title_storage_permission_required">Storage Access Needed</string>
+     <string name="content_storage_permission_required">Grant access to storage to set a wallpaper.</string>
+     <string name="accessibility_undo">Undo</string>
+@@ -562,4 +562,4 @@
+     <string name="pref_desktop_mode_settings">Desktop mode settings</string>
+     <string name="web_search_metager">Metager (Web)</string>
+     <string name="web_search_searx">Searx (Web)</string>
+-</resources>
+\ No newline at end of file
++</resources>
+diff --git a/Omega/src/com/saggitt/omega/compose/screens/.AboutScreen.kt.kate-swp b/Omega/src/com/saggitt/omega/compose/screens/.AboutScreen.kt.kate-swp
+deleted file mode 100644
+index 53785463..00000000
+Binary files a/Omega/src/com/saggitt/omega/compose/screens/.AboutScreen.kt.kate-swp and /dev/null differ
+diff --git a/Omega/src/com/saggitt/omega/compose/screens/AboutScreen.kt b/Omega/src/com/saggitt/omega/compose/screens/AboutScreen.kt
+index 6d8d3924..a5d5bf41 100644
+--- a/Omega/src/com/saggitt/omega/compose/screens/AboutScreen.kt
++++ b/Omega/src/com/saggitt/omega/compose/screens/AboutScreen.kt
+@@ -112,7 +112,7 @@ fun AboutScreen() {
+                 ) {
+                     ResourcesCompat.getDrawable(
+                         LocalContext.current.resources,
+-                        R.mipmap.ic_launcher,
++                        R.mipmap.ic_launcher_round,
+                         LocalContext.current.theme
+                     )?.let { drawable ->
+                         val bitmap = Bitmap.createBitmap(
+@@ -238,17 +238,17 @@ private val links = listOf(
+     Link(
+         iconResId = R.drawable.ic_github,
+         labelResId = R.string.about_source,
+-        url = "https://github.com/NeoApplications/Neo-Launcher"
++        url = "https://github.com/LeOS-GSI/LeOS-Launcher"
+     ),
+     Link(
+         iconResId = R.drawable.ic_channel,
+         labelResId = R.string.about_channel,
+-        url = "https://t.me/neo_applications"
++        url = "https://t.me/LeOS_Support"
+     ),
+     Link(
+         iconResId = R.drawable.ic_community,
+         labelResId = R.string.about_community,
+-        url = "https://t.me/neo_launcher"
++        url = "https://t.me/LeOS_Support"
+     )
+ )
+ 
+@@ -256,14 +256,14 @@ private val contributors = listOf(
+     TeamMember(
+         name = R.string.author,
+         descriptionRes = R.string.author_role,
+-        photoUrl = "https://avatars.githubusercontent.com/u/6044050",
+-        webpage = "https://github.com/saulhdev"
++        photoUrl = "https://leos-gsi.de/ic_avatar.png",
++        webpage = "https://github.com/LeOS-GSI"
+     ),
+     TeamMember(
+         name = R.string.contributor1,
+         descriptionRes = R.string.author_role,
+-        photoUrl = "https://avatars.githubusercontent.com/u/40302595",
+-        webpage = "https://github.com/machiav3lli"
++        photoUrl = "https://avatars.githubusercontent.com/u/69337602",
++        webpage = "https://github.com/saulhdev"
+     )
+ )
+ 
+@@ -360,4 +360,4 @@ fun TranslatorsScreen() {
+         ComposableWebView(url = "file:///android_asset/translators.htm")
+         Spacer(modifier = Modifier.requiredHeight(50.dp))
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/Omega/src/com/saggitt/omega/compose/screens/ic_avatar.png b/Omega/src/com/saggitt/omega/compose/screens/ic_avatar.png
+index cb53aa2c..c266b26d 100644
+Binary files a/Omega/src/com/saggitt/omega/compose/screens/ic_avatar.png and b/Omega/src/com/saggitt/omega/compose/screens/ic_avatar.png differ
 diff --git a/README.md b/README.md
-index 58abff15..de4d100b 100644
+index 11748115..92cd8fce 100644
 --- a/README.md
 +++ b/README.md
-@@ -1,5 +1,7 @@
- #LeOS Launcher
- This is a fork of Omega Launcher and default Launcher in LeOS-GSI. 
- Please visit https://leos-gsi.de
--Releases are stored at https://leos-gsi.de/downloads/special_apps/Launcher/
--or visit my Telegram group https://t.me/LeOS_Support
-\ No newline at end of file
-+or
+@@ -1,115 +1,9 @@
+-# Neo Launcher <img title="" src="./fastlane/metadata/android/en-US/images/icon.png" align="left" width="64">
+ 
+-**Free and Open Source Launcher**
+ 
+-![](neo_banner.png)
++#LeOS Launcher
+ 
+-## *Installation & Download*
++LeOS-Launcher is a complete ungoogled fork of great Neo Launcher and default Launcher in LeOS-GSI. 
++Please visit https://leos-gsi.de or 
 +visit my Telegram group https://t.me/LeOS_Support
-+Releases:
-+https://leos-gsi.de/downloads/special_apps/Launcher/
+ 
+-Our builds are available on:
+-
+-- **Github:** Releases or Actions (usually).
+-
+-- **F-Droid**: Either IzzyOnDroid or our own repo.
+-
+-- **Telegram**.
+-
+-### *Links*
+-
+-**Github Releases**: [here](https://github.com/otakuhqz/Omega/releases)
+-
+-**F-Droid** Add the links below into your F-Droid client:
+-
+-- **[IzzyOnDroid repo link](https://apt.izzysoft.de/fdroid/repo?fingerprint=3BF0D6ABFEAE2F401707B6D966BE743BF0EEE49C2561B9BA39073711F628937A)**
+-
+-- **[Our own repo link](https://raw.githubusercontent.com/nonaybay/newomega/master/fdroid/repo)**
+-
+-## *Community*
+-
+-You can join [our Telegram group](https://t.me/neo_launcher) to make suggestions, ask questions, receive news and chat.
+-
+-## *App features:*
+-
+-### **Working**
+-
+-- Sorting apps Alphabetically and by Usage.
+-- Google feed integration.
+-- Theme support.
+-- Customize search engine.
+-- Gesture support.
+-- Notification configuration.
+-- Categorize apps in the drawer.
+-- Icon Shape support.
+-- Quick action shortcuts (dash).
+-- Hide and Protect apps using security PIN or biometric.
+-- Dock search.
+-- Drawer search.
+-- Drawer grid preference.
+-- Customize app icons.
+-- All apps icon scaling.
+-- Dock icon scaling.
+-- Workspace icon scaling.
+-- Desktop grid preference.
+-- App predictions (v8 - v9 only).
+-- Icon pack support.
+-- Back up and restore preferences.
+-- Vertical Apps Lists.
+-
+-### **TODOs**
+-
+-- Turn off "auto remove empty screen".
+-- Add desktop screen manually.
+-- Reorder empty screens.
+-- Horizontal drawer.
+-- Add auto tab mode for drawer.
+-- Animations.
+-
+-There's also a [devloper's document](DEVDOC.md), where the maintainer and collaborators communicate their TODOs and plans.
+-
+-## *Screenshots*
+-
+-<table>
+-    <tr>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/omega-11/snapshots/omega1.jpg" alt="" width="256"></td>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/master/snapshots/omega2.jpg" alt="" width="256"></td>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/omega-11/snapshots/omega3.jpg" alt="" width="256"></td>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/master/snapshots/omega4.jpg" alt="" width="256"></td>
+-    </tr>
+-    <tr>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/omega-11/snapshots/omega5.jpg" alt="" width="256"></td>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/master/snapshots/omega6.jpg" alt="" width="256"></td>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/master/snapshots/omega7.jpg" alt="" width="256"></td>
+-        <td><img src="https://raw.githubusercontent.com/otakuhqz/Omega/master/snapshots/omega8.jpg" alt="" width="256"></td>
+-    </tr>
+-</table>
+-
+-## *Contributions*
+-
+-**If you have knowledge in Java or Kotlin you can work on additional features or bugs, and open pull requests. Make sure the code is formatted before make a pull request.**
+-
+-**You can also contribute to this project by opening issues for bugs or new features.**
+-
+-## *Support*
+-
+-<a href="https://www.paypal.com/paypalme/omegalauncher"><img src="https://img.shields.io/badge/Paypal-Donate-blue?style=for-the-badge&logo=paypal" alt="Donate via PayPal"/></a>
+-<a href="https://www.patreon.com/omegalauncher"><img src="https://img.shields.io/badge/Patreon-Donate-blue?style=for-the-badge&logo=patreon" alt="Donate via Patreon"/></a>
+-
+-## *FAQ*
+-
+-## *Credits*
+-
+-#### Thanks to The LawnchairLauncher team for the great work on Lawnchair.
+-
+-#### Thanks to <a href="https://github.com/machiav3lli">Antonios Hazim</a> for creating the logo and his great contributions in the project.
+-
+-#### Thanks to <a href="https://github.com/nonaybay">Rafael Venâncio</a> for creating the F-Droid repo.
+-
+-#### Thanks to Helena Zhang and Toby Fried for the great [Phosphor icons](https://phosphoricons.com), which we use since 0.9.0.
+-
+-## *Translation*
+-
+-Translations are handled via Weblate. If want to help, visit <a href="https://hosted.weblate.org/projects/omegalauncher">Hosted Weblate</a>.
+-
+-#### **Translation stats:** [<img align="right" src="https://hosted.weblate.org/widgets/omegalauncher/-/287x66-white.png" alt="Übersetzungsstatus" />](https://hosted.weblate.org/engage/omegalauncher/?utm_source=widget)
+-
+-<img src="https://hosted.weblate.org/widgets/omegalauncher/-/multi-red.svg" />
++thx
+diff --git a/assets/.license.htm.kate-swp b/assets/.license.htm.kate-swp
+deleted file mode 100644
+index 79c32711..00000000
+Binary files a/assets/.license.htm.kate-swp and /dev/null differ
+diff --git a/assets/changelog.htm b/assets/changelog.htm
+index 55514248..7b0fdf86 100644
+--- a/assets/changelog.htm
++++ b/assets/changelog.htm
+@@ -2,12 +2,22 @@
+ <html>
+ 
+ <head>
+-    <title>Neo Launcher Changelog</title>
++    <title>LeOS Launcher Changelog</title>
+     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+ </head>
+ 
+ <body id="top">
+ 
++<div>
++    <h2>v12.1.1 (Build 1)</h2>
++    <h4>Release date: 07-2022</h4>
++    <ul class="changelog">
++        <li>complete new version based on Neo Launcher</li>
++    </ul>
++    <p><a class="topButton" href="#top">Back to the top</a></p>
++</div>
++
++
+ <div>
+     <h2>v0.9.0 (Build 330)</h2>
+     <h4>Release date: 05-30-2022</h4>
+diff --git a/assets/license.htm b/assets/license.htm
+index f6397580..cc48c8d3 100644
+--- a/assets/license.htm
++++ b/assets/license.htm
+@@ -1,25 +1,62 @@
+ <!DOCTYPE html>
+ <html>
+-
+ <head>
+-    <title>Neo Launcher licenses</title>
++<p> -  </p>
++
++
++
++
++    <title>LeOS Launcher licenses</title>
+     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+ </head>
+-
+-<body id="top">
+-<h1>Neo Launcher</h1>
+-<p>Copyright &copy; 2020-2022 Neo Launcher Team</p>
++	<style type="text/css">
++		p { margin-bottom: 0.25cm; background: transparent; line-height: 115% }
++		h1 { margin-bottom: 0.21cm; background: transparent }
++		h1.western { font-family: "Liberation Serif", serif }
++		h1.cjk { font-family: "Noto Serif CJK SC"; font-size: 24pt }
++		h1.ctl { font-family: "Lohit Devanagari"; font-size: 24pt }
++		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent }
++		h2.western { font-family: "Liberation Serif", serif }
++		h2.cjk { font-family: "Noto Serif CJK SC" }
++		h2.ctl { font-family: "Lohit Devanagari" }
++		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent }
++		h3.western { font-family: "Liberation Serif", serif }
++		h3.cjk { font-family: "Noto Serif CJK SC" }
++		h3.ctl { font-family: "Lohit Devanagari" }
++		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; background: transparent }
++		h4.western { font-family: "Liberation Serif", serif }
++		h4.cjk { font-family: "Noto Serif CJK SC" }
++		h4.ctl { font-family: "Lohit Devanagari" }
++		a:link { so-language: zxx }
++	</style>
++	</head>
++
++<body lang="de-AT" dir="ltr">
++<h1 class="western" style="font-weight: normal"><img src="leos.png" name="Bild1" align="left" width="190" height="79" top= "100" border="0"/>
++<font face="Candice"><font size="6" style="font-size: 24pt">Launcher</font></font></h1>
++
++
++<p>Copyleft &copy; 2022 Harvey186 and NeoLaucherTeam</p>
+ <div>
+     <h2>License</h2>
+-    <p>Neo Launcher is licensed under the <a href="#gpl">GNU General Public License, version 3 or
++    <p>LeOS Launcher is licensed under the <a href="#gpl">GNU General Public License, version 3 or
+         later</a> (herein referred to as GPL).</p>
+     <h2>Sources</h2>
+     <p>The sources to this application can be retrieved at <a
+-            href="https://github.com/NeoApplications/Neo-Launcher"
+-            id="revision_link">https://github.com/NeoApplications/Neo-Launcher</a>.
++            href="https://github.com/LeOS-GSI/LeOS-Launcher"
++            id="revision_link">https://github.com/LeOS-GSI/LeOS-Launcher</a>.
+     </p>
+     <h2>Libraries</h2>
+-    <p>Neo Launcher uses the following libraries and Software:</p>
++    <p>LeOS Launcher uses the following libraries and Software:</p>
++
++
++    <div class="license">
++        <p class="name"><strong>Neo Launcher</strong></p>
++        <p class="developer">Copyright &copy; NeoLaucherTeam</p>
++        <p class="source"><a
++                href="https://github.com/NeoApplications/Neo-Launcher">Source
++            Code</a> - Apache license</p>
++    </div>
+ 
+     <div class="license">
+         <p class="name"><strong>Android Open Source Project</strong></p>
+@@ -790,4 +827,4 @@
+ <p><a class="topButton" href="#top">Back to the top</a></p>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/changes b/changes
+index e518a92c..3bd35bc0 100644
+--- a/changes
++++ b/changes
+@@ -1,2 +1,5 @@
+ - changlog.htm
+ - license.htm
++- Omega/res/values/strings.xml
++- Omega/src/com/saggitt/omega/compose/screens/AboutScreen.kt
++- icons
+diff --git a/fastlane/metadata/android/en-US/images/icon.png b/fastlane/metadata/android/en-US/images/icon.png
+index 0f161423..281c1f80 100644
+Binary files a/fastlane/metadata/android/en-US/images/icon.png and b/fastlane/metadata/android/en-US/images/icon.png differ
+diff --git a/src/aosp/ic_launcher-playstore.png b/src/aosp/ic_launcher-playstore.png
+index d7be13b6..74ac6cc4 100644
+Binary files a/src/aosp/ic_launcher-playstore.png and b/src/aosp/ic_launcher-playstore.png differ
+diff --git a/src/aosp/res/mipmap-anydpi-v26/ic_launcher.xml b/src/aosp/res/mipmap-anydpi-v26/ic_launcher.xml
+deleted file mode 100644
+index 909f7dc8..00000000
+--- a/src/aosp/res/mipmap-anydpi-v26/ic_launcher.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background"/>
+-    <foreground android:drawable="@mipmap/ic_lavatar"/>
+-</adaptive-icon>
+\ No newline at end of file
+diff --git a/src/aosp/res/mipmap-anydpi-v26/ic_launcher_round.xml b/src/aosp/res/mipmap-anydpi-v26/ic_launcher_round.xml
+deleted file mode 100644
+index 909f7dc8..00000000
+--- a/src/aosp/res/mipmap-anydpi-v26/ic_launcher_round.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background"/>
+-    <foreground android:drawable="@mipmap/ic_lavatar"/>
+-</adaptive-icon>
+\ No newline at end of file
+diff --git a/src/aosp/res/mipmap-hdpi/ic_launcher.png b/src/aosp/res/mipmap-hdpi/ic_launcher.png
+deleted file mode 100644
+index 3a9d95ed..00000000
+Binary files a/src/aosp/res/mipmap-hdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-hdpi/ic_launcher_foreground.png b/src/aosp/res/mipmap-hdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index 260f75b7..00000000
+Binary files a/src/aosp/res/mipmap-hdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-hdpi/ic_launcher_round.png b/src/aosp/res/mipmap-hdpi/ic_launcher_round.png
+deleted file mode 100644
+index 53019f7c..00000000
+Binary files a/src/aosp/res/mipmap-hdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-mdpi/ic_launcher.png b/src/aosp/res/mipmap-mdpi/ic_launcher.png
+deleted file mode 100644
+index 4d69e0ec..00000000
+Binary files a/src/aosp/res/mipmap-mdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-mdpi/ic_launcher_foreground.png b/src/aosp/res/mipmap-mdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index e2c8b743..00000000
+Binary files a/src/aosp/res/mipmap-mdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-mdpi/ic_launcher_round.png b/src/aosp/res/mipmap-mdpi/ic_launcher_round.png
+deleted file mode 100644
+index fe1bb4c0..00000000
+Binary files a/src/aosp/res/mipmap-mdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xhdpi/ic_launcher.png b/src/aosp/res/mipmap-xhdpi/ic_launcher.png
+deleted file mode 100644
+index f67f154d..00000000
+Binary files a/src/aosp/res/mipmap-xhdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xhdpi/ic_launcher_foreground.png b/src/aosp/res/mipmap-xhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index 0f8b85f4..00000000
+Binary files a/src/aosp/res/mipmap-xhdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xhdpi/ic_launcher_round.png b/src/aosp/res/mipmap-xhdpi/ic_launcher_round.png
+deleted file mode 100644
+index 9254aadb..00000000
+Binary files a/src/aosp/res/mipmap-xhdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xxhdpi/ic_launcher.png b/src/aosp/res/mipmap-xxhdpi/ic_launcher.png
+deleted file mode 100644
+index d30735bc..00000000
+Binary files a/src/aosp/res/mipmap-xxhdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xxhdpi/ic_launcher_foreground.png b/src/aosp/res/mipmap-xxhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index d47e8086..00000000
+Binary files a/src/aosp/res/mipmap-xxhdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xxhdpi/ic_launcher_round.png b/src/aosp/res/mipmap-xxhdpi/ic_launcher_round.png
+deleted file mode 100644
+index a50c83f5..00000000
+Binary files a/src/aosp/res/mipmap-xxhdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xxxhdpi/ic_launcher.png b/src/aosp/res/mipmap-xxxhdpi/ic_launcher.png
+deleted file mode 100644
+index 25b8944e..00000000
+Binary files a/src/aosp/res/mipmap-xxxhdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xxxhdpi/ic_launcher_foreground.png b/src/aosp/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index 50678d4c..00000000
+Binary files a/src/aosp/res/mipmap-xxxhdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/aosp/res/mipmap-xxxhdpi/ic_launcher_round.png b/src/aosp/res/mipmap-xxxhdpi/ic_launcher_round.png
+deleted file mode 100644
+index 00e60681..00000000
+Binary files a/src/aosp/res/mipmap-xxxhdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/aosp/res/values/ic_launcher_background.xml b/src/aosp/res/values/ic_launcher_background.xml
+index e53d14c9..0b0303cb 100644
+--- a/src/aosp/res/values/ic_launcher_background.xml
++++ b/src/aosp/res/values/ic_launcher_background.xml
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-    <color name="ic_launcher_background">#A9B1AA</color>
++    <color name="ic_launcher_background">#EBF1EE</color>
+ </resources>
 \ No newline at end of file

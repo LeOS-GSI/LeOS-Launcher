@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
@@ -23,9 +22,10 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.content.res.AppCompatResources
 import com.android.launcher3.R
 import com.saggitt.omega.dash.DashActionProvider
-import com.saggitt.omega.settings.SettingsActivity
+import com.saggitt.omega.preferences.views.PreferencesActivity
 
 class EditDash(context: Context) : DashActionProvider(context) {
+    override val itemId = 5
     override val name = context.getString(R.string.edit_dash)
     override val description = context.getString(R.string.edit_dash_summary)
 
@@ -36,6 +36,10 @@ class EditDash(context: Context) : DashActionProvider(context) {
 
     override fun runAction(context: Context) {
         val fragment = "com.saggitt.omega.dash.DashFragment"
-        SettingsActivity.startFragment(context, fragment, R.string.edit_dash)
+        PreferencesActivity.startFragment(
+            context,
+            fragment,
+            context.resources.getString(R.string.edit_dash)
+        )
     }
 }

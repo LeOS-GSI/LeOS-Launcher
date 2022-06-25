@@ -20,24 +20,40 @@ package com.saggitt.omega.gestures.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.launcher3.R
 import com.android.launcher3.shortcuts.ShortcutKey
-import com.saggitt.omega.preferences.AppsAdapterWithShortcuts
-import com.saggitt.omega.settings.SettingsBaseActivity
+import com.saggitt.omega.preferences.AppsShortcutsAdapter
+import com.saggitt.omega.theme.ThemeManager
+import com.saggitt.omega.theme.ThemeOverride
+import com.saggitt.omega.util.omegaPrefs
+import com.saggitt.omega.util.recreateAnimated
 
-class SelectAppActivity : SettingsBaseActivity(), AppsAdapterWithShortcuts.Callback {
+class SelectAppActivity : AppCompatActivity(), ThemeManager.ThemeableActivity,
+    AppsShortcutsAdapter.Callback {
+    private lateinit var themeOverride: ThemeOverride
+    private val themeSet: ThemeOverride.ThemeSet get() = ThemeOverride.Settings()
+
+    override var currentTheme = 0
+    override var currentAccent = 0
+    private var paused = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        themeOverride = ThemeOverride(themeSet, this)
+        themeOverride.applyTheme(this)
+        currentTheme = themeOverride.getTheme(this)
+        currentAccent = omegaPrefs.accentColor
+
         setContentView(R.layout.preference_insettable_recyclerview)
 
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val recyclerView = findViewById<RecyclerView>(R.id.list)
-        recyclerView.adapter = AppsAdapterWithShortcuts(this, this)
+        recyclerView.adapter = AppsShortcutsAdapter(this, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
@@ -49,7 +65,7 @@ class SelectAppActivity : SettingsBaseActivity(), AppsAdapterWithShortcuts.Callb
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onAppSelected(app: AppsAdapterWithShortcuts.AppItem) {
+    override fun onAppSelected(app: AppsShortcutsAdapter.AppItem) {
         setResult(RESULT_OK, Intent().apply {
             putExtra("type", "app")
             putExtra("appName", app.info.label)
@@ -58,7 +74,7 @@ class SelectAppActivity : SettingsBaseActivity(), AppsAdapterWithShortcuts.Callb
         finish()
     }
 
-    override fun onShortcutSelected(shortcut: AppsAdapterWithShortcuts.ShortcutItem) {
+    override fun onShortcutSelected(shortcut: AppsShortcutsAdapter.ShortcutItem) {
         setResult(RESULT_OK, Intent().apply {
             putExtra("type", "shortcut")
             putExtra("appName", shortcut.label)
@@ -69,4 +85,24 @@ class SelectAppActivity : SettingsBaseActivity(), AppsAdapterWithShortcuts.Callb
         })
         finish()
     }
+
+    override fun onThemeChanged() {
+        if (currentTheme == themeOverride.getTheme(this)) return
+        if (paused) {
+            recreate()
+        } else {
+            recreateAnimated()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        paused = false
+    }
+
+    override fun onPause() {
+        super.onPause()
+        paused = true
+    }
+
 }

@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
@@ -26,11 +25,12 @@ import com.android.launcher3.R
 import com.saggitt.omega.dash.DashActionProvider
 
 class OmegaSettings(context: Context) : DashActionProvider(context) {
+    override val itemId = 9
     override val name = context.getString(R.string.settings_button_text)
     override val description = context.getString(R.string.dash_launcher_settings_summary)
 
     override val icon: Drawable?
-        get() = AppCompatResources.getDrawable(context, R.drawable.ic_settings).apply {
+        get() = AppCompatResources.getDrawable(context, R.drawable.ic_omega_settings).apply {
             this?.setTint(darkenColor(accentColor))
         }
 

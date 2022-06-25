@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,11 +33,11 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:background="?selectableItemBackground"
-        android:drawableStart="@drawable/ic_restore"
         android:drawablePadding="16dp"
         android:gravity="center_vertical"
         android:padding="16dp"
-        android:text="@string/restore_backup" />
+        android:text="@string/restore_backup"
+        app:drawableStartCompat="@drawable/ic_restore" />
 
     <View
         android:id="@+id/divider"
@@ -50,11 +51,11 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:background="?selectableItemBackground"
-        android:drawableStart="@drawable/ic_share"
         android:drawablePadding="16dp"
         android:gravity="center_vertical"
         android:padding="16dp"
-        android:text="@string/backup_share" />
+        android:text="@string/backup_share"
+        app:drawableStartCompat="@drawable/ic_share" />
 
     <TextView
         android:id="@+id/action_remove_backup_from_list"
@@ -62,10 +63,10 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:background="?selectableItemBackground"
-        android:drawableStart="@drawable/ic_list_remove"
         android:drawablePadding="16dp"
         android:gravity="center_vertical"
         android:padding="16dp"
-        android:text="@string/backup_remove_from_recents" />
+        android:text="@string/backup_remove_from_recents"
+        app:drawableStartCompat="@drawable/ic_list_remove" />
 
 </LinearLayout>

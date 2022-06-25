@@ -22,7 +22,6 @@ import com.android.launcher3.R
 import com.android.launcher3.model.ModelWriter
 import com.android.launcher3.model.data.FolderInfo
 import com.android.launcher3.model.data.ItemInfo
-import com.saggitt.omega.iconpack.IconPackManager
 import com.saggitt.omega.util.SingletonHolder
 import com.saggitt.omega.util.ensureOnMainThread
 import com.saggitt.omega.util.omegaPrefs
@@ -39,29 +38,24 @@ class FolderInfoProvider(context: Context) : CustomInfoProvider<FolderInfo>(cont
             info.title.toString()
     }
 
-    override fun getDefaultTitle(info: FolderInfo): String {
-        return context.getString(R.string.folder_hint_text)
-    }
+    override fun getDefaultTitle(info: FolderInfo): String =
+        context.getString(R.string.folder_hint_text)
 
-    override fun getCustomTitle(info: FolderInfo): String {
-        return if (info.title == null) {
-            ""
-        } else info.title.toString()
-    }
+    override fun getCustomTitle(info: FolderInfo): String = if (info.title == null) ""
+    else info.title.toString()
 
     override fun setTitle(info: FolderInfo, title: String?, modelWriter: ModelWriter) {
         info.setTitle(title ?: "", modelWriter)
     }
 
-    override fun setIcon(info: FolderInfo, entry: IconPackManager.CustomIconEntry?) {
+    /*override fun setIcon(info: FolderInfo, entry: CustomIconEntry?) {
         prefs.customAppIcon[info.toComponentKey()] = entry
         info.onIconChanged()
     }
 
-    override fun getIcon(info: FolderInfo): IconPackManager.CustomIconEntry? {
-        return prefs.customAppIcon[info.toComponentKey()]
-    }
-
+    override fun getIcon(info: FolderInfo): CustomIconEntry? =
+        prefs.customAppIcon[info.toComponentKey()]
+*/
     override fun supportsSwipeUp(info: FolderInfo) = info.container != ItemInfo.NO_ID
 
     override fun supportsIcon() = true
@@ -70,10 +64,15 @@ class FolderInfoProvider(context: Context) : CustomInfoProvider<FolderInfo>(cont
         info.setSwipeUpAction(context, action)
     }
 
-    override fun getSwipeUpAction(info: FolderInfo): String? {
-        return info.swipeUpAction
+    fun isDisabled(): Boolean {
+        return false
     }
 
-    companion object : SingletonHolder<FolderInfoProvider, Context>(ensureOnMainThread(
-            useApplicationContext(::FolderInfoProvider)))
+    override fun getSwipeUpAction(info: FolderInfo): String? = info.swipeUpAction
+
+    companion object : SingletonHolder<FolderInfoProvider, Context>(
+        ensureOnMainThread(
+            useApplicationContext(::FolderInfoProvider)
+        )
+    )
 }

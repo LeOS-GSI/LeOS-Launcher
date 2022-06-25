@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
@@ -27,8 +26,9 @@ import com.saggitt.omega.dash.DashActionProvider
 import com.saggitt.omega.util.omegaPrefs
 
 class Torch(context: Context) : DashActionProvider(context) {
-    override val name = context.getString(R.string.action_torch)
-    override val description = context.getString(R.string.action_torch_summary)
+    override val itemId = 11
+    override val name = context.getString(R.string.dash_torch)
+    override val description = context.getString(R.string.dash_torch_summary)
 
     override val icon: Drawable?
         get() = AppCompatResources.getDrawable(context, R.drawable.ic_torch).apply {

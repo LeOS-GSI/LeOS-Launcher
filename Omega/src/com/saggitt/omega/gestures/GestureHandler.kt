@@ -14,7 +14,6 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 package com.saggitt.omega.gestures
 
 import android.content.Context
@@ -59,7 +58,8 @@ class BlankGestureHandler(context: Context, config: JSONObject?) : GestureHandle
     override fun onGestureTrigger(controller: GestureController, view: View?) {}
 }
 
-class RunnableGestureHandler(context: Context, private val onTrigger: Runnable) : GestureHandler(context, null) {
+class RunnableGestureHandler(context: Context, private val onTrigger: Runnable) :
+    GestureHandler(context, null) {
     override val displayName: String = context.getString(R.string.action_none)
     override fun onGestureTrigger(controller: GestureController, view: View?) {
         onTrigger.run()

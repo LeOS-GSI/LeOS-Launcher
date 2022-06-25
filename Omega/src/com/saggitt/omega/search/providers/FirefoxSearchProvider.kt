@@ -23,8 +23,8 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
-import com.android.launcher3.util.PackageManagerHelper
 import com.saggitt.omega.search.SearchProvider
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 open class FirefoxSearchProvider(context: Context) : SearchProvider(context) {
@@ -45,12 +45,13 @@ open class FirefoxSearchProvider(context: Context) : SearchProvider(context) {
         )
 
     override fun startFeed(callback: (intent: Intent) -> Unit) = callback(
-        Intent()
-            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).setPackage(getPackage(context))
+        Intent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).setPackage(getPackage(context))
     )
 
+    override val iconRes: Int
+        get() = R.drawable.ic_firefox
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_firefox, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 
     open fun getPackage(context: Context) = listOf(
         "org.mozilla.firefox",
@@ -59,5 +60,5 @@ open class FirefoxSearchProvider(context: Context) : SearchProvider(context) {
         "org.mozilla.fennec_aurora",
         "org.mozilla.focus",
         "org.mozilla.fenix"
-    ).firstOrNull { PackageManagerHelper.isAppEnabled(context.packageManager, it, 0) }
+    ).firstOrNull { context.packageManager.isAppEnabled(it, 0) }
 }

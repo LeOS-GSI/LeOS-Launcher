@@ -1,123 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~  This file is part of LeOS Launcher
-  ~  Copyright (c) 2021   Saul Henriquez
-  ~
-  ~  This program is free software: you can redistribute it and/or modify
-  ~  it under the terms of the GNU General Public License as
-  ~  published by the Free Software Foundation, either version 3 of the
-  ~  License, or (at your option) any later version.
-  ~
-  ~  This program is distributed in the hope that it will be useful,
-  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~  GNU General Public License for more details.
-  ~
-  ~  You should have received a copy of the GNU General Public License
-  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.telephony"
-        android:required="false" />
-
-    <!-- Pixel -->
     <permission
-        android:name="${applicationId}.permission.QSB"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="signatureOrSystem" />
-    <uses-permission android:name="com.android.launcher.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="${applicationId}.permission.READ_SETTINGS" />
-    <uses-permission android:name="${applicationId}.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="${applicationId}.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
-    <uses-permission android:name="${applicationId}.permission.QSB" />
+        android:name="${packageName}.permission.READ_SETTINGS"
+        tools:node="remove" />
+    <permission
+        android:name="${packageName}.permission.WRITE_SETTINGS"
+        tools:node="remove" />
+    <permission
+        android:name="${packageName}.permission.HOTSEAT_EDU"
+        tools:node="remove" />
     <uses-permission
-        android:name="android.permission.START_TASKS_FROM_RECENTS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.INTERACT_ACROSS_USERS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.CREATE_USERS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.MANAGE_USERS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.FORCE_STOP_PACKAGES"
+        android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.MANAGE_DEVICE_ADMINS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission
         android:name="android.permission.STATUS_BAR"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
-    <uses-permission
-        android:name="android.permission.WRITE_SETTINGS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.READ_WALLPAPER_INTERNAL"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.DEVICE_POWER"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="com.huawei.wallpaperservcie.permission.SET_WALLPAPER_OFFSET" />
-    <uses-permission android:name="com.huawei.android.thememanager.permission.ACCESS_CHANGE_WALLPAPER" />
-    <uses-permission
-        android:name="android.permission.BIND_APPWIDGET"
-        tools:ignore="ProtectedPermissions" />
-    <!-- For weather / sunset/-rise -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="org.pixelexperience.weather.client.READ_WEATHER" />
-    <!-- App prediction -->
-    <uses-permission
-        android:name="android.permission.PACKAGE_USAGE_STATS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-
-    <uses-permission android:name="android.permission.READ_DEVICE_CONFIG" />
 
     <application
         android:name="com.saggitt.omega.OmegaApp"
         android:backupAgent="com.android.launcher3.LauncherBackupAgent"
         android:fullBackupContent="@xml/backupscheme"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:fullBackupOnly="true"
         android:hardwareAccelerated="true"
         android:icon="${appIcon}"
-        android:roundIcon="${appIconRound}"
         android:label="@string/derived_app_name"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
+        android:roundIcon="${appIconRound}"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.Light"
         tools:replace="android:label">
 
         <activity
             android:name="com.android.launcher3.Launcher"
+            android:exported="true"
             tools:node="remove" />
-
         <!--
         Main launcher activity. When extending only change the name, and keep all the
         attributes and intent filters the same
@@ -125,106 +67,91 @@
         <activity
             android:name="com.saggitt.omega.OmegaLauncher"
             android:clearTaskOnLaunch="true"
-            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
-            android:enabled="true"
-            android:label="@string/derived_app_name"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize|density"
             android:launchMode="singleTask"
             android:resizeableActivity="true"
             android:resumeWhilePausing="true"
             android:screenOrientation="unspecified"
             android:stateNotNeeded="true"
             android:taskAffinity=""
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.MONKEY" />
-                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.LAUNCHER_APP" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="com.android.launcher3.grid.control"
+                android:value="${packageName}.grid_control" />
+
+            <meta-data
+                android:name="com.android.launcher3.themedicon.option"
                 android:value="${packageName}.grid_control" />
         </activity>
 
         <activity
             android:name="com.android.launcher3.settings.SettingsActivity"
+            android:exported="true"
             tools:node="remove" />
+
         <activity
-            android:name="com.saggitt.omega.settings.SettingsActivity"
+            android:name="com.saggitt.omega.preferences.views.PreferencesActivity"
             android:autoRemoveFromRecents="true"
-            android:label="@string/derived_app_name"
-            android:taskAffinity="${applicationId}.tasks.SETTINGS"
-            android:theme="@style/SettingsTheme_Light">
-            <intent-filter>
+            android:exported="true"
+            android:label="@string/settings_button_text"
+            android:theme="@style/SettingsTheme.Dark">
+            <intent-filter android:priority="-1">
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name="com.saggitt.omega.settings.search.SettingsSearchActivity"
-            android:autoRemoveFromRecents="true"
-            android:label="@string/derived_app_name"
-            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
-            android:theme="@style/SettingsTheme_Light" />
+            android:name="com.saggitt.omega.gestures.ui.SelectAppActivity"
+            android:exported="true"
+            android:label="@string/action_open_app_select_app"
+            android:theme="@style/SettingsTheme.Light" />
 
         <activity
-            android:name="com.saggitt.omega.preferences.SelectableAppsActivity"
-            android:autoRemoveFromRecents="true"
-            android:theme="@style/SettingsTheme_Light" />
+            android:name="com.saggitt.omega.BlankActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Transparent" />
+
+        <!-- Icon picker -->
+        <activity
+            android:name="com.saggitt.omega.compose.ComposeActivity"
+            android:theme="@style/SettingsTheme.Light" />
 
         <!-- Actions -->
         <activity
             android:name="com.saggitt.omega.gestures.OmegaShortcutActivity"
-            android:icon="@drawable/ic_comic_hand_peace_sign"
+            android:exported="false"
+            android:icon="@mipmap/ic_launcher"
             android:label="@string/omega_actions"
-            android:theme="@style/SettingsTheme_Light.Transparent">
+            android:theme="@style/SettingsTheme.Light">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.saggitt.omega.gestures.ui.RunHandlerActivity"
+            android:exported="false"
             android:taskAffinity="${applicationId}.tasks.RUN_HANDLER"
-            android:theme="@style/SettingsTheme_Light.Transparent">
+            android:theme="@style/SettingsTheme.Light">
             <intent-filter>
                 <action android:name="com.saggitt.omega.START_ACTION" />
-                <action android:name="android.intent.action.ASSIST"/>
+                <action android:name="android.intent.action.ASSIST" />
                 <action android:name="android.intent.action.SEARCH_LONG_PRESS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-
-        <activity
-            android:name="com.saggitt.omega.gestures.ui.SelectAppActivity"
-            android:label="@string/action_open_app_select_app"
-            android:theme="@style/SettingsTheme_Light" />
-
-        <activity
-            android:name="com.saggitt.omega.BlankActivity"
-            android:theme="@style/Theme.Transparent" />
-
-        <!-- Icon picker -->
-        <activity
-            android:name="com.saggitt.omega.iconpack.EditIconActivity"
-            android:taskAffinity="${applicationId}.tasks.EDIT_ICON"
-            android:theme="@style/SettingsTheme_Light" />
-        <activity
-            android:name="com.saggitt.omega.iconpack.IconPickerActivity"
-            android:theme="@style/SettingsTheme_Light" />
-
-        <!-- Apply directly from iconpack -->
-        <activity
-            android:name="com.saggitt.omega.iconpack.ApplyIconPackActivity"
-            android:theme="@style/SettingsTheme_Light.Transparent">
-            <intent-filter>
-                <action android:name="com.saggitt.omega.APPLY_ICONS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -232,26 +159,22 @@
 
         <activity
             android:name="com.saggitt.omega.FakeLauncher"
-            android:enabled="false">
-
+            android:enabled="false"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <!-- DT2S using screen timeout -->
-        <activity
-            android:name="com.saggitt.omega.gestures.handlers.SleepTimeoutActivity"
-            android:screenOrientation="locked"
-            android:theme="@style/SleepTimeoutTheme" />
-
         <!-- DT2S using device admin -->
         <receiver
             android:description="@string/dt2s_admin_hint"
             android:name="com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin$SleepDeviceAdmin"
-            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/sleep_admin_policy" />
@@ -263,6 +186,7 @@
 
         <service
             android:name="com.saggitt.omega.OmegaAccessibilityService"
+            android:exported="true"
             android:label="@string/derived_app_name"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
@@ -270,90 +194,45 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name="com.saggitt.omega.backup.BackupListActivity"
-            android:label="@string/backups"
-            android:parentActivityName="com.saggitt.omega.settings.SettingsActivity"
-            android:theme="@style/SettingsTheme_Light" />
-        <activity
-            android:name="com.saggitt.omega.backup.NewBackupActivity"
-            android:label="@string/title_create"
-            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
-            android:requestLegacyExternalStorage="true"
-            android:theme="@style/SettingsTheme_Light" />
-        <activity
-            android:name="com.saggitt.omega.backup.RestoreBackupActivity"
-            android:label="@string/restore_backup"
-            android:parentActivityName="com.saggitt.omega.backup.BackupListActivity"
-            android:theme="@style/SettingsTheme_Light">
+        <service
+            android:name="com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":wallpaper_chooser" />
+
+        <receiver
+            android:name="com.saggitt.omega.widget.ClockWidgetProvider"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:mimeType="application/vnd.omega.backup" />
-                <data android:mimeType="application/octet-stream" />
-                <data android:mimeType="application/x-zip-compressed" />
-                <data android:mimeType="application/zip" />
-
-                <data android:scheme="file" />
-                <data android:scheme="content" />
-                <data android:mimeType="*/*" />
-                <!--
-                    Work around Android's ugly primitive PatternMatcher
-                    implementation that can't cope with finding a . early in
-                    the path unless it's explicitly matched.
-                -->
-                <data android:host="*" />
-                <data android:pathPattern=".*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.zbk" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-        </activity>
 
-        <activity
-            android:name="com.saggitt.omega.feed.FeedWidgetsActivity"
-            android:label="@string/feed_widget"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="com.saggitt.omega.feed.WidgetPicker"
-            android:autoRemoveFromRecents="true"
-            android:excludeFromRecents="true"
-            android:exported="true"
-            android:finishOnCloseSystemDialogs="true"
-            android:label="@string/feed_widget"
-            android:theme="@style/WidgetPickerDialog" />
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_info" />
+        </receiver>
 
-        <!-- Pixel -->
-        <activity
-            android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity"
-            android:theme="@android:style/Theme.NoDisplay">
-            <intent-filter android:priority="1">
-                <action android:name="com.google.android.apps.nexuslauncher.search.APP_LAUNCH" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:mimeType="vnd.android.cursor.dir/vnd.android.search.suggest"
-                    android:scheme="content" />
+        <receiver
+            android:name="com.saggitt.omega.widget.WeatherClickListenerReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.saggitt.omega.ACTION_OPEN_WEATHER_INTENT" />
             </intent-filter>
-        </activity>
+        </receiver>
 
         <receiver
             android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver"
-            android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
+            android:permission="android.permission.CAPTURE_AUDIO_HOTWORD"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.systemui.OPA_ENABLED" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver">
+
+        <receiver
+            android:name="com.google.systemui.smartspace.SmartSpaceBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE" />
             </intent-filter>
@@ -362,30 +241,9 @@
         <meta-data
             android:name="android.max_aspect"
             android:value="2.1" />
+
         <meta-data
             android:name="com.samsung.android.non_immersive"
             android:value="true" />
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${packageName}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
-
-        <provider
-            android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"
-            android:authorities="${applicationId}.appssearch"
-            android:exported="true" />
-
-        <provider
-            android:name="com.saggitt.omega.util.FiveSecsProvider"
-            android:authorities="${applicationId}.fivesecsprovider"
-            android:exported="true"
-            android:grantUriPermissions="true"
-            tools:ignore="MissingClass" />
     </application>
 </manifest>

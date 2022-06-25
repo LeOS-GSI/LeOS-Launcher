@@ -35,6 +35,7 @@ import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.icons.cache.CachingLogic;
 import com.android.launcher3.shortcuts.ShortcutKey;
 import com.android.launcher3.util.Themes;
+import com.saggitt.omega.icons.CustomAdaptiveIconDrawable;
 
 /**
  * Caching logic for shortcuts.
@@ -42,23 +43,6 @@ import com.android.launcher3.util.Themes;
 public class ShortcutCachingLogic implements CachingLogic<ShortcutInfo> {
 
     private static final String TAG = "ShortcutCachingLogic";
-
-    /**
-     * Similar to {@link LauncherApps#getShortcutIconDrawable(ShortcutInfo, int)} with additional
-     * Launcher specific checks
-     */
-    public static Drawable getIcon(Context context, ShortcutInfo shortcutInfo, int density) {
-        if (GO_DISABLE_WIDGETS) {
-            return null;
-        }
-        try {
-            return context.getSystemService(LauncherApps.class)
-                    .getShortcutIconDrawable(shortcutInfo, density);
-        } catch (SecurityException | IllegalStateException e) {
-            Log.e(TAG, "Failed to get shortcut icon", e);
-            return null;
-        }
-    }
 
     @Override
     public ComponentName getComponent(ShortcutInfo info) {
@@ -104,5 +88,23 @@ public class ShortcutCachingLogic implements CachingLogic<ShortcutInfo> {
     @Override
     public boolean addToMemCache() {
         return false;
+    }
+
+    /**
+     * Similar to {@link LauncherApps#getShortcutIconDrawable(ShortcutInfo, int)} with additional
+     * Launcher specific checks
+     */
+    public static Drawable getIcon(Context context, ShortcutInfo shortcutInfo, int density) {
+        if (GO_DISABLE_WIDGETS) {
+            return null;
+        }
+        try {
+            Drawable icon = context.getSystemService(LauncherApps.class)
+                    .getShortcutIconDrawable(shortcutInfo, density);
+            return CustomAdaptiveIconDrawable.wrap(icon);
+        } catch (SecurityException | IllegalStateException e) {
+            Log.e(TAG, "Failed to get shortcut icon", e);
+            return null;
+        }
     }
 }

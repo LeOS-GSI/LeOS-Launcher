@@ -1,18 +1,19 @@
 /*
- *     This file is part of Lawnchair Launcher.
+ * This file is part of Omega Launcher
+ * Copyright (c) 2022   Omega Launcher Team
  *
- *     Lawnchair Launcher is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
  *
- *     Lawnchair Launcher is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- *     You should have received a copy of the GNU General Public License
- *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package com.saggitt.omega.groups
@@ -20,7 +21,6 @@ package com.saggitt.omega.groups
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,20 +31,20 @@ import androidx.appcompat.widget.SwitchCompat
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import com.android.launcher3.util.ComponentKey
-import com.saggitt.colorpickerx.ColorSelectorPresets
-import com.saggitt.colorpickerx.OnChooseColorListener
-import com.saggitt.omega.OmegaPreferencesChangeCallback
-import com.saggitt.omega.preferences.SelectableAppsActivity
+import com.saggitt.omega.preferences.OmegaPreferencesChangeCallback
+import com.saggitt.omega.preferences.views.PreferencesActivity
 import com.saggitt.omega.theme.ThemeOverride
 import com.saggitt.omega.theme.ThemedContextProvider
 import com.saggitt.omega.util.*
+import com.shlabs.colorpickerx.ColorPickerTab
+import com.shlabs.colorpickerx.OnChooseColorListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
 abstract class AppGroups<T : AppGroups.Group>(
-    private val manager: AppGroupsManager,
-    private val type: AppGroupsManager.CategorizationType
+        private val manager: AppGroupsManager,
+        private val type: AppGroupsManager.CategorizationType
 ) {
     private val prefs = manager.prefs
     val context = prefs.context
@@ -78,8 +78,8 @@ abstract class AppGroups<T : AppGroups.Group>(
             }
 
             return groups
-        } catch (e: IllegalArgumentException) {
-        } catch (e: JSONException) {
+        } catch (_: IllegalArgumentException) {
+        } catch (_: JSONException) {
         }
 
         try {
@@ -95,13 +95,13 @@ abstract class AppGroups<T : AppGroups.Group>(
         val arr = loadGroupsArray()
         val used = mutableSetOf<GroupCreator<T>>()
         (0 until arr.length())
-            .map { arr.getJSONObject(it) }
-            .mapNotNullTo(groups) { group ->
-                val type = if (group.has(KEY_TYPE)) group.getString(KEY_TYPE) else TYPE_UNDEFINED
-                val creator = getGroupCreator(type)
-                used.add(creator)
-                creator.createGroup(context)?.apply { loadCustomizations(context, group.asMap()) }
-            }
+                .map { arr.getJSONObject(it) }
+                .mapNotNullTo(groups) { group ->
+                    val type = if (group.has(KEY_TYPE)) group.getString(KEY_TYPE) else TYPE_UNDEFINED
+                    val creator = getGroupCreator(type)
+                    used.add(creator)
+                    creator.createGroup(context)?.apply { loadCustomizations(context, group.asMap()) }
+                }
         getDefaultCreators().asReversed().forEach { creator ->
             if (creator !in used) {
                 creator.createGroup(context)?.let { groups.add(0, it) }
@@ -239,17 +239,18 @@ abstract class AppGroups<T : AppGroups.Group>(
 
             abstract fun clone(): Customization<T, S>
 
+            @Suppress("UNCHECKED_CAST")
             open fun applyFrom(other: Customization<*, *>) {
                 value = other.value as? T
             }
 
-            open fun createRow(context: Context, parent: ViewGroup, accent: Int): View? {
+            open fun createRow(context: Context, parent: ViewGroup): View? {
                 return null
             }
         }
 
         open class StringCustomization(key: String, default: String) :
-            Customization<String, String>(key, default) {
+                Customization<String, String>(key, default) {
 
             override fun loadFromJson(context: Context, obj: String?) {
                 value = obj
@@ -266,10 +267,9 @@ abstract class AppGroups<T : AppGroups.Group>(
 
         class CustomTitle(key: String, default: String) : StringCustomization(key, default) {
 
-            override fun createRow(context: Context, parent: ViewGroup, accent: Int): View? {
+            override fun createRow(context: Context, parent: ViewGroup): View? {
                 val view = LayoutInflater.from(context)
-                    .inflate(R.layout.drawer_tab_custom_title_row, parent, false)
-                view.findViewById<TextView>(R.id.name_label).setTextColor(accent)
+                        .inflate(R.layout.drawer_tab_custom_title_row, parent, false)
 
                 val tabName = view.findViewById<TextView>(R.id.name)
                 tabName.text = value
@@ -280,18 +280,18 @@ abstract class AppGroups<T : AppGroups.Group>(
                     }
 
                     override fun beforeTextChanged(
-                        s: CharSequence?,
-                        start: Int,
-                        count: Int,
-                        after: Int
+                            s: CharSequence?,
+                            start: Int,
+                            count: Int,
+                            after: Int
                     ) {
                     }
 
                     override fun onTextChanged(
-                        s: CharSequence?,
-                        start: Int,
-                        before: Int,
-                        count: Int
+                            s: CharSequence?,
+                            start: Int,
+                            before: Int,
+                            count: Int
                     ) {
                     }
 
@@ -309,7 +309,7 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         open class BooleanCustomization(key: String, default: Boolean) :
-            Customization<Boolean, Boolean>(key, default) {
+                Customization<Boolean, Boolean>(key, default) {
 
             override fun loadFromJson(context: Context, obj: Boolean?) {
                 value = obj
@@ -325,7 +325,7 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         open class LongCustomization(key: String, default: Long) :
-            Customization<Long, Long>(key, default) {
+                Customization<Long, Long>(key, default) {
             override fun loadFromJson(context: Context, obj: Long?) {
                 value = obj
             }
@@ -341,27 +341,27 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         class SwitchRow(
-            private val icon: Int,
-            private val label: Int,
-            key: String,
-            default: Boolean
+                private val icon: Int,
+                private val label: Int,
+                key: String,
+                default: Boolean
         ) :
-            BooleanCustomization(key, default) {
+                BooleanCustomization(key, default) {
 
-            override fun createRow(context: Context, parent: ViewGroup, accent: Int): View? {
+            override fun createRow(context: Context, parent: ViewGroup): View? {
                 val view = LayoutInflater.from(context)
-                    .inflate(R.layout.drawer_tab_switch_row, parent, false)
+                        .inflate(R.layout.drawer_tab_switch_row, parent, false)
 
                 view.findViewById<AppCompatImageView>(R.id.icon).apply {
                     setImageResource(icon)
-                    tintDrawable(accent)
                 }
 
                 view.findViewById<AppCompatTextView>(R.id.title).setText(label)
 
-                val switch = view.findViewById<SwitchCompat>(R.id.switch_widget)
-                switch.isChecked = value()
-                // switch.applyColor(accent)
+                val switch = view.findViewById<SwitchCompat>(R.id.switch_widget).apply {
+                    isChecked = value()
+                    applyColor(context.omegaPrefs.accentColor)
+                }
 
                 view.setOnClickListener {
                     value = !value()
@@ -377,7 +377,7 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         open class ColorCustomization(key: String, default: Int) :
-            Customization<Int, String>(key, default) {
+                Customization<Int, String>(key, default) {
             override fun loadFromJson(context: Context, obj: String?) {
                 value = obj?.let { AppGroupsUtils.getInstance(context).getTabColor(it) }
             }
@@ -392,26 +392,29 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         class ColorRow(key: String, default: Int) : ColorCustomization(key, default) {
-            override fun createRow(context: Context, parent: ViewGroup, accent: Int): View? {
+            override fun createRow(context: Context, parent: ViewGroup): View? {
                 val view = LayoutInflater.from(context)
-                    .inflate(R.layout.drawer_tab_color_row, parent, false)
+                        .inflate(R.layout.drawer_tab_color_row, parent, false)
 
                 updateColor(view)
 
-                val themedContext =
-                    ThemedContextProvider(context, null, ThemeOverride.Settings()).get()
-
+                val themedContext = ThemedContextProvider(context, null, ThemeOverride.Settings()).get()
+                val colors: ArrayList<String> = arrayListOf()
+                if (value == null) {
+                    value = context.omegaPrefs.accentColor
+                }
+                val currentColor = java.lang.String.format("#%06X", 0xFFFFFF and value!!)
+                colors.add(currentColor)
+                colors.addAll(context.resources.getStringArray(R.array.tab_colors))
                 view.setOnClickListener {
-                    val colorPicker = ColorSelectorPresets(themedContext)
-                    colorPicker.setTitle(context.getString(R.string.tab_color))
+                    val colorPicker = ColorPickerTab(themedContext)
                     colorPicker.setRoundColorButton(true)
+                    colorPicker.showAlpha(false)
                     colorPicker.setColorButtonSize(48, 48)
                     colorPicker.setColumns(4)
-                    if (value == null) {
-                        value = accent
-                    }
+                    colorPicker.setColors(colors)
                     colorPicker.setDefaultColorButton(value!!)
-                    colorPicker.positiveButton.applyColor(Utilities.getOmegaPrefs(context).accentColor)
+                    colorPicker.positiveButton.applyColor(context.omegaPrefs.accentColor)
                     colorPicker.show()
                     colorPicker.setOnChooseColorListener(object : OnChooseColorListener {
                         override fun onCancel() {
@@ -438,7 +441,7 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         abstract class SetCustomization<T : Any, S : Any>(key: String, default: MutableSet<T>) :
-            Customization<MutableSet<T>, JSONArray>(key, default) {
+                Customization<MutableSet<T>, JSONArray>(key, default) {
 
             @Suppress("UNCHECKED_CAST")
             override fun loadFromJson(context: Context, obj: JSONArray?) {
@@ -466,7 +469,7 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         open class ComponentsCustomization(key: String, default: MutableSet<ComponentKey>) :
-            SetCustomization<ComponentKey, String>(key, default) {
+                SetCustomization<ComponentKey, String>(key, default) {
 
             override fun loadFromJson(context: Context, obj: JSONArray?) {
                 super.loadFromJson(context, obj)
@@ -491,31 +494,49 @@ abstract class AppGroups<T : AppGroups.Group>(
         }
 
         class AppsRow(key: String, default: MutableSet<ComponentKey>) :
-            ComponentsCustomization(key, default) {
+                ComponentsCustomization(key, default) {
 
-            override fun createRow(context: Context, parent: ViewGroup, accent: Int): View? {
+            override fun createRow(context: Context, parent: ViewGroup): View? {
                 val view = LayoutInflater.from(context)
-                    .inflate(R.layout.drawer_tab_apps_row, parent, false)
+                        .inflate(R.layout.drawer_tab_apps_row, parent, false)
 
-                view.findViewById<AppCompatImageView>(R.id.manage_apps_icon).tintDrawable(accent)
                 updateCount(view)
 
                 view.setOnClickListener {
-                    SelectableAppsActivity.start(context, value(), { newSelections ->
-                        if (newSelections != null) {
-                            value = HashSet(newSelections)
-                            updateCount(view)
+                    if (Utilities.ATLEAST_R && Utilities.getOmegaPrefs(context).enableProtectedApps) {
+                        Config.showLockScreen(
+                                context,
+                                context.getString(R.string.trust_apps_manager_name)
+                        ) {
+                            openFragment(context, view)
                         }
-                    }, DrawerTabs.Profile())
+                    } else {
+                        openFragment(context, view)
+                    }
                 }
 
                 return view
             }
 
+            private fun openFragment(context: Context, view: View) {
+                val fragment = "com.saggitt.omega.views.SelectableAppsFragment"
+                PreferencesActivity.startFragment(
+                        context,
+                        fragment,
+                        context.resources.getString(R.string.title__drawer_hide_apps),
+                        value(), { newSelections ->
+                    if (newSelections != null) {
+                        value = HashSet(newSelections)
+                        updateCount(view)
+                    }
+                }, DrawerTabs.Profile()
+                )
+            }
+
             private fun updateCount(view: View) {
                 val count = value().size
                 view.findViewById<AppCompatTextView>(R.id.apps_count).text =
-                    view.resources.getQuantityString(R.plurals.tab_apps_count, count, count)
+                        view.resources.getQuantityString(R.plurals.tab_apps_count, count, count)
             }
 
             override fun clone(): Customization<MutableSet<ComponentKey>, JSONArray> {
@@ -578,7 +599,6 @@ class AppGroupsUtils(context: Context) {
     val defaultColor = Utilities.getOmegaPrefs(context).accentColor
 
     fun getTabColor(color: String): Int {
-        Log.d("AppGroupsUtils", "Loading tab color for $color")
         return if (color != "null") {
             color.toInt()
         } else {
@@ -587,6 +607,6 @@ class AppGroupsUtils(context: Context) {
     }
 
     companion object : SingletonHolder<AppGroupsUtils, Context>(
-        ensureOnMainThread(useApplicationContext(::AppGroupsUtils))
+            ensureOnMainThread(useApplicationContext(::AppGroupsUtils))
     )
 }

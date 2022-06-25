@@ -23,8 +23,8 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.Keep
 import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
-import com.android.launcher3.util.PackageManagerHelper
 import com.saggitt.omega.search.SearchProvider
+import com.saggitt.omega.util.isAppEnabled
 
 @Keep
 open class EdgeSearchProvider(context: Context) : SearchProvider(context) {
@@ -36,7 +36,7 @@ open class EdgeSearchProvider(context: Context) : SearchProvider(context) {
         get() = "com.microsoft.emmx"
 
     override val isAvailable: Boolean
-        get() = PackageManagerHelper.isAppEnabled(context.packageManager, packageName, 0)
+        get() = context.packageManager.isAppEnabled(packageName, 0)
 
     override fun startSearch(callback: (intent: Intent) -> Unit) {
         callback(
@@ -48,6 +48,8 @@ open class EdgeSearchProvider(context: Context) : SearchProvider(context) {
         )
     }
 
+    override val iconRes: Int
+        get() = R.drawable.ic_edge
     override val icon: Drawable
-        get() = ResourcesCompat.getDrawable(context.resources, R.drawable.ic_edge, null)!!
+        get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 }
