@@ -17,7 +17,6 @@
 
 package com.saggitt.omega
 
-import androidx.appcompat.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -25,9 +24,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.ResultReceiver
 import android.view.ContextThemeWrapper
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.saggitt.omega.theme.ThemeOverride
+import com.saggitt.omega.util.Config.Companion.REQUEST_PERMISSION_LOCATION_ACCESS
 import com.saggitt.omega.util.applyAccent
 
 class BlankActivity : AppCompatActivity() {
@@ -47,15 +48,15 @@ class BlankActivity : AppCompatActivity() {
             if (intent.hasExtra("dialogTitle")) {
                 val theme = ThemeOverride.Settings().getTheme(this)
                 AlertDialog.Builder(ContextThemeWrapper(this, theme))
-                        .setTitle(intent.getCharSequenceExtra("dialogTitle"))
-                        .setMessage(intent.getCharSequenceExtra("dialogMessage"))
-                        .setOnDismissListener { if (!targetStarted) finish() }
-                        .setNegativeButton(android.R.string.cancel) { _, _ -> finish() }
-                        .setPositiveButton(intent.getStringExtra("positiveButton")) { _, _ ->
-                            startTargetActivity()
-                        }
-                        .show()
-                        .applyAccent()
+                    .setTitle(intent.getCharSequenceExtra("dialogTitle"))
+                    .setMessage(intent.getCharSequenceExtra("dialogMessage"))
+                    .setOnDismissListener { if (!targetStarted) finish() }
+                    .setNegativeButton(android.R.string.cancel) { _, _ -> finish() }
+                    .setPositiveButton(intent.getStringExtra("positiveButton")) { _, _ ->
+                        startTargetActivity()
+                    }
+                    .show()
+                    .applyAccent()
             } else {
                 startTargetActivity()
             }
@@ -70,11 +71,13 @@ class BlankActivity : AppCompatActivity() {
                 if (intent.hasExtra("dialogTitle")) {
                     startActivity(intent.getParcelableExtra("intent"))
                 } else {
-                    startActivityForResult(intent.getParcelableExtra("intent"), requestCode)
+                    intent.getParcelableExtra<Intent>("intent")
+                        ?.let { startActivityForResult(it, requestCode) }
                 }
             }
             intent.hasExtra("permissions") -> ActivityCompat.requestPermissions(
-                    this, intent.getStringArrayExtra("permissions")!!, permissionRequestCode)
+                this, intent.getStringArrayExtra("permissions")!!, permissionRequestCode
+            )
 
             else -> {
                 finish()
@@ -84,7 +87,11 @@ class BlankActivity : AppCompatActivity() {
         targetStarted = true
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (requestCode == permissionRequestCode) {
             resultReceiver?.send(RESULT_OK, Bundle(2).apply {
                 putStringArray("permissions", permissions)
@@ -92,11 +99,14 @@ class BlankActivity : AppCompatActivity() {
             })
             resultSent = true
             finish()
+        } else if (requestCode == REQUEST_PERMISSION_LOCATION_ACCESS) {
+            omegaApp.smartspace.updateWeatherData()
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == this.requestCode) {
             if (data != null) {
@@ -119,8 +129,10 @@ class BlankActivity : AppCompatActivity() {
 
     companion object {
 
-        fun startActivityForResult(context: Context, targetIntent: Intent, requestCode: Int,
-                                   flags: Int, callback: (Int, Bundle?) -> Unit) {
+        fun startActivityForResult(
+            context: Context, targetIntent: Intent, requestCode: Int,
+            flags: Int, callback: (Int, Bundle?) -> Unit
+        ) {
             val intent = Intent(context, BlankActivity::class.java).apply {
                 putExtra("intent", targetIntent)
                 putExtra("requestCode", requestCode)
@@ -135,9 +147,11 @@ class BlankActivity : AppCompatActivity() {
             start(context, intent)
         }
 
-        fun startActivityWithDialog(context: Context, targetIntent: Intent, requestCode: Int,
-                                    dialogTitle: CharSequence, dialogMessage: CharSequence,
-                                    positiveButton: String, callback: (Int) -> Unit) {
+        fun startActivityWithDialog(
+            context: Context, targetIntent: Intent, requestCode: Int,
+            dialogTitle: CharSequence, dialogMessage: CharSequence,
+            positiveButton: String, callback: (Int) -> Unit
+        ) {
             val intent = Intent(context, BlankActivity::class.java).apply {
                 putExtra("intent", targetIntent)
                 putExtra("requestCode", requestCode)
@@ -154,15 +168,19 @@ class BlankActivity : AppCompatActivity() {
             start(context, intent)
         }
 
-        inline fun requestPermission(context: Context, permission: String, requestCode: Int,
-                                     crossinline callback: (Boolean) -> Unit) {
+        inline fun requestPermission(
+            context: Context, permission: String, requestCode: Int,
+            crossinline callback: (Boolean) -> Unit
+        ) {
             requestPermissions(context, arrayOf(permission), requestCode) { _, _, grantResults ->
                 callback(grantResults.all { it == PackageManager.PERMISSION_GRANTED })
             }
         }
 
-        fun requestPermissions(context: Context, permissions: Array<String>, requestCode: Int,
-                               callback: (Int, Array<String>, IntArray) -> Unit) {
+        fun requestPermissions(
+            context: Context, permissions: Array<String>, requestCode: Int,
+            callback: (Int, Array<String>, IntArray) -> Unit
+        ) {
             val intent = Intent(context, BlankActivity::class.java).apply {
                 putExtra("permissions", permissions)
                 putExtra("permissionRequestCode", requestCode)
@@ -170,12 +188,14 @@ class BlankActivity : AppCompatActivity() {
 
                     override fun onReceiveResult(resultCode: Int, resultData: Bundle?) {
                         if (resultCode == RESULT_OK && resultData != null) {
-                            callback(requestCode,
-                                    resultData.getStringArray("permissions")!!,
-                                    resultData.getIntArray("grantResults")!!)
+                            callback(
+                                requestCode,
+                                resultData.getStringArray("permissions")!!,
+                                resultData.getIntArray("grantResults")!!
+                            )
                         } else {
                             callback(requestCode, permissions,
-                                    IntArray(permissions.size) { PackageManager.PERMISSION_DENIED })
+                                IntArray(permissions.size) { PackageManager.PERMISSION_DENIED })
                         }
                     }
                 })

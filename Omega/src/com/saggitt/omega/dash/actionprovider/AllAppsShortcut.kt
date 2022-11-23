@@ -18,26 +18,22 @@
 package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import androidx.appcompat.content.res.AppCompatResources
-import com.android.launcher3.Launcher
+import com.android.launcher3.LauncherAppState
 import com.android.launcher3.LauncherState
 import com.android.launcher3.R
+import com.saggitt.omega.compose.icons.Phosphor
+import com.saggitt.omega.compose.icons.phosphor.DotsNine
 import com.saggitt.omega.dash.DashActionProvider
 
 class AllAppsShortcut(context: Context) : DashActionProvider(context) {
     override val itemId = 1
     override val name = context.getString(R.string.dash_all_apps_title)
     override val description = context.getString(R.string.dash_all_apps_summary)
-
-    override val icon: Drawable?
-        get() = AppCompatResources.getDrawable(context, R.drawable.ic_apps).apply {
-            this?.setTint(darkenColor(accentColor))
-        }
+    override val icon = Phosphor.DotsNine
 
     override fun runAction(context: Context) {
-        if (!Launcher.getLauncher(context).isInState(LauncherState.ALL_APPS)) {
-            Launcher.getLauncher(context).stateManager.goToState(LauncherState.ALL_APPS)
+        if (LauncherAppState.getInstance(context).launcher.stateManager.state != LauncherState.ALL_APPS) {
+            LauncherAppState.getInstance(context).launcher.stateManager.goToState(LauncherState.ALL_APPS)
         }
     }
 }

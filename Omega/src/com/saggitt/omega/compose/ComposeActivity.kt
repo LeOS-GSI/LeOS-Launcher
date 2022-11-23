@@ -26,13 +26,14 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.core.net.toUri
+import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.saggitt.omega.compose.navigation.DefaultComposeView
+import com.saggitt.omega.compose.navigation.Routes
 import com.saggitt.omega.theme.OmegaAppTheme
 import com.saggitt.omega.theme.ThemeManager
 import com.saggitt.omega.theme.ThemeOverride
 import com.saggitt.omega.util.omegaPrefs
-import com.saggitt.omega.util.recreateAnimated
 
 /*
     Blank activity to handle Compose calls
@@ -44,13 +45,14 @@ class ComposeActivity : AppCompatActivity(), ThemeManager.ThemeableActivity {
     private lateinit var themeOverride: ThemeOverride
     private val themeSet: ThemeOverride.ThemeSet get() = ThemeOverride.Settings()
     private var paused = false
+    lateinit var navController: NavHostController
 
     @OptIn(ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         themeOverride = ThemeOverride(themeSet, this)
         themeOverride.applyTheme(this)
-        currentAccent = omegaPrefs.accentColor
+        currentAccent = omegaPrefs.themeAccentColor.onGetValue()
         currentTheme = themeOverride.getTheme(this)
         theme.applyStyle(
             resources.getIdentifier(
@@ -64,23 +66,24 @@ class ComposeActivity : AppCompatActivity(), ThemeManager.ThemeableActivity {
         }
         setContent {
             OmegaAppTheme {
-                val navController = rememberAnimatedNavController()
+                navController = rememberAnimatedNavController()
                 DefaultComposeView(navController)
             }
         }
     }
 
-    override fun onThemeChanged() {
-        if (currentTheme == themeOverride.getTheme(this)) return
+    override fun onThemeChanged(forceUpdate: Boolean) {
+        if (currentTheme == themeOverride.getTheme(this) && !forceUpdate) return
         if (paused) {
             recreate()
         } else {
-            recreateAnimated()
+            val currentRoute = navController.currentDestination?.route ?: "${Routes.PREFS_MAIN}/"
+            navController.popBackStack()
+            navController.navigate(currentRoute)
         }
     }
 
     companion object {
-
         fun createIntent(context: Context, destination: String): Intent {
             val uri = "android-app://androidx.navigation//$destination".toUri()
             Log.d("ComposeActivity", "Creating intent for $uri")

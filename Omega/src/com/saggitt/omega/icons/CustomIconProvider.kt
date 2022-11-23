@@ -18,8 +18,12 @@
 
 package com.saggitt.omega.icons
 
-import android.content.*
+import android.content.BroadcastReceiver
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
 import android.content.Intent.*
+import android.content.IntentFilter
 import android.content.pm.ActivityInfo
 import android.content.pm.LauncherActivityInfo
 import android.content.res.Resources
@@ -38,12 +42,15 @@ import com.android.launcher3.icons.IconProvider
 import com.android.launcher3.icons.ThemedIconDrawable
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.SafeCloseable
+import com.saggitt.omega.LAWNICONS_PACKAGE_NAME
 import com.saggitt.omega.data.IconOverrideRepository
 import com.saggitt.omega.iconpack.IconEntry
 import com.saggitt.omega.iconpack.IconPack
 import com.saggitt.omega.iconpack.IconPackProvider
 import com.saggitt.omega.iconpack.IconType
 import com.saggitt.omega.util.MultiSafeCloseable
+import com.saggitt.omega.util.getPackageVersionCode
+import com.saggitt.omega.util.isPackageInstalled
 import org.xmlpull.v1.XmlPullParser
 import java.util.function.Supplier
 
@@ -53,10 +60,12 @@ class CustomIconProvider @JvmOverloads constructor(
 ) :
     IconProvider(context, supportsIconTheme) {
     private val prefs = Utilities.getOmegaPrefs(context)
+    private val iconPackPref = prefs.themeIconPackGlobal
     private val mContext = context
     private val iconPackProvider = IconPackProvider.INSTANCE.get(context)
     private val overrideRepo = IconOverrideRepository.INSTANCE.get(context)
-    private val iconPack get() = iconPackProvider.getIconPackOrSystem(prefs.iconPackPackage)
+    private val iconPack get() = iconPackProvider.getIconPackOrSystem(iconPackPref.onGetValue())
+    private var lawniconsVersion = 0L
 
     private var _themeMap: Map<ComponentName, ThemedIconDrawable.ThemeData>? = null
     private val themeMap: Map<ComponentName, ThemedIconDrawable.ThemeData>
@@ -66,7 +75,20 @@ class CustomIconProvider @JvmOverloads constructor(
             }
             return _themeMap!!
         }
-    val supportsIconTheme get() = themeMap != DISABLED_MAP
+    private val supportsIconTheme get() = themeMap != DISABLED_MAP
+
+    init {
+        setIconThemeSupported(supportsIconTheme)
+    }
+
+    override fun setIconThemeSupported(isSupported: Boolean) {
+        lawniconsVersion =
+            if (isSupported)
+                context.packageManager.getPackageVersionCode(LAWNICONS_PACKAGE_NAME)
+            else
+                0L
+        _themeMap = if (isSupported) null else DISABLED_MAP
+    }
 
     private fun resolveIconEntry(componentName: ComponentName, user: UserHandle): IconEntry? {
         val componentKey = ComponentKey(componentName, user)
@@ -83,7 +105,7 @@ class CustomIconProvider @JvmOverloads constructor(
             return calendarEntry
         }
         // finally, look for normal icon
-        return iconPack.getIcon(componentName, user)
+        return iconPack.getIcon(componentName)
     }
 
     override fun getIconWithOverrides(
@@ -141,6 +163,14 @@ class CustomIconProvider @JvmOverloads constructor(
         return super.getIconWithOverrides(packageName, component, user, iconDpi, fallback)
     }
 
+    override fun isThemeEnabled(): Boolean {
+        return _themeMap != DISABLED_MAP
+    }
+
+    override fun getThemeData(componentName: ComponentName): ThemedIconDrawable.ThemeData? {
+        return themeMap[componentName] ?: themeMap[ComponentName(componentName.packageName, "")]
+    }
+
     override fun getIcon(info: ActivityInfo?): Drawable {
         return CustomAdaptiveIconDrawable.wrapNonNull(super.getIcon(info))
     }
@@ -153,6 +183,14 @@ class CustomIconProvider @JvmOverloads constructor(
         return CustomAdaptiveIconDrawable.wrapNonNull(super.getIcon(info, iconDpi))
     }
 
+    override fun getSystemStateForPackage(systemState: String, packageName: String): String {
+        return super.getSystemStateForPackage(systemState, packageName)
+    }
+
+    override fun getSystemIconState(): String {
+        return super.getSystemIconState() + ",pack:${iconPackPref.onGetValue()},lawnicons:${lawniconsVersion}"
+    }
+
     override fun registerIconChangeListener(
         callback: IconChangeListener,
         handler: Handler
@@ -160,6 +198,7 @@ class CustomIconProvider @JvmOverloads constructor(
         return MultiSafeCloseable().apply {
             add(super.registerIconChangeListener(callback, handler))
             add(IconPackChangeReceiver(mContext, handler, callback))
+            add(LawniconsChangeReceiver(context, handler, callback))
         }
     }
 
@@ -175,7 +214,17 @@ class CustomIconProvider @JvmOverloads constructor(
                 field = value
             }
 
-        private val iconPackPref = prefs.iconPackPackage
+        private var iconState = systemIconState
+        private val iconPackPref = prefs.themeIconPackGlobal
+
+        private val subscription = SafeCloseable {
+            val newState = systemIconState
+            if (iconState != newState) {
+                iconState = newState
+                callback.onSystemIconStateChanged(iconState)
+                recreateCalendarAndClockChangeReceiver()
+            }
+        }
 
         init {
             recreateCalendarAndClockChangeReceiver()
@@ -183,7 +232,8 @@ class CustomIconProvider @JvmOverloads constructor(
 
         private fun recreateCalendarAndClockChangeReceiver() {
             val iconPack =
-                IconPackProvider.INSTANCE.get(context).getIconPackOrSystem(iconPackPref)
+                IconPackProvider.INSTANCE.get(context)
+                    .getIconPackOrSystem(iconPackPref.onGetValue())
             calendarAndClockChangeReceiver = if (iconPack != null) {
                 CalendarAndClockChangeReceiver(context, handler, iconPack, callback)
             } else {
@@ -193,6 +243,7 @@ class CustomIconProvider @JvmOverloads constructor(
 
         override fun close() {
             calendarAndClockChangeReceiver = null
+            subscription.close()
         }
     }
 
@@ -216,6 +267,7 @@ class CustomIconProvider @JvmOverloads constructor(
                         callback.onAppIconChanged(componentName.packageName, Process.myUserHandle())
                     }
                 }
+
                 ACTION_DATE_CHANGED, ACTION_TIME_CHANGED -> {
                     context.getSystemService<UserManager>()?.userProfiles?.forEach { user ->
                         iconPack.getCalendars().forEach { componentName ->
@@ -223,6 +275,32 @@ class CustomIconProvider @JvmOverloads constructor(
                         }
                     }
                 }
+            }
+        }
+
+        override fun close() {
+            context.unregisterReceiver(this)
+        }
+    }
+
+    private inner class LawniconsChangeReceiver(
+        private val context: Context, handler: Handler,
+        private val callback: IconChangeListener
+    ) : BroadcastReceiver(), SafeCloseable {
+
+        init {
+            val filter = IntentFilter(ACTION_PACKAGE_ADDED)
+            filter.addAction(ACTION_PACKAGE_CHANGED)
+            filter.addAction(ACTION_PACKAGE_REMOVED)
+            filter.addDataScheme("package")
+            filter.addDataSchemeSpecificPart(LAWNICONS_PACKAGE_NAME, 0)
+            context.registerReceiver(this, filter, null, handler)
+        }
+
+        override fun onReceive(context: Context, intent: Intent) {
+            if (isThemeEnabled) {
+                setIconThemeSupported(true)
+                callback.onSystemIconStateChanged(systemIconState)
             }
         }
 
@@ -262,12 +340,21 @@ class CustomIconProvider @JvmOverloads constructor(
                 Log.e("CustomIconProvider", "Unable to parse icon map.", e)
             }
         }
-
         updateMapFromResources(
             resources = context.resources,
             packageName = context.packageName
         )
+        if (context.packageManager.isPackageInstalled(packageName = LAWNICONS_PACKAGE_NAME)) {
+            updateMapFromResources(
+                resources = context.packageManager.getResourcesForApplication(LAWNICONS_PACKAGE_NAME),
+                packageName = LAWNICONS_PACKAGE_NAME
+            )
+        }
 
         return map
+    }
+
+    companion object {
+        val DISABLED_MAP = emptyMap<ComponentName, ThemedIconDrawable.ThemeData>()
     }
 }

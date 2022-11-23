@@ -39,7 +39,7 @@ class ClockWidgetCreator(val context: Context, val widgetId: Int) {
         val views = RemoteViews(context.packageName, R.layout.clock_widget_double_line)
 
         // Clock
-        if (prefs.smartspaceTime) {
+        if (prefs.smartspaceTime.onGetValue()) {
             views.setViewVisibility(R.id.appwidget_clock, View.VISIBLE)
             views.setCharSequence(R.id.appwidget_clock, getTimeFormat(), timeFormat)
 
@@ -49,7 +49,7 @@ class ClockWidgetCreator(val context: Context, val widgetId: Int) {
                 Intent(AlarmClock.ACTION_SHOW_ALARMS).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 },
-                0
+                PendingIntent.FLAG_MUTABLE
             )
             views.setOnClickPendingIntent(R.id.appwidget_clock, clockIntent)
 
@@ -64,7 +64,7 @@ class ClockWidgetCreator(val context: Context, val widgetId: Int) {
             context,
             widgetId,
             WidgetIntents.getCalendarIntent(),
-            PendingIntent.FLAG_UPDATE_CURRENT
+            PendingIntent.FLAG_MUTABLE
         )
         views.setOnClickPendingIntent(R.id.appwidget_date, calendarIntent)
         views.setTextViewText(R.id.appwidget_date, getFormattedDate())
@@ -72,9 +72,10 @@ class ClockWidgetCreator(val context: Context, val widgetId: Int) {
         // Weather
         val intent = Intent(context, WeatherClickListenerReceiver::class.java)
         intent.action = "com.saggitt.omega.ACTION_OPEN_WEATHER_INTENT"
-        val weatherIntent = PendingIntent.getBroadcast(context, widgetId, intent, 0)
+        val weatherIntent =
+            PendingIntent.getBroadcast(context, widgetId, intent, PendingIntent.FLAG_MUTABLE)
 
-        if (prefs.weatherProvider == SmartSpaceDataWidget::class.java.name) {
+        if (prefs.smartspaceWeatherProvider.onGetValue() == SmartSpaceDataWidget::class.java.name) {
             //TODO: Change to visible when there is a weather provider
             views.setViewVisibility(R.id.weather_container, View.GONE)
             views.setOnClickPendingIntent(R.id.title_weather_icon, weatherIntent)
@@ -87,7 +88,7 @@ class ClockWidgetCreator(val context: Context, val widgetId: Int) {
             context,
             appWidgetId,
             WidgetIntents.getWidgetUpdateIntent(context),
-            PendingIntent.FLAG_UPDATE_CURRENT
+            PendingIntent.FLAG_MUTABLE
         )
         views.setOnClickPendingIntent(R.id.main_layout, refreshIntent)
 
@@ -95,7 +96,7 @@ class ClockWidgetCreator(val context: Context, val widgetId: Int) {
     }
 
     private fun getTimeFormat(): String {
-        return if (prefs.smartspaceTime24H)
+        return if (prefs.smartspaceTime24H.onGetValue())
             "setFormat24Hour"
         else
             "setFormat12Hour"

@@ -23,6 +23,7 @@ import android.content.Intent
 import android.os.Build
 import android.view.View
 import androidx.annotation.Keep
+import androidx.core.content.ContextCompat
 import com.android.launcher3.LauncherState
 import com.android.launcher3.R
 import com.android.quickstep.TouchInteractionService
@@ -37,6 +38,7 @@ open class OpenRecentsGestureHandler(context: Context, config: JSONObject?) :
     VerticalSwipeGestureHandler, StateChangeGestureHandler {
 
     override val displayName: String = context.getString(R.string.action_open_recents)
+    override val displayNameRes = R.string.action_open_recents
     override val isAvailable: Boolean
         get() = TouchInteractionService.isConnected()
     override val iconResource: Intent.ShortcutIconResource by lazy {
@@ -63,6 +65,8 @@ open class PressBackGestureHandler(context: Context, config: JSONObject?) :
     GestureHandler(context, config) {
 
     override val displayName: String = context.getString(R.string.action_press_back)
+    override val displayNameRes = R.string.action_press_back
+    override val icon = ContextCompat.getDrawable(context, R.drawable.ic_arrow_back)
 
     override fun onGestureTrigger(controller: GestureController, view: View?) {
 

@@ -45,7 +45,7 @@ class AppCategorizationFragment : Fragment(), OmegaPreferences.OnPreferenceChang
 
     private val mContext by lazy { activity as Context }
     private val prefs by lazy { Utilities.getOmegaPrefs(mContext) }
-    private val manager by lazy { prefs.appGroupsManager }
+    private val manager by lazy { prefs.drawerAppGroupsManager }
 
     private var groupAdapter: AppGroupsAdapter<*, *>? = null
         set(value) {
@@ -93,7 +93,7 @@ class AppCategorizationFragment : Fragment(), OmegaPreferences.OnPreferenceChang
 
     private fun setupEnableToggle(enableToggle: View) {
         val switch = enableToggle.findViewById<SwitchCompat>(R.id.switchWidget)
-        switch.applyColor(prefs.accentColor)
+        switch.applyColor(prefs.themeAccentColor.onGetValue())
         val syncSwitch = {
             switch.isChecked = manager.categorizationEnabled
             updateGroupAdapter()

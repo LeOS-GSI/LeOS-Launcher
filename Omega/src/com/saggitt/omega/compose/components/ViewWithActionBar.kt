@@ -21,22 +21,31 @@ package com.saggitt.omega.compose.components
 
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.android.launcher3.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ViewWithActionBar(
     title: String,
-    content: @Composable (PaddingValues) -> Unit,
+    floatingActionButton: @Composable () -> Unit = {},
+    showBackButton: Boolean = true,
+    actions: @Composable RowScope.() -> Unit = {},
+    onBackAction: () -> Unit = {},
+    content: @Composable (PaddingValues) -> Unit
 ) {
-    val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
     Scaffold(
         topBar = {
             TopAppBar(
@@ -44,19 +53,29 @@ fun ViewWithActionBar(
                     Text(text = title, style = MaterialTheme.typography.titleMedium)
                 },
                 navigationIcon = {
-                    IconButton(
-                        onClick = { backDispatcher?.onBackPressed() }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = stringResource(id = R.string.gesture_press_back),
-                        )
+                    if (showBackButton) {
+                        val backDispatcher =
+                            LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
+                        IconButton(
+                            onClick = {
+                                onBackAction.invoke()
+                                backDispatcher?.onBackPressed()
+                            }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.ArrowBack,
+                                contentDescription = stringResource(id = R.string.gesture_press_back),
+                            )
+                        }
                     }
                 },
-                backgroundColor = MaterialTheme.colorScheme.background,
-                elevation = 0.dp
+                actions = actions,
+                colors = TopAppBarDefaults.smallTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                )
             )
         },
+        floatingActionButton = floatingActionButton,
         content = content
     )
 }

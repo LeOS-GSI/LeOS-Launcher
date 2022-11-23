@@ -22,11 +22,11 @@ import android.app.Activity
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.pm.PackageManager
-import android.graphics.drawable.Drawable
 import android.os.Build
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import com.android.launcher3.R
+import com.saggitt.omega.compose.icons.Phosphor
+import com.saggitt.omega.compose.icons.phosphor.Bluetooth
 import com.saggitt.omega.dash.DashControlProvider
 
 class Bluetooth(context: Context) : DashControlProvider(context) {
@@ -34,11 +34,7 @@ class Bluetooth(context: Context) : DashControlProvider(context) {
     override val name = context.getString(R.string.dash_bluetooth)
     override val description = context.getString(R.string.dash_bluetooth_summary)
     override val extendable = false
-
-    override val icon: Drawable?
-        get() = AppCompatResources.getDrawable(context, R.drawable.ic_bluetooth).apply {
-            this?.setTint(darkenColor(accentColor))
-        }
+    override val icon = Phosphor.Bluetooth
 
     override var state: Boolean
         get() =

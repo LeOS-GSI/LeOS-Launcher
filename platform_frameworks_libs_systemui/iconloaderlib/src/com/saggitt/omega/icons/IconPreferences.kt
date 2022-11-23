@@ -18,7 +18,6 @@ val Context.prefs
 
 fun shouldWrapAdaptive(context: Context) = context.prefs.getBoolean("pref_adaptive_icon_pack", false)
 fun coloredBackground(context: Context) = context.prefs.getBoolean("pref_colored_background", false)
-fun replaceWhiteBackground(context: Context) = context.prefs.getBoolean("pref_white_only_treatment", false)
 
 fun getWrapperBackgroundColor(context: Context, icon: Drawable): Int {
     val lightness = context.prefs.getFloat("pref_coloredBackgroundLightness", 0.5f)
@@ -51,11 +50,12 @@ fun drawableToBitmap(drawable: Drawable): Bitmap {
     return bitmap
 }
 
-private fun getPrefName():String{
-    return if(BuildConfig.BUILD_TYPE.contains("debug")){
+private fun getPrefName(): String {
+    return if (BuildConfig.BUILD_TYPE.contains("debug")) {
         "com.saggitt.omega.debug_preferences"
-    }
-    else{
+    } else if (BuildConfig.BUILD_TYPE.contains("neo")) {
+        "com.saggitt.omega.neo_preferences"
+    } else {
         "com.saggitt.omega_preferences"
     }
 }

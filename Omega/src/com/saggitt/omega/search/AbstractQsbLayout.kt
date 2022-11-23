@@ -18,7 +18,6 @@
 
 package com.saggitt.omega.search
 
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -26,10 +25,11 @@ import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.drawable.*
-import android.net.Uri
-import android.os.Bundle
-import android.os.SystemClock
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.InsetDrawable
+import android.graphics.drawable.RippleDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
@@ -38,14 +38,18 @@ import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
-import com.android.launcher3.*
+import com.android.launcher3.LauncherAppState
+import com.android.launcher3.R
+import com.android.launcher3.ResourceUtils
+import com.android.launcher3.Utilities
 import com.android.launcher3.graphics.IconShape
 import com.android.launcher3.graphics.NinePatchDrawHelper
 import com.android.launcher3.icons.ShadowGenerator.Builder
 import com.android.launcher3.views.ActivityContext
 import com.saggitt.omega.OmegaLauncher
+import com.saggitt.omega.PREFS_SEARCH_ASSISTANT
+import com.saggitt.omega.PREFS_SEARCH_SHOW_ASSISTANT
 import com.saggitt.omega.preferences.OmegaPreferences
-import com.saggitt.omega.util.Config
 import com.saggitt.omega.util.getColorAttr
 import kotlin.math.round
 
@@ -58,13 +62,12 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
     protected var searchProvider: SearchProvider = controller.searchProvider
     var mShowAssistant = false
     protected var mIsRtl = Utilities.isRtl(resources)
-    private var mAllAppsBgColor = mContext.getColorAttr(R.attr.popupColorPrimary)
+    private var mAllAppsBgColor = context.getColorAttr(R.attr.popupColorPrimary)
     private var mShadowHelper = NinePatchDrawHelper()
     protected var mActivity: ActivityContext? = ActivityContext.lookupContext(context)
 
     var micIconView: ImageView? = null
     var searchLogoView: ImageView? = null
-    private var lensIconView: ImageView? = null
 
     private var mAllAppsShadowBitmap: Bitmap? = null
     private var mClearBitmap: Bitmap? = null
@@ -111,41 +114,6 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
             }
         }
 
-        lensIconView = findViewById<ImageView?>(R.id.lens_icon).apply {
-
-            visibility =
-                if (searchProvider.packageName == Config.GOOGLE_QSB
-                    && searchProvider !is WebSearchProvider
-                    && prefs.showLensIcon
-                ) {
-                    setImageResource(R.drawable.ic_lens_color)
-
-                    setOnClickListener {
-                        val lensIntent = Intent()
-                        val bundle = Bundle()
-                        bundle.putString("caller_package", Config.GOOGLE_QSB)
-                        bundle.putLong(
-                            "start_activity_time_nanos",
-                            SystemClock.elapsedRealtimeNanos()
-                        )
-                        lensIntent.setComponent(
-                            ComponentName(
-                                Config.GOOGLE_QSB,
-                                Config.LENS_ACTIVITY
-                            )
-                        )
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            .setPackage(Config.GOOGLE_QSB)
-                            .setData(Uri.parse(Config.LENS_URI))
-                            .putExtra("lens_activity_params", bundle)
-                        mContext.startActivity(lensIntent)
-                    }
-                    View.VISIBLE
-                } else {
-                    View.GONE
-                }
-        }
-
         setOnClickListener {
             val provider = controller.searchProvider
             provider.startSearch { intent: Intent? ->
@@ -182,9 +150,8 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         when (key) {
-            "opa_enabled",
-            "opa_assistant",
-            "show_lens_icon",
+            PREFS_SEARCH_SHOW_ASSISTANT,
+            PREFS_SEARCH_ASSISTANT,
             ->
                 reloadPreferences(sharedPreferences)
         }
@@ -211,8 +178,8 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
     /* Draw search bar background */
     private fun drawPill(helper: NinePatchDrawHelper, bitmap: Bitmap?, canvas: Canvas?) {
         val shadowDimens: Int = getShadowDimens(bitmap!!)
-        val left = paddingLeft - shadowDimens
         val top = paddingTop - (bitmap.height - getHeightWithoutPadding()) / 2
+        val left = paddingLeft - shadowDimens
         val right = width - paddingRight + shadowDimens
         helper.draw(bitmap, canvas, left.toFloat(), top.toFloat(), right.toFloat())
     }
@@ -284,23 +251,6 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
             background = micIconRipple
             setPadding(12, 12, 12, 12)
         }
-        lensIconView?.apply {
-            val lensIconRipple: RippleDrawable =
-                oldRipple.constantState!!.newDrawable().mutate() as RippleDrawable
-            lensIconRipple.setLayerInset(0, 0, 2, 0, 2)
-            background = lensIconRipple
-            setPadding(12, 12, 12, 12)
-        }
-        lensIconView?.requestLayout()
-    }
-
-    /*
-     * Get the searchbar width
-     */
-    open fun getMeasuredWidth(width: Int, dp: DeviceProfile): Int {
-        val leftRightPadding = (dp.desiredWorkspaceLeftRightMarginPx
-                + dp.cellLayoutPaddingLeftRightPx)
-        return width - leftRightPadding * 2
     }
 
     protected open fun getHeightWithoutPadding(): Int {
@@ -318,7 +268,7 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
         return InsetDrawable(ripple, resources.getDimensionPixelSize(R.dimen.qsb_shadow_margin))
     }
 
-    protected fun getDevicePreferences(): SharedPreferences {
+    private fun getDevicePreferences(): SharedPreferences {
         val devicePrefs = Utilities.getPrefs(mContext)
         reloadPreferences(devicePrefs)
         return devicePrefs
@@ -329,8 +279,9 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
             searchProvider = SearchProviderController.getInstance(mContext).searchProvider
             val providerSupported =
                 searchProvider.supportsAssistant || searchProvider.supportsVoiceSearch
-            val showMic = sharedPreferences.getBoolean("opa_enabled", true) && providerSupported
-            mShowAssistant = sharedPreferences.getBoolean("opa_assistant", true)
+            val showMic =
+                sharedPreferences.getBoolean(PREFS_SEARCH_SHOW_ASSISTANT, true) && providerSupported
+            mShowAssistant = sharedPreferences.getBoolean(PREFS_SEARCH_ASSISTANT, true)
             searchLogoView?.setImageDrawable(getIcon())
             if (showMic) {
                 micIconView?.visibility = View.VISIBLE
@@ -344,7 +295,7 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
 
     protected open fun getCornerRadius(): Float {
         val defaultRadius = ResourceUtils.pxFromDp(100f, resources.displayMetrics).toFloat()
-        val radius: Float = round(Utilities.getOmegaPrefs(context).searchBarRadius)
+        val radius: Float = round(Utilities.getOmegaPrefs(context).searchBarRadius.onGetValue())
         if (radius >= 0f) {
             return radius
         }
@@ -354,9 +305,9 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
 
     open fun getMicIcon(): Drawable? {
         return if (searchProvider.supportsAssistant && mShowAssistant) {
-            searchProvider.getAssistantIcon(true)
+            searchProvider.assistantIcon
         } else if (searchProvider.supportsVoiceSearch) {
-            searchProvider.getVoiceIcon(true)
+            searchProvider.voiceIcon
         } else {
             micIconView?.visibility = GONE
             ColorDrawable(Color.TRANSPARENT)
@@ -364,7 +315,7 @@ abstract class AbstractQsbLayout(context: Context, attrs: AttributeSet? = null) 
     }
 
     open fun getIcon(): Drawable {
-        return searchProvider.getIcon(true)
+        return searchProvider.icon
     }
 
     open fun getLauncher(): OmegaLauncher {

@@ -124,7 +124,7 @@ public class IconCache extends BaseIconCache {
             long userSerial = mUserManager.getSerialNumberForUser(user);
             for (LauncherActivityInfo app : mLauncherApps.getActivityList(packageName, user)) {
                 addIconToDBAndMemCache(app, mLauncherActivityInfoCachingLogic, info, userSerial,
-                        false /*replace existing*/);
+                        true /*replace existing*/);
             }
         } catch (NameNotFoundException e) {
             Log.d(TAG, "Package not found", e);
@@ -260,7 +260,7 @@ public class IconCache extends BaseIconCache {
             getTitleAndIcon(appInfo, false);
             return appInfo.bitmap;
         } else {
-            PackageItemInfo pkgInfo = new PackageItemInfo(shortcutInfo.getPackage());
+            PackageItemInfo pkgInfo = new PackageItemInfo(shortcutInfo.getPackage(), shortcutInfo.getUserHandle());
             getTitleAndIconForApp(pkgInfo, false);
             return pkgInfo.bitmap;
         }
@@ -313,7 +313,7 @@ public class IconCache extends BaseIconCache {
         CacheEntry entry = getEntryForPackageLocked(
                 infoInOut.packageName, infoInOut.user, useLowResIcon);
         applyCacheEntry(entry, infoInOut);
-        if (infoInOut.category == PackageItemInfo.CONVERSATIONS) {
+        if (infoInOut.widgetCategory == PackageItemInfo.CONVERSATIONS) {
             infoInOut.title = mContext.getString(R.string.widget_category_conversations);
             infoInOut.contentDescription = mPackageManager.getUserBadgedLabel(
                     infoInOut.title, infoInOut.user);

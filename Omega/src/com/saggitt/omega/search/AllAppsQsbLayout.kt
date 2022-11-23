@@ -27,14 +27,23 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.android.launcher3.*
+import com.android.launcher3.BaseRecyclerView
+import com.android.launcher3.DeviceProfile
+import com.android.launcher3.Insettable
+import com.android.launcher3.LauncherAppState
+import com.android.launcher3.R
+import com.android.launcher3.Utilities
 import com.android.launcher3.allapps.AllAppsContainerView
 import com.android.launcher3.allapps.SearchUiManager
 import com.android.launcher3.icons.IconNormalizer
 import com.saggitt.omega.OmegaLauncher.Companion.getLauncher
+import com.saggitt.omega.PREFS_SEARCH_GLOBAL
+import com.saggitt.omega.compose.PrefsActivityX
+import com.saggitt.omega.compose.navigation.Routes
 import com.saggitt.omega.search.providers.AppsSearchProvider
 import com.saggitt.omega.util.Config
 import kotlin.math.roundToInt
@@ -42,36 +51,41 @@ import kotlin.math.roundToInt
 class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
     AbstractQsbLayout(context, attrs), SearchUiManager, Insettable {
 
-    private var mUseFallbackSearch = false
     var mDoNotRemoveFallback = false
     private val mVerticalOffset =
         resources.getDimensionPixelSize(R.dimen.all_apps_search_vertical_offset)
 
     private var mFallback: AllAppsQsbFallback? = null
     private lateinit var mAppsView: AllAppsContainerView
+    private var mCancelButton: ImageButton? = null
 
     init {
-        visibility = (if (prefs.allAppsSearch) View.VISIBLE else View.GONE)
+        visibility = (if (prefs.drawerSearch.onGetValue()) View.VISIBLE else View.GONE)
     }
 
     override fun onFinishInflate() {
         super.onFinishInflate()
 
-        findViewById<ImageView?>(R.id.mic_icon).apply {
-            if (!prefs.allAppsGlobalSearch) {
-                visibility = View.GONE
+        findViewById<ImageButton?>(R.id.settings_button).apply {
+            setOnClickListener {
+                context.startActivity(
+                    PrefsActivityX.createIntent(
+                        context,
+                        "${Routes.PREFS_SEARCH}/"
+                    )
+                )
             }
         }
 
-        findViewById<ImageView?>(R.id.lens_icon).apply {
-            if (!prefs.allAppsGlobalSearch) {
+        findViewById<ImageView?>(R.id.mic_icon).apply {
+            if (!prefs.searchGlobal.onGetValue()) {
                 visibility = View.GONE
             }
         }
 
         setOnClickListener {
             val provider = controller.searchProvider
-            if (prefs.allAppsGlobalSearch) {
+            if (prefs.searchGlobal.onGetValue()) {
                 provider.startSearch { intent: Intent? ->
                     mContext.startActivity(
                         intent,
@@ -83,6 +97,8 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
                 searchFallback("")
             }
         }
+
+        mCancelButton = findViewById(R.id.search_cancel_button)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -90,17 +106,15 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
         val idp = LauncherAppState.getIDP(mContext)!!
         val dp: DeviceProfile = idp.getDeviceProfile(mContext)
         val myRequestedWidth = MeasureSpec.getSize(widthMeasureSpec)
-        val rowWidth = (myRequestedWidth - mAppsView.activeRecyclerView.paddingLeft
-                - mAppsView.activeRecyclerView.paddingRight)
 
         val cellWidth = DeviceProfile.calculateCellWidth(
-            rowWidth, dp.cellLayoutBorderSpacingPx,
+            myRequestedWidth, dp.cellLayoutBorderSpacingPx,
             dp.numShownHotseatIcons
         )
         val iconVisibleSize = (IconNormalizer.ICON_VISIBLE_AREA_FACTOR * dp.iconSizePx).roundToInt()
         val iconPadding = cellWidth - iconVisibleSize
 
-        val myWidth = rowWidth - iconPadding + paddingLeft + paddingRight
+        val myWidth = myRequestedWidth - iconPadding + paddingLeft + paddingRight
         super.onMeasure(
             MeasureSpec.makeMeasureSpec(myWidth, MeasureSpec.EXACTLY),
             heightMeasureSpec
@@ -118,7 +132,7 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
         translationX = shift.toFloat()
 
         var containerTopMargin = 0
-        if (!prefs.allAppsSearch) {
+        if (!prefs.drawerSearch.onGetValue()) {
             val mlp = layoutParams as MarginLayoutParams
             containerTopMargin = -(mlp.topMargin + mlp.height)
         }
@@ -127,17 +141,17 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         super.onSharedPreferenceChanged(sharedPreferences, key)
-        if (key == "pref_all_apps_global_search") {
+        if (key == PREFS_SEARCH_GLOBAL) {
             reloadPreferences(sharedPreferences)
         }
     }
 
     override fun getMicIcon(): Drawable? {
-        return if (prefs.allAppsGlobalSearch) {
+        return if (prefs.searchGlobal.onGetValue()) {
             if (searchProvider.supportsAssistant && mShowAssistant) {
-                searchProvider.getAssistantIcon(true)
+                searchProvider.assistantIcon
             } else if (searchProvider.supportsVoiceSearch) {
-                searchProvider.getVoiceIcon(true)
+                searchProvider.voiceIcon
             } else {
                 micIconView?.visibility = View.GONE
                 ColorDrawable(Color.TRANSPARENT)
@@ -149,15 +163,14 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
     }
 
     override fun getIcon(): Drawable {
-        return if (prefs.allAppsGlobalSearch) {
+        return if (prefs.searchGlobal.onGetValue()) {
             super.getIcon()
         } else {
-            AppsSearchProvider(mContext).getIcon(true)
+            AppsSearchProvider(mContext).icon
         }
     }
 
     override fun setInsets(insets: Rect?) {
-        removeFallBack()
         val mlp = layoutParams as MarginLayoutParams
         mlp.topMargin = insets!!.top
         requestLayout()
@@ -173,16 +186,14 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
                 }
                 val currentScrollY = (recyclerView as BaseRecyclerView).currentScrollY
                 val elevationScale = Utilities.boundToRange(currentScrollY / 255f, 0f, 1f)
-                if (prefs.drawerLayout != Config.DRAWER_PAGED)
+                if (prefs.drawerLayoutNew.onGetValue() != Config.DRAWER_PAGED)
                     mFallback?.elevation = initialElevation + elevationScale * initialElevation
             }
         })
     }
 
     override fun resetSearch() {
-        if (mUseFallbackSearch) {
-            resetFallbackView()
-        } else if (!mDoNotRemoveFallback) {
+        if (!mDoNotRemoveFallback) {
             removeFallbackView()
         }
     }
@@ -218,22 +229,9 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
                 ) as AllAppsQsbFallback
             val allAppsContainerView: AllAppsContainerView = mAppsView
             mFallback!!.allAppsQsbLayout = this
+            mFallback!!.setCancelButton(mCancelButton!!)
             mFallback!!.initializeSearch(allAppsContainerView)
             addView(mFallback)
-        }
-    }
-
-    private fun resetFallbackView() {
-        if (mFallback != null) {
-            mFallback!!.reset()
-            mFallback!!.clearSearchResult()
-        }
-    }
-
-    private fun removeFallBack() {
-        if (mUseFallbackSearch) {
-            removeFallbackView()
-            mUseFallbackSearch = false
         }
     }
 
@@ -246,7 +244,7 @@ class AllAppsQsbLayout(context: Context, attrs: AttributeSet? = null) :
     }
 
     private fun shouldUseFallbackSearch(provider: SearchProvider) =
-        !prefs.allAppsGlobalSearch
+        !prefs.searchGlobal.onGetValue()
                 || provider is AppsSearchProvider
                 || provider is WebSearchProvider
 }

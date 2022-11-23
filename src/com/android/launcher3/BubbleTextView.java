@@ -18,6 +18,8 @@ package com.android.launcher3;
 
 import static com.android.launcher3.graphics.PreloadIconDrawable.newPendingIcon;
 import static com.android.launcher3.icons.GraphicsUtils.setColorAlphaBound;
+import static com.saggitt.omega.ConstantsKt.LAWNICONS_PACKAGE_NAME;
+import static com.saggitt.omega.ConstantsKt.THEME_ICON_THEMED;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -72,6 +74,7 @@ import com.saggitt.omega.gestures.GestureController;
 import com.saggitt.omega.gestures.GestureHandler;
 import com.saggitt.omega.gestures.handlers.ViewSwipeUpGestureHandler;
 import com.saggitt.omega.preferences.OmegaPreferences;
+import com.saggitt.omega.util.OmegaUtilsKt;
 
 import java.text.NumberFormat;
 
@@ -190,7 +193,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
             defaultIconSize = grid.iconSizePx;
             setCenterVertically(grid.isScalableGrid);
-            int lines = prefs.getHomeLabelRows();
+            int lines = prefs.getDesktopLabelRows();
             setLineCount(lines);
         } else if (mDisplay == DISPLAY_ALL_APPS) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
@@ -198,11 +201,12 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             defaultIconSize = grid.allAppsIconSizePx;
             int lines = prefs.getDrawerLabelRows();
             setLineCount(lines);
+            OmegaUtilsKt.overrideAllAppsTextColor(this);
         } else if (mDisplay == DISPLAY_FOLDER) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx);
             setCompoundDrawablePadding(grid.folderChildDrawablePaddingPx);
             defaultIconSize = grid.folderChildIconSizePx;
-            int lines = prefs.getHomeLabelRows();
+            int lines = prefs.getDesktopLabelRows();
             setLineCount(lines);
         } else if (mDisplay == DISPLAY_DRAWER_FOLDER) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
@@ -367,9 +371,17 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         setTag(searchActionItemInfo);
     }
 
+    public boolean shouldUseTheme() {
+        //if (mDisplay == DISPLAY_ALL_APPS) {
+        String iconPackPref = Utilities.getOmegaPrefs(getContext()).getThemeIconPackGlobal().onGetValue();
+        return iconPackPref.equals(LAWNICONS_PACKAGE_NAME) || iconPackPref.equals(THEME_ICON_THEMED);
+        //}
+        //return mDisplay == DISPLAY_WORKSPACE || mDisplay == DISPLAY_FOLDER || mDisplay == DISPLAY_TASKBAR;
+    }
+
     @UiThread
     protected void applyIconAndLabel(ItemInfoWithIcon info) {
-        boolean useTheme = mDisplay == DISPLAY_WORKSPACE || mDisplay == DISPLAY_FOLDER;
+        boolean useTheme = shouldUseTheme();
         FastBitmapDrawable iconDrawable = info.newIcon(getContext(), useTheme);
         mDotParams.color = IconPalette.getMutedColor(iconDrawable.getIconColor(), 0.54f);
 
@@ -526,9 +538,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
                 OmegaPreferences prefs = Utilities.getOmegaPrefs(getContext());
                 mDotParams.count = mDotInfo.getNotificationCount();
                 mDotParams.notificationKeys = mDotInfo.getNotificationKeys().size();
-                mDotParams.showCount = prefs.getNotificationCount();
-                if (prefs.getNotificationCustomColor()) {
-                    mDotParams.color = prefs.getNotificationBackground();
+                mDotParams.showCount = prefs.getNotificationCount().onGetValue();
+                if (prefs.getNotificationCustomColor().onGetValue()) {
+                    mDotParams.color = prefs.getNotificationBackground().onGetValue();
                 }
             }
             mDotRenderer.draw(canvas, mDotParams);

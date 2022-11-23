@@ -34,20 +34,20 @@ class DeviceProfileOverrides(context: Context) {
             prefs: OmegaPreferences,
             defaultGrid: InvariantDeviceProfile.GridOption,
         ) : this(
-            numHotseatColumns = prefs.numHotseatIcons.get(defaultGrid),
-            numRows = prefs.workspaceRows.get(defaultGrid),
-            numColumns = prefs.workspaceColumns.get(defaultGrid),
-            numAllAppsColumns = prefs.numAllAppsColumns.get(defaultGrid),
-            numFolderRows = prefs.folderRows.toInt(),
-            numFolderColumns = prefs.folderColumns.toInt(),
+            numHotseatColumns = prefs.dockNumIcons.get(defaultGrid),
+            numRows = prefs.desktopRows.get(defaultGrid),
+            numColumns = prefs.desktopColumns.get(defaultGrid),
+            numAllAppsColumns = prefs.drawerColumns.get(defaultGrid),
+            numFolderRows = prefs.desktopFolderRows.onGetValue().toInt(),
+            numFolderColumns = prefs.desktopFolderColumns.onGetValue().toInt(),
 
-            iconSizeFactor = prefs.desktopIconScale,
-            enableIconText = !prefs.hideAppLabels,
-            iconTextSizeFactor = prefs.desktopTextScale,
+            iconSizeFactor = prefs.desktopIconScale.onGetValue(),
+            enableIconText = !prefs.desktopHideAppLabels.onGetValue(),
+            iconTextSizeFactor = prefs.desktopTextScale.onGetValue(),
 
-            allAppsIconSizeFactor = prefs.allAppsIconScale,
-            enableAllAppsIconText = !prefs.hideAllAppsAppLabels,
-            allAppsIconTextSizeFactor = prefs.allAppsTextScale
+            allAppsIconSizeFactor = prefs.drawerIconScale.onGetValue(),
+            enableAllAppsIconText = !prefs.drawerHideAppLabels.onGetValue(),
+            allAppsIconTextSizeFactor = prefs.drawerTextScale.onGetValue()
         )
 
         fun apply(idp: InvariantDeviceProfile) {

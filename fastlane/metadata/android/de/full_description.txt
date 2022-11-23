@@ -1,3 +1,12 @@
-<p>Dein leistungsstarker libre Launcher mit vielen intelligenten Features.</p>
-<br>
-<p>Status: Beta</p>
+Neo Launcher ist ein Fork von AOSPs Launcher für Poweruser. Neo is stark konfigurierbar und bietet einen großen Funktionsumfang. Beispielsweise:
+
+- das _Dash_
+- unterstützung für Rich Themen
+- Benutzerdefinierte Suchmaschienen
+- Support für Gestensteuerung
+- ein einzigartiges Widget
+- Kategorien oder Ordner im Appdrawer
+- Iconformen und -pack Unterstützung
+- Apps verstecken
+
+Es werden immer neue Features hinzugefügt.

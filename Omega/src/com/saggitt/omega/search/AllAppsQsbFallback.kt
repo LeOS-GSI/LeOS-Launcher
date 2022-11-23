@@ -25,7 +25,9 @@ import android.text.SpannableStringBuilder
 import android.text.method.TextKeyListener
 import android.util.AttributeSet
 import android.view.KeyEvent
+import android.view.View
 import android.view.ViewGroup.MarginLayoutParams
+import android.widget.ImageButton
 import com.android.launcher3.BaseDraggingActivity
 import com.android.launcher3.ExtendedEditText
 import com.android.launcher3.Insettable
@@ -51,7 +53,9 @@ class AllAppsQsbFallback(context: Context, attrs: AttributeSet? = null) :
     var mApps: AlphabeticalAppsList? = null
     private var mAppsView: AllAppsContainerView? = null
     var allAppsQsbLayout: AllAppsQsbLayout? = null
+    var mCancelButton: ImageButton? = null
 
+    private var webResult = false
     init {
         Selection.setSelection(mSearchQueryBuilder, 0)
     }
@@ -66,12 +70,17 @@ class AllAppsQsbFallback(context: Context, attrs: AttributeSet? = null) :
         mAppsView!!.appsStore.removeUpdateListener(this)
     }
 
+    fun setCancelButton(cancelButton: ImageButton) {
+        mCancelButton = cancelButton
+        mCancelButton!!.setOnClickListener { v: View? -> clearSearchResult() }
+    }
+
     override fun initializeSearch(appsView: AllAppsContainerView) {
         mApps = appsView.apps
         mAppsView = appsView
         mSearchBarController.initialize(
             CustomAppSearchAlgorithm(mLauncher),
-            this, mLauncher, this
+            this, mCancelButton, mLauncher, this
         )
     }
 
@@ -166,5 +175,13 @@ class AllAppsQsbFallback(context: Context, attrs: AttributeSet? = null) :
 
     override fun getEditText(): ExtendedEditText {
         return this
+    }
+
+    override fun showWebResult(): Boolean {
+        return webResult
+    }
+
+    override fun setShowWebResult(show: Boolean) {
+        webResult = show
     }
 }

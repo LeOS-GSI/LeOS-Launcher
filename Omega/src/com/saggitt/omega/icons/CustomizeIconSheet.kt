@@ -24,15 +24,37 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Divider
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
@@ -43,15 +65,17 @@ import com.android.launcher3.LauncherAppState
 import com.android.launcher3.R
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.PackageManagerHelper
-import com.google.accompanist.drawablepainter.rememberDrawablePainter
 import com.saggitt.omega.allapps.CustomAppFilter
 import com.saggitt.omega.compose.ComposeActivity
-import com.saggitt.omega.compose.components.PreferenceGroup
+import com.saggitt.omega.compose.components.ComposeSwitchView
 import com.saggitt.omega.compose.components.PreferenceItem
-import com.saggitt.omega.compose.components.SwitchPreference
+import com.saggitt.omega.compose.components.preferences.PreferenceGroup
+import com.saggitt.omega.compose.navigation.Routes
+import com.saggitt.omega.data.IconOverrideRepository
 import com.saggitt.omega.groups.ui.AppTabDialog
 import com.saggitt.omega.preferences.OmegaPreferences
 import com.saggitt.omega.util.addIfNotNull
+import kotlinx.coroutines.launch
 
 @Composable
 fun CustomizeIconSheet(
@@ -61,7 +85,7 @@ fun CustomizeIconSheet(
     onClose: () -> Unit
 ) {
     val context = LocalContext.current
-    val prefs = OmegaPreferences.INSTANCE.get(context)
+    val prefs = OmegaPreferences.getInstance(context)
     var title by remember { mutableStateOf("") }
     val request =
         rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -70,7 +94,7 @@ fun CustomizeIconSheet(
         }
 
     val openEditIcon = {
-        val destination = "edit_icon/$componentKey/"
+        val destination = "${Routes.EDIT_ICON}/$componentKey/"
         request.launch(ComposeActivity.createIntent(context, destination))
     }
 
@@ -97,7 +121,7 @@ fun CustomizeIconSheet(
     )
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
+@OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun CustomizeIconView(
     icon: Drawable,
@@ -108,7 +132,7 @@ fun CustomizeIconView(
     launchSelectIcon: (() -> Unit)? = null
 ) {
     val context = LocalContext.current
-    val prefs = OmegaPreferences.INSTANCE.get(context)
+    val prefs = OmegaPreferences.getInstance(context)
     val keyboardController = LocalSoftwareKeyboardController.current
 
     Column(
@@ -134,7 +158,7 @@ fun CustomizeIconView(
                 .clip(MaterialTheme.shapes.small)
         ) {
             Image(
-                painter = rememberDrawablePainter(icon),
+                bitmap = drawableToBitmap(icon).asImageBitmap(),
                 contentDescription = title,
                 modifier = Modifier
                     .requiredSize(64.dp)
@@ -178,8 +202,12 @@ fun CustomizeIconView(
         Spacer(modifier = Modifier.height(16.dp))
 
         PreferenceGroup {
+            val repo = IconOverrideRepository.INSTANCE.get(context)
+            val overrideItem by repo.observeTarget(componentKey).collectAsState(initial = null)
+            val hasOverride = overrideItem != null
+            val scope = rememberCoroutineScope()
             if (!componentKey.componentName.equals("com.saggitt.omega.folder")) {
-                SwitchPreference(
+                ComposeSwitchView(
                     title = stringResource(R.string.hide_app),
                     isChecked = CustomAppFilter.isHiddenApp(context, componentKey),
                     onCheckedChange = { newValue ->
@@ -190,6 +218,17 @@ fun CustomizeIconView(
                         )
                     }
                 )
+
+                if (hasOverride) {
+                    PreferenceItem(
+                        title = stringResource(R.string.reset_custom_icon),
+                        modifier = Modifier.clickable {
+                            scope.launch {
+                                repo.deleteOverride(componentKey)
+                            }
+                        }
+                    )
+                }
 
                 if (prefs.drawerTabs.isEnabled) {
                     val openDialogCustom = remember { mutableStateOf(false) }
@@ -208,7 +247,7 @@ fun CustomizeIconView(
                 }
             }
         }
-        if (prefs.showDebugInfo) {
+        if (prefs.showDebugInfo.onGetValue()) {
             val appInfo =
                 componentKey.componentName.packageName + "/" + componentKey.componentName.className
             Divider(

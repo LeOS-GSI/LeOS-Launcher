@@ -2,8 +2,16 @@ package com.saggitt.omega.compose.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -29,15 +37,31 @@ fun CategorizationOption(
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = MaterialTheme.shapes.medium,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+        border = if (selected)
+            BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(0.95f))
+        else
+            BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
         tonalElevation = 2.dp,
-        color = if (selected) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.background,
+        color = if (selected) MaterialTheme.colorScheme.primary.copy(0.15f) else MaterialTheme.colorScheme.background,
         onClick = onClick
     ) {
         Row(
             horizontalArrangement = Arrangement.End,
-            modifier = Modifier.padding(start = 18.dp, top = 8.dp, bottom = 8.dp, end = 8.dp)
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(8.dp)
         ) {
+            Icon(
+                modifier = Modifier.size(32.dp),
+                painter = painterResource(
+                    id = when (type) {
+                        AppGroupsManager.CategorizationType.Folders -> R.drawable.ic_folder_outline
+                        else -> R.drawable.ic_category
+                    }
+                ), contentDescription = type.name,
+                tint = if (selected) MaterialTheme.colorScheme.primary.copy(0.95f)
+                else MaterialTheme.colorScheme.outline
+            )
+            Spacer(modifier = Modifier.width(6.dp))
             Column(
                 modifier = Modifier.weight(1f)
             ) {

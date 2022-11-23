@@ -32,6 +32,7 @@ import com.android.launcher3.Utilities
 import com.android.quickstep.RecentsActivity
 import com.android.systemui.shared.system.QuickStepContract
 import com.saggitt.omega.blur.BlurWallpaperProvider
+import com.saggitt.omega.flowerpot.Flowerpot
 import com.saggitt.omega.smartspace.OmegaSmartSpaceController
 import com.saggitt.omega.theme.ThemeManager
 import org.chickenhook.restrictionbypass.Unseal
@@ -70,6 +71,7 @@ class OmegaApp : Application() {
     fun onLauncherAppStateCreated() {
         registerActivityLifecycleCallbacks(activityHandler)
         BlurWallpaperProvider.getInstance(this)
+        Flowerpot.Manager.getInstance(this)
     }
 
     fun restart(recreateLauncher: Boolean = true) {
@@ -85,7 +87,11 @@ class OmegaApp : Application() {
         if (dbFile.exists()) return
         val prefs = Utilities.getOmegaPrefs(this)
         val dbJournalFile = getJournalFile(dbFile)
-        val oldDbSlot = prefs.StringPref("pref_currentDbSlot", "a").onGetValue()
+        val oldDbSlot = prefs.StringPref(
+            key = "pref_currentDbSlot",
+            titleId = -1,
+            defaultValue = "a"
+        ).onGetValue()
         val oldDbName = if (oldDbSlot == "a") "launcher.db" else "launcher.db_b"
         val oldDbFile = getDatabasePath(oldDbName)
         val oldDbJournalFile = getJournalFile(oldDbFile)
@@ -108,15 +114,15 @@ class OmegaApp : Application() {
     }
 
     private fun getJournalFile(file: File): File =
-            File(file.parentFile, "${file.name}-journal")
+        File(file.parentFile, "${file.name}-journal")
 
     fun performGlobalAction(action: Int): Boolean {
         return if (accessibilityService != null) {
             accessibilityService!!.performGlobalAction(action)
         } else {
             startActivity(
-                    Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             )
             false
         }
@@ -204,6 +210,10 @@ class OmegaApp : Application() {
         @JvmStatic
         val isRecentsEnabled: Boolean
             get() = instance?.recentsEnabled == true
+
+        fun minSDK(sdk: Int): Boolean {
+            return Build.VERSION.SDK_INT >= sdk
+        }
     }
 }
 

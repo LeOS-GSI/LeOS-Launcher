@@ -83,9 +83,11 @@ class NewBackupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.name.setText(getTimestamp())
+        val backupTitle = "NL_backup_" + getTimestamp()
+        binding.name.setText(backupTitle)
 
-        val color = ColorStateList.valueOf(Utilities.getOmegaPrefs(requireContext()).accentColor)
+        val color =
+            ColorStateList.valueOf(Utilities.getOmegaPrefs(requireContext()).themeAccentColor.onGetValue())
         binding.createButton.backgroundTintList = color
         binding.createButton.setOnClickListener {
             onStartBackup()
@@ -112,6 +114,7 @@ class NewBackupFragment : Fragment() {
         super.onDestroyView()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
@@ -256,7 +259,7 @@ class NewBackupFragment : Fragment() {
     }
 
     private fun getTimestamp(): String {
-        val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy hh:mm:ss", Locale.US)
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd_HH.mm.ss", Locale.US)
         return simpleDateFormat.format(Date())
     }
 }

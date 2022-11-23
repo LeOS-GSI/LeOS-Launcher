@@ -26,11 +26,19 @@ import android.content.pm.LauncherApps
 import android.net.Uri
 import android.view.View
 import android.widget.Toast
-import com.android.launcher3.*
+import com.android.launcher3.AbstractFloatingView
+import com.android.launcher3.Launcher
 import com.android.launcher3.LauncherSettings.Favorites.ITEM_TYPE_APPLICATION
+import com.android.launcher3.LauncherState
+import com.android.launcher3.R
+import com.android.launcher3.Utilities
 import com.android.launcher3.icons.BitmapInfo
-import com.android.launcher3.model.data.*
+import com.android.launcher3.model.data.FolderInfo
+import com.android.launcher3.model.data.ItemInfo
+import com.android.launcher3.model.data.ItemInfoWithIcon
 import com.android.launcher3.model.data.ItemInfoWithIcon.FLAG_SYSTEM_YES
+import com.android.launcher3.model.data.LauncherAppWidgetInfo
+import com.android.launcher3.model.data.WorkspaceItemInfo
 import com.android.launcher3.popup.SystemShortcut
 import com.android.launcher3.util.ComponentKey
 import com.saggitt.omega.OmegaLauncher
@@ -77,7 +85,7 @@ class OmegaShortcuts {
                     }
                 }
             } else if (launcher.isInState(LauncherState.NORMAL)) {
-                if (prefs.desktopPopupEdit && !prefs.lockDesktop) {
+                if (prefs.desktopPopupEdit && !prefs.desktopLock.onGetValue()) {
                     AbstractFloatingView.closeAllOpenViews(mTarget)
                     ComposeBottomSheet.show(launcher, true) {
                         CustomizeIconSheet(
@@ -156,9 +164,22 @@ class OmegaShortcuts {
 
     companion object {
         val CUSTOMIZE = SystemShortcut.Factory<OmegaLauncher> { activity, itemInfo ->
-            getAppInfo(activity, itemInfo)?.let {
-                Customize(activity, it, itemInfo)
+            val prefs = Utilities.getOmegaPrefs(activity)
+            var customize: Customize? = null
+            if (Launcher.getLauncher(activity).isInState(LauncherState.NORMAL)) {
+                if (prefs.desktopPopupEdit && !prefs.desktopLock.onGetValue()) {
+                    getAppInfo(activity, itemInfo)?.let {
+                        customize = Customize(activity, it, itemInfo)
+                    }
+                }
+            } else {
+                if (prefs.drawerPopupEdit) {
+                    getAppInfo(activity, itemInfo)?.let {
+                        customize = Customize(activity, it, itemInfo)
+                    }
+                }
             }
+            customize
         }
 
         private fun getAppInfo(launcher: OmegaLauncher, itemInfo: ItemInfo): ModelAppInfo? {
@@ -176,8 +197,7 @@ class OmegaShortcuts {
                     || itemInfo is LauncherAppWidgetInfo
                     || itemInfo is FolderInfo
                 ) {
-                    if (prefs.desktopPopupRemove
-                        && !prefs.lockDesktop
+                    if (prefs.desktopPopupRemove && !prefs.desktopLock.onGetValue()
                     ) {
                         appRemove = AppRemove(launcher, itemInfo)
                     }

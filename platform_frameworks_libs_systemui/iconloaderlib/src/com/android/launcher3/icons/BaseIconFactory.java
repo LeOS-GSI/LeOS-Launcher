@@ -148,7 +148,7 @@ public class BaseIconFactory implements AutoCloseable {
         AdaptiveIconDrawable drawable = new CustomAdaptiveIconDrawable(
                 new ColorDrawable(PLACEHOLDER_BACKGROUND_COLOR),
                 new BitmapDrawable(mContext.getResources(), placeholderBitmap));
-        Bitmap icon = createIconBitmap(drawable, 1f);
+        Bitmap icon = createIconBitmap(drawable, IconNormalizer.ICON_VISIBLE_AREA_FACTOR);
         return BitmapInfo.of(icon, extractColor(icon));
     }
 
@@ -294,7 +294,8 @@ public class BaseIconFactory implements AutoCloseable {
                                                     boolean shrinkNonAdaptiveIcons, RectF outIconBounds, float[] outScale) {
         if (shrinkNonAdaptiveIcons) {
             boolean isFromIconPack = ExtendedBitmapDrawable.isFromIconPack(icon);
-            shrinkNonAdaptiveIcons = !isFromIconPack && IconPreferencesKt.shouldWrapAdaptive(mContext);
+            //shrinkNonAdaptiveIcons = !isFromIconPack && IconPreferencesKt.shouldWrapAdaptive(mContext);
+            shrinkNonAdaptiveIcons = IconPreferencesKt.shouldWrapAdaptive(mContext);
         }
 
         if (icon == null) {
@@ -331,24 +332,10 @@ public class BaseIconFactory implements AutoCloseable {
                 if (themeData != null) {
                     icon = themeData.wrapDrawable(icon, ICON_TYPE_DEFAULT);
                 }
-                //((ColorDrawable) dr.getBackground()).setColor(mWrapperBackgroundColor);
                 ((ColorDrawable) dr.getBackground()).setColor(wrapperBackgroundColor);
             }
         } else {
             scale = getNormalizer().getScale(icon, outIconBounds, null, null);
-
-            /*if (icon instanceof AdaptiveIconDrawable) {
-                if (((AdaptiveIconDrawable) icon).getBackground() instanceof ColorDrawable) {
-                    AdaptiveIconDrawable mutIcon = (AdaptiveIconDrawable) icon.mutate();
-
-                    if (!ColorExtractor.isSingleColor(mutIcon.getBackground(), Color.WHITE)) {
-                        ((ColorDrawable) mutIcon.getBackground()).setColor(mWrapperBackgroundColor);
-                        outScale[0] = scale;
-                        return mutIcon;
-                    }
-                }
-            }*/
-
         }
 
         outScale[0] = scale;

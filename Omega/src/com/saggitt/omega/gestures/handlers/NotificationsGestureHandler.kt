@@ -20,6 +20,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import androidx.annotation.Keep
+import androidx.core.content.ContextCompat
 import com.android.launcher3.R
 import com.saggitt.omega.gestures.GestureController
 import com.saggitt.omega.gestures.GestureHandler
@@ -31,39 +32,19 @@ class NotificationsOpenGestureHandler(context: Context, config: JSONObject?) :
     GestureHandler(context, config) {
 
     override val displayName = context.getString(R.string.action_open_notifications)
+    override val displayNameRes = R.string.action_open_notifications
 
+    override val icon = ContextCompat.getDrawable(context, R.drawable.ic_assistant)
     @SuppressLint("PrivateApi", "WrongConstant")
     override fun onGestureTrigger(controller: GestureController, view: View?) {
         try {
             Class.forName("android.app.StatusBarManager")
-                .getMethod("expandNotificationsPanel")
-                .invoke(controller.launcher.getSystemService("statusbar"))
-        } catch (ex: ClassNotFoundException) {
+                    .getMethod("expandNotificationsPanel")
+                    .invoke(controller.launcher.getSystemService("statusbar"))
+        } catch (_: ClassNotFoundException) {
         } catch (ex: NoSuchMethodException) {
         } catch (ex: IllegalAccessException) {
         } catch (ex: InvocationTargetException) {
         }
-    }
-}
-
-// TODO not used class, should be removed?
-@Keep
-class NotificationsCloseGestureHandler(context: Context, config: JSONObject?) :
-    GestureHandler(context, config) {
-
-    override val displayName = context.getString(R.string.action_close_notifications)
-
-    @SuppressLint("PrivateApi", "WrongConstant")
-    override fun onGestureTrigger(controller: GestureController, view: View?) {
-        try {
-            Class.forName("android.app.StatusBarManager")
-                .getMethod("collapsePanels")
-                .invoke(controller.launcher.getSystemService("statusbar"))
-        } catch (ex: ClassNotFoundException) {
-        } catch (ex: NoSuchMethodException) {
-        } catch (ex: IllegalAccessException) {
-        } catch (ex: InvocationTargetException) {
-        }
-
     }
 }

@@ -93,7 +93,9 @@ public class RecyclerViewFastScroller extends View {
     private final int mMaxWidth;
     private final int mThumbPadding;
 
-    /** Keeps the last known scrolling delta/velocity along y-axis. */
+    /**
+     * Keeps the last known scrolling delta/velocity along y-axis.
+     */
     private int mDy = 0;
     private final float mDeltaThreshold;
     private final float mScrollbarLeftOffsetTouchDelegate;
@@ -339,12 +341,15 @@ public class RecyclerViewFastScroller extends View {
             performHapticFeedback(CLOCK_TICK);
         }
         int color = thumbInfo.color;
-        if (color != 0 && prefs.getSortMode() == Config.SORT_BY_COLOR) {
+        if (color != 0 && prefs.getDrawerSortModeNew().onGetValue() == Config.SORT_BY_COLOR) {
             setColor(color, Color.WHITE);
-            if (!prefs.getShowDebugInfo()) {
+            if (!prefs.getShowDebugInfo().onGetValue()) {
                 mPopupSectionName = "";
                 mPopupView.setText("");
             }
+        } else if (prefs.getDrawerSortModeNew().onGetValue() == Config.SORT_BY_INSTALL_DATE) {
+            mPopupSectionName = "";
+            mPopupView.setText("");
         } else {
             animatePopupVisibility(!sectionName.isEmpty());
         }

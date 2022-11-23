@@ -17,8 +17,10 @@
 package com.android.launcher3;
 
 import static com.android.launcher3.model.data.ItemInfoWithIcon.FLAG_ICON_BADGED;
+import static com.saggitt.omega.util.Config.REQUEST_PERMISSION_READ_CONTACTS;
 import static com.saggitt.omega.util.Config.REQUEST_PERMISSION_STORAGE_ACCESS;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -103,6 +105,7 @@ import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.views.BaseDragLayer;
 import com.android.launcher3.widget.PendingAddShortcutInfo;
 import com.saggitt.omega.preferences.OmegaPreferences;
+import com.saggitt.omega.util.Config;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -139,6 +142,7 @@ public final class Utilities {
     public static final String[] EMPTY_STRING_ARRAY = new String[0];
     public static final Person[] EMPTY_PERSON_ARRAY = new Person[0];
 
+    // TODO replace usage with  OmegApp.sdk
     public static final boolean ATLEAST_OREO = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
     public static final boolean ATLEAST_OREO_MR1 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1;
     public static final boolean ATLEAST_P = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P;
@@ -699,6 +703,15 @@ public final class Utilities {
         return icon;
     }
 
+    public static Drawable getFullDrawable(Launcher launcher, ItemInfo info, int width, int height,
+                                           Object[] outObj, boolean useTheme) {
+        Drawable icon = loadFullDrawableWithoutTheme(launcher, info, width, height, outObj);
+        if (useTheme && icon instanceof BitmapInfo.Extender) {
+            icon = ((BitmapInfo.Extender) icon).getThemedDrawable(launcher);
+        }
+        return icon;
+    }
+
     public static Drawable loadFullDrawableWithoutTheme(Launcher launcher, ItemInfo info,
                                                         int width, int height, Object[] outObj) {
         LauncherAppState appState = LauncherAppState.getInstance(launcher);
@@ -943,6 +956,15 @@ public final class Utilities {
                 REQUEST_PERMISSION_STORAGE_ACCESS);
     }
 
+    public static void requestLocationPermission(Activity activity) {
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, Config.REQUEST_PERMISSION_LOCATION_ACCESS);
+    }
+
+    public static void requestPeoplePermission(Activity activity) {
+        ActivityCompat.requestPermissions(activity, new String[]{android.Manifest.permission.READ_CONTACTS},
+                REQUEST_PERMISSION_READ_CONTACTS);
+    }
+
     /**
      * @param bitmap                the Bitmap to be scaled
      * @param threshold             the maxium dimension (either width or height) of the scaled bitmap
@@ -1010,7 +1032,7 @@ public final class Utilities {
     }
 
     public static OmegaPreferences getOmegaPrefs(Context context) {
-        return OmegaPreferences.Companion.getInstance(context);
+        return OmegaPreferences.getInstance(context);
     }
 
     /**

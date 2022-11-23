@@ -20,11 +20,11 @@ package com.saggitt.omega.dash.controlprovider
 import android.content.Context
 import android.content.Context.WIFI_SERVICE
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.net.wifi.WifiManager
 import android.provider.Settings
-import androidx.appcompat.content.res.AppCompatResources
 import com.android.launcher3.R
+import com.saggitt.omega.compose.icons.Phosphor
+import com.saggitt.omega.compose.icons.phosphor.WifiHigh
 import com.saggitt.omega.dash.DashControlProvider
 
 class Wifi(context: Context) : DashControlProvider(context) {
@@ -32,13 +32,10 @@ class Wifi(context: Context) : DashControlProvider(context) {
     override val name = context.getString(R.string.dash_wifi)
     override val description = context.getString(R.string.dash_wifi_summary)
     override val extendable = true
+    override val icon = Phosphor.WifiHigh
+
     private var wifiManager: WifiManager =
         context.getSystemService(WIFI_SERVICE) as WifiManager
-
-    override val icon: Drawable?
-        get() = AppCompatResources.getDrawable(context, R.drawable.ic_wifi).apply {
-            this?.setTint(darkenColor(accentColor))
-        }
 
     override var state: Boolean
         get() =

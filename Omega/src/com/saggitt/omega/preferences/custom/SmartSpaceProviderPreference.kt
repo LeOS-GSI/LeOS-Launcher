@@ -27,7 +27,7 @@ import com.saggitt.omega.smartspace.BlankDataProvider
 import com.saggitt.omega.smartspace.OmegaSmartSpaceController
 import com.saggitt.omega.smartspace.SmartSpaceDataWidget
 import com.saggitt.omega.smartspace.weather.FakeDataProvider
-import com.saggitt.omega.smartspace.weather.OnePlusWeatherDataProvider
+import com.saggitt.omega.smartspace.weather.OWMWeatherDataProvider
 import com.saggitt.omega.smartspace.weather.PEWeatherDataProvider
 
 class SmartSpaceProviderPreference(context: Context, attrs: AttributeSet?) :
@@ -48,9 +48,8 @@ class SmartSpaceProviderPreference(context: Context, attrs: AttributeSet?) :
         list.add(SmartSpaceDataWidget::class.java.name)
         if (PEWeatherDataProvider.isAvailable(context))
             list.add(PEWeatherDataProvider::class.java.name)
-        if (OnePlusWeatherDataProvider.isAvailable(context))
-            list.add(OnePlusWeatherDataProvider::class.java.name)
-        if (prefs.showDebugInfo)
+        list.add(OWMWeatherDataProvider::class.java.name)
+        if (prefs.showDebugInfo.onGetValue())
             list.add(FakeDataProvider::class.java.name)
         return list
     }

@@ -92,6 +92,9 @@ import com.android.launcher3.widget.LauncherAppWidgetProviderInfo;
 import com.android.launcher3.widget.LocalColorExtractor;
 import com.android.launcher3.widget.NavigableAppWidgetHostView;
 import com.android.launcher3.widget.custom.CustomWidgetManager;
+import com.saggitt.omega.DeviceProfileOverrides;
+import com.saggitt.omega.data.IconOverrideRepository;
+import com.saggitt.omega.iconpack.IconPackProvider;
 import com.saggitt.omega.icons.CustomAdaptiveIconDrawable;
 
 import java.util.ArrayList;
@@ -127,10 +130,18 @@ public class LauncherPreviewRenderer extends ContextWrapper
                     LauncherAppState.INSTANCE, InvariantDeviceProfile.INSTANCE,
                     CustomWidgetManager.INSTANCE, PluginManagerWrapper.INSTANCE);
             mIdp = idp;
+            putBaseInstance(IconPackProvider.INSTANCE);
+            putBaseInstance(IconOverrideRepository.INSTANCE);
+            putBaseInstance(DeviceProfileOverrides.INSTANCE);
             mObjectMap.put(InvariantDeviceProfile.INSTANCE, idp);
             mObjectMap.put(LauncherAppState.INSTANCE,
                     new LauncherAppState(this, null /* iconCacheFileName */));
 
+        }
+
+        private void putBaseInstance(MainThreadInitializedObject mainThreadInitializedObject) {
+            mAllowedObjects.add(mainThreadInitializedObject);
+            mObjectMap.put(mainThreadInitializedObject, mainThreadInitializedObject.get(getBaseContext()));
         }
 
         public LauncherIcons newLauncherIcons(Context context, boolean shapeDetection) {
@@ -332,7 +343,7 @@ public class LauncherPreviewRenderer extends ContextWrapper
 
     private void inflateAndAddWidgets(LauncherAppWidgetInfo info, WidgetsModel widgetsModel) {
         WidgetItem widgetItem = widgetsModel.getWidgetProviderInfoByProviderName(
-                info.providerName);
+                info.providerName, info.user);
         if (widgetItem == null) {
             return;
         }
@@ -454,7 +465,7 @@ public class LauncherPreviewRenderer extends ContextWrapper
         if (FeatureFlags.showQSbOnFirstScreen(mContext)) {
             int layout = 0;
 
-            if (Utilities.getOmegaPrefs(mContext).getUsePillQsb()) {
+            if (Utilities.getOmegaPrefs(mContext).getSmartspaceUsePillQsb().onGetValue()) {
                 layout = R.layout.qsb_container_preview;
             } else {
                 layout = R.layout.search_container_workspace;

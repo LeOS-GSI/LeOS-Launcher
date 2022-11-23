@@ -43,32 +43,46 @@ import android.util.Property
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
 import androidx.dynamicanimation.animation.FloatPropertyCompat
 import androidx.fragment.app.Fragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import com.android.launcher3.Launcher
 import com.android.launcher3.R
+import com.android.launcher3.Utilities
+import com.android.launcher3.allapps.AppInfoComparator
+import com.android.launcher3.model.data.AppInfo
 import com.android.launcher3.pm.UserCache
 import com.android.launcher3.util.Executors.MAIN_EXECUTOR
 import com.android.launcher3.util.Executors.UI_HELPER_EXECUTOR
+import com.android.launcher3.util.Themes
 import com.android.launcher3.views.OptionsPopupView
+import com.saggitt.omega.allapps.AppColorComparator
+import com.saggitt.omega.allapps.AppUsageComparator
+import com.saggitt.omega.allapps.InstallTimeComparator
+import com.saggitt.omega.data.AppTrackerRepository
+import com.saggitt.omega.preferences.OmegaPreferences
 import org.json.JSONArray
 import org.json.JSONObject
-import org.xmlpull.v1.XmlPullParser
 import java.lang.reflect.Field
-import java.util.*
+import java.text.Collator
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutionException
 import kotlin.math.ceil
+import kotlin.math.roundToInt
 import kotlin.random.Random
 import kotlin.reflect.KMutableProperty0
 import kotlin.reflect.KProperty
 
-// TODO break into specialised files/classes
 @Suppress("UNCHECKED_CAST")
 class JavaField<T>(
     private val targetObject: Any,
@@ -251,20 +265,6 @@ fun Int.addFlag(flag: Int): Int {
     return this or flag
 }
 
-fun Int.setFlag(flag: Int, value: Boolean): Int {
-    return if (value) {
-        addFlag(flag)
-    } else {
-        removeFlag(flag)
-    }
-}
-
-operator fun XmlPullParser.get(index: Int): String? = getAttributeValue(index)
-operator fun XmlPullParser.get(namespace: String?, key: String): String? =
-    getAttributeValue(namespace, key)
-
-operator fun XmlPullParser.get(key: String): String? = this[null, key]
-
 inline fun ViewGroup.forEachChildIndexed(action: (View, Int) -> Unit) {
     val count = childCount
     for (i in (0 until count)) {
@@ -278,12 +278,12 @@ fun View.runOnAttached(runnable: Runnable) {
     } else {
         addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
 
-            override fun onViewAttachedToWindow(v: View?) {
+            override fun onViewAttachedToWindow(v: View) {
                 runnable.run()
                 removeOnAttachStateChangeListener(this)
             }
 
-            override fun onViewDetachedFromWindow(v: View?) {
+            override fun onViewDetachedFromWindow(v: View) {
                 removeOnAttachStateChangeListener(this)
             }
         })
@@ -385,6 +385,25 @@ fun <T> JSONArray.toArrayList(): ArrayList<T> {
     return arrayList
 }
 
+fun overrideAllAppsTextColor(textView: TextView) {
+    val context = textView.context
+    val opacity = context.omegaPrefs.drawerOpacity.onGetValue()
+    if (opacity <= 0.3f) {
+        textView.setTextColor(Themes.getAttrColor(context, R.attr.allAppsAlternateTextColor))
+    }
+}
+
+fun getAllAppsScrimColor(context: Context): Int {
+    val opacity = OmegaPreferences.getInstance(context).drawerOpacity.onGetValue()
+    val scrimColor = if (context.omegaPrefs.drawerBackground.onGetValue()) {
+        context.omegaPrefs.drawerBackgroundColor.onGetValue()
+    } else {
+        Themes.getAttrColor(context, R.attr.allAppsScrimColor)
+    }
+    val alpha = (opacity * 255).roundToInt()
+    return ColorUtils.setAlphaComponent(scrimColor, alpha)
+}
+
 fun openURLinBrowser(context: Context, url: String?) {
     openURLinBrowser(context, url, null, null)
 }
@@ -415,5 +434,60 @@ fun PackageManager.isAppEnabled(packageName: String?, flags: Int): Boolean {
     }
 }
 
+fun PackageManager.isPackageInstalled(packageName: String) =
+    try {
+        getPackageInfo(packageName, 0)
+        true
+    } catch (e: NameNotFoundException) {
+        false
+    }
+
+fun PackageManager.getPackageVersionCode(packageName: String) =
+    try {
+        val info = getPackageInfo(packageName, 0)
+        when {
+            Utilities.ATLEAST_P -> info.longVersionCode
+            else -> info.versionCode.toLong()
+        }
+    } catch (e: NameNotFoundException) {
+        -1L
+    }
+
 fun UserCache.getUserForProfileId(profileId: Int) =
     userProfiles.find { it.toString() == "UserHandle{$profileId}" }
+
+fun MutableList<AppInfo>.sortApps(context: Context, sortType: Int) {
+    val pm: PackageManager = context.packageManager
+    when (sortType) {
+        Config.SORT_ZA -> sortWith(compareBy(Collator.getInstance().reversed()) {
+            it.title.toString().lowercase()
+        })
+
+        Config.SORT_MOST_USED -> {
+            val repository = AppTrackerRepository.INSTANCE[context]
+            val appsCounter = repository.getAppsCount()
+            val mostUsedComparator = AppUsageComparator(appsCounter)
+            sortWith(mostUsedComparator)
+        }
+
+        Config.SORT_BY_COLOR -> sortWith(AppColorComparator(context))
+
+        Config.SORT_BY_INSTALL_DATE -> sortWith(InstallTimeComparator(pm))
+
+        Config.SORT_AZ -> sortWith(compareBy(Collator.getInstance()) {
+            it.title.toString().lowercase()
+        })
+
+        else -> sortWith(AppInfoComparator(context))
+    }
+}
+
+fun getFolderPreviewAlpha(context: Context): Int {
+    val prefs = OmegaPreferences.getInstance(context)
+    return (prefs.folderOpacity.onGetValue() * 255).toInt()
+}
+
+fun getTimestampForFile(): String {
+    val simpleDateFormat = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.US)
+    return simpleDateFormat.format(Date())
+}

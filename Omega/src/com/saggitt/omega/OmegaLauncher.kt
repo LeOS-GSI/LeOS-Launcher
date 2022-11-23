@@ -17,14 +17,18 @@
  */
 package com.saggitt.omega
 
+import android.content.ComponentName
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
 import android.content.IntentSender
-import android.content.pm.LauncherActivityInfo
 import android.content.pm.LauncherApps
 import android.graphics.Rect
-import android.os.*
+import android.os.Build
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.PersistableBundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
@@ -32,10 +36,11 @@ import androidx.activity.result.ActivityResultRegistry
 import androidx.activity.result.ActivityResultRegistryOwner
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContract
-import androidx.activity.result.contract.ActivityResultContracts.*
+import androidx.activity.result.contract.ActivityResultContracts.RequestMultiplePermissions
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+import androidx.activity.result.contract.ActivityResultContracts.StartIntentSenderForResult
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityOptionsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
@@ -44,6 +49,7 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
+import com.android.launcher3.AppFilter
 import com.android.launcher3.LauncherAppState
 import com.android.launcher3.LauncherRootView
 import com.android.launcher3.R
@@ -54,25 +60,37 @@ import com.android.launcher3.popup.SystemShortcut
 import com.android.launcher3.uioverrides.QuickstepLauncher
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.Executors.MODEL_EXECUTOR
+import com.android.launcher3.util.Themes.KEY_THEMED_ICONS
 import com.android.launcher3.views.OptionsPopupView
 import com.android.launcher3.widget.RoundedCornerEnforcement
 import com.android.systemui.plugins.shared.LauncherOverlayManager
 import com.android.systemui.shared.system.QuickStepContract
 import com.farmerbb.taskbar.lib.Taskbar
 import com.google.systemui.smartspace.SmartSpaceView
+import com.saggitt.omega.blur.BlurWallpaperProvider
+import com.saggitt.omega.data.PeopleRepository
 import com.saggitt.omega.gestures.GestureController
 import com.saggitt.omega.popup.OmegaShortcuts
 import com.saggitt.omega.preferences.OmegaPreferences
 import com.saggitt.omega.preferences.OmegaPreferencesChangeCallback
+import com.saggitt.omega.search.PeopleItems
 import com.saggitt.omega.theme.ThemeManager
 import com.saggitt.omega.theme.ThemeOverride
 import com.saggitt.omega.util.Config
+import com.saggitt.omega.util.isPackageInstalled
+import com.saggitt.omega.views.OmegaBackgroundView
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.plus
 import java.util.stream.Stream
 
 class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwner,
     ActivityResultRegistryOwner, ThemeManager.ThemeableActivity,
     OmegaPreferences.OnPreferenceChangeListener {
     val gestureController by lazy { GestureController(this) }
+    val background by lazy { findViewById<OmegaBackgroundView>(R.id.omega_background)!! }
     val dummyView by lazy { findViewById<View>(R.id.dummy_view)!! }
     val optionsView by lazy { findViewById<OptionsPopupView>(R.id.options_view)!! }
     private val lifecycleRegistry = LifecycleRegistry(this)
@@ -91,7 +109,7 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
     val prefs: OmegaPreferences by lazy { Utilities.getOmegaPrefs(this) }
 
     val hiddenApps = ArrayList<AppInfo>()
-    private val insetsController by lazy { WindowInsetsControllerCompat(window, rootView) }
+    val allApps = ArrayList<AppInfo>()
 
     private val activityResultRegistry = object : ActivityResultRegistry() {
         override fun <I : Any?, O : Any?> onLaunch(
@@ -129,7 +147,6 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
                 optionsBundle = options.toBundle()
             }
             if (RequestMultiplePermissions.ACTION_REQUEST_PERMISSIONS == intent.action) {
-                // requestPermissions path
                 var permissions =
                     intent.getStringArrayExtra(RequestMultiplePermissions.EXTRA_PERMISSIONS)
                 if (permissions == null) {
@@ -168,12 +185,32 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
             && !Utilities.hasStoragePermission(this)
         ) Utilities.requestStoragePermission(this)
 
+        //Load People Info and request permission if needed
+        if (prefs.searchContacts.onGetValue()) {
+            if (!Utilities.hasPermission(this, android.Manifest.permission.READ_CONTACTS)) {
+                Utilities.requestPeoplePermission(this)
+            }
+        }
+        if (Utilities.hasPermission(this, android.Manifest.permission.READ_CONTACTS)) {
+            val peopleItems = PeopleItems(this)
+            val scope = CoroutineScope(Dispatchers.IO) + CoroutineName("PeopleRepository")
+            val repository = PeopleRepository.INSTANCE.get(this)
+            scope.launch {
+                repository.deleteAll()
+                val list = peopleItems.getPeopleInformation()
+                list.map { repository.insert(it) }
+            }
+
+        } else {
+            prefs.searchContacts.onSetValue(false)
+        }
+
         themeOverride = ThemeOverride(themeSet, this)
         themeOverride.applyTheme(this)
-        currentAccent = prefs.accentColor
+        currentAccent = prefs.themeAccentColor.onGetValue()
         currentTheme = themeOverride.getTheme(this)
         val config = Config(this)
-        config.setAppLanguage(prefs.language)
+        config.setAppLanguage(prefs.language.onGetValue())
 
         theme.applyStyle(
             resources.getIdentifier(
@@ -188,34 +225,66 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
 
         prefs.registerCallback(prefCallback)
-        prefs.addOnPreferenceChangeListener("pref_hideStatusBar", this)
+        prefs.addOnPreferenceChangeListener(PREFS_STATUSBAR_HIDE, this)
 
-        //Load hidden apps to use with hidden apps preference
-        MODEL_EXECUTOR.handler.postAtFrontOfQueue { loadHiddenApps(prefs.hiddenAppSet) }
+        //Set Initial value for idp columns and rows
+        if (prefs.firstRun.onGetValue()) {
+            val idp = LauncherAppState.getIDP(this)
+            prefs.drawerColumns.onSetValue(idp.numAllAppsColumns)
+            prefs.desktopColumns.onSetValue(idp.numColumns)
+            prefs.desktopRows.onSetValue(idp.numRows)
+            prefs.dockNumIcons.onSetValue(idp.numHotseatIcons)
+            prefs.firstRun.onSetValue(false)
+        }
 
         mOverlayManager = defaultOverlay
-        showFolderNotificationCount = prefs.folderBadgeCount
-        if (prefs.customWindowCorner) {
+        showFolderNotificationCount = prefs.notificationCountFolder.onGetValue()
+        if (prefs.themeCornerRadius.onGetValue() > -1) {
             RoundedCornerEnforcement.sRoundedCornerEnabled = true
-            QuickStepContract.sCustomCornerRadius = prefs.windowCornerRadius
+            QuickStepContract.sCustomCornerRadius = prefs.themeCornerRadius.onGetValue()
         }
+
+        //Load hidden apps to use with hidden apps preference
+        MODEL_EXECUTOR.handler.postAtFrontOfQueue { loadHiddenApps(prefs.drawerHiddenAppSet.onGetValue()) }
+
+        if (prefs.themeIconPackGlobal.onGetValue() == LAWNICONS_PACKAGE_NAME &&
+            !packageManager.isPackageInstalled(packageName = LAWNICONS_PACKAGE_NAME)
+        ) {
+            prefs.themeIconPackGlobal.onSetValue("")
+        }
+        Utilities.getPrefs(this).edit()
+            .putBoolean(
+                KEY_THEMED_ICONS,
+                prefs.themeIconPackGlobal.onGetValue() == LAWNICONS_PACKAGE_NAME ||
+                        prefs.themeIconPackGlobal.onGetValue() == THEME_ICON_THEMED
+            ).apply()
     }
 
     private fun loadHiddenApps(hiddenAppsSet: Set<String>) {
-
-        val apps = ArrayList<LauncherActivityInfo>()
-        val iconCache = LauncherAppState.getInstance(this).iconCache
-        val profiles = UserCache.INSTANCE.get(this).userProfiles
-        val launcherApps: LauncherApps = applicationContext.getSystemService(
-            LauncherApps::class.java
-        )
-        profiles.forEach { apps += launcherApps.getActivityList(null, it) }
-        for (info in apps) {
-            val key = ComponentKey(info.componentName, info.user)
-            if (hiddenAppsSet.contains(key.toString())) {
-                val appInfo = AppInfo(info, info.user, false)
-                iconCache.getTitleAndIcon(appInfo, false)
-                hiddenApps.add(appInfo)
+        val mContext = this
+        CoroutineScope(Dispatchers.IO).launch {
+            val appFilter = AppFilter()
+            for (user in UserCache.INSTANCE[mContext].userProfiles) {
+                val duplicatePreventionCache: MutableList<ComponentName> = ArrayList()
+                for (info in getSystemService(
+                    LauncherApps::class.java
+                ).getActivityList(null, user)) {
+                    val key = ComponentKey(info.componentName, info.user)
+                    if (hiddenAppsSet.contains(key.toString())) {
+                        val appInfo = AppInfo(info, info.user, false)
+                        hiddenApps.add(appInfo)
+                    }
+                    if (prefs.searchHiddenApps.onGetValue()) {
+                        if (!appFilter.shouldShowApp(info.componentName, user)) {
+                            continue
+                        }
+                        if (!duplicatePreventionCache.contains(info.componentName)) {
+                            duplicatePreventionCache.add(info.componentName)
+                            val appInfo = AppInfo(mContext, info, user)
+                            allApps.add(appInfo)
+                        }
+                    }
+                }
             }
         }
     }
@@ -239,7 +308,10 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
     override fun onResume() {
         super.onResume()
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
-        if (currentAccent != prefs.accentColor || currentTheme != themeOverride.getTheme(this)) onThemeChanged()
+        if (currentAccent != prefs.themeAccentColor.onGetValue() || currentTheme != themeOverride.getTheme(
+                this
+            )
+        ) onThemeChanged()
         restartIfPending()
         paused = false
     }
@@ -259,11 +331,16 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
         super.onDestroy()
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
 
-        prefs.removeOnPreferenceChangeListener("pref_hideStatusBar", this)
+        prefs.removeOnPreferenceChangeListener(PREFS_STATUSBAR_HIDE, this)
         prefs.unregisterCallback()
         if (sRestart) {
             sRestart = false
         }
+    }
+
+    override fun onRotationChanged() {
+        super.onRotationChanged()
+        BlurWallpaperProvider.getInstance(this).updateAsync()
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
@@ -293,7 +370,7 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
         }
     }
 
-    override fun onThemeChanged() = recreate()
+    override fun onThemeChanged(forceUpdate: Boolean) = recreate()
 
     fun shouldRecreate() = !sRestart
 
@@ -339,8 +416,8 @@ class OmegaLauncher : QuickstepLauncher(), LifecycleOwner, SavedStateRegistryOwn
     }
 
     override fun onValueChanged(key: String, prefs: OmegaPreferences, force: Boolean) {
-        if (key == "pref_hideStatusBar") {
-            if (prefs.hideStatusBar) {
+        if (key == PREFS_STATUSBAR_HIDE) {
+            if (prefs.desktopHideStatusBar.onGetValue()) {
                 window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
             } else if (!force) {
                 window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)

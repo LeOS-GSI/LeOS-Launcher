@@ -33,7 +33,7 @@
     <string name="msg_missing_usage_access">تشغيل الوصول إلى الاستخدام ل <xliff:g example="My App" id="name">%1$s</xliff:g> لعرض اقتراحات التطبيق</string>
     <string name="needs_usage_access">يحتاج ألوصول للأستخدام</string>
     <string name="hide_app_reset">إعادة تعيين التطبيقات المخفية</string>
-    <string name="hide_app_selected"> مخفي</string>
+    <string name="hide_app_selected">التطبيقات المخفية (%1$d)</string>
     <plurals name="hidden_apps_count">
         <item quantity="zero">%1$d مخفي</item>
         <item quantity="one"/>
@@ -71,9 +71,9 @@
     <string name="summary__drawer_hide_apps">أخفاء التطبيقات من درج التطبيقات</string>
     <string name="summary_all_apps_google_search">جد نتائج الويب والتطبيقات</string>
     <string name="summary_search_hidden_apps">أظهر الأختصارات المخفية في البحث.</string>
-    <string name="title_search_hidden_apps">جد أختصارات مخفية</string>
+    <string name="title_search_hidden_apps">البحث عن التطبيقات المخفية</string>
     <string name="title_all_apps_keep_scroll_state">تذكر الوضعية</string>
-    <string name="title_all_apps_google_search">بحث عالمي</string>
+    <string name="title_all_apps_google_search">نتائج الويب</string>
     <string name="title_all_apps_search">درج شريط البحث</string>
     <string name="title__sort_by_color">عن طريق اللون</string>
     <string name="title__sort_most_used">مستعمل بكثرة</string>
@@ -100,7 +100,6 @@
     <string name="dock_colored_google">لون الايقونات</string>
     <string name="title__dock_show_arrow">أظهر السهم</string>
     <string name="title__dock_hotseat_icons">عدد الايقونات</string>
-    <string name="title__dock_search_bar">أظهر شريط البحث</string>
     <string name="title__dock_colored_icons">ايقونات ملونة</string>
     <string name="title__dock_hide_labels">اخفاء الأسماء</string>
     <string name="title__dock_hide">أخفاء الرصيف</string>
@@ -128,7 +127,7 @@
     <string name="pref_category__others">أخرى</string>
     <string name="pref_category__inputs">الأيماءات والبحث</string>
     <string name="pref_category__interfaces">واجهة المستخدم</string>
-    <string name="summary__general_about">المزيد حول مشغل أوميغا</string>
+    <string name="summary__general_about">المزيد حول Neo Launcher</string>
     <string name="summary__general_advanced">اللغة, النسخ الأحتياطي, بحث الأعدادات</string>
     <string name="summary__general_smartspace">الزمن, الوقت, أدوات سطح المكتب</string>
     <string name="summary__general_drawer">خصص الدرج</string>
@@ -256,8 +255,8 @@
     <string name="label_voice_search">البحث الصوتي</string>
     <string name="automatic_short">تلقائي</string>
     <string name="reset_to_default">إعادة التعيين إلى الوضع الافتراضي</string>
-    <string name="drag_to_enable_packs">اسحب لأعلى للإيقاف</string>
-    <string name="drag_to_disable_packs">اسحب لأسفل للتشغيل</string>
+    <string name="drag_to_enable_packs">اسحب لأعلى للتشغيل</string>
+    <string name="drag_to_disable_packs">اسحب لأسفل لإيقاف التشغيل</string>
     <string name="dash_device_settings_summary">افتح إعدادات الجهاز</string>
     <string name="dash_volume_summary">اعرض محدد الصوت للجهاز</string>
     <string name="dash_launcher_settings_summary">عرض اعدادات الانشر</string>
@@ -295,9 +294,9 @@
     <string name="developer_options_enabled">خيارات المطور مفعلة</string>
     <string name="local_backups">في التخزين</string>
     <string name="read_external_storage_required">منح صلاحية الوصول إلى التخزين لإنشاء نسخة احتياطية.</string>
-    <string name="backup_location_device_storage">مجلد أوميغا</string>
+    <string name="backup_location_device_storage">الملف الداخلي</string>
     <string name="backup_location">موقع</string>
-    <string name="backup_share_text">ملف النسخ الاحتياطي لأوميغا</string>
+    <string name="backup_share_text">ملف النسخ الاحتياطي Neo Launcher</string>
     <string name="backup_share_title">شارك النسخ الاحتياطية</string>
     <string name="restore_read_meta_fail">ملف النسخ الاحتياطي غير صالح</string>
     <string name="restore_failed">الاستعادة فشلت</string>
@@ -441,6 +440,43 @@
     <string name="backup_delete_failed">حدث خطأ ما</string>
     <string name="backup_name">اسم النسخة الاحتياطية</string>
     <string name="permission_denied">تم رفض إذن القراءة!</string>
-    <string name="summary_all_apps_search">إظهار شريط البحث</string>
     <string name="summary_app_suggestions">لجميع التطبيقات والشاشة الرئيسية</string>
+    <string name="tab_shortcuts">الاختصارات</string>
+    <string name="app_name">اسم التطبيق</string>
+    <string name="icon_picker_default_category">الأيقونات</string>
+    <string name="title_fuzzy_search">بحث غامض</string>
+    <string name="summary_fuzzy_search">المطابقة التقريبية لعمليات البحث عن التطبيقات.</string>
+    <string name="icon_picker_load_failed">تعذر تحميل المزيد من الايقونات.</string>
+    <string name="debug_options_title">معلومات التصحيح</string>
+    <string name="accessibility_undo">تراجع</string>
+    <string name="tab_launcher">المشغل</string>
+    <string name="folder_name">اسم المجلد</string>
+    <string name="section_apps">التطبيقات</string>
+    <string name="section_web">الويب</string>
+    <string name="title__general_profile">ملف التعريف</string>
+    <string name="title__general_gestures_dash">الإيماءات و السحب</string>
+    <string name="title__general_widgets_notifications">القطع الذكية والإشعارات</string>
+    <string name="pref_category__features">المميزات</string>
+    <string name="pref_category__dash">السحب</string>
+    <string name="theme_auto_black">اتبع الخلفية (أسود)</string>
+    <string name="title__feed">التغذية</string>
+    <string name="title__general_search_feed">البحث والخلاصة</string>
+    <string name="title_search_contacts">البحث في جهات الاتصال</string>
+    <string name="section_contacts">جهات الاتصال</string>
+    <string name="cat_dock_search">درج التطبيقات وشريط الارساء</string>
+    <string name="title_desktop_widget_corner_radius">زاوية القطعة الذكية</string>
+    <string name="title__drawer_rows">عدد الصفوف</string>
+    <string name="protected_apps">التطبيقات المحمية</string>
+    <string name="protected_app_selected">التطبيقات المحمية (%1$d)</string>
+    <string name="contributor_role">المساهم</string>
+    <string name="notification_dots_disabled">لإظهار نقاط الإشعارات، قم بتمكين إظهار نقاط الإشعارات في الإعدادات</string>
+    <string name="author_role">المطور</string>
+    <string name="default_city">سان سلفادور, SV</string>
+    <string name="weather_city">المدينة</string>
+    <string name="selected_apps">التطبيقات المحددة (%1$d)</string>
+    <string name="app_reset">إعادة تعيين التحديد</string>
+    <string name="weather_provider_owm" translatable="true">فتح WeatherMap</string>
+    <string name="owm_get_your_own_key">احصل على مفتاح API في api.openweathermap.org.</string>
+    <string name="weather_api_key">مفتاح واجهة برمجة تطبيقات OWM</string>
+    <string name="notification_dots_missing_notification_access">لإظهار نقاط الإشعارات، قم بتشغيل الوصول إلى إشعارات التطبيق</string>
 </resources>

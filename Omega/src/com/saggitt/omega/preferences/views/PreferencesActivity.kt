@@ -25,7 +25,12 @@ import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.os.Bundle
 import android.os.ResultReceiver
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -46,7 +51,11 @@ import com.saggitt.omega.compose.ComposeActivity
 import com.saggitt.omega.groups.DrawerTabs
 import com.saggitt.omega.theme.ThemeManager
 import com.saggitt.omega.theme.ThemeOverride
-import com.saggitt.omega.util.*
+import com.saggitt.omega.util.Config
+import com.saggitt.omega.util.getBooleanAttr
+import com.saggitt.omega.util.isAppEnabled
+import com.saggitt.omega.util.omegaPrefs
+import com.saggitt.omega.util.recreateAnimated
 import com.saggitt.omega.views.DecorLayout
 import com.saggitt.omega.views.SettingsDragLayer
 import kotlinx.coroutines.CoroutineScope
@@ -67,9 +76,9 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
         themeOverride = ThemeOverride(themeSet, this)
         themeOverride.applyTheme(this)
         val config = Config(this)
-        config.setAppLanguage(omegaPrefs.language)
+        config.setAppLanguage(omegaPrefs.language.onGetValue())
 
-        currentAccent = omegaPrefs.accentColor
+        currentAccent = omegaPrefs.themeAccentColor.onGetValue()
         currentTheme = themeOverride.getTheme(this)
         theme.applyStyle(
             resources.getIdentifier(
@@ -190,7 +199,7 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
         }
     }
 
-    override fun onThemeChanged() {
+    override fun onThemeChanged(forceUpdate: Boolean) {
         if (currentTheme == themeOverride.getTheme(this)) return
         if (paused) {
             recreate()
@@ -204,11 +213,11 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            mShowDevOptions = Utilities.getOmegaPrefs(activity).developerOptionsEnabled
+            mShowDevOptions = Utilities.getOmegaPrefs(activity).developerOptionsEnabled.onGetValue()
             setHasOptionsMenu(true)
 
             findPreference<Preference>(PREFS_DEV_PREFS_SHOW)?.apply {
-                isVisible = Utilities.getOmegaPrefs(context).developerOptionsEnabled
+                isVisible = Utilities.getOmegaPrefs(context).developerOptionsEnabled.onGetValue()
             }
 
             findPreference<Preference>(PREFS_SMARTSPACE_SHOW)?.apply {
@@ -236,11 +245,12 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
             super.onResume()
             requireActivity().title = requireActivity().getString(R.string.settings_button_text)
             val dev = Utilities.getOmegaPrefs(activity).developerOptionsEnabled
-            if (dev != mShowDevOptions) {
+            if (dev.onGetValue() != mShowDevOptions) {
                 activity?.recreate()
             }
         }
 
+        @Deprecated("Deprecated in Java")
         override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
             inflater.inflate(R.menu.menu_settings, menu)
             if (BuildConfig.APPLICATION_ID != DEFAULT_HOME) {
@@ -248,14 +258,11 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
             }
         }
 
+        @Deprecated("Deprecated in Java")
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             when (item.itemId) {
                 R.id.action_change_default_home -> changeDefaultHome(requireContext())
                 R.id.action_restart_launcher -> Utilities.killLauncher()
-                R.id.action_dev_options -> {
-                    requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, PrefsDevFragment()).commit()
-                }
                 else -> return false
             }
             return true
@@ -269,7 +276,7 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
         const val EXTRA_FRAGMENT = "fragment"
         const val EXTRA_FRAGMENT_ARGS = "fragmentArgs"
 
-        fun startFragment(
+        fun startFragment( // TODO replace with PrefsActivityX calls
             context: Context,
             fragment: String?,
             title: String?
@@ -282,7 +289,7 @@ open class PreferencesActivity : AppCompatActivity(), ThemeManager.ThemeableActi
         const val KEY_CALLBACK = "callback"
         const val KEY_FILTER_IS_WORK = "filterIsWork"
 
-        fun startFragment(
+        fun startFragment( // TODO replace with PrefsActivityX calls
             context: Context,
             fragment: String?,
             title: String?,

@@ -20,15 +20,25 @@ package com.saggitt.omega.preferences
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import androidx.annotation.StringRes
 import com.android.launcher3.InvariantDeviceProfile
 import com.android.launcher3.LauncherFiles
+import com.jaredrummler.android.colorpicker.ColorPickerDialog
+import com.saggitt.omega.compose.navigation.Routes
 import com.saggitt.omega.util.dpToPx
 import com.saggitt.omega.util.pxToDp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 import kotlin.math.roundToInt
+import kotlin.random.Random
 import kotlin.reflect.KProperty
 
 abstract class BasePreferences(context: Context) :
@@ -40,6 +50,9 @@ abstract class BasePreferences(context: Context) :
         HashMap()
     private var onChangeCallback: OmegaPreferencesChangeCallback? = null
 
+    private val _changePoker = MutableSharedFlow<Int>()
+    val changePoker = _changePoker.asSharedFlow()
+
     val doNothing = { }
 
     val restart = {
@@ -49,6 +62,7 @@ abstract class BasePreferences(context: Context) :
     val reloadAll = { reloadAll() }
     val updateBlur = { updateBlur() }
     val recreate = { recreate() }
+    val pokeChange = { pokeChange() }
 
     val idp: InvariantDeviceProfile get() = InvariantDeviceProfile.INSTANCE.get(mContext)
     val reloadIcons = { idp.onPreferencesChanged(context) }
@@ -58,10 +72,22 @@ abstract class BasePreferences(context: Context) :
         val dir = mContext.cacheDir.parent
         val oldFile = File(dir, "shared_prefs/" + LauncherFiles.OLD_SHARED_PREFERENCES_KEY + ".xml")
         val newFile = File(dir, "shared_prefs/" + LauncherFiles.SHARED_PREFERENCES_KEY + ".xml")
+
+        //Migrate old preferences to new file name
+        val oldNeoFile = File(dir, "shared_prefs/com.saggitt.omega.neo_preferences.xml")
+        val oldDebugFile = File(dir, "shared_prefs/com.saggitt.omega.debug_preferences.xml")
+
         if (oldFile.exists() && !newFile.exists()) {
             oldFile.renameTo(newFile)
             oldFile.delete()
+        } else if (oldNeoFile.exists() && !newFile.exists()) {
+            oldNeoFile.renameTo(newFile)
+            oldNeoFile.delete()
+        } else if (oldDebugFile.exists() && !newFile.exists()) {
+            oldDebugFile.renameTo(newFile)
+            oldDebugFile.delete()
         }
+
         return mContext.applicationContext
             .getSharedPreferences(LauncherFiles.SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE)
     }
@@ -80,6 +106,12 @@ abstract class BasePreferences(context: Context) :
 
     fun recreate() {
         onChangeCallback?.recreate()
+    }
+
+    fun pokeChange() {
+        CoroutineScope(Dispatchers.Default).launch {
+            _changePoker.emit(Random.nextInt())
+        }
     }
 
     fun reloadApps() {
@@ -180,10 +212,12 @@ abstract class BasePreferences(context: Context) :
         }
     }
 
-    abstract inner class PrefDelegate<T : Any>(
+    abstract inner class PrefDelegate<T : Any>( // TODO Add iconId
         val key: String,
+        @StringRes val titleId: Int,
+        @StringRes var summaryId: Int = -1,
         val defaultValue: T,
-        private val onChange: () -> Unit
+        val onChange: () -> Unit
     ) {
 
         private var cached = false
@@ -238,9 +272,11 @@ abstract class BasePreferences(context: Context) :
 
     open inner class BooleanPref(
         key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
         defaultValue: Boolean = false,
         onChange: () -> Unit = doNothing
-    ) : PrefDelegate<Boolean>(key, defaultValue, onChange) {
+    ) : PrefDelegate<Boolean>(key, titleId, summaryId, defaultValue, onChange) {
         override fun onGetValue(): Boolean = sharedPrefs.getBoolean(getKey(), defaultValue)
 
         override fun onSetValue(value: Boolean) {
@@ -248,11 +284,32 @@ abstract class BasePreferences(context: Context) :
         }
     }
 
+    open inner class IntentLauncherPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        @StringRes val positiveAnswerId: Int = -1,
+        defaultValue: Boolean = false,
+        val intent: () -> Intent,
+        val getter: () -> Boolean,
+        onChange: () -> Unit = doNothing
+    ) : PrefDelegate<Boolean>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): Boolean = getter()
+
+        override fun onSetValue(value: Boolean) {}
+    }
+
     open inner class FloatPref(
         key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
         defaultValue: Float = 0f,
+        val minValue: Float,
+        val maxValue: Float,
+        val steps: Int,
+        val specialOutputs: ((Float) -> String) = Float::toString,
         onChange: () -> Unit = doNothing
-    ) : PrefDelegate<Float>(key, defaultValue, onChange) {
+    ) : PrefDelegate<Float>(key, titleId, summaryId, defaultValue, onChange) {
         override fun onGetValue(): Float = sharedPrefs.getFloat(getKey(), defaultValue)
 
         override fun onSetValue(value: Float) {
@@ -260,22 +317,57 @@ abstract class BasePreferences(context: Context) :
         }
     }
 
+    open inner class ColorIntPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: Int = 0,
+        val entries: IntArray = ColorPickerDialog.MATERIAL_COLORS,
+        val allowCustom: Boolean = true,
+        val withAlpha: Boolean = false,
+        val withShades: Boolean = true,
+        onChange: () -> Unit = doNothing
+    ) : IntPref(key, titleId, summaryId, defaultValue, onChange)
+
     open inner class DimensionPref(
         key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
         defaultValue: Float = 0f,
+        minValue: Float,
+        maxValue: Float,
+        steps: Int,
+        specialOutputs: ((Float) -> String) = Float::toString,
         onChange: () -> Unit = doNothing
-    ) :
-        PrefDelegate<Float>(key, defaultValue, onChange) {
+    ) : FloatPref(
+        key,
+        titleId,
+        summaryId,
+        defaultValue,
+        minValue,
+        maxValue,
+        steps,
+        specialOutputs,
+        onChange
+    ) {
 
-        override fun onGetValue(): Float = dpToPx(sharedPrefs.getFloat(getKey(), defaultValue))
+        override fun onGetValue() = pxToDp(sharedPrefs.getFloat(getKey(), dpToPx(defaultValue)))
+
+        fun getValueInPixels() = sharedPrefs.getFloat(getKey(), dpToPx(defaultValue))
 
         override fun onSetValue(value: Float) {
-            edit { putFloat(getKey(), pxToDp(value)) }
+            edit { putFloat(getKey(), dpToPx(value)) }
         }
     }
 
-    open inner class IntPref(key: String, defaultValue: Int = 0, onChange: () -> Unit = doNothing) :
-        PrefDelegate<Int>(key, defaultValue, onChange) {
+    open inner class IntPref( // TODO migrate to ?
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: Int = 0,
+        onChange: () -> Unit = doNothing
+    ) :
+        PrefDelegate<Int>(key, titleId, summaryId, defaultValue, onChange) {
         override fun onGetValue(): Int = sharedPrefs.getInt(getKey(), defaultValue)
 
         override fun onSetValue(value: Int) {
@@ -285,16 +377,22 @@ abstract class BasePreferences(context: Context) :
 
     inner class IdpIntPref(
         key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
         private val selectDefaultValue: InvariantDeviceProfile.GridOption.() -> Int,
-        onChange: () -> Unit = doNothing
-    ) : IntPref(key, -1, onChange) {
+        val specialOutputs: ((Int) -> String) = Int::toString,
+        val minValue: Float,
+        val maxValue: Float,
+        val steps: Int,
+        onChange: () -> Unit = doNothing,
+    ) : IntPref(key, titleId, summaryId, -1, onChange) {
 
         override fun onGetValue(): Int {
-            error("unsupported")
+            return sharedPrefs.getInt(getKey(), defaultValue)
         }
 
         override fun onSetValue(value: Int) {
-            error("unsupported")
+            edit { putInt(getKey(), value) }
         }
 
         fun defaultValue(defaultGrid: InvariantDeviceProfile.GridOption): Int {
@@ -321,33 +419,109 @@ abstract class BasePreferences(context: Context) :
 
     open inner class AlphaPref(
         key: String,
-        defaultValue: Int = 0,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: Float = 0f,
+        steps: Int = 100,
+        specialOutputs: ((Float) -> String) = { "${(it * steps).roundToInt()}%" },
         onChange: () -> Unit = doNothing
-    ) :
-        PrefDelegate<Int>(key, defaultValue, onChange) {
-        override fun onGetValue(): Int =
-            (sharedPrefs.getFloat(getKey(), defaultValue.toFloat() / 255) * 255).roundToInt()
+    ) : FloatPref(
+        key,
+        titleId,
+        summaryId,
+        defaultValue,
+        minValue = 0f,
+        maxValue = 1f,
+        steps,
+        specialOutputs,
+        onChange
+    ) {
+        override fun onGetValue(): Float = sharedPrefs.getFloat(getKey(), defaultValue)
 
-        override fun onSetValue(value: Int) {
-            edit { putFloat(getKey(), value.toFloat() / 255) }
+        override fun onSetValue(value: Float) {
+            edit { putFloat(getKey(), value) }
         }
     }
 
-    inline fun <reified T : Enum<T>> EnumPref(
-        key: String, defaultValue: T,
+    inline fun <reified T : Enum<T>> EnumPref( // TODO remove when done migration
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: T,
         noinline onChange: () -> Unit = doNothing
     ): PrefDelegate<T> {
-        return IntBasedPref(key, defaultValue, onChange, { value ->
+        return IntBasedPref(key, titleId, summaryId, defaultValue, onChange, { value ->
             enumValues<T>().firstOrNull { item -> item.ordinal == value } ?: defaultValue
         }, { it.ordinal }, { })
     }
 
+    open inner class IntSelectionPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: Int = 0,
+        val entries: Map<Int, Int>,
+        onChange: () -> Unit = doNothing
+    ) :
+        PrefDelegate<Int>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): Int = sharedPrefs.getInt(getKey(), defaultValue)
+
+        override fun onSetValue(value: Int) {
+            edit { putInt(getKey(), value) }
+        }
+    }
+
+    open inner class StringSelectionPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: String = "",
+        val entries: Map<String, String>,
+        onChange: () -> Unit = doNothing
+    ) : PrefDelegate<String>(key, titleId, summaryId, defaultValue, onChange) {
+
+        override fun onGetValue(): String = sharedPrefs.getString(getKey(), defaultValue)!!
+        override fun onSetValue(value: String) {
+            edit { putString(getKey(), value) }
+        }
+    }
+
+    open inner class StringMultiSelectionPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: List<String>,
+        val entries: Map<String, Int>,
+        val withIcons: Boolean = false,
+        onChange: () -> Unit = doNothing
+    ) : MutableListPref<String>(key, titleId, summaryId, onChange, defaultValue) {
+        override fun unflattenValue(value: String) = value
+        override fun flattenValue(value: String) = value
+    }
+
+    open inner class DialogPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: String = "",
+        onChange: () -> Unit = doNothing,
+    ) : PrefDelegate<String>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): String = sharedPrefs.getString(key, defaultValue)!!
+
+        override fun onSetValue(value: String) {
+            edit { putString(key, value) }
+        }
+    }
+
     open inner class IntBasedPref<T : Any>(
-        key: String, defaultValue: T, onChange: () -> Unit = doNothing,
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: T, onChange: () -> Unit = doNothing,
         private val fromInt: (Int) -> T,
         private val toInt: (T) -> Int,
         private val dispose: (T) -> Unit
-    ) : PrefDelegate<T>(key, defaultValue, onChange) {
+    ) : PrefDelegate<T>(key, titleId, summaryId, defaultValue, onChange) {
         override fun onGetValue(): T {
             return if (sharedPrefs.contains(key)) {
                 fromInt(sharedPrefs.getInt(getKey(), toInt(defaultValue)))
@@ -365,24 +539,63 @@ abstract class BasePreferences(context: Context) :
 
     open inner class StringPref(
         key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
         defaultValue: String = "",
-        onChange: () -> Unit = doNothing
-    ) : PrefDelegate<String>(key, defaultValue, onChange) {
-        override fun onGetValue(): String = sharedPrefs.getString(getKey(), defaultValue)!!
+        val onClick: (() -> Unit)? = null,
+        onChange: () -> Unit = doNothing,
+        val navRoute: String = ""
+    ) : PrefDelegate<String>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): String = sharedPrefs.getString(key, defaultValue)!!
 
         override fun onSetValue(value: String) {
-            edit { putString(getKey(), value) }
+            edit { putString(key, value) }
         }
     }
 
-    inner class StringBasedPref<T : Any>(
-        key: String, defaultValue: T, onChange: () -> Unit = doNothing,
+    open inner class StringTextPref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: String = "",
+        val onClick: (() -> Unit)? = null,
+        onChange: () -> Unit = doNothing,
+    ) : PrefDelegate<String>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): String = sharedPrefs.getString(key, defaultValue)!!
+
+        override fun onSetValue(value: String) {
+            edit { putString(key, value) }
+        }
+    }
+
+    open inner class GesturePref(
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: String = "",
+        onClick: (() -> Unit)? = null,
+        onChange: () -> Unit = doNothing,
+    ) : StringPref(
+        key,
+        titleId,
+        summaryId,
+        defaultValue,
+        onClick,
+        onChange,
+        navRoute = "${Routes.GESTURE_SELECTOR}/$titleId/$key/$defaultValue"
+    )
+
+    inner class StringBasedPref<T : Any>( // TODO migrate to @StringSelectionPref
+        key: String, defaultValue: T,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        onChange: () -> Unit = doNothing,
         private val fromString: (String) -> T,
         private val toString: (T) -> String,
         private val dispose: (T) -> Unit
     ) :
-        PrefDelegate<T>(key, defaultValue, onChange) {
-        override fun onGetValue(): T = sharedPrefs.getString(getKey(), null)?.run(fromString)
+        PrefDelegate<T>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): T = sharedPrefs.getString(getKey(), "")?.run(fromString)
             ?: defaultValue
 
         override fun onSetValue(value: T) {
@@ -394,28 +607,15 @@ abstract class BasePreferences(context: Context) :
         }
     }
 
-    open inner class StringIntPref(
-        key: String,
-        defaultValue: Int = 0,
-        onChange: () -> Unit = doNothing
-    ) : PrefDelegate<Int>(key, defaultValue, onChange) {
-        override fun onGetValue(): Int = try {
-            sharedPrefs.getString(getKey(), "$defaultValue")!!.toInt()
-        } catch (e: Exception) {
-            sharedPrefs.getInt(getKey(), defaultValue)
-        }
-
-        override fun onSetValue(value: Int) {
-            edit { putString(getKey(), "$value") }
-        }
-    }
-
     open inner class StringSetPref(
-        key: String,
-        defaultValue: Set<String>,
-        onChange: () -> Unit = doNothing
+            key: String,
+            @StringRes titleId: Int,
+            @StringRes summaryId: Int = -1,
+            defaultValue: Set<String>,
+            val navRoute: String = "",
+            onChange: () -> Unit = doNothing
     ) :
-        PrefDelegate<Set<String>>(key, defaultValue, onChange) {
+            PrefDelegate<Set<String>>(key, titleId, summaryId, defaultValue, onChange) {
         override fun onGetValue(): Set<String> = sharedPrefs.getStringSet(getKey(), defaultValue)!!
 
         override fun onSetValue(value: Set<String>) {
@@ -423,24 +623,21 @@ abstract class BasePreferences(context: Context) :
         }
     }
 
-    open inner class StringListPref(
-        prefKey: String,
-        default: List<String> = emptyList(),
-        onChange: () -> Unit = doNothing
-    ) : MutableListPref<String>(prefKey, onChange, default) {
-        override fun unflattenValue(value: String) = value
-        override fun flattenValue(value: String) = value
-    }
-
-    abstract inner class MutableListPref<T>(
-        private val prefs: SharedPreferences, private val prefKey: String,
+    abstract inner class MutableListPref<T>( // TODO re-evaluate if needed
+        private val prefs: SharedPreferences,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        private val prefKey: String,
         onChange: () -> Unit = doNothing,
         default: List<T> = emptyList()
-    ) : PrefDelegate<List<T>>(prefKey, default, onChange) {
+    ) : BasePreferences.PrefDelegate<List<T>>(prefKey, titleId, summaryId, default, onChange) {
         constructor(
-            prefKey: String, onChange: () -> Unit = doNothing,
+            prefKey: String,
+            @StringRes titleId: Int,
+            @StringRes summaryId: Int = -1,
+            onChange: () -> Unit = doNothing,
             default: List<T> = emptyList()
-        ) : this(sharedPrefs, prefKey, onChange, default)
+        ) : this(sharedPrefs, titleId, summaryId, prefKey, onChange, default)
 
         private val valueList = arrayListOf<T>()
         private val listeners = mutableSetOf<OmegaPreferences.MutableListPrefChangeListener>()
@@ -503,12 +700,6 @@ abstract class BasePreferences(context: Context) :
 
         fun contains(value: T): Boolean {
             return valueList.contains(value)
-        }
-
-        fun replaceWith(newList: List<T>) {
-            valueList.clear()
-            valueList.addAll(newList)
-            saveChanges()
         }
 
         fun getList() = valueList

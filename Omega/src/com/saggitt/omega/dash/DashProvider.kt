@@ -20,16 +20,16 @@ package com.saggitt.omega.dash
 
 import android.content.Context
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
+import androidx.compose.ui.graphics.vector.ImageVector
 import com.android.launcher3.Utilities
 
 abstract class DashProvider(protected val context: Context) {
-    val accentColor = Utilities.getOmegaPrefs(context).accentColor
+    val accentColor = Utilities.getOmegaPrefs(context).themeAccentColor.onGetValue()
     abstract val itemId: Int
     abstract val name: String
     abstract val description: String
-    abstract val icon: Drawable?
+    abstract val icon: ImageVector
 
     @ColorInt
     fun darkenColor(@ColorInt color: Int): Int {

@@ -19,14 +19,27 @@ package com.saggitt.omega.gestures
 
 import android.content.Context
 import android.graphics.PointF
-import android.text.TextUtils
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import com.android.launcher3.util.TouchController
 import com.saggitt.omega.OmegaLauncher
-import com.saggitt.omega.gestures.gestures.*
-import com.saggitt.omega.gestures.handlers.*
+import com.saggitt.omega.gestures.gestures.DoubleTapGesture
+import com.saggitt.omega.gestures.gestures.LaunchAssistantGesture
+import com.saggitt.omega.gestures.gestures.LongPressGesture
+import com.saggitt.omega.gestures.gestures.PressBackGesture
+import com.saggitt.omega.gestures.gestures.PressHomeGesture
+import com.saggitt.omega.gestures.gestures.VerticalSwipeGesture
+import com.saggitt.omega.gestures.handlers.NotificationsOpenGestureHandler
+import com.saggitt.omega.gestures.handlers.OpenDashGestureHandler
+import com.saggitt.omega.gestures.handlers.OpenDrawerGestureHandler
+import com.saggitt.omega.gestures.handlers.OpenOverlayGestureHandler
+import com.saggitt.omega.gestures.handlers.OpenOverviewGestureHandler
+import com.saggitt.omega.gestures.handlers.OpenSettingsGestureHandler
+import com.saggitt.omega.gestures.handlers.OpenWidgetsGestureHandler
+import com.saggitt.omega.gestures.handlers.PressBackGestureHandler
+import com.saggitt.omega.gestures.handlers.SleepGestureHandler
+import com.saggitt.omega.gestures.handlers.StartGlobalSearchGestureHandler
 import com.saggitt.omega.util.omegaPrefs
 import org.json.JSONException
 import org.json.JSONObject
@@ -41,10 +54,7 @@ class GestureController(val launcher: OmegaLauncher) : TouchController {
     private val longPressGesture by lazy { LongPressGesture(this) }
     private val assistantGesture by lazy { LaunchAssistantGesture(this) }
 
-    val hasBackGesture
-        get() = pressBackGesture.handler !is BlankGestureHandler
     val verticalSwipeGesture by lazy { VerticalSwipeGesture(this) }
-    val navSwipeUpGesture by lazy { NavSwipeUpGesture(this) }
 
     var touchDownPoint = PointF()
 
@@ -97,15 +107,16 @@ class GestureController(val launcher: OmegaLauncher) : TouchController {
 
     fun createHandlerPref(key: String, defaultValue: GestureHandler = blankGestureHandler) =
         prefs.StringBasedPref(
-            key,
-            defaultValue,
-            prefs.doNothing,
-            ::createGestureHandler,
-            GestureHandler::toString,
-            GestureHandler::onDestroy
+            key = key,
+            defaultValue = defaultValue,
+            titleId = -1,
+            onChange = prefs.doNothing,
+            fromString = ::createGestureHandler,
+            toString = GestureHandler::toString,
+            dispose = GestureHandler::onDestroy
         )
 
-    private fun createGestureHandler(jsonString: String) =
+    fun createGestureHandler(jsonString: String) =
         createGestureHandler(launcher, jsonString, blankGestureHandler)
 
     companion object {
@@ -121,7 +132,7 @@ class GestureController(val launcher: OmegaLauncher) : TouchController {
             jsonString: String?,
             fallback: GestureHandler
         ): GestureHandler {
-            if (!TextUtils.isEmpty(jsonString)) {
+            if (!jsonString.isNullOrEmpty()) {
                 val config: JSONObject? = try {
                     JSONObject(jsonString ?: "{ }")
                 } catch (e: JSONException) {
@@ -163,7 +174,6 @@ class GestureController(val launcher: OmegaLauncher) : TouchController {
             mutableListOf(
                 PressBackGestureHandler(context, null),
                 SleepGestureHandler(context, null),
-                SleepGestureHandlerTimeout(context, null),
                 OpenDashGestureHandler(context, null),
                 OpenDrawerGestureHandler(context, null),
                 OpenWidgetsGestureHandler(context, null),
@@ -171,8 +181,6 @@ class GestureController(val launcher: OmegaLauncher) : TouchController {
                 OpenOverlayGestureHandler(context, null),
                 OpenOverviewGestureHandler(context, null),
                 StartGlobalSearchGestureHandler(context, null),
-                StartAppSearchGestureHandler(context, null),
-                StartAppGestureHandler(context, null),
                 OpenSettingsGestureHandler(context, null)
             ).apply {
                 if (hasBlank) {

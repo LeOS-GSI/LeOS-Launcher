@@ -22,13 +22,16 @@ import android.annotation.SuppressLint
 import android.app.WallpaperManager
 import android.content.Context
 import android.content.ContextWrapper
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.util.Log
 import androidx.core.content.FileProvider
+import androidx.documentfile.provider.DocumentFile
 import com.android.launcher3.BuildConfig
 import com.android.launcher3.LauncherFiles
+import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -123,12 +126,10 @@ class BackupFile(context: Context, val uri: Uri) {
         }
     }
 
-    fun restore(contents: Int): Boolean { // TODO FIX: doesn't restore all backed up DBs
+    fun restore(contents: Int): Boolean {
         try {
             val contextWrapper = ContextWrapper(mContext)
             val dbFile2 = contextWrapper.getDatabasePath(LauncherFiles.LAUNCHER_DB2)
-            //val widgets = contextWrapper.getDatabasePath(LauncherFiles.WIDGET_PREVIEWS_DB)
-            //val appIcons = contextWrapper.getDatabasePath(LauncherFiles.APP_ICONS_DB)
             val dir = contextWrapper.cacheDir.parent
             val settingsFile =
                 File(dir, "shared_prefs/" + LauncherFiles.SHARED_PREFERENCES_KEY + ".xml")
@@ -151,13 +152,13 @@ class BackupFile(context: Context, val uri: Uri) {
                     } else if (entry.name == dbFile2.name) {
                         if (contents and INCLUDE_HOME_SCREEN == 0) continue
                         dbFile2
-                        /*} else if (entry.name == widgets.name) {
-                            if (contents and INCLUDE_HOME_SCREEN == 0) continue
-                            widgets
-                        } else if (entry.name == appIcons.name) {
-                            if (contents and INCLUDE_HOME_SCREEN == 0) continue
-                            appIcons*/
-                    } else if (entry.name == settingsFile.name) {
+                    } else if (entry.name == "NeoLauncher.db-shm") {
+                        if (contents and INCLUDE_HOME_SCREEN == 0) continue
+                        contextWrapper.getDatabasePath("NeoLauncher.db-shm")
+                    } else if (entry.name == "NeoLauncher.db-wal") {
+                        if (contents and INCLUDE_HOME_SCREEN == 0) continue
+                        contextWrapper.getDatabasePath("NeoLauncher.db-wal")
+                    } else if (entry.name.endsWith("_preferences.xml")) {
                         if (contents and INCLUDE_SETTINGS == 0) continue
                         settingsFile
                     } else if (entry.name == WALLPAPER_FILE_NAME) {
@@ -196,7 +197,22 @@ class BackupFile(context: Context, val uri: Uri) {
     }
 
     fun delete(): Boolean {
-        return mContext.contentResolver.delete(uri, null, null) != 0
+        return try {
+            mContext.contentResolver.delete(uri, null, null) != 0
+        } catch (e: UnsupportedOperationException) {
+            DocumentFile.fromSingleUri(mContext, uri)?.delete() ?: false
+        }
+    }
+
+    fun share(context: Context) {
+        val shareTitle = context.getString(R.string.backup_share_title)
+        val shareText = context.getString(R.string.backup_share_text)
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.type = MIME_TYPE
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareTitle)
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+        context.startActivity(Intent.createChooser(shareIntent, shareTitle))
     }
 
     class MetaLoader(private val backupFile: BackupFile) {
@@ -309,12 +325,13 @@ class BackupFile(context: Context, val uri: Uri) {
         }
 
         fun listLocalBackups(context: Context): List<BackupFile> {
-            return getFolder(context).listFiles { file -> file.extension == EXTENSION }
+            return getFolder(context)
+                .listFiles()
                 ?.sortedByDescending { it.lastModified() }
                 ?.map {
                     FileProvider.getUriForFile(
                         context,
-                        "${BuildConfig.APPLICATION_ID}.overview.fileprovider",
+                        BuildConfig.APPLICATION_ID + ".fileprovider",
                         it
                     )
                 }
@@ -325,14 +342,14 @@ class BackupFile(context: Context, val uri: Uri) {
         private fun prepareConfig(context: Context) {
             Utilities.getOmegaPrefs(context).blockingEdit {
                 restoreSuccess = true
-                developerOptionsEnabled = false
+                developerOptionsEnabled.onSetValue(false)
             }
         }
 
         private fun cleanupConfig(context: Context, devOptionsEnabled: Boolean) {
             Utilities.getOmegaPrefs(context).blockingEdit {
                 restoreSuccess = false
-                developerOptionsEnabled = devOptionsEnabled
+                developerOptionsEnabled.onSetValue(devOptionsEnabled)
             }
         }
 
@@ -345,6 +362,8 @@ class BackupFile(context: Context, val uri: Uri) {
                     .filter { it.matches(Regex(LauncherFiles.LAUNCHER_DB_CUSTOM)) }
                     .forEach { files.add(contextWrapper.getDatabasePath(it)) }
                 files.add(contextWrapper.getDatabasePath(LauncherFiles.LAUNCHER_DB2))
+                files.add(contextWrapper.getDatabasePath("NeoLauncher.db-shm"))
+                files.add(contextWrapper.getDatabasePath("NeoLauncher.db-wal"))
                 files.add(contextWrapper.getDatabasePath(LauncherFiles.WIDGET_PREVIEWS_DB))
                 files.add(contextWrapper.getDatabasePath(LauncherFiles.APP_ICONS_DB))
             }
@@ -408,7 +427,7 @@ class BackupFile(context: Context, val uri: Uri) {
                 out.close()
                 outStream.close()
                 pfd?.close()
-                cleanupConfig(context, devOptionsEnabled)
+                cleanupConfig(context, devOptionsEnabled.onGetValue())
             }
         }
 
@@ -419,7 +438,7 @@ class BackupFile(context: Context, val uri: Uri) {
         )
 
         private fun getTimestamp(): String {
-            val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy hh:mm:ss", Locale.US)
+            val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.US)
             return simpleDateFormat.format(Date())
         }
     }

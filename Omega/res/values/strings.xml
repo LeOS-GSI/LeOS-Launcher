@@ -19,9 +19,9 @@
     <string name="derived_app_name" translatable="false">LeOS Launcher</string>
     <string name="app_version" translatable="false">Version</string>
     <string name="app_build" translatable="false">Build</string>
-    <string name="app_id" translatable="false">leos-launcher</string>
+    <string name="app_id" translatable="false">Package</string>
     <string name="default_folder_name">New Folder</string>
-
+    <string name="folder_name">Folder Name</string>
     <!-- PREFERENCES GENERAL -->
     <string name="title__general_about">About</string>
     <string name="title__general_desktop">Desktop</string>
@@ -32,6 +32,10 @@
     <string name="title__general_smartspace">Home Widget</string>
     <string name="title__general_advanced">Advanced Settings</string>
     <string name="title__general_notifications">Gestures and Notifications</string>
+    <string name="title__general_profile">Profile</string>
+    <string name="title__general_gestures_dash">Gestures &amp; Dash</string>
+    <string name="title__general_search_feed">Search &amp; Feed</string>
+    <string name="title__general_widgets_notifications">Widgets &amp; Notifications</string>
     <string name="summary__general_desktop">Customize your desktop</string>
     <string name="summary__general_dock">Hotseat icons, search bar</string>
     <string name="summary__general_drawer">Customize your drawer</string>
@@ -42,13 +46,14 @@
     <string name="summary__general_advanced">Language, back up, setting search</string>
     <string name="summary__general_about">More about LeOS Launcher</string>
     <string name="pref_category__interfaces">User Interface</string>
+    <string name="pref_category__features">Features</string>
     <string name="pref_category__inputs">Gestures and Search</string>
     <string name="pref_category__others">Others</string>
     <string name="pref_category__incubating">Incubating</string>
-
     <!-- PREFERENCES DESKTOP -->
     <string name="allow_rotation_blocked_desc">Current Display setting doesn\'t permit rotation</string>
     <string name="title_desktop_full_width_widgets">Full width widgets</string>
+    <string name="title_desktop_widget_corner_radius">Widget corner radius</string>
     <string name="title__desktop_icon_size">Icon size</string>
     <string name="title__desktop_grid_size">Grid size</string>
     <string name="title__desktop_hide_icon_labels">Hide icon labels on home screen</string>
@@ -62,7 +67,6 @@
     <string name="summary_full_width_widgets">Allow widgets to span over the whole width without padding</string>
     <string name="grid_size_height">Height</string>
     <string name="grid_size_width">Width</string>
-
     <!-- PREFERENCES DOCK -->
     <string name="title__dock_icon_size">Icon size</string>
     <string name="title__dock_scale">Dock scale</string>
@@ -72,7 +76,6 @@
     <string name="title__dock_hide">Dock Hide</string>
     <string name="title__dock_hide_labels">Hide Labels</string>
     <string name="title__dock_colored_icons">Colored icons</string>
-    <string name="title__dock_search_bar">Show Search Bar</string>
     <string name="title__dock_hotseat_icons">Icon Count</string>
     <string name="title__dock_show_arrow">Show Arrow</string>
     <string name="dock_colored_google">Color Icons</string>
@@ -84,8 +87,8 @@
     <string name="title_dock_search">Dock search bar</string>
     <string name="summary_dock_search">Show in the bottom dock</string>
     <string name="label_search">Search</string>
+    <string name="cat_dock_search">Drawer and dock</string>
     <string name="label_lens" translatable="false">Google Lens</string>
-
     <!-- PREFERENCES DRAWER -->
     <string name="title__drawer_sort">Apps Sort</string>
     <string name="title__drawer_all_apps">Show "All Apps" label</string>
@@ -97,6 +100,7 @@
     <string name="title__drawer_categorization">Categories</string>
     <string name="title__drawer_icon_popup_menu">Shortcut Bubble</string>
     <string name="title__drawer_columns">Number of columns</string>
+    <string name="title__drawer_rows">Number of rows</string>
     <string name="title_drawer_enable_background">Use custom background color</string>
     <string name="title_drawer_row_height">Row height</string>
     <string name="title__sort_mode">App Sorting</string>
@@ -106,9 +110,9 @@
     <string name="title__sort_most_used">Most Used</string>
     <string name="title__sort_by_color">By Color</string>
     <string name="title_all_apps_search">Drawer search bar</string>
-    <string name="title_all_apps_google_search">Global search</string>
+    <string name="title_all_apps_google_search">Web results</string>
     <string name="title_all_apps_keep_scroll_state">Remember Position</string>
-    <string name="title_search_hidden_apps">Find Hidden Shortcuts</string>
+    <string name="title_search_hidden_apps">Find hidden apps</string>
     <string name="title_fuzzy_search">Fuzzy Search</string>
     <string name="summary_fuzzy_search">Approximate matching for app searches.</string>
     <string name="title_app_categorize">Categorize Apps</string>
@@ -117,7 +121,6 @@
     <string name="summary_all_apps_google_search">Find web results and apps</string>
     <string name="summary__drawer_hide_apps">Hide app from the app drawer</string>
     <string name="summary_app_categorization_enable">Create tabs or folders</string>
-    <string name="summary_all_apps_search">Show search bar</string>
     <string name="summary_app_suggestions">For all apps and Home screen</string>
     <string name="title_disable_suggestions_prompt">Turn off app suggestions</string>
     <string name="msg_disable_suggestions_prompt">"Usage data will be deleted."</string>
@@ -149,10 +152,15 @@
         <item quantity="other">%1$d Apps</item>
     </plurals>
     <plurals name="hidden_apps_count">
+        <item quantity="one"></item>
         <item quantity="other">%1$d Hidden</item>
     </plurals>
-    <string name="hide_app_selected"> hidden</string>
+    <string name="protected_apps">Protected Apps</string>
+    <string name="protected_app_selected">Protected Apps (%1$d)</string>
+    <string name="hide_app_selected">Hidden Apps (%1$d)</string>
     <string name="hide_app_reset">Reset hidden apps</string>
+    <string name="selected_apps">Selected Apps (%1$d)</string>
+    <string name="app_reset">Reset Selection</string>
     <string name="protected_app_reset">Reset protected apps</string>
     <string name="action_preferences" translatable="false">@string/customize</string>
     <string name="needs_usage_access">Usage access needed</string>
@@ -162,16 +170,16 @@
     <string name="enable_protected_apps">Turn on protected apps</string>
     <string name="disable_protected_apps">Turn off protected apps</string>
     <string name="disable_protected_apps_message">Turn off protected apps requiring authentication</string>
-
     <!-- PREFERENCES THEME -->
     <string name="title__theme_accent_color">Accent Color</string>
     <string name="title__theme_blur">Blur</string>
     <string name="title__theme_blur_radius">Blur Intensity</string>
-    <string name="title__theme_icon_shape">Change icon shape</string>
+    <string name="title__theme_icon_shape">Icon shape</string>
     <string name="title_theme_icon_packs">Icon Packs</string>
     <string name="title_theme_customize_icons">Customize Icons</string>
     <string name="summary__theme_blur">Blur page backgrounds</string>
     <string name="theme_auto">Follow wallpaper</string>
+    <string name="theme_auto_black">Follow wallpaper (Black)</string>
     <string name="theme_auto_night_mode">System</string>
     <string name="theme_auto_night_mode_black">System (Black)</string>
     <string name="theme_based">Set by Theme</string>
@@ -184,6 +192,7 @@
     <string name="theme_dark_dark_text">Dark with dark text</string>
     <string name="theme_dark_theme_mode">Dark theme</string>
     <string name="theme_dark_theme_mode_follow_wallpaper" translatable="false">@string/theme_auto</string>
+    <string name="theme_dark_theme_mode_follow_wallpaper_black" translatable="false">@string/theme_auto_black</string>
     <string name="theme_dark_theme_mode_follow_system" translatable="false">@string/theme_auto_night_mode</string>
     <string name="theme_dark_theme_mode_follow_daylight">Follow daylight</string>
     <string name="theme_dark_theme_mode_follow_daylight_black">Follow daylight (Black)</string>
@@ -224,11 +233,13 @@
     <string name="open_image_picker">Open image picker</string>
     <string name="import_icon">Import icon</string>
     <string name="import_as_adaptive">As adaptive icon</string>
+    <string name="reset_custom_icon">Remove Custom Icon</string>
     <string name="reset_custom_icons">Remove Custom Icons</string>
     <string name="reset_custom_icons_confirmation">Revert to default icons from this Icon Pack? This can’t be undone.</string>
     <string name="color_presets">Presets</string>
     <string name="title_adaptify_pack">Create adaptive icons for icon pack</string>
     <string name="title_force_shapeless">Force shapeless icons</string>
+    <string name="title_themed_icons">Themed Icons</string>
     <string name="title_colored_backgrounds">Coloured backgrounds</string>
     <string name="summary_colored_backgrounds">For Adaptive Icons’ backgrounds.</string>
     <string name="summary_force_shapeless">Try to use legacy icons for all apps.</string>
@@ -242,7 +253,6 @@
     <string name="preview_app_signal" translatable="false">Signal</string>
     <string name="icon_picker_default_category">Icons</string>
     <string name="icon_picker_load_failed">Couldn’t load more icons.</string>
-
     <!-- PREFERENCES SMARTSPACE -->
     <string name="title_show_google_app">Show Google app</string>
     <string name="title_smartspace_feed_theme">Feed Theme</string>
@@ -258,7 +268,6 @@
     <string name="category__behavior_weather">Weather</string>
     <string name="google_app" translatable="false">Google app</string>
     <string name="pref_shelf_summary">To the left of the main Home screen</string>
-
     <!-- SmartSpace -->
     <string name="smartspace_preferences">Preferences</string>
     <string name="smartspace_add_to_home">Add to Desktop</string>
@@ -291,6 +300,7 @@
     <string name="onbording_settings_summary">Touch and hold on the Desktop.</string>
     <string name="onboarding_swipe_up">Swipe up to open the drawer.</string>
     <string name="weather_provider_testing">Debug</string>
+    <string name="weather_provider_owm" translatable="true">OpenWeatherMap</string>
     <string name="weather_provider_pe">Pixel Experience</string>
     <string name="weather_provider_oneplus_weather">OnePlus Weather</string>
     <string name="event_provider_now_playing">Now Playing</string>
@@ -310,6 +320,10 @@
     <string name="units_delisle">Delisle</string>
     <string name="units_reaumur">Réaumur</string>
     <string name="units_romer">Rømer</string>
+    <string name="owm_get_your_own_key">Get an API key at api.openweathermap.org.</string>
+    <string name="default_city">San Salvador, SV</string>
+    <string name="weather_api_key">OWM API Key</string>
+    <string name="weather_city">City</string>
     <!-- Folder name format -->
     <string name="folder_name_format">Folder: <xliff:g example="Games" id="name">%1$s</xliff:g></string>
     <string-array name="greetings_morning">
@@ -337,6 +351,7 @@
     <string name="title__gesture_swipe_down">Swipe down</string>
     <string name="pref_category__notifications">Notifications</string>
     <string name="pref_category__gestures">Gestures</string>
+    <string name="pref_category__dash">Dash</string>
     <string name="action_none">Do Nothing</string>
     <string name="action_open_drawer">Open app drawer</string>
     <string name="action_open_drawer_or_recents">Open recents/app drawer</string>
@@ -349,7 +364,7 @@
     <string name="action_app_search">Open app search</string>
     <string name="action_open_widgets">Open Widget Drawer</string>
     <string name="action_open_notifications">Open notifications</string>
-    <string name="action_overlay">not available</string>
+    <string name="action_overlay">Open Google Feed</string>
     <string name="action_close_notifications">Close notifications</string>
     <string name="action_global_search">Launch Global Search</string>
     <string name="action_sleep">Sleep</string>
@@ -363,15 +378,17 @@
     <string name="omega_actions">Actions</string>
     <string name="dt2s_admin_hint">To use double tap to sleep and grant admin permission.</string>
     <string name="dt2s_admin_warning">Double tap to sleep will be turned off.</string>
+    <string name="notification_dots_missing_notification_access">To show Notification Dots, turn on app notifications access</string>
+    <string name="notification_dots_disabled">To show Notification Dots, enable showing notification dots in settings</string>
     <!-- SEARCH -->
     <string name="title__search_bubble_searchbar">Show Two Bubbles</string>
-    <string name="title__search_action_assistant">not availble</string>
-    <string name="title_search_action_lens">Show Lens Icon</string>
+    <string name="title__search_action_assistant">Open Assistant</string>
+    <string name="title_search_contacts">Search Contacts</string>
     <string name="title__search_show_assistant">Show Voice Search Button</string>
     <string name="title_search_provider">Search engine</string>
     <string name="title__search_bar_radius">Corner Radius</string>
-    <string name="summary__search_show_as_assistant_summary">not available</string>
-    <string name="summary_search_show_lens_summary">--</string>
+    <string name="title__feed">Feed</string>
+    <string name="summary__search_show_as_assistant_summary">Open Assistant instead of Voice Search</string>
     <string name="cat_search_bar">Search Bar</string>
     <string name="search_no_results">No Results</string>
     <string name="search_breadcrumb_connector" translatable="false">
@@ -382,8 +399,8 @@
     <string name="search_provider_ddg" translatable="false">DuckDuckGo</string>
     <string name="search_provider_baidu" translatable="false">Baidu</string>
     <string name="search_provider_s_finder" translatable="false">S Finder</string>
-    <string name="google" translatable="false">G**gle</string>
-    <string name="search_provider_google_go" translatable="false">G**gle Go</string>
+    <string name="google" translatable="false">Google</string>
+    <string name="search_provider_google_go" translatable="false">Google Go</string>
     <string name="search_provider_firefox" translatable="false">Firefox</string>
     <string name="search_provider_search_lite" translatable="false">Search Lite</string>
     <string name="search_provider_cool_search" translatable="false">Cool Search</string>
@@ -407,6 +424,10 @@
     <string name="folder_radius">Folder corner radius</string>
     <string name="folder_rows">Folder Rows</string>
     <string name="folder_columns">Folder Columns</string>
+    <string name="folder_opacity">Folder Opacity</string>
+    <string name="section_apps">apps</string>
+    <string name="section_web">Web</string>
+    <string name="section_contacts">Contacts</string>
     <!-- FONT -->
     <string name="fonts_global_font">Font</string>
     <string name="fonts_change_global_font">Change</string>
@@ -444,13 +465,12 @@
     <string name="restore_failed">Restore failed</string>
     <string name="restore_read_meta_fail">Invalid backup file</string>
     <string name="backup_share_title">Share backup</string>
-    <string name="backup_share_text">Omega backup file</string>
+    <string name="backup_share_text">LeOS Launcher backup file</string>
     <string name="backup_location">Location</string>
-    <string name="backup_location_device_storage">Omega Folder</string>
+    <string name="backup_location_device_storage">Internal folder</string>
     <string name="read_external_storage_required">Grant storage access to create a backup.</string>
     <string name="local_backups">In Storage</string>
     <string name="permission_denied">Read permission denied!</string>
-
     <!-- DEVELOPER -->
     <string name="developer_options_enabled">Developer options on</string>
     <string name="search_menu">Find settings</string>
@@ -469,7 +489,7 @@
     <string name="about_build_information">Build info</string>
     <string name="title__about_donate">Donate</string>
     <string name="title__about_changelog">Changelog</string>
-    <string name="about_copyright">Copyleft © 2022</string>
+    <string name="about_copyright">Copyleft © 2020–2022</string>
     <string name="about_team">Team Members</string>
     <string name="about_translators_group">Contributors and Translators</string>
     <string name="about_translators">Translators</string>
@@ -477,7 +497,7 @@
     <string name="about_channel">Channel</string>
     <string name="about_community">Community</string>
     <string name="about_open_source">Open Source Libraries</string>
-    <string name="about_source_url" translatable="false">https://github.com/otakuhqz/Omega</string>
+    <string name="about_source_url" translatable="false">https://github.com/LeOS-GSI/LeOS-Launcher</string>
     <string name="category__about_licenses">License</string>
     <string name="license_gpl" translatable="false">GPLv3+</string>
     <string name="app_donate_url" translatable="false">https://paypal.me/LeOSGSI</string>
@@ -485,7 +505,7 @@
     <string name="author_role" translatable="false">Developer</string>
     <string name="contributor1" translatable="false">Saul Henriquez</string>
     <string name="contributor2" translatable="false">Rafael Venancio</string>
-    <string name="contributor_role" translatable="false">Contributor/NeoLauncher</string>
+    <string name="contributor_role" translatable="false">Contributor/Neo-Launcher</string>
     <string name="title_storage_permission_required">Storage Access Needed</string>
     <string name="content_storage_permission_required">Grant access to storage to set a wallpaper.</string>
     <string name="accessibility_undo">Undo</string>
@@ -502,13 +522,14 @@
     <string name="dash_all_apps_summary">Show all app button</string>
     <string name="dash_media_player">Audio Player</string>
     <string name="dash_media_player_description">Show or hide the audio player controls</string>
-    <string name="edit_dash_summary">Turn on or off shortcuts</string>
+    <string name="edit_dash_summary">Turn shortcuts on or off</string>
     <string name="wallpaper_pick_summary">Open the wallpaper chooser</string>
     <string name="dash_launcher_settings_summary">Display the launcher settings</string>
     <string name="dash_volume_summary">Display the device audio selector</string>
     <string name="dash_device_settings_summary">Open the Device Settings</string>
-    <string name="drag_to_disable_packs">Drag down to turn on</string>
-    <string name="drag_to_enable_packs">Drag up to turn off</string>
+    <string name="drag_to_disable_packs">Drag down to turn off</string>
+    <string name="drag_to_enable_packs">Drag up to turn on</string>
+    <string name="tap_to_enable">Tap item to enable</string>
     <string name="enabled_events">Enabled</string>
     <string name="dash_wifi">Wi-Fi</string>
     <string name="dash_wifi_summary">Wi-Fi state and connection</string>
@@ -551,6 +572,8 @@
     <string name="folder_cover_mode_desc">Tap to open first app. Swipe upwards to view all.</string>
     <string name="loading">Loading…</string>
     <string name="uninstall_failed">Could not uninstall the app</string>
+    <string name="tab_launcher">Launcher</string>
+    <string name="tab_shortcuts">Shortcuts</string>
     <!-- WIDGET FEED -->
     <string name="button_organize_screens">Arrange Pages</string>
     <string name="modify_system_settings">Modify system settings</string>

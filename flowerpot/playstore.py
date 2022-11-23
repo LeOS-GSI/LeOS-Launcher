@@ -24,7 +24,7 @@ from urllib.parse import unquote
 # Note: This script is currently a huge mess and has just been hacked together until it worked as desired.
 # Feel free to clean it up or improve it!
 
-BASE_URL = 'https://play.google.com/store/apps/'
+BASE_URL = 'https://github.com/LeOS-GSI/LeOS-Launcher'
 CATEGORY_URL = f'{BASE_URL}category/'
 TOP_URL = f'{BASE_URL}top/category/'
 NEW_URL = f'{BASE_URL}new/category/'

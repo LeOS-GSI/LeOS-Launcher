@@ -1,11 +1,11 @@
 plugins {
     id("com.android.library")
-    kotlin("android").version("1.6.21")
+    kotlin("android").version("1.7.20")
 }
 
 android {
     namespace = "app.lawnchair.compatlib"
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 26
@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0-alpha05")
+    implementation("androidx.core:core-ktx:1.9.0")
 }
 
 fun Project.addFrameworkJar(path: String) {

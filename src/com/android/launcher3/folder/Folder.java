@@ -101,9 +101,9 @@ import com.android.launcher3.views.ActivityContext;
 import com.android.launcher3.views.BaseDragLayer;
 import com.android.launcher3.views.ClipPathView;
 import com.android.launcher3.widget.PendingAddShortcutInfo;
+import com.saggitt.omega.folder.FolderShortcut;
 import com.saggitt.omega.groups.DrawerFolderInfo;
 import com.saggitt.omega.preferences.OmegaPreferences;
-import com.saggitt.omega.views.CustomBottomSheet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -303,7 +303,7 @@ public class Folder extends AbstractFloatingView implements ClipPathView, DragSo
         }
 
         View settingsButton = findViewById(R.id.settings_button);
-        if (Utilities.getOmegaPrefs(mLauncher).getLockDesktop()) {
+        if (Utilities.getOmegaPrefs(mLauncher).getDesktopLock().onGetValue()) {
             settingsButton.setVisibility(View.GONE);
         } else {
             settingsButton.setOnClickListener(v -> {
@@ -311,7 +311,8 @@ public class Folder extends AbstractFloatingView implements ClipPathView, DragSo
                 if (mInfo instanceof DrawerFolderInfo) {
                     ((DrawerFolderInfo) mInfo).showEdit(mLauncher);
                 } else {
-                    CustomBottomSheet.show(mLauncher, mInfo);
+                    FolderShortcut fc = new FolderShortcut(mLauncher, mInfo);
+                    fc.show();
                 }
             });
         }
@@ -326,7 +327,7 @@ public class Folder extends AbstractFloatingView implements ClipPathView, DragSo
     }
 
     public float getCornerRadius() {
-        float radius = round(prefs.getFolderRadius());
+        float radius = round(prefs.getDesktopFolderRadius().onGetValue());
         if (radius > 0f) {
             return radius;
         }

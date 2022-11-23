@@ -16,22 +16,32 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.android.launcher3.Utilities
-import com.google.accompanist.drawablepainter.rememberDrawablePainter
 import com.saggitt.omega.compose.components.ActionDashItem
 import com.saggitt.omega.compose.components.ControlDashItem
 import com.saggitt.omega.compose.components.MusicBar
+import com.saggitt.omega.dash.actionprovider.AudioPlayer
+import com.saggitt.omega.util.getDashActionProviders
+import com.saggitt.omega.util.getDashControlProviders
+import kotlin.math.roundToInt
 
 // TODO add better support for horizontal
 @Composable
 fun DashPage() {
     val context = LocalContext.current
     val prefs = Utilities.getOmegaPrefs(context)
-    val allActionItems = DashEditAdapter.getDashActionProviders(context)
-    val allControlItems = DashEditAdapter.getDashControlProviders(context)
-    val activeDashProviders = prefs.dashProviders.getAll()
-    val musicManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-    val lineSize = prefs.dashLineSize.toInt()
+    val activeDashProviders = prefs.dashProvidersItems.getAll()
 
+    val actionItems = getDashActionProviders(context).filter {
+        it.javaClass.name in activeDashProviders && it.javaClass.name != AudioPlayer::class.java.name
+    }.associateBy { it.javaClass.name }
+    val controlItems = getDashControlProviders(context).filter {
+        it.javaClass.name in activeDashProviders
+    }.associateBy { it.javaClass.name }
+    val musicManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    val lineSize = prefs.dashLineSize.onGetValue().roundToInt()
+
+    val displayItems = actionItems + controlItems
+    val displayItemsSorted = activeDashProviders.mapNotNull { displayItems[it] }
     LazyVerticalGrid(
         modifier = Modifier.fillMaxWidth(),
         columns = GridCells.Fixed(lineSize),
@@ -39,41 +49,42 @@ fun DashPage() {
         horizontalArrangement = Arrangement.spacedBy(4.dp),
         contentPadding = PaddingValues(4.dp)
     ) {
-        if (activeDashProviders.contains("2")) item(span = { GridItemSpan(lineSize) }) { // TODO abstract DashProviders to Constants
+        if (activeDashProviders.contains(AudioPlayer::class.java.name)) item(
+            span = { GridItemSpan(lineSize) }) { // TODO abstract DashProviders to Constants
             MusicBar(
                 ratio = lineSize.toFloat(),
                 audioManager = musicManager,
             )
         }
-        itemsIndexed(items = activeDashProviders.mapNotNull { itemId ->
-            allControlItems.find { it.itemId.toString() == itemId }
-                ?: allActionItems.find { it.itemId.toString() == itemId && it.itemId != 2 }
-        }, span = { _, item ->
-            when (item) {
-                is DashControlProvider -> GridItemSpan(2)
-                else -> GridItemSpan(1)
-            }
-        }, key = { _: Int, item: DashProvider -> item.itemId }) { _, item ->
+        itemsIndexed(
+            items = displayItemsSorted,
+            span = { _, item ->
+                when (item) {
+                    is DashControlProvider -> GridItemSpan(2)
+                    else -> GridItemSpan(1)
+                }
+            },
+            key = { _: Int, item: DashProvider -> item.javaClass.name }) { _, item ->
             when (item) {
                 is DashControlProvider -> {
-                    val (enabled, enable) = remember {
+                    val enabled = remember {
                         mutableStateOf(item.state)
                     }
                     ControlDashItem(
                         modifier = Modifier.fillMaxWidth(0.5f),
-                        icon = rememberDrawablePainter(drawable = item.icon),
+                        icon = item.icon,
                         description = item.name,
                         ratio = 2.15f,
                         isExtendable = item.extendable,
-                        enabled = enabled,
+                        enabled = enabled.value,
                         onClick = {
-                            item.state = !enabled
-                            enable(!enabled)
+                            item.state = !enabled.value
+                            enabled.value = !enabled.value
                         }
                     )
                 }
                 is DashActionProvider -> ActionDashItem(
-                    icon = rememberDrawablePainter(drawable = item.icon),
+                    icon = item.icon,
                     description = item.name,
                     onClick = { item.runAction(context) }
                 )

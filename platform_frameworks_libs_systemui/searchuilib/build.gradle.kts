@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 26
@@ -39,5 +39,5 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core:1.9.0-alpha05")
+    implementation("androidx.core:core:1.9.0")
 }

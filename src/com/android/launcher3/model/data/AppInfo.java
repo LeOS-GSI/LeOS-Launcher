@@ -31,6 +31,8 @@ import android.os.UserManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.graphics.drawable.DrawableKt;
+import androidx.palette.graphics.Palette;
 
 import com.android.launcher3.LauncherSettings;
 import com.android.launcher3.Utilities;
@@ -81,7 +83,11 @@ public class AppInfo extends ItemInfoWithIcon {
         this.componentName = info.getComponentName();
         this.container = CONTAINER_ALL_APPS;
         this.user = user;
+        this.iconColor = Palette.from(DrawableKt.toBitmap(info.getIcon(46), 46, 46, null))
+                .generate()
+                .getDominantColor(0);
         intent = makeLaunchIntent(info);
+        title = info.getLabel();
 
         if (quietModeEnabled) {
             runtimeStatusFlags |= FLAG_DISABLED_QUIET_USER;
@@ -94,6 +100,7 @@ public class AppInfo extends ItemInfoWithIcon {
         componentName = info.componentName;
         title = Utilities.trim(info.title);
         intent = new Intent(info.intent);
+        this.iconColor = info.iconColor;
     }
 
     @VisibleForTesting
@@ -113,6 +120,7 @@ public class AppInfo extends ItemInfoWithIcon {
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                         | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
         setProgressLevel(installInfo);
+        title = installInfo.packageName;
         user = installInfo.user;
     }
 

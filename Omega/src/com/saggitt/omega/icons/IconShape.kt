@@ -23,7 +23,7 @@ import android.graphics.PointF
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
 
-open class IconShape(
+open class IconShape( // TODO migrate to Compose?
     val topLeft: Corner,
     val topRight: Corner,
     val bottomLeft: Corner,
@@ -310,11 +310,28 @@ open class IconShape(
         }
     }
 
+    object Octagon : IconShape(
+        IconCornerShape.cut,
+        IconCornerShape.cut,
+        IconCornerShape.cut,
+        IconCornerShape.cut,
+        .5f, .5f, .5f, .5f
+    ) {
+
+        override fun toString(): String {
+            return "octagon"
+        }
+    }
+
     companion object {
 
         fun fromString(value: String): IconShape? {
             return when (value) {
-                "system" -> IconShapeManager.INSTANCE.noCreate.systemIconShape
+                "", "system" -> try {
+                    IconShapeManager.INSTANCE.noCreate.systemIconShape
+                } catch (e: Exception) {
+                    Circle
+                }
                 "circle" -> Circle
                 "square" -> Square
                 "rounded" -> RoundedSquare
@@ -323,7 +340,7 @@ open class IconShape(
                 "teardrop" -> Teardrop
                 "cylinder" -> Cylinder
                 "cupertino" -> Cupertino
-                "" -> null
+                "octagon" -> Octagon
                 else -> try {
                     parseCustomShape(value)
                 } catch (ex: Exception) {

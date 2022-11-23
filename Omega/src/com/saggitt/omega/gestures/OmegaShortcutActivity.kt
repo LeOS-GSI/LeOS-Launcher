@@ -48,12 +48,13 @@ class OmegaShortcutActivity : AppCompatActivity() {
     private fun onSelectHandler(handler: GestureHandler) {
         selectedHandler = handler
         if (handler.configIntent != null) {
-            startActivityForResult(handler.configIntent, REQUEST_CODE)
+            startActivityForResult(handler.configIntent as Intent, REQUEST_CODE)
         } else {
             saveChanges()
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
             selectedHandler?.onConfigResult(data)

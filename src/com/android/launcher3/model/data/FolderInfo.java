@@ -58,7 +58,6 @@ import java.util.List;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
-
 /**
  * Represents a folder containing shortcuts or apps.
  */
@@ -83,7 +82,7 @@ public class FolderInfo extends ItemInfo {
 
     public static final int FLAG_MANUAL_FOLDER_NAME = 0x00000008;
 
-    public static final int FLAG_COVER_MODE = 0x00000016;
+    public static final int FLAG_COVER_MODE = 0x00000010;
 
     /**
      * Different states of folder label.
@@ -129,6 +128,7 @@ public class FolderInfo extends ItemInfo {
     public FolderInfo() {
         itemType = LauncherSettings.Favorites.ITEM_TYPE_FOLDER;
         user = Process.myUserHandle();
+        swipeUpAction = "";
     }
 
     /**
@@ -249,7 +249,7 @@ public class FolderInfo extends ItemInfo {
 
     public void setSwipeUpAction(@NonNull Context context, @Nullable String action) {
         swipeUpAction = action;
-        ModelWriter.modifyItemInDatabase(context, this, null, swipeUpAction, null, null, false, true);
+        ModelWriter.modifyItemInDatabase(context, this, swipeUpAction, true);
     }
 
     public CharSequence getIconTitle(Folder folder) {
@@ -448,39 +448,12 @@ public class FolderInfo extends ItemInfo {
         return isCoverMode();
     }
 
-    /*private boolean hasCustomIcon(Context context) {
-        Launcher launcher = OmegaLauncher.getLauncher(context);
-        return getIconInternal(launcher) != null;
-    }*/
-
     public boolean usingCustomIcon(Context context) {
         return !isCoverMode();
     }
 
-    private Drawable getIconInternal(Launcher launcher) {
-        /*CustomInfoProvider<FolderInfo> infoProvider = CustomInfoProvider.Companion.forItem(launcher, this);
-        //CustomIconEntry entry = infoProvider == null ? null : infoProvider.getIcon(this);
-        if (entry != null) {
-            entry.getIcon();
-            if (!entry.getIcon().equals(cachedIcon)) {
-                IconPack pack = IconPackProvider.INSTANCE.get(launcher)
-                        .getIconPackOrSystem(entry.getPackPackageName());
-                if (pack != null) {
-                    cached = pack.getIcon(entry, launcher.getDeviceProfile().inv.fillResIconDpi);
-                    cachedIcon = entry.getIcon();
-                }
-            }
-            if (cached != null) {
-                return cached.mutate();
-            }
-        }*/
-        return null;
-    }
-
     public Drawable getIcon(Context context) {
         Launcher launcher = Launcher.getLauncher(context);
-        Drawable icn = getIconInternal(launcher);
-        if (icn != null) return icn;
         if (isCoverMode()) return getCoverInfo().newIcon(context);
         return getFolderIcon(launcher);
     }

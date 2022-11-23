@@ -39,7 +39,7 @@ class SearchProviderController(private val context: Context) {
 
     private val listeners = HashSet<OnProviderChangeListener>()
 
-    val isGoogle get() = searchProvider is QwantSearchProvider
+    val isGoogle get() = searchProvider is GoogleSearchProvider
 
     init {
         ThemeManager.getInstance(context).addOverride(themeOverride)
@@ -64,14 +64,14 @@ class SearchProviderController(private val context: Context) {
 
     val searchProvider: SearchProvider
         get() {
-            val curr = prefs.searchProvider
+            val curr = prefs.searchProvider.onGetValue()
             if (cache == null || cached != curr) {
-                cache = createProvider(prefs.searchProvider) {
+                cache = createProvider(prefs.searchProvider.onGetValue()) {
                     AppsSearchProvider(context)
                 }
                 cached = cache!!::class.java.name
-                if (prefs.searchProvider != cached) {
-                    prefs.searchProvider = cached
+                if (prefs.searchProvider.onGetValue() != cached) {
+                    prefs.searchProvider.onSetValue(cached)
                 }
                 notifyProviderChanged()
             }
@@ -79,8 +79,8 @@ class SearchProviderController(private val context: Context) {
         }
 
     private fun createProvider(
-            providerName: String,
-            fallback: () -> SearchProvider
+        providerName: String,
+        fallback: () -> SearchProvider
     ): SearchProvider {
         try {
             val constructor = Class.forName(providerName).getConstructor(Context::class.java)
@@ -115,36 +115,73 @@ class SearchProviderController(private val context: Context) {
     }
 
     companion object : SingletonHolder<SearchProviderController, Context>(
-            ensureOnMainThread(
-                    useApplicationContext(::SearchProviderController)
-            )
+        ensureOnMainThread(
+            useApplicationContext(::SearchProviderController)
+        )
     ) {
+        //TODO: Remove when the compose migration is complete
         fun getSearchProviders(context: Context) = listOf(
+            AppsSearchProvider(context),
+            //GoogleSearchProvider(context),
+            SFinderSearchProvider(context),
+            //GoogleGoSearchProvider(context),
+            //FirefoxSearchProvider(context),
+            DuckDuckGoSearchProvider(context),
+            //BingSearchProvider(context),
+            //BaiduSearchProvider(context),
+            //YandexSearchProvider(context),
+            QwantSearchProvider(context),
+            SearchLiteSearchProvider(context),
+            CoolSearchSearchProvider(context),
+            //EdgeSearchProvider(context),
+
+            /*Web Providers*/
+            //BaiduWebSearchProvider(context),
+            BraveWebSearchProvider(context),
+            //BingWebSearchProvider(context),
+            DDGWebSearchProvider(context),
+            EcosiaWebSearchProvider(context),
+            MetagerWebSearchProvider(context),
+            //GoogleWebSearchProvider(context),
+            QwantWebSearchProvider(context),
+            StartpageWebSearchProvider(context),
+            SearxWebSearchProvider(context),
+            //YahooWebSearchProvider(context),
+            //YandexWebSearchProvider(context)
+        ).filter { it.isAvailable }
+
+        fun getSearchProvidersMap(context: Context): Map<String, String> {
+            val providers = listOf(
                 AppsSearchProvider(context),
                 SFinderSearchProvider(context),
-                GoogleGoSearchProvider(context),
-                FirefoxSearchProvider(context),
+                //FirefoxSearchProvider(context),
                 DuckDuckGoSearchProvider(context),
-                BingSearchProvider(context),
-                BaiduSearchProvider(context),
-                YandexSearchProvider(context),
+                //BingSearchProvider(context),
+                //BaiduSearchProvider(context),
+                //YandexSearchProvider(context),
                 QwantSearchProvider(context),
                 SearchLiteSearchProvider(context),
                 CoolSearchSearchProvider(context),
                 EdgeSearchProvider(context),
 
                 /*Web Providers*/
-                BaiduWebSearchProvider(context),
+                //BaiduWebSearchProvider(context),
                 BraveWebSearchProvider(context),
-                BingWebSearchProvider(context),
+                //BingWebSearchProvider(context),
                 DDGWebSearchProvider(context),
                 EcosiaWebSearchProvider(context),
                 MetagerWebSearchProvider(context),
+                //GoogleWebSearchProvider(context),
                 QwantWebSearchProvider(context),
                 StartpageWebSearchProvider(context),
                 SearxWebSearchProvider(context),
-                YahooWebSearchProvider(context),
-                YandexWebSearchProvider(context)
-        ).filter { it.isAvailable }
+                //YahooWebSearchProvider(context),
+                //YandexWebSearchProvider(context)
+            ).filter { it.isAvailable }
+
+            val entries = providers.map { it.name }.toTypedArray()
+            val entryValues = providers.map { it::class.java.name }.toTypedArray()
+            return entryValues.zip(entries).toMap()
+        }
     }
 }

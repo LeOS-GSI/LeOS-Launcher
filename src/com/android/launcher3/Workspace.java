@@ -117,7 +117,9 @@ import com.android.launcher3.widget.WidgetManagerHelper;
 import com.android.launcher3.widget.dragndrop.AppWidgetHostViewDragListener;
 import com.android.launcher3.widget.util.WidgetSizes;
 import com.android.systemui.plugins.shared.LauncherOverlayManager.LauncherOverlay;
+import com.saggitt.omega.OmegaLauncher;
 import com.saggitt.omega.preferences.OmegaPreferences;
+import com.saggitt.omega.views.OmegaBackgroundView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -564,7 +566,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             // edges, we do not need a full width QSB.
             int layout = 0;
 
-            if (Utilities.getOmegaPrefs(getContext()).getUsePillQsb()) {
+            if (Utilities.getOmegaPrefs(getContext()).getSmartspaceUsePillQsb().onGetValue()) {
                 layout = R.layout.qsb_container_preview;
             } else {
                 layout = R.layout.search_container_workspace;
@@ -695,7 +697,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
 
         if (hasExtraEmptyScreen() || mScreenOrder.size() == 0) return;
 
-        if (prefs.getAllowEmptyScreens()) {
+        if (prefs.getDesktopAllowEmptyScreens().onGetValue()) {
             return;
         }
 
@@ -821,7 +823,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             return;
         }
 
-        if (prefs.getAllowEmptyScreens()) {
+        if (prefs.getDesktopAllowEmptyScreens().onGetValue()) {
             return;
         }
 
@@ -1092,6 +1094,12 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
         // device I've tried, translating the launcher causes things to get quite laggy.
         mLauncher.getDragLayer().setTranslationX(transX);
         mLauncher.getDragLayer().getAlphaProperty(ALPHA_INDEX_OVERLAY).setValue(alpha);
+
+        if (mLauncher instanceof OmegaLauncher) {
+            ((OmegaLauncher) mLauncher).getBackground().getBlurAlphas().getProperty(
+                    OmegaBackgroundView.ALPHA_INDEX_OVERLAY).setValue(1 - alpha);
+        }
+        mLauncher.mAllAppsController.setOverlayScroll(transX);
     }
 
     /**
@@ -1236,6 +1244,26 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
         }
     }
 
+    public void updateBlurAlpha() {
+        int screenCenter = getScrollX() + getMeasuredWidth() / 2;
+        float totalBlurAlpha = 0;
+        for (int i = 0; i < getChildCount(); i++) {
+            CellLayout child = (CellLayout) getChildAt(i);
+            if (child != null) {
+                float scrollProgress = getScrollProgress(screenCenter, child, i);
+                float blurAlpha = 1 - Math.abs(scrollProgress);
+                int id = getScreenIdForPageIndex(i);
+                /*if (mWorkspaceBlur.get(id)) {
+                    totalBlurAlpha += blurAlpha;
+                }*/
+            }
+        }
+        if (mLauncher instanceof OmegaLauncher) {
+            ((OmegaLauncher) mLauncher).getBackground().getBlurAlphas().getProperty(
+                    OmegaBackgroundView.ALPHA_INDEX_SCREEN).setValue(Math.min(1, totalBlurAlpha));
+        }
+    }
+
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         mWallpaperOffset.setWindowToken(getWindowToken());
@@ -1259,6 +1287,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
         }
         super.onLayout(changed, left, top, right, bottom);
         updatePageAlphaValues();
+        updateBlurAlpha();
     }
 
     @Override
@@ -1540,7 +1569,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             }
         }
 
-        if (Utilities.getOmegaPrefs(mLauncher).getLockDesktop()) {
+        if (Utilities.getOmegaPrefs(mLauncher).getDesktopLock().onGetValue()) {
             child.setVisibility(View.VISIBLE);
 
             if (dragOptions.preDragCondition != null) {

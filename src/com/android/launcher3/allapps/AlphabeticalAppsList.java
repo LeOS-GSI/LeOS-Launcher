@@ -15,17 +15,13 @@
  */
 package com.android.launcher3.allapps;
 
-import static com.saggitt.omega.util.Config.SORT_AZ;
-import static com.saggitt.omega.util.Config.SORT_BY_COLOR;
-import static com.saggitt.omega.util.Config.SORT_MOST_USED;
-import static com.saggitt.omega.util.Config.SORT_ZA;
-
 import android.content.Context;
 import android.graphics.Color;
 
 import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherModel;
+import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.allapps.AllAppsGridAdapter.AdapterItem;
 import com.android.launcher3.config.FeatureFlags;
@@ -36,13 +32,10 @@ import com.android.launcher3.util.ItemInfoMatcher;
 import com.android.launcher3.util.LabelComparator;
 import com.saggitt.omega.OmegaLauncher;
 import com.saggitt.omega.allapps.AppColorComparator;
-import com.saggitt.omega.allapps.AppUsageComparator;
-import com.saggitt.omega.data.AppTracker;
-import com.saggitt.omega.data.AppTrackerRepository;
 import com.saggitt.omega.groups.DrawerFolderInfo;
 import com.saggitt.omega.preferences.OmegaPreferences;
+import com.saggitt.omega.util.OmegaUtilsKt;
 
-import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -117,7 +110,7 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
         }
 
         // Sort the list of apps
-        sortApps(prefs.getSortMode());
+        OmegaUtilsKt.sortApps(mApps, mLauncher, prefs.getDrawerSortModeNew().onGetValue());
 
         // As a special case for some languages (currently only Simplified Chinese), we may need to
         // coalesce sections
@@ -168,31 +161,6 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
      */
     public List<AppInfo> getApps() {
         return mApps;
-    }
-
-    private void sortApps(int sortType) {
-        switch (sortType) {
-            case SORT_ZA:
-                mApps.sort((p2, p1) -> Collator
-                        .getInstance()
-                        .compare(p1.title, p2.title));
-                break;
-
-            case SORT_MOST_USED:
-                AppTrackerRepository repository = AppTrackerRepository.Companion.getINSTANCE().get(mLauncher);
-                List<AppTracker> appsCounter = repository.getAppsCount();
-                AppUsageComparator mostUsedComparator = new AppUsageComparator(appsCounter);
-                mApps.sort(mostUsedComparator);
-                break;
-
-            case SORT_BY_COLOR:
-                mApps.sort(mAppColorComparator);
-                break;
-            case SORT_AZ:
-            default:
-                mApps.sort(mAppNameComparator);
-                break;
-        }
     }
 
     /**
@@ -326,13 +294,6 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
         // Recreate the filtered and sectioned apps (for convenience for the grid layout) from the
         // ordered set of sections
 
-        // Search suggestions should be all the way to the top
-        if (hasFilter() && hasSuggestions()) {
-            for (String suggestion : mSearchSuggestions) {
-                mAdapterItems.add(AdapterItem.asSearchSuggestion(position++, suggestion));
-            }
-        }
-
         if (!hasFilter()) {
             mAccessibilityResultsCount = mApps.size();
             if (mWorkAdapterProvider != null) {
@@ -390,7 +351,22 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
         }
 
         if (hasFilter()) {
+            if (mSearchResults.size() > 0 && prefs.getSearchGlobal().onGetValue())
+                mAdapterItems.add(AdapterItem.asSectionHeader(position++, mLauncher.getString(R.string.section_apps)));
             updateSearchAdapterItems(mSearchResults, 0);
+
+            if (mSearchResults.size() > 0 && prefs.getSearchGlobal().onGetValue())
+                mAdapterItems.add(AdapterItem.asAllAppsDivider(position++));
+
+            if (hasSuggestions()) {
+                mAdapterItems.add(AdapterItem.asSectionHeader(position++, mLauncher.getString(R.string.section_web)));
+                for (String suggestion : mSearchSuggestions) {
+                    mAdapterItems.add(AdapterItem.asSearchSuggestion(position++, suggestion));
+                }
+
+                mAdapterItems.add(AdapterItem.asAllAppsDivider(position++));
+            }
+
             if (!FeatureFlags.ENABLE_DEVICE_SEARCH.get()) {
                 // Append the search market item
                 if (hasNoFilteredResults()) {
@@ -485,7 +461,7 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
         LauncherModel model = app.getModel();
         ModelWriter modelWriter = model.getWriter(false, true);
         return Utilities.getOmegaPrefs(mLauncher)
-                .getAppGroupsManager()
+                .getDrawerAppGroupsManager()
                 .getDrawerFolders()
                 .getFolderInfos(this, modelWriter);
     }
@@ -493,7 +469,7 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
     private Set<ComponentKey> getFolderFilteredApps() {
 
         return Utilities.getOmegaPrefs(mLauncher)
-                .getAppGroupsManager()
+                .getDrawerAppGroupsManager()
                 .getDrawerFolders()
                 .getHiddenComponents();
     }

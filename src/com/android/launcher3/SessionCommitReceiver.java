@@ -81,6 +81,7 @@ public class SessionCommitReceiver extends BroadcastReceiver {
     }
 
     public static boolean isEnabled(Context context) {
-        return Utilities.getPrefs(context).getBoolean(ADD_ICON_PREFERENCE_KEY, true);
+        //return Utilities.getPrefs(context).getBoolean(ADD_ICON_PREFERENCE_KEY, true);
+        return Utilities.getOmegaPrefs(context).getDesktopAddIconsToHome().onGetValue();
     }
 }

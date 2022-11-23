@@ -22,7 +22,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,7 +34,6 @@ import com.saggitt.omega.compose.components.CategorizationOption
 import com.saggitt.omega.groups.AppGroupsManager
 
 // TODO convert to single items
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 fun AppCategorizationOptions() {
@@ -43,7 +41,7 @@ fun AppCategorizationOptions() {
     val prefs = Utilities.getOmegaPrefs(context)
 
     val (selectedOption, onOptionSelected) = remember {
-        mutableStateOf(prefs.appGroupsManager.categorizationType)
+        mutableStateOf(prefs.drawerAppGroupsManager.categorizationType)
     }
 
     Column(
@@ -60,7 +58,7 @@ fun AppCategorizationOptions() {
                 type = it,
                 selected = selectedOption == it
             ) {
-                prefs.appGroupsManager.categorizationType = it
+                prefs.drawerAppGroupsManager.categorizationType = it
                 onOptionSelected(it)
             }
         }

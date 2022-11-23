@@ -17,10 +17,14 @@
 
 package com.saggitt.omega.groups
 
+import com.android.launcher3.AbstractFloatingView
 import com.android.launcher3.Launcher
+import com.android.launcher3.Utilities
 import com.android.launcher3.allapps.AllAppsStore
 import com.android.launcher3.model.ModelWriter
 import com.android.launcher3.model.data.FolderInfo
+import com.saggitt.omega.compose.components.ComposeBottomSheet
+import com.saggitt.omega.groups.ui.EditGroupBottomSheet
 import com.saggitt.omega.util.omegaPrefs
 
 class DrawerFolderInfo(private val drawerFolder: DrawerFolders.Folder) : FolderInfo() {
@@ -44,11 +48,18 @@ class DrawerFolderInfo(private val drawerFolder: DrawerFolders.Folder) : FolderI
     fun onCloseComplete() {
         if (changed) {
             changed = false
-            drawerFolder.context.omegaPrefs.appGroupsManager.drawerFolders.saveToJson()
+            drawerFolder.context.omegaPrefs.drawerAppGroupsManager.drawerFolders.saveToJson()
         }
     }
 
     fun showEdit(launcher: Launcher) {
-        DrawerGroupBottomSheet.editFolder(launcher, drawerFolder)
+        val prefs = Utilities.getOmegaPrefs(launcher)
+        ComposeBottomSheet.show(launcher, true) {
+            EditGroupBottomSheet(
+                type = prefs.drawerAppGroupsManager.getEnabledType()!!,
+                group = drawerFolder,
+                onClose = { AbstractFloatingView.closeAllOpenViews(launcher) }
+            )
+        }
     }
 }

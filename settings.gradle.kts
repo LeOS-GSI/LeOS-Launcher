@@ -28,4 +28,4 @@ include(":SystemUIShared")
 include(":CompatLib")
 include(":CompatLibVR")
 include(":CompatLibVS")
-rootProject.name = "LeOS-Launcher"
+rootProject.name = "Neo Launcher"

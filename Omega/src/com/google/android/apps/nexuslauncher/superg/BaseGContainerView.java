@@ -1,5 +1,7 @@
 package com.google.android.apps.nexuslauncher.superg;
 
+import static com.saggitt.omega.ConstantsKt.PREFS_SEARCH_PROVIDER;
+
 import android.animation.ObjectAnimator;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -221,7 +223,7 @@ public abstract class BaseGContainerView extends FrameLayout implements View.OnC
                     .setPackage("com.google.android.googlequicksearchbox"));
         } catch (ActivityNotFoundException ignored) {
             try {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com")),
+                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://qwant.com")),
                         Launcher.getLauncher(context).getActivityLaunchOptions(mQsbView).toBundle());
             } catch (ActivityNotFoundException ignored2) {
             }
@@ -239,7 +241,7 @@ public abstract class BaseGContainerView extends FrameLayout implements View.OnC
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-        if ("pref_globalSearchProvider".equals(s)) {
+        if (PREFS_SEARCH_PROVIDER.equals(s)) {
             loadIcon();
         }
     }
@@ -254,7 +256,7 @@ public abstract class BaseGContainerView extends FrameLayout implements View.OnC
             SearchProvider provider = SearchProviderController.Companion.getInstance(getContext())
                     .getSearchProvider();
             ImageView gIcon = mQsbView.findViewById(R.id.g_icon);
-            gIcon.setImageDrawable(provider.getIcon(true));
+            gIcon.setImageDrawable(provider.getIcon());
         }
     }
 }

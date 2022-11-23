@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 26
@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0-alpha05")
+    implementation("androidx.core:core-ktx:1.9.0")
     implementation(project(":CompatLib"))
 }
 

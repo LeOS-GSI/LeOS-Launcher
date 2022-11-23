@@ -21,11 +21,14 @@ package com.saggitt.omega.util
 import android.app.KeyguardManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.content.pm.LauncherActivityInfo
 import android.content.pm.LauncherApps
+import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.hardware.biometrics.BiometricManager
 import android.hardware.biometrics.BiometricPrompt
+import android.net.Uri
 import android.os.Build
 import android.os.CancellationSignal
 import android.os.Process
@@ -33,6 +36,7 @@ import android.text.TextUtils
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.android.launcher3.AppFilter
+import com.android.launcher3.LauncherAppState
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import com.android.launcher3.model.data.AppInfo
@@ -40,9 +44,11 @@ import com.android.launcher3.pm.UserCache
 import com.android.launcher3.util.ComponentKey
 import com.android.launcher3.util.Executors.MAIN_EXECUTOR
 import com.android.launcher3.util.PackageManagerHelper
+import com.saggitt.omega.PREFS_DOCK_COLUMNS
+import com.saggitt.omega.PREFS_DRAWER_COLUMNS
 import com.saggitt.omega.allapps.CustomAppFilter
 import com.saggitt.omega.theme.ThemeOverride
-import java.util.*
+import java.util.Locale
 
 class Config(val context: Context) {
 
@@ -66,27 +72,42 @@ class Config(val context: Context) {
         } else Resources.getSystem().configuration.locales[0]
     }
 
-    fun getAppsList(filter: AppFilter?): List<LauncherActivityInfo> {
+    fun getAppsList(filter: AppFilter?): MutableList<LauncherActivityInfo> {
         val apps = ArrayList<LauncherActivityInfo>()
         val profiles = UserCache.INSTANCE.get(context).userProfiles
         val launcherApps = context.getSystemService(LauncherApps::class.java)
         profiles.forEach { apps += launcherApps.getActivityList(null, it) }
         return if (filter != null) {
-            apps.filter { filter.shouldShowApp(it.componentName, it.user) }
+            apps.filter { filter.shouldShowApp(it.componentName, it.user) }.toMutableList()
         } else {
             apps
         }
+    }
+
+    fun feedProviderList(context: Context): List<ApplicationInfo> {
+        val packageManager = context.packageManager
+        val intent = Intent("com.android.launcher3.WINDOW_OVERLAY")
+            .setData(Uri.parse("app://" + context.packageName))
+        val feedList: MutableList<ApplicationInfo> = ArrayList()
+        for (resolveInfo in packageManager.queryIntentServices(
+            intent,
+            PackageManager.GET_RESOLVED_FILTER
+        )) {
+            if (resolveInfo.serviceInfo != null) {
+                val applicationInfo = resolveInfo.serviceInfo.applicationInfo
+                feedList.add(applicationInfo)
+            }
+        }
+        return feedList
     }
 
     companion object {
         //PERMISSION FLAGS
         const val REQUEST_PERMISSION_STORAGE_ACCESS = 666
         const val REQUEST_PERMISSION_LOCATION_ACCESS = 667
-        const val CODE_EDIT_ICON = 100
+        const val REQUEST_PERMISSION_READ_CONTACTS = 668
 
         const val GOOGLE_QSB = "com.google.android.googlequicksearchbox"
-        const val LENS_URI = "google://lens"
-        const val LENS_ACTIVITY = "com.google.android.apps.lens.MainActivity"
         const val DPS_PACKAGE = "com.google.android.as"
 
         //APP DRAWER SORT MODE
@@ -94,6 +115,7 @@ class Config(val context: Context) {
         const val SORT_ZA = 1
         const val SORT_MOST_USED = 2
         const val SORT_BY_COLOR = 3
+        const val SORT_BY_INSTALL_DATE = 4
 
         //APP DRAWER LAYOUT MODE
         const val DRAWER_VERTICAL = 0
@@ -103,6 +125,11 @@ class Config(val context: Context) {
         const val THEME_LIGHT = 0
         const val THEME_DARK = 1
         const val THEME_BLACK = 2
+
+        //CATEGORY BOTTOM SHEET
+        const val BS_SELECT_TAB_TYPE = 0
+        const val BS_CREATE_GROUP = 1
+        const val BS_EDIT_GROUP = 2
 
         val ICON_INTENTS = arrayOf(
             Intent("com.novalauncher.THEME"),
@@ -177,8 +204,8 @@ class Config(val context: Context) {
         fun isAppProtected(context: Context, componentKey: ComponentKey): Boolean {
             var result = false
             val protectedApps = ArrayList(
-                    Utilities.getOmegaPrefs(context).protectedAppsSet
-                            .map { Utilities.makeComponentKey(context, it) })
+                Utilities.getOmegaPrefs(context).drawerProtectedAppsSet.onGetValue()
+                    .map { Utilities.makeComponentKey(context, it) })
 
             if (protectedApps.contains(componentKey)) {
                 result = true
@@ -187,36 +214,36 @@ class Config(val context: Context) {
         }
 
         private val PLACE_HOLDERS = arrayOf(
-                "com.android.phone",
-                "com.samsung.android.dialer",
-                "com.whatsapp",
-                "com.android.chrome",
-                "com.instagram.android",
-                "com.google.android.gm",
-                "com.facebook.orca",
-                "com.google.android.youtube",
-                "com.twitter.android",
-                "com.facebook.katana",
-                "com.google.android.calendar",
-                "com.yodo1.crossyroad",
-                "com.spotify.music",
-                "com.skype.raider",
-                "com.snapchat.android",
-                "com.viber.voip",
-                "com.google.android.deskclock",
-                "com.google.android.apps.photos",
-                "com.google.android.music",
-                "com.google.android.apps.genie.geniewidget",
-                "com.netflix.mediaclient",
-                "com.google.android.apps.maps",
-                "bbc.iplayer.android",
-                "com.android.settings",
-                "com.google.android.videos",
-                "com.amazon.mShop.android.shopping",
-                "com.microsoft.office.word",
-                "com.google.android.apps.docs",
-                "com.google.android.keep",
-                "com.google.android.talk"
+            "com.android.phone",
+            "com.samsung.android.dialer",
+            "com.whatsapp",
+            "com.android.chrome",
+            "com.instagram.android",
+            "com.google.android.gm",
+            "com.facebook.orca",
+            "com.google.android.youtube",
+            "com.twitter.android",
+            "com.facebook.katana",
+            "com.google.android.calendar",
+            "com.yodo1.crossyroad",
+            "com.spotify.music",
+            "com.skype.raider",
+            "com.snapchat.android",
+            "com.viber.voip",
+            "com.google.android.deskclock",
+            "com.google.android.apps.photos",
+            "com.google.android.music",
+            "com.google.android.apps.genie.geniewidget",
+            "com.netflix.mediaclient",
+            "com.google.android.apps.maps",
+            "bbc.iplayer.android",
+            "com.android.settings",
+            "com.google.android.videos",
+            "com.amazon.mShop.android.shopping",
+            "com.microsoft.office.word",
+            "com.google.android.apps.docs",
+            "com.google.android.keep",
+            "com.google.android.talk"
         )
 
         fun getPreviewAppInfos(context: Context): List<AppInfo> {
@@ -224,7 +251,7 @@ class Config(val context: Context) {
             val user = Process.myUserHandle()
             val appFilter = CustomAppFilter(context)
             val predefined = PLACE_HOLDERS
-                    .filter { PackageManagerHelper(context).isAppInstalled(it, user) }
+                .filter { PackageManagerHelper(context).isAppInstalled(it, user) }
                 .mapNotNull { launcherApps.getActivityList(it, user).firstOrNull() }
                 .asSequence()
             val randomized = launcherApps.getActivityList(null, Process.myUserHandle())
@@ -247,5 +274,20 @@ class Config(val context: Context) {
             return currentTheme
         }
 
+        fun getIdpDefaultValue(context: Context, key: String): Int {
+            var originalIdp = 0
+            val idp = LauncherAppState.getIDP(context)
+            if (key == PREFS_DOCK_COLUMNS) {
+                originalIdp = idp.numColumnsOriginal
+            } else if (key == PREFS_DRAWER_COLUMNS) {
+                originalIdp = idp.numAllAppsColumnsOriginal
+            }
+            return originalIdp
+        }
+
+        fun hasWorkApps(context: Context): Boolean {
+            return context.omegaPrefs.drawerSeparateWorkApps.onGetValue() &&
+                    UserCache.INSTANCE.get(context).userProfiles.size > 1
+        }
     }
 }

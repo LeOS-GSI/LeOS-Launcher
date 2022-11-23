@@ -20,12 +20,12 @@ package com.saggitt.omega.dash.controlprovider
 import android.content.Context
 import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.location.LocationManager
 import android.os.Build
 import android.provider.Settings
-import androidx.appcompat.content.res.AppCompatResources
 import com.android.launcher3.R
+import com.saggitt.omega.compose.icons.Phosphor
+import com.saggitt.omega.compose.icons.phosphor.MapPin
 import com.saggitt.omega.dash.DashControlProvider
 
 class Location(context: Context) : DashControlProvider(context) {
@@ -33,14 +33,10 @@ class Location(context: Context) : DashControlProvider(context) {
     override val name = context.getString(R.string.dash_location)
     override val description = context.getString(R.string.dash_location_summary)
     override val extendable = true
+    override val icon = Phosphor.MapPin
 
     var locationManager =
         context.getSystemService(LOCATION_SERVICE) as LocationManager
-
-    override val icon: Drawable?
-        get() = AppCompatResources.getDrawable(context, R.drawable.ic_location).apply {
-            this?.setTint(darkenColor(accentColor))
-        }
 
     override var state: Boolean
         get() = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
