@@ -121,7 +121,7 @@ fun AboutPage() {
                 ) {
                     ResourcesCompat.getDrawable(
                         LocalContext.current.resources,
-                        R.mipmap.ic_launcher,
+                        R.mipmap.ic_launcher_foreground,
                         LocalContext.current.theme
                     )?.let { drawable ->
                         val bitmap = Bitmap.createBitmap(

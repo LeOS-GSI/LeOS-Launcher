@@ -55,7 +55,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.all {
             (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl).outputFileName =
-                "NeoLauncher_v${variant.versionName}_build_${variant.versionCode}.apk"
+                "LeOSLauncher_v${variant.versionName}_build_${variant.versionCode}.apk"
         }
         variant.resValue(
             "string",
@@ -65,6 +65,9 @@ android {
         true
     }
     buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("debug")
+        }
         named("debug") {
             isMinifyEnabled = false
             applicationIdSuffix = ""
@@ -75,7 +78,7 @@ android {
         create("neo") {
             manifestPlaceholders += mapOf()
             isMinifyEnabled = false
-            applicationIdSuffix = ".neo"
+            applicationIdSuffix = ""
             signingConfig = signingConfigs.getByName("debug")
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher_debug"
             manifestPlaceholders["appIconRound"] = "@mipmap/ic_launcher_round_debug"

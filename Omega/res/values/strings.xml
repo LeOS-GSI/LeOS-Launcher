@@ -253,7 +253,7 @@
     <string name="icon_picker_default_category">Icons</string>
     <string name="icon_picker_load_failed">Couldn’t load more icons.</string>
     <!-- PREFERENCES SMARTSPACE -->
-    <string name="title_show_google_app">Show Google app</string>
+    <!--    <string name="title_show_google_app">Show Google app</string> -->
     <string name="title_smartspace_feed_theme">Feed Theme</string>
     <string name="title_use_pill_qsb">Show Pill Search Shortcut</string>
     <string name="title_smartspace">Show Smartspace</string>
