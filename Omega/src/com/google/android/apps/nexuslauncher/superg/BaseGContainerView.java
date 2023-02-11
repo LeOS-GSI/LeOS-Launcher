@@ -223,7 +223,7 @@ public abstract class BaseGContainerView extends FrameLayout implements View.OnC
                     .setPackage("com.google.android.googlequicksearchbox"));
         } catch (ActivityNotFoundException ignored) {
             try {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://qwant.com")),
+                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://swisscows.com")),
                         Launcher.getLauncher(context).getActivityLaunchOptions(mQsbView).toBundle());
             } catch (ActivityNotFoundException ignored2) {
             }

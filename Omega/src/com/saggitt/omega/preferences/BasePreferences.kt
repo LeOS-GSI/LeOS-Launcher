@@ -499,20 +499,6 @@ abstract class BasePreferences(context: Context) :
         override fun flattenValue(value: String) = value
     }
 
-    open inner class DialogPref(
-        key: String,
-        @StringRes titleId: Int,
-        @StringRes summaryId: Int = -1,
-        defaultValue: String = "",
-        onChange: () -> Unit = doNothing,
-    ) : PrefDelegate<String>(key, titleId, summaryId, defaultValue, onChange) {
-        override fun onGetValue(): String = sharedPrefs.getString(key, defaultValue)!!
-
-        override fun onSetValue(value: String) {
-            edit { putString(key, value) }
-        }
-    }
-
     open inner class IntBasedPref<T : Any>(
         key: String,
         @StringRes titleId: Int,
@@ -607,20 +593,49 @@ abstract class BasePreferences(context: Context) :
         }
     }
 
-    open inner class StringSetPref(
-            key: String,
-            @StringRes titleId: Int,
-            @StringRes summaryId: Int = -1,
-            defaultValue: Set<String>,
-            val navRoute: String = "",
-            onChange: () -> Unit = doNothing
+    open inner class StringIntPref( // TODO remove when done migration
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: Int = 0,
+        onChange: () -> Unit = doNothing
+    ) : PrefDelegate<Int>(key, titleId, summaryId, defaultValue, onChange) {
+        override fun onGetValue(): Int = try {
+            sharedPrefs.getString(getKey(), "$defaultValue")!!.toInt()
+        } catch (e: Exception) {
+            sharedPrefs.getInt(getKey(), defaultValue)
+        }
+
+        override fun onSetValue(value: Int) {
+            edit { putString(getKey(), "$value") }
+        }
+    }
+
+    open inner class StringSetPref( // TODO migrate to @StringMultiSelectionPref
+        key: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        defaultValue: Set<String>,
+        val navRoute: String = "",
+        onChange: () -> Unit = doNothing
     ) :
-            PrefDelegate<Set<String>>(key, titleId, summaryId, defaultValue, onChange) {
+        PrefDelegate<Set<String>>(key, titleId, summaryId, defaultValue, onChange) {
         override fun onGetValue(): Set<String> = sharedPrefs.getStringSet(getKey(), defaultValue)!!
 
         override fun onSetValue(value: Set<String>) {
             edit { putStringSet(getKey(), value) }
         }
+    }
+
+    open inner class StringListPref( // TODO migrate to @StringMultiSelectionPref
+        prefKey: String,
+        @StringRes titleId: Int,
+        @StringRes summaryId: Int = -1,
+        default: List<String> = emptyList(),
+        onChange: () -> Unit = doNothing
+    ) : MutableListPref<String>(prefKey, titleId, summaryId, onChange, default) {
+        override fun unflattenValue(value: String) = value
+        override fun flattenValue(value: String) = value
     }
 
     abstract inner class MutableListPref<T>( // TODO re-evaluate if needed
@@ -700,6 +715,12 @@ abstract class BasePreferences(context: Context) :
 
         fun contains(value: T): Boolean {
             return valueList.contains(value)
+        }
+
+        fun replaceWith(newList: List<T>) {
+            valueList.clear()
+            valueList.addAll(newList)
+            saveChanges()
         }
 
         fun getList() = valueList

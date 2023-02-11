@@ -212,7 +212,6 @@ class AllAppsTabItem(context: Context, attrs: AttributeSet) : PersonalWorkSlidin
                     EditGroupBottomSheet(
                         type = prefs.drawerAppGroupsManager.getEnabledType()!!,
                         group = tab.drawerTab,
-                        openFromSettings = false,
                         onClose = { AbstractFloatingView.closeAllOpenViews(launcher) }
                     )
                 }

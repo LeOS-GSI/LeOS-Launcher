@@ -20,10 +20,7 @@ import static android.view.Surface.ROTATION_180;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.os.Build;
-import android.view.Display;
 import android.view.WindowManager;
 import android.view.WindowMetrics;
 
@@ -32,7 +29,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 
 import com.android.launcher3.R;
-import com.android.launcher3.Utilities;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.WindowBounds;
 
@@ -75,7 +71,8 @@ public class SplitScreenBounds {
      * Creates window bounds as 50% of device size
      */
     private static WindowBounds createDefaultWindowBounds(Context context) {
-        WindowBounds bounds = getFullSizeWindowBounds(context);
+        WindowMetrics wm = context.getSystemService(WindowManager.class).getMaximumWindowMetrics();
+        WindowBounds bounds = WindowBounds.fromWindowMetrics(wm);
 
         int rotation = DisplayController.INSTANCE.get(context).getInfo().rotation;
         int halfDividerSize = context.getResources()
@@ -89,19 +86,6 @@ public class SplitScreenBounds {
             bounds.insets.left = 0;
         }
         return new WindowBounds(bounds.bounds, bounds.insets);
-    }
-
-    private static WindowBounds getFullSizeWindowBounds(Context context) {
-        WindowManager windowManager = context.getSystemService(WindowManager.class);
-        if (Utilities.ATLEAST_R) {
-            WindowMetrics wm = windowManager.getMaximumWindowMetrics();
-            return WindowBounds.fromWindowMetrics(wm);
-        } else {
-            Display display = windowManager.getDefaultDisplay();
-            Point mwSize = new Point();
-            display.getSize(mwSize);
-            return new WindowBounds(new Rect(0, 0, mwSize.x, mwSize.y), new Rect());
-        }
     }
 
     public void addOnChangeListener(OnChangeListener listener) {

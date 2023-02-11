@@ -5,8 +5,7 @@ import com.google.protobuf.gradle.protoc
 import org.jetbrains.kotlin.gradle.internal.KaptWithoutKotlincTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.TimeZone
+import java.util.*
 
 val vCompose = "1.3.0"
 val vComposeCompiler = "1.3.2"
@@ -35,7 +34,7 @@ android {
     namespace = "com.android.launcher3"
     compileSdk = 33
 
-    val name = "v13.N"
+    val name = "13.1"
     val code = 161
 
 
@@ -61,14 +60,14 @@ android {
         variant.resValue(
             "string",
             "launcher_component",
-            "${variant.applicationId}/com.saggitt.omega.OmegaLauncher"
+            "${variant.applicationId}/com.leos.launcher.OmegaLauncher"
         )
         true
     }
     buildTypes {
         named("debug") {
             isMinifyEnabled = false
-            applicationIdSuffix = ".debug"
+            applicationIdSuffix = ""
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher_debug"
             manifestPlaceholders["appIconRound"] = "@mipmap/ic_launcher_round_debug"
             signingConfig = signingConfigs.getByName("debug")
@@ -137,7 +136,7 @@ android {
     productFlavors {
         create("aosp") {
             dimension = "app"
-            applicationId = "com.saggitt.omega"
+            applicationId = "com.leos.launcher"
             testApplicationId = "com.android.launcher3.tests"
         }
 

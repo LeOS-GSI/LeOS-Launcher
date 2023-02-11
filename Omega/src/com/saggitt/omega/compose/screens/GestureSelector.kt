@@ -82,6 +82,7 @@ import com.saggitt.omega.data.AppItemWithShortcuts
 import com.saggitt.omega.gestures.GestureController
 import com.saggitt.omega.gestures.handlers.StartAppGestureHandler
 import com.saggitt.omega.preferences.OmegaPreferences
+import com.saggitt.omega.util.Config
 import com.saggitt.omega.util.appsList
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -245,7 +246,8 @@ fun AppsScreen(prefs: OmegaPreferences, selectedHandler: MutableState<String?>, 
             .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
     ) {
         val context = LocalContext.current
-        val apps = appsList().value
+        val apps =
+            appsList().value //Config(context).getAppsList(filter = null).sortedBy { it.label.toString() }
         val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
         val colors = RadioButtonDefaults.colors(
             selectedColor = MaterialTheme.colorScheme.onPrimary,
@@ -333,7 +335,7 @@ fun ShortcutsScreen(prefs: OmegaPreferences, selectedHandler: MutableState<Strin
             .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
     ) {
         val context = LocalContext.current
-        val apps = appsList().value
+        val apps = Config(context).getAppsList(filter = null)
             .sortedBy { it.label.toString() }
             .map { AppItemWithShortcuts(context, it) }
         val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
@@ -367,8 +369,8 @@ fun ShortcutsScreen(prefs: OmegaPreferences, selectedHandler: MutableState<Strin
                                     if (expanded) MaterialTheme.colorScheme.background
                                     else MaterialTheme.colorScheme.surface
                                 ),
-                            title = app.info.label,
-                            icon = app.info.icon,
+                            title = app.info.label.toString(),
+                            icon = app.info.getIcon(LocalContext.current.resources.displayMetrics.densityDpi),
                             onClick = { expanded = !expanded }
                         ) {
                             val groupSize = app.shortcuts.size

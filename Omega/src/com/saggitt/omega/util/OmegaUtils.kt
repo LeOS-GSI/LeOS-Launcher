@@ -64,7 +64,6 @@ import com.android.launcher3.util.Themes
 import com.android.launcher3.views.OptionsPopupView
 import com.saggitt.omega.allapps.AppColorComparator
 import com.saggitt.omega.allapps.AppUsageComparator
-import com.saggitt.omega.allapps.InstallTimeComparator
 import com.saggitt.omega.data.AppTrackerRepository
 import com.saggitt.omega.preferences.OmegaPreferences
 import org.json.JSONArray
@@ -83,6 +82,7 @@ import kotlin.random.Random
 import kotlin.reflect.KMutableProperty0
 import kotlin.reflect.KProperty
 
+// TODO break into specialised files/classes
 @Suppress("UNCHECKED_CAST")
 class JavaField<T>(
     private val targetObject: Any,
@@ -263,6 +263,14 @@ fun Int.removeFlag(flag: Int): Int {
 
 fun Int.addFlag(flag: Int): Int {
     return this or flag
+}
+
+fun Int.setFlag(flag: Int, value: Boolean): Int {
+    return if (value) {
+        addFlag(flag)
+    } else {
+        removeFlag(flag)
+    }
 }
 
 inline fun ViewGroup.forEachChildIndexed(action: (View, Int) -> Unit) {
@@ -457,7 +465,6 @@ fun UserCache.getUserForProfileId(profileId: Int) =
     userProfiles.find { it.toString() == "UserHandle{$profileId}" }
 
 fun MutableList<AppInfo>.sortApps(context: Context, sortType: Int) {
-    val pm: PackageManager = context.packageManager
     when (sortType) {
         Config.SORT_ZA -> sortWith(compareBy(Collator.getInstance().reversed()) {
             it.title.toString().lowercase()
@@ -469,22 +476,12 @@ fun MutableList<AppInfo>.sortApps(context: Context, sortType: Int) {
             val mostUsedComparator = AppUsageComparator(appsCounter)
             sortWith(mostUsedComparator)
         }
-
         Config.SORT_BY_COLOR -> sortWith(AppColorComparator(context))
-
-        Config.SORT_BY_INSTALL_DATE -> sortWith(InstallTimeComparator(pm))
-
         Config.SORT_AZ -> sortWith(compareBy(Collator.getInstance()) {
             it.title.toString().lowercase()
         })
-
         else -> sortWith(AppInfoComparator(context))
     }
-}
-
-fun getFolderPreviewAlpha(context: Context): Int {
-    val prefs = OmegaPreferences.getInstance(context)
-    return (prefs.folderOpacity.onGetValue() * 255).toInt()
 }
 
 fun getTimestampForFile(): String {

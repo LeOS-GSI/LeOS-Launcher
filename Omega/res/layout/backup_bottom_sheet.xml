@@ -55,7 +55,7 @@
         android:gravity="center_vertical"
         android:padding="16dp"
         android:text="@string/backup_share"
-        app:drawableStartCompat="@drawable/ic_share" />
+        app:drawableStartCompat="@mipmap/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/action_remove_backup_from_list"

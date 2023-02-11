@@ -437,26 +437,6 @@ fun StringMultiSelectionPreference(
 }
 
 @Composable
-fun AlertDialogPreference(
-    modifier: Modifier = Modifier,
-    pref: BasePreferences.DialogPref,
-    index: Int = 1,
-    groupSize: Int = 1,
-    isEnabled: Boolean = true,
-    onClick: (() -> Unit) = {},
-) {
-    BasePreference(
-        modifier = modifier,
-        titleId = pref.titleId,
-        summaryId = pref.summaryId,
-        index = index,
-        groupSize = groupSize,
-        isEnabled = isEnabled,
-        onClick = onClick
-    )
-}
-
-@Composable
 fun IntentLauncherPreference(
     modifier: Modifier = Modifier,
     pref: BasePreferences.IntentLauncherPref,

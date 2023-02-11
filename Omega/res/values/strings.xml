@@ -233,7 +233,6 @@
     <string name="open_image_picker">Open image picker</string>
     <string name="import_icon">Import icon</string>
     <string name="import_as_adaptive">As adaptive icon</string>
-    <string name="reset_custom_icon">Remove Custom Icon</string>
     <string name="reset_custom_icons">Remove Custom Icons</string>
     <string name="reset_custom_icons_confirmation">Revert to default icons from this Icon Pack? This can’t be undone.</string>
     <string name="color_presets">Presets</string>
@@ -424,7 +423,6 @@
     <string name="folder_radius">Folder corner radius</string>
     <string name="folder_rows">Folder Rows</string>
     <string name="folder_columns">Folder Columns</string>
-    <string name="folder_opacity">Folder Opacity</string>
     <string name="section_apps">apps</string>
     <string name="section_web">Web</string>
     <string name="section_contacts">Contacts</string>
@@ -489,7 +487,7 @@
     <string name="about_build_information">Build info</string>
     <string name="title__about_donate">Donate</string>
     <string name="title__about_changelog">Changelog</string>
-    <string name="about_copyright">Copyleft © 2020–2022</string>
+    <string name="about_copyright">Copyleft © 2020–2023</string>
     <string name="about_team">Team Members</string>
     <string name="about_translators_group">Contributors and Translators</string>
     <string name="about_translators">Translators</string>
@@ -505,7 +503,7 @@
     <string name="author_role" translatable="false">Developer</string>
     <string name="contributor1" translatable="false">Saul Henriquez</string>
     <string name="contributor2" translatable="false">Rafael Venancio</string>
-    <string name="contributor_role" translatable="false">Contributor/Neo-Launcher</string>
+    <string name="contributor_role">Contributor/Neo-Launcher</string>
     <string name="title_storage_permission_required">Storage Access Needed</string>
     <string name="content_storage_permission_required">Grant access to storage to set a wallpaper.</string>
     <string name="accessibility_undo">Undo</string>

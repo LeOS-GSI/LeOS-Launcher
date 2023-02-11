@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.saggitt.omega.compose.objects.MusicControlItem
@@ -67,7 +68,7 @@ fun MusicBar(
                         modifier = Modifier
                             .fillMaxHeight(0.5f)
                             .aspectRatio(1f),
-                        imageVector = it.icon,
+                        painter = painterResource(id = it.icon),
                         contentDescription = stringResource(id = it.description)
                     )
                 }

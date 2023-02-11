@@ -48,6 +48,7 @@ import com.saggitt.omega.PREFS_BLUR_RADIUS_X
 import com.saggitt.omega.PREFS_COLORED_BACKGROUND
 import com.saggitt.omega.PREFS_DASH
 import com.saggitt.omega.PREFS_DASH_LINESIZE
+import com.saggitt.omega.PREFS_DASH_PROVIDERS
 import com.saggitt.omega.PREFS_DASH_PROVIDERS_X
 import com.saggitt.omega.PREFS_DEBUG_MODE
 import com.saggitt.omega.PREFS_DESKTOP_COLUMNS
@@ -94,7 +95,6 @@ import com.saggitt.omega.PREFS_FEED_PROVIDER
 import com.saggitt.omega.PREFS_FOLDER_BACKGROUND
 import com.saggitt.omega.PREFS_FOLDER_BACKGROUND_CUSTOM
 import com.saggitt.omega.PREFS_FOLDER_COLUMNS
-import com.saggitt.omega.PREFS_FOLDER_OPACITY
 import com.saggitt.omega.PREFS_FOLDER_RADIUS
 import com.saggitt.omega.PREFS_FOLDER_ROWS
 import com.saggitt.omega.PREFS_FORCE_ADAPTIVE
@@ -121,7 +121,6 @@ import com.saggitt.omega.PREFS_NOTIFICATION_COUNT_FOLDER
 import com.saggitt.omega.PREFS_PROTECTED_APPS
 import com.saggitt.omega.PREFS_PROTECTED_SET
 import com.saggitt.omega.PREFS_RECENT_BACKUP
-import com.saggitt.omega.PREFS_RESET_CUSTOM_ICONS
 import com.saggitt.omega.PREFS_RESTORE_SUCCESS
 import com.saggitt.omega.PREFS_SEARCH_BAR_RADIUS
 import com.saggitt.omega.PREFS_SEARCH_CONTACTS
@@ -269,6 +268,13 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
         specialOutputs = { it.roundToInt().toString() },
         onChange = doNothing
     )
+    var dashProviders = StringListPref(
+        prefKey = PREFS_DASH_PROVIDERS,
+        titleId = R.string.edit_dash,
+        summaryId = R.string.edit_dash_summary,
+        default = listOf("17", "15", "4", "6", "8", "5"),
+        onChange = doNothing
+    )
     var dashEdit = StringPref(
         key = PREFS_DASH,
         titleId = R.string.edit_dash,
@@ -349,22 +355,6 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
         onChange = reloadApps
     )
     val desktopLabelRows get() = if (desktopMultilineLabel.onGetValue()) 2 else 1
-
-    var desktopPopup = StringMultiSelectionPref(
-        key = PREFS_DESKTOP_POPUP,
-        titleId = R.string.title_desktop_icon_popup_menu,
-        defaultValue = listOf(PREFS_DESKTOP_POPUP_EDIT),
-        entries = desktopPopupOptions,
-        withIcons = true,
-        onChange = doNothing
-    )
-    val desktopPopupEdit: Boolean
-        get() = desktopPopup.onGetValue().contains(PREFS_DESKTOP_POPUP_EDIT)
-    val desktopPopupRemove: Boolean
-        get() = desktopPopup.onGetValue().contains(PREFS_DESKTOP_POPUP_REMOVE)
-
-
-    /* ==== Folder ====*/
     var desktopFolderRadius = DimensionPref(
         key = PREFS_FOLDER_RADIUS,
         titleId = R.string.folder_radius,
@@ -379,7 +369,7 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
             }
         },
         onChange = recreate
-    )
+    ) // TODO add
     val desktopCustomFolderBackground = BooleanPref(
         key = PREFS_FOLDER_BACKGROUND_CUSTOM,
         titleId = R.string.folder_custom_background,
@@ -412,17 +402,18 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
         specialOutputs = { it.roundToInt().toString() },
         onChange = reloadGrid
     )
-
-    val folderOpacity = FloatPref(
-        key = PREFS_FOLDER_OPACITY,
-        titleId = R.string.folder_opacity,
-        defaultValue = 1f,
-        maxValue = 1f,
-        minValue = 0f,
-        steps = 10,
-        specialOutputs = { "${(it * 100).roundToInt()}%" },
-        onChange = reloadIcons
+    var desktopPopup = StringMultiSelectionPref(
+        key = PREFS_DESKTOP_POPUP,
+        titleId = R.string.title_desktop_icon_popup_menu,
+        defaultValue = listOf(PREFS_DESKTOP_POPUP_EDIT),
+        entries = desktopPopupOptions,
+        withIcons = true,
+        onChange = doNothing
     )
+    val desktopPopupEdit: Boolean
+        get() = desktopPopup.onGetValue().contains(PREFS_DESKTOP_POPUP_EDIT)
+    val desktopPopupRemove: Boolean
+        get() = desktopPopup.onGetValue().contains(PREFS_DESKTOP_POPUP_REMOVE)
 
 
     // DOCK
@@ -754,12 +745,6 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
         onChange = doNothing
     )
 
-    val themeResetCustomIcons = DialogPref(
-        key = PREFS_RESET_CUSTOM_ICONS,
-        titleId = R.string.reset_custom_icons,
-        onChange = doNothing
-    )
-
     // SEARCH & FEED
     var searchBarRadius = DimensionPref(
         key = PREFS_SEARCH_BAR_RADIUS,
@@ -926,7 +911,7 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
         onChange = ::updateSmartspaceProvider
     )
 
-    var smartspaceWeatherCity = StringTextPref(
+    var smartspaceweatherCity = StringTextPref(
         key = "pref_weather_city",
         titleId = R.string.weather_city,
         defaultValue = context.getString(R.string.default_city),
@@ -1211,7 +1196,7 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
     var themeIconPackGlobal = StringSelectionPref(
         key = PREFS_ICON_PACK,
         titleId = R.string.title_theme_icon_packs,
-        defaultValue = "",
+        defaultValue = "com.leos.icons",
         entries = IconPackProvider.INSTANCE.get(context)
             .getIconPackList()
             .associateBy(IconPackInfo::packageName, IconPackInfo::name),

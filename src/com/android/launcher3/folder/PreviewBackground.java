@@ -40,13 +40,10 @@ import android.graphics.Shader;
 import android.util.Property;
 import android.view.View;
 
-import androidx.core.graphics.ColorUtils;
-
 import com.android.launcher3.CellLayout;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.R;
 import com.android.launcher3.views.ActivityContext;
-import com.saggitt.omega.util.OmegaUtilsKt;
 
 /**
  * This object represents a FolderIcon preview background. It stores drawing / measurement
@@ -168,8 +165,6 @@ public class PreviewBackground extends CellLayout.DelegatedCellDrawing {
         mDotColor = ta.getColor(R.styleable.FolderIconPreview_folderDotColor, 0);
         mStrokeColor = ta.getColor(R.styleable.FolderIconPreview_folderIconBorderColor, 0);
         mBgColor = ta.getColor(R.styleable.FolderIconPreview_folderFillColor, 0);
-
-        mBgColor = ColorUtils.setAlphaComponent(mBgColor, OmegaUtilsKt.getFolderPreviewAlpha(context));
         ta.recycle();
 
         DeviceProfile grid = activity.getDeviceProfile();
@@ -246,9 +241,8 @@ public class PreviewBackground extends CellLayout.DelegatedCellDrawing {
     }
 
     public int getBgColor() {
-        /*int alpha = (int) Math.min(MAX_BG_OPACITY, BG_OPACITY * mColorMultiplier);
-        return setColorAlphaBound(mBgColor, alpha);*/
-        return mBgColor;
+        int alpha = (int) Math.min(MAX_BG_OPACITY, BG_OPACITY * mColorMultiplier);
+        return setColorAlphaBound(mBgColor, alpha);
     }
 
     public int getDotColor() {

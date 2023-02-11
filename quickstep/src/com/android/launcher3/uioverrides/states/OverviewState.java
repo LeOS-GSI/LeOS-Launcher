@@ -27,7 +27,6 @@ import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherState;
 import com.android.launcher3.R;
-import com.android.launcher3.Utilities;
 import com.android.launcher3.Workspace;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.Themes;
@@ -111,12 +110,6 @@ public class OverviewState extends LauncherState {
     @Override
     public int getWorkspaceScrimColor(Launcher launcher) {
         return Themes.getAttrColor(launcher, R.attr.overviewScrimColor);
-    }
-
-    @Override
-    public float getWorkspaceBlurAlpha(Launcher launcher) {
-        boolean blurEnabled = Utilities.getOmegaPrefs(launcher).getThemeBlurEnable().onGetValue();
-        return blurEnabled ? 1f : 0f;
     }
 
     @Override

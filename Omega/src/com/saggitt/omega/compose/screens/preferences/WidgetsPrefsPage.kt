@@ -74,7 +74,7 @@ fun WidgetsPrefsPage() {
                     prefs.smartspaceWeatherApiKey
                 } else null,
                 if (prefs.smartspaceWeatherProvider.onGetValue() == OWMWeatherDataProvider::class.java.name) {
-                    prefs.smartspaceWeatherCity
+                    prefs.smartspaceweatherCity
                 } else null,
                 prefs.smartspaceWeatherUnit,
                 prefs.smartspaceEventProvidersNew

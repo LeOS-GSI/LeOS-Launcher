@@ -1,0 +1,741 @@
+
+diff --git a/quickstep/src/com/android/launcher3/uioverrides/states/OverviewState.java b/quickstep/src/com/android/launcher3/uioverrides/states/OverviewState.java
+index 4ef2c8c9..521c17b0 100644
+--- a/quickstep/src/com/android/launcher3/uioverrides/states/OverviewState.java
++++ b/quickstep/src/com/android/launcher3/uioverrides/states/OverviewState.java
+@@ -27,7 +27,6 @@ import com.android.launcher3.DeviceProfile;
+ import com.android.launcher3.Launcher;
+ import com.android.launcher3.LauncherState;
+ import com.android.launcher3.R;
+-import com.android.launcher3.Utilities;
+ import com.android.launcher3.Workspace;
+ import com.android.launcher3.config.FeatureFlags;
+ import com.android.launcher3.util.Themes;
+@@ -113,12 +112,6 @@ public class OverviewState extends LauncherState {
+         return Themes.getAttrColor(launcher, R.attr.overviewScrimColor);
+     }
+ 
+-    @Override
+-    public float getWorkspaceBlurAlpha(Launcher launcher) {
+-        boolean blurEnabled = Utilities.getOmegaPrefs(launcher).getThemeBlurEnable().onGetValue();
+-        return blurEnabled ? 1f : 0f;
+-    }
+-
+     @Override
+     public boolean displayOverviewTasksAsGrid(DeviceProfile deviceProfile) {
+         return deviceProfile.isTablet && FeatureFlags.ENABLE_OVERVIEW_GRID.get();
+diff --git a/quickstep/src/com/android/quickstep/util/SplitScreenBounds.java b/quickstep/src/com/android/quickstep/util/SplitScreenBounds.java
+index e49f58c7..5de7dbb5 100644
+--- a/quickstep/src/com/android/quickstep/util/SplitScreenBounds.java
++++ b/quickstep/src/com/android/quickstep/util/SplitScreenBounds.java
+@@ -20,10 +20,7 @@ import static android.view.Surface.ROTATION_180;
+ 
+ import android.annotation.TargetApi;
+ import android.content.Context;
+-import android.graphics.Point;
+-import android.graphics.Rect;
+ import android.os.Build;
+-import android.view.Display;
+ import android.view.WindowManager;
+ import android.view.WindowMetrics;
+ 
+@@ -32,7 +29,6 @@ import androidx.annotation.Nullable;
+ import androidx.annotation.UiThread;
+ 
+ import com.android.launcher3.R;
+-import com.android.launcher3.Utilities;
+ import com.android.launcher3.util.DisplayController;
+ import com.android.launcher3.util.WindowBounds;
+ 
+@@ -75,7 +71,8 @@ public class SplitScreenBounds {
+      * Creates window bounds as 50% of device size
+      */
+     private static WindowBounds createDefaultWindowBounds(Context context) {
+-        WindowBounds bounds = getFullSizeWindowBounds(context);
++        WindowMetrics wm = context.getSystemService(WindowManager.class).getMaximumWindowMetrics();
++        WindowBounds bounds = WindowBounds.fromWindowMetrics(wm);
+ 
+         int rotation = DisplayController.INSTANCE.get(context).getInfo().rotation;
+         int halfDividerSize = context.getResources()
+@@ -91,19 +88,6 @@ public class SplitScreenBounds {
+         return new WindowBounds(bounds.bounds, bounds.insets);
+     }
+ 
+-    private static WindowBounds getFullSizeWindowBounds(Context context) {
+-        WindowManager windowManager = context.getSystemService(WindowManager.class);
+-        if (Utilities.ATLEAST_R) {
+-            WindowMetrics wm = windowManager.getMaximumWindowMetrics();
+-            return WindowBounds.fromWindowMetrics(wm);
+-        } else {
+-            Display display = windowManager.getDefaultDisplay();
+-            Point mwSize = new Point();
+-            display.getSize(mwSize);
+-            return new WindowBounds(new Rect(0, 0, mwSize.x, mwSize.y), new Rect());
+-        }
+-    }
+-
+     public void addOnChangeListener(OnChangeListener listener) {
+         mListeners.add(listener);
+     }
+diff --git a/res/layout/launcher.xml b/res/layout/launcher.xml
+index 46b109b2..baebedb5 100644
+--- a/res/layout/launcher.xml
++++ b/res/layout/launcher.xml
+@@ -19,11 +19,6 @@
+     android:layout_height="match_parent"
+     android:fitsSystemWindows="true">
+ 
+-    <com.saggitt.omega.views.OmegaBackgroundView
+-        android:id="@+id/omega_background"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent" />
+-
+     <com.android.launcher3.dragndrop.DragLayer
+         android:id="@+id/drag_layer"
+         android:layout_width="match_parent"
+diff --git a/snapshots/theme.png b/snapshots/theme.png
+deleted file mode 100644
+index 35a4d8e3..00000000
+Binary files a/snapshots/theme.png and /dev/null differ
+diff --git a/src/com/android/launcher3/Launcher.java b/src/com/android/launcher3/Launcher.java
+index 3ef36bf8..3c978fb7 100644
+--- a/src/com/android/launcher3/Launcher.java
++++ b/src/com/android/launcher3/Launcher.java
+@@ -2921,9 +2921,6 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
+         return mDeviceProfile.isVerticalBarLayout();
+     }
+ 
+-    protected void onRotationChanged() {
+-    }
+-
+     /**
+      * @see LauncherState#getTaskbarScale(Launcher)
+      */
+diff --git a/src/com/android/launcher3/LauncherState.java b/src/com/android/launcher3/LauncherState.java
+index 0cf9135f..0aa000d5 100644
+--- a/src/com/android/launcher3/LauncherState.java
++++ b/src/com/android/launcher3/LauncherState.java
+@@ -223,10 +223,6 @@ public abstract class LauncherState implements BaseState<LauncherState> {
+         return 0;
+     }
+ 
+-    public float getWorkspaceBlurAlpha(Launcher launcher) {
+-        return 0;
+-    }
+-
+     /**
+      * What color should the workspace scrim be in when at rest in this state.
+      * Return {@link Color#TRANSPARENT} for no scrim.
+diff --git a/src/com/android/launcher3/Workspace.java b/src/com/android/launcher3/Workspace.java
+index fc9077a7..91bb618a 100644
+--- a/src/com/android/launcher3/Workspace.java
++++ b/src/com/android/launcher3/Workspace.java
+@@ -117,9 +117,7 @@ import com.android.launcher3.widget.WidgetManagerHelper;
+ import com.android.launcher3.widget.dragndrop.AppWidgetHostViewDragListener;
+ import com.android.launcher3.widget.util.WidgetSizes;
+ import com.android.systemui.plugins.shared.LauncherOverlayManager.LauncherOverlay;
+-import com.saggitt.omega.OmegaLauncher;
+ import com.saggitt.omega.preferences.OmegaPreferences;
+-import com.saggitt.omega.views.OmegaBackgroundView;
+ 
+ import java.util.ArrayList;
+ import java.util.Collections;
+@@ -1094,12 +1092,6 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
+         // device I've tried, translating the launcher causes things to get quite laggy.
+         mLauncher.getDragLayer().setTranslationX(transX);
+         mLauncher.getDragLayer().getAlphaProperty(ALPHA_INDEX_OVERLAY).setValue(alpha);
+-
+-        if (mLauncher instanceof OmegaLauncher) {
+-            ((OmegaLauncher) mLauncher).getBackground().getBlurAlphas().getProperty(
+-                    OmegaBackgroundView.ALPHA_INDEX_OVERLAY).setValue(1 - alpha);
+-        }
+-        mLauncher.mAllAppsController.setOverlayScroll(transX);
+     }
+ 
+     /**
+@@ -1244,26 +1236,6 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
+         }
+     }
+ 
+-    public void updateBlurAlpha() {
+-        int screenCenter = getScrollX() + getMeasuredWidth() / 2;
+-        float totalBlurAlpha = 0;
+-        for (int i = 0; i < getChildCount(); i++) {
+-            CellLayout child = (CellLayout) getChildAt(i);
+-            if (child != null) {
+-                float scrollProgress = getScrollProgress(screenCenter, child, i);
+-                float blurAlpha = 1 - Math.abs(scrollProgress);
+-                int id = getScreenIdForPageIndex(i);
+-                /*if (mWorkspaceBlur.get(id)) {
+-                    totalBlurAlpha += blurAlpha;
+-                }*/
+-            }
+-        }
+-        if (mLauncher instanceof OmegaLauncher) {
+-            ((OmegaLauncher) mLauncher).getBackground().getBlurAlphas().getProperty(
+-                    OmegaBackgroundView.ALPHA_INDEX_SCREEN).setValue(Math.min(1, totalBlurAlpha));
+-        }
+-    }
+-
+     protected void onAttachedToWindow() {
+         super.onAttachedToWindow();
+         mWallpaperOffset.setWindowToken(getWindowToken());
+@@ -1287,7 +1259,6 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
+         }
+         super.onLayout(changed, left, top, right, bottom);
+         updatePageAlphaValues();
+-        updateBlurAlpha();
+     }
+ 
+     @Override
+diff --git a/src/com/android/launcher3/allapps/AllAppsContainerView.java b/src/com/android/launcher3/allapps/AllAppsContainerView.java
+index 3c4b6880..6c129991 100644
+--- a/src/com/android/launcher3/allapps/AllAppsContainerView.java
++++ b/src/com/android/launcher3/allapps/AllAppsContainerView.java
+@@ -25,6 +25,7 @@ import android.animation.ValueAnimator;
+ import android.content.Context;
+ import android.content.res.Resources;
+ import android.graphics.Canvas;
++import android.graphics.Color;
+ import android.graphics.Paint;
+ import android.graphics.Point;
+ import android.graphics.Rect;
+@@ -66,8 +67,6 @@ import com.android.launcher3.keyboard.FocusedItemDecorator;
+ import com.android.launcher3.model.data.AppInfo;
+ import com.android.launcher3.testing.TestProtocol;
+ import com.android.launcher3.util.ItemInfoMatcher;
+-import com.android.launcher3.util.MultiValueAlpha;
+-import com.android.launcher3.util.MultiValueAlpha.AlphaProperty;
+ import com.android.launcher3.util.Themes;
+ import com.android.launcher3.views.RecyclerViewFastScroller;
+ import com.android.launcher3.views.ScrimView;
+@@ -133,7 +132,7 @@ public class AllAppsContainerView extends SpringRelativeLayout implements DragSo
+ 
+     private SearchAdapterProvider mSearchAdapterProvider;
+     private WorkAdapterProvider mWorkAdapterProvider;
+-    //private final int mScrimColor;
++    private final int mScrimColor;
+     private final int mHeaderProtectionColor;
+     private final float mHeaderThreshold;
+     private ScrimView mScrimView;
+@@ -145,7 +144,6 @@ public class AllAppsContainerView extends SpringRelativeLayout implements DragSo
+     public int mCurrentPage;
+     public AllAppsPagedView mHorizontalViewPager;
+     private final boolean mScrimIsTranslucent;
+-    private final MultiValueAlpha mMultiValueAlpha;
+ 
+     public AllAppsContainerView(Context context) {
+         this(context, null);
+@@ -164,11 +162,11 @@ public class AllAppsContainerView extends SpringRelativeLayout implements DragSo
+         float drawerOpacity = prefs.getDrawerOpacity().onGetValue();
+         mScrimIsTranslucent = drawerOpacity < 1f;
+ 
+-        /*if (prefs.getDrawerBackground().onGetValue()) {
++        if (prefs.getDrawerBackground().onGetValue()) {
+             mScrimColor = prefs.getDrawerBackgroundColor().onGetValue();
+         } else {
+             mScrimColor = Themes.getAttrColor(context, R.attr.allAppsScrimColor);
+-        }*/
++        }
+ 
+         mHeaderThreshold = getResources().getDimensionPixelSize(
+                 R.dimen.dynamic_grid_cell_border_spacing);
+@@ -199,7 +197,6 @@ public class AllAppsContainerView extends SpringRelativeLayout implements DragSo
+         mNavBarScrimPaint.setColor(Themes.getAttrColor(context, R.attr.allAppsNavBarScrimColor));
+ 
+         mAllAppsStore.addUpdateListener(this::onAppsUpdated);
+-        mMultiValueAlpha = new MultiValueAlpha(this, 1);
+     }
+ 
+     private boolean isPagedView() {
+@@ -260,10 +257,6 @@ public class AllAppsContainerView extends SpringRelativeLayout implements DragSo
+         return mAllAppsStore;
+     }
+ 
+-    public AlphaProperty getAlphaProperty(int index) {
+-        return mMultiValueAlpha.getProperty(index);
+-    }
+-
+     public WorkModeSwitch getWorkModeSwitch() {
+         return mWorkModeSwitch;
+     }
+@@ -387,20 +380,14 @@ public class AllAppsContainerView extends SpringRelativeLayout implements DragSo
+     }
+ 
+     public AllAppsRecyclerView getActiveRecyclerView() {
+-        /*if (mViewPager != null) {
++        if (mViewPager != null) {
+             if (!mUsingTabs || mViewPager.getNextPage() == 0) {
+                 return mAH[AdapterHolder.MAIN].recyclerView;
+             } else {
+                 return mAH[AdapterHolder.WORK].recyclerView;
+             }
+         }
+-        return mAH[AdapterHolder.MAIN].recyclerView;*/
+-
+-        if (!mUsingTabs) {
+-            return mAH[AdapterHolder.MAIN].recyclerView;
+-        } else {
+-            return mAH[mViewPager.getNextPage()].recyclerView;
+-        }
++        return mAH[AdapterHolder.MAIN].recyclerView;
+     }
+ 
+     public LayoutInflater getLayoutInflater() {
+diff --git a/src/com/android/launcher3/allapps/AllAppsTransitionController.java b/src/com/android/launcher3/allapps/AllAppsTransitionController.java
+index a5a8ff41..3d535fca 100644
+--- a/src/com/android/launcher3/allapps/AllAppsTransitionController.java
++++ b/src/com/android/launcher3/allapps/AllAppsTransitionController.java
+@@ -44,7 +44,6 @@ import com.android.launcher3.config.FeatureFlags;
+ import com.android.launcher3.statemanager.StateManager.StateHandler;
+ import com.android.launcher3.states.StateAnimationConfig;
+ import com.android.launcher3.views.ScrimView;
+-import com.saggitt.omega.blur.BlurScrimView;
+ 
+ /**
+  * Handles AllApps view transition.
+@@ -76,7 +75,6 @@ public class AllAppsTransitionController
+                 }
+             };
+ 
+-    private static final int APPS_VIEW_ALPHA_CHANNEL_INDEX = 0;
+     private AllAppsContainerView mAppsView;
+ 
+     private final Launcher mLauncher;
+@@ -113,7 +111,6 @@ public class AllAppsTransitionController
+         setScrollRangeDelta(mScrollRangeDelta);
+ 
+         if (mIsVerticalLayout) {
+-            mAppsView.getAlphaProperty(APPS_VIEW_ALPHA_CHANNEL_INDEX).setValue(1);
+             mLauncher.getHotseat().setTranslationY(0);
+             mLauncher.getWorkspace().getPageIndicator().setTranslationY(0);
+         }
+@@ -233,10 +230,4 @@ public class AllAppsTransitionController
+     public AllAppsContainerView getAppsView() {
+         return mAppsView;
+     }
+-
+-    public void setOverlayScroll(float scroll) {
+-        if (mScrimView instanceof BlurScrimView) {
+-            ((BlurScrimView) mScrimView).setOverlayScroll(scroll);
+-        }
+-    }
+ }
+diff --git a/src/com/android/launcher3/allapps/AlphabeticalAppsList.java b/src/com/android/launcher3/allapps/AlphabeticalAppsList.java
+index 91291989..3ee31547 100644
+--- a/src/com/android/launcher3/allapps/AlphabeticalAppsList.java
++++ b/src/com/android/launcher3/allapps/AlphabeticalAppsList.java
+@@ -15,6 +15,11 @@
+  */
+ package com.android.launcher3.allapps;
+ 
++import static com.saggitt.omega.util.Config.SORT_AZ;
++import static com.saggitt.omega.util.Config.SORT_BY_COLOR;
++import static com.saggitt.omega.util.Config.SORT_MOST_USED;
++import static com.saggitt.omega.util.Config.SORT_ZA;
++
+ import android.content.Context;
+ import android.graphics.Color;
+ 
+@@ -32,10 +37,14 @@ import com.android.launcher3.util.ItemInfoMatcher;
+ import com.android.launcher3.util.LabelComparator;
+ import com.saggitt.omega.OmegaLauncher;
+ import com.saggitt.omega.allapps.AppColorComparator;
++import com.saggitt.omega.allapps.AppUsageComparator;
++import com.saggitt.omega.data.AppTracker;
++import com.saggitt.omega.data.AppTrackerRepository;
+ import com.saggitt.omega.groups.DrawerFolderInfo;
+ import com.saggitt.omega.preferences.OmegaPreferences;
+ import com.saggitt.omega.util.OmegaUtilsKt;
+ 
++import java.text.Collator;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Locale;
+@@ -163,6 +172,31 @@ public class AlphabeticalAppsList implements AllAppsStore.OnUpdateListener {
+         return mApps;
+     }
+ 
++    private void sortApps(int sortType) {
++        switch (sortType) {
++            case SORT_ZA:
++                mApps.sort((p2, p1) -> Collator
++                        .getInstance()
++                        .compare(p1.title, p2.title));
++                break;
++
++            case SORT_MOST_USED:
++                AppTrackerRepository repository = AppTrackerRepository.Companion.getINSTANCE().get(mLauncher);
++                List<AppTracker> appsCounter = repository.getAppsCount();
++                AppUsageComparator mostUsedComparator = new AppUsageComparator(appsCounter);
++                mApps.sort(mostUsedComparator);
++                break;
++
++            case SORT_BY_COLOR:
++                mApps.sort(mAppColorComparator);
++                break;
++            case SORT_AZ:
++            default:
++                mApps.sort(mAppNameComparator);
++                break;
++        }
++    }
++
+     /**
+      * Returns fast scroller sections of all the current filtered applications.
+      */
+diff --git a/src/com/android/launcher3/folder/FolderAnimationManager.java b/src/com/android/launcher3/folder/FolderAnimationManager.java
+index 7c0c91bc..c440790c 100644
+--- a/src/com/android/launcher3/folder/FolderAnimationManager.java
++++ b/src/com/android/launcher3/folder/FolderAnimationManager.java
+@@ -45,7 +45,6 @@ import com.android.launcher3.Utilities;
+ import com.android.launcher3.anim.PropertyResetListener;
+ import com.android.launcher3.util.Themes;
+ import com.android.launcher3.views.BaseDragLayer;
+-import com.saggitt.omega.util.OmegaUtilsKt;
+ 
+ import java.util.List;
+ 
+@@ -182,7 +181,8 @@ public class FolderAnimationManager {
+         } else {
+             finalColor = mFolderBackground.getColor().getDefaultColor();
+         }
+-        final int initialColor = setColorAlphaBound(folderFillColor, OmegaUtilsKt.getFolderPreviewAlpha(mContext));
++        final int initialColor = setColorAlphaBound(
++                folderFillColor, mPreviewBackground.getBackgroundAlpha());
+         mFolderBackground.mutate();
+         mFolderBackground.setColor(mIsOpening ? initialColor : finalColor);
+ 
+diff --git a/src/com/android/launcher3/folder/PreviewBackground.java b/src/com/android/launcher3/folder/PreviewBackground.java
+index 5be30247..2711246c 100644
+--- a/src/com/android/launcher3/folder/PreviewBackground.java
++++ b/src/com/android/launcher3/folder/PreviewBackground.java
+@@ -40,13 +40,10 @@ import android.graphics.Shader;
+ import android.util.Property;
+ import android.view.View;
+ 
+-import androidx.core.graphics.ColorUtils;
+-
+ import com.android.launcher3.CellLayout;
+ import com.android.launcher3.DeviceProfile;
+ import com.android.launcher3.R;
+ import com.android.launcher3.views.ActivityContext;
+-import com.saggitt.omega.util.OmegaUtilsKt;
+ 
+ /**
+  * This object represents a FolderIcon preview background. It stores drawing / measurement
+@@ -168,8 +165,6 @@ public class PreviewBackground extends CellLayout.DelegatedCellDrawing {
+         mDotColor = ta.getColor(R.styleable.FolderIconPreview_folderDotColor, 0);
+         mStrokeColor = ta.getColor(R.styleable.FolderIconPreview_folderIconBorderColor, 0);
+         mBgColor = ta.getColor(R.styleable.FolderIconPreview_folderFillColor, 0);
+-
+-        mBgColor = ColorUtils.setAlphaComponent(mBgColor, OmegaUtilsKt.getFolderPreviewAlpha(context));
+         ta.recycle();
+ 
+         DeviceProfile grid = activity.getDeviceProfile();
+@@ -246,9 +241,8 @@ public class PreviewBackground extends CellLayout.DelegatedCellDrawing {
+     }
+ 
+     public int getBgColor() {
+-        /*int alpha = (int) Math.min(MAX_BG_OPACITY, BG_OPACITY * mColorMultiplier);
+-        return setColorAlphaBound(mBgColor, alpha);*/
+-        return mBgColor;
++        int alpha = (int) Math.min(MAX_BG_OPACITY, BG_OPACITY * mColorMultiplier);
++        return setColorAlphaBound(mBgColor, alpha);
+     }
+ 
+     public int getDotColor() {
+diff --git a/src/com/android/launcher3/util/WallpaperOffsetInterpolator.java b/src/com/android/launcher3/util/WallpaperOffsetInterpolator.java
+index 53528f5d..78a467e2 100644
+--- a/src/com/android/launcher3/util/WallpaperOffsetInterpolator.java
++++ b/src/com/android/launcher3/util/WallpaperOffsetInterpolator.java
+@@ -17,7 +17,6 @@ import android.view.animation.Interpolator;
+ import com.android.launcher3.Utilities;
+ import com.android.launcher3.Workspace;
+ import com.android.launcher3.anim.Interpolators;
+-import com.saggitt.omega.blur.BlurWallpaperProvider;
+ 
+ /**
+  * Utility class to handle wallpaper scrolling along with workspace.
+@@ -175,15 +174,14 @@ public class WallpaperOffsetInterpolator extends BroadcastReceiver {
+             mWorkspace.getContext()
+                     .registerReceiver(this, new IntentFilter(Intent.ACTION_WALLPAPER_CHANGED));
+             onReceive(mWorkspace.getContext(), null);
+-            BlurWallpaperProvider.Companion.getInstance(mWorkspace.getContext()).updateAsync();
+             mRegistered = true;
+         }
+     }
+ 
+     @Override
+     public void onReceive(Context context, Intent intent) {
+-        mWallpaperIsLiveWallpaper = WallpaperManager.getInstance(mWorkspace.getContext()).getWallpaperInfo() != null;
+-        BlurWallpaperProvider.Companion.getInstance(context).updateAsync();
++        mWallpaperIsLiveWallpaper =
++                WallpaperManager.getInstance(mWorkspace.getContext()).getWallpaperInfo() != null;
+         updateOffset();
+     }
+ 
+@@ -205,12 +203,10 @@ public class WallpaperOffsetInterpolator extends BroadcastReceiver {
+ 
+         private float mFinalOffset;
+         private float mOffsetX;
+-        private final Context mContext;
+ 
+         public OffsetHandler(Context context) {
+             super(UI_HELPER_EXECUTOR.getLooper());
+             mInterpolator = Interpolators.DEACCEL_1_5;
+-            mContext = context;
+             mWM = WallpaperManager.getInstance(context);
+         }
+ 
+@@ -277,8 +273,6 @@ public class WallpaperOffsetInterpolator extends BroadcastReceiver {
+         private void setOffsetSafely(IBinder token) {
+             try {
+                 mWM.setWallpaperOffsets(token, mCurrentOffset, 0.5f);
+-                BlurWallpaperProvider.Companion.getInstance(mContext)
+-                        .setWallpaperOffset(mCurrentOffset);
+             } catch (IllegalArgumentException e) {
+                 Log.e(TAG, "Error updating wallpaper offset: " + e);
+             }
+diff --git a/src/com/android/launcher3/views/RecyclerViewFastScroller.java b/src/com/android/launcher3/views/RecyclerViewFastScroller.java
+index 52718687..4b54ecd7 100644
+--- a/src/com/android/launcher3/views/RecyclerViewFastScroller.java
++++ b/src/com/android/launcher3/views/RecyclerViewFastScroller.java
+@@ -347,9 +347,6 @@ public class RecyclerViewFastScroller extends View {
+                 mPopupSectionName = "";
+                 mPopupView.setText("");
+             }
+-        } else if (prefs.getDrawerSortModeNew().onGetValue() == Config.SORT_BY_INSTALL_DATE) {
+-            mPopupSectionName = "";
+-            mPopupView.setText("");
+         } else {
+             animatePopupVisibility(!sectionName.isEmpty());
+         }
+diff --git a/src/com/android/launcher3/views/ScrimView.java b/src/com/android/launcher3/views/ScrimView.java
+index 28998efc..d3183a43 100644
+--- a/src/com/android/launcher3/views/ScrimView.java
++++ b/src/com/android/launcher3/views/ScrimView.java
+@@ -20,7 +20,6 @@ import static com.android.launcher3.util.SystemUiController.UI_STATE_SCRIM_VIEW;
+ import android.content.Context;
+ import android.graphics.Canvas;
+ import android.graphics.Color;
+-import android.graphics.Paint;
+ import android.graphics.Rect;
+ import android.graphics.drawable.ColorDrawable;
+ import android.util.AttributeSet;
+@@ -173,13 +172,6 @@ public class ScrimView extends View implements Insettable {
+         mOpaquenessListeners.remove(listener);
+     }
+ 
+-    protected void onDrawFlatColor(Canvas canvas) {
+-    }
+-
+-    protected void onDrawRoundRect(Canvas canvas, float left, float top, float right, float bottom, float rx, float ry, Paint paint) {
+-
+-    }
+-
+     /**
+      * A Utility interface allowing for other surfaces to draw on ScrimView
+      */
+diff --git a/src/neo/ic_launcher-playstore.png b/src/neo/ic_launcher-playstore.png
+deleted file mode 100644
+index 441dc604..00000000
+Binary files a/src/neo/ic_launcher-playstore.png and /dev/null differ
+diff --git a/src/neo/res/drawable/ic_launcher_background.xml b/src/neo/res/drawable/ic_launcher_background.xml
+deleted file mode 100644
+index ca3826a4..00000000
+--- a/src/neo/res/drawable/ic_launcher_background.xml
++++ /dev/null
+@@ -1,74 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<vector
+-    android:height="108dp"
+-    android:width="108dp"
+-    android:viewportHeight="108"
+-    android:viewportWidth="108"
+-    xmlns:android="http://schemas.android.com/apk/res/android">
+-    <path android:fillColor="#3DDC84"
+-          android:pathData="M0,0h108v108h-108z"/>
+-    <path android:fillColor="#00000000" android:pathData="M9,0L9,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,0L19,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M29,0L29,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M39,0L39,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M49,0L49,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M59,0L59,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M69,0L69,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M79,0L79,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M89,0L89,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M99,0L99,108"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,9L108,9"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,19L108,19"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,29L108,29"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,39L108,39"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,49L108,49"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,59L108,59"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,69L108,69"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,79L108,79"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,89L108,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M0,99L108,99"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,29L89,29"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,39L89,39"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,49L89,49"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,59L89,59"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,69L89,69"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M19,79L89,79"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M29,19L29,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M39,19L39,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M49,19L49,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M59,19L59,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M69,19L69,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-    <path android:fillColor="#00000000" android:pathData="M79,19L79,89"
+-          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+-</vector>
+diff --git a/src/neo/res/mipmap-anydpi-v26/ic_launcher.xml b/src/neo/res/mipmap-anydpi-v26/ic_launcher.xml
+deleted file mode 100644
+index c4a603d4..00000000
+--- a/src/neo/res/mipmap-anydpi-v26/ic_launcher.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background"/>
+-    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+-</adaptive-icon>
+\ No newline at end of file
+diff --git a/src/neo/res/mipmap-anydpi-v26/ic_launcher_round.xml b/src/neo/res/mipmap-anydpi-v26/ic_launcher_round.xml
+deleted file mode 100644
+index c4a603d4..00000000
+--- a/src/neo/res/mipmap-anydpi-v26/ic_launcher_round.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background"/>
+-    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+-</adaptive-icon>
+\ No newline at end of file
+diff --git a/src/neo/res/mipmap-hdpi/ic_launcher.png b/src/neo/res/mipmap-hdpi/ic_launcher.png
+deleted file mode 100644
+index e0a12a1c..00000000
+Binary files a/src/neo/res/mipmap-hdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-hdpi/ic_launcher_foreground.png b/src/neo/res/mipmap-hdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index 83661333..00000000
+Binary files a/src/neo/res/mipmap-hdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-hdpi/ic_launcher_round.png b/src/neo/res/mipmap-hdpi/ic_launcher_round.png
+deleted file mode 100644
+index 18296e7a..00000000
+Binary files a/src/neo/res/mipmap-hdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-mdpi/ic_launcher.png b/src/neo/res/mipmap-mdpi/ic_launcher.png
+deleted file mode 100644
+index 2511ba26..00000000
+Binary files a/src/neo/res/mipmap-mdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-mdpi/ic_launcher_foreground.png b/src/neo/res/mipmap-mdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index 3a81583c..00000000
+Binary files a/src/neo/res/mipmap-mdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-mdpi/ic_launcher_round.png b/src/neo/res/mipmap-mdpi/ic_launcher_round.png
+deleted file mode 100644
+index 62849083..00000000
+Binary files a/src/neo/res/mipmap-mdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xhdpi/ic_launcher.png b/src/neo/res/mipmap-xhdpi/ic_launcher.png
+deleted file mode 100644
+index afa43cad..00000000
+Binary files a/src/neo/res/mipmap-xhdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xhdpi/ic_launcher_foreground.png b/src/neo/res/mipmap-xhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index c8dd1b59..00000000
+Binary files a/src/neo/res/mipmap-xhdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xhdpi/ic_launcher_round.png b/src/neo/res/mipmap-xhdpi/ic_launcher_round.png
+deleted file mode 100644
+index dfebd728..00000000
+Binary files a/src/neo/res/mipmap-xhdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xxhdpi/ic_launcher.png b/src/neo/res/mipmap-xxhdpi/ic_launcher.png
+deleted file mode 100644
+index 4bbd0888..00000000
+Binary files a/src/neo/res/mipmap-xxhdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xxhdpi/ic_launcher_foreground.png b/src/neo/res/mipmap-xxhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index 80c33c0f..00000000
+Binary files a/src/neo/res/mipmap-xxhdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xxhdpi/ic_launcher_round.png b/src/neo/res/mipmap-xxhdpi/ic_launcher_round.png
+deleted file mode 100644
+index ab62506e..00000000
+Binary files a/src/neo/res/mipmap-xxhdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xxxhdpi/ic_launcher.png b/src/neo/res/mipmap-xxxhdpi/ic_launcher.png
+deleted file mode 100644
+index aa6f0a89..00000000
+Binary files a/src/neo/res/mipmap-xxxhdpi/ic_launcher.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xxxhdpi/ic_launcher_foreground.png b/src/neo/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index c7bfe17f..00000000
+Binary files a/src/neo/res/mipmap-xxxhdpi/ic_launcher_foreground.png and /dev/null differ
+diff --git a/src/neo/res/mipmap-xxxhdpi/ic_launcher_round.png b/src/neo/res/mipmap-xxxhdpi/ic_launcher_round.png
+deleted file mode 100644
+index 415e2eb7..00000000
+Binary files a/src/neo/res/mipmap-xxxhdpi/ic_launcher_round.png and /dev/null differ
+diff --git a/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java b/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java
+index 7639808c..ff848367 100644
+--- a/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java
++++ b/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java
+@@ -22,13 +22,13 @@ import static com.android.launcher3.touch.SingleAxisSwipeDetector.HORIZONTAL;
+ import static com.android.launcher3.touch.SingleAxisSwipeDetector.VERTICAL;
+ 
+ import static org.junit.Assert.assertTrue;
+-/*import static org.mockito.Matchers.any;
++import static org.mockito.Matchers.any;
+ import static org.mockito.Matchers.anyBoolean;
+ import static org.mockito.Matchers.anyFloat;
+ import static org.mockito.Mockito.doAnswer;
+ import static org.mockito.Mockito.doReturn;
+ import static org.mockito.Mockito.never;
+-import static org.mockito.Mockito.verify;*/
++import static org.mockito.Mockito.verify;
+ 
+ import android.util.Log;
+ import android.view.MotionEvent;
+@@ -45,7 +45,7 @@ import org.junit.jupiter.api.Test;
+ import org.junit.runner.RunWith;
+ import org.mockito.Mock;
+ import org.mockito.MockitoAnnotations;
+-/*
++
+ @SmallTest
+ @RunWith(AndroidJUnit4.class)
+ public class SingleAxisSwipeDetectorTest {
+@@ -189,4 +189,3 @@ public class SingleAxisSwipeDetectorTest {
+                 mDetector.isIdleState());
+     }
+ }
+-*/

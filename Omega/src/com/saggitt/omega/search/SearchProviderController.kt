@@ -133,10 +133,10 @@ class SearchProviderController(private val context: Context) {
             QwantSearchProvider(context),
             SearchLiteSearchProvider(context),
             CoolSearchSearchProvider(context),
-            //EdgeSearchProvider(context),
+            EdgeSearchProvider(context),
 
             /*Web Providers*/
-            //BaiduWebSearchProvider(context),
+            //aiduWebSearchProvider(context),
             BraveWebSearchProvider(context),
             //BingWebSearchProvider(context),
             DDGWebSearchProvider(context),

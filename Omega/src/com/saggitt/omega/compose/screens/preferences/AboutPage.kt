@@ -156,7 +156,7 @@ fun AboutPage() {
                     color = MaterialTheme.colorScheme.onPrimary
                 )
                 Text(
-                    text = stringResource(id = R.string.app_id) + ": com.leos.launcher",
+                    text = stringResource(id = R.string.app_id) + ": " + BuildConfig.APPLICATION_ID,
                     fontWeight = FontWeight.Normal,
                     fontSize = 13.sp,
                     color = MaterialTheme.colorScheme.onPrimary
@@ -238,17 +238,17 @@ private val links = listOf(
     Link(
         iconResId = R.drawable.ic_github,
         labelResId = R.string.about_source,
-        url = "https://github.com/LeOS-GSI/LeOS-Launcher"
+        url = "https://github.com/NeoApplications/Neo-Launcher"
     ),
     Link(
         iconResId = R.drawable.ic_channel,
         labelResId = R.string.about_channel,
-        url = "https://t.me/LeOS_Support"
+        url = "https://t.me/neo_applications"
     ),
     Link(
         iconResId = R.drawable.ic_community,
         labelResId = R.string.about_community,
-        url = "https://t.me/LeOS_Support"
+        url = "https://t.me/neo_launcher"
     )
 )
 
@@ -256,8 +256,8 @@ private val contributors = listOf(
     TeamMember(
         name = R.string.author,
         descriptionRes = R.string.author_role,
-        photoUrl = "https://leos-gsi.de/ic_avatar.png",
-        webpage = "https://github.com/LeOS-GSI"
+        photoUrl = "https://avatars.githubusercontent.com/u/6044050",
+        webpage = "https://github.com/saulhdev"
     ),
     TeamMember(
         name = R.string.contributor1,

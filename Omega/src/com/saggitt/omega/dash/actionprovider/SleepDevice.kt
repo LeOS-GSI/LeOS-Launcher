@@ -19,8 +19,6 @@ package com.saggitt.omega.dash.actionprovider
 
 import android.content.Context
 import com.android.launcher3.R
-import com.saggitt.omega.compose.icons.Phosphor
-import com.saggitt.omega.compose.icons.phosphor.Power
 import com.saggitt.omega.dash.DashActionProvider
 import com.saggitt.omega.gestures.handlers.SleepGestureHandler
 import com.saggitt.omega.gestures.handlers.SleepMethodDeviceAdmin
@@ -30,7 +28,7 @@ class SleepDevice(context: Context) : DashActionProvider(context) {
     override val itemId = 10
     override val name = context.getString(R.string.action_sleep)
     override val description = context.getString(R.string.action_sleep)
-    override val icon = Phosphor.Power
+    override val icon = R.drawable.ic_sleep
 
     private val method: SleepGestureHandler.SleepMethod? by lazy {
         listOf(
