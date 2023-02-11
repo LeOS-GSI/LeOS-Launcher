@@ -22,18 +22,18 @@ import androidx.core.content.res.ResourcesCompat
 import com.android.launcher3.R
 import com.saggitt.omega.search.WebSearchProvider
 
-class BaiduWebSearchProvider(context: Context) : WebSearchProvider(context) {
+class SwisscowsWebSearchProvider(context: Context) : WebSearchProvider(context) {
     override val iconRes: Int
         get() = R.drawable.ic_swiss_old
     override val icon: Drawable
         get() = ResourcesCompat.getDrawable(context.resources, iconRes, null)!!
 
     override val packageName: String
-        get() = "https://swisscows.com/s?wd=%s"
+        get() = "https://swisscows.com/search?q=%s"
 
     override val suggestionsUrl: String
         get() = "https://swisscows.com/web?query=%s"
 
     override val name: String
-        get() = context.resources.getString(R.string.web_search_baidu)
+        get() = context.resources.getString(R.string.web_search_swisscows)
 }

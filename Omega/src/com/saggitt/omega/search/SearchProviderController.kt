@@ -122,6 +122,7 @@ class SearchProviderController(private val context: Context) {
         //TODO: Remove when the compose migration is complete
         fun getSearchProviders(context: Context) = listOf(
             AppsSearchProvider(context),
+            SwisscowsWebSearchProvider(context),
             //GoogleSearchProvider(context),
             SFinderSearchProvider(context),
             //GoogleGoSearchProvider(context),
@@ -136,7 +137,7 @@ class SearchProviderController(private val context: Context) {
             EdgeSearchProvider(context),
 
             /*Web Providers*/
-            //aiduWebSearchProvider(context),
+            SwisscowsWebSearchProvider(context),
             BraveWebSearchProvider(context),
             //BingWebSearchProvider(context),
             DDGWebSearchProvider(context),
@@ -157,7 +158,7 @@ class SearchProviderController(private val context: Context) {
                 //FirefoxSearchProvider(context),
                 DuckDuckGoSearchProvider(context),
                 //BingSearchProvider(context),
-                //BaiduSearchProvider(context),
+                SwisscowsWebSearchProvider(context),
                 //YandexSearchProvider(context),
                 QwantSearchProvider(context),
                 SearchLiteSearchProvider(context),
@@ -165,6 +166,7 @@ class SearchProviderController(private val context: Context) {
                 EdgeSearchProvider(context),
 
                 /*Web Providers*/
+                SwisscowsWebSearchProvider(context),
                 //BaiduWebSearchProvider(context),
                 BraveWebSearchProvider(context),
                 //BingWebSearchProvider(context),

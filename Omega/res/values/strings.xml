@@ -265,7 +265,7 @@
     <string name="title_smartspace_weather_units">Temperature unit</string>
     <string name="title_smartspace_event_providers">Events sources</string>
     <string name="category__behavior_weather">Weather</string>
-    <string name="google_app" translatable="false">Google app</string>
+    <string name="google_app" translatable="false"></string>
     <string name="pref_shelf_summary">To the left of the main Home screen</string>
     <!-- SmartSpace -->
     <string name="smartspace_preferences">Preferences</string>
@@ -278,7 +278,7 @@
     <string name="smartspace_provider_bridge">Rootless Pixel Bridge</string>
     <string name="resuable_text_alarm">Alarm</string>
     <string name="name_provider_alarm_events">Upcoming alarms</string>
-    <string name="smartspace_widget_provider_not_found">Get the Google App.</string>
+    <string name="smartspace_widget_provider_not_found">Sorry, not available in LeOS-Launcher</string>
     <string name="zen_mode_enabled">Do Not Disturb is enabled.</string>
     <string name="home_widget">At a Glance</string>
     <string name="battery_charging">Charging</string>
@@ -396,7 +396,7 @@
     </string>
     <string name="search_provider_yandex" translatable="false">Yandex</string>
     <string name="search_provider_ddg" translatable="false">DuckDuckGo</string>
-    <string name="search_provider_baidu" translatable="false">Baidu</string>
+    <string name="search_provider_baidu" translatable="false">Swisscows</string>
     <string name="search_provider_s_finder" translatable="false">S Finder</string>
     <string name="google" translatable="false">Google</string>
     <string name="search_provider_google_go" translatable="false">Google Go</string>
@@ -416,6 +416,7 @@
     <string name="web_search_ecosia" translatable="false">Ecosia (web)</string>
     <string name="web_search_yandex" translatable="false">Yandex (web)</string>
     <string name="web_search_baidu" translatable="false">Baidu (web)</string>
+    <string name="web_search_swisscows" translatable="false">Swisscows(web)</string>
     <string name="web_search_yahoo" translatable="false">Yahoo (web)</string>
     <string name="error_no_browser">Install an app to open URLs first</string>
     <string name="folder_custom_background">Use custom folder background</string>
