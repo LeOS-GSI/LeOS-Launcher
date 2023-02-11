@@ -73,8 +73,10 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
         create("neo") {
+            manifestPlaceholders += mapOf()
             isMinifyEnabled = false
             applicationIdSuffix = ".neo"
+            signingConfig = signingConfigs.getByName("debug")
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher_debug"
             manifestPlaceholders["appIconRound"] = "@mipmap/ic_launcher_round_debug"
         }

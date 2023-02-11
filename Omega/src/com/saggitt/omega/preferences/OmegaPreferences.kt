@@ -38,6 +38,8 @@ import com.android.launcher3.util.MainThreadInitializedObject
 import com.android.launcher3.util.SettingsCache
 import com.android.launcher3.util.Themes
 import com.saggitt.omega.ALL_MATERIAL_COLORS
+import com.saggitt.omega.GREY
+import com.saggitt.omega.KEY_600
 import com.saggitt.omega.KEY_A400
 import com.saggitt.omega.NOTIFICATION_ENABLED_LISTENERS
 import com.saggitt.omega.OmegaApp
@@ -673,7 +675,7 @@ class OmegaPreferences(val context: Context) : BasePreferences(context) {
     val themeAccentColor = ColorIntPref(
         key = PREFS_ACCENT,
         titleId = R.string.title__theme_accent_color,
-        defaultValue = RED.getValue(KEY_A400).toInt(),
+        defaultValue = GREY.getValue(KEY_600).toInt(),
         entries = ALL_MATERIAL_COLORS.map { it.toInt() }.toIntArray(),
         allowCustom = false,
         withShades = false,
